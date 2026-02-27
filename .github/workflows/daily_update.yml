@@ -27,7 +27,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python finance_daily_news/agent.py
+        # 修正：直接執行專案根目錄下的 agent.py
+        run: python agent.py
 
       - name: Commit updated data files
         run: |
