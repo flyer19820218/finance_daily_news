@@ -1,5 +1,9 @@
-import os, re, json, calendar
+import os
+import re
+import json
+import calendar
 from datetime import datetime, timedelta, timezone
+
 import feedparser
 import requests
 import google.generativeai as genai
@@ -12,14 +16,17 @@ RSS_LIST = [
 CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
 
+
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
+
 
 def escape_md_v2(text: str) -> str:
     chars = r"\_*[]()~`>#+-=|{}.!"
     for c in chars:
         text = text.replace(c, "\\" + c)
     return text
+
 
 def load_cache():
     if os.path.exists(CACHE_FILE):
@@ -31,10 +38,12 @@ def load_cache():
             return []
     return []
 
+
 def save_cache(cache_list):
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache_list, f, ensure_ascii=False)
+
 
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
@@ -45,6 +54,7 @@ def fetch_news(hours=24, limit=20):
 
     for rss in RSS_LIST:
         feed = feedparser.parse(rss)
+
         for e in feed.entries:
             if not hasattr(e, "published_parsed"):
                 continue
@@ -76,6 +86,7 @@ def fetch_news(hours=24, limit=20):
     news.sort(key=lambda x: x["dt_utc"], reverse=True)
     return news[:limit]
 
+
 def ai_analyze(news):
     if not news:
         return "📰 今日無新重大財經事件"
@@ -85,7 +96,7 @@ def ai_analyze(news):
     prompt = f"""
 你是總體經濟分析師與台股策略研究員。
 請對以下新聞做：
-1) 重要性排序（列出 3-6 則最重要）
+1) 重要性排序
 2) 市場情緒
 3) 台股影響
 4) 投資觀察
@@ -109,23 +120,29 @@ def ai_analyze(news):
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-2.5-flash")
     r = model.generate_content(prompt)
+
     return r.text if hasattr(r, "text") else "AI分析失敗"
+
 
 def send_telegram(msg: str):
     token = os.environ.get("TELEGRAM_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+
     if not token or not chat_id:
         raise RuntimeError("Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID env var")
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
+
     payload = {
         "chat_id": chat_id,
         "text": escape_md_v2(msg),
         "parse_mode": "MarkdownV2",
         "disable_web_page_preview": True,
     }
+
     r = requests.post(url, json=payload, timeout=20)
     r.raise_for_status()
+
 
 def run_daily():
     news = fetch_news()
@@ -143,6 +160,7 @@ def run_daily():
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
     send_telegram(report_text)
+
 
 if __name__ == "__main__":
     run_daily()
