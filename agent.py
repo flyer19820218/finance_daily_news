@@ -22,6 +22,7 @@ def clean_html(text: str) -> str:
 
 
 def escape_md_v2(text: str) -> str:
+    # Telegram MarkdownV2 escape
     chars = r"\_*[]()~`>#+-=|{}.!"
     for c in chars:
         text = text.replace(c, "\\" + c)
@@ -54,7 +55,6 @@ def fetch_news(hours=24, limit=20):
 
     for rss in RSS_LIST:
         feed = feedparser.parse(rss)
-
         for e in feed.entries:
             if not hasattr(e, "published_parsed"):
                 continue
@@ -72,12 +72,14 @@ def fetch_news(hours=24, limit=20):
             summary = clean_html(e.get("summary", ""))[:200]
             title = getattr(e, "title", "(no title)")
 
-            news.append({
-                "title": title,
-                "link": link,
-                "summary": summary,
-                "dt_utc": dt.isoformat(),
-            })
+            news.append(
+                {
+                    "title": title,
+                    "link": link,
+                    "summary": summary,
+                    "dt_utc": dt.isoformat(),
+                }
+            )
 
             cache_set.add(link)
             cache_list.append(link)
@@ -96,10 +98,10 @@ def ai_analyze(news):
     prompt = f"""
 你是總體經濟分析師與台股策略研究員。
 請對以下新聞做：
-1) 重要性排序
-2) 市場情緒
-3) 台股影響
-4) 投資觀察
+1) 重要性排序（列出 3-6 則最重要）
+2) 市場情緒（偏風險偏好/風險趨避/中性 + 原因）
+3) 台股影響（利多/中性/利空；若可能點名產業）
+4) 投資觀察（3-5 點可操作觀察，避免保證獲利語氣）
 
 新聞：
 {text}
@@ -127,12 +129,10 @@ def ai_analyze(news):
 def send_telegram(msg: str):
     token = os.environ.get("TELEGRAM_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-
     if not token or not chat_id:
         raise RuntimeError("Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID env var")
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-
     payload = {
         "chat_id": chat_id,
         "text": escape_md_v2(msg),
