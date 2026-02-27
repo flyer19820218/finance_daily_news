@@ -2,7 +2,7 @@ name: Daily Finance Update (06:00 Taipei)
 
 on:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "0 22 * * *"  # 06:00 Asia/Taipei
   workflow_dispatch:
 
 permissions:
@@ -27,7 +27,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python agent.py
+        run: python finance_daily_news/agent.py
 
       - name: Commit updated data files
         run: |
