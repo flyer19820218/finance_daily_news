@@ -22,13 +22,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run agent (generate report + send Telegram)
+      - name: Run agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        # 修正：直接執行專案根目錄下的 agent.py
-        run: python agent.py
+        # 強制鎖定執行根目錄下的新代碼檔案
+        run: python finance_news_agent.py
 
       - name: Commit updated data files
         run: |
