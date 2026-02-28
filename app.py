@@ -4,6 +4,7 @@ import math
 from urllib.parse import urlparse
 
 import streamlit as st
+import yfinance as yf
 
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
@@ -219,6 +220,94 @@ def list_history():
     return files
 
 
+# ==========================
+# ✅ 直接抓 6 個指數（保底）
+# ==========================
+SYMBOLS = [
+    ("富台指（FTX）", ["FTX=F", "FTX1!"]),  # 富台指先嘗試兩個
+    ("費半（SOX）", ["^SOX"]),
+    ("道瓊期（YM）", ["YM=F"]),
+    ("納指期（NQ）", ["NQ=F"]),
+    ("台積電 ADR（TSM）", ["TSM"]),
+    ("NVIDIA（NVDA）", ["NVDA"]),
+]
+
+def _safe_float(x):
+    try:
+        if x is None:
+            return None
+        return float(x)
+    except Exception:
+        return None
+
+@st.cache_data(ttl=60)
+def yf_quote_any(tickers):
+    for tk in tickers:
+        try:
+            t = yf.Ticker(tk)
+            fi = getattr(t, "fast_info", None)
+
+            last = None
+            prev = None
+            if fi:
+                last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
+                prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
+
+            if last is None:
+                hist = t.history(period="2d", interval="1d")
+                if hist is not None and len(hist) >= 1:
+                    last = _safe_float(hist["Close"].iloc[-1])
+                    if len(hist) >= 2:
+                        prev = _safe_float(hist["Close"].iloc[-2])
+
+            if last is not None:
+                ch = (last - prev) if prev is not None else None
+                pct = (ch / prev * 100) if (ch is not None and prev not in (None, 0)) else None
+                return {
+                    "ok": True,
+                    "ticker": tk,
+                    "price": last,
+                    "prev_close": prev,
+                    "change": ch,
+                    "pct": pct,
+                }
+        except Exception:
+            continue
+
+    return {"ok": False, "ticker": tickers[0] if tickers else "", "price": None, "prev_close": None, "change": None, "pct": None}
+
+
+def render_tile(name, q):
+    render_ok = q and q.get("ok") and q.get("price") is not None
+    if not render_ok:
+        return f"""
+        <div class="tile">
+          <div class="name">{name}</div>
+          <div class="price">-</div>
+          <div class="delta flat">-</div>
+        </div>
+        """
+
+    ch = q.get("change")
+    pct = q.get("pct")
+    price = q.get("price")
+
+    ch = float(ch) if ch is not None else 0.0
+    pct = float(pct) if pct is not None else 0.0
+    price = float(price)
+
+    cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+    arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
+
+    return f"""
+    <div class="tile">
+      <div class="name">{name}</div>
+      <div class="price">{round(price, 2)}</div>
+      <div class="delta {cls}">{arrow} {round(ch, 2)}（{round(pct, 2)}%）</div>
+    </div>
+    """
+
+
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -252,77 +341,39 @@ st.markdown(
 )
 
 # =======================
-# ✅ 市場快照（固定6張一排）
+# ✅ 市場快照：先讀 json，沒有就直接抓
 # =======================
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
 market = data.get("market", {}) or {}
 
-# 固定顯示順序（配合 agent 產出的 key）
-ORDER = [
-    "富台指（FTX）",
-    "費半（SOX）",
-    "道瓊期（YM）",
-    "納指期（NQ）",
-    "台積電 ADR（TSM）",
-    "NVIDIA（NVDA）",
-]
-
-def render_tile(name, q):
-    render_ok = q and q.get("ok") and q.get("price") is not None
-    if not render_ok:
-        return f"""
-        <div class="tile">
-          <div class="name">{name}</div>
-          <div class="price">-</div>
-          <div class="delta flat">-</div>
-        </div>
-        """
-
-    ch = q.get("change")
-    pct = q.get("pct")
-    price = q.get("price")
-
-    ch = float(ch) if ch is not None else 0.0
-    pct = float(pct) if pct is not None else 0.0
-    price = float(price)
-
-    cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
-    arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
-
-    return f"""
-    <div class="tile">
-      <div class="name">{name}</div>
-      <div class="price">{round(price, 2)}</div>
-      <div class="delta {cls}">{arrow} {round(ch, 2)}（{round(pct, 2)}%）</div>
-    </div>
-    """
-
-if market:
-    st.markdown('<div class="cards">', unsafe_allow_html=True)
-
-    # ✅ 你原本 toggle 我保留，但桌機預設要一排，所以改 False
-    is_mobile = st.toggle("手機版排版（兩欄）", value=False)
-
-    if is_mobile:
-        col1, col2 = st.columns(2)
-        for i, name in enumerate(ORDER):
-            q = market.get(name, None)
-            html = render_tile(name, q)
-            with (col1 if i % 2 == 0 else col2):
-                st.markdown(html, unsafe_allow_html=True)
+# 如果 json 裡 market 不完整，就用 yfinance 補齊
+filled = {}
+for name, tickers in SYMBOLS:
+    if name in market and market[name].get("price") is not None:
+        filled[name] = market[name]
     else:
-        # ✅ 無論 market 裡有多少，都固定 6 欄一排
-        cols = st.columns(6)
-        for i, name in enumerate(ORDER):
-            q = market.get(name, None)
-            html = render_tile(name, q)
-            with cols[i]:
-                st.markdown(html, unsafe_allow_html=True)
+        filled[name] = yf_quote_any(tuple(tickers))
 
-    st.markdown("</div>", unsafe_allow_html=True)
+st.markdown('<div class="cards">', unsafe_allow_html=True)
+
+# ✅ 桌機預設：一排6個
+is_mobile = st.toggle("手機版排版（兩欄）", value=False)
+
+if is_mobile:
+    col1, col2 = st.columns(2)
+    for i, (name, _) in enumerate(SYMBOLS):
+        html = render_tile(name, filled.get(name))
+        with (col1 if i % 2 == 0 else col2):
+            st.markdown(html, unsafe_allow_html=True)
 else:
-    st.info("目前沒有市場快照資料。")
+    cols = st.columns(6)
+    for i, (name, _) in enumerate(SYMBOLS):
+        html = render_tile(name, filled.get(name))
+        with cols[i]:
+            st.markdown(html, unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
