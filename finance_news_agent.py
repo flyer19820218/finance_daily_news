@@ -2,11 +2,10 @@ import os
 import re
 import json
 import calendar
+import requests
 from datetime import datetime, timedelta, timezone
 
 import feedparser
-import requests
-import yfinance as yf
 import google.generativeai as genai
 
 RSS_LIST = [
@@ -18,10 +17,8 @@ CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 
-
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
-
 
 def load_cache():
     if os.path.exists(CACHE_FILE):
@@ -33,12 +30,10 @@ def load_cache():
             return []
     return []
 
-
 def save_cache(cache_list):
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache_list, f, ensure_ascii=False, indent=2)
-
 
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
@@ -82,7 +77,6 @@ def fetch_news(hours=24, limit=20):
     news.sort(key=lambda x: x["dt_utc"], reverse=True)
     return news[:limit]
 
-
 def ai_analyze(news):
     if not news:
         return "📰 今日無新重大財經事件"
@@ -111,7 +105,6 @@ def ai_analyze(news):
 
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
-        # 沒 key 也不要壞：讓網站能顯示市場快照/新聞
         return "（本機測試模式：未設定 GEMINI_API_KEY，因此略過 AI 分析）"
 
     genai.configure(api_key=api_key)
@@ -120,19 +113,17 @@ def ai_analyze(news):
 
     return r.text if hasattr(r, "text") else "AI分析失敗"
 
-
 def escape_md_v2(text: str) -> str:
     chars = r"\_*[]()~`>#+-=|{}.!"
     for c in chars:
         text = text.replace(c, "\\" + c)
     return text
 
-
 def send_telegram(msg: str):
     token = os.environ.get("TELEGRAM_TOKEN", "").strip()
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
-        return  # 本機可不送
+        return
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {
@@ -144,151 +135,17 @@ def send_telegram(msg: str):
     r = requests.post(url, json=payload, timeout=20)
     r.raise_for_status()
 
-
-def _safe_float(x):
-    try:
-        if x is None:
-            return None
-        return float(x)
-    except Exception:
-        return None
-
-
-# ==========================
-# ✅ 富果 API 專用抓取函數 (終極解包版)
-# ==========================
-def fugle_quote_tx(symbol="TXFR1"):
-    api_key = os.environ.get("FUGLE_API_KEY", "").strip()
-    if not api_key:
-        return None, None, symbol, "未設定金鑰"
-
-    headers = {"X-API-KEY": api_key}
-    url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{symbol}"
-    
-    try:
-        res = requests.get(url_quote, headers=headers, timeout=5)
-        if res.status_code == 200:
-            # 🎯 脫去 JSON 外層包裝
-            res_data = res.json().get("data", {})
-            last = res_data.get("lastPrice") or res_data.get("closePrice")
-            prev = res_data.get("previousClose")
-            
-            if last is not None and prev is not None:
-                return float(last), float(prev), symbol, None
-            else:
-                return None, None, symbol, "解析報價失敗"
-        else:
-            return None, None, symbol, f"錯誤碼:{res.status_code}"
-    except Exception:
-        return None, None, symbol, "連線異常"
-
-
-def yf_quote_any(tickers):
-    """
-    依序嘗試多個 ticker，成功就回傳 (ticker_used, price, prev_close)
-    """
-    for tk in tickers:
-        try:
-            t = yf.Ticker(tk)
-            fi = getattr(t, "fast_info", None)
-
-            last = None
-            prev = None
-
-            if fi:
-                last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
-                prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
-
-            if last is None:
-                hist = t.history(period="2d", interval="1d")
-                if hist is not None and len(hist) >= 1:
-                    last = _safe_float(hist["Close"].iloc[-1])
-                    if len(hist) >= 2:
-                        prev = _safe_float(hist["Close"].iloc[-2])
-
-            if last is not None:
-                return tk, last, prev
-        except Exception:
-            continue
-
-    return None, None, None
-
-
-def build_market_snapshot():
-    """
-    回傳給 app 用的 market dict：
-    key 一律是固定中文名稱（避免順序亂）
-    value 格式：{ok, ticker, price, prev_close, change, pct, asof_utc}
-    """
-
-    mapping = [
-        ("台指期（全）", ["TXFR1"]), # ✅ 改為富果台指期
-        ("費半（SOX）", ["^SOX"]),
-        ("道瓊期（YM）", ["YM=F"]),
-        ("納指期（NQ）", ["NQ=F"]),
-        ("台積電 ADR（TSM）", ["TSM"]),
-        ("NVIDIA（NVDA）", ["NVDA"]),
-    ]
-
-    market = {}
-    now = datetime.now(timezone.utc).isoformat()
-
-    for name, tickers in mapping:
-        # 分流處理：如果是台指期，去呼叫富果函數
-        if name == "台指期（全）":
-            price, prev, used, err_msg = fugle_quote_tx(tickers[0])
-            if price is None:
-                market[name] = {
-                    "ok": False,
-                    "ticker": err_msg or used,
-                    "price": None,
-                    "prev_close": None,
-                    "change": None,
-                    "pct": None,
-                    "asof_utc": now,
-                }
-                continue
-        else:
-            used, price, prev = yf_quote_any(tickers)
-            if price is None:
-                market[name] = {
-                    "ok": False,
-                    "ticker": used or (tickers[0] if tickers else ""),
-                    "price": None,
-                    "prev_close": None,
-                    "change": None,
-                    "pct": None,
-                    "asof_utc": now,
-                }
-                continue
-
-        ch = (price - prev) if (prev is not None) else None
-        pct = (ch / prev * 100) if (ch is not None and prev not in (None, 0)) else None
-
-        market[name] = {
-            "ok": True,
-            "ticker": used,
-            "price": price,
-            "prev_close": prev,
-            "change": ch,
-            "pct": pct,
-            "asof_utc": now,
-        }
-
-    return market
-
-
 def run_daily():
     news = fetch_news()
     report_text = ai_analyze(news)
-    market = build_market_snapshot()
 
+    # 股市報價交由前端 app.py 即時抓取，後端不再多此一舉，僅保留空字典
     payload = {
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
         "title": f"財經AI快報 {datetime.now().strftime('%Y-%m-%d')}",
         "report": report_text,
         "news": news,
-        "market": market,
+        "market": {}, 
     }
 
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
@@ -302,7 +159,6 @@ def run_daily():
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
     send_telegram(report_text)
-
 
 if __name__ == "__main__":
     run_daily()
