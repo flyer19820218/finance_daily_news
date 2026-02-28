@@ -1,5 +1,8 @@
 import json
 import os
+import math
+from urllib.parse import urlparse
+
 import streamlit as st
 
 LATEST_FILE = "data/latest_report.json"
@@ -260,35 +263,65 @@ with left:
 
 with right:
     st.markdown('<div class="section-title">新聞清單</div>', unsafe_allow_html=True)
-    news = data.get("news", [])
-    st.markdown(f"<div class='small'>共 {len(news)} 則</div>", unsafe_allow_html=True)
+    news = data.get("news", []) or []
+
+    # 每頁顯示 10 則
+    page_size = 10
+    total = len(news)
+    total_pages = max(1, math.ceil(total / page_size))
+
+    # 初始化頁碼
+    if "news_page" not in st.session_state:
+        st.session_state.news_page = 1  # 1-based
+
+    st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages))
+
+    # 分頁按鈕
+    c1, c2, c3 = st.columns([1, 1, 2])
+    with c1:
+        if st.button("⬅ 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
+            st.session_state.news_page -= 1
+            st.rerun()
+    with c2:
+        if st.button("下一頁 ➡", use_container_width=True, disabled=(st.session_state.news_page >= total_pages)):
+            st.session_state.news_page += 1
+            st.rerun()
+    with c3:
+        st.markdown(
+            f"<div class='small' style='text-align:right;'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div>",
+            unsafe_allow_html=True,
+        )
+
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
-    for n in news:
-        title = n.get("title", "")
-        link = n.get("link", "")
-        summary = n.get("summary", "") or ""
+    # 取出當頁
+    start = (st.session_state.news_page - 1) * page_size
+    end = start + page_size
+    page_items = news[start:end]
 
-        # 摘要縮短（節省空間）
-        summary = summary.strip()
-        if len(summary) > 110:
-            summary = summary[:110] + "..."
+    # 列表：只顯示「標題 + 來源 + 閱讀原文」
+    for n in page_items:
+        title = (n.get("title") or "").strip()
+        link = (n.get("link") or "").strip()
+
+        source = ""
+        if link:
+            try:
+                source = urlparse(link).netloc.replace("www.", "")
+            except Exception:
+                source = ""
 
         st.markdown('<div class="news-card">', unsafe_allow_html=True)
-
-        # 1) 標題
         st.markdown(f"**{title}**")
 
-        # 2) 同一行：閱讀原文 | 摘要（灰字）
-        row = ""
+        parts = []
+        if source:
+            parts.append(f"<span>{source}</span>")
         if link:
-            row += f"<a href='{link}' target='_blank'>閱讀原文</a>"
-        if summary:
-            if row:
-                row += " &nbsp;&nbsp;|&nbsp;&nbsp; "
-            row += f"<span>{summary}</span>"
+            parts.append(f"<a href='{link}' target='_blank'>閱讀原文</a>")
 
-        if row:
+        if parts:
+            row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts)
             st.markdown(f"<div class='inline-row'>{row}</div>", unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
