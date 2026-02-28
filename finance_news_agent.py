@@ -8,6 +8,7 @@ import feedparser
 import requests
 import google.generativeai as genai
 
+# ================= CONFIG =================
 RSS_LIST = [
     "https://news.google.com/rss/search?q=finance+OR+stock&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
     "https://news.google.com/rss/search?q=台股+OR+美股&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
@@ -15,8 +16,10 @@ RSS_LIST = [
 
 CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
+HISTORY_DIR = "data/history"
 
 
+# ================= UTILS =================
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
 
@@ -46,6 +49,7 @@ def save_cache(cache_list):
         json.dump(cache_list, f, ensure_ascii=False)
 
 
+# ================= NEWS =================
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
     cache_set = set(cache_list)
@@ -55,6 +59,7 @@ def fetch_news(hours=24, limit=20):
 
     for rss in RSS_LIST:
         feed = feedparser.parse(rss)
+
         for e in feed.entries:
             if not hasattr(e, "published_parsed"):
                 continue
@@ -89,6 +94,7 @@ def fetch_news(hours=24, limit=20):
     return news[:limit]
 
 
+# ================= AI ANALYSIS =================
 def ai_analyze(news):
     if not news:
         return "📰 今日無新重大財經事件"
@@ -126,6 +132,7 @@ def ai_analyze(news):
     return r.text if hasattr(r, "text") else "AI分析失敗"
 
 
+# ================= TELEGRAM =================
 def send_telegram(msg: str):
     token = os.environ.get("TELEGRAM_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
@@ -144,6 +151,7 @@ def send_telegram(msg: str):
     r.raise_for_status()
 
 
+# ================= MAIN =================
 def run_daily():
     news = fetch_news()
     report_text = ai_analyze(news)
@@ -155,10 +163,19 @@ def run_daily():
         "news": news,
     }
 
+    # 1) latest
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
+    # 2) history (每天一份)
+    os.makedirs(HISTORY_DIR, exist_ok=True)
+    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    history_path = os.path.join(HISTORY_DIR, f"{date_str}.json")
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    # 3) telegram
     send_telegram(report_text)
 
 
