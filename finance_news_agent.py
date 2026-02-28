@@ -8,7 +8,6 @@ import feedparser
 import requests
 import google.generativeai as genai
 
-# ================= CONFIG =================
 RSS_LIST = [
     "https://news.google.com/rss/search?q=finance+OR+stock&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
     "https://news.google.com/rss/search?q=台股+OR+美股&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
@@ -16,20 +15,13 @@ RSS_LIST = [
 
 CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
-HISTORY_DIR = "data/history"
 
 
-# ================= UTILS =================
+# -------------------------------------------------
+# 工具
+# -------------------------------------------------
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
-
-
-def escape_md_v2(text: str) -> str:
-    # Telegram MarkdownV2 escape
-    chars = r"\_*[]()~`>#+-=|{}.!"
-    for c in chars:
-        text = text.replace(c, "\\" + c)
-    return text
 
 
 def load_cache():
@@ -38,7 +30,7 @@ def load_cache():
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
-        except json.JSONDecodeError:
+        except:
             return []
     return []
 
@@ -46,10 +38,12 @@ def load_cache():
 def save_cache(cache_list):
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache_list, f, ensure_ascii=False)
+        json.dump(cache_list, f, ensure_ascii=False, indent=2)
 
 
-# ================= NEWS =================
+# -------------------------------------------------
+# 抓新聞
+# -------------------------------------------------
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
     cache_set = set(cache_list)
@@ -94,7 +88,48 @@ def fetch_news(hours=24, limit=20):
     return news[:limit]
 
 
-# ================= AI ANALYSIS =================
+# -------------------------------------------------
+# 抓市場快照（Yahoo 官方 JSON API）
+# -------------------------------------------------
+def fetch_market_snapshot():
+    tickers = {
+        "台指期": "TX=F",
+        "納指期": "NQ=F",
+        "費半": "^SOX",
+        "道瓊": "^DJI",
+        "TSM": "TSM",
+        "NVDA": "NVDA",
+    }
+
+    snapshot = {}
+
+    for name, ticker in tickers.items():
+        try:
+            url = "https://query1.finance.yahoo.com/v7/finance/quote"
+            r = requests.get(url, params={"symbols": ticker}, timeout=10)
+            data = r.json()
+
+            result = data.get("quoteResponse", {}).get("result", [])
+            if not result:
+                continue
+
+            q = result[0]
+
+            snapshot[name] = {
+                "price": q.get("regularMarketPrice"),
+                "change": q.get("regularMarketChange"),
+                "pct": q.get("regularMarketChangePercent"),
+            }
+
+        except:
+            continue
+
+    return snapshot
+
+
+# -------------------------------------------------
+# AI 分析
+# -------------------------------------------------
 def ai_analyze(news):
     if not news:
         return "📰 今日無新重大財經事件"
@@ -123,60 +158,35 @@ def ai_analyze(news):
 
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY env var")
+        return "⚠️ 未設定 GEMINI_API_KEY"
 
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-2.5-flash")
-    r = model.generate_content(prompt)
 
+    r = model.generate_content(prompt)
     return r.text if hasattr(r, "text") else "AI分析失敗"
 
 
-# ================= TELEGRAM =================
-def send_telegram(msg: str):
-    token = os.environ.get("TELEGRAM_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not token or not chat_id:
-        raise RuntimeError("Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID env var")
-
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": escape_md_v2(msg),
-        "parse_mode": "MarkdownV2",
-        "disable_web_page_preview": True,
-    }
-
-    r = requests.post(url, json=payload, timeout=20)
-    r.raise_for_status()
-
-
-# ================= MAIN =================
+# -------------------------------------------------
+# 主流程
+# -------------------------------------------------
 def run_daily():
     news = fetch_news()
     report_text = ai_analyze(news)
+    market_snapshot = fetch_market_snapshot()
 
     payload = {
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
         "title": f"財經AI快報 {datetime.now().strftime('%Y-%m-%d')}",
         "report": report_text,
         "news": news,
+        "market": market_snapshot,
     }
 
-    # 1) latest
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
+
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    # 2) history (每天一份)
-    os.makedirs(HISTORY_DIR, exist_ok=True)
-    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    history_path = os.path.join(HISTORY_DIR, f"{date_str}.json")
-    with open(history_path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    # 3) telegram
-    send_telegram(report_text)
 
 
 if __name__ == "__main__":
