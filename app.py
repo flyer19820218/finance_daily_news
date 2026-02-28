@@ -1,6 +1,8 @@
 import json
 import os
 import math
+import re
+import requests
 from urllib.parse import urlparse
 
 import streamlit as st
@@ -11,6 +13,7 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
+# 原有 CSS 樣式完全保留
 st.markdown(
     """
 <style>
@@ -27,6 +30,7 @@ st.markdown(
   --pill:#eef2ff;
   --shadow: 0 10px 30px rgba(2,6,23,0.06);
   --shadow2: 0 8px 22px rgba(2,6,23,0.05);
+  color-scheme: light;
 }
 
 .stApp{
@@ -219,12 +223,32 @@ def list_history():
     files.sort(reverse=True)
     return files
 
+# ==========================
+# ✅ 抓取邏輯：富台指 (玩股網) + 其他 (Yahoo)
+# ==========================
+@st.cache_data(ttl=60)
+def fetch_ftx_wantgoo():
+    """從玩股網抓取富台指即時報價"""
+    url = "https://www.wantgoo.com/global/indices/ftx"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": "https://www.wantgoo.com/"
+    }
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        p = re.search(r'"price":\s*"?([0-9,.]+)"?', res.text)
+        c = re.search(r'"change":\s*"?([0-9,.-]+)"?', res.text)
+        cp = re.search(r'"changePercent":\s*"?([0-9,.-]+)"?', res.text)
+        if p:
+            price = float(p.group(1).replace(',', ''))
+            change = float(c.group(1)) if c else 0.0
+            pct = float(cp.group(1).replace('%', '')) if cp else 0.0
+            return {"ok": True, "price": price, "change": change, "pct": pct}
+    except:
+        pass
+    return {"ok": False}
 
-# ==========================
-# ✅ 直接抓 6 個指數（保底）
-# ==========================
-SYMBOLS = [
-    ("富台指（FTX）", ["FTX=F", "FTX1!"]),  # 富台指先嘗試兩個
+SYMBOLS_OTHERS = [
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -234,11 +258,9 @@ SYMBOLS = [
 
 def _safe_float(x):
     try:
-        if x is None:
-            return None
+        if x is None: return None
         return float(x)
-    except Exception:
-        return None
+    except: return None
 
 @st.cache_data(ttl=60)
 def yf_quote_any(tickers):
@@ -246,68 +268,41 @@ def yf_quote_any(tickers):
         try:
             t = yf.Ticker(tk)
             fi = getattr(t, "fast_info", None)
-
             last = None
             prev = None
             if fi:
                 last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
                 prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
-
             if last is None:
                 hist = t.history(period="2d", interval="1d")
                 if hist is not None and len(hist) >= 1:
                     last = _safe_float(hist["Close"].iloc[-1])
-                    if len(hist) >= 2:
-                        prev = _safe_float(hist["Close"].iloc[-2])
-
+                    if len(hist) >= 2: prev = _safe_float(hist["Close"].iloc[-2])
             if last is not None:
                 ch = (last - prev) if prev is not None else None
                 pct = (ch / prev * 100) if (ch is not None and prev not in (None, 0)) else None
-                return {
-                    "ok": True,
-                    "ticker": tk,
-                    "price": last,
-                    "prev_close": prev,
-                    "change": ch,
-                    "pct": pct,
-                }
-        except Exception:
-            continue
-
-    return {"ok": False, "ticker": tickers[0] if tickers else "", "price": None, "prev_close": None, "change": None, "pct": None}
-
+                return {"ok": True, "price": last, "change": ch, "pct": pct}
+        except: continue
+    return {"ok": False}
 
 def render_tile(name, q):
     render_ok = q and q.get("ok") and q.get("price") is not None
     if not render_ok:
-        return f"""
-        <div class="tile">
-          <div class="name">{name}</div>
-          <div class="price">-</div>
-          <div class="delta flat">-</div>
-        </div>
-        """
+        return f'<div class="tile"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
 
-    ch = q.get("change")
-    pct = q.get("pct")
-    price = q.get("price")
-
-    ch = float(ch) if ch is not None else 0.0
-    pct = float(pct) if pct is not None else 0.0
-    price = float(price)
-
+    ch, pct, price = q.get("change") or 0.0, q.get("pct") or 0.0, q.get("price")
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
     return f"""
     <div class="tile">
       <div class="name">{name}</div>
-      <div class="price">{round(price, 2)}</div>
-      <div class="delta {cls}">{arrow} {round(ch, 2)}（{round(pct, 2)}%）</div>
+      <div class="price">{round(float(price), 2)}</div>
+      <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
     </div>
     """
 
-
+# === 頁面邏輯 ===
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -316,16 +311,14 @@ if mode == "最新（今日）":
 else:
     hist = list_history()
     if not hist:
-        st.warning("尚無歷史資料，請先讓排程成功跑一次。")
+        st.warning("尚無歷史資料")
         st.stop()
     pick = st.selectbox("選擇日期", hist, index=0)
     data = load_json(os.path.join(HISTORY_DIR, pick))
 
 if not data:
-    st.warning("尚未產生報告（請先手動執行一次排程）。")
+    st.warning("尚未產生報告")
     st.stop()
-
-updated = data.get("updated_at_utc", "")
 
 st.markdown(
     f"""
@@ -334,51 +327,44 @@ st.markdown(
     <div class="brand">財經AI快報</div>
     <div class="sub">每日市場重點整理（重大事件｜台股影響｜投資觀察）</div>
   </div>
-  <div class="badge">最後更新（UTC）：{updated}</div>
+  <div class="badge">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 </div>
 """,
     unsafe_allow_html=True,
 )
 
-# =======================
-# ✅ 市場快照：先讀 json，沒有就直接抓
-# =======================
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
-market = data.get("market", {}) or {}
-
-# 如果 json 裡 market 不完整，就用 yfinance 補齊
+# 抓取數據：富台指優先嘗試玩股網，其他 5 個用 yf
 filled = {}
-for name, tickers in SYMBOLS:
-    if name in market and market[name].get("price") is not None:
-        filled[name] = market[name]
-    else:
-        filled[name] = yf_quote_any(tuple(tickers))
+filled["富台指（FTX）"] = fetch_ftx_wantgoo()
+for name, tickers in SYMBOLS_OTHERS:
+    filled[name] = yf_quote_any(tuple(tickers))
 
 st.markdown('<div class="cards">', unsafe_allow_html=True)
-
-# ✅ 桌機預設：一排6個
 is_mobile = st.toggle("手機版排版（兩欄）", value=False)
+
+# 合併顯示順序
+DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
 
 if is_mobile:
     col1, col2 = st.columns(2)
-    for i, (name, _) in enumerate(SYMBOLS):
+    for i, (name, _) in enumerate(DISPLAY_ORDER):
         html = render_tile(name, filled.get(name))
         with (col1 if i % 2 == 0 else col2):
             st.markdown(html, unsafe_allow_html=True)
 else:
     cols = st.columns(6)
-    for i, (name, _) in enumerate(SYMBOLS):
+    for i, (name, _) in enumerate(DISPLAY_ORDER):
         html = render_tile(name, filled.get(name))
         with cols[i]:
             st.markdown(html, unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
-
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
+# 下方 AI 分析與新聞清單完全不變
 left, right = st.columns([1.35, 0.65], gap="large")
-
 with left:
     st.markdown('<div class="section-title">AI 分析摘要</div>', unsafe_allow_html=True)
     st.markdown('<div class="panel">', unsafe_allow_html=True)
@@ -388,81 +374,42 @@ with left:
 with right:
     st.markdown('<div class="section-title">新聞清單</div>', unsafe_allow_html=True)
     news = data.get("news", []) or []
-
     page_size = 10
     total = len(news)
     total_pages = max(1, math.ceil(total / page_size))
-
-    if "news_page" not in st.session_state:
-        st.session_state.news_page = 1
+    if "news_page" not in st.session_state: st.session_state.news_page = 1
     st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages))
 
-    st.markdown(
-        f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div></div>",
-        unsafe_allow_html=True,
-    )
+    st.markdown(f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div></div>", unsafe_allow_html=True)
 
     if total_pages <= 2:
         try:
-            sel = st.segmented_control(
-                "分頁",
-                options=[1, 2],
-                format_func=lambda x: f"第 {x} 頁",
-                selection_mode="single",
-                default=st.session_state.news_page,
-                label_visibility="collapsed",
-            )
-        except Exception:
-            sel = st.radio(
-                "分頁",
-                options=[1, 2],
-                format_func=lambda x: f"第 {x} 頁",
-                horizontal=True,
-                index=st.session_state.news_page - 1,
-                label_visibility="collapsed",
-            )
+            sel = st.segmented_control("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", selection_mode="single", default=st.session_state.news_page, label_visibility="collapsed")
+        except:
+            sel = st.radio("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", horizontal=True, index=st.session_state.news_page - 1, label_visibility="collapsed")
         if sel and sel != st.session_state.news_page:
-            st.session_state.news_page = int(sel)
-            st.rerun()
+            st.session_state.news_page = int(sel); st.rerun()
     else:
         c1, c2 = st.columns([1, 1])
-        with c1:
+        with c1: 
             if st.button("← 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
-                st.session_state.news_page -= 1
-                st.rerun()
+                st.session_state.news_page -= 1; st.rerun()
         with c2:
             if st.button("下一頁 →", use_container_width=True, disabled=(st.session_state.news_page >= total_pages)):
-                st.session_state.news_page += 1
-                st.rerun()
+                st.session_state.news_page += 1; st.rerun()
 
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
-
     start = (st.session_state.news_page - 1) * page_size
-    end = start + page_size
-    page_items = news[start:end]
-
-    for n in page_items:
+    for n in news[start:start+page_size]:
         title = (n.get("title") or "").strip()
         link = (n.get("link") or "").strip()
-
-        source = ""
-        if link:
-            try:
-                source = urlparse(link).netloc.replace("www.", "")
-            except Exception:
-                source = ""
-
+        source = urlparse(link).netloc.replace("www.", "") if link else ""
         st.markdown('<div class="news-card">', unsafe_allow_html=True)
         st.markdown(f"**{title}**")
-
         parts = []
-        if source:
-            parts.append(f"<span>{source}</span>")
-        if link:
-            parts.append(f"<a href='{link}' target='_blank'>閱讀原文</a>")
-
+        if source: parts.append(f"<span>{source}</span>")
+        if link: parts.append(f"<a href='{link}' target='_blank'>閱讀原文</a>")
         if parts:
             row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts)
             st.markdown(f"<div class='inline-row'>{row}</div>", unsafe_allow_html=True)
-
         st.markdown("</div>", unsafe_allow_html=True)
