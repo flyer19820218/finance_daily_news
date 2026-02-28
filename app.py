@@ -10,12 +10,6 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
-# =============================
-# V3 Tech Startup UI + Mobile Typography
-# - 桌機版面不變
-# - 手機字體更好看
-# - 保留你愛的「翩翩體」：若裝置有此字體會優先使用
-# =============================
 st.markdown(
     """
 <style>
@@ -34,7 +28,7 @@ st.markdown(
   --shadow2: 0 8px 22px rgba(2,6,23,0.05);
 }
 
-/* ❶ 全站字體：先翩翩體（若裝置有），沒有就走漂亮黑體堆疊 */
+/* ✅ 全站字體：保留翩翩體（若裝置有），沒有就用漂亮黑體堆疊 */
 .stApp{
   background:var(--bg);
   color:var(--text);
@@ -52,14 +46,12 @@ st.markdown(
     sans-serif;
 }
 
-/* ❷ 讓中文字更清楚（尤其手機） */
 html, body, [class*="css"]{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Link */
 a{ color:var(--link) !important; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
@@ -77,16 +69,29 @@ a:hover{ text-decoration:underline; }
   gap:14px;
   padding: 6px 0 12px 0;
 }
+
+/* ✅ 修正：手機避免「一字一行」的關鍵 */
 .brand{
   font-size: 34px;
   font-weight: 900;
   letter-spacing: -0.4px;
+  line-height: 1.15;
+
+  /* 防止逐字斷行 */
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal;
+
+  /* 讓標題不要被壓到超窄 */
+  max-width: 100%;
 }
+
 .sub{
   color:var(--muted);
   font-size: 13px;
   margin-top: 6px;
 }
+
 .badge{
   display:inline-flex;
   align-items:center;
@@ -101,8 +106,9 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 6px 18px rgba(2,6,23,0.06);
 }
 
-/* Section / Divider */
+/* Divider */
 .hr{ height:1px; background:var(--border); margin: 18px 0; }
+
 .section-title{
   font-size: 15px;
   font-weight: 850;
@@ -180,12 +186,28 @@ a:hover{ text-decoration:underline; }
   margin: 6px 0 10px 0;
 }
 
-/* ===== 手機微調：字更大、更舒服 ===== */
+/* ✅ 手機：讓 header 垂直堆疊，避免標題被擠到一字一行 */
 @media (max-width: 768px){
   .block-container{ padding-left: 0.9rem; padding-right: 0.9rem; }
-  .brand{ font-size: 26px; letter-spacing: -0.2px; }
+
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .brand{
+    font-size: 28px;
+    letter-spacing: -0.2px;
+  }
+
   .sub{ font-size: 12px; }
-  .badge{ font-size: 11px; padding: 7px 10px; }
+  .badge{
+    font-size: 11px;
+    padding: 7px 10px;
+    white-space: normal; /* 讓 badge 在手機可換行，不要橫向擠爆 */
+  }
+
   .section-title{ font-size: 14px; }
   .price{ font-size: 20px; }
   .delta{ font-size: 12px; }
@@ -212,9 +234,6 @@ def list_history():
     return files
 
 
-# =============================
-# 檢視模式
-# =============================
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -234,9 +253,6 @@ if not data:
 
 updated = data.get("updated_at_utc", "")
 
-# =============================
-# Header
-# =============================
 st.markdown(
     f"""
 <div class="header">
@@ -250,9 +266,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# =============================
-# 市場快照
-# =============================
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
 market = data.get("market", {}) or {}
@@ -333,9 +346,6 @@ else:
 
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
-# =============================
-# AI 快報 + 新聞
-# =============================
 left, right = st.columns([1.35, 0.65], gap="large")
 
 with left:
@@ -361,7 +371,6 @@ with right:
         unsafe_allow_html=True,
     )
 
-    # 2 頁最佳化：漂亮切換
     if total_pages <= 2:
         try:
             sel = st.segmented_control(
@@ -385,7 +394,6 @@ with right:
             st.session_state.news_page = int(sel)
             st.rerun()
     else:
-        # 多頁才用上下頁
         c1, c2 = st.columns([1, 1])
         with c1:
             if st.button("← 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
