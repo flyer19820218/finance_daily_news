@@ -225,7 +225,7 @@ def list_history():
 # ✅ 6 個指數設定（富果 + Yahoo）
 # ==========================
 SYMBOLS = [
-    ("台指期（全）", ["TX00"]),  # 使用富果 API (程式會自動抓最新月份代碼)
+    ("台指期（全）", ["TXFR1"]),  # 直接指定富果的連續近月合約代碼
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -242,10 +242,10 @@ def _safe_float(x):
         return None
 
 # ==========================
-# ✅ 富果 API 專用抓取函數 (改良自動導航版)
+# ✅ 富果 API 專用抓取函數 (週末防呆版)
 # ==========================
 @st.cache_data(ttl=60)
-def fugle_quote_tx(symbol="TX00"):
+def fugle_quote_tx(symbol="TXFR1"):
     # 嘗試讀取金鑰
     api_key = os.environ.get("FUGLE_API_KEY")
     if not api_key:
@@ -258,29 +258,9 @@ def fugle_quote_tx(symbol="TX00"):
         return {"ok": False, "ticker": "未讀取到金鑰", "price": None, "change": None, "pct": None}
 
     headers = {"X-API-KEY": api_key}
-    target_symbol = None
     
-    # 步驟 1: 動態查詢當前「台指期」近月合約代碼 (修正為 openapi.fugle.tw)
-    if symbol == "TX00":
-        try:
-            url_tickers = "https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/tickers?type=FUTURE&exchange=TAIFEX&product=TXF"
-            res_t = requests.get(url_tickers, headers=headers, timeout=5)
-            if res_t.status_code == 200:
-                data_t = res_t.json().get("data", [])
-                # 排除週選 (TXF1C5等)，只抓長度為 5 的標準近月合約
-                valid_symbols = [item["symbol"] for item in data_t if item.get("symbol", "").startswith("TXF") and len(item["symbol"]) == 5]
-                if valid_symbols:
-                    target_symbol = valid_symbols[0]
-        except Exception:
-            pass
-    else:
-        target_symbol = symbol
-
-    if not target_symbol:
-        return {"ok": False, "ticker": "代碼查詢失敗", "price": None, "change": None, "pct": None}
-
-    # 步驟 2: 查詢該代碼的即時報價 (切換為期貨專屬端點 futopt，並修正為 openapi.fugle.tw)
-    url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
+    # 直接抓取近月連續合約，避開週末找不到當日代碼的問題
+    url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{symbol}"
     
     try:
         res = requests.get(url_quote, headers=headers, timeout=5)
@@ -294,12 +274,15 @@ def fugle_quote_tx(symbol="TX00"):
                 pct = (ch / float(prev)) * 100 if float(prev) != 0 else 0
                 return {
                     "ok": True,
-                    "ticker": target_symbol, # 回傳真實代碼讓你知道它抓了什麼
+                    "ticker": symbol,
                     "price": float(last),
                     "prev_close": float(prev),
                     "change": float(ch),
                     "pct": float(pct),
                 }
+        else:
+            # 如果失敗，印出 HTTP 狀態碼讓我們知道原因 (例如 403 沒權限, 404 找不到)
+            return {"ok": False, "ticker": f"API錯誤碼:{res.status_code}", "price": None, "change": None, "pct": None}
     except Exception:
         pass
 
@@ -348,7 +331,6 @@ def yf_quote_any(tickers):
 def render_tile(name, q):
     render_ok = q and q.get("ok") and q.get("price") is not None
     if not render_ok:
-        # 如果失敗，把 ticker 印出來幫助除錯
         debug_msg = q.get("ticker", "") if q else ""
         return f"""
         <div class="tile">
