@@ -1,9 +1,6 @@
 import json
 import os
 import math
-import calendar
-import requests
-from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 import streamlit as st
@@ -231,75 +228,7 @@ def _safe_float(x):
         return None
 
 # ==========================
-# ✅ 台指期專屬：演算法推導合約代碼，精準打擊夜盤快取
-# ==========================
-@st.cache_data(ttl=60)
-def get_tx_quote_with_fallback():
-    api_key = os.environ.get("FUGLE_API_KEY")
-    if not api_key:
-        try:
-            api_key = st.secrets["FUGLE_API_KEY"]
-        except:
-            pass
-            
-    if not api_key:
-        return {"ok": False, "ticker": "未設定金鑰", "price": None, "change": None, "pct": None}
-
-    headers = {"X-API-KEY": api_key}
-
-    # 🎯 演算法自動算出今天的「期貨主力月份代碼」
-    now = datetime.now(timezone.utc) + timedelta(hours=8)
-    year = now.year
-    month = now.month
-    
-    cal = calendar.monthcalendar(year, month)
-    wednesdays = [week[2] for week in cal if week[2] != 0]
-    third_wed = wednesdays[2]
-    
-    # 如果超過第三個星期三的下午 14:00，就換下一個月的合約
-    if now.day > third_wed or (now.day == third_wed and now.hour >= 14):
-        month += 1
-        if month > 12:
-            month = 1
-            year += 1
-            
-    m_code = "ABCDEFGHIJKL"[month - 1]
-    y_code = str(year)[-1]
-    target_symbol = f"TXF{m_code}{y_code}"
-
-    try:
-        # 直接拿算出來的精準代碼去戳盤中報價，即使週末也會保留週六凌晨 5 點的夜盤快取！
-        url_q = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
-        res_q = requests.get(url_q, headers=headers, timeout=5)
-        if res_q.status_code == 200:
-            res_data = res_q.json().get("data", {})
-            last = res_data.get("lastPrice") or res_data.get("closePrice")
-            prev = res_data.get("previousClose")
-            
-            if last is not None and prev is not None:
-                ch = float(last) - float(prev)
-                pct = (ch / float(prev)) * 100 if float(prev) != 0 else 0
-                return {
-                    "ok": True,
-                    "ticker": f"{target_symbol}(夜盤)",
-                    "price": float(last),
-                    "prev_close": float(prev),
-                    "change": ch,
-                    "pct": pct,
-                }
-    except Exception:
-        pass
-
-    # 備用引擎：萬一富果完全當機，退回 Yahoo 抓期貨
-    fallback = yf_quote_any(["FTX=F", "FTX1!"])
-    if fallback and fallback.get("ok"):
-        fallback["ticker"] = f"Yahoo({fallback['ticker']})"
-        return fallback
-
-    return {"ok": False, "ticker": "無報價", "price": None, "change": None, "pct": None}
-
-# ==========================
-# ✅ YFinance 抓取函數 (限美股使用)
+# ✅ YFinance 萬用抓取函數
 # ==========================
 @st.cache_data(ttl=60)
 def yf_quote_any(tickers):
@@ -338,10 +267,10 @@ def yf_quote_any(tickers):
     return {"ok": False, "ticker": tickers[0] if tickers else "", "price": None, "prev_close": None, "change": None, "pct": None}
 
 # ==========================
-# ✅ 6 個指數設定
+# ✅ 回歸初心：單純的 6 個指數設定 (全由 Yahoo 抓)
 # ==========================
 SYMBOLS = [
-    ("台指期（全）", []),  # 留空交給專屬函數處理
+    ("富台指（FTX）", ["FTX=F", "FTX1!"]),  # 回歸富台指，並備用兩個代碼
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -372,6 +301,7 @@ def render_tile(name, q):
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
     
+    # 旁邊印出小小的灰色代碼，讓你知道抓到了什麼
     src_tag = f" <span style='font-size:10px; font-weight:normal; color:#94a3b8;'>{q.get('ticker','')}</span>" if q.get("ticker") else ""
 
     return f"""
@@ -420,13 +350,12 @@ market = data.get("market", {}) or {}
 
 filled = {}
 for name, tickers in SYMBOLS:
+    # 只要 JSON 裡面有存好價格，就直接用
     if name in market and market[name].get("price") is not None:
         filled[name] = market[name]
     else:
-        if name == "台指期（全）":
-            filled[name] = get_tx_quote_with_fallback()
-        else:
-            filled[name] = yf_quote_any(tuple(tickers))
+        # 沒存到就全部呼叫 Yahoo Finance
+        filled[name] = yf_quote_any(tuple(tickers))
 
 st.markdown('<div class="cards">', unsafe_allow_html=True)
 
