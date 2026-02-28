@@ -38,10 +38,10 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          # 先強制把新產生的資料加進暫存區並存檔
-          git add data/
-          git commit -m "Auto update daily data" || echo "No changes to commit"
-          # 接著把遠端你手動改的代碼拉下來合併 (確保版本一致)
-          git pull --rebase origin main || true
-          # 最後推播回去
+          # 強制將所有變更（包含隱藏快取）加入暫存
+          git add -A
+          # 如果沒有變更就安全退出，如果有變更就 commit
+          git commit -m "Auto update daily data" || exit 0
+          # 拉取雲端代碼合併，並推播最新資料
+          git pull --rebase origin main
           git push
