@@ -24,7 +24,8 @@ st.markdown(
   --link:#2563eb;
 }
 .stApp{ background:var(--bg); color:var(--text); }
-a{ color:var(--link) !important; }
+a{ color:var(--link) !important; text-decoration: none; }
+a:hover{ text-decoration: underline; }
 .block-container{ padding-top: 1.2rem; padding-bottom: 2rem; max-width: 1200px; }
 .header{
   display:flex;
@@ -91,10 +92,17 @@ a{ color:var(--link) !important; }
   border:1px solid var(--border);
   background:#fff;
   border-radius: 14px;
-  padding: 12px;
+  padding: 10px 12px;
   margin-bottom: 10px;
 }
 .small{ color:var(--muted); font-size: 12px; }
+.inline-row{
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.35;
+  word-break: break-word;
+}
 </style>
 """,
     unsafe_allow_html=True,
@@ -114,6 +122,7 @@ def list_history():
     files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
     files.sort(reverse=True)
     return files
+
 
 # =============================
 # 選擇：最新 / 歷史
@@ -258,13 +267,28 @@ with right:
     for n in news:
         title = n.get("title", "")
         link = n.get("link", "")
-        summary = n.get("summary", "")
+        summary = n.get("summary", "") or ""
+
+        # 摘要縮短（節省空間）
+        summary = summary.strip()
+        if len(summary) > 110:
+            summary = summary[:110] + "..."
 
         st.markdown('<div class="news-card">', unsafe_allow_html=True)
+
+        # 1) 標題
         st.markdown(f"**{title}**")
+
+        # 2) 同一行：閱讀原文 | 摘要（灰字）
+        row = ""
         if link:
-            st.markdown(f"[閱讀原文]({link})")
+            row += f"<a href='{link}' target='_blank'>閱讀原文</a>"
         if summary:
-            with st.expander("摘要"):
-                st.write(summary)
+            if row:
+                row += " &nbsp;&nbsp;|&nbsp;&nbsp; "
+            row += f"<span>{summary}</span>"
+
+        if row:
+            st.markdown(f"<div class='inline-row'>{row}</div>", unsafe_allow_html=True)
+
         st.markdown("</div>", unsafe_allow_html=True)
