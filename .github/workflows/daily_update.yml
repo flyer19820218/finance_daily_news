@@ -38,10 +38,16 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          # 強制將所有變更（包含隱藏快取）加入暫存
+          
+          # 把所有新產生的資料與快取通通強制加入
           git add -A
-          # 如果沒有變更就安全退出，如果有變更就 commit
-          git commit -m "Auto update daily data" || exit 0
-          # 拉取雲端代碼合併，並推播最新資料
-          git pull --rebase origin main
-          git push
+          
+          # 判斷是否有東西被加入，有的話才執行存檔與上傳
+          if ! git diff-index --quiet HEAD; then
+            echo "發現新資料，準備存檔與上傳..."
+            git commit -m "Auto update daily data"
+            git pull --rebase origin main
+            git push
+          else
+            echo "沒有新資料需要存檔，安全結束！"
+          fi
