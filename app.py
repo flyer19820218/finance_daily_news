@@ -1,7 +1,9 @@
 import json
 import os
 import math
+import calendar
 import requests
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 import streamlit as st
@@ -229,7 +231,75 @@ def _safe_float(x):
         return None
 
 # ==========================
-# ✅ YFinance 萬用抓取函數
+# ✅ 台指期專屬：演算法推導合約代碼，精準打擊夜盤快取
+# ==========================
+@st.cache_data(ttl=60)
+def get_tx_quote_with_fallback():
+    api_key = os.environ.get("FUGLE_API_KEY")
+    if not api_key:
+        try:
+            api_key = st.secrets["FUGLE_API_KEY"]
+        except:
+            pass
+            
+    if not api_key:
+        return {"ok": False, "ticker": "未設定金鑰", "price": None, "change": None, "pct": None}
+
+    headers = {"X-API-KEY": api_key}
+
+    # 🎯 演算法自動算出今天的「期貨主力月份代碼」
+    now = datetime.now(timezone.utc) + timedelta(hours=8)
+    year = now.year
+    month = now.month
+    
+    cal = calendar.monthcalendar(year, month)
+    wednesdays = [week[2] for week in cal if week[2] != 0]
+    third_wed = wednesdays[2]
+    
+    # 如果超過第三個星期三的下午 14:00，就換下一個月的合約
+    if now.day > third_wed or (now.day == third_wed and now.hour >= 14):
+        month += 1
+        if month > 12:
+            month = 1
+            year += 1
+            
+    m_code = "ABCDEFGHIJKL"[month - 1]
+    y_code = str(year)[-1]
+    target_symbol = f"TXF{m_code}{y_code}"
+
+    try:
+        # 直接拿算出來的精準代碼去戳盤中報價，即使週末也會保留週六凌晨 5 點的夜盤快取！
+        url_q = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
+        res_q = requests.get(url_q, headers=headers, timeout=5)
+        if res_q.status_code == 200:
+            res_data = res_q.json().get("data", {})
+            last = res_data.get("lastPrice") or res_data.get("closePrice")
+            prev = res_data.get("previousClose")
+            
+            if last is not None and prev is not None:
+                ch = float(last) - float(prev)
+                pct = (ch / float(prev)) * 100 if float(prev) != 0 else 0
+                return {
+                    "ok": True,
+                    "ticker": f"{target_symbol}(夜盤)",
+                    "price": float(last),
+                    "prev_close": float(prev),
+                    "change": ch,
+                    "pct": pct,
+                }
+    except Exception:
+        pass
+
+    # 備用引擎：萬一富果完全當機，退回 Yahoo 抓期貨
+    fallback = yf_quote_any(["FTX=F", "FTX1!"])
+    if fallback and fallback.get("ok"):
+        fallback["ticker"] = f"Yahoo({fallback['ticker']})"
+        return fallback
+
+    return {"ok": False, "ticker": "無報價", "price": None, "change": None, "pct": None}
+
+# ==========================
+# ✅ YFinance 抓取函數 (限美股使用)
 # ==========================
 @st.cache_data(ttl=60)
 def yf_quote_any(tickers):
@@ -268,65 +338,10 @@ def yf_quote_any(tickers):
     return {"ok": False, "ticker": tickers[0] if tickers else "", "price": None, "prev_close": None, "change": None, "pct": None}
 
 # ==========================
-# ✅ 台指期雙引擎抓取 (富果優先，Yahoo備用)
-# ==========================
-@st.cache_data(ttl=60)
-def get_tx_quote_with_fallback():
-    # 引擎 1：嘗試富果 API (平日精準)
-    api_key = os.environ.get("FUGLE_API_KEY")
-    if not api_key:
-        try:
-            api_key = st.secrets["FUGLE_API_KEY"]
-        except:
-            pass
-            
-    if api_key:
-        headers = {"X-API-KEY": api_key}
-        try:
-            # 1. 自動查詢當月合約代碼
-            url_t = "https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/tickers?type=FUTURE&exchange=TAIFEX&product=TXF"
-            res_t = requests.get(url_t, headers=headers, timeout=5)
-            if res_t.status_code == 200:
-                data_t = res_t.json().get("data", [])
-                valid_syms = [i["symbol"] for i in data_t if i.get("symbol", "").startswith("TXF") and len(i["symbol"]) == 5]
-                
-                if valid_syms:
-                    target_symbol = valid_syms[0]
-                    # 2. 抓取精準報價
-                    url_q = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
-                    res_q = requests.get(url_q, headers=headers, timeout=5)
-                    if res_q.status_code == 200:
-                        res_data = res_q.json().get("data", {})
-                        last = res_data.get("lastPrice") or res_data.get("closePrice")
-                        prev = res_data.get("previousClose")
-                        
-                        if last is not None and prev is not None:
-                            ch = float(last) - float(prev)
-                            pct = (ch / float(prev)) * 100 if float(prev) != 0 else 0
-                            return {
-                                "ok": True,
-                                "ticker": f"富果({target_symbol})",
-                                "price": float(last),
-                                "prev_close": float(prev),
-                                "change": ch,
-                                "pct": pct,
-                            }
-        except Exception:
-            pass # 富果出錯(如週末沒開盤)，不報錯，默默進入備用引擎
-            
-    # 引擎 2：富果沒資料時 (週末/假日)，無縫切換 Yahoo 富台指
-    fallback = yf_quote_any(["FTX=F", "FTX1!", "^TWII"])
-    if fallback and fallback.get("ok"):
-        fallback["ticker"] = f"Yahoo({fallback['ticker']})"
-        return fallback
-
-    return {"ok": False, "ticker": "週末無數據", "price": None, "change": None, "pct": None}
-
-# ==========================
-# ✅ 6 個指數總設定
+# ✅ 6 個指數設定
 # ==========================
 SYMBOLS = [
-    ("台指期（全）", []),  # 留空，交給專屬雙引擎函數處理
+    ("台指期（全）", []),  # 留空交給專屬函數處理
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -357,8 +372,7 @@ def render_tile(name, q):
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
     
-    # 若有來源標籤(如 Yahoo)，顯示在小字旁邊
-    src_tag = f" <span style='font-size:10px; font-weight:normal;'>{q.get('ticker','')}</span>" if q.get("ticker") else ""
+    src_tag = f" <span style='font-size:10px; font-weight:normal; color:#94a3b8;'>{q.get('ticker','')}</span>" if q.get("ticker") else ""
 
     return f"""
     <div class="tile">
@@ -367,7 +381,6 @@ def render_tile(name, q):
       <div class="delta {cls}">{arrow} {round(ch, 2)}（{round(pct, 2)}%）</div>
     </div>
     """
-
 
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
@@ -401,9 +414,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# =======================
-# ✅ 市場快照：分配不同 API
-# =======================
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
 market = data.get("market", {}) or {}
@@ -413,7 +423,6 @@ for name, tickers in SYMBOLS:
     if name in market and market[name].get("price") is not None:
         filled[name] = market[name]
     else:
-        # 分流抓取：台指期走專屬雙引擎，其他走 Yahoo
         if name == "台指期（全）":
             filled[name] = get_tx_quote_with_fallback()
         else:
@@ -437,7 +446,6 @@ else:
             st.markdown(html, unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
-
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 left, right = st.columns([1.35, 0.65], gap="large")
