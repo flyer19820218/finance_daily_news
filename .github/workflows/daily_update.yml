@@ -1,8 +1,8 @@
-name: Daily Finance Update (06:00 Taipei)
+name: Daily Finance Update (05:30 Taipei)
 
 on:
   schedule:
-    - cron: "0 22 * * *"  # 06:00 Asia/Taipei (UTC+8)
+    - cron: "30 21 * * *"  # 05:30 Asia/Taipei (UTC+8)
   workflow_dispatch:
 
 permissions:
