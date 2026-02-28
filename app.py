@@ -5,134 +5,101 @@ import streamlit as st
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 
-st.set_page_config(page_title="Market Briefing", page_icon="📊", layout="wide")
+st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
 # =============================
-# Enterprise UI (V2)
+# 企業白底 UI
 # =============================
 st.markdown(
     """
 <style>
 :root{
-  --bg:#0b0f17;
-  --panel:#111827;
-  --panel2:#0f172a;
-  --border:#263042;
-  --text:#e5e7eb;
-  --muted:#9aa4b2;
-  --up:#00ff87;
-  --down:#ff4d4f;
-  --flat:#a3a9b5;
-  --link:#60a5fa;
+  --bg:#ffffff;
+  --panel:#f6f8fa;
+  --border:#e5e7eb;
+  --text:#111827;
+  --muted:#6b7280;
+  --up:#0a7d38;
+  --down:#c1121f;
+  --link:#2563eb;
 }
-
-.stApp { background: var(--bg); color: var(--text); }
-a { color: var(--link) !important; }
-
-.block-container{ padding-top: 1.2rem; padding-bottom: 2rem; }
-
+.stApp{ background:var(--bg); color:var(--text); }
+a{ color:var(--link) !important; }
+.block-container{ padding-top: 1.2rem; padding-bottom: 2rem; max-width: 1200px; }
 .header{
   display:flex;
-  align-items:flex-end;
   justify-content:space-between;
+  align-items:flex-end;
   gap:12px;
-  padding: 2px 0 10px 0;
+  padding: 4px 0 12px 0;
 }
 .brand{
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: .2px;
 }
 .sub{
-  color: var(--muted);
+  color:var(--muted);
   font-size: 13px;
   margin-top: 6px;
 }
-
-.pill{
+.badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
   padding: 8px 10px;
   border:1px solid var(--border);
   border-radius: 999px;
-  background: rgba(17,24,39,0.7);
+  background: #fff;
   color: var(--muted);
   font-size: 12px;
   white-space: nowrap;
 }
+.hr{ height:1px; background:var(--border); margin: 18px 0; }
 
-.hr{ height:1px; background: var(--border); margin: 18px 0; }
-
-.ticker{
+.cards{
   border:1px solid var(--border);
-  background: linear-gradient(180deg, rgba(17,24,39,0.90), rgba(15,23,42,0.90));
+  background: var(--panel);
   border-radius: 16px;
-  padding: 14px 14px;
+  padding: 14px;
 }
-
 .tile{
-  text-align:left;
-  padding: 10px 10px;
+  background:#fff;
+  border:1px solid var(--border);
   border-radius: 14px;
-  background: rgba(15,23,42,0.55);
-  border:1px solid rgba(38,48,66,0.65);
+  padding: 12px 12px;
   height: 100%;
 }
-
-.name{
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 0.4px;
-  margin-bottom: 2px;
-}
-.price{
-  font-size: 22px;
-  font-weight: 800;
-  margin: 2px 0 4px 0;
-}
-.delta{
-  font-size: 13px;
-  font-weight: 700;
-}
-.up{ color: var(--up); }
-.down{ color: var(--down); }
-.flat{ color: var(--flat); }
+.name{ color:var(--muted); font-size: 12px; margin-bottom: 2px; }
+.price{ font-size: 22px; font-weight: 800; margin: 2px 0 6px 0; }
+.delta{ font-size: 13px; font-weight: 700; }
+.up{ color:var(--up); }
+.down{ color:var(--down); }
+.flat{ color:var(--muted); }
 
 .section-title{
   font-size: 16px;
   font-weight: 800;
-  letter-spacing: 0.25px;
   margin: 10px 0 8px 0;
 }
-
 .panel{
   border:1px solid var(--border);
-  background: rgba(17,24,39,0.65);
+  background: #fff;
   border-radius: 16px;
-  padding: 14px 14px;
+  padding: 14px;
 }
-
 .news-card{
-  border:1px solid rgba(38,48,66,0.75);
-  background: rgba(15,23,42,0.55);
+  border:1px solid var(--border);
+  background:#fff;
   border-radius: 14px;
-  padding: 12px 12px;
+  padding: 12px;
   margin-bottom: 10px;
 }
-
-.small{
-  color: var(--muted);
-  font-size: 12px;
-}
+.small{ color:var(--muted); font-size: 12px; }
 </style>
 """,
     unsafe_allow_html=True,
 )
 
-# =============================
-# Data loading
-# =============================
 @st.cache_data(ttl=60)
 def load_json(path: str):
     try:
@@ -141,7 +108,6 @@ def load_json(path: str):
     except Exception:
         return None
 
-
 def list_history():
     if not os.path.exists(HISTORY_DIR):
         return []
@@ -149,108 +115,144 @@ def list_history():
     files.sort(reverse=True)
     return files
 
-
-mode = st.radio("View", ["Latest", "History"], horizontal=True)
+# =============================
+# 選擇：最新 / 歷史
+# =============================
+mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
-label = "Latest"
-if mode == "Latest":
+label = "今日"
+if mode == "最新（今日）":
     data = load_json(LATEST_FILE)
 else:
     hist = list_history()
     if not hist:
-        st.warning("No history yet. Run workflow once to generate the first report.")
+        st.warning("尚無歷史資料，請先讓排程成功跑一次。")
         st.stop()
-    pick = st.selectbox("Date", hist, index=0)
+    pick = st.selectbox("選擇日期", hist, index=0)
     data = load_json(os.path.join(HISTORY_DIR, pick))
     label = pick.replace(".json", "")
 
 if not data:
-    st.warning("Report not found yet. Please run the scheduled job once.")
+    st.warning("尚未產生報告（請先手動執行一次排程）。")
     st.stop()
 
 updated = data.get("updated_at_utc", "")
 
 # =============================
-# Header
+# Header（中文）
 # =============================
 st.markdown(
     f"""
 <div class="header">
   <div>
-    <div class="brand">Market Briefing</div>
-    <div class="sub">Daily macro + equities highlights</div>
+    <div class="brand">財經AI快報</div>
+    <div class="sub">每日市場重點整理（重大事件｜台股影響｜投資觀察）</div>
   </div>
-  <div class="pill">Last updated (UTC): {updated}</div>
+  <div class="badge">最後更新（UTC）：{updated}</div>
 </div>
 """,
     unsafe_allow_html=True,
 )
 
 # =============================
-# Market snapshot
+# 市場快照
 # =============================
-st.markdown('<div class="section-title">Market snapshot</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
 market = data.get("market", {})
-
 if market:
-    st.markdown('<div class="ticker">', unsafe_allow_html=True)
+    st.markdown('<div class="cards">', unsafe_allow_html=True)
 
-    cols = st.columns(len(market))
-    for col, (name, q) in zip(cols, market.items()):
-        with col:
-            if not q or not q.get("ok") or q.get("price") is None:
-                st.markdown(
-                    f"""
-                    <div class="tile">
-                      <div class="name">{name}</div>
-                      <div class="price">-</div>
-                      <div class="delta flat">-</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-            else:
-                ch = q.get("change") or 0
-                pct = q.get("pct") or 0
-                cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
-                arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
-                price = q.get("price")
+    is_mobile = st.toggle("手機版排版（兩欄）", value=True)
 
-                st.markdown(
-                    f"""
-                    <div class="tile">
-                      <div class="name">{name}</div>
-                      <div class="price">{round(float(price), 2)}</div>
-                      <div class="delta {cls}">{arrow} {round(float(ch), 2)} ({round(float(pct), 2)}%)</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+    items = list(market.items())
+    if is_mobile:
+        col1, col2 = st.columns(2)
+        for i, (name, q) in enumerate(items):
+            with (col1 if i % 2 == 0 else col2):
+                render_ok = q and q.get("ok") and q.get("price") is not None
+                if not render_ok:
+                    st.markdown(
+                        f"""
+                        <div class="tile">
+                          <div class="name">{name}</div>
+                          <div class="price">-</div>
+                          <div class="delta flat">-</div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    ch = q.get("change") or 0
+                    pct = q.get("pct") or 0
+                    cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+                    arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
+                    price = q.get("price")
+                    st.markdown(
+                        f"""
+                        <div class="tile">
+                          <div class="name">{name}</div>
+                          <div class="price">{round(float(price), 2)}</div>
+                          <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+    else:
+        cols = st.columns(len(items))
+        for col, (name, q) in zip(cols, items):
+            with col:
+                render_ok = q and q.get("ok") and q.get("price") is not None
+                if not render_ok:
+                    st.markdown(
+                        f"""
+                        <div class="tile">
+                          <div class="name">{name}</div>
+                          <div class="price">-</div>
+                          <div class="delta flat">-</div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    ch = q.get("change") or 0
+                    pct = q.get("pct") or 0
+                    cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+                    arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
+                    price = q.get("price")
+                    st.markdown(
+                        f"""
+                        <div class="tile">
+                          <div class="name">{name}</div>
+                          <div class="price">{round(float(price), 2)}</div>
+                          <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
 
     st.markdown("</div>", unsafe_allow_html=True)
 else:
-    st.info("Market snapshot is empty.")
+    st.info("目前沒有市場快照資料。")
 
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # =============================
-# Content: Analysis + News
+# AI 快報 + 新聞
 # =============================
 left, right = st.columns([1.35, 0.65], gap="large")
 
 with left:
-    st.markdown('<div class="section-title">AI Summary</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">AI 分析摘要</div>', unsafe_allow_html=True)
     st.markdown('<div class="panel">', unsafe_allow_html=True)
     st.markdown(data.get("report", ""))
     st.markdown("</div>", unsafe_allow_html=True)
 
 with right:
-    st.markdown('<div class="section-title">Top news</div>', unsafe_allow_html=True)
-
+    st.markdown('<div class="section-title">新聞清單</div>', unsafe_allow_html=True)
     news = data.get("news", [])
-    st.markdown(f'<div class="small">Items: {len(news)}</div>', unsafe_allow_html=True)
+    st.markdown(f"<div class='small'>共 {len(news)} 則</div>", unsafe_allow_html=True)
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
     for n in news:
@@ -261,8 +263,8 @@ with right:
         st.markdown('<div class="news-card">', unsafe_allow_html=True)
         st.markdown(f"**{title}**")
         if link:
-            st.markdown(f"[Open source]({link})")
+            st.markdown(f"[閱讀原文]({link})")
         if summary:
-            with st.expander("Summary"):
+            with st.expander("摘要"):
                 st.write(summary)
         st.markdown("</div>", unsafe_allow_html=True)
