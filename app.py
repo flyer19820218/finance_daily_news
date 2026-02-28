@@ -225,7 +225,7 @@ def list_history():
 # ✅ 6 個指數設定（富果 + Yahoo）
 # ==========================
 SYMBOLS = [
-    ("台指期（全）", ["TX00"]),  # 使用富果 API (TX00 為台指期近月代碼)
+    ("台指期（全）", ["TX00"]),  # 使用富果 API (程式會自動抓最新月份代碼)
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -242,10 +242,11 @@ def _safe_float(x):
         return None
 
 # ==========================
-# ✅ 富果 API 專用抓取函數
+# ✅ 富果 API 專用抓取函數 (改良自動導航版)
 # ==========================
 @st.cache_data(ttl=60)
-def fugle_quote_tx(symbol):
+def fugle_quote_tx(symbol="TX00"):
+    # 嘗試讀取金鑰
     api_key = os.environ.get("FUGLE_API_KEY")
     if not api_key:
         try:
@@ -256,22 +257,44 @@ def fugle_quote_tx(symbol):
     if not api_key:
         return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
 
-    url = f"https://openapi.fugle.tw/marketdata/v1.0/stock/intraday/quote/{symbol}"
     headers = {"X-API-KEY": api_key}
+    target_symbol = None
+    
+    # 步驟 1: 動態查詢當前「台指期」近月合約代碼 (例如 TXFC5)
+    if symbol == "TX00":
+        try:
+            url_tickers = "https://api.fugle.tw/marketdata/v1.0/futopt/intraday/tickers?type=FUTURE&exchange=TAIFEX&product=TXF"
+            res_t = requests.get(url_tickers, headers=headers, timeout=5)
+            if res_t.status_code == 200:
+                data_t = res_t.json().get("data", [])
+                # 排除週選 (TXF1C5等)，只抓長度為 5 的標準近月合約
+                valid_symbols = [item["symbol"] for item in data_t if item.get("symbol", "").startswith("TXF") and len(item["symbol"]) == 5]
+                if valid_symbols:
+                    target_symbol = valid_symbols[0]
+        except Exception:
+            pass
+    else:
+        target_symbol = symbol
+
+    if not target_symbol:
+        return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+
+    # 步驟 2: 查詢該代碼的即時報價 (切換為期貨專屬端點 futopt)
+    url_quote = f"https://api.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
     
     try:
-        res = requests.get(url, headers=headers, timeout=5)
+        res = requests.get(url_quote, headers=headers, timeout=5)
         if res.status_code == 200:
             data = res.json()
             last = data.get("lastPrice") or data.get("closePrice")
             prev = data.get("previousClose")
             
             if last is not None and prev is not None:
-                ch = last - prev
-                pct = (ch / prev) * 100 if prev != 0 else 0
+                ch = float(last) - float(prev)
+                pct = (ch / float(prev)) * 100 if float(prev) != 0 else 0
                 return {
                     "ok": True,
-                    "ticker": symbol,
+                    "ticker": target_symbol, # 回傳真實代碼讓你知道它抓了什麼
                     "price": float(last),
                     "prev_close": float(prev),
                     "change": float(ch),
@@ -394,7 +417,6 @@ market = data.get("market", {}) or {}
 
 filled = {}
 for name, tickers in SYMBOLS:
-    # 判斷 JSON 是否已有完整數據
     if name in market and market[name].get("price") is not None:
         filled[name] = market[name]
     else:
@@ -406,7 +428,6 @@ for name, tickers in SYMBOLS:
 
 st.markdown('<div class="cards">', unsafe_allow_html=True)
 
-# ✅ 桌機預設：一排6個
 is_mobile = st.toggle("手機版排版（兩欄）", value=False)
 
 if is_mobile:
