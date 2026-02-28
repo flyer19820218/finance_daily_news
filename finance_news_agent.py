@@ -154,6 +154,35 @@ def _safe_float(x):
         return None
 
 
+# ==========================
+# ✅ 富果 API 專用抓取函數 (終極解包版)
+# ==========================
+def fugle_quote_tx(symbol="TXFR1"):
+    api_key = os.environ.get("FUGLE_API_KEY", "").strip()
+    if not api_key:
+        return None, None, symbol, "未設定金鑰"
+
+    headers = {"X-API-KEY": api_key}
+    url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{symbol}"
+    
+    try:
+        res = requests.get(url_quote, headers=headers, timeout=5)
+        if res.status_code == 200:
+            # 🎯 脫去 JSON 外層包裝
+            res_data = res.json().get("data", {})
+            last = res_data.get("lastPrice") or res_data.get("closePrice")
+            prev = res_data.get("previousClose")
+            
+            if last is not None and prev is not None:
+                return float(last), float(prev), symbol, None
+            else:
+                return None, None, symbol, "解析報價失敗"
+        else:
+            return None, None, symbol, f"錯誤碼:{res.status_code}"
+    except Exception:
+        return None, None, symbol, "連線異常"
+
+
 def yf_quote_any(tickers):
     """
     依序嘗試多個 ticker，成功就回傳 (ticker_used, price, prev_close)
@@ -192,13 +221,8 @@ def build_market_snapshot():
     value 格式：{ok, ticker, price, prev_close, change, pct, asof_utc}
     """
 
-    # ✅ 富台指：yfinance 可能會抽風，所以做多代碼 fallback
-    # 你堅持「富台指」：先試 FTX=F，再試 FTX1!
-    # 都失敗才退回 ^TWII（台股加權指數）當救命（可自行刪掉）
-    ftx_try = ["FTX=F", "FTX1!", "^TWII"]
-
     mapping = [
-        ("富台指（FTX）", ftx_try),
+        ("台指期（全）", ["TXFR1"]), # ✅ 改為富果台指期
         ("費半（SOX）", ["^SOX"]),
         ("道瓊期（YM）", ["YM=F"]),
         ("納指期（NQ）", ["NQ=F"]),
@@ -210,26 +234,40 @@ def build_market_snapshot():
     now = datetime.now(timezone.utc).isoformat()
 
     for name, tickers in mapping:
-        used, price, prev = yf_quote_any(tickers)
-
-        if price is None:
-            market[name] = {
-                "ok": False,
-                "ticker": used or (tickers[0] if tickers else ""),
-                "price": None,
-                "prev_close": None,
-                "change": None,
-                "pct": None,
-                "asof_utc": now,
-            }
-            continue
+        # 分流處理：如果是台指期，去呼叫富果函數
+        if name == "台指期（全）":
+            price, prev, used, err_msg = fugle_quote_tx(tickers[0])
+            if price is None:
+                market[name] = {
+                    "ok": False,
+                    "ticker": err_msg or used,
+                    "price": None,
+                    "prev_close": None,
+                    "change": None,
+                    "pct": None,
+                    "asof_utc": now,
+                }
+                continue
+        else:
+            used, price, prev = yf_quote_any(tickers)
+            if price is None:
+                market[name] = {
+                    "ok": False,
+                    "ticker": used or (tickers[0] if tickers else ""),
+                    "price": None,
+                    "prev_close": None,
+                    "change": None,
+                    "pct": None,
+                    "asof_utc": now,
+                }
+                continue
 
         ch = (price - prev) if (prev is not None) else None
         pct = (ch / prev * 100) if (ch is not None and prev not in (None, 0)) else None
 
         market[name] = {
             "ok": True,
-            "ticker": used or (tickers[0] if tickers else ""),
+            "ticker": used,
             "price": price,
             "prev_close": prev,
             "change": ch,
