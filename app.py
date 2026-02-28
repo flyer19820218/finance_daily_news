@@ -255,15 +255,15 @@ def fugle_quote_tx(symbol="TX00"):
             pass
             
     if not api_key:
-        return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+        return {"ok": False, "ticker": "未讀取到金鑰", "price": None, "change": None, "pct": None}
 
     headers = {"X-API-KEY": api_key}
     target_symbol = None
     
-    # 步驟 1: 動態查詢當前「台指期」近月合約代碼 (例如 TXFC5)
+    # 步驟 1: 動態查詢當前「台指期」近月合約代碼 (修正為 openapi.fugle.tw)
     if symbol == "TX00":
         try:
-            url_tickers = "https://api.fugle.tw/marketdata/v1.0/futopt/intraday/tickers?type=FUTURE&exchange=TAIFEX&product=TXF"
+            url_tickers = "https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/tickers?type=FUTURE&exchange=TAIFEX&product=TXF"
             res_t = requests.get(url_tickers, headers=headers, timeout=5)
             if res_t.status_code == 200:
                 data_t = res_t.json().get("data", [])
@@ -277,10 +277,10 @@ def fugle_quote_tx(symbol="TX00"):
         target_symbol = symbol
 
     if not target_symbol:
-        return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+        return {"ok": False, "ticker": "代碼查詢失敗", "price": None, "change": None, "pct": None}
 
-    # 步驟 2: 查詢該代碼的即時報價 (切換為期貨專屬端點 futopt)
-    url_quote = f"https://api.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
+    # 步驟 2: 查詢該代碼的即時報價 (切換為期貨專屬端點 futopt，並修正為 openapi.fugle.tw)
+    url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{target_symbol}"
     
     try:
         res = requests.get(url_quote, headers=headers, timeout=5)
@@ -303,7 +303,7 @@ def fugle_quote_tx(symbol="TX00"):
     except Exception:
         pass
 
-    return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+    return {"ok": False, "ticker": "連線報價失敗", "price": None, "change": None, "pct": None}
 
 # ==========================
 # ✅ YFinance 抓取函數
@@ -348,11 +348,13 @@ def yf_quote_any(tickers):
 def render_tile(name, q):
     render_ok = q and q.get("ok") and q.get("price") is not None
     if not render_ok:
+        # 如果失敗，把 ticker 印出來幫助除錯
+        debug_msg = q.get("ticker", "") if q else ""
         return f"""
         <div class="tile">
           <div class="name">{name}</div>
           <div class="price">-</div>
-          <div class="delta flat">-</div>
+          <div class="delta flat">{debug_msg if debug_msg else "-"}</div>
         </div>
         """
 
