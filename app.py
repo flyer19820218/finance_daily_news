@@ -26,7 +26,6 @@ st.markdown(
   --up:#16a34a;
   --down:#ef4444;
   --link:#2563eb;
-  --pill:#f1f5ff;
   --shadow: 0 10px 30px rgba(2,6,23,0.06);
 }
 
@@ -143,38 +142,11 @@ a:hover{ text-decoration:underline; }
   word-break: break-word;
 }
 
-/* Pagination: ← 1 2 3 → */
-.pager{
+.pagerline{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
   margin: 6px 0 10px 0;
-}
-.pager-left{ color:var(--muted); font-size:12px; }
-
-.pagebox{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-.pagebtn{
-  border:1px solid var(--border);
-  background:#fff;
-  padding:6px 10px;
-  border-radius: 999px;
-  font-size:12px;
-  color:#0f172a;
-}
-.pagebtn:hover{ background: #f3f6ff; }
-
-.pagebtn-active{
-  border:1px solid rgba(37,99,235,0.35);
-  background: var(--pill);
-  color: #1d4ed8;
-  font-weight: 800;
 }
 </style>
 """,
@@ -203,7 +175,6 @@ def list_history():
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
-label = "今日"
 if mode == "最新（今日）":
     data = load_json(LATEST_FILE)
 else:
@@ -213,7 +184,6 @@ else:
         st.stop()
     pick = st.selectbox("選擇日期", hist, index=0)
     data = load_json(os.path.join(HISTORY_DIR, pick))
-    label = pick.replace(".json", "")
 
 if not data:
     st.warning("尚未產生報告（請先手動執行一次排程）。")
@@ -247,8 +217,8 @@ if market:
     st.markdown('<div class="cards">', unsafe_allow_html=True)
 
     is_mobile = st.toggle("手機版排版（兩欄）", value=True)
-
     items = list(market.items())
+
     if is_mobile:
         col1, col2 = st.columns(2)
         for i, (name, q) in enumerate(items):
@@ -339,60 +309,51 @@ with right:
     total = len(news)
     total_pages = max(1, math.ceil(total / page_size))
 
+    # 初始化頁碼
     if "news_page" not in st.session_state:
         st.session_state.news_page = 1
     st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages))
 
-    # ===== 分頁：← 1 2 3 →（數字頁碼）=====
-    # 顯示的頁碼範圍（最多顯示 5 個）
-    current = st.session_state.news_page
-    window = 2
-    start_page = max(1, current - window)
-    end_page = min(total_pages, current + window)
-
-    # 邊界補齊讓頁碼維持最多 5 個
-    while (end_page - start_page + 1) < 5 and start_page > 1:
-        start_page -= 1
-    while (end_page - start_page + 1) < 5 and end_page < total_pages:
-        end_page += 1
-
+    # === 兩頁最佳化：用 segmented / radio（超好看）===
     st.markdown(
-        f"""
-<div class="pager">
-  <div class="pager-left">第 {current} / {total_pages} 頁（共 {total} 則）</div>
-</div>
-""",
+        f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div></div>",
         unsafe_allow_html=True,
     )
 
-    # 用 Streamlit button 來做「← 1 2 3 →」
-    cols = st.columns([1, 6, 1])
-    with cols[0]:
-        if st.button("←", use_container_width=True, disabled=(current <= 1)):
-            st.session_state.news_page -= 1
+    if total_pages <= 2:
+        # 優先用 segmented_control（新版 streamlit）
+        try:
+            sel = st.segmented_control(
+                "分頁",
+                options=[1, 2],
+                format_func=lambda x: f"第 {x} 頁",
+                selection_mode="single",
+                default=st.session_state.news_page,
+                label_visibility="collapsed",
+            )
+        except Exception:
+            sel = st.radio(
+                "分頁",
+                options=[1, 2],
+                format_func=lambda x: f"第 {x} 頁",
+                horizontal=True,
+                index=st.session_state.news_page - 1,
+                label_visibility="collapsed",
+            )
+        if sel and sel != st.session_state.news_page:
+            st.session_state.news_page = int(sel)
             st.rerun()
-
-    with cols[1]:
-        # 中間區塊做成「一排數字」
-        page_cols = st.columns(end_page - start_page + 1)
-        for i, p in enumerate(range(start_page, end_page + 1)):
-            with page_cols[i]:
-                label = str(p)
-                if p == current:
-                    # active：用不同 key 並用 CSS 讓它更像 pill
-                    st.markdown(
-                        f"<div style='text-align:center;'><span class='pagebtn pagebtn-active'>{label}</span></div>",
-                        unsafe_allow_html=True,
-                    )
-                else:
-                    if st.button(label, key=f"page_{p}", use_container_width=True):
-                        st.session_state.news_page = p
-                        st.rerun()
-
-    with cols[2]:
-        if st.button("→", use_container_width=True, disabled=(current >= total_pages)):
-            st.session_state.news_page += 1
-            st.rerun()
+    else:
+        # 超過 2 頁才用簡潔上一頁/下一頁（避免醜）
+        c1, c2 = st.columns([1, 1])
+        with c1:
+            if st.button("← 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
+                st.session_state.news_page -= 1
+                st.rerun()
+        with c2:
+            if st.button("下一頁 →", use_container_width=True, disabled=(st.session_state.news_page >= total_pages)):
+                st.session_state.news_page += 1
+                st.rerun()
 
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
@@ -401,7 +362,6 @@ with right:
     end = start + page_size
     page_items = news[start:end]
 
-    # 列表：只顯示「標題 + 來源 + 閱讀原文」
     for n in page_items:
         title = (n.get("title") or "").strip()
         link = (n.get("link") or "").strip()
