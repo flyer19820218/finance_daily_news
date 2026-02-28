@@ -19,8 +19,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 重要：需要完整 git history 才能 rebase
 
       - uses: actions/setup-python@v5
         with:
@@ -32,8 +30,12 @@ jobs:
       - name: Run agent (generate report)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
         run: python finance_news_agent.py
 
+      # 用官方套件無痛存檔，徹底解決紅燈衝突
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
