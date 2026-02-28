@@ -242,11 +242,10 @@ def _safe_float(x):
         return None
 
 # ==========================
-# ✅ 富果 API 專用抓取函數 (週末防呆版)
+# ✅ 富果 API 專用抓取函數 (終極解包版)
 # ==========================
 @st.cache_data(ttl=60)
 def fugle_quote_tx(symbol="TXFR1"):
-    # 嘗試讀取金鑰
     api_key = os.environ.get("FUGLE_API_KEY")
     if not api_key:
         try:
@@ -258,16 +257,15 @@ def fugle_quote_tx(symbol="TXFR1"):
         return {"ok": False, "ticker": "未讀取到金鑰", "price": None, "change": None, "pct": None}
 
     headers = {"X-API-KEY": api_key}
-    
-    # 直接抓取近月連續合約，避開週末找不到當日代碼的問題
     url_quote = f"https://openapi.fugle.tw/marketdata/v1.0/futopt/intraday/quote/{symbol}"
     
     try:
         res = requests.get(url_quote, headers=headers, timeout=5)
         if res.status_code == 200:
-            data = res.json()
-            last = data.get("lastPrice") or data.get("closePrice")
-            prev = data.get("previousClose")
+            # 🎯 破解關鍵：API回傳的真實格式是 {"apiVersion": "...", "data": {...}}
+            res_data = res.json().get("data", {})
+            last = res_data.get("lastPrice") or res_data.get("closePrice")
+            prev = res_data.get("previousClose")
             
             if last is not None and prev is not None:
                 ch = float(last) - float(prev)
@@ -280,13 +278,12 @@ def fugle_quote_tx(symbol="TXFR1"):
                     "change": float(ch),
                     "pct": float(pct),
                 }
+            else:
+                return {"ok": False, "ticker": "解析報價失敗", "price": None, "change": None, "pct": None}
         else:
-            # 如果失敗，印出 HTTP 狀態碼讓我們知道原因 (例如 403 沒權限, 404 找不到)
-            return {"ok": False, "ticker": f"API錯誤碼:{res.status_code}", "price": None, "change": None, "pct": None}
-    except Exception:
-        pass
-
-    return {"ok": False, "ticker": "連線報價失敗", "price": None, "change": None, "pct": None}
+            return {"ok": False, "ticker": f"錯誤碼:{res.status_code}", "price": None, "change": None, "pct": None}
+    except Exception as e:
+        return {"ok": False, "ticker": "連線異常", "price": None, "change": None, "pct": None}
 
 # ==========================
 # ✅ YFinance 抓取函數
