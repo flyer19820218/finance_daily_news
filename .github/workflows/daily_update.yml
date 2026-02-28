@@ -34,30 +34,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python finance_news_agent.py
 
-      - name: Commit & push updated data (robust)
+      - name: Commit & push updated data
         run: |
-          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-
-          # 確保是在 main
-          git checkout main
-
-          # 先抓遠端最新 + rebase，避免 non-fast-forward
-          git fetch origin main
-          git pull --rebase origin main
-
-          # 加入你會更新的檔案（含 history）
-          git add data/latest_report.json data/news_cache.json data/history || true
-
-          # 如果沒變更就直接結束（不算失敗）
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          # commit
-          git commit -m "Daily update"
-
-          # push（若剛好又被更新，重試一次）
-          git push origin main || (echo "Push failed, retry after rebase..." && git pull --rebase origin main && git push origin main)
+          # 先強制把新產生的資料加進暫存區並存檔
+          git add data/
+          git commit -m "Auto update daily data" || echo "No changes to commit"
+          # 接著把遠端你手動改的代碼拉下來合併 (確保版本一致)
+          git pull --rebase origin main || true
+          # 最後推播回去
+          git push
