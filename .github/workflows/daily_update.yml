@@ -2,11 +2,16 @@ name: Daily Finance Update (05:30 Taipei)
 
 on:
   schedule:
-    - cron: "30 21 * * *"  # 05:30 Asia/Taipei (UTC+8)
+    # Taipei 05:30 = UTC 21:30 (previous day)
+    - cron: "30 21 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-finance-update
+  cancel-in-progress: true
 
 jobs:
   run-agent:
@@ -14,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 重要：需要完整 git history 才能 rebase
 
       - uses: actions/setup-python@v5
         with:
@@ -22,17 +29,35 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run agent (generate report + send Telegram)
+      - name: Run agent (generate report)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python finance_news_agent.py
 
-      - name: Commit updated data files
+      - name: Commit & push updated data (robust)
         run: |
+          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data/latest_report.json data/news_cache.json data/history
-          git commit -m "Daily update" || echo "No changes to commit"
-          git push
+
+          # 確保是在 main
+          git checkout main
+
+          # 先抓遠端最新 + rebase，避免 non-fast-forward
+          git fetch origin main
+          git pull --rebase origin main
+
+          # 加入你會更新的檔案（含 history）
+          git add data/latest_report.json data/news_cache.json data/history || true
+
+          # 如果沒變更就直接結束（不算失敗）
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          # commit
+          git commit -m "Daily update"
+
+          # push（若剛好又被更新，重試一次）
+          git push origin main || (echo "Push failed, retry after rebase..." && git pull --rebase origin main && git push origin main)
