@@ -15,11 +15,9 @@ RSS_LIST = [
 
 CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
+HISTORY_DIR = "data/history"
 
 
-# -------------------------------------------------
-# 工具
-# -------------------------------------------------
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
 
@@ -30,7 +28,7 @@ def load_cache():
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
-        except:
+        except Exception:
             return []
     return []
 
@@ -41,9 +39,6 @@ def save_cache(cache_list):
         json.dump(cache_list, f, ensure_ascii=False, indent=2)
 
 
-# -------------------------------------------------
-# 抓新聞
-# -------------------------------------------------
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
     cache_set = set(cache_list)
@@ -60,7 +55,6 @@ def fetch_news(hours=24, limit=20):
 
             unix = calendar.timegm(e.published_parsed)
             dt = datetime.fromtimestamp(unix, tz=timezone.utc)
-
             if dt < cutoff:
                 continue
 
@@ -88,10 +82,10 @@ def fetch_news(hours=24, limit=20):
     return news[:limit]
 
 
-# -------------------------------------------------
-# 抓市場快照（Yahoo 官方 JSON API）
-# -------------------------------------------------
 def fetch_market_snapshot():
+    """
+    用 Yahoo quote JSON API 抓快照（在 GitHub Actions 通常比 Streamlit Cloud 穩）
+    """
     tickers = {
         "台指期": "TX=F",
         "納指期": "NQ=F",
@@ -102,34 +96,32 @@ def fetch_market_snapshot():
     }
 
     snapshot = {}
+    url = "https://query1.finance.yahoo.com/v7/finance/quote"
 
     for name, ticker in tickers.items():
         try:
-            url = "https://query1.finance.yahoo.com/v7/finance/quote"
-            r = requests.get(url, params={"symbols": ticker}, timeout=10)
+            r = requests.get(url, params={"symbols": ticker}, timeout=15)
             data = r.json()
-
             result = data.get("quoteResponse", {}).get("result", [])
             if not result:
+                snapshot[name] = {"ticker": ticker, "ok": False}
                 continue
 
             q = result[0]
-
             snapshot[name] = {
+                "ticker": ticker,
+                "ok": True,
                 "price": q.get("regularMarketPrice"),
                 "change": q.get("regularMarketChange"),
                 "pct": q.get("regularMarketChangePercent"),
+                "time": q.get("regularMarketTime"),
             }
-
-        except:
-            continue
+        except Exception:
+            snapshot[name] = {"ticker": ticker, "ok": False}
 
     return snapshot
 
 
-# -------------------------------------------------
-# AI 分析
-# -------------------------------------------------
 def ai_analyze(news):
     if not news:
         return "📰 今日無新重大財經事件"
@@ -158,35 +150,42 @@ def ai_analyze(news):
 
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        return "⚠️ 未設定 GEMINI_API_KEY"
+        return "⚠️ 未設定 GEMINI_API_KEY（請到 GitHub Secrets 設定）"
 
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-2.5-flash")
-
     r = model.generate_content(prompt)
+
     return r.text if hasattr(r, "text") else "AI分析失敗"
 
 
-# -------------------------------------------------
-# 主流程
-# -------------------------------------------------
-def run_daily():
-    news = fetch_news()
-    report_text = ai_analyze(news)
-    market_snapshot = fetch_market_snapshot()
+def write_json(path: str, payload: dict):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
 
+
+def run_daily():
+    news = fetch_news(hours=24, limit=20)
+    report_text = ai_analyze(news)
+    market = fetch_market_snapshot()
+
+    now_utc = datetime.now(timezone.utc)
     payload = {
-        "updated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "title": f"財經AI快報 {datetime.now().strftime('%Y-%m-%d')}",
+        "updated_at_utc": now_utc.isoformat(),
+        "title": f"財經AI快報 {now_utc.astimezone(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')}",
         "report": report_text,
         "news": news,
-        "market": market_snapshot,
+        "market": market,
     }
 
-    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
+    # latest
+    write_json(OUT_FILE, payload)
 
-    with open(OUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    # history（每天一份）
+    os.makedirs(HISTORY_DIR, exist_ok=True)
+    history_name = now_utc.astimezone(timezone(timedelta(hours=8))).strftime("%Y-%m-%d") + ".json"
+    write_json(os.path.join(HISTORY_DIR, history_name), payload)
 
 
 if __name__ == "__main__":
