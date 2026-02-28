@@ -1,6 +1,7 @@
 import json
 import os
 import math
+import requests
 from urllib.parse import urlparse
 
 import streamlit as st
@@ -221,10 +222,10 @@ def list_history():
 
 
 # ==========================
-# ✅ 直接抓 6 個指數（保底）
+# ✅ 6 個指數設定（富果 + Yahoo）
 # ==========================
 SYMBOLS = [
-    ("富台指（FTX）", ["FTX=F", "FTX1!"]),  # 富台指先嘗試兩個
+    ("台指期（全）", ["TX00"]),  # 使用富果 API (TX00 為台指期近月代碼)
     ("費半（SOX）", ["^SOX"]),
     ("道瓊期（YM）", ["YM=F"]),
     ("納指期（NQ）", ["NQ=F"]),
@@ -240,6 +241,50 @@ def _safe_float(x):
     except Exception:
         return None
 
+# ==========================
+# ✅ 富果 API 專用抓取函數
+# ==========================
+@st.cache_data(ttl=60)
+def fugle_quote_tx(symbol):
+    api_key = os.environ.get("FUGLE_API_KEY")
+    if not api_key:
+        try:
+            api_key = st.secrets["FUGLE_API_KEY"]
+        except:
+            pass
+            
+    if not api_key:
+        return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+
+    url = f"https://openapi.fugle.tw/marketdata/v1.0/stock/intraday/quote/{symbol}"
+    headers = {"X-API-KEY": api_key}
+    
+    try:
+        res = requests.get(url, headers=headers, timeout=5)
+        if res.status_code == 200:
+            data = res.json()
+            last = data.get("lastPrice") or data.get("closePrice")
+            prev = data.get("previousClose")
+            
+            if last is not None and prev is not None:
+                ch = last - prev
+                pct = (ch / prev) * 100 if prev != 0 else 0
+                return {
+                    "ok": True,
+                    "ticker": symbol,
+                    "price": float(last),
+                    "prev_close": float(prev),
+                    "change": float(ch),
+                    "pct": float(pct),
+                }
+    except Exception:
+        pass
+
+    return {"ok": False, "ticker": symbol, "price": None, "change": None, "pct": None}
+
+# ==========================
+# ✅ YFinance 抓取函數
+# ==========================
 @st.cache_data(ttl=60)
 def yf_quote_any(tickers):
     for tk in tickers:
@@ -341,19 +386,23 @@ st.markdown(
 )
 
 # =======================
-# ✅ 市場快照：先讀 json，沒有就直接抓
+# ✅ 市場快照：分配不同 API
 # =======================
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
 market = data.get("market", {}) or {}
 
-# 如果 json 裡 market 不完整，就用 yfinance 補齊
 filled = {}
 for name, tickers in SYMBOLS:
+    # 判斷 JSON 是否已有完整數據
     if name in market and market[name].get("price") is not None:
         filled[name] = market[name]
     else:
-        filled[name] = yf_quote_any(tuple(tickers))
+        # 分流抓取：台指期給富果，其他給 Yahoo
+        if name == "台指期（全）":
+            filled[name] = fugle_quote_tx(tickers[0])
+        else:
+            filled[name] = yf_quote_any(tuple(tickers))
 
 st.markdown('<div class="cards">', unsafe_allow_html=True)
 
