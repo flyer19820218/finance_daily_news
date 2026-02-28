@@ -2,3 +2,8 @@ streamlit
 feedparser
 requests
 google-generativeai
+pandas
+matplotlib
+yfinance
+lxml
+beautifulsoup4
