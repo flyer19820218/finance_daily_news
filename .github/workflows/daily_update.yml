@@ -3,7 +3,7 @@ name: Daily Finance Update (05:30 Taipei)
 on:
   schedule:
     # Taipei 05:30 = UTC 21:30 (previous day)
-    - cron: "0 4 * * *"
+    - cron: "30 21 * * *"
   workflow_dispatch:
 
 permissions:
