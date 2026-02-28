@@ -11,7 +11,10 @@ HISTORY_DIR = "data/history"
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
 # =============================
-# Tech Startup UI (白底新創感)
+# V3 Tech Startup UI + Mobile Typography
+# - 桌機版面不變
+# - 手機字體更好看
+# - 保留你愛的「翩翩體」：若裝置有此字體會優先使用
 # =============================
 st.markdown(
     """
@@ -26,10 +29,37 @@ st.markdown(
   --up:#16a34a;
   --down:#ef4444;
   --link:#2563eb;
+  --pill:#eef2ff;
   --shadow: 0 10px 30px rgba(2,6,23,0.06);
+  --shadow2: 0 8px 22px rgba(2,6,23,0.05);
 }
 
-.stApp{ background:var(--bg); color:var(--text); }
+/* ❶ 全站字體：先翩翩體（若裝置有），沒有就走漂亮黑體堆疊 */
+.stApp{
+  background:var(--bg);
+  color:var(--text);
+  font-family:
+    "翩翩體",
+    "PianPian",
+    "PingFang TC",
+    "PingFang SC",
+    "Noto Sans TC",
+    "Noto Sans CJK TC",
+    "Microsoft JhengHei",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ❷ 讓中文字更清楚（尤其手機） */
+html, body, [class*="css"]{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Link */
 a{ color:var(--link) !important; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
@@ -39,6 +69,7 @@ a:hover{ text-decoration:underline; }
   max-width: 1180px;
 }
 
+/* Header */
 .header{
   display:flex;
   justify-content:space-between;
@@ -48,15 +79,14 @@ a:hover{ text-decoration:underline; }
 }
 .brand{
   font-size: 34px;
-  font-weight: 850;
-  letter-spacing: -0.3px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
 }
 .sub{
   color:var(--muted);
   font-size: 13px;
   margin-top: 6px;
 }
-
 .badge{
   display:inline-flex;
   align-items:center;
@@ -71,15 +101,16 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 6px 18px rgba(2,6,23,0.06);
 }
 
+/* Section / Divider */
 .hr{ height:1px; background:var(--border); margin: 18px 0; }
-
 .section-title{
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 850;
   letter-spacing: -0.1px;
   margin: 10px 0 10px 0;
 }
 
+/* Cards */
 .cards{
   border:1px solid var(--border);
   background: var(--panel);
@@ -87,31 +118,27 @@ a:hover{ text-decoration:underline; }
   padding: 14px;
   box-shadow: var(--shadow);
 }
-
 .tile{
   background:#fff;
   border:1px solid var(--border);
   border-radius: 16px;
   padding: 12px 12px;
   height: 100%;
-  box-shadow: 0 8px 24px rgba(2,6,23,0.05);
+  box-shadow: var(--shadow2);
+  transition: transform .12s ease, box-shadow .12s ease;
 }
-
-.name{
-  color:var(--muted);
-  font-size: 12px;
-  margin-bottom: 2px;
+.tile:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(2,6,23,0.08);
 }
+.name{ color:var(--muted); font-size: 12px; margin-bottom: 2px; }
 .price{
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 950;
   margin: 2px 0 6px 0;
   letter-spacing: -0.2px;
 }
-.delta{
-  font-size: 13px;
-  font-weight: 750;
-}
+.delta{ font-size: 13px; font-weight: 800; }
 .up{ color:var(--up); }
 .down{ color:var(--down); }
 .flat{ color:var(--muted2); }
@@ -124,15 +151,20 @@ a:hover{ text-decoration:underline; }
   box-shadow: var(--shadow);
 }
 
+/* News */
 .news-card{
   border:1px solid var(--border);
   background:#fff;
   border-radius: 16px;
   padding: 10px 12px;
   margin-bottom: 10px;
-  box-shadow: 0 8px 22px rgba(2,6,23,0.05);
+  box-shadow: var(--shadow2);
+  transition: transform .12s ease, box-shadow .12s ease;
 }
-
+.news-card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(2,6,23,0.08);
+}
 .small{ color:var(--muted); font-size: 12px; }
 .inline-row{
   margin-top: 4px;
@@ -141,12 +173,23 @@ a:hover{ text-decoration:underline; }
   line-height: 1.35;
   word-break: break-word;
 }
-
 .pagerline{
   display:flex;
   align-items:center;
   justify-content:space-between;
   margin: 6px 0 10px 0;
+}
+
+/* ===== 手機微調：字更大、更舒服 ===== */
+@media (max-width: 768px){
+  .block-container{ padding-left: 0.9rem; padding-right: 0.9rem; }
+  .brand{ font-size: 26px; letter-spacing: -0.2px; }
+  .sub{ font-size: 12px; }
+  .badge{ font-size: 11px; padding: 7px 10px; }
+  .section-title{ font-size: 14px; }
+  .price{ font-size: 20px; }
+  .delta{ font-size: 12px; }
+  .inline-row{ font-size: 12px; }
 }
 </style>
 """,
@@ -170,7 +213,7 @@ def list_history():
 
 
 # =============================
-# 選擇：最新 / 歷史
+# 檢視模式
 # =============================
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
@@ -192,7 +235,7 @@ if not data:
 updated = data.get("updated_at_utc", "")
 
 # =============================
-# Header（中文）
+# Header
 # =============================
 st.markdown(
     f"""
@@ -309,19 +352,17 @@ with right:
     total = len(news)
     total_pages = max(1, math.ceil(total / page_size))
 
-    # 初始化頁碼
     if "news_page" not in st.session_state:
         st.session_state.news_page = 1
     st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages))
 
-    # === 兩頁最佳化：用 segmented / radio（超好看）===
     st.markdown(
         f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div></div>",
         unsafe_allow_html=True,
     )
 
+    # 2 頁最佳化：漂亮切換
     if total_pages <= 2:
-        # 優先用 segmented_control（新版 streamlit）
         try:
             sel = st.segmented_control(
                 "分頁",
@@ -344,7 +385,7 @@ with right:
             st.session_state.news_page = int(sel)
             st.rerun()
     else:
-        # 超過 2 頁才用簡潔上一頁/下一頁（避免醜）
+        # 多頁才用上下頁
         c1, c2 = st.columns([1, 1])
         with c1:
             if st.button("← 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
@@ -357,7 +398,6 @@ with right:
 
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
-    # 取出當頁
     start = (st.session_state.news_page - 1) * page_size
     end = start + page_size
     page_items = news[start:end]
