@@ -40,3 +40,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto update daily data"
+
+      - name: Ping Streamlit to keep awake
+        run: |
+          curl -s https://financedailynews-mobile.streamlit.app/ > /dev/null
+          curl -s https://financedailynews-web.streamlit.app/ > /dev/null
