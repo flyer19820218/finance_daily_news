@@ -4,6 +4,7 @@ import math
 import re
 import requests
 from urllib.parse import urlparse
+from datetime import datetime
 
 import streamlit as st
 import yfinance as yf
@@ -13,7 +14,6 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
-# 原有 CSS 樣式完全保留 (未動)
 st.markdown(
     """
 <style>
@@ -181,6 +181,56 @@ a:hover{ text-decoration:underline; }
   margin: 6px 0 10px 0;
 }
 
+/* 倒數卡片專屬 CSS */
+.countdown-card {
+    max-width: 300px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    background-color: #ffffff;
+    box-shadow: var(--shadow2);
+}
+.card-date {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+.card-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+.card-title {
+    font-size: 13px;
+    font-weight: bold;
+}
+.card-days {
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+.card-progress-bar {
+    height: 5px;
+    background-color: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 8px 0 6px 0;
+}
+.card-progress-fill {
+    height: 100%;
+    background-color: var(--text);
+    transition: width 0.5s ease-in-out;
+}
+.card-progress-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+}
+
 @media (max-width: 768px){
   .block-container{ padding-left: 0.9rem; padding-right: 0.9rem; }
   .header{
@@ -202,6 +252,7 @@ a:hover{ text-decoration:underline; }
   .price{ font-size: 20px; }
   .delta{ font-size: 12px; }
   .inline-row{ font-size: 12px; }
+  .countdown-card { max-width: 100%; width: 100%; margin-top: 10px; }
 }
 </style>
 """,
@@ -223,13 +274,9 @@ def list_history():
     files.sort(reverse=True)
     return files
 
-# ==========================
-# ✅ 抓取邏輯：富台指 (玩股網) ＋ MSCI 備援
-# ==========================
 @st.cache_data(ttl=60)
 def fetch_ftx_wantgoo():
     """從玩股網抓取富台指即時報價，若失敗則自動切換為 MSCI 台灣 (EWT) 備援"""
-    # 1. 嘗試抓取玩股網 (富台指)
     url = "https://www.wantgoo.com/global/indices/ftx"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -248,7 +295,6 @@ def fetch_ftx_wantgoo():
     except:
         pass
 
-    # 2. 如果富台指抓不到，啟動備援：抓取 MSCI 台灣 (EWT)
     try:
         t = yf.Ticker("EWT")
         fi = getattr(t, "fast_info", None)
@@ -310,7 +356,6 @@ def render_tile(name, q):
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
-    # 💡 智慧改名：如果是靠備援抓到的，標題就換成 MSCI 台灣
     display_name = "MSCI 台灣 (EWT 備援)" if q.get("is_fallback") else name
 
     return f"""
@@ -318,6 +363,40 @@ def render_tile(name, q):
       <div class="name">{display_name}</div>
       <div class="price">{round(float(price), 2)}</div>
       <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
+    </div>
+    """
+
+def generate_countdown_html(start_year=2026, target_year=2035):
+    """生成動態倒數卡片的 HTML 字串"""
+    start_date = datetime(start_year, 1, 1)
+    target_date = datetime(target_year, 12, 31)
+    today = datetime.now()
+    
+    if today < start_date: today = start_date
+    elif today > target_date: today = target_date
+        
+    total_days = (target_date - start_date).days
+    passed_days = (today - start_date).days
+    days_remaining_int = (target_date - today).days
+    
+    days_remaining = f"{days_remaining_int:,}" 
+    progress_percentage = round((passed_days / total_days) * 100, 2)
+    today_date_str = today.strftime("%Y-%m-%d")
+    
+    return f"""
+    <div class="countdown-card">
+        <div class="card-date">📅 今日：{today_date_str}</div>
+        <div class="card-main">
+            <div class="card-title">🎯 {target_year} 財務自由倒數</div>
+            <div class="card-days">{days_remaining} 天</div>
+        </div>
+        <div class="card-progress-bar">
+            <div class="card-progress-fill" style="width: {progress_percentage}%;"></div>
+        </div>
+        <div class="card-progress-details">
+            <div>起點：{start_year}</div>
+            <div>進度 {progress_percentage}%</div>
+        </div>
     </div>
     """
 
@@ -332,7 +411,6 @@ else:
     if not hist:
         st.warning("尚無歷史資料")
         st.stop()
-    # 💡 魔法參數：隱藏 .json 字眼，讓選單只顯示乾淨的日期
     pick = st.selectbox("選擇日期", hist, index=0, format_func=lambda x: x.replace(".json", ""))
     data = load_json(os.path.join(HISTORY_DIR, pick))
 
@@ -340,22 +418,30 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-st.markdown(
-    f"""
-<div class="header">
-  <div>
-    <div class="brand">財經AI快報</div>
-    <div class="sub">每日市場重點整理（重大事件｜台股影響｜投資觀察）</div>
-  </div>
-  <div class="badge">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
-</div>
-""",
-    unsafe_allow_html=True,
-)
+# 頂部佈局：左側標題與更新時間，右側財務自由倒數卡片
+header_col1, header_col2 = st.columns([1.5, 0.8], gap="large")
+
+with header_col1:
+    st.markdown(
+        f"""
+        <div class="header" style="flex-direction: column; align-items: flex-start; padding-bottom: 0;">
+          <div>
+            <div class="brand">財經AI快報</div>
+            <div class="sub">每日市場重點整理（重大事件｜台股影響｜投資觀察）</div>
+          </div>
+          <div class="badge" style="margin-top: 10px;">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with header_col2:
+    st.markdown(generate_countdown_html(), unsafe_allow_html=True)
+
+st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True)
 
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
-# 抓取數據：富台指優先嘗試玩股網，失敗就用 EWT 備援，其他 5 個用 yf
 filled = {}
 filled["富台指（FTX）"] = fetch_ftx_wantgoo()
 for name, tickers in SYMBOLS_OTHERS:
@@ -364,7 +450,6 @@ for name, tickers in SYMBOLS_OTHERS:
 st.markdown('<div class="cards">', unsafe_allow_html=True)
 is_mobile = st.toggle("手機版排版（兩欄）", value=False)
 
-# 合併顯示順序
 DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
 
 if is_mobile:
@@ -383,7 +468,6 @@ else:
 st.markdown("</div>", unsafe_allow_html=True)
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
-# 下方 AI 分析與新聞清單完全不變
 left, right = st.columns([1.35, 0.65], gap="large")
 with left:
     st.markdown('<div class="section-title">AI 分析摘要</div>', unsafe_allow_html=True)
