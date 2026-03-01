@@ -17,6 +17,9 @@ CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 
+# 🌟 設定台灣時區 (UTC+8)
+TW_TZ = timezone(timedelta(hours=8))
+
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
 
@@ -32,8 +35,9 @@ def load_cache():
 
 def save_cache(cache_list):
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    # 限制 Cache 大小，避免檔案無限膨脹 (只保留最近 200 筆)
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache_list, f, ensure_ascii=False, indent=2)
+        json.dump(cache_list[-200:], f, ensure_ascii=False, indent=2)
 
 def fetch_news(hours=24, limit=20):
     cache_list = load_cache()
@@ -61,14 +65,12 @@ def fetch_news(hours=24, limit=20):
             summary = clean_html(e.get("summary", ""))[:200]
             title = getattr(e, "title", "(no title)")
 
-            news.append(
-                {
-                    "title": title,
-                    "link": link,
-                    "summary": summary,
-                    "dt_utc": dt.isoformat(),
-                }
-            )
+            news.append({
+                "title": title,
+                "link": link,
+                "summary": summary,
+                "dt_utc": dt.isoformat(),
+            })
 
             cache_set.add(link)
             cache_list.append(link)
@@ -79,7 +81,7 @@ def fetch_news(hours=24, limit=20):
 
 def ai_analyze(news):
     if not news:
-        return "📰 今日無新重大財經事件"
+        return "📰 今日目前無更新之重大財經事件。"
 
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
 
@@ -89,13 +91,13 @@ def ai_analyze(news):
 1) 重要性排序（列出 3-6 則最重要）
 2) 市場情緒（偏風險偏好/風險趨避/中性 + 原因）
 3) 台股影響（利多/中性/利空；若可能點名產業）
-4) 投資觀察（3-5 點可操作觀察，避免保證獲利語氣）
+4) 投資觀察（3-5 點可操作觀察，避免保證獲利語氣，避免過度看多或看空）
 
 新聞：
 {text}
 
 輸出格式：
-🌟財經AI快報 {datetime.now().strftime("%Y-%m-%d")}
+🌟財經AI快報 {datetime.now(TW_TZ).strftime("%Y-%m-%d")}
 
 📊重大事件
 🔥市場情緒
@@ -109,9 +111,13 @@ def ai_analyze(news):
 
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-2.5-flash")
-    r = model.generate_content(prompt)
-
-    return r.text if hasattr(r, "text") else "AI分析失敗"
+    
+    try:
+        r = model.generate_content(prompt)
+        return r.text
+    except Exception as e:
+        # 🌟 防呆：避免 Gemini 安全過濾導致整個程式崩潰
+        return f"AI分析生成失敗 (可能觸發安全過濾)，錯誤訊息：{e}"
 
 def escape_md_v2(text: str) -> str:
     chars = r"\_*[]()~`>#+-=|{}.!"
@@ -137,12 +143,20 @@ def send_telegram(msg: str):
 
 def run_daily():
     news = fetch_news()
+    
+    # 🌟 防呆：如果今天第二次執行，抓不到新新聞，就讀取舊資料，不要用空檔案覆蓋網頁！
+    if not news and os.path.exists(OUT_FILE):
+        print("沒有抓到新新聞，保留今日舊有報告不覆蓋。")
+        return
+
     report_text = ai_analyze(news)
 
-    # 股市報價交由前端 app.py 即時抓取，後端不再多此一舉，僅保留空字典
+    # 統一使用台灣時間 (TW_TZ)
+    now_tw = datetime.now(TW_TZ)
+
     payload = {
-        "updated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "title": f"財經AI快報 {datetime.now().strftime('%Y-%m-%d')}",
+        "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
+        "title": f"財經AI快報 {now_tw.strftime('%Y-%m-%d')}",
         "report": report_text,
         "news": news,
         "market": {}, 
@@ -153,8 +167,9 @@ def run_daily():
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
     os.makedirs(HISTORY_DIR, exist_ok=True)
-    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date_str = now_tw.strftime("%Y-%m-%d") # 🌟 保證存出來的檔名是正確的台灣日期
     history_path = os.path.join(HISTORY_DIR, f"{date_str}.json")
+    
     with open(history_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
