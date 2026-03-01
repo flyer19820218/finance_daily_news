@@ -79,7 +79,8 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
-            pick = st.selectbox("選擇日期", hist_files, index=0)
+            # 💡 只有這裡加了 format_func 幫你把 .json 變不見
+            pick = st.selectbox("選擇日期", hist_files, index=0, format_func=lambda x: x.replace(".json", ""))
             with open(os.path.join(HISTORY_DIR, pick), "r", encoding="utf-8") as f:
                 data = json.load(f)
         else:
@@ -118,7 +119,7 @@ st.markdown(grid_html, unsafe_allow_html=True)
 st.markdown('<div style="font-size:15px; font-weight:800; margin-bottom:8px; color:#1e293b;">AI 分析摘要</div>', unsafe_allow_html=True)
 st.info(data.get("report", ""))
 
-# 8. 雙欄並列新聞 (解決了截斷與引號錯誤)
+# 8. 雙欄並列新聞
 st.markdown('<div style="font-size:15px; font-weight:800; margin:15px 0 10px 0; color:#1e293b;">即時新聞快報</div>', unsafe_allow_html=True)
 news = data.get("news", [])
 
