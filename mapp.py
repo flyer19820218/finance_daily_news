@@ -83,7 +83,7 @@ with open(LATEST_FILE, "r", encoding="utf-8") as f:
 # 6. 【功能回歸】大標題與最後更新
 st.markdown(f'''
 <div class="brand">財經AI快報</div>
-<div class="sub">每日市場重點整理（手機優化版）</div>
+<div class="sub">每日市場重點整理：重大事件｜台股影響｜投資觀察</div>
 <div style="font-size:11px; color:#94a3b8; margin-bottom:20px;">更新時間：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
 
