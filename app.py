@@ -13,7 +13,7 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
-# 原有 CSS 樣式完全保留
+# 原有 CSS 樣式完全保留 (未動)
 st.markdown(
     """
 <style>
@@ -224,18 +224,19 @@ def list_history():
     return files
 
 # ==========================
-# ✅ 抓取邏輯：富台指 (玩股網) + 其他 (Yahoo)
+# ✅ 抓取邏輯：富台指 (玩股網) ＋ MSCI 備援
 # ==========================
 @st.cache_data(ttl=60)
 def fetch_ftx_wantgoo():
-    """從玩股網抓取富台指即時報價"""
+    """從玩股網抓取富台指即時報價，若失敗則自動切換為 MSCI 台灣 (EWT) 備援"""
+    # 1. 嘗試抓取玩股網 (富台指)
     url = "https://www.wantgoo.com/global/indices/ftx"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Referer": "https://www.wantgoo.com/"
     }
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, headers=headers, timeout=5)
         p = re.search(r'"price":\s*"?([0-9,.]+)"?', res.text)
         c = re.search(r'"change":\s*"?([0-9,.-]+)"?', res.text)
         cp = re.search(r'"changePercent":\s*"?([0-9,.-]+)"?', res.text)
@@ -243,9 +244,24 @@ def fetch_ftx_wantgoo():
             price = float(p.group(1).replace(',', ''))
             change = float(c.group(1)) if c else 0.0
             pct = float(cp.group(1).replace('%', '')) if cp else 0.0
-            return {"ok": True, "price": price, "change": change, "pct": pct}
+            return {"ok": True, "price": price, "change": change, "pct": pct, "is_fallback": False}
     except:
         pass
+
+    # 2. 如果富台指抓不到，啟動備援：抓取 MSCI 台灣 (EWT)
+    try:
+        t = yf.Ticker("EWT")
+        fi = getattr(t, "fast_info", None)
+        if fi:
+            last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
+            prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
+            if last is not None and prev is not None:
+                change = last - prev
+                pct = (change / prev * 100) if prev != 0 else 0.0
+                return {"ok": True, "price": last, "change": change, "pct": pct, "is_fallback": True}
+    except:
+        pass
+
     return {"ok": False}
 
 SYMBOLS_OTHERS = [
@@ -294,9 +310,12 @@ def render_tile(name, q):
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
+    # 💡 智慧改名：如果是靠備援抓到的，標題就換成 MSCI 台灣
+    display_name = "MSCI 台灣 (EWT 備援)" if q.get("is_fallback") else name
+
     return f"""
     <div class="tile">
-      <div class="name">{name}</div>
+      <div class="name">{display_name}</div>
       <div class="price">{round(float(price), 2)}</div>
       <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
     </div>
@@ -313,7 +332,8 @@ else:
     if not hist:
         st.warning("尚無歷史資料")
         st.stop()
-    pick = st.selectbox("選擇日期", hist, index=0)
+    # 💡 魔法參數：隱藏 .json 字眼，讓選單只顯示乾淨的日期
+    pick = st.selectbox("選擇日期", hist, index=0, format_func=lambda x: x.replace(".json", ""))
     data = load_json(os.path.join(HISTORY_DIR, pick))
 
 if not data:
@@ -335,7 +355,7 @@ st.markdown(
 
 st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
 
-# 抓取數據：富台指優先嘗試玩股網，其他 5 個用 yf
+# 抓取數據：富台指優先嘗試玩股網，失敗就用 EWT 備援，其他 5 個用 yf
 filled = {}
 filled["富台指（FTX）"] = fetch_ftx_wantgoo()
 for name, tickers in SYMBOLS_OTHERS:
