@@ -102,7 +102,7 @@ st.markdown(f'''
 ''', unsafe_allow_html=True)
 
 # 6. 市場網格
-targets = [("EWT", "MSCI 台灣"), ("^SOX", "費半"), ("YM=F", "道瓊期"), ("NQ=F", "納指期"), ("TSM", "台積電"), ("NVDA", "NVIDIA")]
+targets = [("EWT", "MSCI 台灣"), ("^SOX", "費半"), ("YM=F", "道瓊期"), ("NQ=F", "納指期"), ("TSM", "台積電-adr"), ("NVDA", "NVIDIA")]
 grid_html = '<div class="m-grid">'
 for sym, name in targets:
     q = fetch_yf_data(sym, name)
