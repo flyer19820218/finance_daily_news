@@ -4,8 +4,8 @@ import math
 import re
 import requests
 from urllib.parse import urlparse
-from datetime import datetime
-
+from datetime import datetime, timezone, timedelta
+import pandas as pd
 import streamlit as st
 import yfinance as yf
 
@@ -367,10 +367,10 @@ def render_tile(name, q):
     """
 
 def generate_countdown_html(start_year=2026, target_year=2035):
-    """生成動態倒數卡片的 HTML 字串"""
-    start_date = datetime(start_year, 1, 1)
-    target_date = datetime(target_year, 12, 31)
-    today = datetime.now()
+    tw_tz = timezone(timedelta(hours=8))
+    today = datetime.now(tw_tz)
+    start_date = datetime(start_year, 1, 1, tzinfo=tw_tz)
+    target_date = datetime(target_year, 12, 31, tzinfo=tw_tz)
     
     if today < start_date: today = start_date
     elif today > target_date: today = target_date
@@ -400,6 +400,75 @@ def generate_countdown_html(start_year=2026, target_year=2035):
     </div>
     """
 
+@st.cache_data(ttl=3600)
+def fetch_histock_tables():
+    url = "https://histock.tw/stock/three.aspx"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        res.encoding = 'utf-8'
+        tables = pd.read_html(res.text)
+        
+        df_inst, df_fut = None, None
+        for tbl in tables:
+            if isinstance(tbl.columns, pd.MultiIndex):
+                tbl.columns = [col[-1] for col in tbl.columns]
+                
+            cols = list(tbl.columns)
+            if '外資' in cols and '投信' in cols and '總計' in cols:
+                if '自營(總)' in cols:
+                    df_inst = tbl.head(5) 
+                elif '自營' in cols and len(cols) == 5:
+                    df_fut = tbl.head(5)  
+                    
+        return df_inst, df_fut
+    except Exception as e:
+        return None, None
+
+def render_table_html(df, title, icon="📊"):
+    """將 DataFrame 渲染成 HTML 表格 (強制等寬分配)"""
+    if df is None or df.empty: return ""
+    col_width = 100 / len(df.columns)
+        
+    html = f"""
+    <div class="panel" style="margin-bottom: 16px; padding: 14px;">
+        <div class="section-title" style="margin-top: 0; margin-bottom: 10px;">{icon} {title}</div>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; text-align: right;">
+                <thead>
+                    <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+    """
+    for col in df.columns:
+        align = "center" if col == "日期" else "right"
+        html += f'<th style="width: {col_width:.2f}%; padding: 8px 6px; text-align: {align}; color: #475569; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{col}</th>'
+    html += "</tr></thead><tbody>"
+    
+    for i, row in df.iterrows():
+        bg_color = "#ffffff" if i % 2 == 0 else "#f8fafc"
+        html += f'<tr style="background-color: {bg_color}; border-bottom: 1px solid #e2e8f0;">'
+        for col in df.columns:
+            val = row[col]
+            align = "center" if col == "日期" else "right"
+            
+            style = f"padding: 8px 6px; text-align: {align};"
+            try:
+                num_str = str(val).replace(',', '')
+                if num_str.replace('.', '', 1).replace('-', '', 1).isdigit():
+                    num = float(num_str)
+                    if num > 0:
+                        style += " color: #ef4444; font-weight: 600;"
+                    elif num < 0:
+                        style += " color: #16a34a; font-weight: 600;"
+            except: pass
+                
+            html += f'<td style="{style} overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{val}</td>'
+        html += "</tr>"
+        
+    html += "</tbody></table></div></div>"
+    return html
+
 # === 頁面邏輯 ===
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
@@ -418,7 +487,6 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-# 頂部佈局：左側標題與更新時間，右側財務自由倒數卡片
 header_col1, header_col2 = st.columns([1.5, 0.8], gap="large")
 
 with header_col1:
@@ -447,10 +515,11 @@ filled["富台指（FTX）"] = fetch_ftx_wantgoo()
 for name, tickers in SYMBOLS_OTHERS:
     filled[name] = yf_quote_any(tuple(tickers))
 
+# 顯示順序設定：只保留富台指 (與它的 EWT 備援) + 其他 5 個，總共 6 個！
+DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
+
 st.markdown('<div class="cards">', unsafe_allow_html=True)
 is_mobile = st.toggle("手機版排版（兩欄）", value=False)
-
-DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
 
 if is_mobile:
     col1, col2 = st.columns(2)
@@ -459,7 +528,8 @@ if is_mobile:
         with (col1 if i % 2 == 0 else col2):
             st.markdown(html, unsafe_allow_html=True)
 else:
-    cols = st.columns(6)
+    # 自動分配等寬格子，6 個指數就會切成 6 格
+    cols = st.columns(len(DISPLAY_ORDER))
     for i, (name, _) in enumerate(DISPLAY_ORDER):
         html = render_tile(name, filled.get(name))
         with cols[i]:
@@ -467,6 +537,25 @@ else:
 
 st.markdown("</div>", unsafe_allow_html=True)
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
+
+# ====== 新增：三大法人與期貨未平倉區塊 ======
+df_inst, df_fut = fetch_histock_tables()
+if df_inst is not None or df_fut is not None:
+    
+    # 按照欄位數 7:5 比例完美切分
+    ratio_left = len(df_inst.columns) if df_inst is not None else 7
+    ratio_right = len(df_fut.columns) if df_fut is not None else 5
+    t1, t2 = st.columns([ratio_left, ratio_right], gap="small")
+    
+    with t1:
+        if df_inst is not None:
+            st.markdown(render_table_html(df_inst, "近五日上市三大法人買賣超 (億)", "🏦"), unsafe_allow_html=True)
+    with t2:
+        if df_fut is not None:
+            st.markdown(render_table_html(df_fut, "近五日台股期貨未平倉 (口)", "📈"), unsafe_allow_html=True)
+            
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
+# ==========================================
 
 left, right = st.columns([1.35, 0.65], gap="large")
 with left:
