@@ -107,7 +107,7 @@ a:hover{ text-decoration:underline; }
 .hr{ height:1px; background:var(--border); margin: 18px 0; }
 
 .section-title{
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 850;
   letter-spacing: -0.1px;
   margin: 10px 0 10px 0;
@@ -120,6 +120,8 @@ a:hover{ text-decoration:underline; }
   padding: 14px;
   box-shadow: var(--shadow);
 }
+
+/* 動態變色方塊 */
 .tile{
   background:#fff;
   border:1px solid var(--border);
@@ -127,13 +129,16 @@ a:hover{ text-decoration:underline; }
   padding: 12px 12px;
   height: 100%;
   box-shadow: var(--shadow2);
-  transition: transform .12s ease, box-shadow .12s ease;
+  transition: all 0.3s ease;
 }
 .tile:hover{
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(2,6,23,0.08);
 }
-.name{ color:var(--muted); font-size: 12px; margin-bottom: 2px; }
+.tile.up-bg { background: #f0fdf4; border-color: #bbf7d0; }
+.tile.down-bg { background: #fef2f2; border-color: #fecaca; }
+
+.name{ color:var(--muted); font-size: 12px; margin-bottom: 2px; font-weight: 700; }
 .price{
   font-size: 22px;
   font-weight: 950;
@@ -151,6 +156,16 @@ a:hover{ text-decoration:underline; }
   border-radius: 18px;
   padding: 16px 16px;
   box-shadow: var(--shadow);
+}
+
+/* === 新增：AI快評專屬淡藍色面板 === */
+.panel-blue {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff; /* 舒適的科技淡藍色 */
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.05); /* 微微的藍色陰影 */
+  line-height: 1.6;
 }
 
 .news-card{
@@ -276,7 +291,6 @@ def list_history():
 
 @st.cache_data(ttl=60)
 def fetch_ftx_wantgoo():
-    """從玩股網抓取富台指即時報價，若失敗則自動切換為 MSCI 台灣 (EWT) 備援"""
     url = "https://www.wantgoo.com/global/indices/ftx"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -353,13 +367,15 @@ def render_tile(name, q):
         return f'<div class="tile"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
 
     ch, pct, price = q.get("change") or 0.0, q.get("pct") or 0.0, q.get("price")
+    
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+    bg_cls = "up-bg" if ch > 0 else "down-bg" if ch < 0 else ""
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
     display_name = "MSCI 台灣 (EWT 備援)" if q.get("is_fallback") else name
 
     return f"""
-    <div class="tile">
+    <div class="tile {bg_cls}">
       <div class="name">{display_name}</div>
       <div class="price">{round(float(price), 2)}</div>
       <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
@@ -428,39 +444,53 @@ def fetch_histock_tables():
         return None, None
 
 def render_table_html(df, title, icon="📊"):
-    """將 DataFrame 渲染成 HTML 表格 (強制等寬分配)"""
     if df is None or df.empty: return ""
     col_width = 100 / len(df.columns)
         
     html = f"""
-    <div class="panel" style="margin-bottom: 16px; padding: 14px;">
-        <div class="section-title" style="margin-top: 0; margin-bottom: 10px;">{icon} {title}</div>
-        <div style="overflow-x: auto;">
-            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; text-align: right;">
+    <div class="panel" style="margin-bottom: 16px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <div class="section-title" style="margin-top: 0; margin-bottom: 12px;">{icon} {title}</div>
+        <div style="overflow-x: auto; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; text-align: right; background: #fff;">
                 <thead>
-                    <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+                    <tr style="background-color: #1e293b; color: #ffffff;">
     """
     for col in df.columns:
         align = "center" if col == "日期" else "right"
-        html += f'<th style="width: {col_width:.2f}%; padding: 8px 6px; text-align: {align}; color: #475569; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{col}</th>'
+        html += f'<th style="width: {col_width:.2f}%; padding: 10px 6px; text-align: {align}; font-weight: 700; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{col}</th>'
     html += "</tr></thead><tbody>"
     
     for i, row in df.iterrows():
-        bg_color = "#ffffff" if i % 2 == 0 else "#f8fafc"
-        html += f'<tr style="background-color: {bg_color}; border-bottom: 1px solid #e2e8f0;">'
+        if i == 0:
+            bg_color = "linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%)"
+            date_color = "#b45309"
+            row_weight = "900"
+            font_size = "14px"
+        else:
+            bg_color = "#ffffff" if i % 2 == 0 else "#f8fafc"
+            date_color = "inherit"
+            row_weight = "normal"
+            font_size = "13px"
+
+        html += f'<tr style="background: {bg_color}; border-bottom: 1px solid #e2e8f0; font-weight: {row_weight}; font-size: {font_size};">'
+        
         for col in df.columns:
             val = row[col]
             align = "center" if col == "日期" else "right"
             
-            style = f"padding: 8px 6px; text-align: {align};"
+            style = f"padding: 10px 6px; text-align: {align};"
+            
+            if col == "日期" and i == 0:
+                 style += f" color: {date_color};"
+                 
             try:
                 num_str = str(val).replace(',', '')
                 if num_str.replace('.', '', 1).replace('-', '', 1).isdigit():
                     num = float(num_str)
                     if num > 0:
-                        style += " color: #ef4444; font-weight: 600;"
+                        style += " color: #ef4444; font-weight: 700;"
                     elif num < 0:
-                        style += " color: #16a34a; font-weight: 600;"
+                        style += " color: #16a34a; font-weight: 700;"
             except: pass
                 
             html += f'<td style="{style} overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{val}</td>'
@@ -508,14 +538,13 @@ with header_col2:
 
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True)
 
-st.markdown('<div class="section-title">全球市場快照</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-title">🌍 全球市場快照</div>', unsafe_allow_html=True)
 
 filled = {}
 filled["富台指（FTX）"] = fetch_ftx_wantgoo()
 for name, tickers in SYMBOLS_OTHERS:
     filled[name] = yf_quote_any(tuple(tickers))
 
-# 顯示順序設定：只保留富台指 (與它的 EWT 備援) + 其他 5 個，總共 6 個！
 DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
 
 st.markdown('<div class="cards">', unsafe_allow_html=True)
@@ -528,7 +557,6 @@ if is_mobile:
         with (col1 if i % 2 == 0 else col2):
             st.markdown(html, unsafe_allow_html=True)
 else:
-    # 自動分配等寬格子，6 個指數就會切成 6 格
     cols = st.columns(len(DISPLAY_ORDER))
     for i, (name, _) in enumerate(DISPLAY_ORDER):
         html = render_tile(name, filled.get(name))
@@ -538,11 +566,10 @@ else:
 st.markdown("</div>", unsafe_allow_html=True)
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
-# ====== 新增：三大法人與期貨未平倉區塊 ======
+# ====== 三大法人與期貨未平倉區塊 ======
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
     
-    # 按照欄位數 7:5 比例完美切分
     ratio_left = len(df_inst.columns) if df_inst is not None else 7
     ratio_right = len(df_fut.columns) if df_fut is not None else 5
     t1, t2 = st.columns([ratio_left, ratio_right], gap="small")
@@ -559,13 +586,14 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 left, right = st.columns([1.35, 0.65], gap="large")
 with left:
-    st.markdown('<div class="section-title">AI 分析摘要</div>', unsafe_allow_html=True)
-    st.markdown('<div class="panel">', unsafe_allow_html=True)
+    # 這裡加上了跟手機版一樣的機器人符號，並且換成了剛寫好的 .panel-blue 樣式！
+    st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
+    st.markdown('<div class="panel-blue">', unsafe_allow_html=True)
     st.markdown(data.get("report", ""))
     st.markdown("</div>", unsafe_allow_html=True)
 
 with right:
-    st.markdown('<div class="section-title">新聞清單</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">📰 新聞清單</div>', unsafe_allow_html=True)
     news = data.get("news", []) or []
     page_size = 10
     total = len(news)
