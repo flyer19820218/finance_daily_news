@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS
+# 2. 核心 CSS (極致壓縮版 3x2 網格)
 st.markdown("""
 <style>
 :root{
@@ -28,20 +28,21 @@ st.markdown("""
 .combined-table th { background: #f1f5f9; padding: 8px 4px; border-bottom: 2px solid #cbd5e1; color: #475569; font-size: 12px; }
 .combined-table td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; }
 
-/* 2x3 市場網格 */
+/* 3x2 市場網格 (極致壓縮) */
 .m-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;
   background: #f8fafc; border: 1px solid var(--border);
-  border-radius: 12px; padding: 10px; margin-bottom: 20px;
+  border-radius: 12px; padding: 6px; margin-bottom: 20px;
 }
 .m-tile {
   background: #ffffff; border: 1px solid var(--border);
-  border-radius: 10px; padding: 8px; text-align: center;
+  border-radius: 8px; padding: 6px 2px; text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  overflow: hidden;
 }
-.m-name { color: var(--muted); font-size: 10px; }
-.m-price { font-size: 18px; font-weight: 900; margin: 2px 0; color: #0f172a; }
-.m-pct { font-size: 11px; font-weight: 800; }
+.m-name { color: var(--muted); font-size: 9px; white-space: nowrap; letter-spacing: -0.3px; }
+.m-price { font-size: 15px; font-weight: 900; margin: 2px 0; color: #0f172a; letter-spacing: -0.5px; }
+.m-pct { font-size: 10px; font-weight: 800; }
 .up { color: var(--up); } .down { color: var(--down); }
 
 /* 雙欄新聞區域 */
@@ -160,15 +161,11 @@ if not data:
 # 5. 大標題
 st.markdown(f'''
 <div class="brand">財經AI快報</div>
-<div class="sub">市場重點整理（重大事件｜台股影響｜投資觀察）</div>
+<div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
 
-# ==========================================
-# 重新排序：1. 指數 -> 2. 籌碼 -> 3. AI -> 4. 新聞
-# ==========================================
-
-# 6. 🌍 全球市場快照
+# 6. 🌍 全球市場快照 (3x2 壓縮版)
 st.markdown('<div style="font-size:15px; font-weight:800; margin:5px 0 10px 0; color:#1e293b;">🌍 全球市場快照</div>', unsafe_allow_html=True)
 targets = [("EWT", "MSCI 台灣"), ("^SOX", "費半"), ("YM=F", "道瓊期"), ("NQ=F", "納指期"), ("TSM", "台積電-adr"), ("NVDA", "NVIDIA")]
 grid_html = '<div class="m-grid">'
