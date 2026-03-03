@@ -400,7 +400,7 @@ def generate_countdown_html(start_year=2026, target_year=2035):
     </div>
     """
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
     headers = {
