@@ -160,7 +160,7 @@ if not data:
 # 5. 大標題
 st.markdown(f'''
 <div class="brand">財經AI快報</div>
-<div class="sub">每日市場重點整理（重大事件｜台股影響｜投資觀察）</div>
+<div class="sub">市場重點整理（重大事件｜台股影響｜投資觀察）</div>
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
 
