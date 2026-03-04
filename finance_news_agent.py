@@ -3,8 +3,7 @@ import re
 import json
 import calendar
 import requests
-from datetime import datetime, timedelta, timezone
-
+from datetime import datetime, timedelta, timezone, time
 import feedparser
 import google.generativeai as genai
 
@@ -16,9 +15,8 @@ RSS_LIST = [
 CACHE_FILE = "data/news_cache.json"
 OUT_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
-HOT_STOCKS_FILE = "hot_stocks.json" # 🌟 新增：每日爆量名單存檔路徑
+HOT_STOCKS_FILE = "hot_stocks.json"
 
-# 🌟 設定台灣時區 (UTC+8)
 TW_TZ = timezone(timedelta(hours=8))
 
 def clean_html(text: str) -> str:
@@ -30,8 +28,7 @@ def load_cache():
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
-        except Exception:
-            return []
+        except: return []
     return []
 
 def save_cache(cache_list):
@@ -44,7 +41,6 @@ def fetch_news(hours=24, limit=20):
     cache_set = set(cache_list)
     news = []
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
-
     for rss in RSS_LIST:
         feed = feedparser.parse(rss)
         for e in feed.entries:
@@ -54,126 +50,84 @@ def fetch_news(hours=24, limit=20):
             if dt < cutoff: continue
             link = getattr(e, "link", None)
             if not link or link in cache_set: continue
-            summary = clean_html(e.get("summary", ""))[:200]
-            title = getattr(e, "title", "(no title)")
-            news.append({"title": title, "link": link, "summary": summary, "dt_utc": dt.isoformat()})
+            news.append({
+                "title": getattr(e, "title", "(no title)"),
+                "link": link,
+                "summary": clean_html(e.get("summary", ""))[:200],
+                "dt_utc": dt.isoformat(),
+            })
             cache_set.add(link)
             cache_list.append(link)
-
     save_cache(cache_list)
     news.sort(key=lambda x: x["dt_utc"], reverse=True)
     return news[:limit]
 
-# ==========================================
-# 🌟 新增：去證交所抓真實爆量名單的函數
-# ==========================================
 def update_hot_stocks():
     try:
-        # 台灣證交所官方 API：每日成交量前 20 名
         url = "https://openapi.twse.com.tw/v1/exchangeReport/MI_INDEX20"
         res = requests.get(url, timeout=10)
         data = res.json()
-        
-        top_6_dict = {}
-        for item in data[:6]:
-            code = item['Code']
-            name = item['Name']
-            top_6_dict[f"{code}.TW"] = name
-            
-        print(f"✅ 成功抓取真實市場爆量前 6 名:", top_6_dict)
-        
-        # 存檔供前端網頁讀取
+        top_6 = {f"{item['Code']}.TW": item['Name'] for item in data[:6]}
         with open(HOT_STOCKS_FILE, "w", encoding="utf-8") as f:
-            json.dump({"top_volume_pool": top_6_dict}, f, ensure_ascii=False, indent=4)
-            
-    except Exception as e:
-        print(f"⚠️ 抓取真實成交量失敗 (可能遇上假日或 API 維護): {e}")
-        # 如果失敗，就不覆蓋檔案，讓前端繼續用昨天的名單或備用名單
+            json.dump({"top_volume_pool": top_6}, f, ensure_ascii=False, indent=4)
+    except: print("⚠️ 抓取爆量名單失敗，保留舊有名單。")
 
 def ai_analyze(news, period_str):
-    if not news:
-        return f"📰 今日目前無更新之重大財經事件。({period_str})"
-
+    if not news: return f"📰 今日目前無更新之重大財經事件。({period_str})"
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
-    if period_str == "盤前":
-        role_prompt = "你是總體經濟分析師與台股策略研究員。現在是【早晨盤前】時段，請針對昨晚歐美股市與最新國際局勢，提供今日台股開盤的觀盤重點與風險提示。"
+    
+    # 🌟 邏輯大師精選：Gemini 智慧人格切換
+    if "美股週收盤" in period_str:
+        role = "你是頂級美股策略師。請總結本週美股表現與個股波動，並分析對下週一台灣相關供應鏈（如台積電ADR）的衝擊。"
+    elif "下週展望" in period_str:
+        role = "你是最強 AI 選股專家。請執行【Gemini 強勢選股任務】：從新聞中找出下週最可能噴發的 3-5 個產業板塊，點名具潛力個股，並提醒關鍵經濟數據。"
+    elif "盤前" in period_str:
+        role = "你是總體經濟分析師。現在是早晨盤前，請針對昨晚美股影響，提供今日台股觀盤重點。"
     else:
-        role_prompt = "你是總體經濟分析師與台股策略研究員。現在是【下午盤後】時段，請針對今日最新財經新聞、產業動態，提供盤後總結與明日市場的觀察重點。"
+        role = "你是台股操盤手。現在是下午盤後，請分析今日盤勢動態並總結法人籌碼動向。"
 
     prompt = f"""
-{role_prompt}
-請對以下新聞做：
-1) 重要性排序（列出 3-6 則最重要）
-2) 市場情緒（偏風險偏好/風險趨避/中性 + 原因）
-3) 台股影響（利多/中性/利空；若可能點名產業）
-4) 投資觀察（3-5 點可操作觀察，避免保證獲利語氣，避免過度看多或看空）
-
-新聞：
-{text}
-
-輸出格式：
-🌟財經AI快報 {datetime.now(TW_TZ).strftime("%Y-%m-%d")} ({period_str})
-
-📊重大事件
-🔥市場情緒
-💰台股影響
-📈投資觀察
-"""
-    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not api_key: return "（未設定 GEMINI_API_KEY，略過 AI 分析）"
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    {role}
+    新聞素材：{text}
+    輸出格式：
+    🌟財經AI快報 {datetime.now(TW_TZ).strftime("%Y-%m-%d")} ({period_str})
+    📊重大事件
+    🔥市場情緒
+    💰台股影響
+    📈【下週強勢展望 & AI 精選股】(若非週日則顯示投資觀察)
+    """
+    genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
+    model = genai.GenerativeModel("gemini-2.0-flash") # 確保使用最新模型
     try:
-        r = model.generate_content(prompt)
-        return r.text
-    except Exception as e:
-        return f"AI分析生成失敗，錯誤訊息：{e}"
-
-def escape_md_v2(text: str) -> str:
-    for c in r"\_*[]()~`>#+-=|{}.!": text = text.replace(c, "\\" + c)
-    return text
-
-def send_telegram(msg: str):
-    token = os.environ.get("TELEGRAM_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id: return
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {"chat_id": chat_id, "text": escape_md_v2(msg), "parse_mode": "MarkdownV2", "disable_web_page_preview": True}
-    requests.post(url, json=payload, timeout=20)
+        return model.generate_content(prompt).text
+    except Exception as e: return f"AI 分析失敗: {e}"
 
 def run_daily():
-    # 🌟 每次執行時，先去更新真實的爆量名單！
     update_hot_stocks()
-
     news = fetch_news()
     now_tw = datetime.now(TW_TZ)
-    period_str = "盤前" if now_tw.hour < 12 else "盤後"
-
-    if not news and os.path.exists(OUT_FILE):
-        print(f"[{period_str}] 沒有抓到新新聞，保留今日舊有報告不覆蓋。")
-        return
+    weekday = now_tw.weekday() # 0=Mon, 5=Sat, 6=Sun
+    
+    # 🌟 自動判定人格標籤
+    if weekday == 5: period_str = "週末特刊-美股週收盤"
+    elif weekday == 6: period_str = "週末特刊-下週展望"
+    else: period_str = "盤前" if now_tw.hour < 12 else "盤後"
 
     report_text = ai_analyze(news, period_str)
-
     payload = {
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"財經AI快報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
         "report": report_text,
         "news": news,
-        "market": {}, 
     }
-
-    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
+    
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
+    
     os.makedirs(HISTORY_DIR, exist_ok=True)
-    history_filename = f"{now_tw.strftime('%Y-%m-%d')}_{period_str}.json"
-    with open(os.path.join(HISTORY_DIR, history_filename), "w", encoding="utf-8") as f:
+    hist_name = f"{now_tw.strftime('%Y-%m-%d')}_{period_str}.json"
+    with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    print(f"✅ 成功儲存最新報告與歷史紀錄：{history_filename}")
-    send_telegram(report_text)
 
 if __name__ == "__main__":
     run_daily()
