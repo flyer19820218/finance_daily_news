@@ -1,127 +1,49 @@
 {
-  "updated_at_utc": "2026-03-05 05:49:18 (TW)",
+  "updated_at_utc": "2026-03-05 05:59:28 (TW)",
   "title": "財經AI快報 2026-03-05 盤前",
-  "report": "AI 分析失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 41.765556331s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\"\n  quota_id: \"GenerateContentInputTokensPerModelPerMinute-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\n, retry_delay {\n  seconds: 41\n}\n]",
+  "report": "🌟財經AI快報 2026-03-05 (盤前)\n\n📊**重大事件**\n*   **美股強勁反彈，地緣政治風險降溫：** 昨晚美股四大指數全面收紅，道瓊工業指數上漲238點，費城半導體指數漲近2%。主因市場樂觀預期伊朗地緣政治緊張局勢有望緩和，風險偏好回升。比特幣同步飆漲，顯示資金風險情緒轉佳。\n*   **台股歷經修正，散戶積極承接：** 近期台股受地緣政治衝擊，三天內大幅修正，指數跌去逾2500點。新聞指出小資族殺紅眼瘋抄底，台積電零股交易量創歷史新高，顯示散戶對護國神山仍具信心。\n*   **證交所強調基本面穩健：** 台灣證交所發聲，儘管國際地緣政治雜音多，但台灣整體經濟基本面仍穩健。此外，國內天然氣至3月底前供應無虞，有助穩定產業生產成本。\n\n🔥**市場情緒**\n全球市場風險偏好自谷底回升，伊朗和談傳聞大幅緩解了投資人對中東衝突擴大的擔憂，資金重回股市。在台灣市場，經歷急跌後，觀望氣氛濃厚但買盤蠢蠢欲動，尤其散戶積極布局權值股的現象，透露出對長期基本面的信心尚未動搖。\n\n💰**台股大盤影響**\n*   **正面影響：**\n    *   **地緣政治利空鈍化：** 國際地緣政治風險降溫，是台股擺脫近期陰霾的最大利多，有助資金重返風險性資產。\n    *   **美股止跌反彈引領：** 美股，特別是費半指數的強勁表現，將為台股電子族群提供強大支撐，有利於科技權值股反彈。\n    *   **超跌反彈動能：** 台股短線跌幅過深，技術面上具備反彈契機，昨日美股漲勢可望激發搶短及補跌買盤。\n*   **潛在挑戰：**\n    *   **套牢賣壓：** 短線急跌可能造成部分投資人套牢，指數反彈過程中需留意解套賣壓是否湧現，可能限制上漲幅度。\n    *   **基本面檢視：** 雖然地緣政治雜音降低，但市場仍將回歸檢視企業財報與總體經濟數據，確認復甦動能。\n\n📈**【投資觀察】**\n今日台股可望在美股止跌反彈、地緣政治風險緩解的雙重利多下，展現強勁反彈走勢，試圖收復部分失土。市場焦點將從地緣政治風險轉向企業基本面與產業前景，尤其受惠於美國科技股回溫，半導體及相關供應鏈將是今日反彈主力。\n\n總體經濟面，投資人將持續關注全球通膨動向、主要央行貨幣政策路徑，以及全球製造業的景氣復甦情況。雖然當前市場情緒暫獲喘息，但地緣政治的長期不確定性仍在，且全球經濟成長仍面臨挑戰，因此建議投資人在享受反彈的同時，保持審慎的宏觀視野，關注資金流向與產業輪動，避免追高殺低，以穩健的總體經濟分析為依歸。",
   "news": [
     {
-      "title": "盤勢分析》台股馬年漲幅吐光 市值3天蒸發8.4兆 - 自由財經",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE84RmhsZ2VlUEU2eU8td3JaMG9kUjFsY2JmZFRvZ3o3MDVzc0xsRzJoUW5BRTdYYjRKWk91NEM1eWFFRkpOcHY0SUhHVTMxQjNudW82MkpR0gFbQVVfeXFMTldNazVEckg5R0hGS052dXpQNnV0cUN0NGlTcHg4UEhBT3BCRzhucWd0Q2w0Si1rdEFBWEdsQWpmQ2ZzeXVMMzVfVHNnUVRaVFY2MFlLal95dVVEdw?oc=5",
-      "summary": "盤勢分析》台股馬年漲幅吐光 市值3天蒸發8.4兆&nbsp;&nbsp;自由財經",
-      "dt_utc": "2026-03-04T21:30:00+00:00"
+      "title": "Stock market today: Dow, S&P 500, Nasdaq rebound on hopes of Iran deescalation as bitcoin surges - cmoney.tw",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBOTGtFSGN4RDRhWXBBTk9QdG9yYXZmcEJDeGJDSW1YSkRsMHFOTDF3QmZLRjlKOEh6Nk82dzJMWHY5Yzk5bV9BUExQdXBFWUJuYWREUmM4c0M?oc=5",
+      "summary": "Stock market today: Dow, S&amp;P 500, Nasdaq rebound on hopes of Iran deescalation as bitcoin surges&nbsp;&nbsp;cmoney.tw",
+      "dt_utc": "2026-03-04T21:55:32+00:00"
     },
     {
-      "title": "外資大逃殺台股狂瀉 重挫1494點史上第3大 - 卡優新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZRVMxdFpPT3VNNFpIVTRFSmJBYXZHZFBRbjVUUkc0bjYwSzlGd3FjaURaN2FLUXRjWC02VEdJc2NPejVqUzRad2dRejZSVzVoS0FxUlhEaFJRQQ?oc=5",
-      "summary": "外資大逃殺台股狂瀉 重挫1494點史上第3大&nbsp;&nbsp;卡優新聞網",
-      "dt_utc": "2026-03-04T20:50:46+00:00"
+      "title": "傳伊朗想談和！美股收盤「4大指數全收紅」　道瓊漲238點、費半漲近2% - 三立新聞網SETN.com",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBQdHBPeE9lWUs2cXZHTkxzSmdmY1doUC1FVWhPQXlkdmJlLWdCRVQyY2dNbGxBWHlnakctVVVxYkZaU1VaVGtiSmR4b0FpcjVDSE54VDJmZXPSAV9BVV95cUxPZTEzd2ZVRUhaYlJIc2Q3TVNNM19MbnltU2UybktIcXZ4bFhIdnItYklfakVuXzJhc1NWWTAzVEFZVDJ6ZmNDOGtTelZzVFJ1NEFRYWY0X0hLemk1R2lXcw?oc=5",
+      "summary": "傳伊朗想談和！美股收盤「4大指數全收紅」　道瓊漲238點、費半漲近2%&nbsp;&nbsp;三立新聞網SETN.com",
+      "dt_utc": "2026-03-04T21:11:00+00:00"
     },
     {
-      "title": "新聞驚句－會「AI」才會賺錢 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOaVVrZ1ZRSV83M3ZxdlFPZFB0YnY5TmVWb3FWdUwtWV8xaldYSzhaeWtpb2VNUk1hWHJsSG91YkhzakNZZVRiOW5vWG5GSS1MTDZza3dHN05DalNqYU9qR0xwRDFNZjlpZk1nTHhNWFRGN0lPZi1kS1k0cFJZdnJ4UGJ2RVp0V2J4Vzhoc08ycno0cGM0RlNCUlRIbThWM2otNFlsRUhxN1RlSng0RzI4M0RDS1BRS1N0ejVZNkxBWVhweW9qdlhTQ0FOR0ZtZw?oc=5",
-      "summary": "新聞驚句－會「AI」才會賺錢&nbsp;&nbsp;Yahoo股市",
+      "title": "〈台股盤前要聞〉3天崩跌2586點搶反彈、天然氣3月底前供應無虞、Q2 DRAM將跳漲 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiqANBVV95cUxNTjVJa3FSc0U0cTJ1S3FITmt3LW9kUlF0UUg5elJjWW5rZVVwSjhlU1dxRVVWU3Q4eU5sckJkLVBBVnEtUDhSSDdET2NhZmd0aVVxUU9PeXA5eGZLWXBCRm9GdVdXZFNOTVVKUWxjTEQtSVI4VXNjZXQ5WHUwYmtFaFJZdGh5RmZNRDZ5amlKYWtSa0hpQ1Q1V3E2SVp2eWZIYTd3LWFzNG8ydHRvUXNXV0pUdl9VVVhpcFAtcTFfNW41WW0wak9sbkE5UEJiUlVMdkl1QnBfZkhQeFhVbFZyQVpiVkZPMWZLbTVvbTlpNGcxSUpVUHhQX1QyQW1DSXFqTDZ3cjY0bnRUVWVxNVdSZHRoNDZJdVhaZ1RxazJick9pajFrMGlER3cxSEdXMFpOVm1LbE4yUUdPVnJUVURlM2ROOTFkWVZXalM0bkcxNGFPek9IVkNzYm0tMVhwbWhUbkk2cURKTldadjAxZ1d3MjJwV19yYk9ESDRlU1haekpOaTZMQnBtNVFqWHFHcWtNbzI4NUVMY2lGNDVJenAtOHd0TlRtaTNn?oc=5",
+      "summary": "〈台股盤前要聞〉3天崩跌2586點搶反彈、天然氣3月底前供應無虞、Q2 DRAM將跳漲&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-03-04T21:10:02+00:00"
+    },
+    {
+      "title": "得力加碼2.8億 印尼設新布廠 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPM25hd2g3cHUzemR5OXhPQktiUU9ZYzEwS1pPU3M5RDhGQjhmaGgwRkxlRzNXaTJkWjdvd0RHQUIwX3RiZWxSMXdjRVoyY2JqampMRlhobDIwRkpWVlExVlRpVkFJeWwweHpmUkpEblRGSS1lMVk4c01PTWRDMXJ3c2Nwa3RlallROVA2aDY2MHpvUFBNWTYxQ1piYTJFZ2FYNG92Q2tjdW9sSjFyY3RQdmVkZFJiRGkyQ1hlZFcxSGZJTVhVY1hWN3hUZUNBeDNCVXJDNHFPdjVMZHk2aXYwdmtRTkQ?oc=5",
+      "summary": "得力加碼2.8億 印尼設新布廠&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-03-04T20:10:00+00:00"
     },
     {
-      "title": "熱門股－信錦 股價創下近期新高 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQQ0dXdFpLMkFHVEoyYnVRWjV4X1pENm13ZFZaQ2p2TUwtdHE0cW82QVF0TndOZGhrb2tyTGFwN0ItdWxXVEI2XzRYM21ob0VMa1JiZFkyS1NZMkdkOGhZMmVaNlJKVU9sU1lXeTRvU0Y1LUtTZmltUnpMOHRxQnNxWlRDTXItZXpJd2VWY0s1UHhPU2w5SUNJRTZ1aEFmYjFUTHFnSHM4LTRBdkFZX2MzOG9QVEhCR0MyUk9TVXIyUWN2ZEpaQ05FX1VZNEhERTFvZVo4ajlBRm9rMXI1bk1OSDJEVVVqUkVvOU1OSG5vcDRrZ0F1TjhtS2x3?oc=5",
-      "summary": "熱門股－信錦 股價創下近期新高&nbsp;&nbsp;Yahoo股市",
+      "title": "志聖砸14.8億擴產 營運喊衝 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcGIwdGlvdVM4TmZLdGpxams2bmtmcjhzSnZySkpfcWo1eFdDa282RWpMZGU3YllMbFZxTWNhUjdLQVduNzVhMFNaVXJPUmY3V0o1XzhpM3FXY28wQUdQdHZnZEtuSWJYZ2VfVGZ0MTlBVWRON3ZmdW9Lc2lJVlVFbjBaNXhFUGRkN3ZqLWtISU1BbHZwMm84SzlOUEJWQlBlWEtBVFdWV2dtVWxPcTM0MnViMTRsZENtd09PQ0ttQnhyLTdMWUNYRFIyVzJpUlR3OC1YVExGcXp6UQ?oc=5",
+      "summary": "志聖砸14.8億擴產 營運喊衝&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-03-04T20:10:00+00:00"
     },
     {
-      "title": "裕民、慧洋-KY 今年營運前景俏 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPSzNRUGR4VHZRRTJDYjQ0WlJYVkZWa3cwMkhWQmRRbF84VkU4cXJtd01sUTZtcC1VaklCWU1pNjNlNGZmQTdPdExCNlp5azM5Y3lkTFZiOENzdFZ0bHRWZVlpWDNQQ2gwbnRnZVFwOTZTRVdnYnZqc3kzVzh1UmlIVUthUkdOaXBCWE5IWTREZnFBdmxIYk9qYkJYNkdfWjM0R2dPN0MxdlJ3dnpuM3dIam5vaGlIcm5tVHhIWVp3OC1oaWNwVS1UVWFueUR6cVNuLVY0bVBrUWV4RkZiTzVaWVVfR2h4Zw?oc=5",
-      "summary": "裕民、慧洋-KY 今年營運前景俏&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-04T20:10:00+00:00"
+      "title": "台股崩小資殺紅眼！台積電零股捲275億破紀錄 螞蟻散戶瘋抄底護國神山 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMitgNBVV95cUxPaW5IT3NfbkNsMndOLVRqYzBjd2kwdXVJQk5tVEdjaWJFQ0pHUTIzMDJIcFI3bFFCbklFdE12b1RPSl84NHR1OEJpYkdFbGM0OGhnQkpPbGlYWDh1ZGVfR0JVT1VlcmtNN0hBR1h5UnJzQjN2VlpYa1ZJb0kzNzJSd0FCLVZDUkRqTjh5RTMtY1FTMGFoMUt0UkxGcVZCdkN3a0dXNkVIbDE1MFZ6aDJwSXU5REljUzk2TWVTSU4xNzFoa3Zza3gwVTE0UnI3dFZhMzJSdm9NVW8ycEZBcklPcFF0OXRDQVhnMjdjcEdZTnFtX0JwMlpHenAyaDJscU1nMkVueHlUZXVxR0xZUm5KMHZIV3FmTzRNLVMxem1jZXBFZWtGdkpVNVVyUnJuelNlMnFEZFpxMTQzbFZ6eGZDeEdBOXVaWC1hbXM3X1lVVEpFMWlTRVBsM0N6VnY0UVA4ZVVOd0NYdjFjcGx5bFlsQWpaSUkzVllyZ1EyeVhFZFVMQjk2VEM1UThaMGUwZjRkTE9jNDhmcmxubzktbVM0Q0dCMFIzMmJXVC00NTRBelFFZENHaGc?oc=5",
+      "summary": "台股崩小資殺紅眼！台積電零股捲275億破紀錄 螞蟻散戶瘋抄底護國神山&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-03-04T16:05:00+00:00"
     },
     {
-      "title": "新聞驚句－會「AI」一定賺大錢 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNdzl1MzUzcktoRGxzeW5XMkNGSGNrTTJTdHdGNXNNaG9QZTlTRFc2aEZDOTZBQ1B3Z0xCVGN0QzdsNnhfU09CWUtOWkNOam10VEE2cHBDNkc5Q1otd1NWMDY3TFQ4LUFTcGhSNWNBY09XNENnMzNvc1VGZks1bHRyWVpQOWZRQ3hYSjNOc1VaN0pFWXp3dzEtLXBTSXdGTWlPMGhjMXBTbzFYenNZS3NuRks2UGVqbTZWSkRTekUxeGEyRnV6TGliVVBlYm1Zdw?oc=5",
-      "summary": "新聞驚句－會「AI」一定賺大錢&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-04T20:10:00+00:00"
-    },
-    {
-      "title": "台股大跌…金管會、證交所、櫃買齊信心喊話 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQM1FiYTBDcEYtWHcyc0llQXFucGVucHdVanVSNzNQX1FNR2JCZTVsOWZzQXNwSUd3TmpJbXd2WFp3RDdmTlB2WmZ2bHhGRXJTaHpTNjVZSFlzQ3d4bXZ5cGh6Y0FDZXR6OWFHeG1RNkV1ZlBYWGFFVV93cG91eF8zSWtJYmhhWjFCenVOTElfb2dZS2dBYkc4QlhvX2UwTVJreWU3TjVFaHNvNVl4OHdhQnZBd0R3S0Q4UXQ1MldyOFV4Rkc2UjMzeUJxSkZGTXlqQ25Ld2VUM3phNHptM2RTcGNDMXhsRjQzOGlTeXNFOFRHNG0xWXNONmZuRWVaZnNucHItQVhhSG1kdjRJSlBBdG1WUVl0T2wwZEluN1Nqc1Vab1JUTWJwSkdBRQ?oc=5",
-      "summary": "台股大跌…金管會、證交所、櫃買齊信心喊話&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-04T20:10:00+00:00"
-    },
-    {
-      "title": "軟體商 Palantir 重獲華爾街青睞 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Cc0lwM3BobEpreng5RUl6YlIxU0dqQUVrNDNUYVRVeTAtTVktWngzaC1nVDZzelE3UlV1LW1xWGxTZmRjaU9URm93OVNQaC1qVDFjTDBhek84V1pC0gFiQVVfeXFMTzZPT0RVSlBoN3dpTlVPTTE5M2RsUTkwaVZrYXk2c0dJeFRlOWxtUzgxb3ZkVmJ2bHBQblM5ZmpLSWtUT2J3T1J6MGM2OU5qV1l6dGtoZW1sNjVFZzZjdEJHTkE?oc=5",
-      "summary": "軟體商 Palantir 重獲華爾街青睞&nbsp;&nbsp;經濟日報",
-      "dt_utc": "2026-03-04T19:53:32+00:00"
-    },
-    {
-      "title": "台股商品伺機撿便宜 歷史經驗大跌千點後九成會漲 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1RUklJTklOTUpYOF9ZbEljYWVSYXl3bWV4NDZQczRmYkl6cHpHLTdxcHR4VWNzSVRYTkRQZFVnejJqX19XenBKV2t3c29uRDh2Rk5J0gFYQVVfeXFMUHVWWnJIYWI1dzl5ZkVfY0huTzNVdFdVS0JTWDlnc1VxM24wXzBtUjlfdkZBMk9YZFFkOE9iVExXX3p0LU5HTUlldW5fend2cGc1dXNrTFcxdQ?oc=5",
-      "summary": "台股商品伺機撿便宜 歷史經驗大跌千點後九成會漲&nbsp;&nbsp;聯合新聞網",
-      "dt_utc": "2026-03-04T19:42:55+00:00"
-    },
-    {
-      "title": "股市VIP - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE1GbEQ1N3dJeFVPd004VmJEN3VWN24zemNSS2dPQ2RYWnY2N2dVN0xfcEIwVFJKdmZ1TFJVUGQ3MG0?oc=5",
-      "summary": "股市VIP&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-04T19:17:35+00:00"
-    },
-    {
-      "title": "Adira Finance 2025 年淨利達 1.5 兆印尼盾 - citytimes.tw",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOSnloWXoxUkh3WUNCcHhsSWw2OElpbElvUFo1WmR0Z1NPMXlFTUhZSDdFM3k5aVVydWdnZXMwSkZHb0J3YTN6MzhaaVBrRGZZOGt1N1Vobk51OFJCWXB3TkxRWmxkN3FXdldOUGFCNW0xMWVwZmdCNGJoMjYzY1JLTnM4VUdSaEJmSEFUb2pFTlZHWDhxZ1dRVWw4Q2hBOTdDZGVFa2EwdER1cTMzZW83UW9tSlNCdDJOODRrVWpudVhvUjR1VnJXd0hHWldMSDJjWlBrV1lUNHl1YXQx?oc=5",
-      "summary": "Adira Finance 2025 年淨利達 1.5 兆印尼盾&nbsp;&nbsp;citytimes.tw",
-      "dt_utc": "2026-03-04T19:04:42+00:00"
-    },
-    {
-      "title": "【即時新聞】宣佈配息降至0.06美元！Horizon Technology Finance併購案雖延後但債務收益率仍逾14% - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE84QVV2YVZHakc5b20wM1ZvVTZzMDlLdldQXzBWeFBXVVdPTHltWnZaT1JNVUh5cFhBWURYRnY2cjQxSHhuZV9aNDNZZDMyY3A5ZXJVbWhOZHJBcVZncjFRWDdMQ0dWazA?oc=5",
-      "summary": "【即時新聞】宣佈配息降至0.06美元！Horizon Technology Finance併購案雖延後但債務收益率仍逾14%&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-04T18:30:06+00:00"
-    },
-    {
-      "title": "【即時新聞】宣佈配息降至0.06美元！Horizon Technology Finance併購案雖延後但債務收益率仍逾14% - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPaFVDWlpGV2hQUHYyNlFkdk50MVIyN2U4YWE3Y0FTLVpuY2NyMl9laWRpaWF1SDc0bXF5TjRqbmZOY3l2MFpDSjVoVmRQa1N2bXAtOVJaUGNFVXpLM2x2MjI2UkZIZ201UFFiSlJ5VkwzT1dWNmZVMGxhcHZVNU81ZDltLUhfOWYyLUVNZUQ2Tko?oc=5",
-      "summary": "【即時新聞】宣佈配息降至0.06美元！Horizon Technology Finance併購案雖延後但債務收益率仍逾14%&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:30:05+00:00"
-    },
-    {
-      "title": "【即時新聞】Horizon Technology Finance 財報揭露配息調整與合併延遲，債務收益率仍維持高檔 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbzFwMnZXQzBSbjMyNkdjUlpVOExMY3RxNmtYbkVOcXdXc2xDdVJ6VGpjUjhWdUlGX00zMTlvQ2hyaE83NWFMZC1lTFRBUmRxeDB5Y0FnQ1A3ZXR4ZTFGV0xfdkNpVzRxbGQ4M1oyU19OdW1GUW5ZOTNORHlfSFhzVmtHTkQwbGNsdHNrdGxiNFc?oc=5",
-      "summary": "【即時新聞】Horizon Technology Finance 財報揭露配息調整與合併延遲，債務收益率仍維持高檔&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:28:40+00:00"
-    },
-    {
-      "title": "【即時新聞】淨投資收益不如預期，Horizon Technology Finance財報失利股價下挫逾4% - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPOHhOd0dlRXBHSUFobTN1SWJnUi00ckRFZzFsWm1sa18wLXNRbHZYSW90YUdwajdfZWRtNk1LSXozRHV1Tm05SVMwbXVyT3pNdktVX2dyVzJVNUpDaUVOYW1LZnczZ3c4QW1XZnV2dEl0TDZaRzZFaFpNRUg4bS1qTWllMEVxSkk3ZnIyVDdteks?oc=5",
-      "summary": "【即時新聞】淨投資收益不如預期，Horizon Technology Finance財報失利股價下挫逾4%&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:27:05+00:00"
-    },
-    {
-      "title": "【即時新聞】日月光投控失守19美元！爆量激增23%跌逾2% | CMoney投資網誌 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPTWs0OGRDVzJtRWJpZ0pkTDAtbFViTnFVUnFxVUU0M1owRTFoYjRNWGlBTEJ1aXFoclBMSlktOHNWS19OWkMtWlU0eUFZcmF5S0QyeklOZnZETVlDUU9KWXlQLTRJVmx4c0QzNVhsWjZTVVJnQVBqbEw5cHI1SGFRdzlwbnhNeGF5cHROX3ZBT2Q?oc=5",
-      "summary": "【即時新聞】日月光投控失守19美元！爆量激增23%跌逾2% | CMoney投資網誌&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:25:40+00:00"
-    },
-    {
-      "title": "【即時新聞】Horizon Technology Finance即將公布財報，市場預期營收年增8.9%每股盈餘0.29美元 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPUzZya3hlSG50M01idTVtbDMtNjlnbnVvNklnbFBwN3N1R1BrbU1Fc3BRM3hXMjZvZmlZbXJLT3ZabUxpalkwa19aRDBIZHJCa29UMG0wX2RqeFRRb3Ztb2tqaUxnUncxVUtoVGtwTFdjaU10c2tTcXlZMTlKYVI5Z1lxUW12RmNMY0lGTUlrUHk?oc=5",
-      "summary": "【即時新聞】Horizon Technology Finance即將公布財報，市場預期營收年增8.9%每股盈餘0.29美元&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:24:10+00:00"
-    },
-    {
-      "title": "【即時新聞】Horizon Technology Finance財報前瞻：Q4營收估年增8.9%且EPS測0.29美元 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSk5yZVBQTTRnTjBleWltSDhkMXlBTHFXWnpySDZYU2FIaFIyeEdZX2ZRSGJwVFZsQUdpajRrSlZrdzVOeGJjOXAwQ1FoRkNsN3FTS05sWVppaW1CWVVNT19sb29UYTlhSjJwOXJQM0U4aDRuMFVYLU4yR1lMNnMzX1ZKQ1VITmlUZGkwX0ZXRG8?oc=5",
-      "summary": "【即時新聞】Horizon Technology Finance財報前瞻：Q4營收估年增8.9%且EPS測0.29美元&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-04T18:22:47+00:00"
-    },
-    {
-      "title": "台股漲多震盪壓回 16檔中長期技術指標偏多股還有戲 | 市場焦點 | 證券 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE12Wkk4eGFISW13bFRRLU5XdjZESTRnNUphOUhGbHRMUFh1cFJ3UUhYbGQxYTZmamNTTWNoTDFuRG5LTzdtVXVycFFudnRTZmxGWVFVdGQxQURndw?oc=5",
-      "summary": "台股漲多震盪壓回 16檔中長期技術指標偏多股還有戲 | 市場焦點 | 證券&nbsp;&nbsp;經濟日報",
-      "dt_utc": "2026-03-04T16:14:03+00:00"
-    },
-    {
-      "title": "台股盤中暴跌1373點「史上第4慘」！分析師：還沒跌完 國安基金出手可激勵 - 威傳媒新聞",
-      "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5TRVVXdlZ0MmlNdWJhaF80LWZHY2owSXJvTUNSSlpvQnQxQUpBZTRIMy1vTXMtNTlnWDhiY0VtVHVGcmZVNDVYaWlR?oc=5",
-      "summary": "台股盤中暴跌1373點「史上第4慘」！分析師：還沒跌完 國安基金出手可激勵&nbsp;&nbsp;威傳媒新聞",
-      "dt_utc": "2026-03-04T16:03:00+00:00"
+      "title": "台股大跌該出場嗎？證交所：國際地緣政治風險雜音多 基本面仍穩健 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQaGFmZlBLbTNMVWdCWGxQUkw3NXZxMzR0Q0prRTRXVU44bHN1Z1BValBmZTdZRVBYdkN0WHBHcnJTNndsVWowY25DQmtwU3dIemZWdmJwaFMzZUttNGxDeS11RDAzUHBPUkFRUUhsemtaWUVOd0tsMUZFaHpHRG0wSzdXTjdzMF82M3dIUTJlRlVEVjVGZ3NpUkV1NWdvdElMX2szS3FfaVhYOUppYk1kNnNLMzZPLS1qUGlWMzhISzhGUk1QX3llbEl2OUlseWdleVBQVG9UeXQ0bi00cnQ4ZDFPQW9VZlhLelREU1NyTDlmM3BjQmp6dlFaQTI0b21mc2RkazVmcDdFcm9WWGZRZW9NSXFjUGRwSFFtX1c1YzZFZTF5Y0JhRm5DYzk1Q0FtOTNZMFYweUpLUEdhWkV5LUVZUW9pZ1g0T0tRQjNqWXNiLVc5bzg0MGE1TWo5cjBQVXlTR0tOOUlmMG1UZUcxMzg0NTB5VnZYQW1FcXRvS1FZVlI3NnNxbG53aWJCYzVWcW5TTnRXQkN2YzJ0Y2NVcy1tNEpkdzhlaWxxYTFudw?oc=5",
+      "summary": "台股大跌該出場嗎？證交所：國際地緣政治風險雜音多 基本面仍穩健&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-03-04T09:30:02+00:00"
     }
   ]
 }
