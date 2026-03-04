@@ -1,12 +1,17 @@
-name: Daily Finance Update (05:15 & 13:20 Taipei)
+name: Daily Finance Update (Smart Schedule)
 
 on:
   schedule:
-    # ☀️ 盤前快報：Taipei 05:15 = UTC 21:15 (前一天)
-    - cron: "15 21 * * *"
-    # 🌙 盤後分析：Taipei 13:20 = UTC 05:20 (當天下午)
-    - cron: "20 5 * * *"
-  workflow_dispatch:
+    # ☀️ 1. 盤前快報：台灣時間 週一至週五 05:15 (對應 UTC: 前一天 21:15)
+    - cron: "15 21 * * 0-4"
+    
+    # 🌙 2. 盤後快報：台灣時間 週一至週五 14:35 (對應 UTC: 當天 06:35)
+    - cron: "35 6 * * 1-5"
+    
+    # 🥂 3. 週末特刊：台灣時間 週六至週日 06:30 (對應 UTC: 前一天 22:30，確實等美股收盤)
+    - cron: "30 22 * * 5,6"
+    
+  workflow_dispatch: # 讓您可以隨時在 GitHub 網頁上手動點擊 "Run workflow" 測試
 
 permissions:
   contents: write
@@ -35,14 +40,13 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
-        # 🤖 這裡就是您的 AI 爬蟲大腦！
         run: python finance_news_agent.py
 
-      # 用官方套件無痛存檔，徹底解決紅燈衝突
+      # 官方套件無痛存檔，徹底解決紅燈衝突
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update daily data (Morning/Afternoon)"
+          commit_message: "Auto update daily data (Smart Schedule)"
 
       - name: Ping Streamlit to keep awake
         run: |
