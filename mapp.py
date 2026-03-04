@@ -5,11 +5,13 @@ import os
 import requests
 import pandas as pd
 from urllib.parse import urlparse
+from datetime import datetime, time
+import pytz
 
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光)
+# 2. 核心 CSS (動態方塊 + 籌碼高光) - 完全保留您的設計！
 st.markdown("""
 <style>
 :root{
@@ -97,43 +99,29 @@ def fetch_histock_tables():
         return None, None
 
 def render_combined_foreign_table(df_inst, df_fut):
-    """將現貨與期貨整合成單一外資專屬表格，只留三天，最新一天高光處理"""
     if df_inst is None or df_fut is None: return ""
-    
     html = '<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div>'
     html += '<table class="combined-table">'
     html += '<tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
-    
     max_rows = min(3, len(df_inst), len(df_fut))
     for i in range(max_rows):
         date_str = df_inst.iloc[i].get('日期', '')
         spot_val = df_inst.iloc[i].get('外資', '')
         fut_val = df_fut.iloc[i].get('外資', '')
-        
-        # 決定顏色：台股慣例 負數(賣)=綠, 正數(買)=紅
         def get_color(val_str):
             try:
                 num = float(str(val_str).replace(',', ''))
                 return "#16a34a" if num < 0 else "#ef4444"
             except: return "#0f172a"
-            
         spot_color = get_color(spot_val)
         fut_color = get_color(fut_val)
-        
-        # 方案三：第一天(最新一天) 漸層高光打底，絕對聚焦
         if i == 0:
             row_style = "font-weight: 900; font-size: 15px; background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);"
             date_weight = "font-weight: 900; color: #b45309;"
         else:
             row_style = "font-size: 13px;"
             date_weight = "color: #64748b;"
-            
-        html += f'<tr style="{row_style}">'
-        html += f'<td style="{date_weight}">{date_str}</td>'
-        html += f'<td style="color: {spot_color};">{spot_val}</td>'
-        html += f'<td style="color: {fut_color};">{fut_val}</td>'
-        html += '</tr>'
-        
+        html += f'<tr style="{row_style}"><td style="{date_weight}">{date_str}</td><td style="color: {spot_color};">{spot_val}</td><td style="color: {fut_color};">{fut_val}</td></tr>'
     html += '</table>'
     return html
 
@@ -167,23 +155,52 @@ st.markdown(f'''
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
 
-# 6. 🌍 全球市場快照 (3x2 壓縮版 + 動態變色方塊)
-st.markdown('<div style="font-size:16px; font-weight:900; margin:5px 0 8px 0; color:#1e293b;">🌍 全球市場快照</div>', unsafe_allow_html=True)
-targets = [("EWT", "MSCI 台灣"), ("^SOX", "費半"), ("YM=F", "道瓊期"), ("NQ=F", "納指期"), ("TSM", "台積電-adr"), ("NVDA", "NVIDIA")]
-grid_html = '<div class="m-grid">'
-for sym, name in targets:
-    q = fetch_yf_data(sym, name)
-    if q and q.get("ok"):
-        pct = q["pct"]
-        # 判斷動態背景色
-        bg_cls = "up-bg" if pct > 0 else "down-bg" if pct < 0 else ""
-        cls = "up" if pct > 0 else "down" if pct < 0 else ""
-        sign = "+" if pct > 0 else ""
-        grid_html += f'<div class="m-tile {bg_cls}"><div class="m-name">{q["name"]}</div><div class="m-price">{round(q["price"], 1)}</div><div class="m-pct {cls}">{sign}{round(pct, 2)}%</div></div>'
-    else:
-        grid_html += f'<div class="m-tile"><div class="m-name">{name}</div><div class="m-price">-</div></div>'
-grid_html += '</div>'
-st.markdown(grid_html, unsafe_allow_html=True)
+# ==================================================
+# 6. 日夜自動切換市場快照 (完美套用您的動態變色 CSS)
+# ==================================================
+tw_tz = pytz.timezone('Asia/Taipei')
+current_tw_time = datetime.now(tw_tz).time()
+
+# 判定時間：21:30 ~ 09:00 為美股時間
+time_2130 = time(21, 30)
+time_0900 = time(9, 0)
+is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
+
+# 將您原本的網格產生邏輯包裝成函數，方便呼叫
+def render_market_grid(title, targets_list):
+    html = f'<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div>'
+    html += '<div class="m-grid">'
+    for sym, name in targets_list:
+        q = fetch_yf_data(sym, name)
+        if q and q.get("ok"):
+            pct = q["pct"]
+            bg_cls = "up-bg" if pct > 0 else "down-bg" if pct < 0 else ""
+            cls = "up" if pct > 0 else "down" if pct < 0 else ""
+            sign = "+" if pct > 0 else ""
+            html += f'<div class="m-tile {bg_cls}"><div class="m-name">{q["name"]}</div><div class="m-price">{round(q["price"], 1)}</div><div class="m-pct {cls}">{sign}{round(pct, 2)}%</div></div>'
+        else:
+            html += f'<div class="m-tile"><div class="m-name">{name}</div><div class="m-price">-</div><div class="m-pct">-</div></div>'
+    html += '</div>'
+    return html
+
+# 依據時間動態渲染
+if is_us_market:
+    us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊期"), ("^IXIC", "納指期"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
+    st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
+else:
+    # 權值股陣容 (您要求的：替換成 0050)
+    top6_targets = [("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2382.TW", "廣達"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
+    st.markdown(render_market_grid("👑 護國神山：核心權值 (含0050)", top6_targets), unsafe_allow_html=True)
+    
+    # 爆量股陣容 (優先讀取 hot_stocks.json，若無則用備用)
+    try:
+        with open("hot_stocks.json", "r", encoding="utf-8") as f:
+            vol_pool = json.load(f).get("top_volume_pool", {})
+            vol_targets = [(k, v) for k, v in vol_pool.items()][:6]
+    except:
+        vol_targets = [("3231.TW", "緯創"), ("2603.TW", "長榮"), ("2317.TW", "鴻海"), ("2356.TW", "英業達"), ("2409.TW", "友達"), ("3481.TW", "群創")]
+    
+    st.markdown(render_market_grid("🔥 盤中實戰：市場人氣爆量", vol_targets), unsafe_allow_html=True)
 
 # 7. 🏦 整合版外資籌碼表 (深藍標題 + 第一行漸層高光)
 df_inst, df_fut = fetch_histock_tables()
