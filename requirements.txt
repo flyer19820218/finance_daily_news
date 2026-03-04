@@ -7,3 +7,4 @@ matplotlib
 yfinance
 lxml
 beautifulsoup4
+pytz
