@@ -125,7 +125,9 @@ def render_combined_foreign_table(df_inst, df_fut):
     html += '</table>'
     return html
 
-# 4. JSON 讀取
+# ==========================================
+# 4. JSON 讀取與三層式過濾 (手機版最佳化)
+# ==========================================
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
@@ -138,7 +140,33 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
-            pick = st.selectbox("選擇日期", hist_files, index=0, format_func=lambda x: x.replace(".json", ""))
+            # 1. 抓取年份
+            years = []
+            for f in hist_files:
+                y = f[:4]
+                if y not in years: years.append(y)
+            
+            # 手機版佈局：年份與月份並排一行
+            col_y, col_m = st.columns(2)
+            with col_y:
+                selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
+            
+            # 2. 抓取月份
+            months = []
+            for f in hist_files:
+                if f.startswith(selected_year):
+                    m = f[5:7]
+                    if m not in months: months.append(m)
+            
+            with col_m:
+                selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
+            
+            # 3. 獨立全寬選取特定報告，避免手指點不到
+            prefix = f"{selected_year}-{selected_month}"
+            filtered_hist = [f for f in hist_files if f.startswith(prefix)]
+            
+            pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
+            
             with open(os.path.join(HISTORY_DIR, pick), "r", encoding="utf-8") as f: data = json.load(f)
         else:
             st.warning("尚無歷史資料"); st.stop()
