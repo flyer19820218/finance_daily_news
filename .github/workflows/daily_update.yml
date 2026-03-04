@@ -1,9 +1,11 @@
-name: Daily Finance Update (05:15 Taipei)
+name: Daily Finance Update (05:15 & 13:45 Taipei)
 
 on:
   schedule:
-    # Taipei 05:15 = UTC 21:30 (前一天)
+    # ☀️ 盤前快報：Taipei 05:15 = UTC 21:15 (前一天)
     - cron: "15 21 * * *"
+    # 🌙 盤後分析：Taipei 13:20 = UTC 05:20 (當天下午)
+    - cron: "20 5 * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,13 +35,14 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
+        # 🤖 這裡就是您的 AI 爬蟲大腦！
         run: python finance_news_agent.py
 
       # 用官方套件無痛存檔，徹底解決紅燈衝突
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update daily data"
+          commit_message: "Auto update daily data (Morning/Afternoon)"
 
       - name: Ping Streamlit to keep awake
         run: |
