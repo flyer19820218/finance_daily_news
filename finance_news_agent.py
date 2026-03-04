@@ -127,7 +127,7 @@ def ai_analyze(news, period_str):
 """
     
     genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     
     try:
         return model.generate_content(prompt).text
