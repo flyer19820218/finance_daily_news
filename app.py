@@ -447,7 +447,6 @@ def render_table_html(df, title, icon="📊"):
     return html
 
 # === 頁面邏輯 ===
-# --- JSON 讀取防呆 ---
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -458,7 +457,42 @@ else:
     if not hist:
         st.warning("尚無歷史資料")
         st.stop()
-    pick = st.selectbox("選擇日期", hist, index=0, format_func=lambda x: x.replace(".json", ""))
+        
+    # 🌟 邏輯大師專屬：三層式完美過濾系統 (年 -> 月 -> 日)
+    # 1. 萃取出所有出現過的「年份」(例如 '2026')
+    years = []
+    for f in hist:
+        y = f[:4] # 取檔名前 4 個字 (YYYY)
+        if y not in years:
+            years.append(y)
+            
+    # 建立三個整齊的欄位
+    col_y, col_m, col_d = st.columns(3)
+    
+    with col_y:
+        # 第一層：選年份
+        selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
+        
+    # 2. 根據選定的年份，過濾出該年有的「月份」(例如 '03')
+    months = []
+    for f in hist:
+        if f.startswith(selected_year):
+            m = f[5:7] # 取月份 (MM)
+            if m not in months:
+                months.append(m)
+                
+    with col_m:
+        # 第二層：選月份
+        selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
+        
+    # 3. 根據選定的「年與月」，過濾出具體的報告
+    prefix = f"{selected_year}-{selected_month}"
+    filtered_hist = [f for f in hist if f.startswith(prefix)]
+    
+    with col_d:
+        # 第三層：選具體日期與盤別
+        pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
+        
     data = load_json(os.path.join(HISTORY_DIR, pick))
 
 if not data:
