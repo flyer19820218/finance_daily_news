@@ -291,12 +291,6 @@ def list_history():
     files.sort(reverse=True)
     return files
 
-def _safe_float(x):
-    try:
-        if x is None: return None
-        return float(x)
-    except: return None
-
 @st.cache_data(ttl=60)
 def fetch_yf_data(symbol, name):
     try:
@@ -446,7 +440,9 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
-# === 頁面邏輯 ===
+# ==========================================
+# 頁面邏輯：三層式完美過濾系統 (電腦版專屬)
+# ==========================================
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -458,42 +454,38 @@ else:
         st.warning("尚無歷史資料")
         st.stop()
         
-    # 🌟 邏輯大師專屬：三層式完美過濾系統 (年 -> 月 -> 日)
-    # 1. 萃取出所有出現過的「年份」(例如 '2026')
+    # 1. 萃取出所有出現過的「年份」
     years = []
     for f in hist:
-        y = f[:4] # 取檔名前 4 個字 (YYYY)
-        if y not in years:
-            years.append(y)
+        y = f[:4] 
+        if y not in years: years.append(y)
             
-    # 建立三個整齊的欄位
+    # 電腦版寬螢幕：三個整齊的欄位並排
     col_y, col_m, col_d = st.columns(3)
     
     with col_y:
-        # 第一層：選年份
         selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
         
-    # 2. 根據選定的年份，過濾出該年有的「月份」(例如 '03')
+    # 2. 過濾月份
     months = []
     for f in hist:
         if f.startswith(selected_year):
-            m = f[5:7] # 取月份 (MM)
-            if m not in months:
-                months.append(m)
+            m = f[5:7] 
+            if m not in months: months.append(m)
                 
     with col_m:
-        # 第二層：選月份
         selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
         
-    # 3. 根據選定的「年與月」，過濾出具體的報告
+    # 3. 過濾出具體的報告
     prefix = f"{selected_year}-{selected_month}"
     filtered_hist = [f for f in hist if f.startswith(prefix)]
     
     with col_d:
-        # 第三層：選具體日期與盤別
-        pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
-        
-    data = load_json(os.path.join(HISTORY_DIR, pick))
+        if filtered_hist:
+            pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
+            data = load_json(os.path.join(HISTORY_DIR, pick))
+        else:
+            st.warning("該月份尚未產生報告。"); st.stop()
 
 if not data:
     st.warning("尚未產生報告")
@@ -536,7 +528,7 @@ def render_market_section(title, targets_list):
     st.markdown(f'<div class="section-title">🌍 {title}</div>', unsafe_allow_html=True)
     st.markdown('<div class="cards">', unsafe_allow_html=True)
     
-    # 電腦版網頁通常排版較寬，這裡設定一行排 6 個
+    # 電腦版網頁排版較寬，一行排 6 個動態方塊
     cols = st.columns(6)
     for i, (sym, name) in enumerate(targets_list):
         q = fetch_yf_data(sym, name)
@@ -554,7 +546,7 @@ else:
     top6_targets = [("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2382.TW", "廣達"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
     render_market_section("護國神山：核心權值 (含0050)", top6_targets)
     
-    # 嘗試讀取爆量熱門股
+    # 讀取當日爆量熱門股
     try:
         with open("hot_stocks.json", "r", encoding="utf-8") as f:
             vol_pool = json.load(f).get("top_volume_pool", {})
