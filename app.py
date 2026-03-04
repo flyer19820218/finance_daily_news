@@ -4,7 +4,8 @@ import math
 import re
 import requests
 from urllib.parse import urlparse
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, time
+import pytz
 import pandas as pd
 import streamlit as st
 import yfinance as yf
@@ -119,6 +120,7 @@ a:hover{ text-decoration:underline; }
   border-radius: 18px;
   padding: 14px;
   box-shadow: var(--shadow);
+  margin-bottom: 20px;
 }
 
 /* 動態變色方塊 */
@@ -289,49 +291,6 @@ def list_history():
     files.sort(reverse=True)
     return files
 
-@st.cache_data(ttl=60)
-def fetch_ftx_wantgoo():
-    url = "https://www.wantgoo.com/global/indices/ftx"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://www.wantgoo.com/"
-    }
-    try:
-        res = requests.get(url, headers=headers, timeout=5)
-        p = re.search(r'"price":\s*"?([0-9,.]+)"?', res.text)
-        c = re.search(r'"change":\s*"?([0-9,.-]+)"?', res.text)
-        cp = re.search(r'"changePercent":\s*"?([0-9,.-]+)"?', res.text)
-        if p:
-            price = float(p.group(1).replace(',', ''))
-            change = float(c.group(1)) if c else 0.0
-            pct = float(cp.group(1).replace('%', '')) if cp else 0.0
-            return {"ok": True, "price": price, "change": change, "pct": pct, "is_fallback": False}
-    except:
-        pass
-
-    try:
-        t = yf.Ticker("EWT")
-        fi = getattr(t, "fast_info", None)
-        if fi:
-            last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
-            prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
-            if last is not None and prev is not None:
-                change = last - prev
-                pct = (change / prev * 100) if prev != 0 else 0.0
-                return {"ok": True, "price": last, "change": change, "pct": pct, "is_fallback": True}
-    except:
-        pass
-
-    return {"ok": False}
-
-SYMBOLS_OTHERS = [
-    ("費半（SOX）", ["^SOX"]),
-    ("道瓊期（YM）", ["YM=F"]),
-    ("納指期（NQ）", ["NQ=F"]),
-    ("台積電 ADR（TSM）", ["TSM"]),
-    ("NVIDIA（NVDA）", ["NVDA"]),
-]
-
 def _safe_float(x):
     try:
         if x is None: return None
@@ -339,27 +298,17 @@ def _safe_float(x):
     except: return None
 
 @st.cache_data(ttl=60)
-def yf_quote_any(tickers):
-    for tk in tickers:
-        try:
-            t = yf.Ticker(tk)
-            fi = getattr(t, "fast_info", None)
-            last = None
-            prev = None
-            if fi:
-                last = _safe_float(fi.get("last_price") or fi.get("lastPrice"))
-                prev = _safe_float(fi.get("previous_close") or fi.get("previousClose"))
-            if last is None:
-                hist = t.history(period="2d", interval="1d")
-                if hist is not None and len(hist) >= 1:
-                    last = _safe_float(hist["Close"].iloc[-1])
-                    if len(hist) >= 2: prev = _safe_float(hist["Close"].iloc[-2])
-            if last is not None:
-                ch = (last - prev) if prev is not None else None
-                pct = (ch / prev * 100) if (ch is not None and prev not in (None, 0)) else None
-                return {"ok": True, "price": last, "change": ch, "pct": pct}
-        except: continue
-    return {"ok": False}
+def fetch_yf_data(symbol, name):
+    try:
+        t = yf.Ticker(symbol)
+        info = getattr(t, "fast_info", None)
+        if info:
+            last = getattr(info, "last_price", getattr(info, "lastPrice", None))
+            prev = getattr(info, "previous_close", getattr(info, "previousClose", None))
+            if last and prev:
+                return {"name": name, "ok": True, "price": last, "change": last-prev, "pct": ((last-prev)/prev)*100}
+    except: pass
+    return {"name": name, "ok": False}
 
 def render_tile(name, q):
     render_ok = q and q.get("ok") and q.get("price") is not None
@@ -372,11 +321,9 @@ def render_tile(name, q):
     bg_cls = "up-bg" if ch > 0 else "down-bg" if ch < 0 else ""
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
-    display_name = "MSCI 台灣 (EWT 備援)" if q.get("is_fallback") else name
-
     return f"""
     <div class="tile {bg_cls}">
-      <div class="name">{display_name}</div>
+      <div class="name">{name}</div>
       <div class="price">{round(float(price), 2)}</div>
       <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
     </div>
@@ -500,6 +447,7 @@ def render_table_html(df, title, icon="📊"):
     return html
 
 # === 頁面邏輯 ===
+# --- JSON 讀取防呆 ---
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 
 data = None
@@ -517,6 +465,7 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
+# --- 頂部區域 ---
 header_col1, header_col2 = st.columns([1.5, 0.8], gap="large")
 
 with header_col1:
@@ -538,32 +487,49 @@ with header_col2:
 
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True)
 
-st.markdown('<div class="section-title">🌍 全球市場快照</div>', unsafe_allow_html=True)
+# ==================================================
+# 🌟 日夜自動切換市場快照 (套用網頁版超美卡片)
+# ==================================================
+tw_tz = pytz.timezone('Asia/Taipei')
+current_tw_time = datetime.now(tw_tz).time()
 
-filled = {}
-filled["富台指（FTX）"] = fetch_ftx_wantgoo()
-for name, tickers in SYMBOLS_OTHERS:
-    filled[name] = yf_quote_any(tuple(tickers))
+# 判定時間：21:30 ~ 09:00 為美股時間
+time_2130 = time(21, 30)
+time_0900 = time(9, 0)
+is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
 
-DISPLAY_ORDER = [("富台指（FTX）", None)] + SYMBOLS_OTHERS
-
-st.markdown('<div class="cards">', unsafe_allow_html=True)
-is_mobile = st.toggle("手機版排版（兩欄）", value=False)
-
-if is_mobile:
-    col1, col2 = st.columns(2)
-    for i, (name, _) in enumerate(DISPLAY_ORDER):
-        html = render_tile(name, filled.get(name))
-        with (col1 if i % 2 == 0 else col2):
+def render_market_section(title, targets_list):
+    st.markdown(f'<div class="section-title">🌍 {title}</div>', unsafe_allow_html=True)
+    st.markdown('<div class="cards">', unsafe_allow_html=True)
+    
+    # 電腦版網頁通常排版較寬，這裡設定一行排 6 個
+    cols = st.columns(6)
+    for i, (sym, name) in enumerate(targets_list):
+        q = fetch_yf_data(sym, name)
+        html = render_tile(name, q)
+        with cols[i % 6]:
             st.markdown(html, unsafe_allow_html=True)
+            
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# 依據時間動態渲染 (無縫接軌您的設計)
+if is_us_market:
+    us_targets = [("TSM", "台積電-adr"), ("YM=F", "道瓊期"), ("NQ=F", "納指期"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
+    render_market_section("全球市場快照 (美股時段)", us_targets)
 else:
-    cols = st.columns(len(DISPLAY_ORDER))
-    for i, (name, _) in enumerate(DISPLAY_ORDER):
-        html = render_tile(name, filled.get(name))
-        with cols[i]:
-            st.markdown(html, unsafe_allow_html=True)
+    top6_targets = [("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2382.TW", "廣達"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
+    render_market_section("護國神山：核心權值 (含0050)", top6_targets)
+    
+    # 嘗試讀取爆量熱門股
+    try:
+        with open("hot_stocks.json", "r", encoding="utf-8") as f:
+            vol_pool = json.load(f).get("top_volume_pool", {})
+            vol_targets = [(k, v) for k, v in vol_pool.items()][:6]
+    except:
+        vol_targets = [("3231.TW", "緯創"), ("2603.TW", "長榮"), ("2317.TW", "鴻海"), ("2356.TW", "英業達"), ("2409.TW", "友達"), ("3481.TW", "群創")]
+    
+    render_market_section("盤中實戰：市場人氣爆量", vol_targets)
 
-st.markdown("</div>", unsafe_allow_html=True)
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # ====== 三大法人與期貨未平倉區塊 ======
@@ -586,7 +552,6 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 left, right = st.columns([1.35, 0.65], gap="large")
 with left:
-    # 這裡加上了跟手機版一樣的機器人符號，並且換成了剛寫好的 .panel-blue 樣式！
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     st.markdown('<div class="panel-blue">', unsafe_allow_html=True)
     st.markdown(data.get("report", ""))
