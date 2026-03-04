@@ -11,7 +11,7 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光) - 完全保留您的設計！
+# 2. 核心 CSS (動態方塊 + 籌碼高光)
 st.markdown("""
 <style>
 :root{
@@ -165,9 +165,11 @@ else:
             prefix = f"{selected_year}-{selected_month}"
             filtered_hist = [f for f in hist_files if f.startswith(prefix)]
             
-            pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
-            
-            with open(os.path.join(HISTORY_DIR, pick), "r", encoding="utf-8") as f: data = json.load(f)
+            if filtered_hist:
+                pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
+                with open(os.path.join(HISTORY_DIR, pick), "r", encoding="utf-8") as f: data = json.load(f)
+            else:
+                st.warning("該月份尚未產生報告。"); st.stop()
         else:
             st.warning("尚無歷史資料"); st.stop()
     else:
@@ -184,7 +186,7 @@ st.markdown(f'''
 ''', unsafe_allow_html=True)
 
 # ==================================================
-# 6. 日夜自動切換市場快照 (完美套用您的動態變色 CSS)
+# 6. 日夜自動切換市場快照
 # ==================================================
 tw_tz = pytz.timezone('Asia/Taipei')
 current_tw_time = datetime.now(tw_tz).time()
@@ -216,7 +218,7 @@ if is_us_market:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊期"), ("^IXIC", "納指期"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
 else:
-    # 權值股陣容 (您要求的：替換成 0050)
+    # 權值股陣容
     top6_targets = [("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2382.TW", "廣達"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
     st.markdown(render_market_grid("👑 護國神山：核心權值 (含0050)", top6_targets), unsafe_allow_html=True)
     
@@ -230,7 +232,7 @@ else:
     
     st.markdown(render_market_grid("🔥 盤中實戰：市場人氣爆量", vol_targets), unsafe_allow_html=True)
 
-# 7. 🏦 整合版外資籌碼表 (深藍標題 + 第一行漸層高光)
+# 7. 🏦 整合版外資籌碼表
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
