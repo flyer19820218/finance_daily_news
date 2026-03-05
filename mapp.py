@@ -215,11 +215,11 @@ def render_market_grid(title, targets_list):
 
 # 依據時間動態渲染
 if is_us_market:
-    us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊期"), ("^IXIC", "納指期"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
+    us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
 else:
     # 權值股陣容
-    top6_targets = [("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2382.TW", "廣達"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
+    top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
     st.markdown(render_market_grid("👑 護國神山：核心權值 (含0050)", top6_targets), unsafe_allow_html=True)
     
     # 爆量股陣容 (優先讀取 hot_stocks.json，若無則用備用)
