@@ -1,3 +1,4 @@
+import yfinance as yf
 import os
 import re
 import json
@@ -77,7 +78,7 @@ def update_hot_stocks():
     except Exception as e:
         print(f"⚠️ 抓取爆量名單失敗: {e}")
 
-# === 📢 補回：Telegram 自動推播功能 ===
+# === 📢 Telegram 自動推播功能 ===
 def send_telegram_message(text):
     token = os.environ.get("TELEGRAM_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
@@ -90,7 +91,7 @@ def send_telegram_message(text):
     payload = {
         "chat_id": chat_id,
         "text": text,
-        "parse_mode": "Markdown" # 讓 AI 的粗體字能正確顯示
+        "parse_mode": "Markdown"
     }
     
     try:
@@ -98,9 +99,51 @@ def send_telegram_message(text):
         if res.status_code == 200:
             print("✅ Telegram 推播成功！")
         else:
-            print(f"⚠️ Telegram 推播失敗，狀態碼: {res.status_code}, 錯誤訊息: {res.text}")
+            print(f"⚠️ Telegram 推播失敗: {res.text}")
     except Exception as e:
         print(f"⚠️ Telegram 請求發生錯誤: {e}")
+
+# === 📈 新增：真實市場指標抓取 (VIX, 匯率, 融資水位) ===
+def get_market_indicators():
+    indicators = []
+    
+    # 1. 抓取 VIX
+    try:
+        vix_data = yf.Ticker("^VIX").history(period="1d")
+        vix_close = vix_data['Close'].iloc[-1]
+        indicators.append(f"👉 VIX 恐慌指數收盤：{vix_close:.2f}")
+    except:
+        indicators.append("👉 VIX 恐慌指數：暫無數據")
+
+    # 2. 抓取 美元/台幣 匯率 (防波堤)
+    try:
+        twd_data = yf.Ticker("TWD=X").history(period="1d")
+        twd_close = twd_data['Close'].iloc[-1]
+        indicators.append(f"👉 美元/台幣匯率：{twd_close:.2f}")
+    except:
+        pass
+
+    # 3. 抓取 證交所融資餘額 (籌碼水位)
+    try:
+        url = "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN"
+        res = requests.get(url, timeout=10)
+        data = res.json()
+        margin_items = []
+        for d in data:
+            item_name = d.get('Item') or d.get('CreditType') or ''
+            if '融資' in item_name and '總計' not in item_name:
+                balance = d.get('TodayBalance') or d.get('Balance') or '未知'
+                margin_items.append(f"餘額 {balance} 單位")
+                break # 抓到第一筆大盤融資即可
+                
+        if margin_items:
+            indicators.append(f"👉 證交所最新融資狀態：{margin_items[0]}")
+        else:
+            indicators.append("👉 證交所最新融資狀態：已公告，需留意籌碼變化")
+    except:
+        indicators.append("👉 證交所最新融資狀態：API 暫無數據")
+        
+    return "【當前真實市場指標】\n" + "\n".join(indicators)
 
 # === 🌟 核心 AI 大腦 (Gemini 2.5 Flash 定製版) ===
 def ai_analyze(news, period_str):
@@ -109,19 +152,22 @@ def ai_analyze(news, period_str):
         
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
     
-    # 這裡已經把「2035戰情室」拿掉，換成高級的「全球政經情報中心」
-# === 替換開始 ===
-    strategy_prompt = """
+    # 呼叫我們剛剛寫的函數，取得三大指標！
+    market_data_text = get_market_indicators()
+
+    strategy_prompt = f"""
     你是全球政經情報中心的資深戰略分析官。
     任務：偵蒐並分析全球地緣政治中的非典型波動與潛在市場衝擊。
+    
+    {market_data_text}
     
     【核心偵蒐邏輯】：
     1. 🛡️ 地緣政治 (Geopolitics)：重點掃描全球軍事對抗、外交摩擦、政經變局。
     2. ⚠️ 市場心理警示：納入重大傳聞或突發言論，評估其對市場避險情緒的衝擊。
-    3. 🌡️ 宏觀情緒解讀：請根據新聞事件推演市場恐慌程度與資金避險方向。直接給出您的專業定調（例如：避險需求升溫、恐慌情緒蔓延、風險偏好修復）。
+    3. 🌡️ 宏觀情緒與籌碼解讀：請結合我提供的【當前真實市場指標】(VIX、匯率、融資水位) 與新聞事件，推演市場恐慌程度與散戶籌碼壓力。直接給出您的專業定調（例如：避險需求升溫、融資斷頭壓力增加、風險偏好修復）。
     
     ⛔ 【絕對禁止事項】：
-    嚴禁在報告中寫出「素材中未提及 VIX」、「新聞未報導融資」等機械式廢話。請直接將事件轉化為對市場情緒的定性分析。
+    嚴禁在報告中寫出「素材中未提及 VIX」、「新聞未報導融資」等機械式廢話。我已經把真實數據提供給你了，請直接將新聞事件與這些數值轉化為對市場情緒的定性分析。
     """
 
     if period_str == "週末特刊-美股週收盤":
@@ -144,13 +190,12 @@ def ai_analyze(news, period_str):
 📊 全球局勢與市場情報中心 {datetime.now(TW_TZ).strftime("%Y-%m-%d")} ({period_str})
 
 🚩【全球局勢與地緣政治警示】
-📊【市場情緒與壓力測試】 (基於新聞事件，綜合評估避險需求與潛在恐慌壓力，切勿提及缺乏特定數據)
+📊【市場情緒與壓力測試】 (基於新聞事件與我提供的 VIX、匯率、融資真實數據，綜合評估避險需求與籌碼壓力)
 💰【台股戰略定調】
 💎【產業長線觀察】
 """
 
     genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
-    # 確保使用確定存在的 2.5 版本
     model = genai.GenerativeModel("gemini-2.5-flash")
     
     try:
@@ -186,7 +231,6 @@ def run_daily():
     with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # 🚀 在最後一步，呼叫 Telegram 推播發送 AI 報告！
     send_telegram_message(report_text)
 
 if __name__ == "__main__":
