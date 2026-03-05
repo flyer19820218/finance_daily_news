@@ -196,45 +196,60 @@ a:hover{ text-decoration:underline; }
   margin: 6px 0 10px 0;
 }
 
-/* 🌟 修正：恢復穩定的卡片 CSS 🌟 */
+/* 🌟 魔法：把重新整理按鈕變成「無框純文字」 🌟 */
+button[kind="primary"] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--muted) !important;
+    padding: 0 !important;
+    justify-content: flex-end !important; 
+}
+button[kind="primary"]:hover {
+    color: var(--link) !important;
+    background-color: transparent !important;
+    text-decoration: underline;
+}
+
+/* 🌟 財務自由卡片：修正「天」字溢出，達到 100% 完美 🌟 */
 .countdown-card {
-    width: 100%; /* 讓它自然填滿右側欄位，不會變形 */
+    max-width: 275px; /* 微調加寬 25px，把霸氣的「天」字完美包覆進來 */
+    margin-left: auto; /* 靠右貼齊 */
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 14px 16px;
+    padding: 20px 20px; /* 保持上下修長，左右給予舒適空間 */
     background-color: #ffffff;
     box-shadow: var(--shadow2);
-    margin-top: 8px; /* 跟上面的按鈕保持一點舒適距離 */
 }
 .card-date {
-    font-size: 11px;
+    font-size: 13px; /* 放大字體 */
     font-weight: bold;
     color: var(--muted);
-    margin-bottom: 6px;
+    margin-bottom: 10px; 
 }
 .card-main {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 10px; 
     white-space: nowrap;
 }
 .card-title {
-    font-size: 13px;
+    font-size: 15px; /* 放大字體 */
     font-weight: bold;
 }
 .card-days {
-    font-size: 18px;
+    font-size: 22px; /* 天數維持霸氣放大 */
     font-weight: 900;
+    margin-left: 8px;
     color: var(--text);
 }
 .card-progress-bar {
-    height: 5px;
+    height: 6px; 
     background-color: var(--border);
     border-radius: 3px;
     overflow: hidden;
-    margin: 8px 0 6px 0;
+    margin: 14px 0 10px 0; 
 }
 .card-progress-fill {
     height: 100%;
@@ -244,7 +259,7 @@ a:hover{ text-decoration:underline; }
 .card-progress-details {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 12px; 
     color: var(--muted);
 }
 
@@ -269,7 +284,7 @@ a:hover{ text-decoration:underline; }
   .price{ font-size: 20px; }
   .delta{ font-size: 12px; }
   .inline-row{ font-size: 12px; }
-  .countdown-card { margin-top: 16px; } 
+  .countdown-card { max-width: 100%; width: 100%; padding: 16px; margin-top: 10px; margin-left: 0; }
 }
 </style>
 """,
@@ -440,10 +455,22 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
-# === 頁面邏輯：模式選擇 ===
-st.markdown('<div class="section-title">📊 檢視模式</div>', unsafe_allow_html=True)
-mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
-st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
+# =======================================================
+# 🌟 【列1】頂部選單與按鈕
+# =======================================================
+top_c1, top_c2 = st.columns([5, 1]) 
+
+with top_c1:
+    st.markdown('<div class="section-title" style="margin-top: 0;">📊 檢視模式</div>', unsafe_allow_html=True)
+    mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
+
+with top_c2:
+    st.markdown('<div style="height: 38px;"></div>', unsafe_allow_html=True) 
+    if st.button("🔄 重新整理", type="primary", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
+
+st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
 
 # 根據模式讀取資料
 data = None
@@ -455,19 +482,15 @@ else:
         st.warning("尚無歷史資料")
         st.stop()
         
-    # 1. 萃取出所有出現過的「年份」
     years = []
     for f in hist:
         y = f[:4] 
         if y not in years: years.append(y)
             
-    # 電腦版寬螢幕：三個整齊的欄位並排
     col_y, col_m, col_d = st.columns(3)
-    
     with col_y:
         selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
         
-    # 2. 過濾月份
     months = []
     for f in hist:
         if f.startswith(selected_year):
@@ -477,7 +500,6 @@ else:
     with col_m:
         selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
         
-    # 3. 過濾出具體的報告
     prefix = f"{selected_year}-{selected_month}"
     filtered_hist = [f for f in hist if f.startswith(prefix)]
     
@@ -492,10 +514,12 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-# --- 🌟 修正佈局：恢復安全穩定的左右比例 ---
-main_col1, main_col2 = st.columns([1.5, 0.7], gap="large") # 讓右邊有足夠的寬度容納按鈕
+# =======================================================
+# 🌟 【列2】標題與卡片
+# =======================================================
+header_col1, header_col2 = st.columns([1.5, 1], gap="large") 
 
-with main_col1:
+with header_col1:
     st.markdown(
         f"""
         <div class="header" style="flex-direction: column; align-items: flex-start; padding-bottom: 0;">
@@ -509,26 +533,15 @@ with main_col1:
         unsafe_allow_html=True,
     )
 
-with main_col2:
-    # 重新整理的按鈕 (現在有足夠的空間，不會再變成兩行了)
-    if st.button("🔄 重新整理", use_container_width=True):
-        st.cache_data.clear()
-        st.rerun()
-        
-    # 卡片渲染
+with header_col2:
     st.markdown(generate_countdown_html(), unsafe_allow_html=True)
 
-# 分割線在頂部區域下方
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
 
 # ====== 其餘代碼 (市場快照, 三大法人, AI快評等) ======
-# ==================================================
-# 🌟 市場快照 (動態日夜自動切換)
-# ==================================================
 tw_tz_snapshot = pytz.timezone('Asia/Taipei')
 current_tw_time_snapshot = datetime.now(tw_tz_snapshot).time()
 
-# 判定時間：21:30 ~ 09:00 為美股時間
 time_2130_snapshot = time(21, 30)
 time_0900_snapshot = time(9, 0)
 is_us_market_snapshot = (current_tw_time_snapshot >= time_2130_snapshot or current_tw_time_snapshot < time_0900_snapshot)
@@ -546,7 +559,6 @@ def render_market_section_dynamic(title, targets_list):
             
     st.markdown("</div>", unsafe_allow_html=True)
 
-# 依據時間動態渲染
 if is_us_market_snapshot:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     render_market_section_dynamic("全球市場快照 (美股時段)", us_targets)
