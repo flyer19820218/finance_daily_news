@@ -15,7 +15,6 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
-# 🚨 注意：這裡絕對不能加上 f，否則 Python 會把 CSS 當成數學公式導致當機
 st.markdown(
     """
 <style>
@@ -161,7 +160,7 @@ a:hover{ text-decoration:underline; }
   box-shadow: var(--shadow);
 }
 
-/* === 新增：AI快評專屬淡藍色面板 === */
+/* === AI快評專屬淡藍色面板 === */
 .panel-blue {
   border: 1px solid #bfdbfe;
   background: #eff6ff; /* 舒適的科技淡藍色 */
@@ -199,14 +198,16 @@ a:hover{ text-decoration:underline; }
   margin: 6px 0 10px 0;
 }
 
-/* 倒數卡片專屬 CSS */
+/* 🌟 修正：貼齊內容的卡片 CSS 🌟 */
 .countdown-card {
-    max-width: 300px;
+    /* max-width: 300px; 註銷固定最大寬度 */
+    display: table; /* 重要！讓卡片寬度由內容決定，實現「貼齊內容」 */
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 12px 14px;
     background-color: #ffffff;
     box-shadow: var(--shadow2);
+    /* 為了在移動端全寬，這裡不需要設置 margin-left */
 }
 .card-date {
     font-size: 11px;
@@ -218,6 +219,7 @@ a:hover{ text-decoration:underline; }
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 8px; /* 增加內容之間的間距，讓它不那麼擁擠 */
     margin-bottom: 6px;
     white-space: nowrap;
 }
@@ -228,7 +230,7 @@ a:hover{ text-decoration:underline; }
 .card-days {
     font-size: 17px;
     font-weight: bold;
-    margin-left: 8px;
+    margin-left: auto; /* 將數字推到右邊 */
 }
 .card-progress-bar {
     height: 5px;
@@ -250,27 +252,7 @@ a:hover{ text-decoration:underline; }
 }
 
 @media (max-width: 768px){
-  .block-container{ padding-left: 0.9rem; padding-right: 0.9rem; }
-  .header{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .brand{
-    font-size: 28px;
-    letter-spacing: -0.2px;
-  }
-  .sub{ font-size: 12px; }
-  .badge{
-    font-size: 11px;
-    padding: 7px 10px;
-    white-space: normal;
-  }
-  .section-title{ font-size: 14px; }
-  .price{ font-size: 20px; }
-  .delta{ font-size: 12px; }
-  .inline-row{ font-size: 12px; }
-  .countdown-card { max-width: 100%; width: 100%; margin-top: 10px; }
+  .countdown-card { max-width: 100%; width: 100%; margin-top: 10px; } /* 移動端保持全寬 */
 }
 </style>
 """,
@@ -441,20 +423,10 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
-# ==========================================
-# 🌟 頁面邏輯：加上完美的「重新整理」按鈕！
-# ==========================================
-top_col1, top_col2 = st.columns([8, 2])
-
-with top_col1:
-    mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
-
-with top_col2:
-    st.write("") # 稍微往下推一點，讓按鈕跟左邊的選項對齊
-    # 點擊按鈕後，清除快取並強制重整網頁
-    if st.button("🔄 重新整理", use_container_width=True):
-        st.cache_data.clear()
-        st.rerun()
+# === 頁面邏輯：模式選擇 ===
+st.markdown('<div class="section-title">📊 檢視模式</div>', unsafe_allow_html=True)
+mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # 根據模式讀取資料
 data = None
@@ -503,10 +475,10 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-# --- 頂部區域 ---
-header_col1, header_col2 = st.columns([1.5, 0.8], gap="large")
+# --- 🌟 修正佈局：標題一列，按鈕+卡片一列 (激進比例以貼齊內容) ---
+main_col1, main_col2 = st.columns([2.2, 0.3], gap="large") # 調整比例，使右列非常窄
 
-with header_col1:
+with main_col1:
     st.markdown(
         f"""
         <div class="header" style="flex-direction: column; align-items: flex-start; padding-bottom: 0;">
@@ -520,27 +492,44 @@ with header_col1:
         unsafe_allow_html=True,
     )
 
-with header_col2:
-    st.markdown(generate_countdown_html(), unsafe_allow_html=True)
+with main_col2:
+    # 🌟 修正：「移下來一點點」，露出完整上框
+    # 在按鈕上方使用多個 `<div style="height: 12px;"></div>` 來增加間距。
+    # 我將添加 3 個來提供足夠的距離。
+    st.markdown('<div style="height: 12px;"></div>', unsafe_allow_html=True) # 移下來一點點
+    
+    # 重新整理的按鈕
+    # 按鈕使用了 `use_container_width=True`，將填滿新容器。
+    if st.button("🔄 重新整理", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
+        
+    # 卡片渲染
+    # 用 `generate_countdown_html()` 生成 HTML
+    # 用 CSS 給卡片設置負 margin-top 貼齊按鈕。
+    card_html = generate_countdown_html()
+    card_html = card_html.replace('class="countdown-card"', 'class="countdown-card" style="margin-top: -10px;"') # 貼齊按鈕
+    st.markdown(card_html, unsafe_allow_html=True)
 
-st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True)
+# 分割線在頂部區域下方
+st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
 
+# ====== 其餘代碼 (市場快照, 三大法人, AI快評等) ======
 # ==================================================
-# 🌟 日夜自動切換市場快照 (套用網頁版超美卡片)
+# 🌟 市場快照 (動態日夜自動切換)
 # ==================================================
-tw_tz = pytz.timezone('Asia/Taipei')
-current_tw_time = datetime.now(tw_tz).time()
+tw_tz_snapshot = pytz.timezone('Asia/Taipei')
+current_tw_time_snapshot = datetime.now(tw_tz_snapshot).time()
 
 # 判定時間：21:30 ~ 09:00 為美股時間
-time_2130 = time(21, 30)
-time_0900 = time(9, 0)
-is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
+time_2130_snapshot = time(21, 30)
+time_0900_snapshot = time(9, 0)
+is_us_market_snapshot = (current_tw_time_snapshot >= time_2130_snapshot or current_tw_time_snapshot < time_0900_snapshot)
 
-def render_market_section(title, targets_list):
+def render_market_section_dynamic(title, targets_list):
     st.markdown(f'<div class="section-title">🌍 {title}</div>', unsafe_allow_html=True)
     st.markdown('<div class="cards">', unsafe_allow_html=True)
     
-    # 電腦版網頁排版較寬，一行排 6 個動態方塊
     cols = st.columns(6)
     for i, (sym, name) in enumerate(targets_list):
         q = fetch_yf_data(sym, name)
@@ -551,12 +540,12 @@ def render_market_section(title, targets_list):
     st.markdown("</div>", unsafe_allow_html=True)
 
 # 依據時間動態渲染 (無縫接軌您的設計)
-if is_us_market:
+if is_us_market_snapshot:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
-    render_market_section("全球市場快照 (美股時段)", us_targets)
+    render_market_section_dynamic("全球市場快照 (美股時段)", us_targets)
 else:
     top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
-    render_market_section("護國神山與亞洲指數", top6_targets)
+    render_market_section_dynamic("護國神山與亞洲指數", top6_targets)
     
     # 讀取當日爆量熱門股
     try:
@@ -566,74 +555,72 @@ else:
     except:
         vol_targets = [("3231.TW", "緯創"), ("2603.TW", "長榮"), ("2317.TW", "鴻海"), ("2356.TW", "英業達"), ("2409.TW", "友達"), ("3481.TW", "群創")]
     
-    render_market_section("盤中實戰：市場人氣爆量", vol_targets)
-
-st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
+    render_market_section_dynamic("盤中實戰：市場人氣爆量", vol_targets)
 
 # ====== 三大法人與期貨未平倉區塊 ======
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # 法人數據上方的 HR
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
     
-    ratio_left = len(df_inst.columns) if df_inst is not None else 7
-    ratio_right = len(df_fut.columns) if df_fut is not None else 5
-    t1, t2 = st.columns([ratio_left, ratio_right], gap="small")
+    ratio_left_inst = len(df_inst.columns) if df_inst is not None else 7
+    ratio_right_fut = len(df_fut.columns) if df_fut is not None else 5
+    t1_df, t2_df = st.columns([ratio_left_inst, ratio_right_fut], gap="small")
     
-    with t1:
+    with t1_df:
         if df_inst is not None:
             st.markdown(render_table_html(df_inst, "近五日上市三大法人買賣超 (億)", "🏦"), unsafe_allow_html=True)
-    with t2:
+    with t2_df:
         if df_fut is not None:
             st.markdown(render_table_html(df_fut, "近五日台股期貨未平倉 (口)", "📈"), unsafe_allow_html=True)
             
-st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
-# ==========================================
-
-left, right = st.columns([1.35, 0.65], gap="large")
-with left:
+# ====== AI 盤勢快評 與 新聞清單 ======
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # AI 快評上方的 HR
+left_ai, right_news = st.columns([1.35, 0.65], gap="large")
+with left_ai:
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     st.markdown('<div class="panel-blue">', unsafe_allow_html=True)
     st.markdown(data.get("report", ""))
     st.markdown("</div>", unsafe_allow_html=True)
 
-with right:
+with right_news:
     st.markdown('<div class="section-title">📰 新聞清單</div>', unsafe_allow_html=True)
-    news = data.get("news", []) or []
+    news_list = data.get("news", []) or []
     page_size = 10
-    total = len(news)
-    total_pages = max(1, math.ceil(total / page_size))
+    total_news = len(news_list)
+    total_pages_news = max(1, math.ceil(total_news / page_size))
     if "news_page" not in st.session_state: st.session_state.news_page = 1
-    st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages))
+    st.session_state.news_page = max(1, min(st.session_state.news_page, total_pages_news))
 
-    st.markdown(f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages} 頁（共 {total} 則）</div></div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='pagerline'><div class='small'>第 {st.session_state.news_page} / {total_pages_news} 頁（共 {total_news} 則）</div></div>", unsafe_allow_html=True)
 
-    if total_pages <= 2:
+    if total_pages_news <= 2:
         try:
-            sel = st.segmented_control("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", selection_mode="single", default=st.session_state.news_page, label_visibility="collapsed")
+            sel_page = st.segmented_control("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", selection_mode="single", default=st.session_state.news_page, label_visibility="collapsed")
         except:
-            sel = st.radio("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", horizontal=True, index=st.session_state.news_page - 1, label_visibility="collapsed")
-        if sel and sel != st.session_state.news_page:
-            st.session_state.news_page = int(sel); st.rerun()
+            sel_page = st.radio("分頁", options=[1, 2], format_func=lambda x: f"第 {x} 頁", horizontal=True, index=st.session_state.news_page - 1, label_visibility="collapsed")
+        if sel_page and sel_page != st.session_state.news_page:
+            st.session_state.news_page = int(sel_page); st.rerun()
     else:
-        c1, c2 = st.columns([1, 1])
-        with c1: 
-            if st.button("← 上一頁", use_container_width=True, disabled=(st.session_state.news_page <= 1)):
+        pager1, pager2 = st.columns([1, 1])
+        with pager1: 
+            if st.button("← 上一頁", use_container_width=True, key="pager_prev", disabled=(st.session_state.news_page <= 1)):
                 st.session_state.news_page -= 1; st.rerun()
-        with c2:
-            if st.button("下一頁 →", use_container_width=True, disabled=(st.session_state.news_page >= total_pages)):
+        with pager2:
+            if st.button("下一頁 →", use_container_width=True, key="pager_next", disabled=(st.session_state.news_page >= total_pages_news)):
                 st.session_state.news_page += 1; st.rerun()
 
-    st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
-    start = (st.session_state.news_page - 1) * page_size
-    for n in news[start:start+page_size]:
-        title = (n.get("title") or "").strip()
-        link = (n.get("link") or "").strip()
-        source = urlparse(link).netloc.replace("www.", "") if link else ""
+    st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # 新聞卡片上方的 HR
+    start_news = (st.session_state.news_page - 1) * page_size
+    for n in news_list[start_news:start_news+page_size]:
+        news_title = (n.get("title") or "").strip()
+        news_link = (n.get("link") or "").strip()
+        news_source = urlparse(news_link).netloc.replace("www.", "") if news_link else ""
         st.markdown('<div class="news-card">', unsafe_allow_html=True)
-        st.markdown(f"**{title}**")
-        parts = []
-        if source: parts.append(f"<span>{source}</span>")
-        if link: parts.append(f"<a href='{link}' target='_blank'>閱讀原文</a>")
-        if parts:
-            row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts)
-            st.markdown(f"<div class='inline-row'>{row}</div>", unsafe_allow_html=True)
+        st.markdown(f"**{news_title}**")
+        parts_row = []
+        if news_source: parts_row.append(f"<span>{news_source}</span>")
+        if news_link: parts_row.append(f"<a href='{news_link}' target='_blank'>閱讀原文</a>")
+        if parts_row:
+            news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
+            st.markdown(f"<div class='inline-row'>{news_parts_row}</div>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
