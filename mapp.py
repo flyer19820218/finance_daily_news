@@ -11,12 +11,11 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟完美同行按鈕)
+# 2. 核心 CSS (動態方塊 + 籌碼高光)
 st.markdown("""
 <style>
 :root{
   --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3;
-  --link:#2563eb;
 }
 .block-container { padding: 0.8rem 0.6rem !important; }
 .stApp { background:#ffffff; font-family: "翩翩體", "PingFang TC", sans-serif; }
@@ -25,46 +24,6 @@ st.markdown("""
 .brand { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-bottom: 2px;}
 .sub { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
 .update-time { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
-
-/* 🌟 魔法 1：把按鈕變成幽靈純文字，字體縮小 🌟 */
-button[kind="primary"] {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: #94a3b8 !important; /* 低調的淡雅色 */
-    padding: 0 !important;
-    justify-content: flex-end !important; /* 文字絕對靠右 */
-    min-height: 0 !important;
-    height: auto !important;
-}
-button[kind="primary"] p {
-    font-size: 11px !important; /* 確保按鈕內的文字變小 */
-    margin: 0 !important;
-}
-button[kind="primary"]:hover {
-    color: var(--link) !important;
-    background-color: transparent !important;
-    text-decoration: underline;
-}
-
-/* 🌟 魔法 2：強制標題與按鈕的欄位在手機上「不折疊」，永遠維持同行 🌟 */
-div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) {
-    align-items: center !important; /* 垂直置中對齊 */
-}
-@media (max-width: 768px) {
-    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) {
-        flex-direction: row !important; /* 嚴禁往下疊 */
-    }
-    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) > div[data-testid="column"]:nth-child(1) {
-        width: auto !important;
-        flex: 1 1 auto !important; /* 左邊標題區自動伸展 */
-    }
-    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) > div[data-testid="column"]:nth-child(2) {
-        width: auto !important;
-        flex: 0 0 auto !important; /* 右邊按鈕區只佔用需要的空間 */
-        min-width: 80px !important;
-    }
-}
 
 /* 方案三：籌碼高光表格 CSS */
 .combined-table { width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
@@ -167,15 +126,11 @@ def render_combined_foreign_table(df_inst, df_fut):
     return html
 
 # ==========================================
-# 4. JSON 讀取與三層式過濾
+# 4. JSON 讀取與三層式過濾 (手機版最佳化)
 # ==========================================
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
-
-# 檢視模式放在最上面，單獨一行
-mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
-st.markdown('<div class="hr" style="margin: 4px 0 16px 0;"></div>', unsafe_allow_html=True)
-
+mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
 data = None
 
 if mode == "最新（今日）":
@@ -185,15 +140,18 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
+            # 1. 抓取年份
             years = []
             for f in hist_files:
                 y = f[:4]
                 if y not in years: years.append(y)
             
+            # 手機版佈局：年份與月份並排一行
             col_y, col_m = st.columns(2)
             with col_y:
                 selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
             
+            # 2. 抓取月份
             months = []
             for f in hist_files:
                 if f.startswith(selected_year):
@@ -203,6 +161,7 @@ else:
             with col_m:
                 selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
             
+            # 3. 獨立全寬選取特定報告，避免手指點不到
             prefix = f"{selected_year}-{selected_month}"
             filtered_hist = [f for f in hist_files if f.startswith(prefix)]
             
@@ -219,20 +178,9 @@ else:
 if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
-# ==========================================
-# 5. 🌟 標題與按鈕完美同行 (網格鎖定) 🌟
-# ==========================================
-# 把標題跟按鈕放在同一個 Columns 裡，上面的 CSS 會確保它們在手機上絕對不折疊！
-title_col, btn_col = st.columns([4, 1])
-
-with title_col:
-    st.markdown('<div class="brand" style="margin-bottom:0;">財經AI快報</div>', unsafe_allow_html=True)
-with btn_col:
-    if st.button("🔄 重新整理", type="primary", use_container_width=True):
-        st.cache_data.clear()
-        st.rerun()
-
+# 5. 大標題
 st.markdown(f'''
+<div class="brand">財經AI快報</div>
 <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
@@ -243,10 +191,12 @@ st.markdown(f'''
 tw_tz = pytz.timezone('Asia/Taipei')
 current_tw_time = datetime.now(tw_tz).time()
 
+# 判定時間：21:30 ~ 09:00 為美股時間
 time_2130 = time(21, 30)
 time_0900 = time(9, 0)
 is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
 
+# 將您原本的網格產生邏輯包裝成函數，方便呼叫
 def render_market_grid(title, targets_list):
     html = f'<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div>'
     html += '<div class="m-grid">'
@@ -263,13 +213,16 @@ def render_market_grid(title, targets_list):
     html += '</div>'
     return html
 
+# 依據時間動態渲染
 if is_us_market:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
 else:
+    # 權值股陣容
     top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
     st.markdown(render_market_grid("👑 護國神山與亞洲指數", top6_targets), unsafe_allow_html=True)
     
+    # 爆量股陣容 (優先讀取 hot_stocks.json，若無則用備用)
     try:
         with open("hot_stocks.json", "r", encoding="utf-8") as f:
             vol_pool = json.load(f).get("top_volume_pool", {})
