@@ -11,7 +11,7 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟幽靈按鈕)
+# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟終極同行按鈕)
 st.markdown("""
 <style>
 :root{
@@ -26,19 +26,28 @@ st.markdown("""
 .sub { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
 .update-time { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
 
-/* 🌟 魔法：把重新整理按鈕變成「無框純文字」 🌟 */
+/* 🌟 魔法：幽靈按鈕 + 向上吸附同一行 + 靠右對齊 + 字變小 🌟 */
 button[kind="primary"] {
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    color: var(--muted) !important;
+    color: #94a3b8 !important; /* 讓它更低調淡雅 */
+    font-size: 11px !important; /* 字小一點 */
     padding: 0 !important;
-    justify-content: flex-end !important; /* 讓文字靠右貼齊 */
 }
 button[kind="primary"]:hover {
     color: var(--link) !important;
     background-color: transparent !important;
     text-decoration: underline;
+}
+/* 針對按鈕的外部容器施法，把它往上拉到標題旁邊，且永遠靠右 */
+div[data-testid="stButton"]:has(button[kind="primary"]) {
+    margin-top: -46px; /* 向上吸附，剛好與大標題平行 */
+    display: flex;
+    justify-content: flex-end; /* 絕對靠右 */
+    margin-bottom: 12px; /* 補回一點下方空間 */
+    position: relative;
+    z-index: 10;
 }
 
 /* 方案三：籌碼高光表格 CSS */
@@ -142,21 +151,14 @@ def render_combined_foreign_table(df_inst, df_fut):
     return html
 
 # ==========================================
-# 4. 🌟 JSON 讀取與三層式過濾 + 幽靈按鈕 🌟
+# 4. JSON 讀取與三層式過濾
 # ==========================================
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 
-# 使用 columns 讓選單跟按鈕並排
-top_c1, top_c2 = st.columns([3, 1])
-with top_c1:
-    mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
-with top_c2:
-    # 微調下推，讓按鈕文字對齊左邊的選項
-    st.markdown('<div style="height: 8px;"></div>', unsafe_allow_html=True)
-    if st.button("🔄 重新整理", type="primary", use_container_width=True):
-        st.cache_data.clear()
-        st.rerun()
+# 檢視模式放在最上面，單獨一行
+mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
+st.markdown('<div class="hr" style="margin: 4px 0 16px 0;"></div>', unsafe_allow_html=True)
 
 data = None
 
@@ -167,18 +169,15 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
-            # 1. 抓取年份
             years = []
             for f in hist_files:
                 y = f[:4]
                 if y not in years: years.append(y)
             
-            # 手機版佈局：年份與月份並排一行
             col_y, col_m = st.columns(2)
             with col_y:
                 selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
             
-            # 2. 抓取月份
             months = []
             for f in hist_files:
                 if f.startswith(selected_year):
@@ -188,7 +187,6 @@ else:
             with col_m:
                 selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
             
-            # 3. 獨立全寬選取特定報告，避免手指點不到
             prefix = f"{selected_year}-{selected_month}"
             filtered_hist = [f for f in hist_files if f.startswith(prefix)]
             
@@ -205,10 +203,17 @@ else:
 if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
-# 5. 大標題
-st.markdown('<div class="hr" style="margin: 4px 0 16px 0;"></div>', unsafe_allow_html=True) # 加一條分隔線讓視覺更乾淨
+# ==========================================
+# 5. 大標題與 🌟「精準同行」的重整按鈕 🌟
+# ==========================================
+st.markdown('<div class="brand">財經AI快報</div>', unsafe_allow_html=True)
+
+# 渲染按鈕（CSS魔法會自動把它吸上去同一行，並靠最右邊）
+if st.button("🔄 重新整理", type="primary"):
+    st.cache_data.clear()
+    st.rerun()
+
 st.markdown(f'''
-<div class="brand">財經AI快報</div>
 <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
@@ -219,12 +224,10 @@ st.markdown(f'''
 tw_tz = pytz.timezone('Asia/Taipei')
 current_tw_time = datetime.now(tw_tz).time()
 
-# 判定時間：21:30 ~ 09:00 為美股時間
 time_2130 = time(21, 30)
 time_0900 = time(9, 0)
 is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
 
-# 將您原本的網格產生邏輯包裝成函數，方便呼叫
 def render_market_grid(title, targets_list):
     html = f'<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div>'
     html += '<div class="m-grid">'
@@ -241,16 +244,13 @@ def render_market_grid(title, targets_list):
     html += '</div>'
     return html
 
-# 依據時間動態渲染
 if is_us_market:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
 else:
-    # 權值股陣容
     top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
     st.markdown(render_market_grid("👑 護國神山與亞洲指數", top6_targets), unsafe_allow_html=True)
     
-    # 爆量股陣容 (優先讀取 hot_stocks.json，若無則用備用)
     try:
         with open("hot_stocks.json", "r", encoding="utf-8") as f:
             vol_pool = json.load(f).get("top_volume_pool", {})
