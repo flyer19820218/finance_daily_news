@@ -103,7 +103,7 @@ def send_telegram_message(text):
     except Exception as e:
         print(f"⚠️ Telegram 請求發生錯誤: {e}")
 
-# === 📈 新增：真實市場指標抓取 (VIX, 匯率, 融資水位) ===
+# === 📈 真實市場指標抓取 (盤前專屬，供 AI 參考) ===
 def get_market_indicators():
     indicators = []
     
@@ -134,7 +134,7 @@ def get_market_indicators():
             if '融資' in item_name and '總計' not in item_name:
                 balance = d.get('TodayBalance') or d.get('Balance') or '未知'
                 margin_items.append(f"餘額 {balance} 單位")
-                break # 抓到第一筆大盤融資即可
+                break
                 
         if margin_items:
             indicators.append(f"👉 證交所最新融資狀態：{margin_items[0]}")
@@ -152,22 +152,35 @@ def ai_analyze(news, period_str):
         
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
     
-    # 呼叫我們剛剛寫的函數，取得三大指標！
-    market_data_text = get_market_indicators()
+    # 🔥 邏輯智慧切換：只有「盤前」才去抓 VIX 和融資，避免盤後拿舊數據製造雜訊！
+    market_data_section = ""
+    pressure_test_format = "📊【市場情緒與壓力測試】 (基於新聞事件，綜合評估避險需求與潛在恐慌壓力，切勿提及缺乏特定數據)"
+    
+    if period_str == "盤前":
+        market_data_text = get_market_indicators()
+        market_data_section = f"""
+    {market_data_text}
+    
+    3. 🌡️ 宏觀情緒與籌碼解讀：請結合我提供的【當前真實市場指標】(VIX、匯率、融資水位) 與新聞事件，推演市場恐慌程度與散戶籌碼壓力。直接給出您的專業定調。
+    
+    ⛔ 【絕對禁止事項】：嚴禁在報告中寫出「素材中未提及 VIX」、「新聞未報導融資」等機械式廢話。我已經把真實數據提供給你了，請直接轉化為對市場情緒的定性分析。
+        """
+        pressure_test_format = "📊【市場情緒與壓力測試】 (基於新聞事件與我提供的 VIX、匯率、融資真實數據，綜合評估避險需求與籌碼壓力)"
+    else:
+        market_data_section = """
+    3. 🌡️ 宏觀情緒解讀：請根據新聞事件推演市場恐慌程度與資金避險方向。直接給出您的專業定調（例如：避險需求升溫、恐慌情緒蔓延、風險偏好修復）。
+    
+    ⛔ 【絕對禁止事項】：嚴禁在報告中寫出「新聞未提及特定數據」等機械式廢話。請直接將事件轉化為對市場情緒的定性分析。
+        """
 
     strategy_prompt = f"""
     你是全球政經情報中心的資深戰略分析官。
     任務：偵蒐並分析全球地緣政治中的非典型波動與潛在市場衝擊。
     
-    {market_data_text}
-    
     【核心偵蒐邏輯】：
     1. 🛡️ 地緣政治 (Geopolitics)：重點掃描全球軍事對抗、外交摩擦、政經變局。
     2. ⚠️ 市場心理警示：納入重大傳聞或突發言論，評估其對市場避險情緒的衝擊。
-    3. 🌡️ 宏觀情緒與籌碼解讀：請結合我提供的【當前真實市場指標】(VIX、匯率、融資水位) 與新聞事件，推演市場恐慌程度與散戶籌碼壓力。直接給出您的專業定調（例如：避險需求升溫、融資斷頭壓力增加、風險偏好修復）。
-    
-    ⛔ 【絕對禁止事項】：
-    嚴禁在報告中寫出「素材中未提及 VIX」、「新聞未報導融資」等機械式廢話。我已經把真實數據提供給你了，請直接將新聞事件與這些數值轉化為對市場情緒的定性分析。
+    {market_data_section}
     """
 
     if period_str == "週末特刊-美股週收盤":
@@ -190,7 +203,7 @@ def ai_analyze(news, period_str):
 📊 全球局勢與市場情報中心 {datetime.now(TW_TZ).strftime("%Y-%m-%d")} ({period_str})
 
 🚩【全球局勢與地緣政治警示】
-📊【市場情緒與壓力測試】 (基於新聞事件與我提供的 VIX、匯率、融資真實數據，綜合評估避險需求與籌碼壓力)
+{pressure_test_format}
 💰【台股戰略定調】
 💎【產業長線觀察】
 """
@@ -231,6 +244,7 @@ def run_daily():
     with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
+    # 🚀 在最後一步，呼叫 Telegram 推播發送 AI 報告！
     send_telegram_message(report_text)
 
 if __name__ == "__main__":
