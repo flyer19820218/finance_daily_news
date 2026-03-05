@@ -11,7 +11,7 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟終極同行按鈕)
+# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟完美同行按鈕)
 st.markdown("""
 <style>
 :root{
@@ -26,28 +26,44 @@ st.markdown("""
 .sub { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
 .update-time { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
 
-/* 🌟 魔法：幽靈按鈕 + 向上吸附同一行 + 靠右對齊 + 字變小 🌟 */
+/* 🌟 魔法 1：把按鈕變成幽靈純文字，字體縮小 🌟 */
 button[kind="primary"] {
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    color: #94a3b8 !important; /* 讓它更低調淡雅 */
-    font-size: 11px !important; /* 字小一點 */
+    color: #94a3b8 !important; /* 低調的淡雅色 */
     padding: 0 !important;
+    justify-content: flex-end !important; /* 文字絕對靠右 */
+    min-height: 0 !important;
+    height: auto !important;
+}
+button[kind="primary"] p {
+    font-size: 11px !important; /* 確保按鈕內的文字變小 */
+    margin: 0 !important;
 }
 button[kind="primary"]:hover {
     color: var(--link) !important;
     background-color: transparent !important;
     text-decoration: underline;
 }
-/* 針對按鈕的外部容器施法，把它往上拉到標題旁邊，且永遠靠右 */
-div[data-testid="stButton"]:has(button[kind="primary"]) {
-    margin-top: -46px; /* 向上吸附，剛好與大標題平行 */
-    display: flex;
-    justify-content: flex-end; /* 絕對靠右 */
-    margin-bottom: 12px; /* 補回一點下方空間 */
-    position: relative;
-    z-index: 10;
+
+/* 🌟 魔法 2：強制標題與按鈕的欄位在手機上「不折疊」，永遠維持同行 🌟 */
+div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) {
+    align-items: center !important; /* 垂直置中對齊 */
+}
+@media (max-width: 768px) {
+    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) {
+        flex-direction: row !important; /* 嚴禁往下疊 */
+    }
+    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) > div[data-testid="column"]:nth-child(1) {
+        width: auto !important;
+        flex: 1 1 auto !important; /* 左邊標題區自動伸展 */
+    }
+    div[data-testid="stHorizontalBlock"]:has(button[kind="primary"]) > div[data-testid="column"]:nth-child(2) {
+        width: auto !important;
+        flex: 0 0 auto !important; /* 右邊按鈕區只佔用需要的空間 */
+        min-width: 80px !important;
+    }
 }
 
 /* 方案三：籌碼高光表格 CSS */
@@ -204,14 +220,17 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # ==========================================
-# 5. 大標題與 🌟「精準同行」的重整按鈕 🌟
+# 5. 🌟 標題與按鈕完美同行 (網格鎖定) 🌟
 # ==========================================
-st.markdown('<div class="brand">財經AI快報</div>', unsafe_allow_html=True)
+# 把標題跟按鈕放在同一個 Columns 裡，上面的 CSS 會確保它們在手機上絕對不折疊！
+title_col, btn_col = st.columns([4, 1])
 
-# 渲染按鈕（CSS魔法會自動把它吸上去同一行，並靠最右邊）
-if st.button("🔄 重新整理", type="primary"):
-    st.cache_data.clear()
-    st.rerun()
+with title_col:
+    st.markdown('<div class="brand" style="margin-bottom:0;">財經AI快報</div>', unsafe_allow_html=True)
+with btn_col:
+    if st.button("🔄 重新整理", type="primary", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
 
 st.markdown(f'''
 <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
