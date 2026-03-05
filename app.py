@@ -123,7 +123,6 @@ a:hover{ text-decoration:underline; }
   margin-bottom: 20px;
 }
 
-/* 動態變色方塊 */
 .tile{
   background:#fff;
   border:1px solid var(--border);
@@ -160,13 +159,12 @@ a:hover{ text-decoration:underline; }
   box-shadow: var(--shadow);
 }
 
-/* === AI快評專屬淡藍色面板 === */
 .panel-blue {
   border: 1px solid #bfdbfe;
-  background: #eff6ff; /* 舒適的科技淡藍色 */
+  background: #eff6ff; 
   border-radius: 18px;
   padding: 18px 20px;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.05); /* 微微的藍色陰影 */
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.05); 
   line-height: 1.6;
 }
 
@@ -198,16 +196,15 @@ a:hover{ text-decoration:underline; }
   margin: 6px 0 10px 0;
 }
 
-/* 🌟 修正：貼齊內容的卡片 CSS 🌟 */
+/* 🌟 修正：恢復穩定的卡片 CSS 🌟 */
 .countdown-card {
-    /* max-width: 300px; 註銷固定最大寬度 */
-    display: table; /* 重要！讓卡片寬度由內容決定，實現「貼齊內容」 */
+    width: 100%; /* 讓它自然填滿右側欄位，不會變形 */
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 12px 14px;
+    padding: 14px 16px;
     background-color: #ffffff;
     box-shadow: var(--shadow2);
-    /* 為了在移動端全寬，這裡不需要設置 margin-left */
+    margin-top: 8px; /* 跟上面的按鈕保持一點舒適距離 */
 }
 .card-date {
     font-size: 11px;
@@ -219,7 +216,7 @@ a:hover{ text-decoration:underline; }
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 8px; /* 增加內容之間的間距，讓它不那麼擁擠 */
+    gap: 8px;
     margin-bottom: 6px;
     white-space: nowrap;
 }
@@ -228,9 +225,9 @@ a:hover{ text-decoration:underline; }
     font-weight: bold;
 }
 .card-days {
-    font-size: 17px;
-    font-weight: bold;
-    margin-left: auto; /* 將數字推到右邊 */
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--text);
 }
 .card-progress-bar {
     height: 5px;
@@ -252,7 +249,27 @@ a:hover{ text-decoration:underline; }
 }
 
 @media (max-width: 768px){
-  .countdown-card { max-width: 100%; width: 100%; margin-top: 10px; } /* 移動端保持全寬 */
+  .block-container{ padding-left: 0.9rem; padding-right: 0.9rem; }
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .brand{
+    font-size: 28px;
+    letter-spacing: -0.2px;
+  }
+  .sub{ font-size: 12px; }
+  .badge{
+    font-size: 11px;
+    padding: 7px 10px;
+    white-space: normal;
+  }
+  .section-title{ font-size: 14px; }
+  .price{ font-size: 20px; }
+  .delta{ font-size: 12px; }
+  .inline-row{ font-size: 12px; }
+  .countdown-card { margin-top: 16px; } 
 }
 </style>
 """,
@@ -475,8 +492,8 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-# --- 🌟 修正佈局：標題一列，按鈕+卡片一列 (激進比例以貼齊內容) ---
-main_col1, main_col2 = st.columns([2.2, 0.3], gap="large") # 調整比例，使右列非常窄
+# --- 🌟 修正佈局：恢復安全穩定的左右比例 ---
+main_col1, main_col2 = st.columns([1.5, 0.7], gap="large") # 讓右邊有足夠的寬度容納按鈕
 
 with main_col1:
     st.markdown(
@@ -493,23 +510,13 @@ with main_col1:
     )
 
 with main_col2:
-    # 🌟 修正：「移下來一點點」，露出完整上框
-    # 在按鈕上方使用多個 `<div style="height: 12px;"></div>` 來增加間距。
-    # 我將添加 3 個來提供足夠的距離。
-    st.markdown('<div style="height: 12px;"></div>', unsafe_allow_html=True) # 移下來一點點
-    
-    # 重新整理的按鈕
-    # 按鈕使用了 `use_container_width=True`，將填滿新容器。
+    # 重新整理的按鈕 (現在有足夠的空間，不會再變成兩行了)
     if st.button("🔄 重新整理", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
         
     # 卡片渲染
-    # 用 `generate_countdown_html()` 生成 HTML
-    # 用 CSS 給卡片設置負 margin-top 貼齊按鈕。
-    card_html = generate_countdown_html()
-    card_html = card_html.replace('class="countdown-card"', 'class="countdown-card" style="margin-top: -10px;"') # 貼齊按鈕
-    st.markdown(card_html, unsafe_allow_html=True)
+    st.markdown(generate_countdown_html(), unsafe_allow_html=True)
 
 # 分割線在頂部區域下方
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
@@ -539,7 +546,7 @@ def render_market_section_dynamic(title, targets_list):
             
     st.markdown("</div>", unsafe_allow_html=True)
 
-# 依據時間動態渲染 (無縫接軌您的設計)
+# 依據時間動態渲染
 if is_us_market_snapshot:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     render_market_section_dynamic("全球市場快照 (美股時段)", us_targets)
@@ -547,7 +554,6 @@ else:
     top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
     render_market_section_dynamic("護國神山與亞洲指數", top6_targets)
     
-    # 讀取當日爆量熱門股
     try:
         with open("hot_stocks.json", "r", encoding="utf-8") as f:
             vol_pool = json.load(f).get("top_volume_pool", {})
@@ -557,8 +563,7 @@ else:
     
     render_market_section_dynamic("盤中實戰：市場人氣爆量", vol_targets)
 
-# ====== 三大法人與期貨未平倉區塊 ======
-st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # 法人數據上方的 HR
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
     
@@ -573,8 +578,7 @@ if df_inst is not None or df_fut is not None:
         if df_fut is not None:
             st.markdown(render_table_html(df_fut, "近五日台股期貨未平倉 (口)", "📈"), unsafe_allow_html=True)
             
-# ====== AI 盤勢快評 與 新聞清單 ======
-st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # AI 快評上方的 HR
+st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 with left_ai:
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
@@ -609,7 +613,7 @@ with right_news:
             if st.button("下一頁 →", use_container_width=True, key="pager_next", disabled=(st.session_state.news_page >= total_pages_news)):
                 st.session_state.news_page += 1; st.rerun()
 
-    st.markdown('<div class="hr"></div>', unsafe_allow_html=True) # 新聞卡片上方的 HR
+    st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
     start_news = (st.session_state.news_page - 1) * page_size
     for n in news_list[start_news:start_news+page_size]:
         news_title = (n.get("title") or "").strip()
