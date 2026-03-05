@@ -11,11 +11,12 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光)
+# 2. 核心 CSS (動態方塊 + 籌碼高光 + 🌟幽靈按鈕)
 st.markdown("""
 <style>
 :root{
   --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3;
+  --link:#2563eb;
 }
 .block-container { padding: 0.8rem 0.6rem !important; }
 .stApp { background:#ffffff; font-family: "翩翩體", "PingFang TC", sans-serif; }
@@ -24,6 +25,21 @@ st.markdown("""
 .brand { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-bottom: 2px;}
 .sub { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
 .update-time { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
+
+/* 🌟 魔法：把重新整理按鈕變成「無框純文字」 🌟 */
+button[kind="primary"] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--muted) !important;
+    padding: 0 !important;
+    justify-content: flex-end !important; /* 讓文字靠右貼齊 */
+}
+button[kind="primary"]:hover {
+    color: var(--link) !important;
+    background-color: transparent !important;
+    text-decoration: underline;
+}
 
 /* 方案三：籌碼高光表格 CSS */
 .combined-table { width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
@@ -126,11 +142,22 @@ def render_combined_foreign_table(df_inst, df_fut):
     return html
 
 # ==========================================
-# 4. JSON 讀取與三層式過濾 (手機版最佳化)
+# 4. 🌟 JSON 讀取與三層式過濾 + 幽靈按鈕 🌟
 # ==========================================
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
-mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
+
+# 使用 columns 讓選單跟按鈕並排
+top_c1, top_c2 = st.columns([3, 1])
+with top_c1:
+    mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
+with top_c2:
+    # 微調下推，讓按鈕文字對齊左邊的選項
+    st.markdown('<div style="height: 8px;"></div>', unsafe_allow_html=True)
+    if st.button("🔄 重新整理", type="primary", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
+
 data = None
 
 if mode == "最新（今日）":
@@ -179,6 +206,7 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # 5. 大標題
+st.markdown('<div class="hr" style="margin: 4px 0 16px 0;"></div>', unsafe_allow_html=True) # 加一條分隔線讓視覺更乾淨
 st.markdown(f'''
 <div class="brand">財經AI快報</div>
 <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
