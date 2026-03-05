@@ -543,8 +543,8 @@ if is_us_market:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     render_market_section("全球市場快照 (美股時段)", us_targets)
 else:
-    top6_targets = [("^TWII", "加權指數"), "2330.TW", "台積電"), ("2317.TW", "鴻海"), ("2454.TW", "聯發科"), ("2308.TW", "台達電"), ("0050.TW", "元大台灣50")]
-    render_market_section("護國神山：核心權值 (含0050)", top6_targets)
+    top6_targets = [("^TWII", "加權指數"), "2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
+    render_market_section("護國神山與亞洲指數", top6_targets)
     
     # 讀取當日爆量熱門股
     try:
