@@ -301,13 +301,8 @@ if news:
         except:
             time_display = "今日" # 防呆機制
             
-        news_html += f'''
-        <div class="timeline-item">
-            <div class="timeline-time">{time_display}</div>
-            <a href="{link}" target="_blank" class="timeline-title">{title}</a>
-            <div class="timeline-summary">{summary}</div>
-        </div>
-        '''
+        # ⚠️ 關鍵修復：全部寫在同一行，絕對不留開頭空白，避免被 Streamlit 誤判為程式碼區塊！
+        news_html += f'<div class="timeline-item"><div class="timeline-time">{time_display}</div><a href="{link}" target="_blank" class="timeline-title">{title}</a><div class="timeline-summary">{summary}</div></div>'
         
     news_html += '</div>'
     st.markdown(news_html, unsafe_allow_html=True)
