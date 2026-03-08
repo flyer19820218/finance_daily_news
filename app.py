@@ -168,18 +168,29 @@ a:hover{ text-decoration:underline; }
   line-height: 1.6;
 }
 
+/* 🌟 新聞卡片強化版：加入摘要的樣式限制 🌟 */
 .news-card{
   border:1px solid var(--border);
   background:#fff;
   border-radius: 16px;
-  padding: 10px 12px;
-  margin-bottom: 10px;
+  padding: 14px 16px; /* 稍微加寬內邊距讓內文透氣 */
+  margin-bottom: 12px;
   box-shadow: var(--shadow2);
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .news-card:hover{
   transform: translateY(-1px);
   box-shadow: 0 12px 28px rgba(2,6,23,0.08);
+}
+.news-summary {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 神奇語法：最多顯示 3 行，超出版面變 ... */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .small{ color:var(--muted); font-size: 12px; }
 .inline-row{
@@ -211,18 +222,18 @@ button[kind="primary"]:hover {
     text-decoration: underline;
 }
 
-/* 🌟 財務自由卡片：修正「天」字溢出，達到 100% 完美 🌟 */
+/* 🌟 財務自由卡片：完美的黃金比例 🌟 */
 .countdown-card {
-    max-width: 275px; /* 微調加寬 25px，把霸氣的「天」字完美包覆進來 */
-    margin-left: auto; /* 靠右貼齊 */
+    max-width: 275px;
+    margin-left: auto; 
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 20px 20px; /* 保持上下修長，左右給予舒適空間 */
+    padding: 20px 20px; 
     background-color: #ffffff;
     box-shadow: var(--shadow2);
 }
 .card-date {
-    font-size: 13px; /* 放大字體 */
+    font-size: 13px; 
     font-weight: bold;
     color: var(--muted);
     margin-bottom: 10px; 
@@ -235,11 +246,11 @@ button[kind="primary"]:hover {
     white-space: nowrap;
 }
 .card-title {
-    font-size: 15px; /* 放大字體 */
+    font-size: 15px; 
     font-weight: bold;
 }
 .card-days {
-    font-size: 22px; /* 天數維持霸氣放大 */
+    font-size: 22px; 
     font-weight: 900;
     margin-left: 8px;
     color: var(--text);
@@ -592,6 +603,7 @@ if df_inst is not None or df_fut is not None:
             
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
+
 with left_ai:
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     st.markdown('<div class="panel-blue">', unsafe_allow_html=True)
@@ -599,9 +611,11 @@ with left_ai:
     st.markdown("</div>", unsafe_allow_html=True)
 
 with right_news:
-    st.markdown('<div class="section-title">📰 新聞清單</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">📰 即時新聞與摘要</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
-    page_size = 10
+    
+    # 🌟 為了版面美觀，原本 10 則改成一頁 8 則
+    page_size = 8
     total_news = len(news_list)
     total_pages_news = max(1, math.ceil(total_news / page_size))
     if "news_page" not in st.session_state: st.session_state.news_page = 1
@@ -625,18 +639,38 @@ with right_news:
             if st.button("下一頁 →", use_container_width=True, key="pager_next", disabled=(st.session_state.news_page >= total_pages_news)):
                 st.session_state.news_page += 1; st.rerun()
 
-    st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
+    st.markdown('<div class="hr" style="margin: 10px 0;"></div>', unsafe_allow_html=True) 
+    
     start_news = (st.session_state.news_page - 1) * page_size
+    
+    # 🌟 新聞卡片渲染邏輯大升級：加入時間與摘要 🌟
     for n in news_list[start_news:start_news+page_size]:
         news_title = (n.get("title") or "").strip()
         news_link = (n.get("link") or "").strip()
+        news_summary = (n.get("summary") or "").strip()
         news_source = urlparse(news_link).netloc.replace("www.", "") if news_link else ""
-        st.markdown('<div class="news-card">', unsafe_allow_html=True)
-        st.markdown(f"**{news_title}**")
+        
+        # 處理發布時間
+        dt_str = n.get("dt_utc", "")
+        try:
+            dt_utc = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+            dt_tw = dt_utc.astimezone(pytz.timezone('Asia/Taipei'))
+            time_display = dt_tw.strftime("%m/%d %H:%M") # 電腦版顯示日期+時間
+        except:
+            time_display = ""
+            
         parts_row = []
+        if time_display: parts_row.append(f"<span style='color:#64748b; font-family:monospace; font-weight:bold;'>{time_display}</span>")
         if news_source: parts_row.append(f"<span>{news_source}</span>")
         if news_link: parts_row.append(f"<a href='{news_link}' target='_blank'>閱讀原文</a>")
-        if parts_row:
-            news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
-            st.markdown(f"<div class='inline-row'>{news_parts_row}</div>", unsafe_allow_html=True)
-        st.markdown("</div>", unsafe_allow_html=True)
+        news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
+        
+        # 一口氣組裝整張卡片的 HTML，避免被 Streamlit 切斷
+        card_html = f'''
+        <div class="news-card">
+            <a href="{news_link}" target="_blank" style="font-size:15px; font-weight:850; color:#0f172a; text-decoration:none; display:block; margin-bottom:6px; line-height:1.4;">{news_title}</a>
+            <div class="news-summary">{news_summary}</div>
+            <div class="inline-row">{news_parts_row}</div>
+        </div>
+        '''
+        st.markdown(card_html, unsafe_allow_html=True)
