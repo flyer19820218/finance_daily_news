@@ -50,56 +50,52 @@ st.markdown("""
 .m-pct { font-size: 11px; font-weight: 800; }
 .up { color: var(--up); } .down { color: var(--down); }
 
-/* 🌟 富途牛牛風格：垂直時間軸 CSS 🌟 */
+/* 🌟 手機特務版：極簡垂直時間軸 🌟 */
 .timeline-container {
-    border-left: 2px solid #e2e8f0; 
-    margin-left: 12px; 
-    padding-left: 16px; 
+    border-left: 1px solid #e2e8f0; /* 線條變細更精緻 */
+    margin-left: 10px; 
+    padding-left: 14px; 
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .timeline-item {
     position: relative;
-    margin-bottom: 24px; 
+    margin-bottom: 18px; /* 縮小間距，一屏看更多 */
 }
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -21px; /* 根據 padding 調整圓點位置貼齊直線 */
-    top: 4px;
+    left: -18.5px; /* 貼齊細線 */
+    top: 5px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #94a3b8; 
+    background-color: #000000; /* 圓點改為純黑，更有特務感 */
     border: 2px solid #ffffff; 
 }
 .timeline-time {
-    font-size: 12px;
-    color: #64748b;
+    font-size: 11px;
+    color: #94a3b8;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     font-family: monospace; 
 }
 .timeline-title {
-    font-size: 15px;
-    font-weight: 900;
-    color: #0f172a;
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000 !important; /* 🌟 標題改為純黑 🌟 */
     line-height: 1.4;
-    margin-bottom: 6px;
+    margin-bottom: 0px;
     text-decoration: none;
     display: block;
 }
 .timeline-title:hover {
-    color: #2563eb;
+    color: #000000 !important;
     text-decoration: underline;
 }
 .timeline-summary {
-    font-size: 13px;
-    color: #475569;
-    line-height: 1.5;
+    display: none !important; /* 🌟 核心：手機版徹底隱藏摘要 🌟 */
 }
-</style>
-""", unsafe_allow_html=True)
 
 # 3. 數據抓取 (YF 與 HiStock)
 @st.cache_data(ttl=60)
