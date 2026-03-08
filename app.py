@@ -625,8 +625,8 @@ with right_news:
     st.markdown('<div class="section-title">📰 即時新聞與摘要</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
     
-    # 🌟 為了版面美觀，原本 10 則改成一頁 20 則
-    page_size = 20
+    # 🌟 為了版面美觀，原本 10 則改成一頁 30 則
+    page_size = 30
     total_news = len(news_list)
     total_pages_news = max(1, math.ceil(total_news / page_size))
     if "news_page" not in st.session_state: st.session_state.news_page = 1
