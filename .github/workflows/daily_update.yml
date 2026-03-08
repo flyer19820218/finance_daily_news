@@ -1,57 +1,63 @@
 name: Hourly & Daily Finance Update (Smart Schedule)
 
+# 1️⃣ 設定多重鬧鐘 (觸發條件)
 on:
   schedule:
-    # ☀️ 1. 盤前快報：台灣時間 週一至週五 05:05 (對應 UTC: 前一天 21:05)
+    # ☀️ 盤前快報：台灣時間 週一至週五 05:05 (對應 UTC: 前一天 21:05)
     - cron: "05 21 * * 0-4"
     
-    # 🌙 2. 盤後快報：台灣時間 週一至週五 14:35 (對應 UTC: 當天 06:35)
+    # 🌙 盤後快報：台灣時間 週一至週五 14:35 (對應 UTC: 當天 06:35)
     - cron: "35 6 * * 1-5"
     
-    # 🥂 3. 週末特刊：台灣時間 週六至週日 06:30 (對應 UTC: 前一天 22:30，確實等美股收盤)
+    # 🥂 週末特刊：台灣時間 週六至週日 06:30 (對應 UTC: 前一天 22:30，確實等美股收盤)
     - cron: "30 22 * * 5,6"
 
-    # ⏱️ 4. 滾動快訊：每個小時的「0分」自動執行 (確保手機版的時間軸永遠有最新新聞)
+    # ⏱️ 滾動快訊：每個小時的「0分」自動執行 (確保手機版的時間軸永遠有最新新聞)
     - cron: "0 * * * *"
     
-  workflow_dispatch: # 讓您可以隨時在 GitHub 網頁上手動點擊 "Run workflow" 測試
+  # 2️⃣ 手動執行按鈕 (讓您可以隨時在 GitHub 網頁上手動點擊)
+  workflow_dispatch: 
 
+# 3️⃣ 讀寫權限許可證 (允許機器人存檔並推回 GitHub)
 permissions:
   contents: write
 
+# 4️⃣ 防撞車機制 (如果新的排程啟動，就把舊的卡住的任務砍掉)
 concurrency:
   group: daily-finance-update
   cancel-in-progress: true
 
+# 5️⃣ 租用虛擬電腦與下載程式碼
 jobs:
   run-agent:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 跟 GitHub 免費租借最新版 Linux 電腦
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # 把您的程式碼下載到這台虛擬電腦上
 
+      # 6️⃣ 裝備安裝與呼叫 AI 大腦
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.11" # 安裝 Python 3.11
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt # 安裝爬蟲與 AI 所需的套件
 
       - name: Run agent (generate report)
-        env:
+        env: # 將 GitHub 密碼箱 (Secrets) 裡的鑰匙交給機器人
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
-        run: python finance_news_agent.py
+        run: python finance_news_agent.py # 正式按下啟動鍵！
 
-      # 官方套件無痛存檔，徹底解決紅燈衝突
+      # 7️⃣ 存檔上傳與叫醒網頁
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update hourly data (Smart Schedule)"
+          commit_message: "Auto update hourly data (Smart Schedule)" # 將最新抓到的 JSON 存檔並上傳
 
       - name: Ping Streamlit to keep awake
-        run: |
+        run: | # 去敲門叫醒您的 Streamlit 網頁，保持隨時秒開
           curl -s https://financedailynews-mobile.streamlit.app/ > /dev/null
           curl -s https://financedailynews-web.streamlit.app/ > /dev/null
