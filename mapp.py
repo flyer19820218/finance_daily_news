@@ -278,16 +278,16 @@ st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; col
 st.info(data.get("report", ""))
 
 # ==================================================
-# 9. 📰 即時新聞快報 (富途牛牛垂直時間軸風格)
+# 9. 📰 24小時即時新聞快報 (富途牛牛垂直時間軸風格)
 # ==================================================
-st.markdown('<div style="font-size:16px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 即時新聞快報</div>', unsafe_allow_html=True)
+st.markdown('<div style="font-size:16px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 24小時即時新聞快報</div>', unsafe_allow_html=True)
 news = data.get("news", [])
 
 if news:
     news_html = '<div class="timeline-container">'
     
-    # 限制顯示前 15 則，避免手機滑動太長
-    for n in news[:15]:
+    # 🌟 解除封印：把原本的 news[:15] 改成 news，直接顯示所有 24 小時內抓到的快訊！
+    for n in news:
         link = n.get("link", "")
         title = n.get("title", "")
         summary = n.get("summary", "")
@@ -299,12 +299,12 @@ if news:
             dt_tw = dt_utc.astimezone(pytz.timezone('Asia/Taipei'))
             time_display = dt_tw.strftime("%H:%M")
         except:
-            time_display = "今日" # 防呆機制
+            time_display = "今日" 
             
-        # ⚠️ 關鍵修復：全部寫在同一行，絕對不留開頭空白，避免被 Streamlit 誤判為程式碼區塊！
+        # ⚠️ 保持一行不縮排的黃金守則
         news_html += f'<div class="timeline-item"><div class="timeline-time">{time_display}</div><a href="{link}" target="_blank" class="timeline-title">{title}</a><div class="timeline-summary">{summary}</div></div>'
         
     news_html += '</div>'
     st.markdown(news_html, unsafe_allow_html=True)
 else:
-    st.info("目前無最新快訊資料。")
+    st.info("目前無 24 小時內的快訊資料。")
