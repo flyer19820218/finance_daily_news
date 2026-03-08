@@ -11,7 +11,7 @@ import pytz
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光)
+# 2. 核心 CSS (動態方塊 + 籌碼高光 + 垂直時間軸)
 st.markdown("""
 <style>
 :root{
@@ -50,17 +50,54 @@ st.markdown("""
 .m-pct { font-size: 11px; font-weight: 800; }
 .up { color: var(--up); } .down { color: var(--down); }
 
-/* 雙欄新聞區域 */
-.news-container { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 20px; }
-.news-column { flex: 1; }
-.news-card {
-  border: 1px solid var(--border); background: #fff;
-  border-radius: 10px; padding: 10px; margin-bottom: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-  text-decoration: none; display: block;
+/* 🌟 富途牛牛風格：垂直時間軸 CSS 🌟 */
+.timeline-container {
+    border-left: 2px solid #e2e8f0; 
+    margin-left: 12px; 
+    padding-left: 16px; 
+    position: relative;
+    margin-bottom: 30px;
 }
-.news-title { font-weight: 700; font-size: 12px; color: #1e293b; line-height: 1.4; margin-bottom: 4px; }
-.source-tag { font-size: 9px; color: #64748b; background: #f1f5f9; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+.timeline-item {
+    position: relative;
+    margin-bottom: 24px; 
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -21px; /* 根據 padding 調整圓點位置貼齊直線 */
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #94a3b8; 
+    border: 2px solid #ffffff; 
+}
+.timeline-time {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: monospace; 
+}
+.timeline-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    text-decoration: none;
+    display: block;
+}
+.timeline-title:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+.timeline-summary {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -240,32 +277,39 @@ st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=Tr
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 st.info(data.get("report", ""))
 
-# 9. 📰 雙欄並列新聞
-st.markdown('<div style="font-size:16px; font-weight:900; margin:20px 0 8px 0; color:#1e293b;">📰 即時新聞快報</div>', unsafe_allow_html=True)
+# ==================================================
+# 9. 📰 即時新聞快報 (富途牛牛垂直時間軸風格)
+# ==================================================
+st.markdown('<div style="font-size:16px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 即時新聞快報</div>', unsafe_allow_html=True)
 news = data.get("news", [])
 
 if news:
-    col_left = news[0:10]
-    col_right = news[10:20]
+    news_html = '<div class="timeline-container">'
     
-    news_html = '<div class="news-container">'
-    # 左欄
-    news_html += '<div class="news-column">'
-    for n in col_left:
+    # 限制顯示前 15 則，避免手機滑動太長
+    for n in news[:15]:
         link = n.get("link", "")
         title = n.get("title", "")
-        src = urlparse(link).netloc.replace("www.", "")
-        news_html += f'<a class="news-card" href="{link}" target="_blank"><div class="news-title">{title}</div><span class="source-tag">{src}</span></a>'
-    news_html += '</div>'
-    
-    # 右欄
-    news_html += '<div class="news-column">'
-    for n in col_right:
-        link = n.get("link", "")
-        title = n.get("title", "")
-        src = urlparse(link).netloc.replace("www.", "")
-        news_html += f'<a class="news-card" href="{link}" target="_blank"><div class="news-title">{title}</div><span class="source-tag">{src}</span></a>'
-    news_html += '</div>'
-    
+        summary = n.get("summary", "")
+        
+        # 處理時間：解析 UTC 時間並轉換為台灣時間的 HH:MM
+        dt_str = n.get("dt_utc", "")
+        try:
+            dt_utc = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+            dt_tw = dt_utc.astimezone(pytz.timezone('Asia/Taipei'))
+            time_display = dt_tw.strftime("%H:%M")
+        except:
+            time_display = "今日" # 防呆機制
+            
+        news_html += f'''
+        <div class="timeline-item">
+            <div class="timeline-time">{time_display}</div>
+            <a href="{link}" target="_blank" class="timeline-title">{title}</a>
+            <div class="timeline-summary">{summary}</div>
+        </div>
+        '''
+        
     news_html += '</div>'
     st.markdown(news_html, unsafe_allow_html=True)
+else:
+    st.info("目前無最新快訊資料。")
