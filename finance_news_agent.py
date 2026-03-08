@@ -49,8 +49,8 @@ def save_cache(cache_list):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache_list[-200:], f, ensure_ascii=False, indent=2)
 
-def fetch_news(hours=24, limit=30):
-    """去 RSS 抓取過去 24 小時內的新聞，最多回傳 30 筆"""
+def fetch_news(hours=24, limit=64):
+    """去 RSS 抓取過去 24 小時內的新聞，最多回傳 48 筆"""
     cache_list = load_cache()
     cache_set = set(cache_list)
     news = []
