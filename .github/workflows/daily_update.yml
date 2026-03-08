@@ -1,63 +1,80 @@
 name: Hourly & Daily Finance Update (Smart Schedule)
 
-# 1️⃣ 設定多重鬧鐘 (觸發條件)
+# 1️⃣ 經理的鬧鐘設定
 on:
   schedule:
-    # ☀️ 盤前快報：台灣時間 週一至週五 05:05 (對應 UTC: 前一天 21:05)
-    - cron: "05 21 * * 0-4"
-    
-    # 🌙 盤後快報：台灣時間 週一至週五 14:35 (對應 UTC: 當天 06:35)
-    - cron: "35 6 * * 1-5"
-    
-    # 🥂 週末特刊：台灣時間 週六至週日 06:30 (對應 UTC: 前一天 22:30，確實等美股收盤)
-    - cron: "30 22 * * 5,6"
-
-    # ⏱️ 滾動快訊：每個小時的「0分」自動執行 (確保手機版的時間軸永遠有最新新聞)
+    # ⏱️ 任務A：每小時滾動新聞 (只更新新聞，不叫AI)
     - cron: "0 * * * *"
+    # ☀️ 任務B：盤前快報 (AI深度報告 + 推播)
+    - cron: "05 21 * * 0-4"
+    # 🌙 任務C：盤後快報 (AI深度報告 + 推播)
+    - cron: "35 6 * * 1-5"
+    # 🥂 任務D：週末特刊 (AI深度報告 + 推播)
+    - cron: "30 22 * * 5,6"
     
-  # 2️⃣ 手動執行按鈕 (讓您可以隨時在 GitHub 網頁上手動點擊)
+  # 🌟 神級功能：手動點擊時，讓您自己選要執行什麼任務！
   workflow_dispatch: 
+    inputs:
+      task_type:
+        description: '手動測試：請選擇要執行的任務'
+        required: true
+        default: 'full_report'
+        type: choice
+        options:
+          - full_report
+          - news_only
 
-# 3️⃣ 讀寫權限許可證 (允許機器人存檔並推回 GitHub)
 permissions:
   contents: write
-
-# 4️⃣ 防撞車機制 (如果新的排程啟動，就把舊的卡住的任務砍掉)
 concurrency:
   group: daily-finance-update
   cancel-in-progress: true
 
-# 5️⃣ 租用虛擬電腦與下載程式碼
 jobs:
   run-agent:
-    runs-on: ubuntu-latest # 跟 GitHub 免費租借最新版 Linux 電腦
-
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # 把您的程式碼下載到這台虛擬電腦上
+      - uses: actions/checkout@v4
 
-      # 6️⃣ 裝備安裝與呼叫 AI 大腦
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11" # 安裝 Python 3.11
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt # 安裝爬蟲與 AI 所需的套件
+        run: pip install -r requirements.txt
 
-      - name: Run agent (generate report)
-        env: # 將 GitHub 密碼箱 (Secrets) 裡的鑰匙交給機器人
+      # 2️⃣ 經理開始發號施令：判斷是哪個鬧鐘響了，決定任務類型！
+      - name: Set Task Type
+        id: set-task
+        run: |
+          # 預設為全套報告
+          echo "TASK_TYPE=full_report" >> $GITHUB_ENV
+          
+          # 如果是「每小時0分」那個鬧鐘叫醒的，就改成只抓新聞
+          if [[ "${{ github.event.schedule }}" == "0 * * * *" ]]; then
+            echo "TASK_TYPE=news_only" >> $GITHUB_ENV
+          fi
+          
+          # 如果是您在網頁上手動觸發的，就看您選了什麼
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "TASK_TYPE=${{ github.event.inputs.task_type }}" >> $GITHUB_ENV
+          fi
+
+      # 3️⃣ 把經理的指令 (TASK_TYPE) 交給 Python 去執行
+      - name: Run agent (Execute Task)
+        env:
+          TASK_TYPE: ${{ env.TASK_TYPE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
-        run: python finance_news_agent.py # 正式按下啟動鍵！
+        run: python finance_news_agent.py
 
-      # 7️⃣ 存檔上傳與叫醒網頁
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update hourly data (Smart Schedule)" # 將最新抓到的 JSON 存檔並上傳
+          commit_message: "Auto update: ${{ env.TASK_TYPE }}"
 
       - name: Ping Streamlit to keep awake
-        run: | # 去敲門叫醒您的 Streamlit 網頁，保持隨時秒開
+        run: |
           curl -s https://financedailynews-mobile.streamlit.app/ > /dev/null
           curl -s https://financedailynews-web.streamlit.app/ > /dev/null
