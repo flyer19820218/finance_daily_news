@@ -1,11 +1,20 @@
-name: Hourly Finance Update (Smart Schedule)
+name: Hourly & Daily Finance Update (Smart Schedule)
 
 on:
   schedule:
-    # 這是「每小時的第 0 分鐘」自動執行的密碼 (例如 1:00, 2:00, 3:00...)
+    # ☀️ 1. 盤前快報：台灣時間 週一至週五 05:05 (對應 UTC: 前一天 21:05)
+    - cron: "05 21 * * 0-4"
+    
+    # 🌙 2. 盤後快報：台灣時間 週一至週五 14:35 (對應 UTC: 當天 06:35)
+    - cron: "35 6 * * 1-5"
+    
+    # 🥂 3. 週末特刊：台灣時間 週六至週日 06:30 (對應 UTC: 前一天 22:30，確實等美股收盤)
+    - cron: "30 22 * * 5,6"
+
+    # ⏱️ 4. 滾動快訊：每個小時的「0分」自動執行 (確保手機版的時間軸永遠有最新新聞)
     - cron: "0 * * * *"
     
-  workflow_dispatch: 
+  workflow_dispatch: # 讓您可以隨時在 GitHub 網頁上手動點擊 "Run workflow" 測試
 
 permissions:
   contents: write
@@ -36,6 +45,7 @@ jobs:
           FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
         run: python finance_news_agent.py
 
+      # 官方套件無痛存檔，徹底解決紅燈衝突
       - name: Commit & push updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
