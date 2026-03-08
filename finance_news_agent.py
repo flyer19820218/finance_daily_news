@@ -242,12 +242,11 @@ def ai_analyze(news, period_str):
 def run_daily():
     """接收 YAML 經理的指令，執行對應任務"""
     
-    # 聽經理的指令：現在是要做什麼任務？(預設為 full_report)
     task_type = os.environ.get("TASK_TYPE", "full_report")
     print(f"🎯 接收到指令，啟動任務模式：【{task_type}】")
 
     update_hot_stocks() # 抓人氣股
-    news = fetch_news() # 抓新聞
+    new_fetched_news = fetch_news() # ⚠️ 這裡爬蟲只會回傳「沒抓過的全新新聞」
     
     # 判斷該寫哪個時段的報告名稱
     now_tw = datetime.now(TW_TZ)
@@ -256,28 +255,48 @@ def run_daily():
     if weekday == 5: period_str = "週末特刊-美股週收盤"
     if weekday == 6: period_str = "週末特刊-下週展望"
 
+    # 🌟 讀取上次存檔的「舊報告」與「舊新聞」
+    old_report = "📊 AI 報告將於指定發報時間自動生成。"
+    old_news = []
+    if os.path.exists(OUT_FILE):
+        try:
+            with open(OUT_FILE, "r", encoding="utf-8") as f:
+                old_data = json.load(f)
+                old_report = old_data.get("report", old_report)
+                old_news = old_data.get("news", [])
+        except: pass
+
+    # 🌟 關鍵修復：把「新抓的」跟「舊有的」新聞大合體！
+    combined_news = new_fetched_news + old_news
+    seen_links = set()
+    final_news = []
+    
+    # 去除重複的新聞
+    for n in combined_news:
+        if n["link"] not in seen_links:
+            seen_links.add(n["link"])
+            final_news.append(n)
+            
+    # 按照時間由新到舊重新排隊，並嚴格切出最熱騰騰的前 48 則！
+    final_news.sort(key=lambda x: x["dt_utc"], reverse=True)
+    final_news = final_news[:48]
+
     # 根據任務指令，決定要不要叫醒 AI
     if task_type == "full_report":
         print("🧠 執行任務：呼叫 AI 撰寫深度報告並推播...")
-        report_text = ai_analyze(news, period_str)
-        send_telegram_message(report_text) # 只有寫新報告才推播手機
+        # ⚠️ 把這 48 則完整新聞餵給 AI 寫報告
+        report_text = ai_analyze(final_news, period_str)
+        send_telegram_message(report_text) 
     else:
-        print("📰 執行任務：僅靜默更新 24 小時新聞，不呼叫 AI。")
-        # 去硬碟把上次的 AI 報告讀出來，維持在網頁上不要弄丟
-        report_text = "📊 AI 報告將於指定發報時間自動生成。"
-        if os.path.exists(OUT_FILE):
-            try:
-                with open(OUT_FILE, "r", encoding="utf-8") as f:
-                    old_data = json.load(f)
-                    report_text = old_data.get("report", report_text)
-            except: pass
+        print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
+        report_text = old_report 
     
     # 組裝成 JSON 格式準備存檔
     payload = {
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"全球局勢與市場情報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
         "report": report_text,
-        "news": news,
+        "news": final_news, # ⚠️ 寫入合體後的 48 則完整大軍！
     }
     
     # 存檔：覆寫最新報告
