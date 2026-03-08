@@ -96,6 +96,7 @@ st.markdown("""
 .timeline-summary {
     display: none !important; /* 🌟 核心：手機版徹底隱藏摘要 🌟 */
 }
+""" , unsafe_allow_html=True)
 
 # 3. 數據抓取 (YF 與 HiStock)
 @st.cache_data(ttl=60)
