@@ -49,8 +49,8 @@ def save_cache(cache_list):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache_list[-200:], f, ensure_ascii=False, indent=2)
 
-def fetch_news(hours=24, limit=48):
-    """去 RSS 抓取過去 24 小時內的新聞，最多回傳 48 筆"""
+def fetch_news(hours=24, limit=64):
+    """去 RSS 抓取過去 24 小時內的新聞，最多回傳 64 筆"""
     cache_list = load_cache()
     cache_set = set(cache_list)
     news = []
@@ -277,14 +277,14 @@ def run_daily():
             seen_links.add(n["link"])
             final_news.append(n)
             
-    # 按照時間由新到舊重新排隊，並嚴格切出最熱騰騰的前 48 則！
+    # 按照時間由新到舊重新排隊，並嚴格切出最熱騰騰的前 64 則！
     final_news.sort(key=lambda x: x["dt_utc"], reverse=True)
-    final_news = final_news[:48]
+    final_news = final_news[:64]
 
     # 根據任務指令，決定要不要叫醒 AI
     if task_type == "full_report":
         print("🧠 執行任務：呼叫 AI 撰寫深度報告並推播...")
-        # ⚠️ 把這 48 則完整新聞餵給 AI 寫報告
+        # ⚠️ 把這 64 則完整新聞餵給 AI 寫報告
         report_text = ai_analyze(final_news, period_str)
         send_telegram_message(report_text) 
     else:
@@ -296,7 +296,7 @@ def run_daily():
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"全球局勢與市場情報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
         "report": report_text,
-        "news": final_news, # ⚠️ 寫入合體後的 48 則完整大軍！
+        "news": final_news, # ⚠️ 寫入合體後的 64 則完整大軍！
     }
     
     # 存檔：覆寫最新報告
