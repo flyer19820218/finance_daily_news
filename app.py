@@ -168,43 +168,54 @@ a:hover{ text-decoration:underline; }
   line-height: 1.6;
 }
 
-/* 🌟 新聞卡片強化版：加入摘要的樣式限制 🌟 */
+/* 🌟 新聞卡片：去框、去色、去摘要 🌟 */
 .news-card{
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius: 16px;
-  padding: 14px 16px; /* 稍微加寬內邊距讓內文透氣 */
-  margin-bottom: 12px;
-  box-shadow: var(--shadow2);
-  transition: transform .12s ease, box-shadow .12s ease;
+  border: none !important;
+  border-bottom: 1px solid #f0f0f0 !important; /* 僅保留淡淡的底線 */
+  background: transparent !important;
+  border-radius: 0px !important;
+  padding: 10px 0px !important;
+  margin-bottom: 4px;
+  box-shadow: none !important;
+  transition: none !important;
 }
 .news-card:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(2,6,23,0.08);
+  transform: none !important;
+  box-shadow: none !important;
 }
+
+/* 🌟 摘要：徹底消失 🌟 */
 .news-summary {
-  font-size: 13px;
-  color: #475569;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* 神奇語法：最多顯示 3 行，超出版面變 ... */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: none !important;
 }
-.small{ color:var(--muted); font-size: 12px; }
+
+/* 🌟 配角資訊：調成極淡灰 🌟 */
+.small{ 
+  color: #94a3b8 !important; 
+  font-size: 11px; 
+}
+
 .inline-row{
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.35;
-  word-break: break-word;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #94a3b8 !important; /* 調淡來源文字顏色 */
+  line-height: 1.3;
 }
+
 .pagerline{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin: 6px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #000; /* 分頁線用黑色細線，增加專業感 */
+}
+
+/* 額外補丁：確保連結是黑色的 */
+.news-card a {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
 }
 
 /* 🌟 魔法：把重新整理按鈕變成「無框純文字」 🌟 */
