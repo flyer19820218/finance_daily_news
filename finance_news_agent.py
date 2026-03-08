@@ -237,19 +237,37 @@ def ai_analyze(news, period_str):
 # 6️⃣ 主程式執行流程 (Main Pipeline)
 # ==========================================
 def run_daily():
-    """這是整個程式的心臟，依序執行所有動作"""
+    """接收 YAML 經理的指令，執行對應任務"""
+    
+    # 聽經理的指令：現在是要做什麼任務？(預設為 full_report)
+    task_type = os.environ.get("TASK_TYPE", "full_report")
+    print(f"🎯 接收到指令，啟動任務模式：【{task_type}】")
+
     update_hot_stocks() # 抓人氣股
     news = fetch_news() # 抓新聞
     
-    # 判斷現在是盤前、盤後還是週末
+    # 判斷該寫哪個時段的報告名稱
     now_tw = datetime.now(TW_TZ)
     weekday = now_tw.weekday()
     period_str = "盤前" if now_tw.hour < 12 else "盤後"
     if weekday == 5: period_str = "週末特刊-美股週收盤"
     if weekday == 6: period_str = "週末特刊-下週展望"
 
-    # 呼叫 AI 寫報告
-    report_text = ai_analyze(news, period_str)
+    # 根據任務指令，決定要不要叫醒 AI
+    if task_type == "full_report":
+        print("🧠 執行任務：呼叫 AI 撰寫深度報告並推播...")
+        report_text = ai_analyze(news, period_str)
+        send_telegram_message(report_text) # 只有寫新報告才推播手機
+    else:
+        print("📰 執行任務：僅靜默更新 24 小時新聞，不呼叫 AI。")
+        # 去硬碟把上次的 AI 報告讀出來，維持在網頁上不要弄丟
+        report_text = "📊 AI 報告將於指定發報時間自動生成。"
+        if os.path.exists(OUT_FILE):
+            try:
+                with open(OUT_FILE, "r", encoding="utf-8") as f:
+                    old_data = json.load(f)
+                    report_text = old_data.get("report", report_text)
+            except: pass
     
     # 組裝成 JSON 格式準備存檔
     payload = {
@@ -269,9 +287,6 @@ def run_daily():
     hist_name = f"{now_tw.strftime('%Y-%m-%d')}_{period_str}.json"
     with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    # 最後一步：推播到 Telegram
-    send_telegram_message(report_text)
 
 if __name__ == "__main__":
     run_daily()
