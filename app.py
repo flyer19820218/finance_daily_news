@@ -647,21 +647,14 @@ with left_ai:
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
     # 🌟 星星金化手術 🌟
-    # 先獲取原始報告內容
     raw_report = data.get("report", "") or ""
-    
-    # 使用 Python 的 replace 功能，將 '★' 替換成帶有金色 HTML 樣式的 '★'
-    # #FFD700 是標準的黃金顏色代碼
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 渲染處理後的報告
-    st.markdown('<div class="panel-blue">', unsafe_allow_html=True)
-    
-    # 🌟 關鍵：因為processed_report裡面含有 HTML 標籤，所以這裡必須開啟 unsafe_allow_html=True
-    st.markdown(processed_report, unsafe_allow_html=True)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
+    # 🛠️ 優化：將 div 與報告內容組裝在一起，一次渲染，確保藍色面板不會破版！
+    # 注意裡面的 \n\n 是為了讓 Markdown 換行能正常解析
+    final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
+    st.markdown(final_html, unsafe_allow_html=True)
 
 with right_news:
     st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
