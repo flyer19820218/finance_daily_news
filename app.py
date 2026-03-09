@@ -659,19 +659,22 @@ with left_ai:
     tw_tz = pytz.timezone('Asia/Taipei')
     current_hour = datetime.now(tw_tz).hour
 
-if current_hour >= 14 or current_hour < 5:
-    # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
-    processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
-    processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
-    processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
-else:
-    # ☀️ 早上時段
-    processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
-    processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
+    # ⚠️ 注意：下面的 if...else 必須往右縮排，待在 with left_ai 裡面
+    if current_hour >= 14 or current_hour < 5:
+        # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
+        processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
+        processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
+        processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
+    else:
+        # ☀️ 早上時段
+        processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
+        processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
     
-    # 3. 渲染藍色面板與報告內容
+    # ⚠️ 注意：把這兩行「往左拉」跟 if 對齊，這樣不管早上或下午，報告都會被印出來！
     final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
     st.markdown(final_html, unsafe_allow_html=True)
+
+# 下面接著你的 with right_news: ...
     
 with right_news:
     st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
