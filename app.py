@@ -646,17 +646,15 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
-    st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
-    # ... (下面接著你剛剛貼上的星星金化代碼) ...with left_ai:
+    # 🌟 1. 標題（只留這一行，就不會雙胞胎了）
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
-    # 🌟 星星金化手術 🌟
+    # 🌟 2. 星星金化手術
     raw_report = data.get("report", "") or ""
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 🛠️ 優化：將 div 與報告內容組裝在一起，一次渲染，確保藍色面板不會破版！
-    # 注意裡面的 \n\n 是為了讓 Markdown 換行能正常解析
+    # 🌟 3. 渲染藍色面板與報告內容 (打包成一個字串確保不破版)
     final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
     st.markdown(final_html, unsafe_allow_html=True)
 
