@@ -4,9 +4,9 @@ name: Hourly & Daily Finance Update (Smart Schedule)
 on:
   schedule:
     # ⏱️ 任務A：每小時滾動新聞 (只更新新聞，不叫AI)
-    - cron: "0 * * * *"
+    - cron: "50 * * * *"
     # ☀️ 任務B：盤前快報 (AI深度報告 + 推播)
-    - cron: "05 21 * * 0-4"
+    - cron: "15 21 * * 0-4"
     # 🌙 任務C：盤後快報 (AI深度報告 + 推播)
     - cron: "35 6 * * 1-5"
     # 🥂 任務D：週末特刊 (AI深度報告 + 推播)
