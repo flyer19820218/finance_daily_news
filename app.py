@@ -643,7 +643,11 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 # 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
 # 功能：左側渲染 AI 戰略報告；右側渲染無摘要版的極簡新聞清單與分頁系統。
 # =====================================================================
+left_ai, right_news = st.columns([1.35, 0.65], gap="large")
+
 with left_ai:
+    st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
+    # ... (下面接著你剛剛貼上的星星金化代碼) ...with left_ai:
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
     # 🌟 星星金化手術 🌟
