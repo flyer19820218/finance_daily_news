@@ -1,3 +1,7 @@
+# =====================================================================
+# 【區塊 1】套件匯入與基礎設定
+# 功能：載入程式所需的所有工具，並設定全域變數和頁面基礎屬性。
+# =====================================================================
 import json
 import os
 import math
@@ -15,6 +19,10 @@ HISTORY_DIR = "data/history"
 
 st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
+# =====================================================================
+# 【區塊 2】全域 CSS 樣式定義 (視覺規範)
+# 功能：定義網頁視覺外觀，包含顏色、字體、卡片陰影和無框新聞清單。
+# =====================================================================
 st.markdown(
     """
 <style>
@@ -313,6 +321,10 @@ button[kind="primary"]:hover {
     unsafe_allow_html=True,
 )
 
+# =====================================================================
+# 【區塊 3】資料讀取與快取函數定義
+# 功能：從本地檔案或外部 API 獲取資料，並使用 @st.cache_data 提升效能。
+# =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
     try:
@@ -477,9 +489,10 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
-# =======================================================
-# 🌟 【列1】頂部選單與按鈕
-# =======================================================
+# =====================================================================
+# 【區塊 4】頁面頂部佈局：檢視模式切換與控制
+# 功能：選擇看「最新報告」或「歷史報告」，並提供手動重新整理按鈕。
+# =====================================================================
 top_c1, top_c2 = st.columns([5, 1]) 
 
 with top_c1:
@@ -494,7 +507,10 @@ with top_c2:
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
 
-# 根據模式讀取資料
+# =====================================================================
+# 【區塊 5】資料路由與載入邏輯
+# 功能：根據模式載入對應的 JSON，若是歷史回顧則渲染日期選擇下拉選單。
+# =====================================================================
 data = None
 if mode == "最新（今日）":
     data = load_json(LATEST_FILE)
@@ -536,9 +552,10 @@ if not data:
     st.warning("尚未產生報告")
     st.stop()
 
-# =======================================================
-# 🌟 【列2】標題與卡片
-# =======================================================
+# =====================================================================
+# 【區塊 6】頁面主標題與倒數計時區塊
+# 功能：顯示 App 名稱、更新時間，以及右側財務自由倒數卡片。
+# =====================================================================
 header_col1, header_col2 = st.columns([1.5, 1], gap="large") 
 
 with header_col1:
@@ -560,7 +577,10 @@ with header_col2:
 
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
 
-# ====== 其餘代碼 (市場快照, 三大法人, AI快評等) ======
+# =====================================================================
+# 【區塊 7】全球市場快照 (日夜動態切換)
+# 功能：根據台灣時間，自動切換顯示美股陣容或台股與亞洲指數陣容。
+# =====================================================================
 tw_tz_snapshot = pytz.timezone('Asia/Taipei')
 current_tw_time_snapshot = datetime.now(tw_tz_snapshot).time()
 
@@ -598,6 +618,11 @@ else:
     render_market_section_dynamic("盤中實戰：市場人氣爆量", vol_targets)
 
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
+
+# =====================================================================
+# 【區塊 8】三大法人與期貨籌碼表格
+# 功能：抓取籌碼資料並並排顯示於網頁上。
+# =====================================================================
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
     
@@ -613,6 +638,11 @@ if df_inst is not None or df_fut is not None:
             st.markdown(render_table_html(df_fut, "近五日台股期貨未平倉 (口)", "📈"), unsafe_allow_html=True)
             
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
+
+# =====================================================================
+# 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
+# 功能：左側渲染 AI 戰略報告；右側渲染無摘要版的極簡新聞清單與分頁系統。
+# =====================================================================
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
@@ -622,10 +652,10 @@ with left_ai:
     st.markdown("</div>", unsafe_allow_html=True)
 
 with right_news:
-    st.markdown('<div class="section-title">📰 即時新聞與摘要</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
     
-    # 🌟 為了版面美觀，原本 10 則改成一頁 30 則
+    # 🌟 為了版面美觀，設定一頁 30 則
     page_size = 30
     total_news = len(news_list)
     total_pages_news = max(1, math.ceil(total_news / page_size))
@@ -654,11 +684,10 @@ with right_news:
     
     start_news = (st.session_state.news_page - 1) * page_size
     
-    # 🌟 新聞卡片渲染邏輯大升級：加入時間與摘要 🌟
+    # 🌟 新聞卡片渲染邏輯：極簡無摘要版 🌟
     for n in news_list[start_news:start_news+page_size]:
         news_title = (n.get("title") or "").strip()
         news_link = (n.get("link") or "").strip()
-        news_summary = (n.get("summary") or "").strip()
         news_source = urlparse(news_link).netloc.replace("www.", "") if news_link else ""
         
         # 處理發布時間
@@ -676,11 +705,10 @@ with right_news:
         if news_link: parts_row.append(f"<a href='{news_link}' target='_blank'>閱讀原文</a>")
         news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
         
-        # 一口氣組裝整張卡片的 HTML，避免被 Streamlit 切斷
+        # 一口氣組裝整張卡片的 HTML，移除 summary 變數
         card_html = f'''
         <div class="news-card">
             <a href="{news_link}" target="_blank" style="font-size:15px; font-weight:850; color:#0f172a; text-decoration:none; display:block; margin-bottom:6px; line-height:1.4;">{news_title}</a>
-            <div class="news-summary">{news_summary}</div>
             <div class="inline-row">{news_parts_row}</div>
         </div>
         '''
