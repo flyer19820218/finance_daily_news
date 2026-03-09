@@ -656,8 +656,8 @@ with left_ai:
     processed_report = raw_report.replace("★", gold_star_html)
     
     # 2. 自動判斷時間，切換標題 (兩班制)
-tw_tz = pytz.timezone('Asia/Taipei')
-current_hour = datetime.now(tw_tz).hour
+    tw_tz = pytz.timezone('Asia/Taipei')
+    current_hour = datetime.now(tw_tz).hour
 
 if current_hour >= 14 or current_hour < 5:
     # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
