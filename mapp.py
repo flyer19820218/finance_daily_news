@@ -270,9 +270,23 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
+
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
-st.info(data.get("report", ""))
+
+# 🌟 星星金化手術 (手機版) 🌟
+raw_report = data.get("report", "") or ""
+gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
+processed_report = raw_report.replace("★", gold_star_html)
+
+# 🛠️ 使用自訂的 HTML div 取代原本的 st.info
+# 這樣不但能讓金黃色的 HTML 標籤生效，還能模擬 st.info 的淺藍色質感，且字體大小更適合手機！
+final_html = f'''
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
+    {processed_report}
+</div>
+'''
+st.markdown(final_html, unsafe_allow_html=True)
 
 # ==================================================
 # 9. 📰 24小時即時新聞快報 (富途牛牛垂直時間軸風格)
