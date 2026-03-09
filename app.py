@@ -646,18 +646,33 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
-    # 🌟 1. 標題（只留這一行，就不會雙胞胎了）
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
-    # 🌟 2. 星星金化手術
+    # 🌟 星星金化與兩班制標題變身 🌟
     raw_report = data.get("report", "") or ""
+    
+    # 1. 把星星變金色
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 🌟 3. 渲染藍色面板與報告內容 (打包成一個字串確保不破版)
+    # 2. 自動判斷時間，切換標題 (兩班制)
+tw_tz = pytz.timezone('Asia/Taipei')
+current_hour = datetime.now(tw_tz).hour
+
+if current_hour >= 14 or current_hour < 5:
+    # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
+    processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
+    processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
+    processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
+else:
+    # ☀️ 早上時段
+    processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
+    processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
+    
+    # 3. 渲染藍色面板與報告內容
     final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
     st.markdown(final_html, unsafe_allow_html=True)
-
+    
 with right_news:
     st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
