@@ -1,16 +1,15 @@
 name: Hourly & Daily Finance Update (Smart Schedule)
 
-# 1️⃣ 經理的鬧鐘設定
 on:
   schedule:
     # ⏱️ 任務A：每小時滾動新聞 (只更新新聞，不叫AI)
-    - cron: "50 * * * *"
+    - cron: '50 * * * *'
     # ☀️ 任務B：盤前快報 (AI深度報告 + 推播)
-    - cron: "15 21 * * 0-4"
+    - cron: '15 21 * * 0-4'
     # 🌙 任務C：盤後快報 (AI深度報告 + 推播)
-    - cron: "35 6 * * 1-5"
+    - cron: '35 6 * * 1-5'
     # 🥂 任務D：週末特刊 (AI深度報告 + 推播)
-    - cron: "30 22 * * 5,6"
+    - cron: '30 22 * * 5,6'
     
   # 🌟 神級功能：手動點擊時，讓您自己選要執行什麼任務！
   workflow_dispatch: 
@@ -43,24 +42,22 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # 2️⃣ 經理開始發號施令：判斷是哪個鬧鐘響了，決定任務類型！
       - name: Set Task Type
         id: set-task
         run: |
           # 預設為全套報告
           echo "TASK_TYPE=full_report" >> $GITHUB_ENV
           
-          # 如果是「每小時50分」那個鬧鐘叫醒的，就改成只抓新聞
-          if [[ "${{ github.event.schedule }}" == "50 * * * *" ]]; then
+          # 判斷是否為 50 分的滾動新聞排程
+          if [[ '${{ github.event.schedule }}' == '50 * * * *' ]]; then
             echo "TASK_TYPE=news_only" >> $GITHUB_ENV
           fi
           
-          # 如果是您在網頁上手動觸發的，就看您選了什麼
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+          # 判斷是否為手動觸發
+          if [[ '${{ github.event_name }}' == 'workflow_dispatch' ]]; then
             echo "TASK_TYPE=${{ github.event.inputs.task_type }}" >> $GITHUB_ENV
           fi
 
-      # 3️⃣ 把經理的指令 (TASK_TYPE) 交給 Python 去執行
       - name: Run agent (Execute Task)
         env:
           TASK_TYPE: ${{ env.TASK_TYPE }}
