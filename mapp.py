@@ -266,7 +266,7 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 完美修正：按鈕顯示「收聽快報」，暫停顯示「暫停快報」
+    # 維持完美按鈕：收聽快報 / 暫停快報
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
@@ -340,13 +340,10 @@ st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=Tr
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 🌟 星星金化防禦機制 (捕捉所有可能的符號) 🌟
+# 退回穩定的單純取代模式，拔除造成破版的防禦機制
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
-processed_report = processed_report.replace("☆", gold_star_html)
-processed_report = processed_report.replace("•", gold_star_html)
-# 如果 AI 用 Markdown 列表符號 (- 或 *)，強制轉為星星
-processed_report = re.sub(r'(?m)^[-*]\s+', f'{gold_star_html} ', processed_report)
+processed_report = processed_report.replace("•", gold_star_html) 
 
 current_hour = datetime.now(tw_tz).hour
 
@@ -358,9 +355,9 @@ else:
     processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
     processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-# 渲染特製文字容器 (加入 white-space: pre-wrap; 避免換行消失)
+# 退回無 pre-wrap 的乾淨排版 
 final_html = f'''
-<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px; white-space: pre-wrap;">
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
     {processed_report}
 </div>
 '''
