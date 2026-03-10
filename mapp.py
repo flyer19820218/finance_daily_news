@@ -225,7 +225,7 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # ==========================================
-# 5. 大標題 (整合曉語主播、邊緣語音合成)
+# 5. 大標題 (整合邊緣語音合成)
 # ==========================================
 raw_report = data.get("report", "") or ""
 
@@ -266,15 +266,15 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 播放器維持 1.00 倍速播放 (結合語速 +10% 會有較快節奏的播報感)
+    # 完美修正：按鈕顯示「收聽快報」，暫停顯示「暫停快報」
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
             <div style="font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉語';}}" 
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
                     style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 14px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
-                ▶️ 收聽曉語
+                ▶️ 收聽快報
             </button>
         </div>
         <div style="color: #64748b; font-size: 13px; margin-bottom: 8px;">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
@@ -340,10 +340,13 @@ st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=Tr
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 🌟 星星金化與兩班制標題變身 🌟
+# 🌟 星星金化防禦機制 (捕捉所有可能的符號) 🌟
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
-processed_report = processed_report.replace("•", gold_star_html) 
+processed_report = processed_report.replace("☆", gold_star_html)
+processed_report = processed_report.replace("•", gold_star_html)
+# 如果 AI 用 Markdown 列表符號 (- 或 *)，強制轉為星星
+processed_report = re.sub(r'(?m)^[-*]\s+', f'{gold_star_html} ', processed_report)
 
 current_hour = datetime.now(tw_tz).hour
 
@@ -355,9 +358,9 @@ else:
     processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
     processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-# 渲染特製文字容器
+# 渲染特製文字容器 (加入 white-space: pre-wrap; 避免換行消失)
 final_html = f'''
-<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px; white-space: pre-wrap;">
     {processed_report}
 </div>
 '''
