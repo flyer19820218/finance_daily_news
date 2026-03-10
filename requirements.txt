@@ -8,4 +8,4 @@ yfinance
 lxml
 beautifulsoup4
 pytz
-gTTS
+edge-tts
