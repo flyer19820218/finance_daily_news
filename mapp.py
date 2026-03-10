@@ -266,7 +266,6 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 維持完美按鈕：收聽快報 / 暫停快報
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
@@ -337,16 +336,19 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 
-# 8. 🤖 AI 摘要
+# ==================================================
+# 8. 🤖 AI 摘要 (包含排版修復)
+# ==================================================
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 退回穩定的單純取代模式，拔除造成破版的防禦機制
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
 processed_report = processed_report.replace("•", gold_star_html) 
 
-current_hour = datetime.now(tw_tz).hour
+# 【核心修復一】強制將「1.」或「星星」後面的斷行黏合，避免文字被擠到下一行
+processed_report = re.sub(r'(\d+\.|' + re.escape(gold_star_html) + r')\s*\n\s*', r'\1 ', processed_report)
 
+current_hour = datetime.now(tw_tz).hour
 if current_hour >= 14 or current_hour < 5:
     processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
     processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
@@ -355,10 +357,12 @@ else:
     processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
     processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-# 退回無 pre-wrap 的乾淨排版 
+# 【核心修復二】在 div 內層上下保留空行，這是讓 Streamlit Markdown 解析正常的秘訣
 final_html = f'''
 <div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
-    {processed_report}
+
+{processed_report}
+
 </div>
 '''
 st.markdown(final_html, unsafe_allow_html=True)
