@@ -266,13 +266,13 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 播放器維持 1.35 倍速播放 (結合語速 +10% 會有較快節奏的播報感)
+    # 播放器維持 1.00 倍速播放 (結合語速 +10% 會有較快節奏的播報感)
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
             <div style="font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.35; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉語';}}" 
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉語';}}" 
                     style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 14px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
                 ▶️ 收聽曉語
             </button>
