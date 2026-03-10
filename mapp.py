@@ -336,19 +336,18 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 
-# ==================================================
-# 8. 🤖 AI 摘要 (包含排版修復)
-# ==================================================
+# 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
+raw_report = data.get("report", "") or ""
+
+# 🌟 星星金化與兩班制標題變身 (手機版) 🌟
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
-processed_report = processed_report.replace("•", gold_star_html) 
 
-# 【核心修復一】強制將「1.」或「星星」後面的斷行黏合，避免文字被擠到下一行
-processed_report = re.sub(r'(\d+\.|' + re.escape(gold_star_html) + r')\s*\n\s*', r'\1 ', processed_report)
-
+tw_tz = pytz.timezone('Asia/Taipei')
 current_hour = datetime.now(tw_tz).hour
+
 if current_hour >= 14 or current_hour < 5:
     processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
     processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
@@ -357,15 +356,78 @@ else:
     processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
     processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-# 【核心修復二】在 div 內層上下保留空行，這是讓 Streamlit Markdown 解析正常的秘訣
+# 渲染特製文字容器
 final_html = f'''
 <div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
-
-{processed_report}
-
+    {processed_report}
 </div>
 '''
 st.markdown(final_html, unsafe_allow_html=True)
+
+# =====================================================================
+# 🌟 [新增] 專屬：長期投資觀察 - 景氣燈號一年走勢圖
+# =====================================================================
+st.markdown('<div style="font-size:16px; font-weight:900; margin-top:24px; margin-bottom:10px; color:#1e293b;">📈 長期投資觀察：景氣對策信號 (近1年)</div>', unsafe_allow_html=True)
+
+@st.cache_data(ttl=3600*24) # 景氣燈號一個月才更新一次，快取可以設很久
+def load_macro_history():
+    # 這裡假設您有一個存放歷史資料的 JSON 檔案
+    hist_file = "data/macro_history.json"
+    if os.path.exists(hist_file):
+        with open(hist_file, "r", encoding="utf-8") as f:
+            hist_data = json.load(f)
+            # 將資料轉為 Pandas DataFrame
+            df = pd.DataFrame(hist_data)
+            df['date'] = pd.to_datetime(df['date'])
+            df = df.set_index('date')
+            return df
+    else:
+        # 如果檔案不存在，生成一些假資料示範排版 (正式上線請刪除此段)
+        dates = pd.date_range(start='2025-01-01', periods=12, freq='M')
+        # 生成一個模擬景氣從谷底復甦的資料 (Score range 9~45)
+        scores = [10, 11, 13, 16, 18, 22, 28, 32, 36, 38, 39, 39]
+        df = pd.DataFrame({'date': dates, '景氣分數': scores})
+        df = df.set_index('date')
+        return df
+
+# 讀取資料
+df_macro = load_macro_history()
+
+if not df_macro.empty:
+    # 建立一個精美的容器來包裝圖表
+    with st.container(border=True):
+        # 1. 顯示最新的燈號分數 (最右邊的資料)
+        latest_score = df_macro.iloc[-1]['景氣分數']
+        
+        # 判定目前的燈號顏色
+        def get_light_info(score):
+            if score >= 38: return ("#ef4444", "紅燈")
+            elif score >= 32: return ("#f97316", "黃紅燈")
+            elif score >= 23: return ("#16a34a", "綠燈")
+            elif score >= 17: return ("#eab308", "黃藍燈")
+            else: return ("#2563eb", "藍燈")
+            
+        light_color, light_name = get_light_info(latest_score)
+        
+        # 顯示當前指標狀態
+        st.markdown(f'''
+        <div style="text-align:center; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom:10px;">
+            <div style="font-size: 13px; color: #64748b;">最新月份狀態</div>
+            <div style="font-size: 32px; font-weight: 900; color: {light_color}; line-height:1;">
+                {latest_score} <span style="font-size: 20px;">分</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 700; color: {light_color};">熱絡 {light_name}</div>
+        </div>
+        ''', unsafe_allow_html=True)
+        
+        # 2. 渲染走勢圖 (使用面積圖更漂亮，且自帶漸層)
+        st.area_chart(df_macro['景氣分數'], color=light_color)
+        
+        # 3. 加入長期投資觀察的註解
+        st.markdown('<div style="font-size:12px; color:#64748b; margin-top:-10px; line-height:1.4;">※ 註：9~16分藍燈為低迷(長期買點)，38~45分紅燈為熱絡(高檔風險)。走勢圖能幫助判斷目前處於景氣循環的哪個階段。</div>', unsafe_allow_html=True)
+
+else:
+    st.info("尚無歷史景氣對策信號資料。")
 
 
 # ==================================================
