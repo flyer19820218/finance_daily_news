@@ -140,7 +140,7 @@ def get_market_indicators():
 # 4️⃣ Telegram 推播功能 (Notification)
 # ==========================================
 def send_telegram_message(text):
-    """將生成的 AI 報告傳送到您的 Telegram 手機裡"""
+    """將生成的 AI 報告傳送到您的 Telegram 手機裡（具備格式錯誤自動重發防禦機制）"""
     token = os.environ.get("TELEGRAM_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     
@@ -149,18 +149,38 @@ def send_telegram_message(text):
         return
         
     url = f"https://api.telegram.org/bot{token}/sendMessage"
+    
+    # 第一次嘗試：帶有 Markdown 格式發送
     payload = {
         "chat_id": chat_id,
         "text": text,
-        "parse_mode": "Markdown" # 讓 Telegram 支援星號粗體格式
+        "parse_mode": "Markdown" 
     }
     
     try:
         res = requests.post(url, json=payload, timeout=10)
+        
+        # 如果成功發送
         if res.status_code == 200:
-            print("✅ Telegram 推播成功！")
+            print("✅ Telegram 推播成功！(格式渲染完美)")
+            
+        # 🚨 如果遇到格式解析錯誤 (Error 400) -> 啟動安全氣囊，改用純文字重發！
+        elif res.status_code == 400 and "can't parse entities" in res.text:
+            print("⚠️ Telegram 格式解析失敗，啟動【純文字安全模式】重新發送...")
+            safe_payload = {
+                "chat_id": chat_id,
+                "text": text
+                # 故意拿掉 parse_mode，當作純文字發送，保證絕對不會被擋！
+            }
+            safe_res = requests.post(url, json=safe_payload, timeout=10)
+            if safe_res.status_code == 200:
+                print("✅ Telegram 安全模式推播成功！(已還原為純文字)")
+            else:
+                print(f"❌ 安全模式也推播失敗: {safe_res.text}")
+                
         else:
             print(f"⚠️ Telegram 推播失敗: {res.text}")
+            
     except Exception as e:
         print(f"⚠️ Telegram 請求發生錯誤: {e}")
 
