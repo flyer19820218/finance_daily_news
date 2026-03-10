@@ -7,6 +7,10 @@ import pandas as pd
 from urllib.parse import urlparse
 from datetime import datetime, time
 import pytz
+from gtts import gTTS
+import io
+import re
+import base64
 
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
@@ -174,18 +178,15 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
-            # 1. 抓取年份
             years = []
             for f in hist_files:
                 y = f[:4]
                 if y not in years: years.append(y)
             
-            # 手機版佈局：年份與月份並排一行
             col_y, col_m = st.columns(2)
             with col_y:
                 selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
             
-            # 2. 抓取月份
             months = []
             for f in hist_files:
                 if f.startswith(selected_year):
@@ -195,7 +196,6 @@ else:
             with col_m:
                 selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
             
-            # 3. 獨立全寬選取特定報告，避免手指點不到
             prefix = f"{selected_year}-{selected_month}"
             filtered_hist = [f for f in hist_files if f.startswith(prefix)]
             
@@ -212,12 +212,52 @@ else:
 if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
-# 5. 大標題
+# ==========================================
+# 5. 大標題 (整合曉臻主播專屬膠囊按鈕)
+# ==========================================
+raw_report = data.get("report", "") or ""
+
+@st.cache_data(show_spinner=False)
+def generate_anchor_audio(text):
+    if not text: return None
+    try:
+        clean_text = re.sub(r'<[^>]+>', '', text) 
+        clean_text = clean_text.replace("*", "").replace("★", "").replace("#", "").replace("-", "").replace("•", "")
+        greeting = "各位同仁好，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 "
+        full_script = greeting + clean_text
+        
+        tts = gTTS(text=full_script, lang='zh-TW')
+        fp = io.BytesIO()
+        tts.write_to_fp(fp)
+        return fp.getvalue()
+    except Exception as e:
+        return None
+
+audio_bytes = generate_anchor_audio(raw_report)
+
+# 製作專屬的客製化播放按鈕 HTML
+play_button_html = ""
+if audio_bytes:
+    # 將音檔轉換成網頁隱藏編碼
+    b64_audio = base64.b64encode(audio_bytes).decode()
+    # 打造極致美感的漸層膠囊按鈕 (內建暫停/播放邏輯)
+    play_button_html = f'''
+    <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
+    <button onclick="var a = document.getElementById('anchor-audio'); if(a.paused){{a.play();}}else{{a.pause();}}" 
+            style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 15px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px;">
+        ▶️ 收聽曉臻
+    </button>
+    '''
+
+# 渲染標題與按鈕 (display: flex 讓它們完美並排)
 st.markdown(f'''
-<div class="brand">財經AI快報</div>
+<div class="brand" style="display: flex; align-items: center;">
+    財經AI快報 {play_button_html}
+</div>
 <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
 <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
 ''', unsafe_allow_html=True)
+
 
 # ==================================================
 # 6. 日夜自動切換市場快照
@@ -225,12 +265,10 @@ st.markdown(f'''
 tw_tz = pytz.timezone('Asia/Taipei')
 current_tw_time = datetime.now(tw_tz).time()
 
-# 判定時間：21:30 ~ 09:00 為美股時間
 time_2130 = time(21, 30)
 time_0900 = time(9, 0)
 is_us_market = (current_tw_time >= time_2130 or current_tw_time < time_0900)
 
-# 將您原本的網格產生邏輯包裝成函數，方便呼叫
 def render_market_grid(title, targets_list):
     html = f'<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div>'
     html += '<div class="m-grid">'
@@ -247,16 +285,13 @@ def render_market_grid(title, targets_list):
     html += '</div>'
     return html
 
-# 依據時間動態渲染
 if is_us_market:
     us_targets = [("TSM", "台積電-adr"), ("^DJI", "道瓊工業"), ("^IXIC", "納斯達克"), ("NVDA", "NVIDIA"), ("^SOX", "費半"), ("EWT", "MSCI 台灣")]
     st.markdown(render_market_grid("🌍 全球市場快照 (美股時段)", us_targets), unsafe_allow_html=True)
 else:
-    # 權值股陣容
     top6_targets = [("^TWII", "加權指數"), ("2330.TW", "台積電"), ("2454.TW", "聯發科"), ("^N225", "日經225"), ("^KS11", "韓國綜合"), ("0050.TW", "元大台灣50")]
     st.markdown(render_market_grid("👑 護國神山與亞洲指數", top6_targets), unsafe_allow_html=True)
     
-    # 爆量股陣容 (優先讀取 hot_stocks.json，若無則用備用)
     try:
         with open("hot_stocks.json", "r", encoding="utf-8") as f:
             vol_pool = json.load(f).get("top_volume_pool", {})
@@ -266,6 +301,7 @@ else:
     
     st.markdown(render_market_grid("🔥 盤中實戰：市場人氣爆量", vol_targets), unsafe_allow_html=True)
 
+
 # 7. 🏦 整合版外資籌碼表
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
@@ -274,35 +310,30 @@ st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=Tr
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 🌟 星星金化與兩班制標題變身 (手機版) 🌟
-raw_report = data.get("report", "") or ""
-
-# 1. 把星星變金色
+# 🌟 星星金化與兩班制標題變身 🌟
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
+processed_report = processed_report.replace("•", gold_star_html) # 把黑點也變金星
 
-# 2. 自動判斷時間，切換標題 (兩班制)
-tw_tz = pytz.timezone('Asia/Taipei')
 current_hour = datetime.now(tw_tz).hour
 
-# ⚠️ 注意：手機版沒有左右欄位，所以這段 if...else 要完全貼齊左邊界！
 if current_hour >= 14 or current_hour < 5:
-    # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
     processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
     processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
     processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
 else:
-    # ☀️ 早上時段
     processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
     processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-# 3. 渲染特製容器 (這段也是貼齊左邊界)
+# 渲染特製文字容器
 final_html = f'''
 <div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">
     {processed_report}
 </div>
 '''
 st.markdown(final_html, unsafe_allow_html=True)
+
+
 # ==================================================
 # 9. 📰 24小時即時新聞快報 (富途牛牛垂直時間軸風格)
 # ==================================================
@@ -312,13 +343,11 @@ news = data.get("news", [])
 if news:
     news_html = '<div class="timeline-container">'
     
-    # 🌟 解除封印：把原本的 news[:15] 改成 news，直接顯示所有 24 小時內抓到的快訊！
     for n in news:
         link = n.get("link", "")
         title = n.get("title", "")
         summary = n.get("summary", "")
         
-        # 處理時間：解析 UTC 時間並轉換為台灣時間的 HH:MM
         dt_str = n.get("dt_utc", "")
         try:
             dt_utc = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
@@ -327,7 +356,6 @@ if news:
         except:
             time_display = "今日" 
             
-        # ⚠️ 保持一行不縮排的黃金守則
         news_html += f'<div class="timeline-item"><div class="timeline-time">{time_display}</div><a href="{link}" target="_blank" class="timeline-title">{title}</a><div class="timeline-summary">{summary}</div></div>'
         
     news_html += '</div>'
