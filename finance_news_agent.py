@@ -77,7 +77,7 @@ def fetch_news(hours=24, limit=64):
             
     save_cache(cache_list)
     news.sort(key=lambda x: x["dt_utc"], reverse=True)
-    return news[:limit]
+    return news[:limit] # 🌟 這裡原本的錯字已經修復為 return
 
 # ==========================================
 # 3️⃣ 輔助資料抓取 (人氣股與真實市場指標)
@@ -94,46 +94,55 @@ def update_hot_stocks():
     except Exception as e:
         print(f"⚠️ 抓取爆量名單失敗: {e}")
 
-def get_market_indicators():
-    """盤前專用：抓取真實的 VIX 恐慌指數、匯率與融資餘額"""
-    indicators = []
+def fetch_risk_indicators():
+    """抓取 VIX、匯率、大盤 PE/PB 與景氣燈號 (前端儀表板專用)"""
+    risk_data = {
+        "vix": "-", "vix_trend": "",
+        "usd_twd": "-", "usd_trend": "",
+        "pe": "-", "pb": "-",
+        "light": "紅燈 (39分)", # 手動設定當月燈號
+        "light_month": f"{datetime.now(TW_TZ).year}年最新資料"
+    }
     
     # 抓取 VIX
     try:
         vix_data = yf.Ticker("^VIX").history(period="1d")
         vix_close = vix_data['Close'].iloc[-1]
-        indicators.append(f"👉 VIX 恐慌指數收盤：{vix_close:.2f}")
-    except:
-        indicators.append("👉 VIX 恐慌指數：暫無數據")
+        vix_open = vix_data['Open'].iloc[-1]
+        risk_data["vix"] = f"{vix_close:.2f}"
+        risk_data["vix_trend"] = f"▲ {vix_close-vix_open:.2f}" if vix_close > vix_open else f"▼ {vix_open-vix_close:.2f}"
+    except: pass
 
-    # 抓取 美元/台幣 匯率
+    # 抓取 匯率
     try:
         twd_data = yf.Ticker("TWD=X").history(period="1d")
         twd_close = twd_data['Close'].iloc[-1]
-        indicators.append(f"👉 美元/台幣匯率：{twd_close:.2f}")
-    except:
-        pass
+        twd_open = twd_data['Open'].iloc[-1]
+        risk_data["usd_twd"] = f"{twd_close:.2f}"
+        risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
+    except: pass
 
-    # 抓取 證交所融資餘額
+    # 抓取 大盤 PE / PB
     try:
-        url = "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN"
+        url = "https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=json"
         res = requests.get(url, timeout=10)
-        data = res.json()
-        margin_items = []
-        for d in data:
-            item_name = d.get('Item') or d.get('CreditType') or ''
-            if '融資' in item_name and '總計' not in item_name:
-                balance = d.get('TodayBalance') or d.get('Balance') or '未知'
-                margin_items.append(f"餘額 {balance} 單位")
-                break
-                
-        if margin_items:
-            indicators.append(f"👉 證交所最新融資狀態：{margin_items[0]}")
-        else:
-            indicators.append("👉 證交所最新融資狀態：已公告，需留意籌碼變化")
-    except:
-        indicators.append("👉 證交所最新融資狀態：API 暫無數據")
-        
+        if res.status_code == 200:
+            twse_data = res.json()
+            latest_day_data = twse_data.get("data", [])[-1]
+            risk_data["pe"] = latest_day_data[3]
+            risk_data["pb"] = latest_day_data[4]
+    except: pass
+    
+    return risk_data
+
+def get_market_indicators_text(risk_data):
+    """將抓到的風險數據轉成文字，準備餵給 AI"""
+    indicators = []
+    if risk_data["vix"] != "-": indicators.append(f"👉 VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
+    if risk_data["usd_twd"] != "-": indicators.append(f"👉 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
+    if risk_data["pe"] != "-": indicators.append(f"👉 大盤本益比(PE)：{risk_data['pe']} | 股價淨值比(PB)：{risk_data['pb']}")
+    indicators.append(f"👉 目前台灣景氣對策信號：{risk_data['light']}")
+    
     return "【當前真實市場指標】\n" + "\n".join(indicators)
 
 # ==========================================
@@ -187,30 +196,21 @@ def send_telegram_message(text):
 # ==========================================
 # 5️⃣ 核心 AI 大腦 (Gemini 2.5 Flash 終極深度版)
 # ==========================================
-def ai_analyze(news, period_str):
+def ai_analyze(news, period_str, risk_data):
     """把新聞和數據餵給 Gemini，並要求它產出高質量的深度報告"""
     if not news: 
         return f"📰 目前偵蒐範圍內無重大市場波動事件。({period_str})"
         
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
     
-    # 盤前專屬：加入真實市場數據
-    market_data_section = ""
-    market_data_prompt = ""
+    # 將風險數據轉成給 AI 讀的文字
+    market_data_section = get_market_indicators_text(risk_data)
     
-    if period_str == "盤前":
-        market_data_text = get_market_indicators()
-        # [監視器] 印出真實數據在 GitHub 後台
-        print("\n=== 🕵️‍♂️ 系統抓到的盤前真實數據 ===")
-        print(market_data_text)
-        print("==================================\n")
-        
-        market_data_section = f"{market_data_text}"
-        market_data_prompt = """
-    ✅ 【強制執行事項】：在「市場情緒」段落，必須「明確引述」當前的 VIX 數值與融資餘額數據，並以此作為籌碼與恐慌壓力的佐證！
-        """
+    print("\n=== 🕵️‍♂️ 系統抓到的盤前真實數據 ===")
+    print(market_data_section)
+    print("==================================\n")
 
-    # 🌟 完美還原第一版的超詳細架構與星級評分 (一分鐘速讀懶人包)
+    # 🌟 升級版 Prompt：強制要求金星星與指標引述
     strategy_prompt = f"""
     你是全球頂級政經情報中心的資深戰略分析官。
     任務：偵蒐並深度分析全球政經事件對台股與全球市場的衝擊。
@@ -220,31 +220,29 @@ def ai_analyze(news, period_str):
     {text}
     
     【撰寫規範】：
-    請嚴格依照以下 Markdown 格式輸出，必須保持極高的專業度、層次分明，且分析具備深度：
+    請嚴格依照以下 Markdown 格式輸出，必須保持極高的專業度、層次分明，且分析具備深度。
+    ⚠️【絕對強制要求】：所有條列項目的開頭，都必須使用「★」符號！嚴禁使用「-」或「•」。
 
-    🎯 【一分鐘速讀懶人包】
-    請用 3 句極簡的列點，直接點出今日市場的「核心多空風向」、「最需留意的風險」與「強勢板塊」，讓讀者 10 秒內掌握全局。
+    ★ 🎯 【一分鐘速讀懶人包】
+    請用 3 句極簡的列點(開頭用★)，直接點出今日市場的「核心多空風向」、「最需留意的風險」與「強勢板塊」，讓讀者 10 秒內掌握全局。
 
-    📊 【重大事件】
-    請從素材中挑選 4-6 件對市場影響最大的政經或產業新聞，依序進行深度解析。每項格式如下：
+    ★ 📊 【重大事件】
+    請從素材中挑選 4-6 件對市場影響最大的政經或產業新聞，依序進行深度解析。
     X. [事件精簡標題]
-       - 重要性：[以 ★ 表示，最高五顆星，例如 ★★★★☆]
-       - 解讀：[深度分析該事件對全球經濟、原物料、供應鏈或資金流向的具體影響。切勿只重複新聞，要寫出「為什麼重要」]
+       ★ 重要性：[以 ★ 表示，最高五顆星，例如 ★★★★☆]
+       ★ 解讀：[深度分析該事件對全球經濟、供應鏈或資金流向的具體影響]
 
-    🔥 【市場情緒與壓力測試】
-    {market_data_prompt}
-    請統整目前的市場心理狀態（例如：偏好避險、觀望氣氛濃厚、熱錢湧入等），分析資金板塊轉移的可能方向。
+    ★ 🔥 【市場情緒與壓力測試】
+    ⚠️【強制執行事項】：必須「明確引述」提供的 VIX 數值、匯率、PE/PB 以及景氣燈號，並以此作為籌碼與估值壓力的佐證！
+    請統整目前的市場心理狀態，分析資金板塊轉移的可能方向。
 
-    💰 【台股影響與板塊點名】
+    ★ 💰 【台股影響與板塊點名】
     請綜合評估對台股的影響，分為兩個維度：
-    - 短期影響：[說明利多、利空或震盪。必須具體點名「受惠產業」與「受衝擊產業」(如航運、半導體、觀光等)]
-    - 長期趨勢：[說明在當前局勢下，哪些產業(如 AI、雲端、重電)仍具備基本面護城河]
+    ★ 短期影響：[說明利多、利空或震盪。必須具體點名受惠與受衝擊產業]
+    ★ 長期趨勢：[說明在當前局勢下，哪些產業仍具備基本面護城河]
 
-    📈 【投資觀察指引】
-    請給出 3-5 點具體、可操作的投資與觀察建議（包含：該留意哪些總經數據、外資動向、或是逢低佈局的產業方向）。
-    1. ...
-    2. ...
-    3. ...
+    ★ 📈 【投資觀察指引】
+    請給出 3-5 點具體、可操作的投資與觀察建議(開頭用★)。
     """
 
     genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
@@ -301,11 +299,14 @@ def run_daily():
     final_news.sort(key=lambda x: x["dt_utc"], reverse=True)
     final_news = final_news[:64]
 
+    # 🌟 抓取最新鮮的市場風險指標
+    current_risk_data = fetch_risk_indicators()
+
     # 根據任務指令，決定要不要叫醒 AI
     if task_type == "full_report":
         print("🧠 執行任務：呼叫 AI 撰寫深度報告並推播...")
-        # ⚠️ 把這 64 則完整新聞餵給 AI 寫報告
-        report_text = ai_analyze(final_news, period_str)
+        # ⚠️ 把 64 則新聞與風險指標一起餵給 AI
+        report_text = ai_analyze(final_news, period_str, current_risk_data)
         send_telegram_message(report_text) 
     else:
         print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
@@ -316,7 +317,8 @@ def run_daily():
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"全球局勢與市場情報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
         "report": report_text,
-        "news": final_news, # ⚠️ 寫入合體後的 64 則完整大軍！
+        "news": final_news, 
+        "risk_indicators": current_risk_data, # 🌟 關鍵：將前端儀表板要用的數據存入！
     }
     
     # 存檔：覆寫最新報告
