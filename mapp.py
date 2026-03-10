@@ -7,22 +7,33 @@ import pandas as pd
 from urllib.parse import urlparse
 from datetime import datetime, time
 import pytz
-from gtts import gTTS
+import edge_tts
+import asyncio
 import io
 import re
 import base64
+import streamlit.components.v1 as components
 
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (動態方塊 + 籌碼高光 + 垂直時間軸)
+# 2. 核心 CSS (動態方塊 + 籌碼高光 + 垂直時間軸 + iOS反黑修復補丁)
 st.markdown("""
 <style>
-:root{
+/* 強制亮色模式補丁 */
+:root { 
+  color-scheme: light !important; 
   --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3;
 }
 .block-container { padding: 0.8rem 0.6rem !important; }
-.stApp { background:#ffffff; font-family: "翩翩體", "PingFang TC", sans-serif; }
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important;
+}
+
+/* 確保所有文字標籤為黑色 */
+p, span, h1, h2, h3, label { color: #000000 !important; }
 
 /* 標題區 */
 .brand { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-bottom: 2px;}
@@ -31,7 +42,7 @@ st.markdown("""
 
 /* 方案三：籌碼高光表格 CSS */
 .combined-table { width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-.combined-table th { background: #1e293b; padding: 10px 4px; color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+.combined-table th { background: #1e293b; padding: 10px 4px; color: #ffffff !important; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
 .combined-table td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; }
 
 /* 方案一：3x2 市場網格 (動態背景) */
@@ -46,40 +57,40 @@ st.markdown("""
   transition: all 0.3s ease;
 }
 /* 漲跌動態背景色 */
-.m-tile.up-bg { background: #f0fdf4; border-color: #bbf7d0; }
-.m-tile.down-bg { background: #fef2f2; border-color: #fecaca; }
+.m-tile.up-bg { background: #f0fdf4 !important; border-color: #bbf7d0; }
+.m-tile.down-bg { background: #fef2f2 !important; border-color: #fecaca; }
 
-.m-name { color: var(--muted); font-size: 9px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; }
-.m-price { font-size: 16px; font-weight: 900; margin: 3px 0; color: #0f172a; letter-spacing: -0.5px; }
+.m-name { color: var(--muted) !important; font-size: 9px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; }
+.m-price { font-size: 16px; font-weight: 900; margin: 3px 0; color: #0f172a !important; letter-spacing: -0.5px; }
 .m-pct { font-size: 11px; font-weight: 800; }
-.up { color: var(--up); } .down { color: var(--down); }
+.up { color: var(--up) !important; } .down { color: var(--down) !important; }
 
 /* 🌟 手機特務版：極簡垂直時間軸 🌟 */
 .timeline-container {
-    border-left: 1px solid #e2e8f0; /* 線條變細更精緻 */
-    margin-left: 10px; 
+    border-left: 1px solid #e2e8f0; 
+    margin-left: 10px;  
     padding-left: 14px; 
     position: relative;
     margin-bottom: 20px;
 }
 .timeline-item {
     position: relative;
-    margin-bottom: 18px; /* 縮小間距，一屏看更多 */
+    margin-bottom: 18px; 
 }
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -18.5px; /* 貼齊細線 */
+    left: -18.5px; 
     top: 5px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #000000; /* 圓點改為純黑，更有特務感 */
+    background-color: #000000; 
     border: 2px solid #ffffff; 
 }
 .timeline-time {
     font-size: 11px;
-    color: #94a3b8;
+    color: #94a3b8 !important;
     font-weight: 700;
     margin-bottom: 2px;
     font-family: monospace; 
@@ -87,7 +98,7 @@ st.markdown("""
 .timeline-title {
     font-size: 14px;
     font-weight: 800;
-    color: #000000 !important; /* 🌟 標題改為純黑 🌟 */
+    color: #000000 !important; 
     line-height: 1.4;
     margin-bottom: 0px;
     text-decoration: none;
@@ -98,9 +109,10 @@ st.markdown("""
     text-decoration: underline;
 }
 .timeline-summary {
-    display: none !important; /* 🌟 核心：手機版徹底隱藏摘要 🌟 */
+    display: none !important; 
 }
-""" , unsafe_allow_html=True)
+</style>
+""", unsafe_allow_html=True)
 
 # 3. 數據抓取 (YF 與 HiStock)
 @st.cache_data(ttl=60)
@@ -213,50 +225,39 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # ==========================================
-# 5. 大標題 (整合曉語主播、財富自由開場、數星星、去浮誇自介)
+# 5. 大標題 (整合曉語主播、邊緣語音合成)
 # ==========================================
-import streamlit.components.v1 as components
-import re
-
 raw_report = data.get("report", "") or ""
 
 @st.cache_data(show_spinner=False)
 def generate_anchor_audio(text):
     if not text: return None
     try:
-        # 1. 移除 HTML 標籤
         clean_text = re.sub(r'<[^>]+>', '', text) 
-        
-        # 2. 斬妖除魔：把 AI 浮誇的自我介紹直接刪掉
         clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
-        
-        # 🌟 3. 新增：移除所有的彩色表情符號 (Emoji)，讓主播直接跳過不唸
-        # \U00010000-\U0010ffff 涵蓋了 99% 的手機圖案 (如 🎯, 📊, 🚀)
         clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text)
-        
-        # 4. 數星星魔法：先把空心星拿掉，再把實心星轉換成「X顆星」
         clean_text = clean_text.replace("☆", "") 
         def star_replacer(match):
             return f"{len(match.group(0))}顆星"
         clean_text = re.sub(r'★+', star_replacer, clean_text)
-        
-        # 5. 濾掉其他影響語音的符號 
         clean_text = clean_text.replace("*", "").replace("#", "").replace("-", "").replace("•", "")
+        clean_text = clean_text.replace("重挫", "仲挫")
+        clean_text = clean_text.replace("重擊", "仲擊")
+        clean_text = clean_text.replace("重啟", "蟲啟")
         
-        # 🌟 6. 新增：破音字正音班 (前端顯示不變，只騙過語音引擎)
-        clean_text = clean_text.replace("重挫", "仲挫") # 強迫發 ㄓㄨㄥˋ 的音
-        clean_text = clean_text.replace("重擊", "仲擊") # 順便把重擊也防禦起來
-        clean_text = clean_text.replace("重啟", "蟲啟") # 如果有重啟，就必須唸蟲的音 (預防萬一)
-        
-        # 7. 霸氣開場白強勢回歸！ + 曉語主播
         greeting = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 "
         full_script = greeting + clean_text
         
-        # 8. 呼叫語音引擎
-        tts = gTTS(text=full_script, lang='zh-TW')
-        fp = io.BytesIO()
-        tts.write_to_fp(fp)
-        return fp.getvalue()
+        async def _generate():
+            voice = "zh-TW-HsiaoChenNeural"
+            communicate = edge_tts.Communicate(full_script, voice, rate="+10%", pitch="+5Hz")
+            audio_data = b""
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    audio_data += chunk["data"]
+            return audio_data
+
+        return asyncio.run(_generate())
     except Exception as e:
         return None
 
@@ -265,7 +266,7 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 播放器：1.35 倍速，按鈕文字改為「曉語」
+    # 播放器維持 1.35 倍速播放 (結合語速 +10% 會有較快節奏的播報感)
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
@@ -342,7 +343,7 @@ st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; col
 # 🌟 星星金化與兩班制標題變身 🌟
 gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
 processed_report = raw_report.replace("★", gold_star_html)
-processed_report = processed_report.replace("•", gold_star_html) # 把黑點也變金星
+processed_report = processed_report.replace("•", gold_star_html) 
 
 current_hour = datetime.now(tw_tz).hour
 
