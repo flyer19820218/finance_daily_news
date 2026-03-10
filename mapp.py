@@ -227,24 +227,32 @@ def generate_anchor_audio(text):
         # 1. 移除 HTML 標籤
         clean_text = re.sub(r'<[^>]+>', '', text) 
         
-        # 🌟 2. 斬妖除魔：把 AI 浮誇的自我介紹直接刪掉！
-        # 攔截從「作為...」一直到「報告如下：」之間的所有廢話
+        # 2. 斬妖除魔：把 AI 浮誇的自我介紹直接刪掉
         clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
         
-        # 🌟 3. 數星星魔法：先把空心星拿掉，再把實心星轉換成「X顆星」
+        # 🌟 3. 新增：移除所有的彩色表情符號 (Emoji)，讓主播直接跳過不唸
+        # \U00010000-\U0010ffff 涵蓋了 99% 的手機圖案 (如 🎯, 📊, 🚀)
+        clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text)
+        
+        # 4. 數星星魔法：先把空心星拿掉，再把實心星轉換成「X顆星」
         clean_text = clean_text.replace("☆", "") 
         def star_replacer(match):
             return f"{len(match.group(0))}顆星"
         clean_text = re.sub(r'★+', star_replacer, clean_text)
         
-        # 4. 濾掉其他影響語音的符號 
+        # 5. 濾掉其他影響語音的符號 
         clean_text = clean_text.replace("*", "").replace("#", "").replace("-", "").replace("•", "")
         
-        # 🌟 5. 霸氣開場白強勢回歸！ + 曉語主播
+        # 🌟 6. 新增：破音字正音班 (前端顯示不變，只騙過語音引擎)
+        clean_text = clean_text.replace("重挫", "仲挫") # 強迫發 ㄓㄨㄥˋ 的音
+        clean_text = clean_text.replace("重擊", "仲擊") # 順便把重擊也防禦起來
+        clean_text = clean_text.replace("重啟", "蟲啟") # 如果有重啟，就必須唸蟲的音 (預防萬一)
+        
+        # 7. 霸氣開場白強勢回歸！ + 曉語主播
         greeting = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 "
         full_script = greeting + clean_text
         
-        # 6. 呼叫語音引擎
+        # 8. 呼叫語音引擎
         tts = gTTS(text=full_script, lang='zh-TW')
         fp = io.BytesIO()
         tts.write_to_fp(fp)
