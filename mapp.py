@@ -213,9 +213,10 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # ==========================================
-# 5. 大標題 (整合曉臻主播專屬膠囊按鈕 - 財務自由開場白版)
+# 5. 大標題 (整合曉語主播、財富自由開場、數星星、去浮誇自介)
 # ==========================================
 import streamlit.components.v1 as components
+import re
 
 raw_report = data.get("report", "") or ""
 
@@ -223,13 +224,27 @@ raw_report = data.get("report", "") or ""
 def generate_anchor_audio(text):
     if not text: return None
     try:
+        # 1. 移除 HTML 標籤
         clean_text = re.sub(r'<[^>]+>', '', text) 
-        clean_text = clean_text.replace("*", "").replace("★", "").replace("#", "").replace("-", "").replace("•", "")
         
-        # 🌟 換上全新、充滿動力的開場白！避開早晚安，適合全天候播報。
-        greeting = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 "
+        # 🌟 2. 斬妖除魔：把 AI 浮誇的自我介紹直接刪掉！
+        # 攔截從「作為...」一直到「報告如下：」之間的所有廢話
+        clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
+        
+        # 🌟 3. 數星星魔法：先把空心星拿掉，再把實心星轉換成「X顆星」
+        clean_text = clean_text.replace("☆", "") 
+        def star_replacer(match):
+            return f"{len(match.group(0))}顆星"
+        clean_text = re.sub(r'★+', star_replacer, clean_text)
+        
+        # 4. 濾掉其他影響語音的符號 
+        clean_text = clean_text.replace("*", "").replace("#", "").replace("-", "").replace("•", "")
+        
+        # 🌟 5. 霸氣開場白強勢回歸！ + 曉語主播
+        greeting = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 "
         full_script = greeting + clean_text
         
+        # 6. 呼叫語音引擎
         tts = gTTS(text=full_script, lang='zh-TW')
         fp = io.BytesIO()
         tts.write_to_fp(fp)
@@ -242,15 +257,15 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 維持 1.25 倍輕快語速的播放器
+    # 播放器：1.35 倍速，按鈕文字改為「曉語」
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
             <div style="font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.25; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉臻';}}" 
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.35; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉語';}}" 
                     style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 14px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
-                ▶️ 收聽曉臻
+                ▶️ 收聽曉語
             </button>
         </div>
         <div style="color: #64748b; font-size: 13px; margin-bottom: 8px;">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
