@@ -213,9 +213,9 @@ if not data:
     st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
 
 # ==========================================
-# 5. 大標題 (整合曉臻主播專屬膠囊按鈕)
+# 5. 大標題 (整合曉臻主播專屬膠囊按鈕 - 財務自由開場白版)
 # ==========================================
-import streamlit.components.v1 as components  # 🌟 呼叫進階組件工具突破限制
+import streamlit.components.v1 as components
 
 raw_report = data.get("report", "") or ""
 
@@ -225,7 +225,9 @@ def generate_anchor_audio(text):
     try:
         clean_text = re.sub(r'<[^>]+>', '', text) 
         clean_text = clean_text.replace("*", "").replace("★", "").replace("#", "").replace("-", "").replace("•", "")
-        greeting = "各位同仁好，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 "
+        
+        # 🌟 換上全新、充滿動力的開場白！避開早晚安，適合全天候播報。
+        greeting = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 "
         full_script = greeting + clean_text
         
         tts = gTTS(text=full_script, lang='zh-TW')
@@ -240,13 +242,13 @@ audio_bytes = generate_anchor_audio(raw_report)
 if audio_bytes:
     b64_audio = base64.b64encode(audio_bytes).decode()
     
-    # 🌟 改用 components.html，讓播放與暫停邏輯真正生效！
+    # 維持 1.25 倍輕快語速的播放器
     html_code = f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
             <div style="font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉臻';}}" 
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.25; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉臻';}}" 
                     style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 14px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
                 ▶️ 收聽曉臻
             </button>
@@ -255,7 +257,6 @@ if audio_bytes:
         <div style="font-size: 11px; color: #94a3b8; margin-bottom: 12px;">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
     </div>
     """
-    # 建立一個高度剛剛好的獨立視窗來運行按鈕
     components.html(html_code, height=100)
 else:
     st.markdown(f'''
