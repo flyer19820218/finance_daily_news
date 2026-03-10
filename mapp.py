@@ -215,6 +215,8 @@ if not data:
 # ==========================================
 # 5. 大標題 (整合曉臻主播專屬膠囊按鈕)
 # ==========================================
+import streamlit.components.v1 as components  # 🌟 呼叫進階組件工具突破限制
+
 raw_report = data.get("report", "") or ""
 
 @st.cache_data(show_spinner=False)
@@ -235,29 +237,32 @@ def generate_anchor_audio(text):
 
 audio_bytes = generate_anchor_audio(raw_report)
 
-# 製作專屬的客製化播放按鈕 HTML
-play_button_html = ""
 if audio_bytes:
-    # 將音檔轉換成網頁隱藏編碼
     b64_audio = base64.b64encode(audio_bytes).decode()
-    # 打造極致美感的漸層膠囊按鈕 (內建暫停/播放邏輯)
-    play_button_html = f'''
-    <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-    <button onclick="var a = document.getElementById('anchor-audio'); if(a.paused){{a.play();}}else{{a.pause();}}" 
-            style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 15px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px;">
-        ▶️ 收聽曉臻
-    </button>
-    '''
-
-# 渲染標題與按鈕 (display: flex 讓它們完美並排)
-st.markdown(f'''
-<div class="brand" style="display: flex; align-items: center;">
-    財經AI快報 {play_button_html}
-</div>
-<div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
-<div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
-''', unsafe_allow_html=True)
-
+    
+    # 🌟 改用 components.html，讓播放與暫停邏輯真正生效！
+    html_code = f"""
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0;">
+        <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <div style="font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
+            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
+            <button onclick="var a = document.getElementById('anchor-audio'); if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停播報';}}else{{a.pause(); this.innerHTML='▶️ 收聽曉臻';}}" 
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 6px 16px; font-size: 14px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
+                ▶️ 收聽曉臻
+            </button>
+        </div>
+        <div style="color: #64748b; font-size: 13px; margin-bottom: 8px;">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
+        <div style="font-size: 11px; color: #94a3b8; margin-bottom: 12px;">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
+    </div>
+    """
+    # 建立一個高度剛剛好的獨立視窗來運行按鈕
+    components.html(html_code, height=100)
+else:
+    st.markdown(f'''
+    <div class="brand">財經AI快報</div>
+    <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
+    <div class="update-time">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
+    ''', unsafe_allow_html=True)
 
 # ==================================================
 # 6. 日夜自動切換市場快照
