@@ -184,7 +184,7 @@ def update_hot_stocks():
 
 # ==========================================
 def fetch_risk_indicators():
-    """隱形迷彩版感測器：全自動抓取 VIX、匯率、維持率、景氣燈號"""
+    """方案 2：政府官方 API 版。繞過網頁爬蟲，直接抓取原始數據。"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
@@ -192,61 +192,61 @@ def fetch_risk_indicators():
         "business_light": "-"
     }
     
-    # 1. 抓取 VIX (使用 yfinance 保險)
+    # 1. 抓取 VIX 與 匯率 (維持 yfinance，最穩定)
     try:
         vix_df = yf.Ticker("^VIX").history(period="2d")
-        vix_close = vix_df['Close'].iloc[-1]
-        vix_prev = vix_df['Close'].iloc[-2]
-        risk_data["vix"] = f"{vix_close:.2f}"
-        risk_data["vix_trend"] = f"▲ {vix_close-vix_prev:.2f}" if vix_close > vix_prev else f"▼ {vix_prev-vix_close:.2f}"
-    except: pass
-
-    # 2. 抓取匯率 (使用 yfinance 保險)
-    try:
+        v = vix_df['Close'].iloc[-1]
+        p = vix_df['Close'].iloc[-2]
+        risk_data["vix"] = f"{v:.2f}"
+        risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+        
         twd_df = yf.Ticker("TWD=X").history(period="2d")
-        twd_close = twd_df['Close'].iloc[-1]
-        twd_prev = twd_df['Close'].iloc[-2]
-        risk_data["usd_twd"] = f"{twd_close:.2f}"
-        risk_data["usd_trend"] = f"▲ {twd_close-twd_prev:.2f}" if twd_close > twd_prev else f"▼ {twd_prev-twd_close:.2f}"
+        v = twd_df['Close'].iloc[-1]
+        p = twd_df['Close'].iloc[-2]
+        risk_data["usd_twd"] = f"{v:.2f}"
+        risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
     except: pass
 
-    # 3. 抓取大盤融資維持率 (黑魔法 impersonate="chrome")
+    # 2. 🚀 抓取大盤融資維持率 (直接串接證交所官方 JSON)
+    # 來源：證交所「信用交易統計資料」
     try:
-        url_margin = "https://histock.tw/stock/margin.aspx"
-        # 偽裝成真實 Chrome 瀏覽器繞過 GitHub IP 封鎖
-        res_m = stealth_requests.get(url_margin, impersonate="chrome", timeout=15)
-        match = re.search(r'維持率.*?([1-2]\d{2}\.\d{1,2}\s*%)', res_m.text, re.DOTALL)
-        if match:
-            risk_data['margin_ratio'] = match.group(1).strip()
-    except Exception as e: 
-        print(f"⚠️ 融資維持率抓取失敗: {e}")
-
-    # 4. 抓取台灣景氣對策信號 (黑魔法 impersonate="chrome")
-    try:
-        url_light = "https://www.moneydj.com/KMDJ/MacroEconomic/MacroEconomicList.aspx?a=1050000"
-        res_l = stealth_requests.get(url_light, impersonate="chrome", timeout=15)
-        dfs = pd.read_html(io.StringIO(res_l.text))
-        for df in dfs:
-            if len(df.columns) >= 2:
-                for i in range(min(15, len(df))):
-                    row = [str(x) for x in df.iloc[i].values]
-                    date_v = next((v for v in row if re.match(r'^202\d/\d{2}$', v)), None)
-                    score_v = next((v for v in row if v.isdigit() and 9 <= int(v) <= 45), None)
-                    if date_v and score_v:
-                        s = int(score_v)
-                        if s >= 38: L = "🔴 紅燈"
-                        elif s >= 32: L = "🟡 黃紅燈"
-                        elif s >= 23: L = "🟢 綠燈"
-                        elif s >= 17: L = "🟡 黃藍燈"
-                        else: L = "🔵 藍燈"
-                        risk_data['business_light'] = f"{date_v} | {s}分 {L}"
-                        break
-            if risk_data['business_light'] != "-": break
+        # 證交所 BFT41U 報表包含了市場整體的融資維持率
+        url_margin = "https://www.twse.com.tw/exchangeReport/BFT41U?response=json"
+        headers = {"Referer": "https://www.twse.com.tw/zh/page/trading/exchange/BFT41U.html"}
+        res = requests.get(url_margin, headers=headers, timeout=10)
+        data = res.json()
+        if "data" in data and len(data["data"]) > 0:
+            # 取得最新一筆數據的「維持率」欄位 (通常是最後一欄)
+            latest_row = data["data"][-1]
+            risk_data['margin_ratio'] = f"{latest_row[-1]}%" # 證交所原始數據就是百分比
     except Exception as e:
-        print(f"⚠️ 景氣燈號抓取異常: {e}")
+        print(f"⚠️ 證交所維持率 API 異常: {e}")
+
+    # 3. 🚀 抓取台灣景氣對策信號 (直接串接國發會 ODS API)
+    # 來源：國發會「景氣對策信號綜合分數及燈號」
+    try:
+        # 國發會開放資料 API
+        url_light = "https://ods.ndc.gov.tw/api/v1/rest/datastore/A09000000E-000021-001"
+        res = requests.get(url_light, timeout=10)
+        data = res.json()
+        if "result" in data and "records" in data["result"]:
+            latest = data["result"]["records"][0] # 第一筆通常是最新的
+            date_v = latest.get("年月", "-")
+            score = int(latest.get("綜合分數", 0))
+            
+            if score >= 38: L = "🔴 紅燈"
+            elif score >= 32: L = "🟡 黃紅燈"
+            elif score >= 23: L = "🟢 綠燈"
+            elif score >= 17: L = "🟡 黃藍燈"
+            else: L = "🔵 藍燈"
+            
+            risk_data['business_light'] = f"{date_v} | {score}分 {L}"
+    except Exception as e:
+        print(f"⚠️ 國發會景氣燈號 API 異常: {e}")
         
     return risk_data
 
+# ==========================================
 def get_market_indicators_text(risk_data):
     """格式化數據供 AI 分析使用"""
     indicators = []
