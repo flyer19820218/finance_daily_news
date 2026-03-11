@@ -641,11 +641,44 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # =====================================================================
 # 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
-# 功能：左側渲染 AI 戰略報告；右側渲染無摘要版的極簡新聞清單與分頁系統。
+# 功能：左側渲染風險橫幅與 AI 戰略報告；右側渲染無摘要版的極簡新聞清單與分頁系統。
 # =====================================================================
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
+    # --- 🌟 新增：市場關鍵指標橫幅 (Web 寬版優化) ---
+    risk = data.get("risk_indicators", {})
+    vix_val = risk.get("vix", "-")
+    vix_trend = risk.get("vix_trend", "")
+    usd_val = risk.get("usd_twd", "-")
+    pe_val = risk.get("pe", "-")
+    pb_val = risk.get("pb", "-")
+    margin_val = risk.get("margin_ratio", "-") # 抓取全自動融資維持率
+
+    market_banner_html = f'''
+    <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
+        <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 18px;">📍</span> 市場核心戰略參數
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1; min-width: 150px;">
+                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">大盤融資維持率</div>
+                <div style="font-size: 18px; font-weight: 900; color: #ef4444;">{margin_val}</div>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
+                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">VIX {vix_val} <span style="font-size:12px; font-weight:normal; color:#64748b;">({vix_trend})</span> | TWD {usd_val}</div>
+            </div>
+            <div style="flex: 1; min-width: 150px;">
+                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">大盤估值 (0050)</div>
+                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">PE {pe_val} / PB {pb_val}</div>
+            </div>
+        </div>
+    </div>
+    '''
+    st.markdown(market_banner_html, unsafe_allow_html=True)
+
+    # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
     # 🌟 星星金化與兩班制標題變身 🌟
@@ -655,27 +688,23 @@ with left_ai:
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 2. 自動判斷時間，切換標題 (兩班制)
+    # 2. 自動判斷時間，切換標題 (兩班制 + 新版 Prompt 防護)
     tw_tz = pytz.timezone('Asia/Taipei')
     current_hour = datetime.now(tw_tz).hour
 
-    # ⚠️ 注意：下面的 if...else 必須往右縮排，待在 with left_ai 裡面
     if current_hour >= 14 or current_hour < 5:
-        # 🌩️ 撒網捕魚：只要看到晨報，通通換成盤後！
         processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
+        processed_report = processed_report.replace("一分鐘戰略速讀", "盤後戰略精華包") # 防護新 Prompt
         processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
         processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
     else:
-        # ☀️ 早上時段
         processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
+        processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包") # 防護新 Prompt
         processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
     
-    # ⚠️ 注意：把這兩行「往左拉」跟 if 對齊，這樣不管早上或下午，報告都會被印出來！
     final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
     st.markdown(final_html, unsafe_allow_html=True)
 
-# 下面接著你的 with right_news: ...
-    
 with right_news:
     st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
@@ -730,7 +759,7 @@ with right_news:
         if news_link: parts_row.append(f"<a href='{news_link}' target='_blank'>閱讀原文</a>")
         news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
         
-        # 一口氣組裝整張卡片的 HTML，移除 summary 變數
+        # 一口氣組裝整張卡片的 HTML
         card_html = f'''
         <div class="news-card">
             <a href="{news_link}" target="_blank" style="font-size:15px; font-weight:850; color:#0f172a; text-decoration:none; display:block; margin-bottom:6px; line-height:1.4;">{news_title}</a>
