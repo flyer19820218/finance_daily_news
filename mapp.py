@@ -336,21 +336,21 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 # ==================================================
-# 7.5 🌟 市場關鍵指標橫幅 (精簡版：移除估值與維持率)
+# 7.5 🌟 市場關鍵指標橫幅 (手機版最終修正：手動寫入 + 移除估值)
 # ==================================================
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-")
-# 🚀 僅保留景氣燈號
-light_val = risk.get("business_light", risk.get("light", "等待更新..."))
 
+# 🚀 【教官手動指示區】景氣燈號直接鎖死 39 分
+light_val = "39分 🔴 紅燈"
+
+# 手機版 HTML：徹底拔除 PE/PB 估值行
 market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-    <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-        <span style="font-size: 15px;">📍</span> 市場核心戰略參數
-    </div>
-    <div style="font-size: 14px; color: #334155; line-height: 1.8;">
+<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0;">
+    <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 5px;">📍 市場核心戰略參數</div>
+    <div style="font-size: 14px; color: #334155; line-height: 1.6;">
         <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{light_val}</span><br>
         <b>VIX 指數：</b>{vix_val} <span style="font-size:11px; color:#64748b;">({vix_trend})</span> &nbsp; | &nbsp; <b>匯率：</b>{usd_val}
     </div>
