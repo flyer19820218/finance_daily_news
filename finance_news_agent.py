@@ -8,6 +8,8 @@ from datetime import datetime, timedelta, timezone, time
 import feedparser
 import google.generativeai as genai
 import pandas as pd
+from curl_cffi import requests as stealth_requests
+import io
 
 # ==========================================
 # 1. 基礎設定與環境變數 (Settings)
@@ -180,96 +182,80 @@ def update_hot_stocks():
     except Exception as e:
         print(f"⚠️ 抓取成交值排行榜失敗: {e}")
 
+# ==========================================
 def fetch_risk_indicators():
-    """全自動抓取：VIX、匯率、大盤融資維持率、台灣景氣對策信號"""
+    """隱形迷彩版感測器：全自動抓取 VIX、匯率、維持率、景氣燈號"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-        "margin_ratio": "-", 
-        "business_light": "-" 
+        "margin_ratio": "-",
+        "business_light": "-"
     }
     
-    # 1. 抓取 VIX
+    # 1. 抓取 VIX (使用 yfinance 保險)
     try:
-        vix_data = yf.Ticker("^VIX").history(period="1d")
-        vix_close = vix_data['Close'].iloc[-1]
-        vix_open = vix_data['Open'].iloc[-1]
+        vix_df = yf.Ticker("^VIX").history(period="2d")
+        vix_close = vix_df['Close'].iloc[-1]
+        vix_prev = vix_df['Close'].iloc[-2]
         risk_data["vix"] = f"{vix_close:.2f}"
-        risk_data["vix_trend"] = f"▲ {vix_close-vix_open:.2f}" if vix_close > vix_open else f"▼ {vix_open-vix_close:.2f}"
+        risk_data["vix_trend"] = f"▲ {vix_close-vix_prev:.2f}" if vix_close > vix_prev else f"▼ {vix_prev-vix_close:.2f}"
     except: pass
 
-    # 2. 抓取匯率
+    # 2. 抓取匯率 (使用 yfinance 保險)
     try:
-        twd_data = yf.Ticker("TWD=X").history(period="1d")
-        twd_close = twd_data['Close'].iloc[-1]
-        twd_open = twd_data['Open'].iloc[-1]
+        twd_df = yf.Ticker("TWD=X").history(period="2d")
+        twd_close = twd_df['Close'].iloc[-1]
+        twd_prev = twd_df['Close'].iloc[-2]
         risk_data["usd_twd"] = f"{twd_close:.2f}"
-        risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
+        risk_data["usd_trend"] = f"▲ {twd_close-twd_prev:.2f}" if twd_close > twd_prev else f"▼ {twd_prev-twd_close:.2f}"
     except: pass
 
-    # 3. 抓取大盤融資維持率 (換上最強偽裝面具，欺騙防火牆)
+    # 3. 抓取大盤融資維持率 (黑魔法 impersonate="chrome")
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Language": "zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3"
-        }
-        res_m = requests.get(url_margin, headers=headers, timeout=10)
-        
-        match = re.search(r'<th>維持率</th>\s*<td[^>]*>.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE | re.DOTALL)
+        # 偽裝成真實 Chrome 瀏覽器繞過 GitHub IP 封鎖
+        res_m = stealth_requests.get(url_margin, impersonate="chrome", timeout=15)
+        match = re.search(r'維持率.*?([1-2]\d{2}\.\d{1,2}\s*%)', res_m.text, re.DOTALL)
         if match:
             risk_data['margin_ratio'] = match.group(1).strip()
-        else:
-            match_backup = re.search(r'維持率.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE)
-            if match_backup and len(match_backup.group(0)) < 150:
-                risk_data['margin_ratio'] = match_backup.group(1).strip()
     except Exception as e: 
         print(f"⚠️ 融資維持率抓取失敗: {e}")
 
-    # 4. 🚀 抓取台灣景氣對策信號 (新增智慧 nan 過濾器)
+    # 4. 抓取台灣景氣對策信號 (黑魔法 impersonate="chrome")
     try:
         url_light = "https://www.moneydj.com/KMDJ/MacroEconomic/MacroEconomicList.aspx?a=1050000"
-        headers_light = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-        r_light = requests.get(url_light, headers=headers_light, timeout=10)
-        dfs = pd.read_html(r_light.text)
-        
+        res_l = stealth_requests.get(url_light, impersonate="chrome", timeout=15)
+        dfs = pd.read_html(io.StringIO(res_l.text))
         for df in dfs:
             if len(df.columns) >= 2:
-                # 逐行往下找，直到找到「真正的數字」為止，跳過 nan 標題列
-                for i in range(len(df)):
-                    date_str = str(df.iloc[i, 0]).strip()
-                    score_str = str(df.iloc[i, 1]).strip()
-                    
-                    # 判斷這行是不是數字 (過濾掉 nan)
-                    if score_str != 'nan' and score_str.replace('.', '', 1).isdigit():
-                        score = int(float(score_str))
-                        if score >= 38: light = "🔴 紅燈 (過熱)"
-                        elif score >= 32: light = "🟡 黃紅燈"
-                        elif score >= 23: light = "🟢 綠燈 (穩定)"
-                        elif score >= 17: light = "🟡 黃藍燈"
-                        else: light = "🔵 藍燈 (低迷)"
-                        
-                        risk_data['business_light'] = f"{date_str} | {score}分 {light}"
-                        break # 找到了就立刻跳出迴圈
-            
-            # 如果已經抓到燈號，就不用繼續找下一個表格了
-            if risk_data['business_light'] != "-":
-                break
-
-    except Exception as e: 
+                for i in range(min(15, len(df))):
+                    row = [str(x) for x in df.iloc[i].values]
+                    date_v = next((v for v in row if re.match(r'^202\d/\d{2}$', v)), None)
+                    score_v = next((v for v in row if v.isdigit() and 9 <= int(v) <= 45), None)
+                    if date_v and score_v:
+                        s = int(score_v)
+                        if s >= 38: L = "🔴 紅燈"
+                        elif s >= 32: L = "🟡 黃紅燈"
+                        elif s >= 23: L = "🟢 綠燈"
+                        elif s >= 17: L = "🟡 黃藍燈"
+                        else: L = "🔵 藍燈"
+                        risk_data['business_light'] = f"{date_v} | {s}分 {L}"
+                        break
+            if risk_data['business_light'] != "-": break
+    except Exception as e:
         print(f"⚠️ 景氣燈號抓取異常: {e}")
         
     return risk_data
 
 def get_market_indicators_text(risk_data):
+    """格式化數據供 AI 分析使用"""
     indicators = []
     if risk_data["vix"] != "-": indicators.append(f"👉 VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
     if risk_data["usd_twd"] != "-": indicators.append(f"👉 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
     if risk_data["margin_ratio"] != "-": indicators.append(f"👉 大盤融資維持率：{risk_data['margin_ratio']}")
-    if risk_data.get("business_light", "-") != "-": indicators.append(f"👉 台灣景氣對策信號：{risk_data['business_light']}")
+    if risk_data["business_light"] != "-": indicators.append(f"👉 台灣景氣對策信號：{risk_data['business_light']}")
     return "【當前真實市場指標】\n" + "\n".join(indicators)
-
+    
 # ==========================================
 # 5. Telegram 推播功能 (Notification)
 # ==========================================
