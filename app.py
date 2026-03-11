@@ -651,7 +651,7 @@ with left_ai:
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
     # 這裡直接寫死，下個月分數變了您再來這改數字就好
-    light_val = "39分 🔴 紅燈"
+    light_val = "🔴 紅燈：39分 
 
     # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
