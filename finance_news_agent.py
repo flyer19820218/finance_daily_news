@@ -147,23 +147,48 @@ def fetch_news(hours=24, limit=64):
 # ==========================================
 def update_hot_stocks():
     try:
-        url = "https://openapi.twse.com.tw/v1/exchangeReport/MI_INDEX20"
+        # 1. 改為抓取「所有上市個股」的日成交資訊
+        url = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
         res = requests.get(url, timeout=10)
         data = res.json()
-        top_6 = {f"{item['Code']}.TW": item['Name'] for item in data[:6]}
+        
+        # 2. 準備一個陣列來裝處理後的資料
+        processed_data = []
+        for item in data:
+            try:
+                # 取得成交金額 (TradeValue)，移除可能的逗號並轉為整數
+                val_str = str(item.get("TradeValue", "0")).replace(",", "")
+                val_int = int(val_str)
+                processed_data.append({
+                    "Code": item["Code"],
+                    "Name": item["Name"],
+                    "TradeValue": val_int
+                })
+            except:
+                pass
+                
+        # 3. 依照「成交金額」由大到小 (降冪) 排序
+        sorted_data = sorted(processed_data, key=lambda x: x["TradeValue"], reverse=True)
+        
+        # 4. 取出成交值最高的前 6 名
+        top_6 = {f"{item['Code']}.TW": item['Name'] for item in sorted_data[:6]}
+        
+        # ⚠️ 注意：這裡的存檔 Key 故意保持 "top_volume_pool"，是為了與前端無縫接軌
         with open(HOT_STOCKS_FILE, "w", encoding="utf-8") as f:
             json.dump({"top_volume_pool": top_6}, f, ensure_ascii=False, indent=4)
+            
     except Exception as e:
-        print(f"⚠️ 抓取爆量名單失敗: {e}")
+        print(f"⚠️ 抓取成交值排行榜失敗: {e}")
 
 def fetch_risk_indicators():
+    """全自動抓取：VIX、匯率、大盤融資維持率(HiStock)"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-        "pe": "-", "pb": "-",
         "margin_ratio": "-" 
     }
     
+    # 1. 抓取 VIX
     try:
         vix_data = yf.Ticker("^VIX").history(period="1d")
         vix_close = vix_data['Close'].iloc[-1]
@@ -172,6 +197,7 @@ def fetch_risk_indicators():
         risk_data["vix_trend"] = f"▲ {vix_close-vix_open:.2f}" if vix_close > vix_open else f"▼ {vix_open-vix_close:.2f}"
     except: pass
 
+    # 2. 抓取匯率
     try:
         twd_data = yf.Ticker("TWD=X").history(period="1d")
         twd_close = twd_data['Close'].iloc[-1]
@@ -180,29 +206,23 @@ def fetch_risk_indicators():
         risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
     except: pass
 
+    # 3. 抓取大盤融資維持率 (強化偽裝版，確保抓得到)
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
-        headers = {"User-Agent": "Mozilla/5.0"}
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        }
         res_m = requests.get(url_margin, headers=headers, timeout=10)
         res_m.encoding = 'utf-8'
         dfs = pd.read_html(res_m.text)
-        df_margin = dfs[0]
-        if '維持率' in df_margin.columns:
-            risk_data['margin_ratio'] = str(df_margin['維持率'].iloc[0])
-    except Exception as e: 
-        print(f"融資維持率抓取失敗: {e}")
-
-    try:
-        url_twse = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
-        res_t = requests.get(url_twse, timeout=10)
-        data_t = res_t.json()
-        for item in data_t:
-            if item.get('Code') == '0050':
-                risk_data['pe'] = item.get('PEratio', '-')
-                risk_data['pb'] = item.get('PBratio', '-')
+        for df in dfs:
+            if '維持率' in df.columns:
+                margin_val = str(df['維持率'].iloc[0])
+                risk_data['margin_ratio'] = margin_val
                 break
-    except Exception as e:
-        print(f"PE/PB抓取失敗: {e}")
+    except Exception as e: 
+        print(f"⚠️ 融資維持率抓取失敗: {e}")
         
     return risk_data
 
@@ -211,7 +231,6 @@ def get_market_indicators_text(risk_data):
     if risk_data["vix"] != "-": indicators.append(f"👉 VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
     if risk_data["usd_twd"] != "-": indicators.append(f"👉 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
     if risk_data["margin_ratio"] != "-": indicators.append(f"👉 大盤融資維持率：{risk_data['margin_ratio']}")
-    if risk_data["pe"] != "-": indicators.append(f"👉 台灣大盤本益比(PE)：{risk_data['pe']} | 股價淨值比(PB)：{risk_data['pb']}")
     return "【當前真實市場指標】\n" + "\n".join(indicators)
 
 # ==========================================
@@ -284,7 +303,7 @@ def ai_analyze(news, period_str, risk_data, today_term):
        ★ 解讀：[深度分析該事件對經濟或資金流向的影響]
 
     ★ 🔥 【市場情緒與壓力測試】
-    必須「明確引述」提供的 VIX、匯率、融資維持率與 PE/PB，以此作為籌碼與估值壓力的佐證！
+    必須「明確引述」提供的 VIX、匯率與大盤融資維持率，以此作為籌碼與情緒壓力的佐證！
 
     ★ 💰 【台股影響與板塊點名】
     ★ 短期影響：[說明利多、利空或震盪。具體點名受惠與受衝擊產業]
@@ -345,20 +364,31 @@ def run_daily():
     final_news.sort(key=lambda x: x["dt_utc"], reverse=True)
     final_news = final_news[:64]
 
+    # 🌟 取得最新風險指標 (已拔除 PE/PB)
     current_risk_data = fetch_risk_indicators()
 
-    base_date = datetime(2024, 1, 1, tzinfo=TW_TZ) 
-    days_passed = (now_tw - base_date).days
-    today_term = FINANCE_TERMS[days_passed % len(FINANCE_TERMS)] 
+    # ====================================================
+    # 🌟 曉臻小教室：絕對序位系統 (順序播放，絕對不重複)
+    # ====================================================
+    # 以 2024 年 1 月 1 日為基準點
+    base_date = datetime(2024, 1, 1, tzinfo=TW_TZ)
+    # 計算今天距離基準日總共過了幾天
+    total_days_passed = (now_tw - base_date).days
+    
+    # 用總天數對詞庫長度取餘數，保證 800 個詞會「按順序」走完一輪
+    term_index = total_days_passed % len(FINANCE_TERMS)
+    today_term = FINANCE_TERMS[term_index]
 
     if task_type == "full_report":
-        print(f"🧠 執行任務：呼叫 AI 撰寫深度報告... (今日單字：{today_term})")
+        # 在終端機印出序號，方便教官核對進度
+        print(f"🧠 執行任務：呼叫 AI 撰寫深度報告... (今日單字序號：{term_index}，單字：{today_term})")
         report_text = ai_analyze(final_news, period_str, current_risk_data, today_term)
         send_telegram_message(report_text) 
     else:
         print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
         report_text = old_report 
     
+    # 🌟 準備存檔封包
     payload = {
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"全球局勢與市場情報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
@@ -367,14 +397,17 @@ def run_daily():
         "risk_indicators": current_risk_data, 
     }
     
+    # 🌟 存入最新報告
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     
+    # 🌟 存入歷史紀錄夾
     os.makedirs(HISTORY_DIR, exist_ok=True)
     hist_name = f"{now_tw.strftime('%Y-%m-%d')}_{period_str}.json"
     with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
+# --- 程式進入點 ---
 if __name__ == "__main__":
     run_daily()
