@@ -336,23 +336,22 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 # ==================================================
-# 7.5 🌟 市場關鍵指標橫幅 (手機版最終修正：只留燈號、VIX、匯率)
+# 7.5 🌟 市場關鍵指標橫幅 (教官大招版：直接重寫)
 # ==================================================
-risk = data.get("risk_indicators", {})
-vix_val = risk.get("vix", "-")
-vix_trend = risk.get("vix_trend", "")
-usd_val = risk.get("usd_twd", "-")
+# 1. 數據準備 (簡單明瞭)
+risk_stats = data.get("risk_indicators", {})
+v_now = risk_stats.get("vix", "-")
+v_trd = risk_stats.get("vix_trend", "")
+u_now = risk_stats.get("usd_twd", "-")
+fixed_light = "39分 🔴 紅燈" # 手動鎖死
 
-# 🚀 教官手動鎖死：確保這裡不會跑出 nan
-light_val = "39分 🔴 紅燈"
-
-# 🚀 這裡的 HTML 已經徹底拔除「估值」那一行了！
+# 2. 終極渲染 (HTML 結構完全重整)
 market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0;">
+<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 15px; border-radius: 10px; margin: 15px 0;">
     <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 5px;">📍 市場核心戰略參數</div>
     <div style="font-size: 14px; color: #334155; line-height: 1.6;">
-        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{light_val}</span><br>
-        <b>VIX 指數：</b>{vix_val} <span style="font-size:11px; color:#64748b;">({vix_trend})</span> &nbsp; | &nbsp; <b>匯率：</b>{usd_val}
+        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{fixed_light}</span><br>
+        <b>VIX 恐慌指數：</b>{v_now} <span style="font-size:11px; color:#64748b;">({v_trd})</span> &nbsp; | &nbsp; <b>匯率：</b>{u_now}
     </div>
 </div>
 '''
