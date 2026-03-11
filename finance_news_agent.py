@@ -181,11 +181,12 @@ def update_hot_stocks():
         print(f"⚠️ 抓取成交值排行榜失敗: {e}")
 
 def fetch_risk_indicators():
-    """全自動抓取：VIX、匯率、大盤融資維持率(HiStock)"""
+    """全自動抓取：VIX、匯率、大盤融資維持率、台灣景氣對策信號"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-        "margin_ratio": "-" 
+        "margin_ratio": "-", 
+        "business_light": "-" 
     }
     
     # 1. 抓取 VIX
@@ -206,7 +207,7 @@ def fetch_risk_indicators():
         risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
     except: pass
 
-# 3. 抓取大盤融資維持率 (拔除 pandas 依賴，改用 Regex 精準狙擊)
+    # 3. 抓取大盤融資維持率 (保留剛修好的 Regex 狙擊槍，防亂碼)
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
         headers = {
@@ -214,22 +215,41 @@ def fetch_risk_indicators():
         }
         res_m = requests.get(url_margin, headers=headers, timeout=10)
         
-        # 使用正則表達式，精準鎖定 <th>維持率</th> 下一個 <td> 裡面的「數字+%」
-        # (re.DOTALL 可以無視換行符號，直接穿透 HTML 標籤抓取)
         match = re.search(r'<th>維持率</th>\s*<td[^>]*>.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE | re.DOTALL)
-        
         if match:
             risk_data['margin_ratio'] = match.group(1).strip()
         else:
-            # 備用狙擊計畫：如果網站連 <th> 都改了，只要離「維持率」夠近的百分比就抓
             match_backup = re.search(r'維持率.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE)
             if match_backup and len(match_backup.group(0)) < 150:
                 risk_data['margin_ratio'] = match_backup.group(1).strip()
             else:
-                risk_data['margin_ratio'] = "-" # 抓不到就給空值，絕對不印出亂碼
-                
+                risk_data['margin_ratio'] = "-" 
     except Exception as e: 
         print(f"⚠️ 融資維持率抓取失敗: {e}")
+
+    # 4. 🚀 抓取台灣景氣對策信號 (MoneyDJ)
+    try:
+        url_light = "https://www.moneydj.com/KMDJ/MacroEconomic/MacroEconomicList.aspx?a=1050000"
+        headers_light = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        r_light = requests.get(url_light, headers=headers_light, timeout=10)
+        dfs = pd.read_html(r_light.text)
+        for df in dfs:
+            if len(df) > 2 and len(df.columns) >= 2:
+                latest_date = str(df.iloc[0, 0]) # 月份
+                latest_score = str(df.iloc[0, 1]) # 分數
+                try:
+                    score = int(latest_score)
+                    if score >= 38: light = "🔴 紅燈 (過熱)"
+                    elif score >= 32: light = "🟡 黃紅燈"
+                    elif score >= 23: light = "🟢 綠燈 (穩定)"
+                    elif score >= 17: light = "🟡 黃藍燈"
+                    else: light = "🔵 藍燈 (低迷)"
+                    risk_data['business_light'] = f"{latest_date} | {score}分 {light}"
+                except:
+                    risk_data['business_light'] = f"{latest_date} | {latest_score}分"
+                break
+    except Exception as e: 
+        print(f"⚠️ 景氣燈號抓取異常: {e}")
         
     return risk_data
 
@@ -238,6 +258,7 @@ def get_market_indicators_text(risk_data):
     if risk_data["vix"] != "-": indicators.append(f"👉 VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
     if risk_data["usd_twd"] != "-": indicators.append(f"👉 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
     if risk_data["margin_ratio"] != "-": indicators.append(f"👉 大盤融資維持率：{risk_data['margin_ratio']}")
+    if risk_data.get("business_light", "-") != "-": indicators.append(f"👉 台灣景氣對策信號：{risk_data['business_light']}")
     return "【當前真實市場指標】\n" + "\n".join(indicators)
 
 # ==========================================
