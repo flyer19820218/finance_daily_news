@@ -184,7 +184,7 @@ def update_hot_stocks():
 
 # ==========================================
 def fetch_risk_indicators():
-    """方案 2：政府官方 API 版。繞過網頁爬蟲，直接抓取原始數據。"""
+    """方案 2 修正版：政府 API 精準對位系統"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
@@ -192,57 +192,66 @@ def fetch_risk_indicators():
         "business_light": "-"
     }
     
-    # 1. 抓取 VIX 與 匯率 (維持 yfinance，最穩定)
+    # 1. VIX & 匯率 (yf 依然是最穩的，不變)
     try:
         vix_df = yf.Ticker("^VIX").history(period="2d")
-        v = vix_df['Close'].iloc[-1]
-        p = vix_df['Close'].iloc[-2]
+        v, p = vix_df['Close'].iloc[-1], vix_df['Close'].iloc[-2]
         risk_data["vix"] = f"{v:.2f}"
         risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
         
         twd_df = yf.Ticker("TWD=X").history(period="2d")
-        v = twd_df['Close'].iloc[-1]
-        p = twd_df['Close'].iloc[-2]
+        v, p = twd_df['Close'].iloc[-1], twd_df['Close'].iloc[-2]
         risk_data["usd_twd"] = f"{v:.2f}"
         risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
     except: pass
 
-    # 2. 🚀 抓取大盤融資維持率 (直接串接證交所官方 JSON)
-    # 來源：證交所「信用交易統計資料」
+    # 2. 🚀 大盤融資維持率 (證交所 BFT41U 暴力解碼)
     try:
-        # 證交所 BFT41U 報表包含了市場整體的融資維持率
         url_margin = "https://www.twse.com.tw/exchangeReport/BFT41U?response=json"
-        headers = {"Referer": "https://www.twse.com.tw/zh/page/trading/exchange/BFT41U.html"}
-        res = requests.get(url_margin, headers=headers, timeout=10)
+        res = requests.get(url_margin, timeout=10)
         data = res.json()
         if "data" in data and len(data["data"]) > 0:
-            # 取得最新一筆數據的「維持率」欄位 (通常是最後一欄)
             latest_row = data["data"][-1]
-            risk_data['margin_ratio'] = f"{latest_row[-1]}%" # 證交所原始數據就是百分比
-    except Exception as e:
-        print(f"⚠️ 證交所維持率 API 異常: {e}")
+            # 💡 策略：維持率通常是數值最大的那個欄位 (通常 > 140)
+            # 我們過濾出所有數值，找最像維持率的那個
+            potential_rates = []
+            for val in latest_row:
+                clean_val = str(val).replace(",", "").replace("%", "")
+                try:
+                    num = float(clean_val)
+                    if 130 < num < 200: # 正常的維持率區間
+                        potential_rates.append(num)
+                except: continue
+            
+            if potential_rates:
+                risk_data['margin_ratio'] = f"{potential_rates[-1]}%"
+            else:
+                # 備案：如果過濾失敗，強制取最後一欄
+                risk_data['margin_ratio'] = f"{latest_row[-1]}%"
+    except Exception as e: print(f"維持率錯誤: {e}")
 
-    # 3. 🚀 抓取台灣景氣對策信號 (直接串接國發會 ODS API)
-    # 來源：國發會「景氣對策信號綜合分數及燈號」
+    # 3. 🚀 台灣景氣對策信號 (國發會官方 CSV 接口 - 最穩)
     try:
-        # 國發會開放資料 API
-        url_light = "https://ods.ndc.gov.tw/api/v1/rest/datastore/A09000000E-000021-001"
+        # 改用 CSV 格式，這種格式政府最少變動
+        url_light = "https://ods.ndc.gov.tw/api/v1/rest/datastore/A09000000E-000021-001?format=json"
         res = requests.get(url_light, timeout=10)
-        data = res.json()
-        if "result" in data and "records" in data["result"]:
-            latest = data["result"]["records"][0] # 第一筆通常是最新的
-            date_v = latest.get("年月", "-")
-            score = int(latest.get("綜合分數", 0))
+        records = res.json().get("result", {}).get("records", [])
+        if records:
+            # 找到最新的那一筆紀錄
+            latest = records[0] 
+            # 抓取年月、分數、燈號顏色
+            date_v = latest.get("年月", latest.get("PERIOD", "-"))
+            score = latest.get("綜合分數", latest.get("SCORE", "0"))
             
-            if score >= 38: L = "🔴 紅燈"
-            elif score >= 32: L = "🟡 黃紅燈"
-            elif score >= 23: L = "🟢 綠燈"
-            elif score >= 17: L = "🟡 黃藍燈"
+            # 判定燈號
+            s = int(score)
+            if s >= 38: L = "🔴 紅燈"
+            elif s >= 32: L = "🟡 黃紅燈"
+            elif s >= 23: L = "🟢 綠燈"
+            elif s >= 17: L = "🟡 黃藍燈"
             else: L = "🔵 藍燈"
-            
-            risk_data['business_light'] = f"{date_v} | {score}分 {L}"
-    except Exception as e:
-        print(f"⚠️ 國發會景氣燈號 API 異常: {e}")
+            risk_data['business_light'] = f"{date_v} | {s}分 {L}"
+    except Exception as e: print(f"景氣燈號錯誤: {e}")
         
     return risk_data
 
