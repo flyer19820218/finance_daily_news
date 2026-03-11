@@ -188,8 +188,7 @@ def fetch_risk_indicators():
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-        "margin_ratio": "-",
-        "business_light": "-"
+
     }
     
     # 1. VIX & 匯率 (yf 依然是最穩的，不變)
@@ -204,54 +203,6 @@ def fetch_risk_indicators():
         risk_data["usd_twd"] = f"{v:.2f}"
         risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
     except: pass
-
-    # 2. 🚀 大盤融資維持率 (證交所 BFT41U 暴力解碼)
-    try:
-        url_margin = "https://www.twse.com.tw/exchangeReport/BFT41U?response=json"
-        res = requests.get(url_margin, timeout=10)
-        data = res.json()
-        if "data" in data and len(data["data"]) > 0:
-            latest_row = data["data"][-1]
-            # 💡 策略：維持率通常是數值最大的那個欄位 (通常 > 140)
-            # 我們過濾出所有數值，找最像維持率的那個
-            potential_rates = []
-            for val in latest_row:
-                clean_val = str(val).replace(",", "").replace("%", "")
-                try:
-                    num = float(clean_val)
-                    if 130 < num < 200: # 正常的維持率區間
-                        potential_rates.append(num)
-                except: continue
-            
-            if potential_rates:
-                risk_data['margin_ratio'] = f"{potential_rates[-1]}%"
-            else:
-                # 備案：如果過濾失敗，強制取最後一欄
-                risk_data['margin_ratio'] = f"{latest_row[-1]}%"
-    except Exception as e: print(f"維持率錯誤: {e}")
-
-    # 3. 🚀 台灣景氣對策信號 (國發會官方 CSV 接口 - 最穩)
-    try:
-        # 改用 CSV 格式，這種格式政府最少變動
-        url_light = "https://ods.ndc.gov.tw/api/v1/rest/datastore/A09000000E-000021-001?format=json"
-        res = requests.get(url_light, timeout=10)
-        records = res.json().get("result", {}).get("records", [])
-        if records:
-            # 找到最新的那一筆紀錄
-            latest = records[0] 
-            # 抓取年月、分數、燈號顏色
-            date_v = latest.get("年月", latest.get("PERIOD", "-"))
-            score = latest.get("綜合分數", latest.get("SCORE", "0"))
-            
-            # 判定燈號
-            s = int(score)
-            if s >= 38: L = "🔴 紅燈"
-            elif s >= 32: L = "🟡 黃紅燈"
-            elif s >= 23: L = "🟢 綠燈"
-            elif s >= 17: L = "🟡 黃藍燈"
-            else: L = "🔵 藍燈"
-            risk_data['business_light'] = f"{date_v} | {s}分 {L}"
-    except Exception as e: print(f"景氣燈號錯誤: {e}")
         
     return risk_data
 
@@ -308,6 +259,7 @@ def ai_analyze(news, period_str, risk_data, today_term):
     
     print("\n=== 🕵️‍♂️ 系統抓到的盤前真實數據 ===")
     print(market_data_section)
+    print("==================================\n")
 
 
     strategy_prompt = f"""
