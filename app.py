@@ -645,12 +645,13 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
-    # --- 🌟 市場關鍵指標橫幅 (已移除維持率，僅留 VIX、匯率、景氣燈號) ---
+    # --- 🌟 市場關鍵指標橫幅 ---
     risk = data.get("risk_indicators", {})
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
-    usd_val = risk.get("usd_twd", "-")
-    light_val = risk.get("business_light", "39分 🔴 紅燈") 
+    usd_val = risk.get("usd_twd", "-") 
+    # 這裡直接寫死，下個月分數變了您再來這改數字就好
+    light_val = "39分 🔴 紅燈"
 
     # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
