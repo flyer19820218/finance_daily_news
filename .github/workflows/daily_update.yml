@@ -1,108 +1,44 @@
-name: Hourly & Daily Finance Update (Smart Schedule)
+name: Hourly & Daily Finance Update
 
-# =====================================================================
-# 【區塊 1】觸發條件與時間排程 (已換算台北時間 UTC+8)
-# 功能：定義什麼時候該叫醒機器人執行任務。
-# =====================================================================
 on:
   schedule:
-    # ⏱️ 任務A：每小時滾動新聞
-    # 觸發：每個小時的 50 分 (台北時間：每小時 50 分)
-    - cron: '50 * * * *'
-    
-    # ☀️ 任務B：盤前快報 (AI深度報告 + 推播)
-    # 觸發：UTC 21:29 (週日到週四) -> 台北時間：每週一到週五 早上 05:29
-    - cron: '29 21 * * 0-4'
-    
-    # 🌙 任務C：盤後快報 (AI深度報告 + 推播)
-    # 觸發：UTC 07:00 (週一到週五) -> 台北時間：每週一到週五 下午 15:00
-    - cron: '00 7 * * 1-5'
-    
-    # 🥂 任務D：週末特刊 (AI深度報告 + 推播)
-    # 觸發：UTC 22:30 (週五、週六) -> 台北時間：每週六、日 早上 06:30
-    - cron: '30 22 * * 5,6'
-    
-  # 🌟 手動觸發介面：讓你在 GitHub 網頁上手動點擊執行
-  workflow_dispatch: 
+    - cron: '50 * * * *'       # 每小時新聞
+    - cron: '29 21 * * 0-4'    # 台北 05:29 晨報
+    - cron: '00 7 * * 1-5'     # 台北 15:00 盤後
+    - cron: '30 22 * * 5,6'    # 週末特刊
+  workflow_dispatch:
     inputs:
       task_type:
-        description: '手動測試：請選擇要執行的任務'
-        required: true
+        description: '任務類型'
         default: 'full_report'
         type: choice
-        options:
-          - full_report
-          - news_only
+        options: [full_report, news_only]
 
-# =====================================================================
-# 【區塊 2】權限與併發控制
-# 功能：賦予寫入權限，並防止同一個任務重複執行塞車。
-# =====================================================================
 permissions:
   contents: write
-concurrency:
-  group: daily-finance-update
-  cancel-in-progress: true
 
-# =====================================================================
-# 【區塊 3】執行環境建置
-# 功能：啟動 Ubuntu 虛擬機，拉取程式碼並安裝 Python 依賴。
-# =====================================================================
 jobs:
   run-agent:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+      
       - name: Install dependencies
-        run: pip install -r requirements.txt
-
-# =====================================================================
-# 【區塊 4】任務路由分發 (設定 TASK_TYPE)
-# 功能：判斷現在是哪個鬧鐘響了，決定要執行「全套報告」還是「只抓新聞」。
-# =====================================================================
-      - name: Set Task Type
-        id: set-task
         run: |
-          # 預設為全套報告
-          echo "TASK_TYPE=full_report" >> $GITHUB_ENV
-          
-          # 判斷是否為「每小時 50 分」的滾動新聞排程
-          if [[ '${{ github.event.schedule }}' == '50 * * * *' ]]; then
-            echo "TASK_TYPE=news_only" >> $GITHUB_ENV
-          fi
-          
-          # 判斷是否為 GitHub 網頁端的手動觸發，若是則讀取使用者的選擇
-          if [[ '${{ github.event_name }}' == 'workflow_dispatch' ]]; then
-            echo "TASK_TYPE=${{ github.event.inputs.task_type }}" >> $GITHUB_ENV
-          fi
+          pip install pandas requests lxml yfinance curl-cffi feedparser google-generativeai
 
-# =====================================================================
-# 【區塊 5】執行 Python 腳本與環境變數載入
-# 功能：將金鑰與任務類型注入環境中，正式啟動 AI 代理。
-# =====================================================================
-      - name: Run agent (Execute Task)
+      - name: Run agent
         env:
-          TASK_TYPE: ${{ env.TASK_TYPE }}
+          TASK_TYPE: ${{ github.event.inputs.task_type || (github.event.schedule == '50 * * * *' && 'news_only' || 'full_report') }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python finance_news_agent.py
 
-# =====================================================================
-# 【區塊 6】資料回傳與雲端喚醒
-# 功能：將抓下來的 JSON 寫回 GitHub，並戳一下 Streamlit 避免它休眠。
-# =====================================================================
-      - name: Commit & push updated data
+      - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update: ${{ env.TASK_TYPE }}"
-
-      - name: Ping Streamlit to keep awake
-        run: |
-          curl -s https://financedailynews-mobile.streamlit.app/ > /dev/null
-          curl -s https://financedailynews-web.streamlit.app/ > /dev/null
+          commit_message: "Auto update"
