@@ -7,10 +7,10 @@ import requests
 from datetime import datetime, timedelta, timezone, time
 import feedparser
 import google.generativeai as genai
-import pandas as pd  # 🌟 修復：補上 Pandas，不然抓融資維持率會當機！
+import pandas as pd
 
 # ==========================================
-# 1️⃣ 基礎設定與環境變數 (Settings)
+# 1. 基礎設定與環境變數 (Settings)
 # ==========================================
 RSS_LIST = [
     "https://news.google.com/rss/search?q=finance+OR+stock+OR+geopolitics&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
@@ -25,7 +25,76 @@ HOT_STOCKS_FILE = "hot_stocks.json"
 TW_TZ = timezone(timedelta(hours=8))
 
 # ==========================================
-# 2️⃣ 新聞快取與爬蟲機制 (News Fetching)
+# 2. 曉臻財經小教室 - 特務專屬單字庫
+# ==========================================
+FINANCE_TERMS = [
+    # --- 總經與央行政策 ---
+    "VIX 恐慌指數", "CPI (消費者物價指數)", "PCE (個人消費支出物價指數)", "PPI (生產者物價指數)", "非農就業數據 (NFP)", 
+    "聯準會 (Fed)", "FOMC (聯邦公開市場委員會)", "點陣圖 (Dot Plot)", "基準利率", "降息與升息", 
+    "量化寬鬆 (QE)", "量化緊縮 (QT)", "殖利率倒掛", "殖利率曲線 (Yield Curve)", "無風險利率", 
+    "GDP (國內生產毛額)", "PMI (採購經理人指數)", "ISM 製造業指數", "初領失業金人數", "褐皮書 (Beige Book)",
+    "停滯性通膨 (Stagflation)", "通膨預期", "核心通膨", "軟著陸 (Soft Landing)", "硬著陸 (Hard Landing)",
+    "不著陸 (No Landing)", "黑色星期五 (Black Friday)", "黑色星期一", "熔斷機制", "流動性陷阱",
+    "布蘭特原油", "西德州原油 (WTI)", "OPEC+ (石油輸出國組織)", "避險貨幣", "美元指數 (DXY)",
+    "外匯存底", "熱錢 (Hot Money)", "匯率操縱國", "雙赤字 (Twin Deficits)", "購買力平價 (PPP)",
+
+    # --- 基本面與財報分析 ---
+    "EPS (每股盈餘)", "本益比 (PE)", "股價淨值比 (PB)", "ROE (股東權益報酬率)", "ROA (資產報酬率)", 
+    "毛利率 (Gross Margin)", "營業利益率 (Operating Margin)", "淨利率 (Net Margin)", "EBITDA", "自由現金流 (FCF)", 
+    "資本支出 (CapEx)", "營收成長率 (YoY/MoM)", "庫存週轉天數", "應收帳款週轉率", "負債比率", 
+    "流動比率", "速動比率", "利息保障倍數", "商譽 (Goodwill)", "無形資產", 
+    "法說會 (Earnings Call)", "財測 (Guidance)", "三率三升", "除權息", "填息與貼息", 
+    "現金殖利率", "股票股利", "現金股利", "減資 (Capital Reduction)", "庫藏股 (Stock Buyback)", 
+    "IPO (首次公開募股)", "SPO (現金增資)", "私募 (Private Placement)", "併購 (M&A)", "敵意併購", 
+    "下市 (Delisting)", "ADR (美國存託憑證)", "GDR (全球存託憑證)", "KY股", "全額交割股",
+
+    # --- 台股籌碼與交易機制 ---
+    "融資維持率", "融資餘額", "融券餘額", "軋空行情 (Short Squeeze)", "借券賣出餘額", 
+    "三大法人", "外資買賣超", "投信作帳", "自營商避險", "八大行庫 (國家隊)", 
+    "國安基金", "官股券商", "散戶指標 (小台散戶多空比)", "大額交易人未平倉", "主力進出", 
+    "隔日沖", "當沖 (Day Trading)", "現股當沖", "信用交易", "斷頭 (Margin Call)", 
+    "限空令", "平盤下不得融券賣出", "處置股票 (關緊閉)", "注意股票", "警示股", 
+    "零股交易", "盤後定價交易", "鉅額交易", "集合競價", "逐筆交易",
+
+    # --- 技術分析與型態 ---
+    "K線 (陰陽燭)", "跳空缺口", "島狀反轉", "黃金交叉", "死亡交叉", 
+    "移動平均線 (MA)", "季線 (生命線)", "年線 (牛熊分界線)", "乖離率 (BIAS)", "均線糾結", 
+    "RSI (相對強弱指標)", "MACD (平滑異同移動平均線)", "KD指標 (隨機指標)", "布林通道 (Bollinger Bands)", "OBV (能量潮指標)", 
+    "DMI (動向指標)", "SAR (拋物線指標)", "CCI (順勢指標)", "威廉指標 (W%R)", "ATR (真實波動幅度)", 
+    "支撐線與壓力線", "頸線 (Neckline)", "頭肩頂", "頭肩底", "W底 (雙重底)", 
+    "M頭 (雙重頂)", "箱型整理", "三角收斂", "旗型型態", "杯柄型態 (Cup and Handle)", 
+    "波浪理論", "費波那契回撤 (黃金分割)", "量價背離", "爆量長黑", "量縮價跌", 
+    "跳水", "誘多與誘空", "洗盤", "拉尾盤", "殺尾盤",
+
+    # --- 科技與半導體產業 ---
+    "晶圓代工 (Foundry)", "IC 設計 (Fabless)", "IDM (整合元件製造廠)", "封測 (OSAT)", "摩爾定律", 
+    "先進製程", "成熟製程", "EUV (極紫外光微影)", "DUV (深紫外光)", "良率 (Yield)", 
+    "CoWoS 先進封裝", "SoIC", "InFO", "2.5D/3D 封裝", "異質整合", 
+    "FinFET (鰭式場效電晶體)", "GAA (環繞閘極電晶體)", "矽光子 (Silicon Photonics)", "CPO (共封裝光學)", "ABF 載板", 
+    "HBM (高頻寬記憶體)", "DRAM", "NAND Flash", "NOR Flash", "固態硬碟 (SSD)", 
+    "ASIC (客製化晶片)", "FPGA (現場可程式化邏輯閘陣列)", "MCU (微控制器)", "CIS (影像感測器)", "PMIC (電源管理IC)", 
+    "EDA (電子設計自動化)", "IP (矽智財)", "ARM 架構", "x86 架構", "RISC-V", 
+    "GPU (圖形處理器)", "NPU (神經處理單元)", "TPU (張量處理單元)", "邊緣運算 (Edge Computing)", "伺服器 BMC (遠端控制晶片)", 
+    "CSP (雲端服務供應商)", "液冷散熱 (Liquid Cooling)", "均熱板 (VC)", "BBU (伺服器備援電池)", "GB200 (輝達AI伺服器)",
+    "低軌衛星", "O-RAN (開放網路架構)", "Wi-Fi 7", "第三代半導體 (SiC/GaN)", "車用電子",
+
+    # --- 衍生性商品、期貨與選擇權 ---
+    "四巫日 (Quadruple Witching)", "結算日", "期貨正價差", "期貨逆價差", "未平倉量 (Open Interest)", 
+    "選擇權 (Options)", "買權 (Call)", "賣權 (Put)", "履約價 (Strike Price)", "權利金 (Premium)", 
+    "隱含波動率 (IV)", "歷史波動率 (HV)", "Delta (對沖值)", "Gamma", "Theta (時間價值)", 
+    "Vega", "價內 (ITM)", "價平 (ATM)", "價外 (OTM)", "買權賣權比 (Put/Call Ratio)", 
+    "保證金 (Margin)", "追繳保證金", "強制平倉", "VIX 期貨", "選擇權賣方 (莊家)",
+
+    # --- 基金、ETF 與資產配置 ---
+    "ETF (指數股票型基金)", "主動型基金", "被動投資", "成分股調整", "折溢價", 
+    "高股息 ETF", "市值型 ETF", "債券 ETF", "槓桿型 ETF", "反向型 ETF (反一)", 
+    "淨值 (NAV)", "追蹤誤差", "內扣費用 (總開銷費用)", "收益平準金", "配息率", 
+    "避險基金 (Hedge Fund)", "主權基金", "私募基金 (PE Fund)", "創投 (VC)", "家族辦公室", 
+    "資產配置", "股債平衡", "60/40 法則", "定時定額", "單筆投資"
+]
+
+# ==========================================
+# 3. 新聞快取與爬蟲機制 (News Fetching)
 # ==========================================
 def clean_html(text: str) -> str:
     return re.sub(r"<.*?>", "", text or "")
@@ -74,7 +143,7 @@ def fetch_news(hours=24, limit=64):
     return news[:limit]
 
 # ==========================================
-# 3️⃣ 輔助資料抓取 (人氣股與真實市場指標)
+# 4. 輔助資料抓取 (人氣股與真實市場指標)
 # ==========================================
 def update_hot_stocks():
     try:
@@ -88,7 +157,6 @@ def update_hot_stocks():
         print(f"⚠️ 抓取爆量名單失敗: {e}")
 
 def fetch_risk_indicators():
-    """全自動抓取：VIX、匯率、融資維持率(HiStock)、大盤估值(以0050為代理)"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
@@ -96,7 +164,6 @@ def fetch_risk_indicators():
         "margin_ratio": "-" 
     }
     
-    # 1. 抓取 VIX
     try:
         vix_data = yf.Ticker("^VIX").history(period="1d")
         vix_close = vix_data['Close'].iloc[-1]
@@ -105,7 +172,6 @@ def fetch_risk_indicators():
         risk_data["vix_trend"] = f"▲ {vix_close-vix_open:.2f}" if vix_close > vix_open else f"▼ {vix_open-vix_close:.2f}"
     except: pass
 
-    # 2. 抓取 匯率
     try:
         twd_data = yf.Ticker("TWD=X").history(period="1d")
         twd_close = twd_data['Close'].iloc[-1]
@@ -114,7 +180,6 @@ def fetch_risk_indicators():
         risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
     except: pass
 
-    # 3. 抓取大盤融資維持率 (從 HiStock)
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
         headers = {"User-Agent": "Mozilla/5.0"}
@@ -127,7 +192,6 @@ def fetch_risk_indicators():
     except Exception as e: 
         print(f"融資維持率抓取失敗: {e}")
 
-    # 4. 抓取大盤估值 (以 0050 作為大盤代理)
     try:
         url_twse = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
         res_t = requests.get(url_twse, timeout=10)
@@ -151,7 +215,7 @@ def get_market_indicators_text(risk_data):
     return "【當前真實市場指標】\n" + "\n".join(indicators)
 
 # ==========================================
-# 4️⃣ Telegram 推播功能 (Notification)
+# 5. Telegram 推播功能 (Notification)
 # ==========================================
 def send_telegram_message(text):
     token = os.environ.get("TELEGRAM_TOKEN")
@@ -167,7 +231,7 @@ def send_telegram_message(text):
     try:
         res = requests.post(url, json=payload, timeout=10)
         if res.status_code == 200:
-            print("✅ Telegram 推播成功！(格式渲染完美)")
+            print("✅ Telegram 推播成功！")
         elif res.status_code == 400 and "can't parse entities" in res.text:
             print("⚠️ Telegram 格式解析失敗，改用純文字重發...")
             safe_payload = { "chat_id": chat_id, "text": text }
@@ -180,24 +244,23 @@ def send_telegram_message(text):
         print(f"⚠️ Telegram 請求發生錯誤: {e}")
 
 # ==========================================
-# 5️⃣ 核心 AI 大腦 (Gemini 2.5 Flash)
+# 6. 核心 AI 大腦 (Gemini 2.5 Flash)
 # ==========================================
-def ai_analyze(news, period_str, risk_data):
+def ai_analyze(news, period_str, risk_data, today_term):
     if not news: 
         return f"📰 目前偵蒐範圍內無重大市場波動事件。({period_str})"
         
     text = "\n".join([f"{n['title']} | {n['summary']}" for n in news])
     market_data_section = get_market_indicators_text(risk_data)
     
-    # 🌟 取得台灣時間的今天日期，餵給 AI 當作手錶
     today_date = datetime.now(TW_TZ).strftime('%Y-%m-%d')
     
     print("\n=== 🕵️‍♂️ 系統抓到的盤前真實數據 ===")
     print(market_data_section)
     print("==================================\n")
 
-    # 🌟 升級版 Prompt：強制要求金星星，並下達最高禁言令
     strategy_prompt = f"""
+    你是全球頂級政經情報中心的資深戰略分析官。
     任務：偵蒐並深度分析全球政經事件對台股與全球市場的衝擊。
     
     【提供給你的素材】：
@@ -208,14 +271,11 @@ def ai_analyze(news, period_str, risk_data):
     【撰寫規範】：
     請嚴格依照以下 Markdown 格式輸出，必須保持極高的專業度。
     ⚠️【最高指令一】：所有條列項目的開頭，都必須使用「★」符號！嚴禁使用「-」或「•」。
-    ⚠️【最高指令二】：嚴禁輸出任何問候語（如「好的長官」、「我是分析官」等廢話）。你的回答第一行必須直接是「★ 🎯 【一分鐘速讀懶人包】」。
+    ⚠️【最高指令二】：嚴禁輸出任何問候語（如「好的長官」、「我是分析官」等廢話）。你的回答第一行必須直接是「★ 🎯 【一分鐘戰略速讀】」。
     ⚠️【最高指令三】：如果今日日期是每個月的 1 號（不管有無交易），請務必在報告中針對台灣宏觀景氣循環進行「長線投資觀察」的戰略補充。
 
     ★ 🎯 【一分鐘戰略速讀】
-    請撰寫約 150~200 字的精華摘要（設計為剛好適合語音播報 45~60 秒的長度）。請用 3 到 4 個結構完整的列點(開頭用★)，深度解析以下面向。請不要只給簡短結論，必須包含背後的邏輯與驅動力：
-    ★ 全局多空定調：總結今日全球宏觀局勢與台股的整體風向，以及引發此風向的核心催化劑（如特定經濟數據或事件）。
-    ★ 資金流向與板塊：具體點名今日的強勢與弱勢族群，並解析主力資金板塊轉移背後的根本邏輯。
-    ★ 警戒雷達：結合 VIX 或匯率等數據，指出當前最需要防禦的潛在風險或即將到來的變數。
+    請撰寫約 150~200 字的精華摘要（設計為剛好適合語音播報 45~60 秒的長度）。請用 3 到 4 個結構完整的列點(開頭用★)，深度解析全局多空定調、資金板塊轉移邏輯，以及潛在風險警戒。
 
     ★ 📊 【重大事件】
     請挑選 4-6 件對市場影響最大的政經或產業新聞進行解析。
@@ -232,6 +292,10 @@ def ai_analyze(news, period_str, risk_data):
 
     ★ 📈 【投資觀察指引】
     請給出 3-5 點具體、可操作的投資與觀察建議(開頭用★)。
+
+    ★ 🏫 【曉臻財經小教室】
+    ⚠️今日指定教學名詞：【{today_term}】
+    請針對這個指定名詞，用 2 到 3 句「麻瓜也聽得懂」的生動白話文，向新手解釋它的含義以及對股市的代表意義。
     """
 
     genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
@@ -244,7 +308,7 @@ def ai_analyze(news, period_str, risk_data):
         return f"AI 情報官連線失敗: {e}"
 
 # ==========================================
-# 6️⃣ 主程式執行流程 (Main Pipeline)
+# 7. 主程式執行流程 (Main Pipeline)
 # ==========================================
 def run_daily():
     task_type = os.environ.get("TASK_TYPE", "full_report")
@@ -283,9 +347,13 @@ def run_daily():
 
     current_risk_data = fetch_risk_indicators()
 
+    base_date = datetime(2024, 1, 1, tzinfo=TW_TZ) 
+    days_passed = (now_tw - base_date).days
+    today_term = FINANCE_TERMS[days_passed % len(FINANCE_TERMS)] 
+
     if task_type == "full_report":
-        print("🧠 執行任務：呼叫 AI 撰寫深度報告並推播...")
-        report_text = ai_analyze(final_news, period_str, current_risk_data)
+        print(f"🧠 執行任務：呼叫 AI 撰寫深度報告... (今日單字：{today_term})")
+        report_text = ai_analyze(final_news, period_str, current_risk_data, today_term)
         send_telegram_message(report_text) 
     else:
         print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
