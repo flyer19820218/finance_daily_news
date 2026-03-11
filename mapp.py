@@ -336,39 +336,27 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 # ==================================================
-# 7.5 🌟 市場關鍵指標橫幅 (精簡穩定版：僅留核心數據)
+# 7.5 🌟 市場關鍵指標橫幅 (精簡版：移除估值與維持率)
 # ==================================================
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-")
-# 🚀 僅保留景氣燈號，移除 PE/PB 等不穩定參數
-light_val = risk.get("business_light", "等待更新...") 
+# 🚀 僅保留景氣燈號
+light_val = risk.get("business_light", risk.get("light", "等待更新..."))
 
-# 手機版優化 HTML：採用垂直堆疊感，更適合手指點擊與閱讀
 market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 15px; border-radius: 10px; margin: 15px 0 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-    <div style="font-size: 14px; font-weight: 800; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 5px;">
-        <span>📍</span> 市場核心戰略參數
+<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 15px;">📍</span> 市場核心戰略參數
     </div>
-    <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
-            <span style="font-size: 12px; color: #64748b;">台灣景氣對策信號</span>
-            <span style="font-size: 15px; font-weight: 700; color: #0f172a;">{light_val}</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
-            <span style="font-size: 12px; color: #64748b;">VIX 恐慌指標</span>
-            <span style="font-size: 15px; font-weight: 700; color: #0f172a;">{vix_val} <span style="font-size:11px; font-weight:normal; color:#64748b;">({vix_trend})</span></span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: #64748b;">美元/台幣匯率</span>
-            <span style="font-size: 15px; font-weight: 700; color: #0f172a;">TWD {usd_val}</span>
-        </div>
+    <div style="font-size: 14px; color: #334155; line-height: 1.8;">
+        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{light_val}</span><br>
+        <b>VIX 指數：</b>{vix_val} <span style="font-size:11px; color:#64748b;">({vix_trend})</span> &nbsp; | &nbsp; <b>匯率：</b>{usd_val}
     </div>
 </div>
 '''
 st.markdown(market_banner_html, unsafe_allow_html=True)
-
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
