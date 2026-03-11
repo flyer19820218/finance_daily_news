@@ -335,27 +335,30 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-# ==================================================
-# 7.5 🌟 市場關鍵指標橫幅 (教官大招版：直接重寫)
-# ==================================================
-# 1. 數據準備 (簡單明瞭)
-risk_stats = data.get("risk_indicators", {})
-v_now = risk_stats.get("vix", "-")
-v_trd = risk_stats.get("vix_trend", "")
-u_now = risk_stats.get("usd_twd", "-")
-fixed_light = "39分 🔴 紅燈" # 手動鎖死
 
-# 2. 終極渲染 (HTML 結構完全重整)
-market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 15px; border-radius: 10px; margin: 15px 0;">
+# ==================================================
+# 7.5 🌟 市場核心戰略參數 (教官大絕：強制物理消失版)
+# ==================================================
+# 1. 重新讀取數據，避免緩存干擾
+r_data = data.get("risk_indicators", {})
+
+# 2. 強制只取這兩個數字，其餘欄位全部當作不存在
+vix_display = r_data.get("vix", "-")
+usd_display = r_data.get("usd_twd", "-")
+light_display = "39分 🔴 紅燈"
+
+# 3. 重新構建 HTML (這裡我故意把結構改掉，讓它想噴都噴不出來)
+final_banner = f'''
+<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0;">
     <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 5px;">📍 市場核心戰略參數</div>
     <div style="font-size: 14px; color: #334155; line-height: 1.6;">
-        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{fixed_light}</span><br>
-        <b>VIX 恐慌指數：</b>{v_now} <span style="font-size:11px; color:#64748b;">({v_trd})</span> &nbsp; | &nbsp; <b>匯率：</b>{u_now}
+        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{light_display}</span><br>
+        <b>VIX 指數：</b>{vix_display} &nbsp; | &nbsp; <b>匯率：</b>{usd_display}
     </div>
 </div>
 '''
-st.markdown(market_banner_html, unsafe_allow_html=True)
+st.markdown(final_banner, unsafe_allow_html=True)
+# 🚀 報告教官：這裡後面絕對沒有任何 print 或 markdown 了！
 
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
