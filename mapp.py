@@ -215,21 +215,38 @@ st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=Tr
 
 
 # ==================================================
-# 🚀 7.5 全新重構：市場核心戰略參數 (教官指定無估值版)
+# 🌟 市場關鍵指標橫幅 (直接沿用電腦版完美設計！)
 # ==================================================
-risk_data = data.get("risk_indicators", {})
-vix_val = risk_data.get("vix", "-")
-usd_val = risk_data.get("usd_twd", "-")
+risk = data.get("risk_indicators", {})
+vix_val = risk.get("vix", "-")
+vix_trend = risk.get("vix_trend", "")
+usd_val = risk.get("usd_twd", "-") 
+# 這裡直接寫死，下個月分數變了您再來這改數字就好
+light_val = "🔴 紅燈：39分"
 
-st.markdown(f'''
-<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 15px; border-radius: 10px; margin: 20px 0;">
-    <div style="font-size: 15px; font-weight: 900; color: #1e40af; margin-bottom: 8px;">📍 市場核心戰略參數</div>
-    <div style="font-size: 14px; color: #334155; line-height: 1.8;">
-        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">39分 🔴 紅燈</span><br>
-        <b>VIX 指數：</b>{vix_val} &nbsp; | &nbsp; <b>匯率：</b>{usd_val}
+# 🚀 完美兩欄式橫幅 HTML (具備自動排版功能，手機看也超美)
+market_banner_html = f'''
+<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
+    <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 18px;">📍</span> 市場核心戰略參數
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
+            <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
+            <div style="font-size: 18px; font-weight: 700; color: #0f172a;">
+                VIX {vix_val} <span style="font-size:13px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
+                <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
+                TWD {usd_val}
+            </div>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號</div>
+            <div style="font-size: 18px; font-weight: 700; color: #0f172a;">{light_val}</div>
+        </div>
     </div>
 </div>
-''', unsafe_allow_html=True)
+'''
+st.markdown(market_banner_html, unsafe_allow_html=True)
 
 
 # 8. 🤖 AI 摘要
