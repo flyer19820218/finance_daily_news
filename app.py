@@ -641,45 +641,40 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # =====================================================================
 # 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
-# 功能：左側渲染風險橫幅與 AI 戰略報告；右側渲染無摘要版的極簡新聞清單與分頁系統。
 # =====================================================================
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
-    # --- 🌟 新增：市場關鍵指標橫幅 (Web 寬版優化) ---
+    # --- 🌟 市場關鍵指標橫幅 (已移除維持率，僅留 VIX、匯率、景氣燈號) ---
     risk = data.get("risk_indicators", {})
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-")
-    margin_val = risk.get("margin_ratio", "-") 
-    light_val = risk.get("business_light", "等待更新...") # 🚀 新增這行：抓取景氣燈號
+    light_val = risk.get("business_light", "等待更新...") 
 
-    # 🚀 下面的 HTML 已經把 PE/PB 拆掉，換成景氣燈號了
+    # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 18px;">📍</span> 市場核心戰略參數
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <div style="flex: 1; min-width: 150px;">
-                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">大盤融資維持率</div>
-                <div style="font-size: 18px; font-weight: 900; color: #ef4444;">{margin_val}</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
+                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
+                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">
+                    VIX {vix_val} <span style="font-size:13px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
+                    <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
+                    TWD {usd_val}
+                </div>
             </div>
             <div style="flex: 1; min-width: 200px;">
-                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
-                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">VIX {vix_val} <span style="font-size:12px; font-weight:normal; color:#64748b;">({vix_trend})</span> | TWD {usd_val}</div>
-            </div>
-            <div style="flex: 1; min-width: 150px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號</div>
-                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">{light_val}</div>
+                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">{light_val}</div>
             </div>
         </div>
     </div>
     '''
     st.markdown(market_banner_html, unsafe_allow_html=True)
-
-    # --- 🌟 🤖 AI 盤勢快評 ---
-    # (保留您原本 AI 盤勢快評的程式碼，不動)
 
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
