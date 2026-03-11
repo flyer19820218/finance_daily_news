@@ -208,13 +208,20 @@ def fetch_risk_indicators():
 
 # ==========================================
 def get_market_indicators_text(risk_data):
-    """格式化數據供 AI 分析使用"""
+    """【教官流停損版】絕對不給 AI 看壞掉的估值，從水源截斷"""
     indicators = []
-    if risk_data["vix"] != "-": indicators.append(f"👉 VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
-    if risk_data["usd_twd"] != "-": indicators.append(f"👉 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
-    if risk_data["margin_ratio"] != "-": indicators.append(f"👉 大盤融資維持率：{risk_data['margin_ratio']}")
-    if risk_data["business_light"] != "-": indicators.append(f"👉 台灣景氣對策信號：{risk_data['business_light']}")
-    return "【當前真實市場指標】\n" + "\n".join(indicators)
+    
+    # 1. VIX (有數據才給)
+    if risk_data.get("vix") and risk_data["vix"] != "-":
+        indicators.append(f"★ VIX 恐慌指數：{risk_data['vix']} ({risk_data['vix_trend']})")
+        
+    # 2. 匯率 (有數據才給)
+    if risk_data.get("usd_twd") and risk_data["usd_twd"] != "-":
+        indicators.append(f"★ 美元/台幣匯率：{risk_data['usd_twd']} ({risk_data['usd_trend']})")
+    
+    # 🚀 注意：這裡徹底刪除 PE/PB 邏輯，AI 沒看到這項，就不會產出「估值」這行字
+    
+    return "【盤前真實市場指標】\n" + "\n".join(indicators)
     
 # ==========================================
 # 5. Telegram 推播功能 (Notification)
