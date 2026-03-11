@@ -308,7 +308,7 @@ def ai_analyze(news, period_str, risk_data, today_term):
     
     print("\n=== 🕵️‍♂️ 系統抓到的盤前真實數據 ===")
     print(market_data_section)
-    print("==================================\n")
+
 
     strategy_prompt = f"""
     你是全球頂級政經情報中心的資深戰略分析官。
