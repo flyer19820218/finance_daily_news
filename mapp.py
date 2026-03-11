@@ -335,6 +335,28 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
+# ==================================================
+# 7.5 🌟 市場關鍵指標橫幅 (取代走勢圖)
+# ==================================================
+risk = data.get("risk_indicators", {})
+vix_val = risk.get("vix", "-")
+vix_trend = risk.get("vix_trend", "")
+usd_val = risk.get("usd_twd", "-")
+pe_val = risk.get("pe", "-")
+pb_val = risk.get("pb", "-")
+light_val = risk.get("light", "紅燈 (39分)")
+
+market_banner_html = f'''
+<div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0;">
+    <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 5px;">📍 市場核心戰略參數</div>
+    <div style="font-size: 14px; color: #334155; line-height: 1.6;">
+        <b>景氣對策信號：</b><span style="color: #ef4444; font-weight: bold;">{light_val}</span><br>
+        <b>VIX 指數：</b>{vix_val} <span style="font-size:11px; color:#64748b;">({vix_trend})</span> &nbsp; | &nbsp; <b>匯率：</b>{usd_val}<br>
+        <b>估值：</b>PE {pe_val} / PB {pb_val}
+    </div>
+</div>
+'''
+st.markdown(market_banner_html, unsafe_allow_html=True)
 
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
@@ -363,71 +385,6 @@ final_html = f'''
 </div>
 '''
 st.markdown(final_html, unsafe_allow_html=True)
-
-# =====================================================================
-# 🌟 [新增] 專屬：長期投資觀察 - 景氣燈號一年走勢圖
-# =====================================================================
-st.markdown('<div style="font-size:16px; font-weight:900; margin-top:24px; margin-bottom:10px; color:#1e293b;">📈 長期投資觀察：景氣對策信號 (近1年)</div>', unsafe_allow_html=True)
-
-@st.cache_data(ttl=3600*24) # 景氣燈號一個月才更新一次，快取可以設很久
-def load_macro_history():
-    # 這裡假設您有一個存放歷史資料的 JSON 檔案
-    hist_file = "data/macro_history.json"
-    if os.path.exists(hist_file):
-        with open(hist_file, "r", encoding="utf-8") as f:
-            hist_data = json.load(f)
-            # 將資料轉為 Pandas DataFrame
-            df = pd.DataFrame(hist_data)
-            df['date'] = pd.to_datetime(df['date'])
-            df = df.set_index('date')
-            return df
-    else:
-        # 如果檔案不存在，生成一些假資料示範排版 (正式上線請刪除此段)
-        dates = pd.date_range(start='2025-01-01', periods=12, freq='M')
-        # 生成一個模擬景氣從谷底復甦的資料 (Score range 9~45)
-        scores = [10, 11, 13, 16, 18, 22, 28, 32, 36, 38, 39, 39]
-        df = pd.DataFrame({'date': dates, '景氣分數': scores})
-        df = df.set_index('date')
-        return df
-
-# 讀取資料
-df_macro = load_macro_history()
-
-if not df_macro.empty:
-    # 建立一個精美的容器來包裝圖表
-    with st.container(border=True):
-        # 1. 顯示最新的燈號分數 (最右邊的資料)
-        latest_score = df_macro.iloc[-1]['景氣分數']
-        
-        # 判定目前的燈號顏色
-        def get_light_info(score):
-            if score >= 38: return ("#ef4444", "紅燈")
-            elif score >= 32: return ("#f97316", "黃紅燈")
-            elif score >= 23: return ("#16a34a", "綠燈")
-            elif score >= 17: return ("#eab308", "黃藍燈")
-            else: return ("#2563eb", "藍燈")
-            
-        light_color, light_name = get_light_info(latest_score)
-        
-        # 顯示當前指標狀態
-        st.markdown(f'''
-        <div style="text-align:center; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom:10px;">
-            <div style="font-size: 13px; color: #64748b;">最新月份狀態</div>
-            <div style="font-size: 32px; font-weight: 900; color: {light_color}; line-height:1;">
-                {latest_score} <span style="font-size: 20px;">分</span>
-            </div>
-            <div style="font-size: 16px; font-weight: 700; color: {light_color};">熱絡 {light_name}</div>
-        </div>
-        ''', unsafe_allow_html=True)
-        
-        # 2. 渲染走勢圖 (使用面積圖更漂亮，且自帶漸層)
-        st.area_chart(df_macro['景氣分數'], color=light_color)
-        
-        # 3. 加入長期投資觀察的註解
-        st.markdown('<div style="font-size:12px; color:#64748b; margin-top:-10px; line-height:1.4;">※ 註：9~16分藍燈為低迷(長期買點)，38~45分紅燈為熱絡(高檔風險)。走勢圖能幫助判斷目前處於景氣循環的哪個階段。</div>', unsafe_allow_html=True)
-
-else:
-    st.info("尚無歷史景氣對策信號資料。")
 
 
 # ==================================================
