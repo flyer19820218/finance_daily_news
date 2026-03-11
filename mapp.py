@@ -336,17 +336,17 @@ df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
 # ==================================================
-# 7.5 🌟 市場關鍵指標橫幅 (手機版最終修正：手動寫入 + 移除估值)
+# 7.5 🌟 市場關鍵指標橫幅 (手機版最終修正：只留燈號、VIX、匯率)
 # ==================================================
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-")
 
-# 🚀 【教官手動指示區】景氣燈號直接鎖死 39 分
+# 🚀 教官手動鎖死：確保這裡不會跑出 nan
 light_val = "39分 🔴 紅燈"
 
-# 手機版 HTML：徹底拔除 PE/PB 估值行
+# 🚀 這裡的 HTML 已經徹底拔除「估值」那一行了！
 market_banner_html = f'''
 <div style="background-color: #f8fafc; border-left: 5px solid #1e40af; padding: 12px; border-radius: 8px; margin: 15px 0 20px 0;">
     <div style="font-size: 13px; font-weight: 800; color: #1e40af; margin-bottom: 5px;">📍 市場核心戰略參數</div>
@@ -357,6 +357,7 @@ market_banner_html = f'''
 </div>
 '''
 st.markdown(market_banner_html, unsafe_allow_html=True)
+
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
