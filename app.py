@@ -651,10 +651,10 @@ with left_ai:
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-")
-    pe_val = risk.get("pe", "-")
-    pb_val = risk.get("pb", "-")
-    margin_val = risk.get("margin_ratio", "-") # 抓取全自動融資維持率
+    margin_val = risk.get("margin_ratio", "-") 
+    light_val = risk.get("business_light", "等待更新...") # 🚀 新增這行：抓取景氣燈號
 
+    # 🚀 下面的 HTML 已經把 PE/PB 拆掉，換成景氣燈號了
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
@@ -670,13 +670,16 @@ with left_ai:
                 <div style="font-size: 16px; font-weight: 700; color: #0f172a;">VIX {vix_val} <span style="font-size:12px; font-weight:normal; color:#64748b;">({vix_trend})</span> | TWD {usd_val}</div>
             </div>
             <div style="flex: 1; min-width: 150px;">
-                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">大盤估值 (0050)</div>
-                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">PE {pe_val} / PB {pb_val}</div>
+                <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號</div>
+                <div style="font-size: 16px; font-weight: 700; color: #0f172a;">{light_val}</div>
             </div>
         </div>
     </div>
     '''
     st.markdown(market_banner_html, unsafe_allow_html=True)
+
+    # --- 🌟 🤖 AI 盤勢快評 ---
+    # (保留您原本 AI 盤勢快評的程式碼，不動)
 
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
