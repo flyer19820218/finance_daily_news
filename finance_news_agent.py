@@ -207,11 +207,13 @@ def fetch_risk_indicators():
         risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
     except: pass
 
-    # 3. 抓取大盤融資維持率 (保留剛修好的 Regex 狙擊槍，防亂碼)
+    # 3. 抓取大盤融資維持率 (換上最強偽裝面具，欺騙防火牆)
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Language": "zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3"
         }
         res_m = requests.get(url_margin, headers=headers, timeout=10)
         
@@ -222,32 +224,39 @@ def fetch_risk_indicators():
             match_backup = re.search(r'維持率.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE)
             if match_backup and len(match_backup.group(0)) < 150:
                 risk_data['margin_ratio'] = match_backup.group(1).strip()
-            else:
-                risk_data['margin_ratio'] = "-" 
     except Exception as e: 
         print(f"⚠️ 融資維持率抓取失敗: {e}")
 
-    # 4. 🚀 抓取台灣景氣對策信號 (MoneyDJ)
+    # 4. 🚀 抓取台灣景氣對策信號 (新增智慧 nan 過濾器)
     try:
         url_light = "https://www.moneydj.com/KMDJ/MacroEconomic/MacroEconomicList.aspx?a=1050000"
         headers_light = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
         r_light = requests.get(url_light, headers=headers_light, timeout=10)
         dfs = pd.read_html(r_light.text)
+        
         for df in dfs:
-            if len(df) > 2 and len(df.columns) >= 2:
-                latest_date = str(df.iloc[0, 0]) # 月份
-                latest_score = str(df.iloc[0, 1]) # 分數
-                try:
-                    score = int(latest_score)
-                    if score >= 38: light = "🔴 紅燈 (過熱)"
-                    elif score >= 32: light = "🟡 黃紅燈"
-                    elif score >= 23: light = "🟢 綠燈 (穩定)"
-                    elif score >= 17: light = "🟡 黃藍燈"
-                    else: light = "🔵 藍燈 (低迷)"
-                    risk_data['business_light'] = f"{latest_date} | {score}分 {light}"
-                except:
-                    risk_data['business_light'] = f"{latest_date} | {latest_score}分"
+            if len(df.columns) >= 2:
+                # 逐行往下找，直到找到「真正的數字」為止，跳過 nan 標題列
+                for i in range(len(df)):
+                    date_str = str(df.iloc[i, 0]).strip()
+                    score_str = str(df.iloc[i, 1]).strip()
+                    
+                    # 判斷這行是不是數字 (過濾掉 nan)
+                    if score_str != 'nan' and score_str.replace('.', '', 1).isdigit():
+                        score = int(float(score_str))
+                        if score >= 38: light = "🔴 紅燈 (過熱)"
+                        elif score >= 32: light = "🟡 黃紅燈"
+                        elif score >= 23: light = "🟢 綠燈 (穩定)"
+                        elif score >= 17: light = "🟡 黃藍燈"
+                        else: light = "🔵 藍燈 (低迷)"
+                        
+                        risk_data['business_light'] = f"{date_str} | {score}分 {light}"
+                        break # 找到了就立刻跳出迴圈
+            
+            # 如果已經抓到燈號，就不用繼續找下一個表格了
+            if risk_data['business_light'] != "-":
                 break
+
     except Exception as e: 
         print(f"⚠️ 景氣燈號抓取異常: {e}")
         
