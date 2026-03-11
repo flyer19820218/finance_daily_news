@@ -206,21 +206,28 @@ def fetch_risk_indicators():
         risk_data["usd_trend"] = f"▲ {twd_close-twd_open:.2f}" if twd_close > twd_open else f"▼ {twd_open-twd_close:.2f}"
     except: pass
 
-    # 3. 抓取大盤融資維持率 (強化偽裝版，確保抓得到)
+# 3. 抓取大盤融資維持率 (拔除 pandas 依賴，改用 Regex 精準狙擊)
     try:
         url_margin = "https://histock.tw/stock/margin.aspx"
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
         res_m = requests.get(url_margin, headers=headers, timeout=10)
-        res_m.encoding = 'utf-8'
-        dfs = pd.read_html(res_m.text)
-        for df in dfs:
-            if '維持率' in df.columns:
-                margin_val = str(df['維持率'].iloc[0])
-                risk_data['margin_ratio'] = margin_val
-                break
+        
+        # 使用正則表達式，精準鎖定 <th>維持率</th> 下一個 <td> 裡面的「數字+%」
+        # (re.DOTALL 可以無視換行符號，直接穿透 HTML 標籤抓取)
+        match = re.search(r'<th>維持率</th>\s*<td[^>]*>.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE | re.DOTALL)
+        
+        if match:
+            risk_data['margin_ratio'] = match.group(1).strip()
+        else:
+            # 備用狙擊計畫：如果網站連 <th> 都改了，只要離「維持率」夠近的百分比就抓
+            match_backup = re.search(r'維持率.*?(\d+\.\d+\s*%)', res_m.text, re.IGNORECASE)
+            if match_backup and len(match_backup.group(0)) < 150:
+                risk_data['margin_ratio'] = match_backup.group(1).strip()
+            else:
+                risk_data['margin_ratio'] = "-" # 抓不到就給空值，絕對不印出亂碼
+                
     except Exception as e: 
         print(f"⚠️ 融資維持率抓取失敗: {e}")
         
