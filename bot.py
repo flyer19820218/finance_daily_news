@@ -86,3 +86,41 @@ def market_sentiment(vix, margin):
 def main():
     print("🚀 啟動市場監控機器人...")
     tw_tz = datetime.timezone(datetime.timedelta(hours=8))
+    today = datetime.datetime.now(tw_tz).strftime("%Y-%m-%d")
+    
+    date, score, light = get_economic_light()
+    margin = get_margin_rate()
+    vix = get_vix()
+    dxy = get_dxy()
+    sentiment = market_sentiment(vix, margin)
+    
+    margin_str = f"{margin} %" if margin else "⚠️ 讀取失敗"
+    vix_str = f"{vix}" if vix else "⚠️ 讀取失敗"
+    dxy_str = f"{dxy}" if dxy else "⚠️ 讀取失敗"
+    
+    msg = f"""<b>📊 台股市場戰略監控</b>
+📅 日期：{today}
+
+🚦 <b>景氣對策信號</b>：
+{date} | {score}分 {light}
+
+💰 <b>大盤融資維持率</b>：
+{margin_str}
+
+😱 <b>恐慌指數 (VIX)</b>：
+{vix_str}
+
+💵 <b>美元指數 (DXY)</b>：
+{dxy_str}
+
+🎯 <b>AI 情緒判定</b>：
+{sentiment}
+"""
+    print(msg)
+    send_telegram(msg)
+
+# =========================
+# 執行引擎 (這次真的在最下面，而且沒吃掉上面的肉！)
+# =========================
+if __name__ == "__main__":
+    main()
