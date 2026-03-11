@@ -650,7 +650,7 @@ with left_ai:
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-")
-    light_val = risk.get("business_light", "等待更新...") 
+    light_val = risk.get("business_light", "39分 🔴 紅燈") 
 
     # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
