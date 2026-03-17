@@ -507,7 +507,6 @@ with top_c2:
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
 
-import time # 確保有載入時間模組
 
 # =====================================================================
 # 【區塊 5】資料路由與載入邏輯
