@@ -323,20 +323,32 @@ def ai_analyze(news, period_str, risk_data, today_term):
         return f"AI 情報官連線失敗: {e}"
 
 # ==========================================
-# 7. 主程式執行流程 (Main Pipeline)
+# 7. 主程式執行流程 (Main Pipeline) - 夏令時間修正版
 # ==========================================
 def run_daily():
     task_type = os.environ.get("TASK_TYPE", "full_report")
-    print(f"🎯 接收到指令，啟動任務模式：【{task_type}】")
+    print(f"🎯 接收到指令， 啟動任務模式： 【{task_type}】")
 
     update_hot_stocks() 
     new_fetched_news = fetch_news() 
     
     now_tw = datetime.now(TW_TZ)
     weekday = now_tw.weekday()
-    period_str = "盤前" if now_tw.hour < 12 else "盤後"
-    if weekday == 5: period_str = "週末特刊-美股週收盤"
-    if weekday == 6: period_str = "週末特刊-下週展望"
+    
+    # 🌟 夏令時間偵蒐策略： 以 21:30 為美股開盤分界線
+    # 21:30 之前算盤前， 21:30 之後算盤後
+    current_time_val = now_tw.hour * 100 + now_tw.minute
+    
+    if current_time_val < 2130:
+        period_str = "盤前"
+    else:
+        period_str = "盤後"
+
+    # 週末特殊處理
+    if weekday == 5: 
+        period_str = "週末特刊-美股週收盤"
+    elif weekday == 6: 
+        period_str = "週末特刊-下週展望"
 
     old_report = "📊 AI 報告將於指定發報時間自動生成。"
     old_news = []
@@ -360,28 +372,21 @@ def run_daily():
     final_news.sort(key=lambda x: x["dt_utc"], reverse=True)
     final_news = final_news[:64]
 
-    # 🌟 取得最新風險指標 (已拔除 PE/PB)
+    # 🌟 取得最新風險指標 (VIX, 匯率)
     current_risk_data = fetch_risk_indicators()
 
-    # ====================================================
-    # 🌟 曉臻小教室：絕對序位系統 (順序播放，絕對不重複)
-    # ====================================================
-    # 以 2024 年 1 月 1 日為基準點
+    # 🌟 曉臻小教室： 絕對序位系統 (順序播放， 絕對不重複)
     base_date = datetime(2024, 1, 1, tzinfo=TW_TZ)
-    # 計算今天距離基準日總共過了幾天
     total_days_passed = (now_tw - base_date).days
-    
-    # 用總天數對詞庫長度取餘數，保證 800 個詞會「按順序」走完一輪
     term_index = total_days_passed % len(FINANCE_TERMS)
     today_term = FINANCE_TERMS[term_index]
 
     if task_type == "full_report":
-        # 在終端機印出序號，方便教官核對進度
-        print(f"🧠 執行任務：呼叫 AI 撰寫深度報告... (今日單字序號：{term_index}，單字：{today_term})")
+        print(f"🧠 執行任務： 呼叫 AI 撰寫深度報告... (今日單字序號： {term_index}， 單字： {today_term})")
         report_text = ai_analyze(final_news, period_str, current_risk_data, today_term)
         send_telegram_message(report_text) 
     else:
-        print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
+        print("📰 執行任務： 僅靜默更新新聞， 不呼叫 AI。")
         report_text = old_report 
     
     # 🌟 準備存檔封包
@@ -393,17 +398,12 @@ def run_daily():
         "risk_indicators": current_risk_data, 
     }
     
-    # 🌟 存入最新報告
+    # 🌟 存入最新報告與歷史紀錄
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     
-    # 🌟 存入歷史紀錄夾
     os.makedirs(HISTORY_DIR, exist_ok=True)
     hist_name = f"{now_tw.strftime('%Y-%m-%d')}_{period_str}.json"
     with open(os.path.join(HISTORY_DIR, hist_name), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
-# --- 程式進入點 ---
-if __name__ == "__main__":
-    run_daily()
