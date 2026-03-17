@@ -507,13 +507,24 @@ with top_c2:
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
 
+import time # 確保有載入時間模組
+
 # =====================================================================
 # 【區塊 5】資料路由與載入邏輯
 # 功能：根據模式載入對應的 JSON，若是歷史回顧則渲染日期選擇下拉選單。
 # =====================================================================
 data = None
 if mode == "最新（今日）":
-    data = load_json(LATEST_FILE)
+    # 🌟 戰術升級：直接抓 GitHub 最新原始檔，絕對零延遲！
+    raw_url = f"https://raw.githubusercontent.com/您的帳號/專案名稱/main/data/latest_report.json?t={time.time()}"
+    try:
+        res = requests.get(raw_url, timeout=5)
+        if res.status_code == 200:
+            data = res.json()
+        else:
+            data = load_json(LATEST_FILE) # 備用方案：如果網路異常，退回讀取本地
+    except:
+        data = load_json(LATEST_FILE)
 else:
     hist = list_history()
     if not hist:
