@@ -514,14 +514,17 @@ st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div
 # =====================================================================
 data = None
 if mode == "最新（今日）":
-    # 🌟 戰術升級：直接抓 GitHub 最新原始檔，絕對零延遲！
-    raw_url = f"https://raw.githubusercontent.com/您的帳號/專案名稱/main/data/latest_report.json?t={time.time()}"
+    # 🌟 戰術升級： 直接抓 GitHub 最新原始檔， 絕對零延遲！(修正撞名錯誤)
+    # 改用 datetime.now().timestamp()， 完美避開 time 撞名問題！
+    current_ts = datetime.now().timestamp()
+    raw_url = f"https://raw.githubusercontent.com/您的帳號/專案名稱/main/data/latest_report.json?t={current_ts}"
+    
     try:
         res = requests.get(raw_url, timeout=5)
         if res.status_code == 200:
             data = res.json()
         else:
-            data = load_json(LATEST_FILE) # 備用方案：如果網路異常，退回讀取本地
+            data = load_json(LATEST_FILE) # 備用方案
     except:
         data = load_json(LATEST_FILE)
 else:
