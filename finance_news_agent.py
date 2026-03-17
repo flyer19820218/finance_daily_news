@@ -184,25 +184,31 @@ def update_hot_stocks():
 
 # ==========================================
 def fetch_risk_indicators():
-    """方案 2 修正版：政府 API 精準對位系統"""
+    """方案 2 修正版：政府 API 精準對位系統 (加入 5d 防禦機制)"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-
     }
     
-    # 1. VIX & 匯率 (yf 依然是最穩的，不變)
     try:
-        vix_df = yf.Ticker("^VIX").history(period="2d")
-        v, p = vix_df['Close'].iloc[-1], vix_df['Close'].iloc[-2]
-        risk_data["vix"] = f"{v:.2f}"
-        risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
-        
-        twd_df = yf.Ticker("TWD=X").history(period="2d")
-        v, p = twd_df['Close'].iloc[-1], twd_df['Close'].iloc[-2]
-        risk_data["usd_twd"] = f"{v:.2f}"
-        risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
-    except: pass
+        # 1. VIX 恐慌指數 (改抓 5 天，防禦週末與連假)
+        vix_df = yf.Ticker("^VIX").history(period="5d")
+        if len(vix_df) >= 2:
+            v, p = vix_df['Close'].iloc[-1], vix_df['Close'].iloc[-2]
+            risk_data["vix"] = f"{v:.2f}"
+            risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+            
+        # 2. 美元/台幣匯率 (改抓 5 天，防禦週末與連假)
+        # 註：TWD=X 或 USDTWD=X 都可以，TWD=X 是 YF 的標準寫法
+        twd_df = yf.Ticker("TWD=X").history(period="5d")
+        if len(twd_df) >= 2:
+            v, p = twd_df['Close'].iloc[-1], twd_df['Close'].iloc[-2]
+            risk_data["usd_twd"] = f"{v:.2f}"
+            risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+            
+    except Exception as e: 
+        print(f"⚠️ 抓取真實市場指標失敗: {e}")
+        pass
         
     return risk_data
 
