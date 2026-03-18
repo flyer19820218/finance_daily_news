@@ -24,6 +24,15 @@ st.markdown("""
 .block-container { padding: 0.8rem 0.6rem !important; }
 html, body, [data-testid="stAppViewContainer"] { background-color: #FFFFFF !important; color: #000000 !important; font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; }
 p, span, h1, h2, h3, label { color: #000000 !important; }
+
+/* 金色星星專屬樣式 */
+.gold-star {
+    color: #FFD700 !important; 
+    text-shadow: 0px 0px 2px rgba(255, 215, 0, 0.5); 
+    font-weight: bold;
+    margin: 0 1px;
+}
+
 .brand { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-bottom: 2px;}
 .sub { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
 .update-time { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
@@ -111,14 +120,10 @@ else:
     if os.path.exists(HISTORY_DIR):
         hist_files = sorted([f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")], reverse=True)
         if hist_files:
-            years = []
-            for f in hist_files:
-                if f[:4] not in years: years.append(f[:4])
+            years = sorted(list(set(f[:4] for f in hist_files)), reverse=True)
             col_y, col_m = st.columns(2)
             with col_y: selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
-            months = []
-            for f in hist_files:
-                if f.startswith(selected_year) and f[5:7] not in months: months.append(f[5:7])
+            months = sorted(list(set(f[5:7] for f in hist_files if f.startswith(selected_year))), reverse=True)
             with col_m: selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
             prefix = f"{selected_year}-{selected_month}"
             filtered_hist = [f for f in hist_files if f.startswith(prefix)]
@@ -127,22 +132,33 @@ else:
                 with open(os.path.join(HISTORY_DIR, pick), "r", encoding="utf-8") as f: data = json.load(f)
             else: st.warning("該月份尚未產生報告。"); st.stop()
         else: st.warning("尚無歷史資料"); st.stop()
-    else: st.warning("歷史資料夾不存在"); st.stop()
 
-if not data: st.warning("找不到資料檔案，請確認 data 目錄。"); st.stop()
+if not data: st.warning("找不到資料檔案。"); st.stop()
 
-# 5. 大標題與語音
+# 5. 大標題與語音處理
 raw_report = data.get("report", "") or ""
 
 @st.cache_data(show_spinner=False)
 def generate_anchor_audio(text):
     if not text: return None
     try:
+        # 移除 HTML 標籤
         clean_text = re.sub(r'<[^>]+>', '', text) 
+        # 移除特定開場白
         clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
+        # 移除特殊 Unicode 符號與 ☆
         clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
+        
+        #  핵심: 處理星星，將 ★★★ 變成 「三顆星」
         clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
-        clean_text = clean_text.replace("*", "").replace("#", "").replace("-", "").replace("•", "").replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
+        
+        # 核心：移除括號、斜線、星號等唸起來會很怪的符號
+        # 移除 【】、[]、（）、() 以及 / 、 * 、 #
+        clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
+        
+        # 修正破音字與特定發音
+        clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
+        
         full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
         
         async def _generate():
@@ -213,18 +229,13 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-
-# ==================================================
-# 🌟 市場關鍵指標橫幅 (直接沿用電腦版完美設計！)
-# ==================================================
+# 市場指標橫幅
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-") 
-# 這裡直接寫死，下個月分數變了您再來這改數字就好
 light_val = "🔴 紅燈：39分"
 
-# 🚀 完美兩欄式橫幅 HTML (具備自動排版功能，手機看也超美)
 market_banner_html = f'''
 <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
     <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
@@ -248,12 +259,11 @@ market_banner_html = f'''
 '''
 st.markdown(market_banner_html, unsafe_allow_html=True)
 
-
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 核心修復：使用更強大的 CSS 確保星星呈現金色
-star_html = '<span style="color: #FFD100; font-size: 1.1em; text-shadow: 0px 0px 1px rgba(0,0,0,0.2);">★</span>'
+# 核心修復：使用 CSS class 確保星星金色
+star_html = '<span class="gold-star">★</span>'
 processed_report = raw_report.replace("★", star_html)
 
 # 處理標題替換邏輯
