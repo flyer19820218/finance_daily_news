@@ -251,14 +251,24 @@ st.markdown(market_banner_html, unsafe_allow_html=True)
 
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
-processed_report = raw_report.replace("★", '<span style="color: #FFD700; font-weight: bold;">★</span>')
-current_hour = datetime.now(tw_tz).hour
-if current_hour >= 14 or current_hour < 5:
-    processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包").replace("一分鐘晨報", "盤後戰略精華包").replace("晨報速讀", "盤後戰略精華")
-else:
-    processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包").replace("一分鐘晨報", "一分鐘速讀懶人包")
 
-st.markdown(f'<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px; font-size: 14px; line-height: 1.6; color: #0f172a; margin-bottom: 20px;">{processed_report}</div>', unsafe_allow_html=True)
+# 核心修復：使用更強大的 CSS 確保星星呈現金色
+star_html = '<span style="color: #FFD100; font-size: 1.1em; text-shadow: 0px 0px 1px rgba(0,0,0,0.2);">★</span>'
+processed_report = raw_report.replace("★", star_html)
+
+# 處理標題替換邏輯
+current_hour = datetime.now(tw_tz).hour
+if 14 <= current_hour < 24 or 0 <= current_hour < 5:
+    processed_report = processed_report.replace("一分鐘戰略速讀", "盤後戰略精華包").replace("晨報", "盤後戰略")
+else:
+    processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包")
+
+# 渲染到畫面上
+st.markdown(f'''
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 15px; font-size: 15px; line-height: 1.8; color: #0f172a; margin-bottom: 20px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
+    {processed_report}
+</div>
+''', unsafe_allow_html=True)
 
 # 9. 新聞快報
 st.markdown('<div style="font-size:16px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 24小時即時新聞快報</div>', unsafe_allow_html=True)
