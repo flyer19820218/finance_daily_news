@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: '39 * * * *'       # 每小時新聞
     - cron: '9 21 * * 0-4'    # 台北 05:09 晨報
-    - cron: '09 7 * * 1-5'     # 台北 15:09 盤後
-    - cron: '09 21 * * 5,6'    # 週末特刊
+    - cron: '9 7 * * 1-5'     # 台北 15:09 盤後
+    - cron: '9 21 * * 5,6'    # 週末特刊
   workflow_dispatch:
     inputs:
       task_type:
