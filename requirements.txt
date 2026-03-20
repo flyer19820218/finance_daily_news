@@ -1,7 +1,6 @@
 streamlit
 feedparser
 requests
-google-generativeai
 pandas
 matplotlib
 yfinance
@@ -10,3 +9,4 @@ beautifulsoup4
 pytz
 edge-tts
 asyncio
+google-genai
