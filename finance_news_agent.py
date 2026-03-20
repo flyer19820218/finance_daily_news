@@ -184,25 +184,39 @@ def update_hot_stocks():
 
 # ==========================================
 def fetch_risk_indicators():
-    """方案 2 修正版：政府 API 精準對位系統"""
+    """方案 2 修正版：政府 API 精準對位系統 (擴展天數與分離錯誤處理)"""
     risk_data = {
         "vix": "-", "vix_trend": "",
         "usd_twd": "-", "usd_trend": "",
-
     }
     
-    # 1. VIX & 匯率 (yf 依然是最穩的，不變)
+    # 1. VIX 獨立處理
     try:
-        vix_df = yf.Ticker("^VIX").history(period="2d")
-        v, p = vix_df['Close'].iloc[-1], vix_df['Close'].iloc[-2]
-        risk_data["vix"] = f"{v:.2f}"
-        risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+        vix_df = yf.Ticker("^VIX").history(period="5d")
+        if len(vix_df) >= 2:
+            v = vix_df['Close'].iloc[-1]
+            p = vix_df['Close'].iloc[-2]
+            risk_data["vix"] = f"{v:.2f}"
+            risk_data["vix_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+        elif len(vix_df) == 1:
+            risk_data["vix"] = f"{vix_df['Close'].iloc[-1]:.2f}"
+            risk_data["vix_trend"] = "休市"
+    except Exception as e:
+        print(f"⚠️ VIX 抓取錯誤: {e}")
         
-        twd_df = yf.Ticker("TWD=X").history(period="2d")
-        v, p = twd_df['Close'].iloc[-1], twd_df['Close'].iloc[-2]
-        risk_data["usd_twd"] = f"{v:.2f}"
-        risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
-    except: pass
+    # 2. 匯率獨立處理
+    try:
+        twd_df = yf.Ticker("TWD=X").history(period="5d")
+        if len(twd_df) >= 2:
+            v = twd_df['Close'].iloc[-1]
+            p = twd_df['Close'].iloc[-2]
+            risk_data["usd_twd"] = f"{v:.2f}"
+            risk_data["usd_trend"] = f"▲ {v-p:.2f}" if v > p else f"▼ {p-v:.2f}"
+        elif len(twd_df) == 1:
+            risk_data["usd_twd"] = f"{twd_df['Close'].iloc[-1]:.2f}"
+            risk_data["usd_trend"] = "休市"
+    except Exception as e:
+        print(f"⚠️ 匯率抓取錯誤: {e}")
         
     return risk_data
 
