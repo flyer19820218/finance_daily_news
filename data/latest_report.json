@@ -1,8 +1,80 @@
 {
-  "updated_at_utc": "2026-03-26 07:06:03 (TW)",
+  "updated_at_utc": "2026-03-26 08:02:25 (TW)",
   "title": "全球局勢與市場情報 2026-03-26 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 55.733868936s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 55\n}\n]",
+  "report": "AI 情報官連線失敗: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.",
   "news": [
+    {
+      "title": "川普15點伊朗方案曝光 國防股短線承壓 但長線仍聚焦美中競爭、軍事轉型 - news.cnyes.com",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBvcWVQN0pwME9zOTBDbHlKZjVBU1N4Q0ZaeXZBUGtKSGs0eTVPUHdPS1VhMFl0aGE1TTJyelM5ZnpFS3B6ZGUtZURVbjVLTjQ?oc=5",
+      "summary": "川普15點伊朗方案曝光 國防股短線承壓 但長線仍聚焦美中競爭、軍事轉型&nbsp;&nbsp;news.cnyes.com",
+      "dt_utc": "2026-03-25T23:40:56+00:00"
+    },
+    {
+      "title": "《台北股市》投信25日賣超股：神基、華邦電、裕融 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQUtSYWlBMU5CU2MtMExwNE9NeWFCU2w0RzdOZ19oUHdwVFdOTHA0bEFBOFhkR3FlRzQzLVo1U3FwbkFhd3Jzall3SmpRUGUzb3dQT01JQmlMRkI4Y3dyT05XeUNYeW92S0lReDZiT0NnN1hUX2FZeU4tcnp5LWVhdzZyS3NUelVUckcxMnRLZw?oc=5",
+      "summary": "《台北股市》投信25日賣超股：神基、華邦電、裕融&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-03-25T23:38:00+00:00"
+    },
+    {
+      "title": "《紐約股市》25日美股道瓊指數漲305.43點，為46429.49點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxON2hfS2FtV1IxN1ZKcm9yU1VpeGZtTVUtVmZNUmIwSmRjMDk0NUJSQTdsTmN4N2lHYzJPOElfMmxuWVFGU3llclZHOE5WZVA1S0pIMndsV0RjanBDNGltRFBOMjd6X3FOYUF4Q0g2ZXczVDlvNVdnYXJsZlM0U3E1VVBMSnJIM1lLelAyZmMwS3BfQQ?oc=5",
+      "summary": "《紐約股市》25日美股道瓊指數漲305.43點，為46429.49點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-03-25T23:31:00+00:00"
+    },
+    {
+      "title": "《世界主要股市指數》25日美股道瓊漲305.43點，為46429.49點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZzNGR1F2UVc4cWxDWGtIdFNBZlZxdkpKdzJuTElWOThKWFNhdmJaR1F0ZVFfRi0ydmFTWEFLY3ZWZ1IwS1kzSjBwS3c4aGU0bjVkcjI0cmNvUW1icW9tajlQTDNJOWxUM214b1REaE8wdVJyNlB0emdBM2V2TXMyWEZtWFhJbDdQU0dkaDF6elNOUQ?oc=5",
+      "summary": "《世界主要股市指數》25日美股道瓊漲305.43點，為46429.49點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-03-25T23:31:00+00:00"
+    },
+    {
+      "title": "【即時新聞】亞洲市場面臨地緣政治風險，三檔具強勁現金流潛力低估價值股浮現 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeUtRVEpxMTRlRnhXQUNYM3R2Vmc2bDNsdjlvNlRoYXlialZwV3NZSmpIQXk4eGFXVFhyTGJOU3B1UW11VzF0N0pib2J3OEFMTG51YjMxaURKc0dLeHBVdnB6TUxJYWU1TEQ5aUwxRXcxcTlSRElJdXZEUE1LUmtBeWNZWGc2Y1prcmstMGdNd2M?oc=5",
+      "summary": "【即時新聞】亞洲市場面臨地緣政治風險，三檔具強勁現金流潛力低估價值股浮現&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-03-25T23:29:20+00:00"
+    },
+    {
+      "title": "東引指揮部「忠義操演」 同島一命護家園- 軍事 - 中時新聞網",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9yTXBqaEZ0ZXZhclhLemxheVVNblJqdlBrQTFmb2JuYTRRTmNMU0I0Z0drV2dFLUROX3JfU2NITF94UUwxdTVOejhVQnFhdGRJZFRsbkF2TUhMdTdUYTZURGU3am5CZDNXQ0VuZEZn?oc=5",
+      "summary": "東引指揮部「忠義操演」 同島一命護家園- 軍事&nbsp;&nbsp;中時新聞網",
+      "dt_utc": "2026-03-25T23:22:33+00:00"
+    },
+    {
+      "title": "【即時新聞】中東地緣政治推升油價，四月能源類股持續震盪，這兩檔最穩健 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOR2xoM2ZUMTA4SDNwNzJWWnZza1BnTmdvRHpsZEUxZ1NRMUp0YnN0MFBtUDJZd2RlSnlTVDl1X1A2aHdlV3Z0bjhXRktGWVIzUmpMVXR4Q2RDcms5VjZDc2Nzblg0NG5UYlFBS0twUFRfSnRXSzVGX2JXbG5UaGdKLWVLLS0zZEc5WHJocXdsX24?oc=5",
+      "summary": "【即時新聞】中東地緣政治推升油價，四月能源類股持續震盪，這兩檔最穩健&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-03-25T23:19:56+00:00"
+    },
+    {
+      "title": "75歲劉曉慶去世傳聞真相曝光 震驚網友 - 大紀元",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0zZDFTeWRKN2lKSHJGUkViMWs5dW5ka3FjSjdzT3ZCeVc3eVBJT3JfVTY2SkRsYjBwUUJ5aTBVXzd5aklnenFocndydVhObU1UTDdiZkZyU0ZfR3J5T05MN9IBZkFVX3lxTE8xU3hDamNRYXBuUWFRYW5wdWhlUlR6dVhwUTNkWUM2VWcwRjVjVW9FaUVGN0RVa2J1VlJlblVocUpzenBRNW13clBIZDNGd2h2ekhmelVLRkk5SkVjQnI0dWp5WEF3QQ?oc=5",
+      "summary": "75歲劉曉慶去世傳聞真相曝光 震驚網友&nbsp;&nbsp;大紀元",
+      "dt_utc": "2026-03-25T23:15:00+00:00"
+    },
+    {
+      "title": "納坦雅胡：對伊軍事行動全力推進 憂川普促停戰加緊空襲 - 波新聞",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB5cVAtMEl5NVEwWHZGVEFCaTFBendVT1l1M0xVQVU4WmdRSFJLbl9mM2k0TFQwZWdqNzhkV29kWTQ0MVZzblBhOVRfSDQwb1VqZ1pXeXdod0EyLXZZX0dTZ0JwVQ?oc=5",
+      "summary": "納坦雅胡：對伊軍事行動全力推進 憂川普促停戰加緊空襲&nbsp;&nbsp;波新聞",
+      "dt_utc": "2026-03-25T23:09:21+00:00"
+    },
+    {
+      "title": "要伊朗認清現實！若不接受「軍事上被擊敗」 白宮：川普準備釋放「地獄之火」 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMihANBVV95cUxPS3JXazJGcnE4ZGhSZ3lCS3kydVRCT01HZE01RkQtbXd3VjlEaUxLb3I1d2ZnVnlkNmxXOTZINUYwOVl0VGZCVVNLZ0NLOUNUZmMwT29IQnVPdTY4TlI2blgtdV91NmgtUzBUR0ppNnphaG10dXluLUZ4R1VBM0ZPejUzSFBab01aWnNvSXdlOVg3NHpGcVhtakE2S0lDbGZRSUJqOFVvZ3pqeDVuWmE0cUx0M2RFWE5Nb1NGdDQ3NnRuaDRVUFdQb0RyVVBxMjM2MWVvVm9YeU1rcWNyZUg5X1RpQVJ6TWdSMHZrTE1pdzR4LWxrYmkwSGxTakZObURyc2FzajBrX3FPZnZKcV9vTnFqQl8zRWNpMmY4WTN0Y3ZpMzJiTUxRRzVuOTFCbFBhVXY0cXJoQmZkQzkteEJyMDA2OFFRZUNPc2daaE9fTXZQVGJiSk00eVo4d2RYNm5nRlBjVU01ZlY2MDlPbXliaXNFV3Z5OVc5c1FzRmxxcHg4bktT?oc=5",
+      "summary": "要伊朗認清現實！若不接受「軍事上被擊敗」 白宮：川普準備釋放「地獄之火」&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-03-25T23:07:52+00:00"
+    },
+    {
+      "title": "休市通知：本日國際主要股市休市通知 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT2E5NGczYWNUREtyLWQxOHpIX0VQR0MyYnpJY1ZWd3dEOUk0NXEyemo0MXBQV1VQeTBlUVR6Q1JaZnFNTVRHUE1VbWNpTDM2Q1hkWXJmelFNaVZmMHdOSFFCeVZBcW1La0NqZXNKOHJya3VBN3lOUkFfWHh3X3NoRm1mT0JOcVNK?oc=5",
+      "summary": "休市通知：本日國際主要股市休市通知&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-03-25T23:00:00+00:00"
+    },
+    {
+      "title": "白宮堅持軍事行動時間表不變 美伊戰事可望4月落幕 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxPRlZqTk0yT0p3aHVqd2dBcE9yTVptanZwUjVzVXZuZi1hM2k4OWQ5WmdHYlI2Z2F1eVhBbkZocGZ3QXZ6ekw4RmdTVi1OcThmd3g4T3pYMXZETXZyM21mWHpBRWRjZjdRTnByT3luaExjQk5ycmNTa0FWTWhCYXM3RXd5dno3RExpNllDME05OWlxX3o4LVpKeGNTMEVUamFTSFRkREIzcy1LcU9PLTc0Wi1PeGszUjlUdlJxTmpsRVpJdUlmZkt4cVBSOXVjWjVldFJXbFRLS2FROTVndUVUMlNBcGo2ZkFobWhnNDhXLWdJLXpoaGNOODdxRWU4T2tWbk1NOGI5Qjc1RzdMUU56Vm5XQldNc2xpQXJjckZIR0NzeUFfbDAtOTUzRHhWRTFXMDBrSGdPUFFfdHVkRFVyZnNId1BqeldHQnJtQ0ZYWFdzSkh6Zm5VcUV6b2RrUQ?oc=5",
+      "summary": "白宮堅持軍事行動時間表不變 美伊戰事可望4月落幕&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-03-25T22:51:37+00:00"
+    },
     {
       "title": "Stock Split Implementation and New Share Delivery List [Stock Split Implementation and New Share Delivery List] - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPN1FQRHFacW9kbFBsU08xUFQ0cXIyUFhicGdtNXAyMXBidjUxVWpOMU5wQWltamFKbndXc1NldUlrYjRjbmY5bl8wV1FGT282alZnVlNTWHVQT3MzMTJpZGZZX1owejdYaHZVU1RvWGhnSFFuN1R3QXZtejBJMHc1QzgwZTgta3d6TkJ0NG5HNGlpZExaODBiNkNGZnY4ZWRJUWJqNmNqNFd2bm8?oc=5",
@@ -20,6 +92,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE16cXZNcU1BX0hMNDFZdUl4T3o2dzQ3QW5ONk5hOGQ3aDJPVW5rUmkyM3YxM1ZPVmFGa09xUWFkaVlMUzZMVnJQOTI5ZUlZeDJMME5IalVScWItZ9IBX0FVX3lxTFBTSllCT2IwLUZybDRlZmU3cUt1ckNMMldJUkpUd0dWQ1QwR0lYN2lZN3JOalN5QS1JblV4VDZtQnhfakg1dTctUHMyc0l4Vi12aml3ZWtKR3FtVFpEaHFj?oc=5",
       "summary": "白宮堅持軍事行動時間表不變 美伊戰事可望4月落幕&nbsp;&nbsp;經濟日報",
       "dt_utc": "2026-03-25T22:19:09+00:00"
+    },
+    {
+      "title": "中東局勢降溫希望提升！美股全面走揚 國際油價跌逾2％ - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxPLV8zSk9xU2xUOEJNN3JWU20zQ1ZZSV9KbmctZ0VpT1hWM1ZYVkZsdGlwY3FpSmVubUxJd2U2cHdjejZDYVNqaDFGWGs3UGlRbzRVN2l5S05NT3E3RVRWeDBTQ0RFUXJLR3NkV25WMVZ4XzFFVzQ4ZlItWUItbmlwcXgyRUlWVWJCUmJjTzZuV3ZLV1J2OUhYeUxhLXF3UUM2eERoaEF3eS1hMjhNRks0MmpSTFI3cnhYamxYRi0xTXZtZG1SUlVydVF5cmVNU2JjSkphaU9vMGh6aFFBeVFFV2pPQlBYWnlER2dYcnBGT3drQ3RSbFplTGd5S3pEd2dXZmJWeVZta1RWdjFzYmM3WlpXMFlGWFUzVFFxSEtOVjRKTFBjbjNSZmt2ZDB4WDJxY0tLZURRZVo4NmRmeDVGb2VDS1NHcFdtU1E5MmJpUWhPbjdhLTEzeHQtUFB1dFhLbFNhU0dPMA?oc=5",
+      "summary": "中東局勢降溫希望提升！美股全面走揚 國際油價跌逾2％&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-03-25T22:05:29+00:00"
     },
     {
       "title": "【美股盤後】收高 - Yahoo股市",
@@ -172,6 +250,12 @@
       "dt_utc": "2026-03-25T18:06:46+00:00"
     },
     {
+      "title": "【美股盤中】休兵傳聞壓抑油價 科技與半導體帶動美股齊揚(2026.03.26) - forecastock.tw",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUHNJc2dJREdMcWk3Sk1uSWFUWjhhWEU1VEs3Qlp4enRLRmxIbi13bjRPWWJna0hmV1pyaWNQYnBndG1UMXZBWGh0NThMMlF0MUV0OXFFTkNVc2JHcm0zOGZVcFpLaHhfcUc3WEZIUmduejF1b3NxMmR6dWQ4UEtGekZEMURFMGtYdlBkaVptZFdrYjNV?oc=5",
+      "summary": "【美股盤中】休兵傳聞壓抑油價 科技與半導體帶動美股齊揚(2026.03.26)&nbsp;&nbsp;forecastock.tw",
+      "dt_utc": "2026-03-25T17:34:06+00:00"
+    },
+    {
       "title": "【美股盤中】休兵傳聞壓抑油價 科技與半導體帶動美股齊揚(2026.03.26) - CMoney投資網誌",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPQlh0eElxOGxIT0lFQUNDV1Fsc1o2bGFvS21Lbnc5MHFaS2JtUm1QUnlySVNFaC1VU3JuOWt4TVJFa0d4RlI1VmpYMWhaS0VSOVp2LWoteUZCNUZNS0NWMWNCSF9faTRRZUFFeDItX2UySkw4RWRvTmlwT2E0OGtHSTRoNkxVb2ZQWTAwQXFB?oc=5",
       "summary": "【美股盤中】休兵傳聞壓抑油價 科技與半導體帶動美股齊揚(2026.03.26)&nbsp;&nbsp;CMoney投資網誌",
@@ -302,96 +386,12 @@
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZHFOaEFINUI5Wm1mNlBTLWtyY1FvLVZLT0dtcXI4WnhrSGVGeUtyM1puM0h0dHpBSExIcTMwMTdvc3owM2ZveUFTZ1VBXzBhV3N5M0JVRzN2aG41VVFCU25GaE9tOGFCT2xpWHU1cnRCQm8wOUNCUGZvTVB4ZEdGUlk0N1BnYkstNGZhYzdaSXFQZ3kzMnJrMXU4TThjdFoxc3o3Y2lFWEMzaFF1R3c?oc=5",
       "summary": "Arm, Intel, Meta, Alibaba, JD.com, Robinhood, GameStop: Biggest Stock Movers&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-03-25T15:19:57+00:00"
-    },
-    {
-      "title": "Arm, Intel, Meta, Alibaba, JD.com, Robinhood, GameStop: Biggest Stock Movers - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTnQ1ZjhfUmZhLUN5b1VidTZQN0x4MldiQmt3VXhWQmhvR09sRnYxMEVEZ0ZnMXJuaGtWU2NYQW85c3NrVWpOQTRRTnJCek9HMGFVRjZfZEFIOTRCT0F4ZVphTVgzY1pZSzJza1dZbWtST1I4R2ZVWW9rU3NMZ1ZKUVRWalR2QXgtYjgyWi1aMU0tWXB0bFZRSENlakhNRVpwM0NuQTBoTHViLWN4QlE?oc=5",
-      "summary": "Arm, Intel, Meta, Alibaba, JD.com, Robinhood, GameStop: Biggest Stock Movers&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-03-25T15:17:00+00:00"
-    },
-    {
-      "title": "民調：多數美國人認為對伊朗軍事行動過頭 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GRGwwQm5ud2RlNi1zclN0aHZjdWt6LU9yNkdQT21uQmtFck5udXB4c0d6Z1U5NDlxZlZHdzdNa3ZWWlVld3lpck1ZTXFmcUlqRWk1Nl9rT2YwQdIBX0FVX3lxTE04cDBKT0FERVR2VHJRTUdzODJQYVM3WldlbXJubGg4ejhScnFNUXMxNHlVUDJNQ2trMFI2QXBWQUtZWlJDQmRkUE5pSF9MNzhvUy1yci04WEhDNUlNRlZR?oc=5",
-      "summary": "民調：多數美國人認為對伊朗軍事行動過頭&nbsp;&nbsp;經濟日報",
-      "dt_utc": "2026-03-25T15:12:29+00:00"
-    },
-    {
-      "title": "2330 台積電 - ⚠️ 即時消息伊朗剛剛宣布願意談了！ - 股市爆料同學會 - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WbWtyeTdFczUwLTBneDBiYVpKSTlpQTAtMWlEUThJTVIyX1FPbFk0Z0NKUHBmanVaNmhYeGZnOEZmWURnY0wtd25jVzBZQlpIUko1eXN3aUU?oc=5",
-      "summary": "2330 台積電 - ⚠️ 即時消息伊朗剛剛宣布願意談了！ - 股市爆料同學會&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-25T15:07:30+00:00"
-    },
-    {
-      "title": "2498 宏達電 - META眼鏡推遲歐盟上市- 股市爆料同學會 - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBCZW9fanJDemdyY3FPZnMzSmtzSmN0ZVB1SjB2bDgzX1ZUVWR2M3lLbmJOb1J6RE15QmlZRktnWTJKcHhTWWJIRTRTNk5NQnR2NUw2MkZ4N1c?oc=5",
-      "summary": "2498 宏達電 - META眼鏡推遲歐盟上市- 股市爆料同學會&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-25T15:01:22+00:00"
-    },
-    {
-      "title": "【23:01 即時新聞】Joint Stock(KSPI) 盤中勁揚逾5%／KD黃金交叉在即、短線動能轉強 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQRklPclN1RldMQll2WEROZEJVM2NsdzJkMFFGbzZZaUhqQ1dBSXdYMzhNbDRmYVYtdFVXVkh5SVZieE9yeTdJVnR4Q1JFWWNoMFRiU2RZS0xVWnZUdFllNDhMemJ0aURPaVJIenNJbHBoQWlxLVBZZlpvZGVQUG4wX0FvSTktdjZCRExtTkNR?oc=5",
-      "summary": "【23:01 即時新聞】Joint Stock(KSPI) 盤中勁揚逾5%／KD黃金交叉在即、短線動能轉強&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-03-25T15:01:15+00:00"
-    },
-    {
-      "title": "【23:01 即時新聞】Joint Stock(KSPI) 盤中勁揚逾5％／KD黃金交叉在即、短線動能轉強 - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YZGlPMTNuQ0Y2NVY1Sm1NSWtjTkNnaDk0MVdTN05zTW8zSDBrUTJXNmhVejBOdDd4S20zNjEwUlprcnlRZVNtOFZCblc2Q0xhc3JiUXZEX1lDYjZsZkNtaXVlZnVKeHc?oc=5",
-      "summary": "【23:01 即時新聞】Joint Stock(KSPI) 盤中勁揚逾5％／KD黃金交叉在即、短線動能轉強&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-25T15:01:15+00:00"
-    },
-    {
-      "title": "Kookor.com 石油市場觀點 遠期盈餘數學與地緣政治風險溢價 - arch-web.com.tw",
-      "link": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxNYnpSMWlBN1B4cjg2V2ZnUm4xcnZXUlFEQ2ZWbHp0WHVHSDRVcVVvdGJ0MWF2YVBpejZnakpVYjdWZmVRMkViUHdqMHhWLXU5ZWlXSU5QeW81VldEbHVkd0ZPb3V3SHk0cHM3T2dfaElmX2ZqZlhvYzVfbVpZSFBXS0FwMm9TZTdHekE1YTQ3eVZJeldpUmFXVk1GYUl2V09kSHhtT0xGd3NUdlZGSVRwV1RNdWxScWVocWhMSTRiQzJIc1BVcW0wOHlCQnJBUC1QeEUtMmtrdGNLNG5CdWVVMXczc0tZSEtjOGZGR0xNTWJNMVFxNUdIallWQ1MtZF9hbmhYRldBRW5KaUNFUnQxWEhhbWpqcVp4Q0pDUzkxM0RzYzNVMWVYUU1HdFV6aFVRb3RUT1F0Mlk2eGFhQjB1dFNJNk94YjVsQmlXUzB0TDhiQzNiR3owN3dUcHhRVll1WEwzVjBIbC1CMXpaa0xEMFlvQ0JsX1N2YVpjdkJ3?oc=5",
-      "summary": "Kookor.com 石油市場觀點 遠期盈餘數學與地緣政治風險溢價&nbsp;&nbsp;arch-web.com.tw",
-      "dt_utc": "2026-03-25T14:57:32+00:00"
-    },
-    {
-      "title": "2327 國巨* - 等破300等好久 - 股市爆料同學會 - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE96N2xla290eDRrTjM5QmQ5THhqekdsTVdRT05vSkJOSjRiaUFkVkdsYWNUUTRuWUo3M0QxcHZlY1pNQ1EzN3dUbFEtY29nWHlTV3dTRV8wU2o?oc=5",
-      "summary": "2327 國巨* - 等破300等好久 - 股市爆料同學會&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-25T14:52:47+00:00"
-    },
-    {
-      "title": "RenX Enterprises To Carry Out 1-for-20 Reverse Stock Split On March 26th, 2026 - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOX2FvNmNiNHdEZ28ta3hraUpXVVlGRlZ3OElDeEJpTEtzU0JPSmpTVEtqREhXOGFUTGV5RlZHRkpNa3BIUV92SXpqa2JOQlBmejBBemtZRktoTDZEdDlwVlVhRktUWUVDTUV4aWhicmw3U25hRkdvdmo3Sm5zb0JoaGtfaU5qUlBjdWVmNnh0eC0zMGt0RHVrNA?oc=5",
-      "summary": "RenX Enterprises To Carry Out 1-for-20 Reverse Stock Split On March 26th, 2026&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-03-25T14:50:16+00:00"
-    },
-    {
-      "title": "U.S. Stock Movement | Storage Sector Weakens Collectively, Micron Technology (MU.US) Drops More Than 4% - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVWpfemw5bTRsY1FsMVhQZmkwbUduR3VMX2ZGV2JITjk2dWZuMTB3aVFfdlI3MUVvcGZWVFNaaGVTc2l3NGZTbnJMVEpQNHN5UG5PMFZ2RVRTRmJSRWR6SC11bWNvUWtnSU1tVWpCc0NDVDJFZ3FDUU9HN1ZGXzY0UWxqUXpjZVZvMW9OelktbXhVZWNCRGlWa21jX1IyNTZYWUZQS3U4WHJaR3d4ZTRwMjR3RGdnRllJ?oc=5",
-      "summary": "U.S. Stock Movement | Storage Sector Weakens Collectively, Micron Technology (MU.US) Drops More Than 4%&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-03-25T14:42:53+00:00"
-    },
-    {
-      "title": "3037 欣興- 完美漂亮的線型- 股市爆料同學會 - cmoney.tw",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9uTU5ReUl3QlBTcTZwT05INGZzWXQtY3ZSQnFFYmRNREw3eWpidEJEVHNQcmdKWURQYTFpd19pOVN5Z0RmbklJb3NJYnVVcmZ5OEZmTHhJblI?oc=5",
-      "summary": "3037 欣興- 完美漂亮的線型- 股市爆料同學會&nbsp;&nbsp;cmoney.tw",
-      "dt_utc": "2026-03-25T14:41:30+00:00"
-    },
-    {
-      "title": "U.S. Stock Movements | Semiconductor Sector Gains Strength at Market Open; Advanced Micro Devices (AMD.US) Surges Over 5% - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcGRINERJYnNmMmp3UDl5Z2VkMFVVN2VkRnpuR1BfdVZhMGtRRm0xOEJCcjdOTzRmX3p5MkhUMHNmU3U3clhQMmlMNUVNWmhtU01UVVpTWFF2SWJBZVlPbkJPSi11ZTF3OVFrM3RuSG1scmRwajhzekplYnNqRXJRaFk2Sjl1d1pCU2NuV2RzWHg0RUxtUUtJNUtEZHFRQWVqNVFYcW94STdTVVdWQnVF?oc=5",
-      "summary": "U.S. Stock Movements | Semiconductor Sector Gains Strength at Market Open; Advanced Micro Devices (AMD.US) Surges Over 5%&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-03-25T14:40:45+00:00"
-    },
-    {
-      "title": "U.S. Stock Movement | Schlumberger Rises 2.5% as NVIDIA Applies AI Technology to the Energy Sector - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNXo5b1lpazhPNjBWa0JROEt4a1AzT0lxcm1BWFkxTEhjRVh1NkdhUW5SZlJCYkdYZzRNMG1HYU42NllwZEVrYmFNRjdhYnYyeWNzUFJaM2c2RU1RVmRHUXFWQ3BZYjhJZHNLeE5kOElHOXJMcW1tYWVZVFhQWFA5dVRvS3ZUOHoxbERpUURWLVZhVVRwdFlrUnFpakZ6YUdo?oc=5",
-      "summary": "U.S. Stock Movement | Schlumberger Rises 2.5% as NVIDIA Applies AI Technology to the Energy Sector&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-03-25T14:40:44+00:00"
-    },
-    {
-      "title": "股市VIP - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE1GbEQ1N3dJeFVPd004VmJEN3VWN24zemNSS2dPQ2RYWnY2N2dVN0xfcEIwVFJKdmZ1TFJVUGQ3MG0?oc=5",
-      "summary": "股市VIP&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-25T14:30:43+00:00"
     }
   ],
   "risk_indicators": {
     "vix": "25.33",
     "vix_trend": "▼ 1.62",
     "usd_twd": "31.93",
-    "usd_trend": "▲ 0.07"
+    "usd_trend": "▲ 0.06"
   }
 }
