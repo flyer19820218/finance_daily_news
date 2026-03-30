@@ -1,8 +1,14 @@
 {
-  "updated_at_utc": "2026-03-31 03:36:23 (TW)",
+  "updated_at_utc": "2026-03-31 04:08:32 (TW)",
   "title": "全球局勢與市場情報 2026-03-31 盤前",
-  "report": "AI 情報官連線失敗: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.",
+  "report": "🎯 【一分鐘戰略速讀】\n根據今日數據分析，VIX恐慌指數雖自高點微幅回落至30.49，但仍遠高於歷史平均，顯示市場對系統性風險的擔憂並未實質解除。美元兌新台幣匯率升值至32.04，新台幣貶值，這與外資三月從台股大規模撤資的現象高度一致，預示著資金正持續流出。地緣政治事件，無論是中東衝突的報導或是潛在的停戰言論，在當前數據下皆被視為市場情緒噪音，尚未引發避險資產的明確噴發或崩跌。部分台股個股雖有亮眼表現或利多傳聞，但在整體市場流動性緊縮與避險情緒高漲的背景下，其持久性與影響力需保守看待。\n\n📊 【重大事件：交叉驗證報告】\n\n*   美伊戰況膠著，川普聲稱洽談停戰釋出訊號 (重要度：★★★☆☆)\n    **事實核對**：新聞提及美伊衝突與停戰可能。然而，VIX恐慌指數今日下跌0.56點，雖仍處於高檔，但未因「戰況」消息而持續飆升，避險資產如黃金或原油亦無顯著「噴發」跡象。這表明市場並未對戰事升級感到新的恐慌，反而對停戰言論有所消化。根據「地緣政治 vs. 避險資產」協議，此類消息更多屬於市場情緒的波動，而非實質局勢的劇烈惡化。\n    **解讀**：地緣政治事件的訊息錯綜複雜，投資人應避免單憑標題進行判斷。 VIX指數的變動是衡量市場恐慌程度的物理指標。在VIX未大幅上揚時，應將此類消息視為觀望期，不宜過度解讀。\n\n*   外資3月單月大幅撤出，新台幣匯率承壓 (重要度：★★★★☆)\n    **事實核對**：新聞指出外資三月單月狂賣台股8895億新台幣，創史上最大賣超紀錄。今日盤前美元兌新台幣匯率已達32.04，較昨日上揚0.11，新台幣貶值。這與部分新聞聲稱「台幣驚險守住31字頭」的事實不符，實際匯率已突破該關卡。根據「政策利多 vs. 市場匯率」與「個股傳聞 vs. 籌碼情緒」協議，資金的實際流向與市場報導有明顯出入，且台幣貶值佐證了外資撤出的實際影響。\n    **解讀**：外資的大規模撤離直接導致新台幣走貶，並對台股大盤造成顯著的賣壓。這是一個明確的資金流出訊號，顯示即使部分個股存在利多，也可能難以抵禦整體市場流動性的壓力。投資人應高度警惕此一系統性風險，重新評估投資組合。\n\n*   AI產業鏈的個別進展與實質效益觀察 (重要度：★★★★☆)\n    **事實核對**：新聞報導「PCB龍頭」獲亞馬遜、Google AI大單並砸500億擴產，這顯示部分AI相關產業確有實質訂單與投資。然而，另一則新聞提及「輝達量子重要夥伴」的老AI股卻遭投信連續賣超逾3萬張，結帳8.5億元。根據「科技大單 vs. 產業常識」協議，即便有「大單」或「夥伴」名義，仍需觀察企業的實質產出、良率歷史及法人籌碼動向。投信賣超表明機構投資者對該個股的實質利多持保留態度。\n    **解讀**：AI產業前景廣闊，但並非所有搭上「AI」名詞的企業都能因此受惠。投資人必須嚴格檢視企業的技術護城河、實際訂單執行能力及獲利數據。盲目追逐概念股，在沒有實質數據支撐下，易受公關策略或市場情緒的影響。\n\n*   台股「千金股」與新股上市熱潮下的風險評估 (重要度：★★★☆☆)\n    **事實核對**：台股誕生37千金，倍利科掛牌首日表現亮眼，以及SpaceX IPO傳聞及相關概念股強拉漲停，均為個別事件的市場表現。然而，今日VIX恐慌指數高達30.49，新台幣兌美元匯率走貶。根據「個股傳聞 vs. 籌碼情緒」協議，系統性風險高於個股利多。在整體市場壓力未減的情況下，個別股票的強勢表現可能存在較高的波動性。\n    **解讀**：新股上市或個別高價股的熱潮，通常能吸引散戶目光。但在宏觀環境充滿不確定性（高VIX、本幣貶值）時，這些熱點可能成為資金的短期避風港或投機標的。投資人應保持冷靜，避免追高殺低，謹慎評估基本面與風險報酬比。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數為30.49，較昨日下跌0.56點。儘管VIX略有回落，但仍處於30以上的高位，這清晰地指出市場的恐慌情緒並未消散，系統性風險仍為顯著。美元/台幣匯率今日升值0.11，來到32.04。新台幣的持續貶值，是資本外流的物理實證，與VIX高漲共同構成一個警告訊號：當前的市場環境並不利於激進操作，新聞中的個別利多或地緣政治的「情緒噪音」皆須在此背景下重新衡量其真實性與影響力。\n\n💰 【台股影響與板塊點名】\n在外資大規模撤出及新台幣貶值的壓力下，台股整體將面臨挑戰。金融與出口導向產業可能會受到匯率波動的直接影響。\n受衝擊產業：依據外資撤出與匯率走貶，傳產類股及非必要消費品類股可能受影響較大。\n受惠產業：儘管大盤承壓，AI相關產業鏈中的部分具備實質訂單與技術護城河的企業，如今日新聞提及的「PCB龍頭」，仍可能因結構性需求而有表現空間。在半導體領域，台積電（TSMC）作為全球晶圓代工龍頭，其產業地位穩固，與海力士（SK Hynix）等記憶體大廠的技術合作（如HBM）是長期趨勢。然而，市場情緒仍可能影響其短期股價表現。\n\n📈 【投資觀察指引】\n1.  **數據為王，過濾噪音**：在資訊爆炸的時代，務必以VIX、匯率、資金流向等客觀數據來驗證新聞的真實性，避免受煽動性詞彙影響。\n2.  **系統性風險優先**：當VIX維持高位且本幣持續貶值時，應優先考量整體市場風險，而非過度聚焦個別股利多傳聞。\n3.  **基本面分析不可或缺**：對於科技大單或產業利多消息，務必深究企業實質的技術領先、產能佈局及良率表現，而非僅憑名詞追漲。\n4.  **分批佈局，降低波動**：在不確定性高的市場中，採取分批、定期定額的投資策略，有助於降低因短期波動帶來的心理壓力與資產風險。\n5.  **密切關注資金流向**：外資動向與匯率變化是判斷市場資金活水的重要指標，持續追蹤有助於掌握整體趨勢。\n\n🏫 【曉臻財經小教室】\n今日單字：【IPO (首次公開募股)】\nIPO是指公司第一次將其股票發行給公眾投資者，並在證券交易所上市交易。它能幫助公司籌集資金，同時也讓公眾有機會投資其未來成長。透過觀察IPO的發行價格與上市後的表現，我們可以看穿市場對新興產業或特定公司的真實估值與熱度，區分是實質潛力還是短期炒作。\n\n**數據定盤，理性為臻。**",
   "news": [
+    {
+      "title": "整理包／美以對伊朗軍事打擊 3．30最新戰況 - worldjournal.com",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbmNHVUwweGlNN1NCcmtWcDZVN3Vfb1BiM1RpajZxZ0M5Y1h6Q0FkdnhkNWNRaFMyelZjckZHVWdrR1dvQ0ZpQ2NjWWdaRGRIbVZTdzQtZGRWMkFQQ3ZqUGZqMGNYUnJ5c3U0MEFmcFU3WkJyNnBIT0w0WlNxblNXN1p3?oc=5",
+      "summary": "整理包／美以對伊朗軍事打擊 3．30最新戰況&nbsp;&nbsp;worldjournal.com",
+      "dt_utc": "2026-03-30T19:47:16+00:00"
+    },
     {
       "title": "Microsoft's Stock May Extend a Record Stretch of Lagging Performance That's Ignited Fierce Debate - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPLS1md3hQTFRUZC1yTnFmUmR1WGJYTWpEQWNMR0R0TGxwYnBrRlZjWFJRc19TS0NScGJ5UThNQjJqaDJFalpPemxZWXNCV2p1bTBGaTExMEdPRV8wY2lQM084aTg5OFZZQnVDeThXZVdDdHVTVkJVbDhKakFqcmxyeGw5SG5yVEVVc3B2Uno2a0l6YkJKdzlSX3BZTnJ3Zw?oc=5",
@@ -14,6 +20,12 @@
       "link": "https://news.google.com/rss/articles/CBMi1gVBVV95cUxNMkNycE1oUEZLbGE1OVpqYWtnRVdNVTlMTWlEYnVQRlpMZ1kwN1BmeXZmUlQtZUV3Tm80VURXYmdQS1pjQWNQZk52cmVMWXVyRzlFRlF1NWlZQ015Yy1kalZyUlRVd0RKTjFBNVprcWlKTEtWeVhjY0JBNjQtR3hEUWZES1NGejN4TzhKSFBjZ3BwRlNYOFdsTFdmM0lYLVFWVEZSMGpTZ3lOR3ZsT1U2RU9WSWVmbFNuNDRFZUt0QnNZNlB6T2J1ekNEZmhETDRVWHlGX09UMXl2RFJYVFBWaHhPYUROQUVwVWVhQmFmRWpHdXdCMi1lNnNrQk9WUEpoQzRvc18xMXZsbjhXVm5WNEpQdmIwcGllZjhiSjQyYlB6NVVtYzFFNnRVbmlGUURHaG9scTlSaDhKUHVaUVFRd3FXXzBxc2tJbl9waE5VNHRfbHA0NkhaaFg4V3UtTFUyYk83LUNCYTMySEZBZ2J1d2NJOXo2SUx6enA5ZFVvMWVKMmVSX1VuWld0WUpJSVVxcDR5NE5hRmJJdHZBUHJQNDBhaDR0S3hhUE5OQ1lxcVBDa25xc1ZlclYwR1NzZ1ZkXzE5VkhBLTZnLTBBUkR2dGpwS2c1OXhTcUt3ajlEY1JZSTZNWktzMjk1YS1YZHZIMEZHWmpFS1kyY1FxYWpMdFpLUDJqM1IyWkw5THkyY1VjcTJkQkQ3UkpEQmZxR2t5eEdpdVM2d3NNdl9rZ1VHTkNTUFE2UHU4MHdJbEotS1Ezb1JLd2JrNXU5Rkl1dTlhdkl3N2duS2Y4UWVpcy05Y1NiMU9MQl9RTThkSXZsNkpsMThXM0JXSGZwdFROREUxa1VuYWRPUEFnN0doWFJxUXpyci0tUlRVX3JMNGVmMlhIOHAzWHk4MXc2MGVTZGtZOWFiOFhYWlBvX3RoQS1oa1BibTJteGJHLVJLNkdnWmlMS1gwSlE?oc=5",
       "summary": "台股37千金誕生！倍利科掛牌首日進榜，抽中賺逾百萬，上櫃半導體材料龍頭閎康也開放增資申購，抽中價差達7.6萬｜股市話題｜豐雲學堂2026 年 03 月&nbsp;&nbsp;sinotrade.com.tw",
       "dt_utc": "2026-03-30T19:15:23+00:00"
+    },
+    {
+      "title": "SpaceX IPO內幕曝光 散戶下單通路恐集中這家 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxNamcwbjVVMzZCYVE3LXMtRUFiOFF3Vk00V2tseTFqV0xmcmI1M2VIRTlqT01tcmZWdkRJb2ZrcmJOeE80NVg3SXFnbXRkV1d1R1E0X1dkNVZBNEdVc3V1MHpRbHlKMkJLWXkyTW9mWXpCZTB2UWROdnoxb0hXNUZLWDlZOVhQTUhrVzA3QUUyQ041MXh1VGZZMTVSZjhMTkNndUJJeWM1RjYtUlRMb1MzdzRtLXVxemY1bTRwbHR6WkNRQms0RkR0bi1LWnJsaGh2MEFhS2JTYzNQQXpubjhKaTM0MGxFSEhJVUNYaUR6WXNqc256YVRSYmlCQmNhbzBSWXhiQzVjU0tJamxJSVJkWVM1Y0hXVkRCbktINnJB?oc=5",
+      "summary": "SpaceX IPO內幕曝光 散戶下單通路恐集中這家&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-03-30T19:00:05+00:00"
     },
     {
       "title": "黃金、股市甜蜜價未現! 美銀揭進場「關鍵門檻」： 這才是真正的抄底訊號 - MSN",
@@ -94,6 +106,12 @@
       "dt_utc": "2026-03-30T16:13:36+00:00"
     },
     {
+      "title": "三芳（1307）做什麼？2025年將發放現金股利2.2元，以跑鞋為核心成長引擎，加速成衣薄膜市場布局，建立第二成長曲線｜股市話題｜豐雲學堂2026 年 03 月 - sinotrade.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMivAVBVV95cUxQeHNORDNYcmtENVc0LXBlWlc1OVNLdTh6V3hyLW5DMUI5a2U0VDFEaW1tMnJ5S2U0ZmQ3NVo0bUtJczUzYWNxRW5pZ2Y5emg2RWJRUFA3cmRiU0VOSVJNR2NfS1RPTkJuenprbjBDTENUY3M5X2dWam1BZTVPLXpGcGMzckUyQjg3bFlkQWdEc3RZaGI3a1dWU05nUm9sclNYWjMzM1dMbVZQamxyOXh3bXJ4NXVVOUk2SE5UT2lweWpHbVJwVzV3enBlTDRvTkhESUVLRDJLbjBnbW1Zdi1TRWNRRGswekhoWUMyQmpFQUNSSTBsOWFPZGVVcktBY3JYZWJLdlBPX003ZGtwcjdOTWtaQ1FjUThyamxHN2VNbU9lTzhuVXc4UkM0OExZWnFZOWcwY3o0VklsM0RMU3k5eVR5Z0ZhQ2FXb053aGw4V09iVGh6aGwwR1l4Y1FTX05scFptWUs0WXNCUEpYMG5PQkNTYTVhRWlfalEtT2g4RHZGOFRBS2MtbXM2RXZ5OVF4Wk5DRnhvQVhwSkZsaGlxc2Z3bjFMYUlCS1pXano3M0Y1MDVob3dSdTItZm1ESWxoWE5VQTA3MmFoM2NZMDd3Q0RVWFlDeFhKSVg2aVR5cEZGRF8yZU5pMDRHVmxjYjZDSWcwTmpNTWtWOE9nR2pJaGtaX3RmRmdySDFBamlFMjlPUEs5cFlORy0yLTJucDZJdjNsd3QzRHQ5Vm9yWGdCS2g3OExEUzJpVDZ5aU9iVUNjX3BqTjdyUzJMQWpzN0Y3aHh3TmRXNzVidjBKVVpzQVU3TlNjNV9qSVljbkZRdzdGVWVka1VIbU14UlBLNGZ0MEpGNkIzY2lycFU3bk5XVUQycVppVVQwai1qQ0xGVlIzX1IyLWd3U3BnY3B2bHNBWlNZUEhIUzlOQ0xI?oc=5",
+      "summary": "三芳（1307）做什麼？2025年將發放現金股利2.2元，以跑鞋為核心成長引擎，加速成衣薄膜市場布局，建立第二成長曲線｜股市話題｜豐雲學堂2026 年 03 月&nbsp;&nbsp;sinotrade.com.tw",
+      "dt_utc": "2026-03-30T15:40:14+00:00"
+    },
+    {
       "title": "Optical communication and storage concept stocks fell, with Micron Technology (MU.US) dropping more than 5.9%. - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdTRHY25JWl8xZDJDSnJrNVRWdHUtaVc2Sl9oVDF6Q3UwbEpsa0d6TDVVYXVtTi1ZQWhtWVlvMG1rYXlxVDNsTHpKbVBXamtzaXhrM0xuUU9vdkVTbHJ5TjRXdDU4NnhfTVoxSVZabXhaQjhOMUJfT20yN2pLNEt6d2ZVSFo3NXotUkdHSXY2bFUxaWs4WTJIZk5KcVNXOTNvd2Q2cGNwSHYtbTNQZEdSYm1BWQ?oc=5",
       "summary": "Optical communication and storage concept stocks fell, with Micron Technology (MU.US) dropping more than 5.9%.&nbsp;&nbsp;富途牛牛",
@@ -122,6 +140,12 @@
       "link": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE9RUTVlVkktM1hMaUxkMUZGZTdLUFg3ZF9UMlpOTGh2cGJGRHo2Rll4TDJTUzBtLWY5QUE?oc=5",
       "summary": "東南亞核能復興潮引地緣政治競逐 美俄中三強爭奪影響力&nbsp;&nbsp;ENN台灣電報",
       "dt_utc": "2026-03-30T15:13:58+00:00"
+    },
+    {
+      "title": "6944 兆聯實業 - 接下來就看你了！ - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5KTFpQdjBhcGdKeG9OTzBmeVZSWjFGOGdpa0pGZFZ5MTNPVzUzTkI3Q0F1NU1JQV9XOVR5QVVOWlpHMnAzelJJX2Vya1FERnJvcjNWUE1yU0c?oc=5",
+      "summary": "6944 兆聯實業 - 接下來就看你了！ - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-03-30T15:06:37+00:00"
     },
     {
       "title": "台外交次長：中共對台灣軍事施壓升高 - 大紀元",
@@ -362,35 +386,11 @@
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRGQ5NnlpTFVCMFljVTZWOVlLdlZ1QjhIUTYtLWJCei1LRkhMMC05ZjJFOTgzMjVsY3c0NXl6aVgtNFVrMUFYNTlwX0VWNjBkRi1VOTBCb2lTRGlDa2dEMV9CelIzOE94c0g5SDVtLTAzNlB0eWFTTlpoRlNsMnh1TUFXN28?oc=5",
       "summary": "Black Cat Insulation Technical Joint Stock Company 統計數據 – UPCOM:BMK&nbsp;&nbsp;TradingView",
       "dt_utc": "2026-03-30T10:59:56+00:00"
-    },
-    {
-      "title": "大啖442億政策大餅！感測器廠「7天狂飆70%」衝進46檔漲停股 台化目標價上調也亮燈 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxPX2dOM05JNHA2TXpIUmpndEhuYjNtY2tXNFI1Zk9odEExQ3l2ampPcWVIUjFUXzg3dHpGZld5cW8zdU1lQTRsSG82Z2loS2V0Nm03X2hCQU5NSXN1R1g5aDl1ZTZtdHNlal9CTHdmNTRSdjJpQjZoakplLUM4LXlYVjVubl9mdzh6SUFLNzVCTDNYdXJHX3JEbF9WS3R4MURsMW1HcEs4VThaOEluWlRlelJPZ3RTbjlFYlIyd1laWng4MXhzQmdWWTFRX2RMaUxYNTkzcEpwaHNWUHk1clF1R0tIZGdVb3Y0UWNHSXNubjh2dWtaTk5jZ1pmb3hwRFZlbmU0ZllJMzM2bzh1UFVGcmZCMk4tVTlHRDJRSGxoQ25wTllycmhIQmE0dVRaQlNGMkFzZGVPMmF1aXpBQkhZNzI1STRkaHhyb25VWWlocXBMbEQ4dTBORXE5Ri1yRFZzN0F4dE9ZR2VKZ3dHd3o5RWJBeGRGVzFWYnJuQW10eXdWX01zTm9HUXUwMDVndTlmS2U0V2labmRvelZqaG1adlFoWFhVQlNlZkJGVnEtbk9kbXBsNWRudXYycjZ0eXU5YlFpbjJjaDhQRXctTXBzS0sxWQ?oc=5",
-      "summary": "大啖442億政策大餅！感測器廠「7天狂飆70%」衝進46檔漲停股 台化目標價上調也亮燈&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-30T10:55:00+00:00"
-    },
-    {
-      "title": "華爾街加強關注「TACO」模式 認定川普十分在意股市 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xYWZnYzVYeVhwZlhuZ1lYTFhQdS1QQmFwZ0hMcUlhNmNObHB4ay1GWi03ZGRmbm9SZXBLMkVrTHNqRGxKTHJwVlVjWDBZbHM?oc=5",
-      "summary": "華爾街加強關注「TACO」模式 認定川普十分在意股市&nbsp;&nbsp;news.cnyes.com",
-      "dt_utc": "2026-03-30T10:50:03+00:00"
-    },
-    {
-      "title": "出手了！Grab併台灣foodpanda送審公平會 強調Uber不參與日常營運 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNWGQwZlRURzNkN1pOaWxJM0g2ODhpNkZTVGNtSmFrUVZIMl9ya0ZhZC1JX1hnV0ZFREJvR1JndDhGU3JPY1N5V05QeEU5dEVTamZkVWRLSjdCWjdwYjJhSkwteGxKRkRMZUhPbTU5bHVOZmNwQS14MEZ4RzFPQzJwRllDZHdxRWxPT1EzTFdoTWNmVUIyTWZxbVA4UGlnNFpUUXYxWE10SWY2bkpMRmpSbFc5X3pxNmdDYVMwR3IwX19iVWtPaDdxVElCMVoxMWNrRG5GOE1SVlVTSXVWT25IY0t3UUJFZUVuTGtIZVJ0bXU5dG9RUUNiSkYxVW1Lb21VaHBsUkx3REw4RTB0MHRoeWhmTlkzU2c4eXVKLTJzMU5Id2lVNUlIaWZNRjE5bmJuRWptdVNfcFZwTFR3ZngyMVBHT0xWSFpzWXZtSU90VlpUWjEtNF8tajRDSVBpLTBLNWJVVXNUUWxEejlfdnk0?oc=5",
-      "summary": "出手了！Grab併台灣foodpanda送審公平會 強調Uber不參與日常營運&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-30T10:48:02+00:00"
-    },
-    {
-      "title": "國際貨幣基金總裁訪菲 深化合作並支持東協輪值主席國 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxQZ19falNuajUyTnJYbGRMRzFaTmFCOENnWVRTSWFlVEJYbTUtTlB3Q1FmVVkxTnVPVjJaY1I5Slpad3lFOVZnNi1yOTNsNWZOSjFUMEYxRllVUm0yeVFiV0NoWTZseWZyZUtCMDBkay1CNXVLUHJ2QU1BY0E0WEtzXzlsLV82U3lTam8zc2kwX2ExalBZVkw2ZzN3Z1lnWWwxTGJHN19XWTdLazRDNk5YNi1QMFRUU1BzdFFCTTJfZEtpZjdkRTkyWUlZd0QyREtodEl5ZnJwRXF5VE9JUzNJRXprNmV2ZE50RzhnT2VDdWRBTUpyeG41ZDRhUlBsb0FpVEJrZzF0NVZyUk11UVJqZ2JpUE90b1RPdU1xT09tNUl6cTFwMm1nWkpXVEhTRzRnTXlwQjZncmZvV1h4aGlLeW5PcmhlTzI5cndFLWlRRHUxaXNTQVVTR1AwTGNkRmNuNEFwcGhQTTFBLWNfb1lLQUhacUh2bDBnYVc1Xw?oc=5",
-      "summary": "國際貨幣基金總裁訪菲 深化合作並支持東協輪值主席國&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-03-30T10:46:50+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "31.23",
-    "vix_trend": "▲ 0.18",
+    "vix": "30.49",
+    "vix_trend": "▼ 0.56",
     "usd_twd": "32.04",
     "usd_trend": "▲ 0.11"
   }
