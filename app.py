@@ -224,23 +224,28 @@ a:hover{ text-decoration:underline; }
   text-decoration: none !important;
 }
 
+/* 🌟 統一按鈕風格：最美漸層藍 🌟 */
 button[kind="primary"] {
-    background-color: transparent !important;
+    background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+    color: white !important;
     border: none !important;
-    box-shadow: none !important;
-    color: var(--muted) !important;
-    padding: 0 !important;
-    justify-content: flex-end !important; 
+    border-radius: 50px !important;
+    padding: 10px 24px !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
 }
 button[kind="primary"]:hover {
-    color: var(--link) !important;
-    background-color: transparent !important;
-    text-decoration: underline;
+    opacity: 0.9;
+    transform: translateY(-2px);
+    color: white !important;
+    text-decoration: none !important;
 }
 
-/* 🌟 解放右邊卡片寬度封印 🌟 */
 .countdown-card {
-    max-width: 320px; /* 原本 275px 太窄，加寬到 320px */
+    max-width: 320px; /* 解放寬度封印 */
     margin-left: auto; 
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -319,7 +324,7 @@ button[kind="primary"]:hover {
 )
 
 # =====================================================================
-# 【區塊 3】資料讀取與快取函數定義 (🚨 yfinance 引擎升級修復版)
+# 【區塊 3】資料讀取與快取函數定義
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -340,7 +345,6 @@ def list_history():
 def fetch_yf_data(symbol, name):
     try:
         t = yf.Ticker(symbol)
-        # 🚨 升級：改用 history 抓取 5 天內的數據，徹底解決變成 "-" 的問題
         hist = t.history(period="5d")
         if not hist.empty and len(hist) >= 2:
             last = float(hist['Close'].iloc[-1])
@@ -485,7 +489,6 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
-# 🛠️ 定義 AI 主播語音生成函數 
 @st.cache_data(show_spinner=False)
 def generate_anchor_audio(text):
     if not text: return None
@@ -509,25 +512,16 @@ def generate_anchor_audio(text):
     except Exception: return None
 
 # =====================================================================
-# 【區塊 4】頁面頂部佈局：檢視模式切換與控制
+# 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
 # =====================================================================
-top_c1, top_c2 = st.columns([5, 1]) 
+# 1. 建立頂部切分 (將重整與收聽按鈕放在最右上角)
+top_c1, top_c2, top_c3 = st.columns([5, 1.5, 1.5], gap="medium") 
 
 with top_c1:
     st.markdown('<div class="section-title" style="margin-top: 0;">📊 檢視模式</div>', unsafe_allow_html=True)
     mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
 
-with top_c2:
-    st.markdown('<div style="height: 38px;"></div>', unsafe_allow_html=True) 
-    if st.button("🔄 重新整理", type="primary", use_container_width=True):
-        st.cache_data.clear()
-        st.rerun()
-
-st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
-
-# =====================================================================
-# 【區塊 5】資料路由與載入邏輯
-# =====================================================================
+# 2. 載入資料 (必須在產生音檔與按鈕前載入)
 data = None
 if mode == "最新（今日）":
     current_ts = datetime.now().timestamp()
@@ -567,14 +561,37 @@ else:
 
 if not data: st.warning("尚未產生報告"); st.stop()
 
-# =====================================================================
-# 【區塊 6】頁面主標題、語音按鈕與倒數計時 
-# =====================================================================
+# 3. 生成音軌並渲染右上角雙子星按鈕
 raw_report = data.get("report", "") or ""
 audio_bytes = generate_anchor_audio(raw_report) 
 
-# 🚨 修正比例：加大右邊寬度，解決「天」跑出框外的問題
-header_col1, header_col2, header_col3 = st.columns([1.3, 0.9, 1.2], gap="large") 
+with top_c2:
+    st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True) 
+    if audio_bytes:
+        b64_audio = base64.b64encode(audio_bytes).decode()
+        # 統一藍色按鈕 HTML 樣式
+        components.html(f"""
+        <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
+            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 10px 0; width: 100%; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif;">
+                ▶️ 收聽快報
+            </button>
+        </div>
+        """, height=50)
+
+with top_c3:
+    st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True) 
+    if st.button("🔄 重新整理", type="primary", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
+
+st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
+
+# =====================================================================
+# 【區塊 6】頁面主標題與倒數計時卡片
+# =====================================================================
+header_col1, header_col2 = st.columns([1.5, 1], gap="large") 
 
 with header_col1:
     st.markdown(
@@ -591,19 +608,6 @@ with header_col1:
     )
 
 with header_col2:
-    if audio_bytes:
-        b64_audio = base64.b64encode(audio_bytes).decode()
-        components.html(f"""
-        <div style="display: flex; align-items: center; justify-content: center; height: 100%; margin-top: 35px;">
-            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
-                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 12px 28px; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif; letter-spacing: 1px;">
-                ▶️ 收聽快報
-            </button>
-        </div>
-        """, height=100)
-
-with header_col3:
     st.markdown(generate_countdown_html(), unsafe_allow_html=True)
 
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
@@ -679,26 +683,26 @@ with left_ai:
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
     
-    # 🚨 霸氣全開：6 個月的氣勢燈號 (三個黃紅燈 + 三個紅燈)
+    # 🚨 拿掉文字，純粹展示 6 顆霸氣燈號
     light_val = """
-    <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px; flex-wrap: wrap;">
+    <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">32</div>
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">35</div>
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">37</div>
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
-        <div style="margin-left: 5px; font-size: 16px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
     </div>
     """
 
+    # 🚨 調整 flex 比例：縮小左側 (0.8)，放大右側 (1.5)，保證燈號不換行
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 18px;">📍</span> 市場核心戰略參數
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-            <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
+            <div style="flex: 0.8; min-width: 150px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
                 <div style="font-size: 18px; font-weight: 700; color: #0f172a;">
                     VIX {vix_val} <span style="font-size:13px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
@@ -706,7 +710,7 @@ with left_ai:
                     TWD {usd_val}
                 </div>
             </div>
-            <div style="flex: 1; min-width: 250px;">
+            <div style="flex: 1.5; min-width: 320px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號 (近半年)</div>
                 <div style="font-size: 18px; font-weight: 700; color: #0f172a;">{light_val}</div>
             </div>
