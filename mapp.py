@@ -149,7 +149,7 @@ def generate_anchor_audio(text):
         # 移除特殊 Unicode 符號與 ☆
         clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
         
-        #  핵심: 處理星星，將 ★★★ 變成 「三顆星」
+        #  核心: 處理星星，將 ★★★ 變成 「三顆星」
         clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
         
         # 核心：移除括號、斜線、星號等唸起來會很怪的符號
@@ -229,12 +229,21 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-# 市場指標橫幅
+# 🚨 8. 市場指標橫幅 (唯一修改處：導入連三紅專屬 UI)
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-") 
-light_val = "🔴 紅燈：39分"
+
+# 把原本單調的文字換成華麗的三顆燈泡 HTML
+light_val = """
+<div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
+    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+    <div style="margin-left: 5px; font-size: 18px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
+</div>
+"""
 
 market_banner_html = f'''
 <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
