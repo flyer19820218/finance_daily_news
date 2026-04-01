@@ -517,14 +517,12 @@ def generate_anchor_audio(text):
 # =====================================================================
 # 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
 # =====================================================================
-# 1. 建立頂部切分
 top_c1, top_c2, top_c3 = st.columns([5, 1.5, 1.5], gap="medium") 
 
 with top_c1:
     st.markdown('<div class="section-title" style="margin-top: 0;">📊 檢視模式</div>', unsafe_allow_html=True)
     mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
 
-# 2. 載入資料
 data = None
 if mode == "最新（今日）":
     current_ts = datetime.now().timestamp()
@@ -564,7 +562,6 @@ else:
 
 if not data: st.warning("尚未產生報告"); st.stop()
 
-# 3. 生成音軌並渲染右上角雙子星按鈕 (🚨 排版完美對齊術)
 raw_report = data.get("report", "") or ""
 audio_bytes = generate_anchor_audio(raw_report) 
 
@@ -590,6 +587,7 @@ with top_c3:
         st.rerun()
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
+
 # =====================================================================
 # 【區塊 6】頁面主標題與倒數計時卡片
 # =====================================================================
@@ -697,22 +695,22 @@ with left_ai:
     </div>
     """
 
-    # 🚨 調整 flex 比例：縮小左側 (0.8)，放大右側 (1.5)，保證燈號不換行
+    # 🚨 解決換行問題：左側加上 nowrap 屬性，並調整比例為 flex: 1 與 min-width: 220px
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 18px;">📍</span> 市場核心戰略參數
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-            <div style="flex: 0.8; min-width: 150px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
+            <div style="flex: 1; min-width: 220px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
-                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">
+                <div style="font-size: 18px; font-weight: 700; color: #0f172a; white-space: nowrap;">
                     VIX {vix_val} <span style="font-size:13px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
                     <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
                     TWD {usd_val}
                 </div>
             </div>
-            <div style="flex: 1.5; min-width: 320px;">
+            <div style="flex: 1.3; min-width: 300px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號 (近半年)</div>
                 <div style="font-size: 18px; font-weight: 700; color: #0f172a;">{light_val}</div>
             </div>
@@ -724,11 +722,9 @@ with left_ai:
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
-    # 1. 把星星變金色
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 2. 自動判斷時間，切換標題
     tw_tz = pytz.timezone('Asia/Taipei')
     current_hour = datetime.now(tw_tz).hour
 
