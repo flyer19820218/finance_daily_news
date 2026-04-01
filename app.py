@@ -180,7 +180,7 @@ a:hover{ text-decoration:underline; }
 /* 🌟 新聞卡片：去框、去色、去摘要 🌟 */
 .news-card{
   border: none !important;
-  border-bottom: 1px solid #f0f0f0 !important; /* 僅保留淡淡的底線 */
+  border-bottom: 1px solid #f0f0f0 !important;
   background: transparent !important;
   border-radius: 0px !important;
   padding: 10px 0px !important;
@@ -207,7 +207,7 @@ a:hover{ text-decoration:underline; }
 .inline-row{
   margin-top: 2px;
   font-size: 11px;
-  color: #94a3b8 !important; /* 調淡來源文字顏色 */
+  color: #94a3b8 !important;
   line-height: 1.3;
 }
 
@@ -217,7 +217,7 @@ a:hover{ text-decoration:underline; }
   justify-content: space-between;
   margin: 4px 0 8px 0;
   padding-bottom: 4px;
-  border-bottom: 2px solid #000; /* 分頁線用黑色細線，增加專業感 */
+  border-bottom: 2px solid #000;
 }
 
 /* 額外補丁：確保連結是黑色的 */
@@ -489,6 +489,29 @@ def render_table_html(df, title, icon="📊"):
     html += "</tbody></table></div></div>"
     return html
 
+# 🛠️ 定義 AI 主播語音生成函數 (移到前面準備生成)
+@st.cache_data(show_spinner=False)
+def generate_anchor_audio(text):
+    if not text: return None
+    try:
+        clean_text = re.sub(r'<[^>]+>', '', text) 
+        clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
+        clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
+        clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
+        clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
+        clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
+        
+        full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
+        
+        async def _generate():
+            communicate = edge_tts.Communicate(full_script, "zh-TW-HsiaoChenNeural", rate="+10%", pitch="+5Hz")
+            audio_data = b""
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio": audio_data += chunk["data"]
+            return audio_data
+        return asyncio.run(_generate())
+    except Exception: return None
+
 # =====================================================================
 # 【區塊 4】頁面頂部佈局：檢視模式切換與控制
 # =====================================================================
@@ -506,7 +529,6 @@ with top_c2:
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
 
-
 # =====================================================================
 # 【區塊 5】資料路由與載入邏輯
 # =====================================================================
@@ -514,7 +536,6 @@ data = None
 if mode == "最新（今日）":
     current_ts = datetime.now().timestamp()
     raw_url = f"https://raw.githubusercontent.com/您的帳號/專案名稱/main/data/latest_report.json?t={current_ts}"
-    
     try:
         res = requests.get(raw_url, timeout=5)
         if res.status_code == 200:
@@ -526,30 +547,21 @@ if mode == "最新（今日）":
 else:
     hist = list_history()
     if not hist:
-        st.warning("尚無歷史資料")
-        st.stop()
-        
+        st.warning("尚無歷史資料"); st.stop()
     years = []
     for f in hist:
         y = f[:4] 
         if y not in years: years.append(y)
-            
     col_y, col_m, col_d = st.columns(3)
-    with col_y:
-        selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
-        
+    with col_y: selected_year = st.selectbox("🗓️ 選擇年份", years, format_func=lambda x: f"{x} 年")
     months = []
     for f in hist:
         if f.startswith(selected_year):
             m = f[5:7] 
             if m not in months: months.append(m)
-                
-    with col_m:
-        selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
-        
+    with col_m: selected_month = st.selectbox("📅 選擇月份", months, format_func=lambda x: f"{int(x)} 月")
     prefix = f"{selected_year}-{selected_month}"
     filtered_hist = [f for f in hist if f.startswith(prefix)]
-    
     with col_d:
         if filtered_hist:
             pick = st.selectbox("📄 選擇報告", filtered_hist, index=0, format_func=lambda x: x.replace(".json", ""))
@@ -557,14 +569,16 @@ else:
         else:
             st.warning("該月份尚未產生報告。"); st.stop()
 
-if not data:
-    st.warning("尚未產生報告")
-    st.stop()
+if not data: st.warning("尚未產生報告"); st.stop()
 
 # =====================================================================
-# 【區塊 6】頁面主標題與倒數計時區塊
+# 【區塊 6】頁面主標題、語音按鈕與倒數計時 (🌟 三欄黃金比例排版)
 # =====================================================================
-header_col1, header_col2 = st.columns([1.5, 1], gap="large") 
+raw_report = data.get("report", "") or ""
+audio_bytes = generate_anchor_audio(raw_report) # 提前生成語音
+
+# 切成三個欄位：左(標題) / 中(播放按鈕) / 右(倒數計時)
+header_col1, header_col2, header_col3 = st.columns([1.5, 1.2, 1], gap="medium") 
 
 with header_col1:
     st.markdown(
@@ -581,6 +595,20 @@ with header_col1:
     )
 
 with header_col2:
+    if audio_bytes:
+        b64_audio = base64.b64encode(audio_bytes).decode()
+        # 加上 margin-top 讓按鈕垂直置中，與兩邊對齊
+        components.html(f"""
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%; margin-top: 35px;">
+            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 12px 28px; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif; letter-spacing: 1px;">
+                ▶️ 收聽快報
+            </button>
+        </div>
+        """, height=100)
+
+with header_col3:
     st.markdown(generate_countdown_html(), unsafe_allow_html=True)
 
 st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_html=True) 
@@ -631,7 +659,6 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 # =====================================================================
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
-    
     ratio_left_inst = len(df_inst.columns) if df_inst is not None else 7
     ratio_right_fut = len(df_fut.columns) if df_fut is not None else 5
     t1_df, t2_df = st.columns([ratio_left_inst, ratio_right_fut], gap="small")
@@ -646,32 +673,6 @@ if df_inst is not None or df_fut is not None:
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
 
 # =====================================================================
-# 🛠️ 新增：定義 AI 主播語音生成函數
-# =====================================================================
-@st.cache_data(show_spinner=False)
-def generate_anchor_audio(text):
-    if not text: return None
-    try:
-        # 清除無聲字元與 HTML 標籤
-        clean_text = re.sub(r'<[^>]+>', '', text) 
-        clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
-        clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
-        clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
-        clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
-        clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
-        
-        full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
-        
-        async def _generate():
-            communicate = edge_tts.Communicate(full_script, "zh-TW-HsiaoChenNeural", rate="+10%", pitch="+5Hz")
-            audio_data = b""
-            async for chunk in communicate.stream():
-                if chunk["type"] == "audio": audio_data += chunk["data"]
-            return audio_data
-        return asyncio.run(_generate())
-    except Exception: return None
-
-# =====================================================================
 # 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
 # =====================================================================
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
@@ -683,7 +684,7 @@ with left_ai:
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
     
-    # 🚨 升級：電腦版的連三紅發光燈泡
+    # 🚨 電腦版的連三紅發光燈泡
     light_val = """
     <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
         <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
@@ -693,7 +694,6 @@ with left_ai:
     </div>
     """
 
-    # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
@@ -720,38 +720,22 @@ with left_ai:
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
-    raw_report = data.get("report", "") or ""
-    
-    # 🚨 升級：獨立嵌入播放按鈕組件
-    audio_bytes = generate_anchor_audio(raw_report)
-    if audio_bytes:
-        b64_audio = base64.b64encode(audio_bytes).decode()
-        components.html(f"""
-        <div style="display: flex; align-items: center; padding-bottom: 10px;">
-            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
-            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
-                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 8px 20px; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif;">
-                ▶️ 收聽快報
-            </button>
-        </div>
-        """, height=50)
-
     # 1. 把星星變金色
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
     
-    # 2. 自動判斷時間，切換標題 (兩班制 + 新版 Prompt 防護)
+    # 2. 自動判斷時間，切換標題
     tw_tz = pytz.timezone('Asia/Taipei')
     current_hour = datetime.now(tw_tz).hour
 
     if current_hour >= 14 or current_hour < 5:
         processed_report = processed_report.replace("一分鐘晨報速讀", "盤後戰略精華包")
-        processed_report = processed_report.replace("一分鐘戰略速讀", "盤後戰略精華包") # 防護新 Prompt
+        processed_report = processed_report.replace("一分鐘戰略速讀", "盤後戰略精華包")
         processed_report = processed_report.replace("一分鐘晨報", "盤後戰略精華包")
         processed_report = processed_report.replace("晨報速讀", "盤後戰略精華")
     else:
         processed_report = processed_report.replace("一分鐘晨報速讀", "一分鐘速讀懶人包")
-        processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包") # 防護新 Prompt
+        processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包")
         processed_report = processed_report.replace("一分鐘晨報", "一分鐘速讀懶人包")
     
     final_html = f'<div class="panel-blue">\n\n{processed_report}\n\n</div>'
@@ -761,7 +745,6 @@ with right_news:
     st.markdown('<div class="section-title">📰 即時新聞</div>', unsafe_allow_html=True)
     news_list = data.get("news", []) or []
     
-    # 🌟 為了版面美觀，設定一頁 30 則
     page_size = 30
     total_news = len(news_list)
     total_pages_news = max(1, math.ceil(total_news / page_size))
@@ -790,18 +773,16 @@ with right_news:
     
     start_news = (st.session_state.news_page - 1) * page_size
     
-    # 🌟 新聞卡片渲染邏輯：極簡無摘要版 🌟
     for n in news_list[start_news:start_news+page_size]:
         news_title = (n.get("title") or "").strip()
         news_link = (n.get("link") or "").strip()
         news_source = urlparse(news_link).netloc.replace("www.", "") if news_link else ""
         
-        # 處理發布時間
         dt_str = n.get("dt_utc", "")
         try:
             dt_utc = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
             dt_tw = dt_utc.astimezone(pytz.timezone('Asia/Taipei'))
-            time_display = dt_tw.strftime("%m/%d %H:%M") # 電腦版顯示日期+時間
+            time_display = dt_tw.strftime("%m/%d %H:%M") 
         except:
             time_display = ""
             
@@ -811,7 +792,6 @@ with right_news:
         if news_link: parts_row.append(f"<a href='{news_link}' target='_blank'>閱讀原文</a>")
         news_parts_row = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(parts_row)
         
-        # 一口氣組裝整張卡片的 HTML
         card_html = f'''
         <div class="news-card">
             <a href="{news_link}" target="_blank" style="font-size:15px; font-weight:850; color:#0f172a; text-decoration:none; display:block; margin-bottom:6px; line-height:1.4;">{news_title}</a>
