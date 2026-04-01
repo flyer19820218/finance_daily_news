@@ -1,18 +1,20 @@
 # =====================================================================
 # 【區塊 1】套件匯入與基礎設定
-# 功能：載入程式所需的所有工具，並設定全域變數和頁面基礎屬性。
 # =====================================================================
 import json
 import os
 import math
 import re
 import requests
+import base64
+import asyncio
+import edge_tts
 from urllib.parse import urlparse
 from datetime import datetime, timezone, timedelta, time
 import pytz
 import pandas as pd
 import streamlit as st
-import yfinance as yf
+import streamlit.components.v1 as components
 
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
@@ -21,7 +23,6 @@ st.set_page_config(page_title="財經AI快報", page_icon="📈", layout="wide")
 
 # =====================================================================
 # 【區塊 2】全域 CSS 樣式定義 (視覺規範)
-# 功能：定義網頁視覺外觀，包含顏色、字體、卡片陰影和無框新聞清單。
 # =====================================================================
 st.markdown(
     """
@@ -323,7 +324,6 @@ button[kind="primary"]:hover {
 
 # =====================================================================
 # 【區塊 3】資料讀取與快取函數定義
-# 功能：從本地檔案或外部 API 獲取資料，並使用 @st.cache_data 提升效能。
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -491,7 +491,6 @@ def render_table_html(df, title, icon="📊"):
 
 # =====================================================================
 # 【區塊 4】頁面頂部佈局：檢視模式切換與控制
-# 功能：選擇看「最新報告」或「歷史報告」，並提供手動重新整理按鈕。
 # =====================================================================
 top_c1, top_c2 = st.columns([5, 1]) 
 
@@ -510,12 +509,9 @@ st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div
 
 # =====================================================================
 # 【區塊 5】資料路由與載入邏輯
-# 功能：根據模式載入對應的 JSON，若是歷史回顧則渲染日期選擇下拉選單。
 # =====================================================================
 data = None
 if mode == "最新（今日）":
-    # 🌟 戰術升級： 直接抓 GitHub 最新原始檔， 絕對零延遲！(修正撞名錯誤)
-    # 改用 datetime.now().timestamp()， 完美避開 time 撞名問題！
     current_ts = datetime.now().timestamp()
     raw_url = f"https://raw.githubusercontent.com/您的帳號/專案名稱/main/data/latest_report.json?t={current_ts}"
     
@@ -524,7 +520,7 @@ if mode == "最新（今日）":
         if res.status_code == 200:
             data = res.json()
         else:
-            data = load_json(LATEST_FILE) # 備用方案
+            data = load_json(LATEST_FILE)
     except:
         data = load_json(LATEST_FILE)
 else:
@@ -567,7 +563,6 @@ if not data:
 
 # =====================================================================
 # 【區塊 6】頁面主標題與倒數計時區塊
-# 功能：顯示 App 名稱、更新時間，以及右側財務自由倒數卡片。
 # =====================================================================
 header_col1, header_col2 = st.columns([1.5, 1], gap="large") 
 
@@ -592,7 +587,6 @@ st.markdown('<div class="hr" style="margin-top: 24px;"></div>', unsafe_allow_htm
 
 # =====================================================================
 # 【區塊 7】全球市場快照 (日夜動態切換)
-# 功能：根據台灣時間，自動切換顯示美股陣容或台股與亞洲指數陣容。
 # =====================================================================
 tw_tz_snapshot = pytz.timezone('Asia/Taipei')
 current_tw_time_snapshot = datetime.now(tw_tz_snapshot).time()
@@ -634,7 +628,6 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 
 # =====================================================================
 # 【區塊 8】三大法人與期貨籌碼表格
-# 功能：抓取籌碼資料並並排顯示於網頁上。
 # =====================================================================
 df_inst, df_fut = fetch_histock_tables()
 if df_inst is not None or df_fut is not None:
@@ -653,6 +646,32 @@ if df_inst is not None or df_fut is not None:
 st.markdown('<div class="hr"></div>', unsafe_allow_html=True) 
 
 # =====================================================================
+# 🛠️ 新增：定義 AI 主播語音生成函數
+# =====================================================================
+@st.cache_data(show_spinner=False)
+def generate_anchor_audio(text):
+    if not text: return None
+    try:
+        # 清除無聲字元與 HTML 標籤
+        clean_text = re.sub(r'<[^>]+>', '', text) 
+        clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
+        clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
+        clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
+        clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
+        clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
+        
+        full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
+        
+        async def _generate():
+            communicate = edge_tts.Communicate(full_script, "zh-TW-HsiaoChenNeural", rate="+10%", pitch="+5Hz")
+            audio_data = b""
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio": audio_data += chunk["data"]
+            return audio_data
+        return asyncio.run(_generate())
+    except Exception: return None
+
+# =====================================================================
 # 【區塊 9】頁面主體：AI 盤勢快評與即時新聞分頁
 # =====================================================================
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
@@ -663,8 +682,16 @@ with left_ai:
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
-    # 這裡直接寫死，下個月分數變了您再來這改數字就好
-    light_val = "🔴 紅燈：39分"
+    
+    # 🚨 升級：電腦版的連三紅發光燈泡
+    light_val = """
+    <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+        <div style="margin-left: 5px; font-size: 18px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
+    </div>
+    """
 
     # 🚀 重新設計的兩欄式橫幅 HTML
     market_banner_html = f'''
@@ -693,9 +720,22 @@ with left_ai:
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
-    # 🌟 星星金化與兩班制標題變身 🌟
     raw_report = data.get("report", "") or ""
     
+    # 🚨 升級：獨立嵌入播放按鈕組件
+    audio_bytes = generate_anchor_audio(raw_report)
+    if audio_bytes:
+        b64_audio = base64.b64encode(audio_bytes).decode()
+        components.html(f"""
+        <div style="display: flex; align-items: center; padding-bottom: 10px;">
+            <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
+            <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 8px 20px; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif;">
+                ▶️ 收聽快報
+            </button>
+        </div>
+        """, height=50)
+
     # 1. 把星星變金色
     gold_star_html = '<span style="color: #FFD700; font-weight: bold;">★</span>'
     processed_report = raw_report.replace("★", gold_star_html)
