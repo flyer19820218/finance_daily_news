@@ -230,10 +230,13 @@ button[kind="primary"] {
     color: white !important;
     border: none !important;
     border-radius: 50px !important;
-    padding: 10px 24px !important;
+    height: 44px !important; /* 🚨 強制鎖死高度 */
+    padding: 0 24px !important;
     font-size: 15px !important;
     font-weight: 800 !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
     transition: all 0.2s ease !important;
 }
@@ -514,14 +517,14 @@ def generate_anchor_audio(text):
 # =====================================================================
 # 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
 # =====================================================================
-# 1. 建立頂部切分 (將重整與收聽按鈕放在最右上角)
+# 1. 建立頂部切分
 top_c1, top_c2, top_c3 = st.columns([5, 1.5, 1.5], gap="medium") 
 
 with top_c1:
     st.markdown('<div class="section-title" style="margin-top: 0;">📊 檢視模式</div>', unsafe_allow_html=True)
     mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
 
-# 2. 載入資料 (必須在產生音檔與按鈕前載入)
+# 2. 載入資料
 data = None
 if mode == "最新（今日）":
     current_ts = datetime.now().timestamp()
@@ -561,33 +564,32 @@ else:
 
 if not data: st.warning("尚未產生報告"); st.stop()
 
-# 3. 生成音軌並渲染右上角雙子星按鈕
+# 3. 生成音軌並渲染右上角雙子星按鈕 (🚨 排版完美對齊術)
 raw_report = data.get("report", "") or ""
 audio_bytes = generate_anchor_audio(raw_report) 
 
 with top_c2:
-    st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True) 
+    st.markdown('<div style="height: 28px;"></div>', unsafe_allow_html=True) 
     if audio_bytes:
         b64_audio = base64.b64encode(audio_bytes).decode()
-        # 統一藍色按鈕 HTML 樣式
         components.html(f"""
+        <style>body {{ margin: 0; padding: 0; overflow: hidden; }}</style>
         <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
             <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
-                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 10px 0; width: 100%; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: sans-serif;">
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; height: 44px; width: 100%; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); outline: none; transition: 0.2s; font-family: system-ui, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; padding: 0;">
                 ▶️ 收聽快報
             </button>
         </div>
-        """, height=50)
+        """, height=46)
 
 with top_c3:
-    st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True) 
+    st.markdown('<div style="height: 28px;"></div>', unsafe_allow_html=True) 
     if st.button("🔄 重新整理", type="primary", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
 
 st.markdown('<div class="hr" style="margin-top: 0px; margin-bottom: 20px;"></div>', unsafe_allow_html=True)
-
 # =====================================================================
 # 【區塊 6】頁面主標題與倒數計時卡片
 # =====================================================================
