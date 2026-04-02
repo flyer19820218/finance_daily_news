@@ -17,6 +17,51 @@ import streamlit.components.v1 as components
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
+# ==========================================
+# 新增：Apple Web App 滿版與桌面圖示設定
+# ==========================================
+def setup_apple_web_app(icon_path='icon.png'):
+    try:
+        # 嘗試讀取同資料夾的圖示
+        with open(icon_path, 'rb') as f:
+            data = f.read()
+        img_base64 = base64.b64encode(data).decode()
+        icon_url = f"data:image/png;base64,{img_base64}"
+    except FileNotFoundError:
+        # 防呆機制：若無檔案則給預設財經圖示
+        icon_url = "https://cdn-icons-png.flaticon.com/512/2933/2933116.png"
+
+    st.markdown(
+        f"""
+        <script>
+            var head = window.parent.document.getElementsByTagName('head')[0];
+            
+            // 1. 設定蘋果專屬桌面圖示
+            var link = window.parent.document.createElement('link');
+            link.rel = 'apple-touch-icon';
+            link.href = '{icon_url}';
+            head.appendChild(link);
+            
+            // 2. 開啟 iOS 滿版模式
+            var metaFs = window.parent.document.createElement('meta');
+            metaFs.name = 'apple-mobile-web-app-capable';
+            metaFs.content = 'yes';
+            head.appendChild(metaFs);
+            
+            // 3. 設定頂部狀態列風格
+            var metaBar = window.parent.document.createElement('meta');
+            metaBar.name = 'apple-mobile-web-app-status-bar-style';
+            metaBar.content = 'default';
+            head.appendChild(metaBar);
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
+
+# 執行滿版與圖示設定
+setup_apple_web_app('icon.png')
+# ==========================================
+
 # 2. 核心 CSS
 st.markdown("""
 <style>
@@ -149,11 +194,10 @@ def generate_anchor_audio(text):
         # 移除特殊 Unicode 符號與 ☆
         clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
         
-        #  核心: 處理星星，將 ★★★ 變成 「三顆星」
+        # 核心: 處理星星，將 ★★★ 變成 「三顆星」
         clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
         
         # 核心：移除括號、斜線、星號等唸起來會很怪的符號
-        # 移除 【】、[]、（）、() 以及 / 、 * 、 #
         clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
         
         # 修正破音字與特定發音
@@ -229,13 +273,12 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-# 🚨 8. 市場指標橫幅 (唯一修改處：導入連三紅專屬 UI)
+# 🚨 8. 市場指標橫幅
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-") 
 
-# 把原本單調的文字換成華麗的三顆燈泡 HTML
 light_val = """
 <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
     <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
@@ -271,18 +314,15 @@ st.markdown(market_banner_html, unsafe_allow_html=True)
 # 8. 🤖 AI 摘要
 st.markdown('<div style="font-size:16px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
-# 核心修復：使用 CSS class 確保星星金色
 star_html = '<span class="gold-star">★</span>'
 processed_report = raw_report.replace("★", star_html)
 
-# 處理標題替換邏輯
 current_hour = datetime.now(tw_tz).hour
 if 14 <= current_hour < 24 or 0 <= current_hour < 5:
     processed_report = processed_report.replace("一分鐘戰略速讀", "盤後戰略精華包").replace("晨報", "盤後戰略")
 else:
     processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包")
 
-# 渲染到畫面上
 st.markdown(f'''
 <div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 15px; font-size: 15px; line-height: 1.8; color: #0f172a; margin-bottom: 20px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
     {processed_report}
