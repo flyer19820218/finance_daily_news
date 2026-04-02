@@ -62,9 +62,15 @@ def setup_apple_web_app(icon_path='icon.png'):
 setup_apple_web_app('icon.png')
 # ==========================================
 
+
 # 2. 核心 CSS
 st.markdown("""
 <style>
+footer {visibility: hidden !important;}
+header {visibility: hidden !important;}
+#MainMenu {visibility: hidden !important;}
+
+:root { color-scheme: light !important; ...略 }<style>
 :root { color-scheme: light !important; --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3; }
 .block-container { padding: 0.8rem 0.6rem !important; }
 html, body, [data-testid="stAppViewContainer"] { background-color: #FFFFFF !important; color: #000000 !important; font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; }
