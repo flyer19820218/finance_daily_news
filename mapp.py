@@ -62,13 +62,21 @@ def setup_apple_web_app(icon_path='icon.png'):
 setup_apple_web_app('icon.png')
 # ==========================================
 
-
 # 2. 核心 CSS
 st.markdown("""
 <style>
+/* 隱藏基本的首尾與選單 */
 footer {visibility: hidden !important;}
 header {visibility: hidden !important;}
 #MainMenu {visibility: hidden !important;}
+
+/* 隱藏新版 Streamlit 的標籤 */
+[data-testid="stHeader"] {display: none !important;}
+[data-testid="stFooter"] {display: none !important;}
+[data-testid="stBottom"] {display: none !important;}
+
+/* 專門狙擊右下角的氣球標籤 */
+div[class^="viewerBadge"] {display: none !important;}
 
 :root { color-scheme: light !important; ...略 }<style>
 :root { color-scheme: light !important; --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3; }
