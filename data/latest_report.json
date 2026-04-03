@@ -1,13 +1,37 @@
 {
-  "updated_at_utc": "2026-04-04 00:05:25 (TW)",
+  "updated_at_utc": "2026-04-04 01:06:26 (TW)",
   "title": "全球局勢與市場情報 2026-04-04 週末特刊-美股週收盤",
-  "report": "🎯 【一分鐘戰略速讀】\n今日（2026-04-04）市場訊息顯示，雖然部分媒體持續報導中東地緣政治緊張，但根據恐慌指數（VIX）下降與新台幣兌美元匯率微幅升值的客觀數據，可評估此類地緣政治事件的實際市場衝擊目前處於受控狀態，或僅為短期情緒波動，而非系統性風險的顯著增高。資金並未大規模流向美元等避險資產。在產業面，AI相關的半導體供應鏈、如封測設備、網通、ABF載板及特定關鍵材料，因與台積電等龍頭廠合作，訂單能見度與成長動能獲得驗證，顯示科技創新仍為市場主軸。中國股市則呈現下跌趨勢，與國際市場動態略有分歧。\n\n📊 【重大事件：交叉驗證報告】\n\n*   中東地緣政治：戰火升溫與終戰訊號並存 (重要度：★★☆☆☆)\n    *   **事實核對**：新聞報導「中東戰火越燒越旺，全球股市齊跌」與「伊朗總統釋出終戰訊號，比特幣與全球股市應聲強勁反彈」相互矛盾。而「金價大跌11%」的事實，結合今日VIX恐慌指數下降0.67點至23.87、美元/台幣匯率下降0.02至31.98，這些避險資產並未呈現大幅上漲或資金大規模湧入的現象。\n    *   **解讀**：多數關於地緣政治升級的報導，應視為「情緒噪音」。當避險指標如黃金、美元指數、VIX指數未同步噴發時，新聞所稱的「戰火越燒越旺」或「全球股市齊跌」並不符合物理事實。資金實際流向並未顯示對全面衝突的擔憂，市場可能更傾向於解讀伊朗的終戰訊號。投資人應避免單純受標題影響，而做出過度反應。\n\n*   AI半導體供應鏈訂單與擴廠 (重要度：★★★★☆)\n    *   **事實核對**：多則新聞指出「封測設備大廠」獲40億元訂單並切入台積電供應鏈、「網通大廠」與博通、台積電合作進軍1.6T且獲投信連續買進、「半導體設備巨頭」斥資8.5億強化AI晶片測試供應鏈，以及特化股作為「台積電2奈米最強後盾」。這些訊息均指向AI晶片與先進製程的需求持續強勁，並有具體投資與合作夥伴背書。\n    *   **解讀**：這些新聞具有高度真實性。在台積電持續領先的2奈米與先進封裝領域，其供應鏈夥伴獲得實質訂單與擴廠投資，是產業成長的直接證據。這對相關設備、材料、設計服務等產業鏈的公司構成實質利多，顯示AI技術的推進對硬體需求帶來的明確效益。\n\n*   NAND產業展望與個股動態 (重要度：★★★☆☆)\n    *   **事實核對**：外資報告預估NAND佔比衝38%，將目標價上修至165元，自營商買進旺宏逾千張。NAND Flash產業近期有復甦跡象，市場預期價格趨穩或上揚。\n    *   **解讀**：NAND產業經歷低谷後，正逐步回溫。外資調升目標價與法人買進動作，顯示市場對NAND後市持樂觀態度。這對相關記憶體製造與封測業者是正面訊號，投資人可關注此板塊的結構性改善。\n\n*   中國股市下挫 (重要度：★★☆☆☆)\n    *   **事實核對**：上海A股跌41.17點，滬指收跌1%，小盤股指跌超3%。\n    *   **解讀**：中國股市今日呈現下跌，尤其小盤股跌幅較大，顯示該市場內部可能存在特定壓力或資金流出。這與「中國市場紅利退燒」等宏觀判斷相符。對於關注中國市場的投資者，需審慎評估其內部經濟結構性問題及政策影響。\n\n🔥 【市場情緒與壓力測試】\n今日的科學儀表板顯示，VIX恐慌指數為23.87，較昨日下降0.67點，說明市場恐慌情緒有所緩解。美元/台幣匯率為31.98，微幅下降0.02元，顯示新台幣相對穩定甚至略有升值趨勢，並未出現因地緣政治緊張導致資金大幅外流至美元避險資產的現象。這些客觀數據提示，當前市場風險偏好並未顯著惡化，許多關於地緣政治的「恐慌」論調缺乏實質市場數據支持。\n\n💰 【台股影響與板塊點名】\n在當前市場環境下，台股主要受惠於明確的AI及半導體產業趨勢。與台積電(TSMC)先進製程、AI晶片測試、HBM4、1.6T網通技術及ABF載板相關的供應鏈廠商，預期將持續受惠。特別是封測設備、特用化學材料、高速傳輸網通設備以及ABF載板等領域，因與台積電等領先者緊密合作，具備較高的成長確定性。儘管新聞中未直接提及海力士(SK Hynix)的大單，但HBM技術的發展對整體記憶體產業鏈仍有帶動作用。受衝擊產業方面，依據「中國市場紅利退燒」的分析，自行車等高度依賴中國市場的傳產出口業可能面臨較大挑戰。\n\n📈 【投資觀察指引】\n1.  **數據先行，驗證後行**：面對地緣政治新聞，務必對照VIX、黃金、原油與匯率等避險資產指標，避免被情緒性報導誤導。\n2.  **聚焦產業趨勢核心**：AI與半導體先進製程仍是明確的長期趨勢，應持續關注與台積電生態系相關的設備、材料與關鍵零組件供應商。\n3.  **注意結構性變化**：中國市場的變化可能導致部分傳產企業營運模式需調整，審慎評估其轉型能力與新市場拓展。\n4.  **警惕公關訊息**：對於未經實質數據或具體產業邏輯支持的「大單」或「技術突破」新聞，應以「保守看待」原則進行評估。\n\n🏫 【曉臻財經小教室】\n今日單字：【敵意併購】\n敵意併購是指一家公司在未經目標公司董事會同意的情況下，直接向其股東提出收購要約或透過其他手段取得控制權。這有助於我們「看穿市場假象」，因為有時市場傳聞或股價異動並非基於公司基本面，而是潛在的併購活動或為併購而進行的策略性布局，影響力可能超越正常的供需關係。\n\n結尾：\n數據為憑，謠言勿聽，長線布局，穩若磐石。",
+  "report": "🎯 【一分鐘戰略速讀】\n今日（2026-04-04）市場的波動性分析顯示，VIX 恐慌指數雖然仍處於相對高位，但已呈現微幅下降，美元/台幣匯率也同步走貶，表明台幣相對美元微幅升值。這組數據指出，儘管部分新聞聲稱中東地緣政治緊張升溫，但市場整體避險情緒並未顯著飆高，甚至有所緩解。避險資產如黃金亦有大跌報導，與戰火擴大邏輯相悖。這暗示大部分地緣政治相關的「戰火延燒」論調，其對全球資本市場的直接衝擊，在今日可能更多屬於「情緒噪音」。科技產業方面，台積電供應鏈持續展現韌性與創新動能，特別是高速運算相關領域。中國股市則呈現顯著跌勢。投資人應以客觀數據為依歸，區分實質趨勢與市場雜音。\n\n📊 【重大事件：交叉驗證報告】\n\n中東戰火越燒越旺！全球股市齊跌 資金竟悄悄轉向這裡 (重要度：★★★★)\n**事實核對**：新聞聲稱「中東戰火越燒越旺」導致「全球股市齊跌」，並引導資金流向特定方向。然而，今日盤前市場指標顯示 VIX 恐慌指數下降 0.67 點至 23.87，美元/台幣匯率下降 0.04 點至 31.96，意即台幣相對美元微幅走強。同時，另有報導指出「金價大跌11%」。若戰火果真如描述般「越燒越旺」，避險資產如美元、黃金應有顯著上升趨勢，VIX 恐慌指數亦應飆高。目前的數據並不支持「全球股市齊跌」是由於「戰火越燒越旺」導致的廣泛恐慌性資金流動，更可能是局部市場或特定板塊的調整，或市場正消化與之相悖的終戰訊號。此類敘述被定調為「情緒噪音」的成分較高。\n**解讀**：投資人應警惕此類將個別事件與廣泛市場結果強行連結的敘述。實際市場數據顯示，雖然地緣政治風險仍存，但其對全球資金流向的影響，至少在今日，並未觸發避險資產的強勁上揚。\n\n伊朗總統釋出終戰訊號，比特幣與全球股市應聲強勁反彈 (重要度：★★★)\n**事實核對**：此新聞與前述「戰火越燒越旺」的報導存在邏輯衝突。若伊朗總統確有釋出終戰訊號，則避險情緒應降低，股市反彈為合理反應。配合 VIX 下降和台幣走強的數據，市場可能正在消化此類正面訊息，而非全面恐慌。比特幣的反彈需更多數據交叉驗證其與終戰訊號的直接關聯性。\n**解讀**：市場對地緣政治消息反應迅速且複雜。當正面訊號出現時，避險情緒會隨之降溫，風險資產可能獲得支撐。投資人需警惕消息發布時間與市場反應的因果關係，避免過度解讀單一事件。\n\n受惠SpaceX上市傳聞！AST SpaceMobile(ASTS)單周狂飆17%，低軌衛星概念股迎爆發 (重要度：★★)\n**事實核對**：該股單週上漲17%是量化數據事實。但其股價變動的原因歸結於「SpaceX上市傳聞」。此處需強調「傳聞」性質，而非已確認的「實質利多」或「產出證據」。在 VIX 仍處於 23.87 的相對高位時，個股因傳聞而大幅波動，顯示其對市場「籌碼情緒」的敏感性高於實質基本面支撐。\n**解讀**：投資人應對基於「傳聞」的股價大幅波動保持謹慎。在整體市場波動性仍高之際，此類標的風險因子較高。需關注公司實際業績、技術進展及訂單狀況，而非僅依賴未經證實的消息。此表現應「保守看待」。\n\n合作博通、台積電進軍1.6T！「網通大廠」切亞馬遜、Meta供應鏈接單動能強投信連12天進場掃購 (重要度：★★★★★)\n**事實核對**：新聞指出某網通大廠與博通、台積電合作，並切入國際大廠供應鏈。這符合產業常識中，台積電作為半導體技術領導者，其生態系合作夥伴將受益於先進技術發展（如1.6T高速傳輸）。投信連續買超是籌碼面的事實。這不是對台積電的挑戰，而是其產業鏈的延伸。\n**解讀**：此訊息對台灣半導體及AI相關產業鏈是實質利多。它強化了台灣在全球高科技供應鏈中的關鍵地位，尤其在AI相關高速運算領域。投資人可關注台積電生態系中，具備技術實力且能切入國際一線客戶供應鏈的廠商。\n\n中國股市跌破3900點，滬指收跌1%！ 小盤股指跌超3% (重要度：★★★)\n**事實核對**：新聞指出中國股市滬指下跌1%，小盤股指下跌逾3%。這是明確的市場數據，反映了中國內部市場的實際走勢。\n**解讀**：中國股市的弱勢表現可能受到多重因素影響，包括國內經濟數據、政策方向以及市場信心等。雖然今日美元/台幣匯率變動不大，但中國市場的資金流向與其經濟體系的波動性，仍需持續觀察，對有曝險於中國市場的投資人而言，需留意風險。這顯示了「政策利多」若無實質經濟數據支撐，亦無法完全扭轉「市場匯率」或股市走勢。\n\n金價大跌11%多頭結束了嗎？瑞銀這樣說 (重要度：★★★★)\n**事實核對**：新聞指出金價有顯著跌幅。黃金作為主要的避險資產之一，其價格下跌與部分聲稱地緣政治緊張、戰火升溫的新聞形成直接對比。瑞銀的評論是市場分析師的觀點，非客觀事實。\n**解讀**：金價的顯著下跌與「中東地緣政治緊張升溫」的敘事不符。這表明市場對地緣政治風險的真實擔憂可能被誇大，或者資金正在尋找其他投資機會。投資人應從黃金價格的實際走勢中判斷避險情緒的真實程度，而非僅聽信新聞標題的「情緒噪音」。\n\n🔥 【市場情緒與壓力測試】\n今日的 VIX 恐慌指數為 23.87，較昨日下降 0.67 點。儘管此數值仍高於歷史平均水平（通常低於20視為平靜），表明市場存在一定程度的波動性與不確定性，但其下降趨勢指示恐慌情緒在今日有所緩解。美元/台幣匯率為 31.96，較昨日下降 0.04 點，顯示台幣對美元微幅升值。此數據與多數地緣政治緊張的報導形成反差，因為若避險需求急劇增加，美元通常會走強。綜合來看，今日市場數據未顯示資金大規模流向美元避險，因此，與地緣政治相關的「情緒噪音」成分可能高於實際的「系統性風險」擴大。\n\n💰 【台股影響與板塊點名】\n受惠產業：半導體（特別是與台積電合作、切入AI高速運算供應鏈的相關廠商，如網通設備、特化材料）、AI 鏈（邊緣推論、伺服器相關）。台積電作為全球技術領頭羊，其2奈米製程及先進封裝技術的推進，將持續帶動整體生態系發展。海力士在HBM領域的進展，與台積電在CoWoS封裝上的強強聯手，共同鞏固了AI晶片供應鏈的強韌性。低軌衛星概念股雖因傳聞上漲，但需審慎評估其基本面而非僅止於短期籌碼效應。\n受衝擊產業：與中國市場關聯度高且面臨競爭壓力大的傳統產業（如自行車雙雄的中國市場紅利退燒）。部分受地緣政治情緒影響的個股，雖然整體市場避險情緒不高，但個別公司仍可能受特定事件衝擊。\n\n📈 【投資觀察指引】\n1.  數據為本：面對充斥地緣政治緊張的標題，務必檢視 VIX、匯率、黃金等避險資產的實際走勢。當數據不匹配時，新聞多為情緒性解讀，而非物理事實。\n2.  聚焦根基：台積電生態系中的合作夥伴（如網通、特化）因其技術實力與國際大廠合作而獲益，這反映了產業的實質增長動能。\n3.  警惕傳聞：在 VIX 仍偏高的環境下，因未經證實的傳聞而大幅上漲的個股，其股價不確定性高，應著重基本面與實質訂單。\n4.  區分市場：中國股市的明顯下跌，提示投資人需針對不同區域市場的經濟基本面與政策風險，採取差異化的評估策略。\n5.  穩健為上：即便有短期波動或個別事件，具備堅實基礎的優質企業和符合未來趨勢的產業（如AI、先進半導體），仍是長期穩健配置的核心。\n\n🏫 【曉臻財經小教室】\n今日單字：【敵意併購】\n敵意併購是指在未經目標公司董事會同意的情況下，透過公開市場收購股票等方式，強行取得該公司控制權的行為。它幫助我們看穿市場假象，因為當某公司股價異常波動，並伴隨大量籌碼異動時，除了利多或利空，也可能是在進行隱秘的股權爭奪戰，而非單純的基本面變化。\n\n數據為憑，真理為錨。雜訊飄散，風險勿撓。",
   "news": [
+    {
+      "title": "【軍事情報局】A-10狂增中東 美陸軍參謀長被撤 - 新唐人電視台",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1KS1B0X3g3dlRyMmVha0p3aWJIMDdtRGlfTGUtZXhXZ252NmhSQTJPb2NRUGg5d3hFNWtQZUtRSjZTbXdpanNEb1c2Q2lqaFJIY2tNYmUyR0ttNmFJOEdmTNIBZkFVX3lxTE91eW85eWZxYTlOa0p1T3NEQldYXzRnTXlzWEx4QzJHdjZ5MnZVMkFqcjRPM1pWejJhS0lRMTI0WndldktSWWpEdDNoMnk1NUthVnhWaldpNmF0VU9fWW1sb2ZGQTBTdw?oc=5",
+      "summary": "【軍事情報局】A-10狂增中東 美陸軍參謀長被撤&nbsp;&nbsp;新唐人電視台",
+      "dt_utc": "2026-04-03T16:50:12+00:00"
+    },
+    {
+      "title": "【即時新聞】受惠SpaceX上市傳聞！AST SpaceMobile(ASTS)單周狂飆17%，低軌衛星概念股迎爆發 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOSVhWMVVsMkdXeXhvSTl1dm8wUU5USWgyQVV2a1VzaXItbE1sbFpJQmd4Vk4tSjdsUHgyTEdDQ25UVk0zM3FRYXF0VDh6ejYxNjdBYzJ2dko5TEpXZ3ZCVkJMcGQ4aHNyLVhydGJqcV9LdDFmNVh3UkZaLUU5alhhM0R3MGxzeC1EblM3aG1lMms?oc=5",
+      "summary": "【即時新聞】受惠SpaceX上市傳聞！AST SpaceMobile(ASTS)單周狂飆17%，低軌衛星概念股迎爆發&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-03T16:42:20+00:00"
+    },
+    {
+      "title": "【即時新聞】Stock Yards Bancorp(SYBT)本益比偏高，估值卻上看112美元，這檔銀行股還能追嗎？ - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbHpwVGxxNWRtbWVpbkpWQndCQWRQTG5jSEJtSmMwSjRlekFaeDRLUWItcVkzVjVETi1nN3BNLWM2VWlwaWFMVnFIZXFrMl9OMnM2UkkzaUd1MklSVVpNVmwzSmdEcE1QbEVzOC1TRXV5d0NkTlNLdUJURlNEM3ZpTmFOSmFTeXNXQkJMMTkzMnY?oc=5",
+      "summary": "【即時新聞】Stock Yards Bancorp(SYBT)本益比偏高，估值卻上看112美元，這檔銀行股還能追嗎？&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-03T15:47:50+00:00"
+    },
     {
       "title": "【軍事情報局】A-10狂增中東 美陸軍參謀長被撤 - 大紀元",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1WaDdZd2ZxUmdtek9uR0g5WTJ3R3lPbXJGRWUxWGhzYjlXdDdRWEJKTGdkQzV6LWlMSTlWc3NuQ0l0NlZxb1pRaEhwUk9ibFp2cExsR1N0SFRKTXZINEhB0gFkQVVfeXFMTTRad21vVTdtcERyZ1diZ1kyUWF1OUJvSFFHWmkxZkRNbTlwSjhYV01pZzFoSDYxdTd0Y1VDdHNrX1UxSWhIMVdfc1lrNEVfNVRwS255NUN5QTJyQXE5TllBRVJFSw?oc=5",
       "summary": "【軍事情報局】A-10狂增中東 美陸軍參謀長被撤&nbsp;&nbsp;大紀元",
       "dt_utc": "2026-04-03T15:35:00+00:00"
+    },
+    {
+      "title": "Why the Stock Market Has Struggled Without Big Tech's Leadership - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZk9qRFpOOXNkR3NORDM1Q0NadXBVTm9PWkFYbXV1bFRQcU1qTU5oREtJaThFRGp4bEUwNGh0LXZmSjlfS09Xc0l1dmRrczVmNXk2ZzMtc0syMTBicWkyaE9jNHhjanVqQWFqdkRHY3VlUWxxeVlrSFhUODRoM3h3YUNLOEk0U19xZVMxODdfUUtKZkdzM19ZVkpR?oc=5",
+      "summary": "Why the Stock Market Has Struggled Without Big Tech's Leadership&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-03T15:18:00+00:00"
     },
     {
       "title": "軍事優先！川普公布2027總統預算案 提議防衛開支增至1.5兆美元 - Yahoo新聞",
@@ -20,6 +44,12 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85ODFoQjNSTFhVWGJHWkwzc0lLX2Q1cU5TVUluV0pXaVNSMFR4aUZ0MFdVUHc5RmpKdVJ5VE1tN1NQN0VkaDJYQVBDX1BNUXRZbDJnbVhjV3hhNVJ0?oc=5",
       "summary": "軍事優先！川普公布2027總統預算案提議防衛開支增至1.5兆美元| 國際焦點&nbsp;&nbsp;太報 TaiSounds",
       "dt_utc": "2026-04-03T15:10:01+00:00"
+    },
+    {
+      "title": "Tesla Stock Drops on Deliveries. What Wall Street Is Saying. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPY2NrVnBGc3M3VWtFYnprb3NPa0JMUFFiSWc4MFVkUGtzOXE0OVBkZm0wY0thdVI2S1JFTVFueDBJN1NmUmRxamR3ZzloVkx0Q1lXR2hGcGJvcFhpaV94eDBvVV9sekUxd0Z0YllhbHZhOWlqdHh5NmNqS0FoRGNON25lM21IMXFVdDMzY01feHdkaEhGS3JMUVg4dlJldUM3?oc=5",
+      "summary": "Tesla Stock Drops on Deliveries. What Wall Street Is Saying. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-03T15:07:00+00:00"
     },
     {
       "title": "今日經濟 - 國際地緣政治和能源局勢緊張 歐盟重新定義與非洲關係 - RFI",
@@ -154,6 +184,12 @@
       "dt_utc": "2026-04-03T10:00:00+00:00"
     },
     {
+      "title": "ETF存股族「暴增」拉低報酬？內行曝「很難發生」原因 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxQcTlMR3kwOFhUaURTQXNhcHJUZU9EZlBzS1ZtbzlRdEhDLWhpemZEdEhHUHEwbERxckk1aWlJbEU4UXVSNUZTc044VFZtSXRPSFg2eE40cnFaWkQ4NHc1T0V4UnR2SnNXRDJtOXdHZUxGQjF6NVE2QnpnaTNPQzVIWWk1Z1UwYjRqYUhGMHdyT1A4X2h4WUN3THdkeE1EM3YzTkstYk5uVi1XUFJZbS1EVXh1TEx0aGdMaXZpYnI1cXpZTXJLdzc4UXZzZnJGWkxvUzV0ZGRzNjBzSl9raDlVZnNCLTZMek1iNTZxa0FBaV9RWmxfVTF0TUVNbXlwbmdBSnlrYWhvY3lGX1ZENjNBOWR0N3pyRDl5WEpIbEZ3aE1vUnh0?oc=5",
+      "summary": "ETF存股族「暴增」拉低報酬？內行曝「很難發生」原因&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-03T09:58:47+00:00"
+    },
+    {
       "title": "允許軍人攜私人武器進軍事基地 美戰爭部長：保護個人安全必要措施 - 聯合新聞網",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1jSVdBQTc5TXFaQVdSaEMxSHBVT0o2ajNfaXRGYlhRZGp4SVJpOWpYc0FVWVh4NThjUXE5Tlp3REMtM3VqcGRBdGc2ZjBGWUdy?oc=5",
       "summary": "允許軍人攜私人武器進軍事基地 美戰爭部長：保護個人安全必要措施&nbsp;&nbsp;聯合新聞網",
@@ -206,6 +242,12 @@
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOR0VtQlNWLTJrQ2c1WldhVnlwdzJRYzhTN0lYaHVnUGYwdUNsdWRQdTQ0TlN2XzdHSXI1Z24xVnlZRno1VVFlTllCb3RCQjJtTlgxaHROck81TVZFcVBGckZyQmI2U1ZSYUJBNF9EQkk4UjdrREJkOUUzVlc4c1NnT1JIVjhaS1p3?oc=5",
       "summary": "《亞洲股市》17:00，上海A股跌41.17點，為4068.52點&nbsp;&nbsp;富聯網",
       "dt_utc": "2026-04-03T09:02:00+00:00"
+    },
+    {
+      "title": "台中藍營大團結！鄭麗文、盧秀燕合體擁抱澄清不合傳聞 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9VZVhHQjk0VjB4NXJDdTlUVFlPRUNLUG5KVk1xb3NDUE1BdjFXR1FJdjNiUHU3SUhVWm9xZFRNUERmU09xZm1OdU50dm80amlHbXRxY1QycDFmWWRzT0d2aGNwQdIBaEFVX3lxTE9ZMlpXU044blJ4TkZ1WVJPZEFmWDJVY1Ezak1qaWwtRVJ3VVhCaVFvSl96V1J4VTc0eWxFWXBTX25pc0Y2OHpzRDdsaWJCYUhwVTd1Z3oxd1ctYV9pZzl4NjFQUTF1ZkZf?oc=5",
+      "summary": "台中藍營大團結！鄭麗文、盧秀燕合體擁抱澄清不合傳聞&nbsp;&nbsp;鏡週刊Mirror Media",
+      "dt_utc": "2026-04-03T08:54:00+00:00"
     },
     {
       "title": "台中藍營大團結！鄭麗文、盧秀燕合體擁抱澄清不合傳聞 - Yahoo新聞",
@@ -344,54 +386,12 @@
       "link": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOUjFUbEdJUktzRFRqNnFKMEt3MWR3d2tuUkx5SjN4ai1PRnFwdVc4bllGSjBGVWtCaHZGNWxHVm55cHFaWXJOXzJobnpQT3g4bHk2b052S21jcUN0Mnp4QjZGQnpHOG9TeVhxTHQ3b1daUWdaZU1mMW9HbXF0SHFDSEtxdWd6NXhTdmxBTzM2VTh5STJBN1g4NjRURnNqT0p2SkV5SllTdndvS0xNZzZteWhNaGtpNlZjTDZ5NU8yZk5oOTBmMFU4bmo4WDNmSWxiT0pBRGtKZWFtWWNGc091MEZIZXVHd1IxT0p3TFAyQzlEdXNVQWNaQTZCNV9qRC1lSVFBYThCUWp3YW5mckE4elVFZlBWWk5mM1RLcTYzYkxtRmdqelVBdEo2X24tcDZpdXF5V0JJMlZKUUwyOThsUXhST0drWkx3bjVSbm52a29KNzBwYmlOck1ZV01sTThDM0t3LUF6cUJoQQ?oc=5",
       "summary": "中東戰火越燒越旺！全球股市齊跌 資金竟悄悄轉向這裡&nbsp;&nbsp;Yahoo新聞",
       "dt_utc": "2026-04-03T05:37:33+00:00"
-    },
-    {
-      "title": "《亞洲股市》13:30，上海A股跌44.85點，為4064.84點 - 富聯網",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPX05FU0p6QWdtTWtHMWxoMTVRaUxZWDdTUHNfRG9XSUlCMXpuTzNwY1AzREJ1MGV4emFzb0p6TWZod2VIYjh4LVJNb2JNZzB5ZmJMekh5aTFqQ21uYVFHUmlMQVVhR2s4SU1xYVduc1lFSV9BbmI5UEx1UkpyYjNTNkExYm8wWG9G?oc=5",
-      "summary": "《亞洲股市》13:30，上海A股跌44.85點，為4064.84點&nbsp;&nbsp;富聯網",
-      "dt_utc": "2026-04-03T05:32:00+00:00"
-    },
-    {
-      "title": "中東戰火越燒越旺！全球股市齊跌 資金竟悄悄轉向這裡 - 三立新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5fMkNKa1p0VnpIbmxNdVBVOW1pc2Q5NVgwajhCQ05NWUpxc1ROSGUzS0U5NklSbnY3WnpWRmVOTGFqcVVSa1JNSlN6UQ?oc=5",
-      "summary": "中東戰火越燒越旺！全球股市齊跌 資金竟悄悄轉向這裡&nbsp;&nbsp;三立新聞網",
-      "dt_utc": "2026-04-03T05:28:35+00:00"
-    },
-    {
-      "title": "個股概覽 | 個股 - 股市 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBfVGtPUmhQeF9nalNLNm9zTGJWQlREWTlFa2dVeEhkNElpN1d0OXlyaFF3U3NaYnBodklvejVEU1YtdkNl?oc=5",
-      "summary": "個股概覽 | 個股 - 股市&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-03T05:28:14+00:00"
-    },
-    {
-      "title": "挺戴遐齡！馬辦發聲明「百分之百支持」 駁斥撤換傳聞 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxNLUoxTk44ZlZqQ0FOTEpNbGZUa1dzLW9WREhZcENkbld6cHcxQUlMdU5JQjJXNXY2MGRwMU1CNDlHMk5CUDNBQWZTZkNXSHVCOWFsWE4zaV9DY2FFOWxrTUNWSUNxazdMeThvX2d6UnFISHI2bEpfTHhheVBLRE51Y3JRVGxzT2pwLWRmV21qSzBDeXd6elI5WUk0bE1tYlBNbGRxekJIVWVrdi1oTS03UXRQdV9XMURxdWJhVnRKN2U4czhOdHFQSDEzTW9NRGJxUlg2RUlQNVBPVEE0cVA4d1NpN05wWGNXVFNjV2g2eThoT1AwRDZXeDFCUXNKNFVKN04zZ25xcVRueElXeE1RNjhtWTBFd0FURnA1U1lrR0NUQjdWTGM5aW1UUEt2a2RsU3M1dFpNbFM5R2FqelFnbmVDMkVVQml4cVd5SEg5ektHa2M?oc=5",
-      "summary": "挺戴遐齡！馬辦發聲明「百分之百支持」 駁斥撤換傳聞&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-04-03T05:09:45+00:00"
-    },
-    {
-      "title": "布蘭特現貨衝破141美元！比期貨貴32美元 專家警告：別被報價騙了 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMikgNBVV95cUxQRldob3hjcTA2NldReUl5YV9TcjV4YnRXSGpKZERHTy05NERUb25jalBSMXdIRnYtcnQtYThhTkl4ZEJReHNjZWxHTEFHaGF2Ql9aTzVlYWJ6d3AwcHBtbnVjcjdVVUtLbnAyU21INFZGbGNuOXdaYWdmS292eS1xb2ZQSVdmOXR1R0dqT250MWpBYkFmTjRyS1ZEUDM5MzltVjhfTy03QjRSNWNwWmlmNi1wVVNqb2lQZm1yTXo3NlVvV0lvRjRUWi1TY2hrXzQ3ZzdGOUQwdjVIYW0tVmw4aGM3VF95VUVxdVJjRjRvcmJDQ2M2X1RSNjc4RHRjR1FzVG9nbG94bVE2LXBZTkV1TWlCQ184ZUFjQVFPcGExNlVMSk5RUFJRRndPaS14OVUxdS1WbXNIdFcyNF9FcjZYdWJMWGw0YUx2bmYwYTZWX2NzOU4ySFg2d1picDVCdWpKbFVhQmR5NzVqX3VZLTZVeF9EUjdWU2VLQ00yS3c2dVVRWW9NNGNxQ3ZUQ28wdnN4X2c?oc=5",
-      "summary": "布蘭特現貨衝破141美元！比期貨貴32美元 專家警告：別被報價騙了&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-03T05:06:45+00:00"
-    },
-    {
-      "title": "美喆營收／3月年減逾六成 中東地緣政治波及 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA0QzhuZmN0RTV5WVhWdElOM0RfeHFpUTZVWE1QLTNoMUZ6SlVxQV9OdlVqYnVLTEtrUnVRZHloc09BdGVSSlJ6bjdrQUlEWExs0gFWQVVfeXFMTUs1cFVQQ0VBMmJNMjQtMkVYOHkyc3RLSWlEMUthSW5KSGNfUjA1eHh6aFEyVC1HaUw0UnF2MS1DcTRXV05pU2RQM2NydnF4TUs4ZHlfQkE?oc=5",
-      "summary": "美喆營收／3月年減逾六成 中東地緣政治波及&nbsp;&nbsp;聯合新聞網",
-      "dt_utc": "2026-04-03T04:57:35+00:00"
-    },
-    {
-      "title": "【即時新聞】先鋒整體股市ETF(VTI)高點回跌6%！中東局勢惹憂，投資人小心尚未見底 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPTzNGVkUzS1ZaSUl0UFNBeEZjMnN5bmo5Ul85X0pSOXNxOEJFR0xxLWR5SXhDN3U1MWRnT1BGNmxNa1FEVk1hSERtQWtmMTRNNXFiUWhCUWlkSGlUOWhORGhvV0RGZGMxSEVuX2gxS1ZabUJ0ZXJ1VjFtc0Y1Vlc1QlhMZTh2djNkWU9RZGl0VlI?oc=5",
-      "summary": "【即時新聞】先鋒整體股市ETF(VTI)高點回跌6%！中東局勢惹憂，投資人小心尚未見底&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-03T04:46:57+00:00"
     }
   ],
   "risk_indicators": {
     "vix": "23.87",
     "vix_trend": "▼ 0.67",
-    "usd_twd": "31.98",
-    "usd_trend": "▼ 0.02"
+    "usd_twd": "31.96",
+    "usd_trend": "▼ 0.04"
   }
 }
