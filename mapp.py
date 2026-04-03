@@ -17,20 +17,6 @@ import streamlit.components.v1 as components
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-## ==========================================
-# 新增：Apple Web App 滿版與桌面圖示設定 (請把這整段徹底刪除)
-# ==========================================
-def setup_apple_web_app(icon_path='icon.png'):
-    # ... 中間的程式碼省略 ...
-        </script>
-        """,
-        unsafe_allow_html=True
-    )
-
-# 執行滿版與圖示設定 (這行也要刪除)
-setup_apple_web_app('icon.png')
-# ==========================================
-
 # 2. 核心 CSS
 st.markdown("""
 <style>
@@ -53,7 +39,7 @@ html, body, [data-testid="stAppViewContainer"] {
     background-color: #FFFFFF !important; 
     color: #000000 !important; 
     font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; 
-    font-size: 18px !important; /* 確保字體放大 */
+    font-size: 18px !important; 
 }
 p, span, h1, h2, h3, label { color: #000000 !important; }
 
@@ -174,20 +160,11 @@ raw_report = data.get("report", "") or ""
 def generate_anchor_audio(text):
     if not text: return None
     try:
-        # 移除 HTML 標籤
         clean_text = re.sub(r'<[^>]+>', '', text) 
-        # 移除特定開場白
         clean_text = re.sub(r'作為.*?如下[：:]', '', clean_text, flags=re.DOTALL)
-        # 移除特殊 Unicode 符號與 ☆
         clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
-        
-        # 核心: 處理星星，將 ★★★ 變成 「三顆星」
         clean_text = re.sub(r'★+', lambda m: f"{len(m.group(0))}顆星", clean_text)
-        
-        # 核心：移除括號、斜線、星號等唸起來會很怪的符號
         clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
-        
-        # 修正破音字與特定發音
         clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
         
         full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
