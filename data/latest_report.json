@@ -1,8 +1,20 @@
 {
-  "updated_at_utc": "2026-04-04 06:00:33 (TW)",
+  "updated_at_utc": "2026-04-04 07:03:30 (TW)",
   "title": "全球局勢與市場情報 2026-04-04 週末特刊-美股週收盤",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 26.098288669s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 26\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場呈現出地緣政治訊息與實際恐慌指標之間的反差。雖然中東衝突升溫的報導頻繁，但 VIX 恐慌指數卻錄得微幅下降，顯示市場整體情緒並未如部分新聞標題般劇烈恐慌。台幣兌美元匯率小幅走貶，則暗示資金流向存在部分調整。在宏觀謹慎的背景下，資金持續流入ETF，而科技產業如AI算力需求與記憶體供應鏈則展現結構性成長。投資人應避免單純受消息面驅動，回歸數據與基本面分析。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治與避險資產的冷靜對比\n事件標題: 中東地緣政治升溫，報導稱美軍戰機遭擊落恐衝擊美股 (★★☆☆☆)\n事實核對: 新聞指出「中東地緣政治升溫！伊朗拒絕美國停火要求，美軍戰機遭擊落恐衝擊美股」，並稱「地緣政治推升油價，節後開盤恐迎來劇烈波動」。然而，盤前 VIX 恐慌指數顯示下跌 0.67 點至 23.87，並未呈現恐慌急劇升高，美元/台幣匯率也僅微幅波動上漲 0.04 至 31.98。市場的避險指標並未與報導的「衝擊」或「劇烈波動」的強度相符。\n解讀: 地緣政治事件確實是潛在風險，但目前的市場指標反映，資金並未出現恐慌性大規模撤離或避險資產噴發的現象。投資人應將其視為市場的背景噪音，而非立即且決定性的市場下行信號。\n\n個股利多與系統性風險的權衡\n事件標題: 封測設備廠獲40億訂單，旺宏NAND前景看俏，概念股飆漲 (★★★☆☆)\n事實核對: 報導指出「封測設備大廠」連飆漲停，在手訂單40億，毛利率上看60%，並切入台積電供應鏈；另有「旺宏NAND占比預估衝38%」，外資目標價大升至165元。然而，目前 VIX 恐慌指數仍維持在 23.87 的相對高點，台幣兌美元匯率也呈現微幅貶值。\n解讀: 個股基本面利多與產業前景固然重要，但在整體市場波動度偏高（VIX偏高）且台幣微幅貶值的環境下，系統性風險對個股表現仍可能造成影響。投資人應審慎評估，避免單純追逐短期消息面帶來的股價波動。\n\n資金流向與市場偏好\n事件標題: ETF持續吸金，美股ETF受益人大增，台股ETF再添千億元級別 (★★★★☆)\n事實核對: 多篇新聞提及「美股ETF吸金 受益人大增」、「千億台股ETF 再添一檔」、「活水來了 2,275億股息助攻台股」，以及「國家隊撒15億狂掃萬張009816 再砸45.9億建倉00919」。這明確顯示市場資金對ETF的青睞與持續投入。\n解讀: 資金大量湧入ETF，反應投資人傾向透過分散化投資降低風險，尤其是在市場潛在波動下尋求相對穩定的報酬。這表明市場的投資策略正朝向更為保守與穩健的方向發展。\n\n科技巨頭策略與產業發展趨勢\n事件標題: 蘋果巨資買斷行動DRAM，中華電信全台IDC轉型AIDC (★★★☆☆)\n事實核對: 蘋果為確保供應鏈穩定而巨資買斷行動DRAM，反映其對未來產品需求量及記憶體供應的預期。中華電信投入AIDC建設，直接響應了市場對AI算力需求的增長，這是實質的資本支出與戰略轉型。\n解讀: 這些事件顯示科技產業龍頭正積極佈局關鍵零組件和基礎設施。這類供應鏈策略與算力投資，代表著產業結構性成長的真實動能，而非短期概念炒作。\n\n🔥 【市場情緒與壓力測試】\n今日 VIX 恐慌指數為 23.87，相較前一交易日下降 0.67。儘管略有回落，但仍處於相對高點，顯示市場參與者對未來波動仍存在一定程度的預期。美元/台幣匯率為 31.98，較前一交易日上漲 0.04，台幣呈現微幅貶值，反映資金流動可能略偏向美元，但幅度不大，未達恐慌性拋售程度。這些數據作為市場信任度儀表板，揭示了市場在面對外部訊息時的實際反應，並未完全與部分新聞標題的煽動性語氣同步。\n\n💰 【台股影響與板塊點名】\n考量今日市場數據，台股在宏觀面臨潛在的系統性風險（VIX偏高、台幣微貶），但微觀層面仍有特定產業的結構性成長動能。\n受惠板塊：\n*   **AI算力與資料中心：** 中華電信啟動AIDC大投資，預期將帶動相關伺服器、散熱、網路設備供應鏈的需求。\n*   **記憶體與半導體周邊：** 蘋果巨資買斷行動DRAM，以及旺宏NAND前景看好，顯示記憶體市場需求穩健。相關封測設備與半導體零組件供應商有望受惠。雖然未有台積電HBM4或2nm的直接新聞，但AI算力需求會間接推升先進製程與高頻寬記憶體（HBM）的需求，SK海力士在此領域的持續領先地位，將強化其供應鏈的戰略價值。\n*   **物流倉儲：** 中菲行等物流相關企業，若能搭上電商或產業景氣回溫，營運有撐。\n受衝擊板塊：\n*   **塑膠石化：** 台塑石化遭檢約談，可能影響投資人信心。\n*   **部分傳產：** 需關注匯率波動對進出口導向產業的影響。\n\n📈 【投資觀察指引】\n1.  **區分噪音與信號：** 地緣政治消息頻繁，但需透過 VIX、匯率等客觀數據判斷其真實市場影響。無實質避險行為出現時，應視為情緒噪音。\n2.  **擁抱趨勢而非盲從：** AI、記憶體等科技產業的結構性成長趨勢明確，但投資應選擇具備實質訂單、技術領先且估值合理的企業，而非僅追逐概念股。\n3.  **ETF作為防禦配置：** 資金持續流入ETF，反映市場對穩健配置的需求。對於想參與市場又擔憂波動的投資人，ETF仍是分散風險的有效工具。\n4.  **留意資金流向：** 台幣微幅走貶，可能代表外資對台股態度略趨保守，或美元強勢。關注資金實質流向，而非僅看新聞利多。\n5.  **保持風險意識：** VIX 仍處於相對高位，提醒投資人當前市場仍具不確定性。適度保留現金水位，以應對可能發生的突發狀況。\n\n🏫 【曉臻財經小教室】\n今日單字：【敵意併購】\n敵意併購是指收購方在未獲得目標公司董事會同意的情況下，透過直接向股東發出收購要約或在公開市場大量收購股票，以取得目標公司控制權的行為。\n它如何幫助我們「看穿市場假象」：當市場上某公司出現異常的股價波動，或是有大量看似矛盾的利多利空消息傳出時，若觀察到同時有大股東或特定法人在公開市場上密集買賣股票，這可能就是敵意併購方或被併購方在試圖影響市場價格，以利其收購或反收購策略。\n\n數據為實，情緒為虛，理性為道，穩健為臻。",
   "news": [
+    {
+      "title": "【歡慶兒童節】多元軍事活動 嗨翻小小兵- 軍事 - 中時新聞網",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0zWGhDLUhZSnk1blA1blZkUzlUUUR6NXl3dUhtSWVXSHdDSEZHd0RZM1pCQlk1TmNUNVVwd3hERi1HYUVzN0stZ2pOU2FvdXNGaUc4ZEFzNU5hU2JRNmxpTzBKc015WWJjVEhpLV9n?oc=5",
+      "summary": "【歡慶兒童節】多元軍事活動 嗨翻小小兵- 軍事&nbsp;&nbsp;中時新聞網",
+      "dt_utc": "2026-04-03T22:47:55+00:00"
+    },
+    {
+      "title": "2615 萬海 - 2615 weekly chart.. Please no... - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBxc3NwY0prS291ZHJJaEpVa2RPYmpjQUY2d3lsU3ZLUE91N25Ra2ZfLTgzeEJXal83MjVHUEJBZlNoMjlNYklpWTZ4SjIwNGlkZU5VY1ppSWU?oc=5",
+      "summary": "2615 萬海 - 2615 weekly chart.. Please no... - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-03T22:38:26+00:00"
+    },
     {
       "title": "Circle(CRCL.US) Director Sells US$3.43 Million in Common Stock - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOakhVTUJWTjdTZUI5aHhJeFBXd1BZLXRJYmJuVjllWTNveW50MGRjX3ZZMU5ZZnBYN3BsNHdzQVp0Sk92M2xGNWlaRUprWVg0MlRqb1R2OVNkbm9DVmNxSDJ4VzcxczZJcmk1M1VyNkdaN3BObDZMUnVhdzV5djRnV0FFeThva2N0aHg1bXdkaTJRSnFEVW1penJoUQ?oc=5",
@@ -86,6 +98,24 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ZQ2pJcFVlYWM3TkNmVFhlZ19wNjA5TkdaMl9qRTRQS0JTRi1nMF9rZDJRdDVNZ3NWU1czdmhmUEg2VU1xRHNydHphNF93V0hpMlHSAVdBVV95cUxQd0x4alRhQjQ4bjRZZWlra1FMMFBydmxVMzFNa21WTERvSmJRamVzOUZFekUwUjRSNW01bjB0ZG5kSkZkazhmTWFRZVVCNVFhdzFTWUxCdU0?oc=5",
       "summary": "巴西基金 中長線看俏&nbsp;&nbsp;聯合新聞網",
       "dt_utc": "2026-04-03T20:23:12+00:00"
+    },
+    {
+      "title": "15檔亂世英雄 逆風飛行 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPY2o4UFVBZE5oZWd5X2Q0ZDFhbHZQOGVXNFVmUnZxNVRkSTNDNXdmZWFTTGV5UUhxUDRQVWQ1ZTF4a2xXd2ZfamtuRkNMZXpQYjJwQnpyTmJVOFdNNF9UTG9FX3FvUF9qaVNNQmJGektoNEVWOFM3Tk9pS29Nak8tQXRrNV9iMzh4UlVRVVEzLXBJQnFPTHJkVS1TcWJNYWsxcG1BWHE3LUxEcHNoYU9TWEpWcFhTeEM1Sng3WlZjRWJkQnBGQXJONlFfcw?oc=5",
+      "summary": "15檔亂世英雄 逆風飛行&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-03T20:10:00+00:00"
+    },
+    {
+      "title": "投資人看虛擬資產 眼光大不同 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQVpNQzlUVTFmakE0bXdIdHBSMHFwMVNqbWpDbnVEa0lINncwYzBUMURSMzRVR2tROXpRVjltZGRxOFp0aF9qM1dib1MzbEt0UFpMMjJlcVI4NGZNTEdPQmRQX0I0NFNvdWdEc2k2TS02aS16Tkl2WmFnYTZjd3l6QXA4Q20wN3BRR256ZllhbTlfSGhwQXl2V2pPazZxZ2dUNWtmbzNBYXJ4S1dGN094OXlRRmtkVk5GODMyVGc4WGptZEdacTFVbGZvNG90cThWUVVNcW9ybjl0b0RUbURTRXgtUVltR3R4TnFLOVo4ZEZLbG80NzVyag?oc=5",
+      "summary": "投資人看虛擬資產 眼光大不同&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-03T20:10:00+00:00"
+    },
+    {
+      "title": "達人心法－重視研發 讓客戶買得安全 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNZjBQbURDbDloM3FMeVgteWowZ3JNY2VNMEdVbFhvLUpMRUI1cnZhaURISnd6cHpDZXhMUTBsZFpUbWp2YnJySU1ESTBtOGZPOTNsVUFmZWJZU3dmNmI0bk1QVnQ0dndZSEZNbEU1RzE3QXlwRmpIRlAwbTA1Nl9leDNsbDFaZWY1UnlDQlFXd2hsd2hmRGNUSGg2blRNX1lBczFDZFhET21WTW84c2pQQU1KdTI0QnhFczNfbjJVYkdRVEVXUUpKcHdHU2xsb00xU0RUX1R5M0stRGsySWFZUVFETjJISFo5aDJvczlHeEc5by1ZMTI2ZC1veHJIcDc1NFdQaUZJazBpSEFTbUdQbER3?oc=5",
+      "summary": "達人心法－重視研發 讓客戶買得安全&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-03T20:10:00+00:00"
     },
     {
       "title": "落難高價股 內外資送暖 - Yahoo股市",
@@ -212,6 +242,12 @@
       "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOZXJiT1BrNUZ4UnZLM2hhNWE4NTlSWmZ6RU1RSTg5RW5qeGdOUjBiN21ma2xzNWdIbXVXRjRPNUVfSjFuM2ExWHRyREh3Y2JyRktvOUJXLWhvR183Ri1hbmNIZ0ZkVU5kWHJRa1o3bFYwc01nbjdlMjEteG4waUlfU1lPdFgyNURuQUNINW5NZFRtdkdTdzdCbFBmelczQzlsdlZ6WlZRLVRuaFlRZWdZQ2w3TFk1YnpPem9FVTRTSFowdVU2cGVYazZCczBGdTktSUt6T3g2djI5Z01pUExQbVNJU2Ria09zTHA5cm5Genp6Q29FVm5PbGhiR0Zkak9SOE02V1lkNER1dFJ6bTFVZEVYSEZsZw?oc=5",
       "summary": "【歡慶兒童節】多元軍事活動 嗨翻小小兵&nbsp;&nbsp;Yahoo新聞",
       "dt_utc": "2026-04-03T18:42:00+00:00"
+    },
+    {
+      "title": "TWA00 加權指數- 現貨 - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1za0U2T3ZnTXFVYm5JV0NHWV9PSjdBcGN0aUk0eFRhd2t0RHZ4T1NaSkpmc3F2ZTdyWGQ2XzRjVU5id251MDFYZ3doU3Bjb3NkQ01GU3BkRFU?oc=5",
+      "summary": "TWA00 加權指數- 現貨 - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-03T18:13:56+00:00"
     },
     {
       "title": "9914 美利達 - 看完更令人佩服了- 股市爆料同學會 - CMoney",
@@ -350,42 +386,6 @@
       "link": "https://news.google.com/rss/articles/CBMi8wJBVV95cUxQNjZfbExacGhkZnFoeUVLdFo5VXF2RVFURF9wOHZWdFMweTdidnVJZFkwbU0zOWs3X3lmWnBEbTVaUkJ0RkxmVnJUT0xMLUVSam9HYjhudlVWSmxfbWZTQ0tLN0pMUnlxT1JHZzA5cUJnMGhHaUpvTDhKZnVtR1FsVDcwVFdJQklzcGwxQzRDeFIwS1BJbndxYnJjcTJiUnFsNXoxaUJBVDgySnJZdy1VNS1vMFBXVGhpSHJKRGh0Q3ZyWEZOOXE4ZF8tSW9nRnlnRHFXbEZ5djFpeVl0cjZvRldzeW9GWnI3Mkd3Z3dpaWdKV1AyUWpvVzJha2xJaTFLRE5yYS1XazVqak5DYkZnTmZVdU1taFEzVjU3Uk5BM2pyOGF6OWpFZUczbDVqOXdFNUZYcjNfSEZETWt2VWdlV1FORm5IY1ZZUGlmVzQ3SUJNdV9SZnN0NFl0a1RtaW5nNzJwS3p1N2dTYnRKTHgxY2lvMA?oc=5",
       "summary": "塑膠袋之亂! 立委質疑台塑石化哄抬 檢約談5名高階主管&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-03T12:55:32+00:00"
-    },
-    {
-      "title": "最厲害特賣會! 台南永康雨衣大放送 特價\"打到骨折\" - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxPOG5uZlZzNllFbUVyd2xmM2ZjZ05rWHRMYzd5Zm9WRTBPcDhpUTVYZUVKT3c0SWt0NFBMM00xTUd1cmR1aUNoOHZldHZxQzMweUlFVXRCREtXZ2ZsS1BDakRzalpzQUpkWkV1UFlIcHgydUlPY3BvVVBvNV83eUVPb0ZCS0dnbEl2T29IRUZHcTZ0SFNNaDR0ZFlRYl8tSGl6NFdPa1FUVGxDUy1TbFFnRi0wWi1kSFJ4cV9aaXp6RkszdTBja0hoY2x4TVVJT1FLUHVITl9HRUhlSUoxbXFkODdvWVM1RU1PSG91LV9iWXdDNTdvZ2UwOVc3TURNRmNjLVhqWllOWEp2NEI2TzlaTEJXYkpDN0xPTFNXTXJLcVgzMlVCT3J1WkJkYkkxeVQySXlQQzZBNTZZbm11U2F0eERVYUNabGdDazRDa1RremZySVJKT1pyanRGSQ?oc=5",
-      "summary": "最厲害特賣會! 台南永康雨衣大放送 特價\"打到骨折\"&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-03T12:54:41+00:00"
-    },
-    {
-      "title": "【即時新聞】中東地緣政治衝突波及！Joby Aviation(JOBY)單月重挫近18%，空中計程車前景添變數 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOTNHU1hFOW5QOS1xSTYwMGxKUE1HYUdERjZYQWJPNDA1N0szM2twMExCX1VMeGVWZ3lXNGVjNUFrNEE0cmo3T28zekUyMWl4MzBINEpTRllWR1VqS2Y3RnZCZXpmMHQ4NTEwdmZxZWRzbHRvbHdSLVdlcGdYZlpnOE1hZEtkTXRqbXllcmhYN3I?oc=5",
-      "summary": "【即時新聞】中東地緣政治衝突波及！Joby Aviation(JOBY)單月重挫近18%，空中計程車前景添變數&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-03T12:47:45+00:00"
-    },
-    {
-      "title": "WOM Finance 2025 年總資產成長6.08% - citytimes.tw",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdFV1c3BiWUVCSHRoWVl4c3l6bkh4Sm05V3ZkLTU2UmRmUlFJTUxlTVRyTmxkV1J1dGtrRGZIYzB4Zmo0bnJXRlozdEFoME1oemhXRDhsODgxZmh2ai1iMlV5NEdKQ3dOYXUwN09vME14VDdscnFMS3pXVURiZ0N1bHc0eTcyWHhPcU9OR0dQNlh1S3VTNEtzLTViN3BZMm5tQjVVbUI1cWdPTXFHSGtjQTduYUZpeWxjRVVPdXhDRUt0ZEk?oc=5",
-      "summary": "WOM Finance 2025 年總資產成長6.08%&nbsp;&nbsp;citytimes.tw",
-      "dt_utc": "2026-04-03T12:25:06+00:00"
-    },
-    {
-      "title": "戰火引三大法人撤資逾兆！大聯大搭AI熱潮突圍 獲三大法人狂掃10.6萬張成贏家 - tw.stock.yahoo.com",
-      "link": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxQNjVwSy1oMXlQQUJMVGtmMnJpRVpIRlliUU5PYnROQjRWSUlRVzc5dk9qaG5hM0lDTUE2Nkpoa1pkTkVTOEZERFBxcHpQMVNUdF93YkxnUmFpSmUtTnB4WTJoRnRHVkpYTTc1SGNlenppOVJZLVhrcnptRmJ4TzNkQU5WQkUtSzBNdVpfTnRvTE13RFc4UUo4ZE9SSzg3TU01ZUg2LV92S0xIa3BRb3o4M2pNdGZkaEJpQllDVEt3SVpyYVpKc0I2YXZJc3pnYTA1WjRlay1pMXByX0ttX0NCSjAxbU5yVXBUVzdfWVZzQUdvbGFRQjNKdVRYdHdhejc3Q3VTZV9QRjZidWFMNHpqUy0xRzFqQm9oNTNHWFdsNDNmYlZ4VUVER2ZOMlRYVGF2Ym9Ybm5RNVduYVhSVnpyQlRrWU1xVVBncU12NWNoZm4zU25BS2plbVFGdlF5NHB2emhvSzRVVjdFRGlUZHRQVGtKaDFVbkprVXdzRG5jYnAwUUlvbXg2ZjJ2NWpPeFY2QzNrS3ZSdmo2X2VoZ2RyQTBPWDZXMVRoWWZHWkhPem5xelFXT25BdXkzTGVlNlh3MTB4cloyV1ZBel9NQVk3ekJZcjNodHVEb3c?oc=5",
-      "summary": "戰火引三大法人撤資逾兆！大聯大搭AI熱潮突圍 獲三大法人狂掃10.6萬張成贏家&nbsp;&nbsp;tw.stock.yahoo.com",
-      "dt_utc": "2026-04-03T12:00:00+00:00"
-    },
-    {
-      "title": "【即時新聞】川普重新評估美國北約成員國身分，地緣政治變數恐牽動美股市場神經 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcGlFaTMzZXVFb2RMMkxQbDZWZG5FYkZyYlNEZmo5NnpwMW1Xb2xNSEJiMS15RFFNalg3NElwcnFmcnc5WGxOUEFaZmtHWC1IY0FzR2paUTMyWFhzbFBNd2FYRFBoVy04RkZuZFpzOFlDWjJYZ3JEQlRqRk5Jc19yNUV3UTE1MGo1MEJtQkFKZng?oc=5",
-      "summary": "【即時新聞】川普重新評估美國北約成員國身分，地緣政治變數恐牽動美股市場神經&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-03T11:29:27+00:00"
-    },
-    {
-      "title": "【即時新聞】標普500指數(GSPC)微漲0.1%！中東地緣政治風險未解，美股靜待明確政策方向 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNN1FiV3RYU1dtcXFaSXd4VXgzTTNXZkZBUFl2QTlsVXZ4Qm5HMTRUeFZpb290WmEteThCZnVqOGJIWVJ4YnVRZ2d5cERJZ2RUb19zVVNpVjgyYWNROExUc1ZhelZrVnM5a0t1ZDczaVVCXzZZRXlIamM4THp1UDdMS1B6WnotdkVBdlh6RjQ3aTk?oc=5",
-      "summary": "【即時新聞】標普500指數(GSPC)微漲0.1%！中東地緣政治風險未解，美股靜待明確政策方向&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-03T11:25:52+00:00"
     }
   ],
   "risk_indicators": {
