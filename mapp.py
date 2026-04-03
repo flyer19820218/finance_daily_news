@@ -78,10 +78,14 @@ header {visibility: hidden !important;}
 /* 專門狙擊右下角的氣球標籤 */
 div[class^="viewerBadge"] {display: none !important;}
 
-:root { color-scheme: light !important; ...略 }<style>
 :root { color-scheme: light !important; --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3; }
 .block-container { padding: 0.8rem 0.6rem !important; }
-html, body, [data-testid="stAppViewContainer"] { background-color: #FFFFFF !important; color: #000000 !important; font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; }
+html, body, [data-testid="stAppViewContainer"] { 
+    background-color: #FFFFFF !important; 
+    color: #000000 !important; 
+    font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; 
+    font-size: 18px !important; /* 確保字體放大 */
+}
 p, span, h1, h2, h3, label { color: #000000 !important; }
 
 /* 金色星星專屬樣式 */
