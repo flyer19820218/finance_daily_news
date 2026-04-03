@@ -2,13 +2,13 @@
 <html lang="zh-TW" style="color-scheme: light;">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>財經AI快報</title>
   
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=2">
   
   <style>
     body { 
@@ -18,34 +18,33 @@
       overflow: hidden; 
       background-color: #FFFFFF; 
       font-family: "HanziPen SC", sans-serif; 
-      position: relative; /* 核心設定 */
+      position: relative; 
     }
     
-    /* 這裡原本鑲嵌快報網頁的區塊，我們把底部空出來 */
+    /* 鑲嵌快報的視窗：底部留 25px 的空間給遮蔽條 */
     iframe { 
       width: 100%; 
-      height: 100%; /* 全螢幕 */
+      height: 100%; 
       border: none; 
-      padding-bottom: 25px; /* 關鍵：底部留下一點點空間不給 iframe 顯示 */
-      box-sizing: border-box; /* 確保 padding 算在 height 裡面 */
+      padding-bottom: 25px; 
+      box-sizing: border-box; 
     }
     
-    /* 核心：新增一個假的底部欄位，把原本網頁底部蓋住 */
+    /* 戰術遮蔽條：用來蓋住 Streamlit 氣球浮水印 */
     .dummy-footer {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 25px; /* 高度剛好蓋住原本浮水印位置 */
-      background-color: #FFFFFF; /* 跟背景一樣的顏色 */
-      z-index: 9999; /* 確保它在最上層 */
-      border-top: 1px solid #e7ebf3; /* 加個淡淡的線條，看起來像專業 App */
+      height: 25px; 
+      background-color: #FFFFFF; 
+      z-index: 9999; 
+      border-top: 1px solid #e7ebf3; 
     }
   </style>
 </head>
 <body>
-  <iframe src="https://financedailynews-mobile.streamlit.app/?embed=true"></iframe>
-  
+  <iframe src="https://financedailynews-web.streamlit.app/?embed=true"></iframe>
   <div class="dummy-footer"></div>
 </body>
 </html>
