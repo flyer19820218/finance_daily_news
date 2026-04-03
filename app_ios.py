@@ -37,7 +37,7 @@ html, body, [data-testid="stAppViewContainer"], .main {
     background-color: #FFFFFF !important; 
     color: #000000 !important; 
     font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; 
-    font-size: 25px !important; /* 28 -> 25 */
+    font-size: 25px !important; 
 }
 
 /* 鎖定 Streamlit 內部排版區塊寬度 */
@@ -59,25 +59,25 @@ p, span, h1, h2, h3, label { color: #000000 !important; }
 }
 
 /* 微調後的大字體設定區 */
-.brand { font-size: 38px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 2px;} /* 42 -> 38 */
-.sub { color: #64748b; font-size: 18px; margin-bottom: 8px; } /* 20 -> 18 */
-.update-time { font-size: 14px; color: #94a3b8; margin-bottom: 12px; } /* 16 -> 14 */
+.brand { font-size: 38px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 2px;} 
+.sub { color: #64748b; font-size: 18px; margin-bottom: 8px; } 
+.update-time { font-size: 14px; color: #94a3b8; margin-bottom: 12px; } 
 .combined-table { width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-.combined-table th { background: #1e293b; padding: 12px 4px; color: #ffffff !important; font-size: 16px; font-weight: 700; letter-spacing: 1px; } /* 18 -> 16 */
+.combined-table th { background: #1e293b; padding: 12px 4px; color: #ffffff !important; font-size: 16px; font-weight: 700; letter-spacing: 1px; } 
 .combined-table td { padding: 10px 4px; border-bottom: 1px solid #e2e8f0; }
 .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
 .m-tile { background: #ffffff; border: 1px solid #e7ebf3; border-radius: 12px; padding: 12px 2px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; }
 .m-tile.up-bg { background: #f0fdf4 !important; border-color: #bbf7d0; }
 .m-tile.down-bg { background: #fef2f2 !important; border-color: #fecaca; }
-.m-name { color: #64748b !important; font-size: 14px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; } /* 16 -> 14 */
-.m-price { font-size: 25px; font-weight: 900; margin: 4px 0; color: #0f172a !important; letter-spacing: -0.5px; } /* 28 -> 25 */
-.m-pct { font-size: 16px; font-weight: 800; } /* 18 -> 16 */
+.m-name { color: #64748b !important; font-size: 14px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; } 
+.m-price { font-size: 25px; font-weight: 900; margin: 4px 0; color: #0f172a !important; letter-spacing: -0.5px; } 
+.m-pct { font-size: 16px; font-weight: 800; } 
 .up { color: #16a34a !important; } .down { color: #ef4444 !important; }
 .timeline-container { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 18px; position: relative; margin-bottom: 20px; }
 .timeline-item { position: relative; margin-bottom: 20px; }
 .timeline-item::before { content: ''; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background-color: #000000; border: 2px solid #ffffff; }
-.timeline-time { font-size: 16px; color: #94a3b8 !important; font-weight: 700; margin-bottom: 4px; font-family: monospace; } /* 18 -> 16 */
-.timeline-title { font-size: 20px; font-weight: 800; color: #000000 !important; line-height: 1.5; margin-bottom: 0px; text-decoration: none; display: block; } /* 22 -> 20 */
+.timeline-time { font-size: 16px; color: #94a3b8 !important; font-weight: 700; margin-bottom: 4px; font-family: monospace; } 
+.timeline-title { font-size: 20px; font-weight: 800; color: #000000 !important; line-height: 1.5; margin-bottom: 0px; text-decoration: none; display: block; } 
 .timeline-title:hover { color: #000000 !important; text-decoration: underline; }
 .timeline-summary { display: none !important; }
 </style>
@@ -136,7 +136,11 @@ def render_combined_foreign_table(df_inst, df_fut):
 # 4. JSON 讀取
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
-mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True)
+
+# ==========================================
+# 這裡加了 label_visibility="collapsed" 把檢視模式四個字徹底隱藏
+# ==========================================
+mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
 data = None
 
 if mode == "最新（今日）":
