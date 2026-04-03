@@ -677,31 +677,50 @@ st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
 left_ai, right_news = st.columns([1.35, 0.65], gap="large")
 
 with left_ai:
-    # --- 🌟 市場關鍵指標橫幅 ---
+    
+# --- 🌟 市場關鍵指標橫幅 ---
     risk = data.get("risk_indicators", {})
     vix_val = risk.get("vix", "-")
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
     
-    # 🚨 拿掉文字，純粹展示 6 顆霸氣燈號
+    # 🚨 帶有月份標示的 6 顆霸氣燈號 (9月至2月)
     light_val = """
-    <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">32</div>
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">35</div>
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">37</div>
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+    <div style="display: flex; gap: 12px; align-items: flex-start; margin-top: 5px; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">32</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">9月</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">35</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">10月</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb347, #ff8c00); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);">37</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">11月</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">12月</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">1月</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+            <div style="font-size: 13px; font-weight: 700; color: #64748b;">2月</div>
+        </div>
     </div>
     """
 
-    # 🚨 解決換行問題：左側加上 nowrap 屬性，並調整比例為 flex: 1 與 min-width: 220px
+    # 🚨 解決換行問題：左側加上 nowrap 屬性，並將整體對齊改為 flex-start 防止跑版
     market_banner_html = f'''
     <div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow2);">
         <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 18px;">📍</span> 市場核心戰略參數
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
             <div style="flex: 1; min-width: 220px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
                 <div style="font-size: 18px; font-weight: 700; color: #0f172a; white-space: nowrap;">
@@ -718,7 +737,6 @@ with left_ai:
     </div>
     '''
     st.markdown(market_banner_html, unsafe_allow_html=True)
-
     # --- 🌟 🤖 AI 盤勢快評 ---
     st.markdown('<div class="section-title">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
     
