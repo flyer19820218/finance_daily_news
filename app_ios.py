@@ -17,7 +17,7 @@ import streamlit.components.v1 as components
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# 2. 核心 CSS (專屬特大字體 + 強制寬度鎖定版)
+# 2. 核心 CSS (微調縮小 10% 版 + 強制寬度鎖定)
 st.markdown("""
 <style>
 /* 隱藏基本的首尾與選單 */
@@ -29,7 +29,7 @@ header {visibility: hidden !important;}
 [data-testid="stBottom"] {display: none !important;}
 div[class^="viewerBadge"] {display: none !important;}
 
-/* 終極破解 iOS 縮小魔咒：強制鎖定所有容器的寬度 */
+/* 破解 iOS 縮小魔咒：強制鎖定所有容器寬度 */
 html, body, [data-testid="stAppViewContainer"], .main { 
     width: 100vw !important; 
     max-width: 100vw !important; 
@@ -37,7 +37,7 @@ html, body, [data-testid="stAppViewContainer"], .main {
     background-color: #FFFFFF !important; 
     color: #000000 !important; 
     font-family: "HanziPen SC", "翩翩體", "PingFang TC", sans-serif !important; 
-    font-size: 28px !important; 
+    font-size: 25px !important; /* 28 -> 25 */
 }
 
 /* 鎖定 Streamlit 內部排版區塊寬度 */
@@ -58,26 +58,26 @@ p, span, h1, h2, h3, label { color: #000000 !important; }
     margin: 0 1px;
 }
 
-/* 超巨大字體設定區 */
-.brand { font-size: 42px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 2px;}
-.sub { color: #64748b; font-size: 20px; margin-bottom: 8px; }
-.update-time { font-size: 16px; color: #94a3b8; margin-bottom: 12px; }
+/* 微調後的大字體設定區 */
+.brand { font-size: 38px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 2px;} /* 42 -> 38 */
+.sub { color: #64748b; font-size: 18px; margin-bottom: 8px; } /* 20 -> 18 */
+.update-time { font-size: 14px; color: #94a3b8; margin-bottom: 12px; } /* 16 -> 14 */
 .combined-table { width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-.combined-table th { background: #1e293b; padding: 12px 4px; color: #ffffff !important; font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+.combined-table th { background: #1e293b; padding: 12px 4px; color: #ffffff !important; font-size: 16px; font-weight: 700; letter-spacing: 1px; } /* 18 -> 16 */
 .combined-table td { padding: 10px 4px; border-bottom: 1px solid #e2e8f0; }
 .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
 .m-tile { background: #ffffff; border: 1px solid #e7ebf3; border-radius: 12px; padding: 12px 2px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; }
 .m-tile.up-bg { background: #f0fdf4 !important; border-color: #bbf7d0; }
 .m-tile.down-bg { background: #fef2f2 !important; border-color: #fecaca; }
-.m-name { color: #64748b !important; font-size: 16px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; }
-.m-price { font-size: 28px; font-weight: 900; margin: 4px 0; color: #0f172a !important; letter-spacing: -0.5px; }
-.m-pct { font-size: 18px; font-weight: 800; }
+.m-name { color: #64748b !important; font-size: 14px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; } /* 16 -> 14 */
+.m-price { font-size: 25px; font-weight: 900; margin: 4px 0; color: #0f172a !important; letter-spacing: -0.5px; } /* 28 -> 25 */
+.m-pct { font-size: 16px; font-weight: 800; } /* 18 -> 16 */
 .up { color: #16a34a !important; } .down { color: #ef4444 !important; }
 .timeline-container { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 18px; position: relative; margin-bottom: 20px; }
 .timeline-item { position: relative; margin-bottom: 20px; }
 .timeline-item::before { content: ''; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background-color: #000000; border: 2px solid #ffffff; }
-.timeline-time { font-size: 18px; color: #94a3b8 !important; font-weight: 700; margin-bottom: 4px; font-family: monospace; }
-.timeline-title { font-size: 22px; font-weight: 800; color: #000000 !important; line-height: 1.5; margin-bottom: 0px; text-decoration: none; display: block; }
+.timeline-time { font-size: 16px; color: #94a3b8 !important; font-weight: 700; margin-bottom: 4px; font-family: monospace; } /* 18 -> 16 */
+.timeline-title { font-size: 20px; font-weight: 800; color: #000000 !important; line-height: 1.5; margin-bottom: 0px; text-decoration: none; display: block; } /* 22 -> 20 */
 .timeline-title:hover { color: #000000 !important; text-decoration: underline; }
 .timeline-summary { display: none !important; }
 </style>
@@ -116,7 +116,7 @@ def fetch_histock_tables():
 
 def render_combined_foreign_table(df_inst, df_fut):
     if df_inst is None or df_fut is None: return ""
-    html = '<div style="font-size:28px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
+    html = '<div style="font-size:25px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
     max_rows = min(3, len(df_inst), len(df_fut))
     for i in range(max_rows):
         date_str = df_inst.iloc[i].get('日期', '')
@@ -127,7 +127,7 @@ def render_combined_foreign_table(df_inst, df_fut):
             except: return "#0f172a"
         spot_color = get_color(spot_val)
         fut_color = get_color(fut_val)
-        row_style = "font-weight: 900; font-size: 20px; background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);" if i == 0 else "font-size: 18px;"
+        row_style = "font-weight: 900; font-size: 18px; background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);" if i == 0 else "font-size: 16px;"
         date_weight = "font-weight: 900; color: #b45309;" if i == 0 else "color: #64748b;"
         html += f'<tr style="{row_style}"><td style="{date_weight}">{date_str}</td><td style="color: {spot_color};">{spot_val}</td><td style="color: {fut_color};">{fut_val}</td></tr>'
     html += '</table>'
@@ -193,17 +193,17 @@ if audio_bytes:
     components.html(f"""
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; margin: 0; width: 100vw; overflow-x: hidden;">
         <div style="display: flex; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 42px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
+            <div style="font-size: 38px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">財經AI快報</div>
             <audio id="anchor-audio" src="data:audio/mp3;base64,{b64_audio}"></audio>
             <button onclick="var a = document.getElementById('anchor-audio'); a.playbackRate = 1.00; if(a.paused){{a.play(); this.innerHTML='⏸️ 暫停快報';}}else{{a.pause(); this.innerHTML='▶️ 收聽快報';}}" 
-                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 12px 24px; font-size: 20px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
+                    style="background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 50px; padding: 10px 20px; font-size: 18px; font-weight: 800; cursor: pointer; margin-left: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); outline: none; transition: 0.2s;">
                 ▶️ 收聽快報
             </button>
         </div>
-        <div style="color: #64748b; font-size: 20px; margin-bottom: 8px;">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
-        <div style="font-size: 16px; color: #94a3b8; margin-bottom: 12px;">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
+        <div style="color: #64748b; font-size: 18px; margin-bottom: 8px;">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
+        <div style="font-size: 14px; color: #94a3b8; margin-bottom: 12px;">最後更新（UTC）：{data.get("updated_at_utc", "")}</div>
     </div>
-    """, height=140)
+    """, height=125)
 else:
     st.markdown(f'''
     <div class="brand">財經AI快報</div>
@@ -217,7 +217,7 @@ current_tw_time = datetime.now(tw_tz).time()
 is_us_market = (current_tw_time >= time(21, 30) or current_tw_time < time(9, 0))
 
 def render_market_grid(title, targets_list):
-    html = f'<div style="font-size:28px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div><div class="m-grid">'
+    html = f'<div style="font-size:25px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">{title}</div><div class="m-grid">'
     for sym, name in targets_list:
         q = fetch_yf_data(sym, name)
         if q and q.get("ok"):
@@ -253,30 +253,30 @@ usd_val = risk.get("usd_twd", "-")
 
 light_val = """
 <div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
-    <div style="width: 55px; height: 55px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 24px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
-    <div style="width: 55px; height: 55px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 24px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-    <div style="width: 55px; height: 55px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 24px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
-    <div style="margin-left: 5px; font-size: 28px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
+    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+    <div style="margin-left: 5px; font-size: 25px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
 </div>
 """
 
 market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
-    <div style="font-size: 26px; font-weight: 850; color: #1e40af; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 28px;">📍</span> 市場核心戰略參數
+<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 22px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
+    <div style="font-size: 24px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 25px;">📍</span> 市場核心戰略參數
     </div>
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
         <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
-            <div style="font-size: 18px; color: #64748b; margin-bottom: 6px;">恐慌指標 / 匯率</div>
-            <div style="font-size: 28px; font-weight: 700; color: #0f172a;">
-                VIX {vix_val} <span style="font-size:18px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
+            <div style="font-size: 16px; color: #64748b; margin-bottom: 6px;">恐慌指標 / 匯率</div>
+            <div style="font-size: 25px; font-weight: 700; color: #0f172a;">
+                VIX {vix_val} <span style="font-size:16px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
                 <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
                 TWD {usd_val}
             </div>
         </div>
         <div style="flex: 1; min-width: 200px;">
-            <div style="font-size: 18px; color: #64748b; margin-bottom: 6px;">台灣景氣對策信號</div>
-            <div style="font-size: 28px; font-weight: 700; color: #0f172a;">{light_val}</div>
+            <div style="font-size: 16px; color: #64748b; margin-bottom: 6px;">台灣景氣對策信號</div>
+            <div style="font-size: 25px; font-weight: 700; color: #0f172a;">{light_val}</div>
         </div>
     </div>
 </div>
@@ -284,7 +284,7 @@ market_banner_html = f'''
 st.markdown(market_banner_html, unsafe_allow_html=True)
 
 # 8. 🤖 AI 摘要
-st.markdown('<div style="font-size:28px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
+st.markdown('<div style="font-size:25px; font-weight:900; margin-bottom:8px; color:#1e293b;">🤖 AI 盤勢快評</div>', unsafe_allow_html=True)
 
 star_html = '<span class="gold-star">★</span>'
 processed_report = raw_report.replace("★", star_html)
@@ -296,13 +296,13 @@ else:
     processed_report = processed_report.replace("一分鐘戰略速讀", "一分鐘速讀懶人包")
 
 st.markdown(f'''
-<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 22px; font-size: 26px; line-height: 1.8; color: #0f172a; margin-bottom: 20px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 20px; font-size: 23px; line-height: 1.8; color: #0f172a; margin-bottom: 20px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
     {processed_report}
 </div>
 ''', unsafe_allow_html=True)
 
 # 9. 新聞快報
-st.markdown('<div style="font-size:28px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 24小時即時新聞快報</div>', unsafe_allow_html=True)
+st.markdown('<div style="font-size:25px; font-weight:900; margin:24px 0 16px 0; color:#1e293b;">📰 24小時即時新聞快報</div>', unsafe_allow_html=True)
 news = data.get("news", [])
 if news:
     news_html = '<div class="timeline-container">'
