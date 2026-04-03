@@ -137,9 +137,6 @@ def render_combined_foreign_table(df_inst, df_fut):
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
 
-# ==========================================
-# 這裡加了 label_visibility="collapsed" 把檢視模式四個字徹底隱藏
-# ==========================================
 mode = st.radio("檢視模式", ["最新（今日）", "歷史回顧"], horizontal=True, label_visibility="collapsed")
 data = None
 
@@ -249,18 +246,21 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-# 🚨 8. 市場指標橫幅
+# 🚨 8. 市場指標橫幅 (6 個燈號升級版)
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-") 
 
+# 把 3 個燈擴充成 6 個燈，加上自動換行 (flex-wrap)，並採用黃紅燈/紅燈專業配色
 light_val = """
-<div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
-    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
-    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-    <div style="width: 50px; height: 50px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 22px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
-    <div style="margin-left: 5px; font-size: 25px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-top: 5px; flex-wrap: wrap;">
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">34</div>
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">35</div>
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">37</div>
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+    <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
 </div>
 """
 
