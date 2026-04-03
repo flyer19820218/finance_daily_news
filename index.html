@@ -2,39 +2,46 @@
 <html lang="zh-TW" style="color-scheme: light;">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
   <title>財經AI快報</title>
   
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=2">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=5">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
   <style>
-    body { 
-      margin: 0; padding: 0; height: 100vh; overflow: hidden; 
-      background-color: #FFFFFF; font-family: "HanziPen SC", sans-serif; position: relative; 
+    /* 核心重置，不給 iOS 任何延伸空間 */
+    html, body { 
+      margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; 
+      background-color: #FFFFFF; font-family: "HanziPen SC", sans-serif;
+      -webkit-text-size-adjust: 100%; 
     }
     
-    /* ========================================== */
-    /* 核心破解術：對付 iOS iframe 縮放 Bug */
-    /* ========================================== */
+    /* 建立一個絕對固定的外框 */
+    .iframe-wrapper {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100vh; overflow: hidden;
+      -webkit-overflow-scrolling: touch; 
+    }
+    
+    /* 強制 iframe 填滿外框，減去底部 25px 遮蔽條的高度 */
     iframe { 
-      width: 1px;          /* 欺騙術：先設積極小 */
-      min-width: 100%;     /* 強制撐開：這樣 Safari 就不會啟動縮小機制 */
-      height: 100%; 
-      border: none; 
-      padding-bottom: 25px; /* 留給遮蔽氣球的空間 */
-      box-sizing: border-box; 
+      position: absolute; top: 0; left: 0;
+      width: 100vw; height: calc(100vh - 25px); 
+      border: none; margin: 0; padding: 0;
     }
     
+    /* 遮蔽氣球的終點線 */
     .dummy-footer {
-      position: absolute; bottom: 0; left: 0; width: 100%; height: 25px; 
+      position: fixed; bottom: 0; left: 0; width: 100vw; height: 25px; 
       background-color: #FFFFFF; z-index: 9999; border-top: 1px solid #e7ebf3; 
     }
   </style>
 </head>
 <body>
-  <iframe src="https://financedailynews-mobile.streamlit.app/?embed=true"></iframe>
+  <div class="iframe-wrapper">
+    <iframe src="https://financedailynews-mobile.streamlit.app/?embed=true" scrolling="yes"></iframe>
+  </div>
   <div class="dummy-footer"></div>
 </body>
 </html>
