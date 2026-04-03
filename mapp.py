@@ -17,48 +17,17 @@ import streamlit.components.v1 as components
 # 1. 頁面配置
 st.set_page_config(page_title="財經AI快報-手機特務版", page_icon="📱", layout="wide")
 
-# ==========================================
-# 新增：Apple Web App 滿版與桌面圖示設定
+## ==========================================
+# 新增：Apple Web App 滿版與桌面圖示設定 (請把這整段徹底刪除)
 # ==========================================
 def setup_apple_web_app(icon_path='icon.png'):
-    try:
-        # 嘗試讀取同資料夾的圖示
-        with open(icon_path, 'rb') as f:
-            data = f.read()
-        img_base64 = base64.b64encode(data).decode()
-        icon_url = f"data:image/png;base64,{img_base64}"
-    except FileNotFoundError:
-        # 防呆機制：若無檔案則給預設財經圖示
-        icon_url = "https://cdn-icons-png.flaticon.com/512/2933/2933116.png"
-
-    st.markdown(
-        f"""
-        <script>
-            var head = window.parent.document.getElementsByTagName('head')[0];
-            
-            // 1. 設定蘋果專屬桌面圖示
-            var link = window.parent.document.createElement('link');
-            link.rel = 'apple-touch-icon';
-            link.href = '{icon_url}';
-            head.appendChild(link);
-            
-            // 2. 開啟 iOS 滿版模式
-            var metaFs = window.parent.document.createElement('meta');
-            metaFs.name = 'apple-mobile-web-app-capable';
-            metaFs.content = 'yes';
-            head.appendChild(metaFs);
-            
-            // 3. 設定頂部狀態列風格
-            var metaBar = window.parent.document.createElement('meta');
-            metaBar.name = 'apple-mobile-web-app-status-bar-style';
-            metaBar.content = 'default';
-            head.appendChild(metaBar);
+    # ... 中間的程式碼省略 ...
         </script>
         """,
         unsafe_allow_html=True
     )
 
-# 執行滿版與圖示設定
+# 執行滿版與圖示設定 (這行也要刪除)
 setup_apple_web_app('icon.png')
 # ==========================================
 
