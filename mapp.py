@@ -237,38 +237,58 @@ else:
 df_inst, df_fut = fetch_histock_tables()
 st.markdown(render_combined_foreign_table(df_inst, df_fut), unsafe_allow_html=True)
 
-# 🚨 8. 市場指標橫幅
+# 🚨 8. 市場指標橫幅 (6 個燈號升級版 + 月份標示)
 risk = data.get("risk_indicators", {})
 vix_val = risk.get("vix", "-")
 vix_trend = risk.get("vix_trend", "")
 usd_val = risk.get("usd_twd", "-") 
 
 light_val = """
-<div style="display: flex; gap: 8px; align-items: center; margin-top: 5px;">
-    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
-    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-    <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
-    <div style="margin-left: 5px; font-size: 18px; font-weight: 900; color: #cc0000; letter-spacing: 1px;">連三紅！</div>
+<div style="display: flex; gap: 12px; align-items: flex-start; margin-top: 5px; flex-wrap: wrap;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">34</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">9月</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">35</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">10月</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">37</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">11月</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">12月</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">1月</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
+        <div style="font-size: 14px; font-weight: 700; color: #64748b;">2月</div>
+    </div>
 </div>
 """
 
 market_banner_html = f'''
-<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
-    <div style="font-size: 15px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 18px;">📍</span> 市場核心戰略參數
+<div style="background-color: #f8fafc; border-left: 6px solid #1e40af; padding: 22px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 22px rgba(2,6,23,0.05);">
+    <div style="font-size: 24px; font-weight: 850; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 25px;">📍</span> 市場核心戰略參數
     </div>
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
         <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
-            <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">恐慌指標 / 匯率</div>
-            <div style="font-size: 18px; font-weight: 700; color: #0f172a;">
-                VIX {vix_val} <span style="font-size:13px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
+            <div style="font-size: 16px; color: #64748b; margin-bottom: 6px;">恐慌指標 / 匯率</div>
+            <div style="font-size: 25px; font-weight: 700; color: #0f172a;">
+                VIX {vix_val} <span style="font-size:16px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
                 <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
                 TWD {usd_val}
             </div>
         </div>
         <div style="flex: 1; min-width: 200px;">
-            <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">台灣景氣對策信號</div>
-            <div style="font-size: 18px; font-weight: 700; color: #0f172a;">{light_val}</div>
+            <div style="font-size: 16px; color: #64748b; margin-bottom: 6px;">台灣景氣對策信號</div>
+            <div style="font-size: 25px; font-weight: 700; color: #0f172a;">{light_val}</div>
         </div>
     </div>
 </div>
