@@ -2,44 +2,34 @@
 <html lang="zh-TW" style="color-scheme: light;">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>財經AI快報</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=2">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=2">
-  
   <style>
     body { 
-      margin: 0; 
-      padding: 0; 
-      height: 100vh; 
-      overflow: hidden; 
-      background-color: #FFFFFF; 
-      font-family: "HanziPen SC", sans-serif; 
-      position: relative; 
+      margin: 0; padding: 0; height: 100vh; overflow: hidden; 
+      background-color: #FFFFFF; font-family: "HanziPen SC", sans-serif; position: relative; 
     }
     
-    /* 鑲嵌快報的視窗：底部留 25px 的空間給遮蔽條 */
+    /* ========================================== */
+    /* 核心破解術：對付 iOS iframe 縮放 Bug */
+    /* ========================================== */
     iframe { 
-      width: 100%; 
+      width: 1px;          /* 欺騙術：先設積極小 */
+      min-width: 100%;     /* 強制撐開：這樣 Safari 就不會啟動縮小機制 */
       height: 100%; 
       border: none; 
-      padding-bottom: 25px; 
+      padding-bottom: 25px; /* 留給遮蔽氣球的空間 */
       box-sizing: border-box; 
     }
     
-    /* 戰術遮蔽條：用來蓋住 Streamlit 氣球浮水印 */
     .dummy-footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 25px; 
-      background-color: #FFFFFF; 
-      z-index: 9999; 
-      border-top: 1px solid #e7ebf3; 
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 25px; 
+      background-color: #FFFFFF; z-index: 9999; border-top: 1px solid #e7ebf3; 
     }
   </style>
 </head>
