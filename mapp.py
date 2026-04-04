@@ -167,7 +167,7 @@ def generate_anchor_audio(text):
         clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
         clean_text = clean_text.replace("重挫", "仲挫").replace("重擊", "仲擊").replace("重啟", "蟲啟")
         
-        full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉語為您帶來的市場重點整理：。 " + clean_text
+        full_script = "即將通往財務自由的大家，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 " + clean_text
         
         async def _generate():
             communicate = edge_tts.Communicate(full_script, "zh-TW-HsiaoChenNeural", rate="+10%", pitch="+5Hz")
