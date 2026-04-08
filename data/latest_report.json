@@ -1,8 +1,62 @@
 {
-  "updated_at_utc": "2026-04-09 01:43:17 (TW)",
+  "updated_at_utc": "2026-04-09 03:48:51 (TW)",
   "title": "全球局勢與市場情報 2026-04-09 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 49.53837404s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 49\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場訊號顯示，全球風險偏好顯著回升。美伊雙方達成有條件停火協議，直接導致國際油價下行，同時避險情緒指標VIX恐慌指數大幅回落，新台幣兌美元匯率也同步升值，這些數據共同證實了地緣政治緊張的暫時性緩解。資金流向反映出市場對於短期風險的擔憂減輕，轉向風險資產。在科技板塊，AI相關發展與儲存產業的積極動態持續，Meta及Intel等公司在各自領域均有股價正面反應。整體而言，在宏觀不確定性降低的背景下，市場呈現出趨向樂觀的結構性變化。\n\n📊 【重大事件：交叉驗證報告】\n\n美伊停火緩解地緣政治壓力 全球巨頭轉向債券與人工智慧板塊 (重要度：★★★★★)\n事實核對：多則新聞報導指出美伊停火，導致油價下跌、全球股市上揚。盤前數據顯示，VIX恐慌指數顯著下跌4.32點至21.46，同時美元/台幣匯率下跌0.17至31.74，顯示台幣升值。VIX下跌證明市場恐慌情緒確實緩解，而台幣升值則表明資金並未外流，反而可能流入或美元走弱。國際油價下跌與股市上漲，與避險資產的行為模式吻合。這並非情緒噪音，而是有數據支撐的真實市場反應。\n解讀：地緣政治風險的暫時性解除，直接降低了市場的系統性風險溢價。這將有利於全球風險資產表現，尤其對依賴國際貿易和穩定供應鏈的產業形成利多。投資人可關注風險性資產的配置機會，但同時須留意此類停火協議的長期可持續性。\n\n全球央行首要風險調查近7成最擔憂地緣政治 (重要度：★★★)\n事實核對：此為一份調查報告，反映央行決策者的普遍擔憂。儘管今日市場因美伊停火而呈現樂觀，VIX及匯率數據指向短期風險解除，但這並不與央行對長期地緣政治風險的擔憂相悖。央行的評估是宏觀且長期的，而市場反應是即時且短期的。\n解讀：這提醒投資人，即使短期地緣政治衝突有所緩解，其潛在風險依然存在，且是全球宏觀經濟中的一個長期變數。市場可能在短期內消化利多，但長線布局仍需將地緣政治風險納入考量，保持風險管理意識。\n\nMeta Stock Surges on 'Muse Spark' AI Model Release (重要度：★★★★)\n事實核對：新聞明確指出Meta因推出AI模型而股價上揚。此為個股消息，與市場整體情緒（VIX下降）並無衝突，反而符合當前科技股對AI題材的積極反應。\n解讀：AI技術的持續進展是當前市場的主要推動力量之一。Meta此舉強化了其在AI領域的競爭地位，顯示科技巨頭在AI競賽中不斷投入。這對AI產業鏈上的相關公司，包括硬體供應商、軟體服務商及數據中心解決方案提供者，都可能產生正向的連帶效應。\n\nU.S. Stock Movement | Intel (INTC.US) Surges Over 7% at Market Open, Up Approximately 30% Month-to-Date (重要度：★★★★)\n事實核對：Intel股價實質上漲是客觀事實。然而，在「科技大單 vs. 產業常識」協議下，若新聞未提及「HBM4 或 2nm 大單」等關鍵技術突破並與台積電(TSMC)的領先地位進行比較，我們應保守看待其長期競爭力。目前新聞僅報導股價漲幅，並未提供Intel在先進製程或HBM領域取得對TSMC構成威脅的實質產出證據。\n解讀：Intel股價的強勁表現，可能反映了市場對其PC及伺服器CPU業務復甦的預期，或對其潛在AI相關產品線的樂觀情緒。然而，在HBM4或2奈米等前瞻技術領域，台積電仍保持領先地位，良率與量產能力是關鍵指標。對於此類技術競賽的報導，應保持嚴謹的科學態度，聚焦於實際產出而非單純的股價波動。\n\n🔥 【市場情緒與壓力測試】\n今日市場的科學儀表板顯示：\nVIX 恐慌指數：21.46 (▼ 4.32)。恐慌指數大幅下降，從數值與變化幅度判斷，市場對未來波動性的預期明顯降低，風險情緒改善。\n美元/台幣匯率：31.74 (▼ 0.17)。新台幣兌美元升值，這通常反映國際資金流入台灣，或美元指數走弱，進一步支持了全球風險偏好提升的論點。\n\n這些數據共同構成今日市場風險情緒緩和的科學證據。\n\n💰 【台股影響與板塊點名】\n地緣政治風險的暫時性緩解與全球風險偏好的回升，將對台股帶來正面影響。\n受惠產業：\n1.  **半導體與AI鏈**：AI技術發展持續推進，相關硬體需求不減。台積電作為全球半導體製造領導者，其先進製程技術（如CoWoS先進封裝）與在HBM整合上的能力，使其在AI晶片供應鏈中佔據不可或缺的地位。與海力士等記憶體大廠的強強聯手，共同推動HBM技術的發展，仍是產業核心動能。相關的AI伺服器、散熱、PCB、組裝等供應鏈公司也將持續受惠。\n2.  **科技產業**：整體電子零組件、儲存設備（如SanDisk股價上漲所示），可能因終端需求復甦及新技術應用而有表現。\n3.  **部分傳產**：在整體經濟氛圍改善下，先前受壓抑的部分傳產股如原物料、海運（見2605 新興相關討論），在需求回溫預期下可能有機會。\n\n受衝擊產業：\n短期內，由於地緣政治衝突緩解，與避險資產強相關的傳統避險類股可能承壓，例如軍工股在短期內可能會面臨獲利了結壓力。然而，長期國防預算與地緣關係仍為其支撐。\n\n📈 【投資觀察指引】\n1.  **追蹤實質數據**：優先關注企業財報、訂單數據及產業報告，而非單純的市場傳聞或股價漲跌。數據是決策的基石。\n2.  **評估地緣政治持續性**：美伊停火為短期協議，後續發展仍需密切關注。避免因一時的利多而過度追高，警惕黑天鵝事件的再起。\n3.  **聚焦科技核心成長**：AI趨勢持續且深遠，應著重投資於具備核心技術、高進入門檻的半導體、AI基礎設施相關龍頭企業。\n4.  **注意資金流向訊號**：VIX、匯率等宏觀指標是市場情緒的客觀反映。當這些指標轉向時，應重新評估風險承擔能力。\n5.  **個股基本面審慎評估**：在市場情緒回暖時，部分基本面較弱的個股可能隨大盤上漲。投資前務必進行詳盡的財務分析。\n\n🏫 【曉臻財經小教室】\n今日單字：【全額交割股】\n全額交割股是指因公司財務狀況不佳（如淨值過低、財報不實等），被證券交易所列為高風險的股票。其買賣方式受到嚴格限制，通常需先繳交全額款項才能進行交易。了解全額交割股，能幫助我們「看穿市場假象」，避免盲目跟從股價波動，而忽略了公司潛在的重大財務風險，從而篩選出具備穩健基本面的投資標的。\n\n真理比對，證據為綱；情緒噪音，勿入迷航。",
   "news": [
+    {
+      "title": "AsiaInfo Technologies (01675.HK) has granted 1.5 million stock options. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOFZuQkdfMFJEYVlrUHZTbFNjbXBLZzlmT3lHSE1vSGdFUEJXbGloRGpfWGxFd3c3RkRRV01tdUxjWXR0N2lFQkI5VEJxNzdPdUNYZ0FvYk1MQWRtSEFBR3R5TWk2QkxoNkJOcmI0Q0JkQWpXZFE3OXoxZ21rUm51Nk9uS20tZFJuRHBGUmJrcV9MWHBTSkczckhsUHFPVENzVHZz?oc=5",
+      "summary": "AsiaInfo Technologies (01675.HK) has granted 1.5 million stock options.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-08T19:07:16+00:00"
+    },
+    {
+      "title": "地緣政治難以預測逢低承接不追高- 日報 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BM0tFSi1aaWlGNVhoY0paZGNxUTdlZ2tjVGZ6bXZBX2lGMm1pV29tLXpwVkFtZzVwUXg0eE5SSEVrNlRTb1JRLVNsR2o0d2tiYjNIdFpNbmtOMTl4SFZJ?oc=5",
+      "summary": "地緣政治難以預測逢低承接不追高- 日報&nbsp;&nbsp;工商時報",
+      "dt_utc": "2026-04-08T19:00:00+00:00"
+    },
+    {
+      "title": "全球央行首要風險調查近7成最擔憂地緣政治- 日報 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE11TE04dVhxSWRkMWYySE9vUHA5VFJ2eWpBdGc0QUhhY29FYVlxMmdYVkdvUlBpWTl3WE5VMEV1TjRSOW9RQk5qaEFXMEdaZDVBdVNOMjNaY2NIcUNaY19V?oc=5",
+      "summary": "全球央行首要風險調查近7成最擔憂地緣政治- 日報&nbsp;&nbsp;工商時報",
+      "dt_utc": "2026-04-08T19:00:00+00:00"
+    },
+    {
+      "title": "國防工業負責人對工黨軍事開支拖延發出警告 - arch-web.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxQN19iMDRDeDNWcU1XYVEyNGkzN3JyME5OOWZLeC1zOEVveS1iY3BmS2hTcGdROVJZaGdZcVRackxiaXVKbFFNRmtIU2tDaEdzakNENU5TNzNqWmh2SFVBdGdPaFRQS0h1VHBpZGpNRDYyc2FPdC1Fb2lzRVZFU1RUaTE3aFN0cXZUcVBRRk9rdWVOeGxoMTBJNk1Mbk9vUjVyaTBJbHFRS2xaYWhTMFZsSW9iTklqUFhvZWFQUlJiQWxYUDNZcURmWmVtenZrVFNnYVI0YzV5UlhuYkNoLWlCVzRXUENCTHctRmVOb0ZRZHhKb09WaUktYUtINnRXQnJfMnJ4cWdxVld5bTBNc2RpZEVIVUJ4amFfNXB1QkxZLUpGSjN1MUhsUjVWX3lqWlZramVONm12S1RyOVhnOHlUR256a2taeFJuNmNxangzYnlWZTdTcnhYVnliMUJPT0ZLVUlNWkVoTW9acERUOEE?oc=5",
+      "summary": "國防工業負責人對工黨軍事開支拖延發出警告&nbsp;&nbsp;arch-web.com.tw",
+      "dt_utc": "2026-04-08T18:43:29+00:00"
+    },
+    {
+      "title": "Meta Stock Surges on 'Muse Spark' AI Model Release. What Has Wall Street Excited. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPall0a1U5VWhmdFVwbGw0RTNyS2NUT3RiaUV6eGxpWWdIeXhiWGZMNE9fQzJOTmNCYnpXVnRtbVhNXzBpdlQxSDlINVdsZEdOT3FBSWd3d1NCSXU1bkVCZmlRTUlGN2RDa2NVOVdMbklQS01QbGNRbHFoeTBDUTVTZlV6SDdQeHk3RzNyUlFuMEZZZFM1YVNqd0p3?oc=5",
+      "summary": "Meta Stock Surges on 'Muse Spark' AI Model Release. What Has Wall Street Excited. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-08T18:31:07+00:00"
+    },
+    {
+      "title": "Meta Stock Surges on 'Muse Spark' AI Model Release. What Has Wall Street Excited. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPckp6bzU1elJpTWhZMzBfMWNwSGFQSElxbHNBbFM1Y1NyNmFmdjJCZ1hTWm9uV1JEUERRYUdWeVFRQXNGOVFGeUdWUXVacWJiZmFiOThScEhCWXdDV2hlOFRfOUMwMFhVdDh5MVNVMXdDZnQ0SVk1TG9ad1Jmb09za3ppdjFuRDdDcVM5azN0NWZOc2NRcGZ5OHlR?oc=5",
+      "summary": "Meta Stock Surges on 'Muse Spark' AI Model Release. What Has Wall Street Excited. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-08T18:23:00+00:00"
+    },
+    {
+      "title": "Better Home & Finance董事Talwar Harit購入33,340美元股票 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4wQUU2anVCc3B0dHJIbVJWRUdhVmNoWnlaQ0FVNGwyaUlrN19IQmk0b19JUGNZMUZfalBaM29TY3ZhMDBmTV9lUE4zaFF4LVNVNXFLVU5XQVg3aVd3akFya2JENnhNbEhEN2VIZHoxNjZtLWh4VWNuRUJNdw?oc=5",
+      "summary": "Better Home & Finance董事Talwar Harit購入33,340美元股票 作者 Investing.com&nbsp;&nbsp;Investing.com 香港 - 股市報價& 財經新聞",
+      "dt_utc": "2026-04-08T18:17:38+00:00"
+    },
+    {
+      "title": "Delta Stock Soars After Earnings. These Airlines Are Climbing Even Higher. - moomoo.com",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdmN0OV91elVLYl90c1Zkc1JEbUxiR2RpRW52dXQ5eGlJUnRwMHc2OFhuVTllclhYS2p3U3g0NmFJUHN6THRLZ29HZFlibVZvbFA3dXlSM1haWE5sR2d4R1dLSXlEdzhMa1NuclZKLTd5Qkd5eG9nS2ZrMUZGSnVQNlhBLVNKNmFIOXk3QmpsVEw3ajA0Zlp4V2JMLTY3RlZnWUpiQTBtZk14UU1BdFhuRUhB?oc=5",
+      "summary": "Delta Stock Soars After Earnings. These Airlines Are Climbing Even Higher.&nbsp;&nbsp;moomoo.com",
+      "dt_utc": "2026-04-08T17:34:01+00:00"
+    },
+    {
+      "title": "川普宣布與伊朗有條件停火後，油價下跌，股市上漲油 - arch-web.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMihgNBVV95cUxNZ1EzZmN3XzhzRjNQRTlsNkVWUFY0NzdiYjZtaDdlbW9KNXFZQ2dBeDhqdlFnYUxmWHl0LU4wYjRXSGIxakE3Q0NuNzE5MG1IRHA2T05qck56RV9TTFYzWnNiRjRDU3RCS2sxSEdRXzJsTHQ3MEM3VlN6MVdpTkk1MUFWemlJMTB6QVpTVW13SGFQdGtuMFZuTUg4dGhCNUVsYUpZOUNkMGZBWUt0bDFnQzJwYXltYVUtWkJWb3VYUkdYYkQwV25PajZIMmFCZ2daeGJ5QmtZa010c0lqYnFOd3FGb2VBNjE2ZEFMdlFDbnpMN1E4Vk56UDhkVm40ZmktN1haX2xsZUNTZHN4SU0wcnhHdFVjMFFXWkRQQTFyRlcydUxUblI3YVFGbWJneGpoZVJ2X1FsRGo2UWNQYW1feFZxT05aeTFpQThQUEdJbUpXVUhNMVJsZk50aVhBdFN2UUFSbFc0cml4TUJycWRYZ3ZuQW9vR0kzbGp4cW1FdW5GNV9sSmc?oc=5",
+      "summary": "川普宣布與伊朗有條件停火後，油價下跌，股市上漲油&nbsp;&nbsp;arch-web.com.tw",
+      "dt_utc": "2026-04-08T17:15:08+00:00"
+    },
     {
       "title": "2489 瑞軒 - 續噴 看好了😚😘 - 股市爆料同學會 - CMoney",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1HZ0h5T1lzVnlJN1ZGcUxBYkM4bVhON1Y4YU9RSE5yT0x0M3dFNjI4aGFpSVNORDdXVVdEUFNnaXJlSTlzcUs0cXY4MjVwcEEybWxxbFN6NTk?oc=5",
@@ -38,6 +92,12 @@
       "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlcU9MYmdUdjZTQURQZTRROEhBb3oxU0tER3JWaFFvb3ZHc1piOE1qNC0yMDdxQ0o0bUZlOV9MSDRlVVRCdEZadnFseHlPVmFrV3JV?oc=5",
       "summary": "mfbgixg5e7 | 熱門同學 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-08T15:43:19+00:00"
+    },
+    {
+      "title": "U.S. Stock Movement | Intel (INTC.US) Surges Over 7% at Market Open, Up Approximately 30% Month-to-Date - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbVFLS05adjhHWmJ6dHQ3eDNoUkJON2liQlFxWjRVeXJCWElHemRyRlRNNFJzN3ZfY0FNa18zaUZrbmJSUWZ1ZjlMR1RzU1Jzal9WTEkxbU43NmVGaDlNdmlPWW9VbThjODd0UG1RVkI1SnZpSFcyeVBLcUJaS3E0TGNRbDZiTGF4d283OW14eE1hQWpqMHFaamdjVQ?oc=5",
+      "summary": "U.S. Stock Movement | Intel (INTC.US) Surges Over 7% at Market Open, Up Approximately 30% Month-to-Date&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-08T15:26:50+00:00"
     },
     {
       "title": "2026/4/9悄悄的當沖標的- 股市爆料同學會 - CMoney",
@@ -326,72 +386,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA3bFg1X0RGOGZwbWpZOWx4a2RGYWFnNG5RU3ZCNTRBZDVTSlhta0VqTXNCQXFTcmhNTVJiajJtaHFrTmNwUVA2Z0pTWHl5N1JLdDdFSnpBQUQ?oc=5",
       "summary": "1314 中石化 - 應該是高雄土地成交買出消息- 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-08T10:49:47+00:00"
-    },
-    {
-      "title": "1314 中石化 - 入帳利多消息嗎- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ISHo3WEpiVDFFcDdzMWU5UmJqWlFtSDFoVFNvUllra0RZSl9LaVV5MnNQcFVvYU8xU1p1aXRTaXdrajNvWGZNalFacU1YUmxsUmMzV0ZHZEg?oc=5",
-      "summary": "1314 中石化 - 入帳利多消息嗎- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:49:44+00:00"
-    },
-    {
-      "title": "1605 華新 - 灑花和灑蛋，有什麼差別 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE92YmFVLXlCUkVfTE9fX2N4X2ZxTFAzdy1tNDR5LWRHTTBqNHI1UFRvOUZCclVoamwxREp2UUhGVFdodm9GQ0VRU0J4YV9sbXpFbVloR1FReEQ?oc=5",
-      "summary": "1605 華新 - 灑花和灑蛋，有什麼差別 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:44:37+00:00"
-    },
-    {
-      "title": "服務台泥逾50年！台泥綠能董事長呂克甫因病辭世 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNdVZrR2Zjby0tMUpraEtSZW11bHlzQjRMd3JaaDlZLWJpSGlyTU44Q1RqVG41SUladjlUVmtTUnBMZWw5aE1YZ2JlOGN6dlB6ZXVVUEQxc0NDN3BmYl9VWFBQNUFQVTlPV2ZfLWYwVWJuM0Y5b1hrWGFnYkpKcUVEb1Q4c0pWM3FUenpXYlg1aFpYLXhRQTltRzUtNEJpeUZqa1JWSG05OGZOU0xWb29nT0s4eHVkQXdjaXgzY2JBQ1NSZlRMWDhLUTVLSGtpNFFyQVNDZ2hVZVJRaXIyN1FjbFRMRTEtaXNfOFJ0XzExekpsUmtzWjktZmtGVVV3TU81eW9mVmYwOF9CSEh2M3Vrcm5hLXFtRF94bGxlbFJubVZ5RTFYckljVXlvN2dCTFpSZlFGR3BjYWhGV0wwbUdzZjlJNUJmUHdaY1Rlekc1RDRVdDNaMlYxcTRB?oc=5",
-      "summary": "服務台泥逾50年！台泥綠能董事長呂克甫因病辭世&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:42:29+00:00"
-    },
-    {
-      "title": "3149 正達- 借卷利息4% - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5INE1TM2tHZU1tMkFVZlBlUml1N1hnbloxZlpWM2hqLW5pTEg3RnNOcjdGZk5NenZDenU4MHhRNlhsbXdzU3ctbE9vNFRSV2FQY0FuVk03VWg?oc=5",
-      "summary": "3149 正達- 借卷利息4% - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:40:41+00:00"
-    },
-    {
-      "title": "5483 中美晶- 冷飯熱炒，目標價140$ up! - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5IOTFtM3ZnNHJEYTJYQVhMUmRvTnE5WTdIVWppWWFrdEFrMjdnMWt5dlpuUnpVQ0tpanViN05uMkIzcl9PZnR2SFVEMWlZYW04RjJvRVk0OG8?oc=5",
-      "summary": "5483 中美晶- 冷飯熱炒，目標價140$ up! - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:40:09+00:00"
-    },
-    {
-      "title": "2406 國碩 - 收32.6雙月線 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE01djRGbGduODg1eWpIUU1sOUYwQ1Z0c0dNMy13S2lXLXlQTkNISHFVQzlwYU5wV0Q5RlA2TlFvY2gtVnhnak5CSkpBdlRnemh2Ynp1VkhWdnI?oc=5",
-      "summary": "2406 國碩 - 收32.6雙月線 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:39:59+00:00"
-    },
-    {
-      "title": "2363 矽統- 今天大盤救了你- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9mRXdzdXl4SndVRjdiRmIzTkZmRDJBX0oyU243UTV2VnRDWkRHY21RY1Jzd2x0Mi1wbWw0N3VLUEdtN0lTNWxERzg0OGppUUhlMW9RS1ExNjU?oc=5",
-      "summary": "2363 矽統- 今天大盤救了你- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:39:40+00:00"
-    },
-    {
-      "title": "2208 台船 - 慢慢蹲吧庫存12張 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1KUVN0NXYya0hlMmFPVGY4eDMtc0hXRWpaLVFQeFpteXFVMkEteW9kUlpBZ2tNZjFhVUkza1N2VmNyWEFDYk9CNVY4WEd0RER0OGpfeWtnNXE?oc=5",
-      "summary": "2208 台船 - 慢慢蹲吧庫存12張 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T10:38:51+00:00"
-    },
-    {
-      "title": "金融三業首季遭裁罰1139萬元大減！剩不到四分之一 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3AJBVV95cUxQNEl5VUs1Z0t3WkhYLTlKckdjYXhRX3o0cElPQzdOeHo1RmdZOXI5emxoY1FOZG44TDZHTnhid2RfdzdqSjRoY05jX1pXWDMyZ28zbTJVaWVHQ0tnLVptVERtbGhBVmNoMERqUEVYM0UyVktuelNOVk1jQ3JmYXFLWGNkeV92SlotN3hpbWdyN1UxLVF3WlF4NGROTERiZ2lZN3FvU05mRTktWTE1NFNFZTlsNENhemc0T21nbTB2aXFBeXlSRFBLMEExT0tmVXF5eTl5ZWtOWHpLczJOeDlVdUlwbGhSaTFnOGExSDZ6cW1RcV95Sy1INU5HeWx0NmtJSGNqLUFiYWtWM0ZiN1pEMVd4aVVNU1lzX2hyOFFYNjlvTkdoOWo3WUN5RzRZYm9pS1F6alE1RjdaaDJMRlktZTYyYWFhT0duTC1WdmxoVFlLUUU2Z1daZHZEZW8?oc=5",
-      "summary": "金融三業首季遭裁罰1139萬元大減！剩不到四分之一&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:32:19+00:00"
-    },
-    {
-      "title": "【美元高利】合庫美元定存最高享年利率3.7% 承作門檻一次看 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxORDg0R0VvQWljeFVoWmt4aklhRjJNOWdLTlpqY3dwWjVMNlZxWXBQeFRLOVBYOFJyNUstcUZJa2UzZ0N5VzhRMjZPNW9vREEtckdQbmZSUUFJU3FuUC1vQ1pXaUpxaGVsNFZ0b1hWRzdVdmxhQ2dsSUNOUFNnZi1vMEtUYmd0MW5HVE5ZeXJNcG1wSWd4RzdVWlBRczExVDZGREVjbUp2Z0c5MkxVNEpYS1FFajVIWXdxTGlwZ3plTlY3OGQyRGl1cVBxckx2R3NnNnd4NUtNLUF1Z1I5a3JNeEJ5QmRvNUlMMlBGR041T0RlZHZZN0d2VXM2WmNCRXE1dThtUkxRMHlRUXpIQ1pyWG9IVUZCd185ZWdOWTd5SktnNl81enNEUUM3ZTNtMk40YmdReG9CcW1Vb19GYkZmd3BfQ19ZZlpsMjZsZzJLeGNqaEZwQ1R0cnVoNkJYOG9xanN6bk5HNzBMamtUMjBVcTA0WG1McllxTmJ5eEtiZG1QbzlWQ1M0Z0tUYw?oc=5",
-      "summary": "【美元高利】合庫美元定存最高享年利率3.7% 承作門檻一次看&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:23:29+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "21.28",
-    "vix_trend": "▼ 4.50",
-    "usd_twd": "31.73",
-    "usd_trend": "▼ 0.19"
+    "vix": "21.46",
+    "vix_trend": "▼ 4.32",
+    "usd_twd": "31.74",
+    "usd_trend": "▼ 0.17"
   }
 }
