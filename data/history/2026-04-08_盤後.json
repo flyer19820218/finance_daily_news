@@ -1,8 +1,20 @@
 {
-  "updated_at_utc": "2026-04-08 22:12:22 (TW)",
+  "updated_at_utc": "2026-04-08 22:28:21 (TW)",
   "title": "全球局勢與市場情報 2026-04-08 盤後",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 29.432501156s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 29\n}\n]",
+  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 19.05028897s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 19\n}\n]",
   "news": [
+    {
+      "title": "U.S. stock movements | Unity rises nearly 8% as it extends multi-year partnership with Meta. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaVRmdi1aNkxRdnU3Xzd1YUdxZjY0cVJpQjhEbk1vcEV2S1JLMmYtTFFOa2x6T0R0eV9ZemhkTTNlTWNEVU5JZzIyVUFoa0NfczkzdGl6RnlpTzZKczV2UVFHdzBvOGc5aFRzSS1LQ3FXRjF6SGdyR0tGTjJwTWNkWmp5Si1qVDFUQzMyY2V5UVQ5YS1pVFI3aTdB?oc=5",
+      "summary": "U.S. stock movements | Unity rises nearly 8% as it extends multi-year partnership with Meta.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-08T14:27:24+00:00"
+    },
+    {
+      "title": "Lion Finance Group將於5月7日公佈第一季度業績 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBkUDJ3dkZDNWJ2U0dXSE5CTm0tOVNvTTZBVW4yeFEzSG9Xbkh3czJuSzVraWY5cjlma0daaUlFM09zMDdLcTB5MmFfQ1hyWFhYVjcyZVNNX05PelI1NzFHRTA1el9MM3NoZ0pEaUsydl8?oc=5",
+      "summary": "Lion Finance Group將於5月7日公佈第一季度業績 作者 Investing.com&nbsp;&nbsp;Investing.com 香港 - 股市報價& 財經新聞",
+      "dt_utc": "2026-04-08T14:19:46+00:00"
+    },
     {
       "title": "伊朗停火後油價暴跌，股市飆漲：NPR - arch-web.com.tw",
       "link": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQbFMtLThwNm9mNVNKSmotRjdZX1lWYnlQV1kzcWQyY0xUSlU2Q1NZRUJuRzVlaF9nT2tpZDNNTzd2eXZ0ZW14Q1Fwa3hWSVNLQlAtOUQwQ1ZkQXdvX1pRVFotLTR2WVQxbHRvVTRFUTl2MFZuTWhKYlBhZGcyLWpucEhpV0dLSGdXVzdsUzItbmNmbzNRTzUxWE03c1djS0dOSEF4bGxtTFFmTXpPMG55VmVJaFNmMzBjUFdsajU4U29QWDFsWXRtZWtWZFFKTHBCUnJhVGRJLUhiNmNOVEgwdExlZW1HTFdMT0lKMEZoOGpBR3dQeDJEOEticlZsUW9scHRKclNQVzBGXzdYMU1pVUlGTF9ZZ283eUVUOFUwT01TZ2pIcDE5bEFoSmJmRDVwWWNSVXBn?oc=5",
@@ -374,23 +386,11 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5LYlRoWEdkc1hUYVZLbV9lZExBQ0lNSzc0U2liYzl4NnVrSnU5dm10UDYwZXRXZlJ5VjFCTF9OOUVkZ1pBT1RWU2tjMjk5ZkhSZjFENno3cnc?oc=5",
       "summary": "6214 精誠 - 精誠股利：現金6元 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-08T09:22:33+00:00"
-    },
-    {
-      "title": "U.S. stock movements | Tesla rebounded about 5% in pre-market trading following a major technological breakthrough, with the release of FSD V14.3. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZHRUT3Eyemx0RmJmLUdXMkt3eHZWR2VPRjRaRVZjTDNGTHdzd2pxTW04cXJQcjJYXzdqTG9YQk0zLWpfdnlCVlZwaWxfQjNPY0pXaFhINFhEUWlyN2VuNzlPdXlpenltSXJ1TXI1LW5KcFVBUHFlM056Q2VzNExvcTJIRkRZbTNxUmhxckFUZ1JCdWRqRGdwa2NRNm9qZw?oc=5",
-      "summary": "U.S. stock movements | Tesla rebounded about 5% in pre-market trading following a major technological breakthrough, with the release of FSD V14.3.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-08T09:18:47+00:00"
-    },
-    {
-      "title": "8069 元太- 3月 32.5億 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9EOC1nVmFsMF9MaFc1VmM0YzZwNnlSWWZiUDdZT243YVdNem44S3QtZkF2ZWFvT3NrZUtFVGwzUXdHSHF1azdXOEIwZ1JDU2ExdEwyUTlWNUc?oc=5",
-      "summary": "8069 元太- 3月 32.5億 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T09:16:43+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "20.87",
-    "vix_trend": "▼ 4.91",
+    "vix": "21.04",
+    "vix_trend": "▼ 4.74",
     "usd_twd": "31.72",
     "usd_trend": "▼ 0.20"
   }
