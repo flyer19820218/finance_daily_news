@@ -1,8 +1,32 @@
 {
-  "updated_at_utc": "2026-04-09 05:26:25 (TW)",
+  "updated_at_utc": "2026-04-09 05:55:42 (TW)",
   "title": "全球局勢與市場情報 2026-04-09 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 54.467621196s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 54\n}\n]",
+  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 1.331056678s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 1\n}\n]",
   "news": [
+    {
+      "title": "深海採礦股暴跌25.5％！TMC遭地緣政治與高估值雙重夾擊，能否翻身仍待審驗 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5IUEpKNGdPNGJLdml6bTBuZG50SWdRWFFpcEhpOUotanRwT1g4bEd2YXFFZ1VPWnFxM2ktUzd6RlFiRzBLaER1ajdnVXFSTzE4Q2U0QUZVX2FKNDVqQm1iVmluekJ0dUk?oc=5",
+      "summary": "深海採礦股暴跌25.5％！TMC遭地緣政治與高估值雙重夾擊，能否翻身仍待審驗&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-08T21:39:03+00:00"
+    },
+    {
+      "title": "4123 晟德- 好股- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ZdGRsOTZUdDcwSmtRT2lvMDZ5X0dhMEVRdmJFazI4cVJSYXQtS1ltcFNIZi1uQXIwejQtRGozZm92ZFpyUnJMdkpxSXl4TUphRWdZc1psd2o?oc=5",
+      "summary": "4123 晟德- 好股- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-08T21:37:10+00:00"
+    },
+    {
+      "title": "台股40千金盛宴 14檔漲停 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5oejlyM1lDRzJQVVZoZTRXQTBiQ1Uxb0tPaWRwcHRuSEYwY3ZjNUtZdVVtdmtQQmdEcnpRUGx4WVJqVDZxVzQ4ZGdvcHc0MHJn0gFWQVVfeXFMTldvYU9DV0RnSElUZ21zbnJ3YUVCTjVEOHBzYVRLMUdCdU5uUWNya09XSHJnLWFDbE1ySzFfZW5yMGFFeVRabWcxMDJVcXhFT0ZRLWxvaGc?oc=5",
+      "summary": "台股40千金盛宴 14檔漲停&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-08T21:30:11+00:00"
+    },
+    {
+      "title": "美伊停火 全球股市大漲 油價崩跌 - 自由財經",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAtTXJqUlBwNjl6YmFxdks2YWFyOEE1dGwxYlpJSEoyOThuRWZreGNwT2xqbjNkSm9GQzNJZkdQZHRsX0ZUTlZEWHhxcFBNQUNYamN6Z2dn0gFbQVVfeXFMT3FCSVB1Q2J4Z0QxX0hFcFRFWVVZd2FjdWVWWE4wR0hwV3JHTXQzZ1hhM1hqY3BXUG5qOXN2S3Mta1hUbmxzRl9uSEtkNGFOVlBlVWthTHFnbkpiSQ?oc=5",
+      "summary": "美伊停火 全球股市大漲 油價崩跌&nbsp;&nbsp;自由財經",
+      "dt_utc": "2026-04-08T21:30:00+00:00"
+    },
     {
       "title": "The U.S. stock market rose, driven by optimism over the ceasefire agreement. - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMk9TVEVxYm9VcnhnamFIOWZzQjdCY3Y3MldJMmpCVDBjNHV4TjlJbG92ejFWUjZ2RFdxZ05kNm5QRXRJSEt6a1hmYk55VnNnZmZXRjJVbjV5d2hwOFZOSW02MHdwWmJkVjBEellvUUU1aHJWYUEtY3gySTZHYjcwTnhKMy1Rei1ieURrVXRiVHRuWlVEZjBJVQ?oc=5",
@@ -56,6 +80,12 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9WQW0ybmNqbFRhWXZTdFV1eUR4R1dYazk5WnhoZEtnOWZuMkZsUmIyOUk1X3NkRGRFbTNzYVhNQmpVemZxM3EzdEl6bVZSNENs?oc=5",
       "summary": "美伊休兵油價急跌全球股市嗨翻天| 全球財經| 全球&nbsp;&nbsp;聯合新聞網",
       "dt_utc": "2026-04-08T20:10:25+00:00"
+    },
+    {
+      "title": "台股被動ETF旺 前十強犀利 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPdjFOWW1vaUxndXlRR2FvRlcya1RMbkZMQkIzWHJPVHNLc1RIWkFwc0dCQzFzLWFzVTVReTM2dDFSb1AyVUFxU1dqX2Q2aU0ydjVDS2UtUzZJdEdtLVhEaXFmS1lUV281OHpRZFpmREZPeHRnLXo5dDVBZVB3YWZYbFltUk5IT01NR2s3OFBianVlSHc2SHI5aUhoNkNrYkl2Nng0bUpqdUROdFdXRF9PajZKaHc0NlkzTi1ZQW45Q2tLSHJ3TTNpSjl1RnQ4LXR1VWZaczF1LXg?oc=5",
+      "summary": "台股被動ETF旺 前十強犀利&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-08T20:10:00+00:00"
     },
     {
       "title": "全球央行首要風險調查近7成最擔憂地緣政治- 財經要聞- 工商時報 - 中時新聞網",
@@ -194,6 +224,12 @@
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMDRjNEtUaGktTnRSTVpBeEM4V1Utc25GUDF5NE5fQWtEZV9sSUJKT2RCVFBCUjhsajQ2RHBkaFg0OThOWTJYYU4wYS1pcWtCQ2NuRGtWMkYzTEgwVVNGMktlajFOd3JqZ0FHTmJ4WDltZ0lIS0xGM000eUx6TS0wR3RhVGNnWFFrdy1Nd3VvN0VXdDAzSmt4dVJaT0d1ZFBPV3F2b2l2Ul9BcFc4?oc=5",
       "summary": "U.S. Stock Movement | Collective Surge in Storage Sector, SanDisk (SNDK.US) Rises Over 10%, Hitting a Record High&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-08T14:53:12+00:00"
+    },
+    {
+      "title": "今日經濟 - 美伊停火兩周：油價大跌，股市大漲，但憂慮仍在 - rfi.fr",
+      "link": "https://news.google.com/rss/articles/CBMipgNBVV95cUxPX3Vmc01YektJQzloTzdENFNWaEg4YkJzYlNDMktUazF1Vm9ZVDV0SVd0ZUtTc3d5cUhXRzl4SkszTkR2ZVpDbnljTDVCNE9KdEZ4a2cxS3ZnRnptS2xnMlBPWHdPeWNjTGtyeTRMMzlWY1NRaXdOZjJhUVhiRGV4VS05YzA0cU9vMXlUajJPcWMtOEl0elVGaTJUdlJwdXhHQW5KY19EeWZhaVk5R3hDWUdwTWRJZGc0cW5LNzdwWTNsVVRPZkUtWWlSdGFwTHJFbkV1UlFhVzFLRWphYjZQSnNNTUlwVjFYYnBBOTdrNWs0RU5xa1lPMHM5SkZKV09HVjJLd0h3djFKSXk4SHU5UXozNDJQYUxWYWl4Si1zY3ROTDdkOUcyTC1hZmpRWG83WTRSVlhvS1ptZlAwdXhhN3JZN0ZjTFhnU29BUGFTNlRQMGVxamgyM3RBd2lDN280XzJuTktkclYxUXJGOUNDZFR0akxaUDFPNVVSQVZORFNNMy1rcGdvb2NFVUs0LWFUVVpEX3NKLXdrZjZsSXY1eWw3eGVzUQ?oc=5",
+      "summary": "今日經濟 - 美伊停火兩周：油價大跌，股市大漲，但憂慮仍在&nbsp;&nbsp;rfi.fr",
+      "dt_utc": "2026-04-08T14:36:41+00:00"
     },
     {
       "title": "今日經濟 - 美伊停火兩周：油價大跌，股市大漲，但憂慮仍在 - RFI",
@@ -350,42 +386,6 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rVG9OUzdSdjV2bkpLVEZMMm04WTJzSE1DbHI4VzFCSVZjcjdnN1BtYVd1R19xdWJNOG10czdjeTE2SDZXMXRzb3FSNlo2MGt6b1VTempsdkE?oc=5",
       "summary": "1711 永光 - 太棒了 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-08T11:44:15+00:00"
-    },
-    {
-      "title": "股市作手「Peter陳」炒股獲利2.6億 通緝期間繼續炒! 北檢起訴求刑16年 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMitwNBVV95cUxPUzE5VmxOVU5sdUt1b1lEaTdBcldwa3JldzBobDZ3anBORi16NG1OcWxBQS0tX0FPV2kyaU92eTJuZmdBYzRiUWt5OXBvcDh5SFhPQUdsUkk3b1NLUTZFRlhqSXJZRmEyYkVqYVFLdzFEZzNwNHNjVE96aU5hUXI2dFJBZW42RkRaczRxeU91S0NQeHk2OFd4ZXhEZmtyOWxnYUZ0aFZaNy1uaDNjQnM1bHhGcm81S3djZ2k4bTRWcFZ1WWJBRk1BNExNRXNPekpTV2Y4S0RWMmxxYjBIRUlrM0FzWGNVa2VQa1BHYlNocWVQM2s5cmVUb29wNmc5cngtM0ppOWYyRnl5dkRVa1h2bXdBdU1La3JJQWJFR3hSNWMxSktiMFRTUGV2b2lFRl9MblNQZzJ6LW1VbVhMS0JRbTRmUHBtdkdzdmI2bGZreDFSemJ6TG1VY01SbnNmRkVSZ0F5b0laVnY1MUlrSFBPcU5pU3U2TnhpUTBsYmlscUVLbzBBX0h3MG9VbDgtMkhJQ3lUdzFoZTl0Yk1vUU12ZjNHaUNkaUUyTnU3TnVtaHZoS0dpalRR?oc=5",
-      "summary": "股市作手「Peter陳」炒股獲利2.6億 通緝期間繼續炒! 北檢起訴求刑16年&nbsp;&nbsp;MSN",
-      "dt_utc": "2026-04-08T11:43:55+00:00"
-    },
-    {
-      "title": "2303 聯電 - 【04/08 投信買超排行榜】 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5xVTZHaF83d3ZFcnRfWXdBZ1Z3bkxEaEg1LUtjdWk5U19Qdy1GSWdGMWNSN29qX2kzM3FESFR6ZUoyQm1QVWJWd05fOXZTUWtuN2FtREZ6RHg?oc=5",
-      "summary": "2303 聯電 - 【04/08 投信買超排行榜】 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T11:30:14+00:00"
-    },
-    {
-      "title": "【即時新聞】美伊達成兩週停火協議！國際油價暴跌15%，美股期指與全球股市狂飆 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNM2VGSjRUa3paZEdoX3pEbGpGNlRtcXE5Vjd2TmIyQ3ZDUEpfSWR1WTBMeU9zbnljdkUwQWRlNGtrcktWUlF0Wk05SlgtWE8wNWxvdDk0WXJuQ2lMandpVm5Hb0Q5ZHdWRHhUSEpmQ1J1NEVWY3hfU3YwYUt4VHRwcTVYdDBZbllLcE9pUWptb0k?oc=5",
-      "summary": "【即時新聞】美伊達成兩週停火協議！國際油價暴跌15%，美股期指與全球股市狂飆&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-08T11:27:00+00:00"
-    },
-    {
-      "title": "6122 擎邦 - 不是說了 48 49盡量買😎 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1QeXk5OU5KNkg3LUM2VFJtZnE0cVltRFh1bTZGVWJZb2pKU0JBMXQ2M2pNQm5wbzRUUXV1d1Q4eHE1VzVKeUdhUnljdEJIYW1JR0xDbm1seHQ?oc=5",
-      "summary": "6122 擎邦 - 不是說了 48 49盡量買😎 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T11:26:50+00:00"
-    },
-    {
-      "title": "3231 緯創 - 今天先這樣 慢慢加溫😎 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE81bHd0VUlOV1gyajhVRG5EMVYxeEl1alFJdURTVVE2ekZ4ek5lUUxKNXZvcmVGYWlRYjZhLUsta1FDUXBtRFZQbmpEenktUFpRNmJULUd6b1A?oc=5",
-      "summary": "3231 緯創 - 今天先這樣 慢慢加溫😎 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-08T11:26:17+00:00"
-    },
-    {
-      "title": "Better Home & Finance股價因公開發行定價而暴跌 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9BclhJak1vX2dtX0JZTGluVk5vM1ZqWllwQ0JBSTlERnVpYVZna0QwemdoVXdnYWtiSTIzeHp5cjdrQTJUekl4dmVNRHNoelZMbjlXbTRicGpneU1pb3FTdWFmMGV1TjdGa1lGaWNhOWp6ZEZ0a3Fn?oc=5",
-      "summary": "Better Home & Finance股價因公開發行定價而暴跌 作者 Investing.com&nbsp;&nbsp;Investing.com 香港 - 股市報價& 財經新聞",
-      "dt_utc": "2026-04-08T11:21:43+00:00"
     }
   ],
   "risk_indicators": {
