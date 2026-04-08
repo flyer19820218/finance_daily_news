@@ -1,8 +1,32 @@
 {
-  "updated_at_utc": "2026-04-09 00:02:36 (TW)",
+  "updated_at_utc": "2026-04-09 01:43:17 (TW)",
   "title": "全球局勢與市場情報 2026-04-09 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 3.59518791s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 3\n}\n]",
+  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 49.53837404s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 49\n}\n]",
   "news": [
+    {
+      "title": "2489 瑞軒 - 續噴 看好了😚😘 - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1HZ0h5T1lzVnlJN1ZGcUxBYkM4bVhON1Y4YU9RSE5yT0x0M3dFNjI4aGFpSVNORDdXVVdEUFNnaXJlSTlzcUs0cXY4MjVwcEEybWxxbFN6NTk?oc=5",
+      "summary": "2489 瑞軒 - 續噴 看好了😚😘 - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-08T17:05:42+00:00"
+    },
+    {
+      "title": "整理包／美以對伊朗軍事打擊 4．8最新戰況 - 世界新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE16X0FzQURfZ2xKdjFvWlBSeElBaUo2ZHpOeVFEQnRSdzBzbnhfNnpneFN2TjRMQ3cxdlJPeXdFZjUtNV9GNnNfbUJPb1lEMGM5eG42OF9Qam1Xb19mTzRVNW1B0gFnQVVfeXFMTTBKcXJiZE5Cd0YwZjVBTTY2eHd1T1IwMTJxdm85RFFKRkV5bzY0V24wYnhPLUFiSWZXdExLREtuTWxDOWFpZzZiTUVzbzRhX1VNNnFMdV83bnBBcXhBSVMtck1OcThSTQ?oc=5",
+      "summary": "整理包／美以對伊朗軍事打擊 4．8最新戰況&nbsp;&nbsp;世界新聞網",
+      "dt_utc": "2026-04-08T16:49:58+00:00"
+    },
+    {
+      "title": "【軍事好好玩】飛行員求生裝備 關鍵保命符 - 青年日報",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OZk1KYnI4VDZlU0ZWMXhncERkdUk3YXdFSnZxTG00S19aUHljeU1HM0JIQ0t3U0YweEZWVnhJcGU0VDd5R1EzdFBWYUN1Q19rb0I3N1dSUFl1TE1FTUYxcDJudjlwRW91TVo0S3VR?oc=5",
+      "summary": "【軍事好好玩】飛行員求生裝備 關鍵保命符&nbsp;&nbsp;青年日報",
+      "dt_utc": "2026-04-08T16:22:07+00:00"
+    },
+    {
+      "title": "股市中長期布局 時機來臨 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1ZZEpIR0otZXFTN0lIUE5BNUt1RVVaWUJ6TXVqMnpNQ1l0MlZsdzFoUTNJa0dIa0RoOWFQU0VFaGIteUl6NHh1TmdfbWdRRVZhTU5YUTFJVDdhek1BeVdZbVBkaV9aWVBBNnFjcWw2UWhydlRhclY1TmdScGnSAV9BVV95cUxNYkNiMjdBUV9fOGliVFFrUkZSVzd5QllKbHlHT0dEa3FKdlphcVZ4UWhZUDg4bVFSLVpYSzB4ZE55SmN1OVVxYk9RVXhZOUlIOTIyUkUyS201eGI0bk1UUQ?oc=5",
+      "summary": "股市中長期布局 時機來臨&nbsp;&nbsp;經濟日報",
+      "dt_utc": "2026-04-08T15:58:03+00:00"
+    },
     {
       "title": "股市中長期布局 時機來臨 - 經濟日報",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE80M2M4Mm5PeXFzeFJVeVJsTGViWldVRHhKU2hnWW5xM2NUZkRnZGlMQldGYW1jOWVtMHVoOV9aRUlFTlRtUFoyLXdiQkhoV1Zhc1dZQ3JiUTg3a0FlUHd2WUx4VWJYd3dLcnRoVEZIX2tQbExfLUtIM182cUvSAV9BVV95cUxNYkNiMjdBUV9fOGliVFFrUkZSVzd5QllKbHlHT0dEa3FKdlphcVZ4UWhZUDg4bVFSLVpYSzB4ZE55SmN1OVVxYk9RVXhZOUlIOTIyUkUyS201eGI0bk1UUQ?oc=5",
@@ -220,6 +244,12 @@
       "dt_utc": "2026-04-08T11:21:43+00:00"
     },
     {
+      "title": "LINE付費版第二波上線！每月回饋逾400元 10大會員功能一次看 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxQanZjbEpLNmNTOXh6Y1FRaUhTekh4ZURUd2hRLVFSYVFuUERiLWVpSGExR21LOWczM1kweFpacUtYOGpTbnh2RVAyWC13Qk8wVFptVEsydUNFZVVRUzJwSlJBSHBSSHRJdFcyREdoT2ppbWM1WjBsZkliN2s5aURTYjFQZ082elA1Z3J2NGdUeGJ0aUY3dk1YcVN0MDllZ0l0alRrcmZJTnozbkV4T3MzYlY4ZjVONjduMmJmUmt5QTlNRmJrQ3EzRFU0RGp0RU91Q09pbmNLeDdYSmVFdWM2c010LWd6amcwVmFiajNyOUx6dVBadnRpdlBhN1ZBOTdBYWJydGV4bl9GSFVFUDJ2SV9lS1dCUS0xN0UweFJ5dk9Fa285Yzg0a0I4VHN2cmJvc2VpdWNqZElySTBYc2hIMXA5Mk1HQ21SQ280TXJiNUNidVJCRlJTS29WUTBaUlVFU05TVHI2XzJ1cGNNMHNDRmtMMWVVOERac2pLeA?oc=5",
+      "summary": "LINE付費版第二波上線！每月回饋逾400元 10大會員功能一次看&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-08T11:20:22+00:00"
+    },
+    {
       "title": "辜仲諒豪砸101億買進台泥 持股5.26%成第一大股東 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMitAJBVV95cUxPZVhqZnhQb2NIYUh2Yjgway1WXzZCVUg5bURBOF80b2ZnYXFRelE1UW9wWU9qb0Yzem91X1pJa0Q3SlpHWEV3UFN5Qi1iMXludnpDZVZxYnAxb1NHQzNkSEItZm1EaVdpSG1jWjBzeG0tNXU0V2hGd2hBUGxuaUJPUWlZMHJlLXhfVjlYd3NSWnVSc2VlSU5BeVdTNjVFVFp1UGNwckFJdEdUYzE0a1BrM2xzSk9FRlVyZW5CY1NjME94bVV1WlFhd2pGQjZLdlh2cEJJY3hUSG1NZzhjb3VOMExaNUh5cnFVVDdrSTRyNTVFWVktbzI3OVk1NWNJUERQZ085ckRhNF9FZXVEUnVwN2xnbFZhWmpCSTF4T0ZtRTJDX29nZUo4clZtSDBaRFpmQzYtdg?oc=5",
       "summary": "辜仲諒豪砸101億買進台泥 持股5.26%成第一大股東&nbsp;&nbsp;Yahoo股市",
@@ -356,42 +386,12 @@
       "link": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxORDg0R0VvQWljeFVoWmt4aklhRjJNOWdLTlpqY3dwWjVMNlZxWXBQeFRLOVBYOFJyNUstcUZJa2UzZ0N5VzhRMjZPNW9vREEtckdQbmZSUUFJU3FuUC1vQ1pXaUpxaGVsNFZ0b1hWRzdVdmxhQ2dsSUNOUFNnZi1vMEtUYmd0MW5HVE5ZeXJNcG1wSWd4RzdVWlBRczExVDZGREVjbUp2Z0c5MkxVNEpYS1FFajVIWXdxTGlwZ3plTlY3OGQyRGl1cVBxckx2R3NnNnd4NUtNLUF1Z1I5a3JNeEJ5QmRvNUlMMlBGR041T0RlZHZZN0d2VXM2WmNCRXE1dThtUkxRMHlRUXpIQ1pyWG9IVUZCd185ZWdOWTd5SktnNl81enNEUUM3ZTNtMk40YmdReG9CcW1Vb19GYkZmd3BfQ19ZZlpsMjZsZzJLeGNqaEZwQ1R0cnVoNkJYOG9xanN6bk5HNzBMamtUMjBVcTA0WG1McllxTmJ5eEtiZG1QbzlWQ1M0Z0tUYw?oc=5",
       "summary": "【美元高利】合庫美元定存最高享年利率3.7% 承作門檻一次看&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-08T10:23:29+00:00"
-    },
-    {
-      "title": "台積電股東「他」最狂！ 一次領近百億元股利 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOTFlKWUNmYXFodHpFTk1VLVRIUFZDQkdZelh2NDZiU2R1WGdUd3ZreDRIY2dQQWdON1NUamFCLWJMdzNaYkt0RlBMZXNzUHNXTEhrTjVldGFtU3dhSEU5NmZoLVNEY0NIMnp3dXhGVHdENi1WWWp5akFnT0o5VHJEVXY4OHlfakM4cEk1bmttVmo3X1E2VFVjTHJBZ0xHdVdicExlTmtFY1JzbUk4WU95VDdrWGV0SEY5TWx4bkdmYUlGVHlwQmZ4UWhHRjRVem80QjRUVlkzWnZBSUlZemFGUzFyX3lEWVh0QndJRGUwSVVnMk9TQ2ZvY0hYdWlheG91eWdYejBFbm4tSXA2RjZtbWF3a0RSOEs2ODlXNlVoejF5dEtUeVAwc2xWRHdFMlRWaG5DM0tqVEo3cEpPdERxM09OX0NMRlFrd3FGeQ?oc=5",
-      "summary": "台積電股東「他」最狂！ 一次領近百億元股利&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:16:37+00:00"
-    },
-    {
-      "title": "121億元沒收衝擊？中石化宣布擬以728%容積率 啟動京華廣場土地處分 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiqANBVV95cUxPRTNqbEdlY3R1YjVGRldjZmZWRnR6S2hidGdfbjR6UFFUaDY4Ulo5WVBSMXBVS3RPNDI4YUpzc3U0VTVkajNoS3pyS1QyTHFJbERCQ0Z0SDhvNklURnJwREFVSDhHLUxxNFMtRG8ya1lWeGE4cERGN0NZM3hHWFdyS1ltdDk3WkpvSkVjR3AxQlBzNnAwcmg5SldrQXdiMTdhNVJ4S0hMZ25BVTBqaTBGdW9GZ1J3VlkyU1pxVkNPYU9lN1RDLXNGVEJ3VWxxSEkyYjk3YXFOZmNKY1ZXSFZUSlJiZXdXMHlFTzJYbm9MM2stRmV2ZmJwUXJ1bUFpZEstVmdxM25OdjNGTVRnZW5fdzhlUHJMeG9MNm1oSTR1R0xYNmJfVGtqTVhwNnVZeHEyVW1SM3hxVFlYWEg3dnRCdHFxLWg3R3MwZzI3RU14RUNIOVd0UW9Jamt1SEg3MmJEdTdjdmVlR1ROOVBIWjNBaFBqLTNmT0RBSF9GVlFSR1lVZVhtYXdqRXNfcmFDNmtsQXNSeHZlSWU1OU1vbTN2Ym9NRThiX21V?oc=5",
-      "summary": "121億元沒收衝擊？中石化宣布擬以728%容積率 啟動京華廣場土地處分&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:14:57+00:00"
-    },
-    {
-      "title": "台積電1556億股利明入帳！專家看好台股：攻破3萬5 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxONXNPWTNaRFdRZ3QwODhtcDFyal9FUFlIZ1hLS0NMZ19rNEpHNzJBOURaNXREQnBiRGlrZWF5Z3VEOUJHNVZfZmRtYTNnOVZnN3VGeXA3OGVMVDZEREdaY0hnOXU0VFVEbVdjWDlZREI2WWtaWHJTbmd4MzBwYlNLR0M2WjQtTnhkcF82d3JXTmpoSWFhOEVFc01BRGtTcGc1RFJVd0tXT3RQYXVjNVMyRDF0RU9KV09mMGI2RU4yeWtpbnFQTVZwNUtIR2J2ZXZIaGF0OVByeFVqWHV5RjlZUXhUakFUT1B4UjBLMktpTnpYVlJDUFRqd3pTdV9hSEdRWTRBM21teW9OQm1YRG5MVzIweTIyNVVIUWZLdjRTQTB2SldFbU12X1FDQVBzbml2RkFCbzRYeWpzMk44V3VrbTVpVmxOV2Q4UGN6MnBJdDRlYU0?oc=5",
-      "summary": "台積電1556億股利明入帳！專家看好台股：攻破3萬5&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-08T10:12:06+00:00"
-    },
-    {
-      "title": "三菱日聯銀行認購 Shriram Finance 471,121,055 股股票 – APN 新聞 - citytimes.tw",
-      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPWlRYb1VsYjRHeS1saFl4RHh3UFduYXdhV2liNFYwNmlfTlJYM25jRGs5cURKQkJDUTJFSG1jX3pGdVpsUkw5RkNMTDBRVWVQdTdPVDR4MVJ3TDdQSzJXNC1DVEdRVFhaMTZrT1pVZVk5LVN5dVZkQ1F0UFJpZEhQem5RYXJ3YzJFYlN0eklhY2tEWVBNVUNVNFFkRGR1U3JXQXEzV3FxYTJMYmtKY0daRG52Q1EwaUlFcXM1UXlkeXJuOE5hSDh2cUN5bEhtejlTMzJOZFFOUGNFUW1PVE82STNLdy1PbjhJUElBV1hqcE83LW9ZcGdwYVhzYTBWdjRPVHBEQWZZVVZqZjhwWVY2LU40LWxnMXNBQktoak5Tc2tYenhl?oc=5",
-      "summary": "三菱日聯銀行認購 Shriram Finance 471,121,055 股股票 – APN 新聞&nbsp;&nbsp;citytimes.tw",
-      "dt_utc": "2026-04-08T09:51:01+00:00"
-    },
-    {
-      "title": "Hejia Holdings (00704.HK) received resumption guidelines from the Stock Exchange. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVEoza2FBMXJQUTZrRXVsWS1xRmlpek9wOTd0N1RDSmRxeWdNMHkxbjlvcXdBdjlFYmlrMG5fb0hlWGlhWjFNal9OWGdkUlNnTHQ1b0UwZkFCZjZ0NklTQWtHVk1FNVJyR1R2T3NRQXFEVDlvLWNVYkZaM2dMM2N1bWcwWEt3T1FuenI1VEpKTjlkRHc1Mks4YzBJa25jWGxiYmxHd2Y4SDRRQkFtUDVj?oc=5",
-      "summary": "Hejia Holdings (00704.HK) received resumption guidelines from the Stock Exchange.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-08T09:50:57+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "21.06",
-    "vix_trend": "▼ 4.72",
-    "usd_twd": "31.71",
-    "usd_trend": "▼ 0.20"
+    "vix": "21.28",
+    "vix_trend": "▼ 4.50",
+    "usd_twd": "31.73",
+    "usd_trend": "▼ 0.19"
   }
 }
