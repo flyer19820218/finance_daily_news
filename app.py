@@ -327,7 +327,7 @@ button[kind="primary"]:hover {
 )
 
 # =====================================================================
-# 【區塊 3】資料讀取與快取函數定義 (代理穿牆版)
+# 【區塊 3】資料讀取與快取函數定義 (終極偵錯穿牆版)
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -348,8 +348,6 @@ def list_history():
 def fetch_yf_data(symbol, name):
     try:
         t = yf.Ticker(symbol)
-        
-        # 🛡️ 第一重：閃電通道 (加權指數秒出)
         try:
             if hasattr(t, "fast_info"):
                 last = t.fast_info.last_price
@@ -359,7 +357,6 @@ def fetch_yf_data(symbol, name):
                     return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
         except: pass
         
-        # 🛡️ 第二重：K線備援通道
         hist = t.history(period="5d")
         if not hist.empty and len(hist) >= 2:
             last = float(hist['Close'].iloc[-1])
@@ -423,47 +420,60 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
-    # 🌟 代理伺服器穿牆術：第一條路是直連，第二條路是透過 AllOrigins 代理繞過 IP 封鎖
+    # 🌟 代理通道加倍：加入 corsproxy，並放寬等待時間至 15 秒
     urls_to_try = [
         "https://histock.tw/stock/three.aspx",
+        "https://corsproxy.io/?https://histock.tw/stock/three.aspx",
         "https://api.allorigins.win/raw?url=https://histock.tw/stock/three.aspx"
     ]
     
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Upgrade-Insecure-Requests": "1"
     }
     
+    errors = []
     for url in urls_to_try:
         try:
-            res = requests.get(url, headers=headers, timeout=10)
+            res = requests.get(url, headers=headers, timeout=15)
             if res.status_code != 200: 
-                continue # 如果被擋了，就換下一條代理網址試試看
+                errors.append(f"[{url[8:22]}] 狀態碼 {res.status_code}")
+                continue
                 
             res.encoding = 'utf-8'
-            tables = pd.read_html(io.StringIO(res.text))
             
-            df_inst, df_fut = None, None
+            # 🚨 檢查是否被 Cloudflare 盾牌擋住
+            if "Just a moment" in res.text or "Cloudflare" in res.text:
+                errors.append(f"[{url[8:22]}] 遇機器人驗證盾")
+                continue
+
+            tables = pd.read_html(io.StringIO(res.text))
+            valid_tables = []
             for tbl in tables:
                 if isinstance(tbl.columns, pd.MultiIndex):
                     tbl.columns = [str(col[-1]).strip() for col in tbl.columns]
                 else:
                     tbl.columns = [str(col).strip() for col in tbl.columns]
-                    
                 cols = list(tbl.columns)
-                # 🎯 只要有這兩個字，就無情開抓！
                 if '外資' in cols and '投信' in cols:
-                    if '自營(總)' in cols or '總計' in cols:
-                        df_inst = tbl.head(3) 
-                    elif len(cols) <= 6:
-                        df_fut = tbl.head(3)  
-                        
-            # 只要抓到任何一張表就代表穿牆成功，立刻回傳！
+                    valid_tables.append(tbl)
+                    
+            df_inst, df_fut = None, None
+            if len(valid_tables) >= 1: df_inst = valid_tables[0].head(3) 
+            if len(valid_tables) >= 2: df_fut = valid_tables[1].head(3)  
+                    
             if df_inst is not None or df_fut is not None:
                 return df_inst, df_fut
                 
         except Exception as e:
-            print(f"⚠️ {url} 抓取失敗: {e}") 
+            errors.append(f"[{url[8:22]}] 錯誤: {str(e)[:25]}...")
             
+    # 🚨 終極雷達：如果全部失敗，直接把死因印在網頁畫面上！
+    if errors:
+        st.error(f"外資抓取失敗報告： {' | '.join(errors)}")
+        
     return None, None
 
 def render_table_html(df, title, icon="📊"):
