@@ -1,13 +1,31 @@
 {
-  "updated_at_utc": "2026-04-09 18:55:42 (TW)",
+  "updated_at_utc": "2026-04-09 19:14:43 (TW)",
   "title": "全球局勢與市場情報 2026-04-09 盤後",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 46.209126089s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 46\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，VIX恐慌指數微幅上升，預示市場波動性有所增加。然而，新台幣兌美元匯率逆勢升值，資金流向未顯著受恐慌情緒影響。台股權重股表現強勁，特別是台積電獲得外資青睞，支撐大盤翻紅。儘管部分國際新聞渲染地緣政治緊張，但實際市場指標並未呈現避險資產普遍噴發的態勢，多數可定調為情緒噪音。航運業營收數據普遍下滑，而部分內需消費與特定電子製造業則展現成長動能。整體而言，台股在個別權值股帶動下展現韌性，但系統性風險仍需密切觀察。\n\n📊 【重大事件：交叉驗證報告】\n- [中東戰事不確定性影響亞洲股市 / 美伊戰火不明亞股慘趴地！台股尾盤「逆轉勝」雙虎攜手爆量125萬張撐盤] (重要度：★★★★)\n    - **事實核對**：新聞指出地緣政治不確定性影響亞股，導致部分市場下跌。然而，今日美元兌台幣匯率實際呈現台幣升值，且VIX指數雖小幅上揚，但未達劇烈噴發水平。這與避險資產通常在地緣衝突升溫時的反應不符。台股尾盤在權值股帶動下翻紅，也與「慘趴地」的描述有所出入。\n    - **解讀**：目前市場對中東局勢的反應更多體現為局部情緒波動，而非系統性恐慌。資金並未大量湧入美元等傳統避險資產，反而有資金流入台股的跡象。投資人應警惕過度解讀單一新聞標題，應以客觀市場數據為準。\n\n- [台積電法說前外資看旺 里昂喊3030元最樂觀 / 神秘買盤!尾盤敲進8726張台積電 台股黑翻紅漲99點] (重要度：★★★★★)\n    - **事實核對**：外資研究機構對台積電展望樂觀，市場傳出尾盤大量買單推升台積電股價並帶動台股翻紅。這與外資回補0050、以及台幣升值現象相符，顯示國際資金對台灣半導體龍頭企業的信心。\n    - **解讀**：台積電作為台股權重最大的公司，其表現對大盤具有顯著影響力。法說會前的樂觀預期與實際資金流入，是支撐今日台股的重要力量。投資人應關注法說會後公司營運展望，這將是未來走勢的關鍵。\n\n- [萬海首季營收336億元 年減9% / 長榮海運首季營收865億元 年減21% / 陽明首季營收386億元 年減15%] (重要度：★★★)\n    - **事實核對**：三大航運公司第一季營收均呈現年減，幅度從9%至21%不等。這反映了全球供應鏈壓力緩解以及運價回歸常態的市場現實。\n    - **解讀**：航運業景氣已脫離疫情期間的超高獲利時期，回歸正常競爭格局。投資人應對航運股的未來展望持審慎態度，避免基於短期消息或歷史高點進行判斷。\n\n- [最強第一季！全家首季營收達277億元寫新高 年增近1成 / 王品3月營收突破19億元創歷年同期新高 誕生6家千萬大店] (重要度：★★★★)\n    - **事實核對**：超商與餐飲龍頭企業均公告亮眼的營收數據，顯示台灣內需市場消費力道穩健。這些數據反映了經濟活動的恢復與民眾消費意願的回升。\n    - **解讀**：在全球經濟面臨不確定性時，內需消費的穩定增長提供了一定的經濟支撐。投資人可關注具備市場龍頭地位且營運表現良好的內需相關企業。\n\n- [Q1營收年增237%創高！「熱處理廠」衝破千元入列66檔漲停股 由田連拉4根、訊芯-KY登天價] (重要度：★★★)\n    - **事實核對**：熱處理廠營收大幅成長，股價表現強勁。儘管新聞中未直接提及AI，但此類高成長往往與半導體先進製程或AI相關供應鏈需求旺盛有關。\n    - **解讀**：特定技術或服務在當前產業趨勢下（如AI、高效能運算）獲得顯著需求增長，可帶動相關供應鏈廠商營收爆發。投資人可深入研究這些高成長背後的產業邏輯，但需留意股價短期漲幅過大後的風險。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數報21.54，較前一日上漲0.50點，顯示市場對短期波動的預期有所升高。然而，美元兌台幣匯率收於31.80，較前一日下跌0.10，呈現台幣升值態勢。這組數據構成了一個有趣的矛盾：儘管有部分擔憂情緒浮現，但資金面並未表現出明顯的避險需求，反而有資金流向台灣市場的跡象。這表明，當前市場的「恐慌」可能更多是選擇性或針對特定板塊，而非全面性的系統性風險。因此，對於聲稱「戰火不明、慘趴地」等地緣政治影響，我們必須依據匯率與VIX的交叉比對，將其定調為情緒噪音，市場資金實際流向與其描述不符。\n\n💰 【台股影響與板塊點名】\n在半導體領域，台積電（TSMC）的強勢表現和外資青睞，再次確立其作為台灣市場「神山」的地位，預期將持續帶動相關供應鏈。儘管新聞中未直接提及海力士(SK Hynix)，但在HBM等高階記憶體領域，兩者是重要的合作夥伴。台積電在先進封裝（如CoWoS）上的技術領先，是其鞏固與NVIDIA等AI巨頭合作的關鍵，這也間接影響HBM供應鏈的穩定性。台達電(Delta)的市值攀升，亦暗示了電源管理、自動化等AI周邊應用領域的潛在增長動能。\n\n受到衝擊的板塊主要是航運業，三大海運公司第一季營收普遍下滑，顯示其產業景氣正經歷調整。此外，在內需消費部分，超商、餐飲業者則表現穩健，顯示國內市場動能良好。\n\n📈 【投資觀察指引】\n1.  關注權值股實質動能：台積電等權值股的法說會內容及其營收表現，將是判斷市場方向的關鍵依據，而非單純的媒體預期。\n2.  區分市場情緒與資金流向：VIX指數僅代表恐慌程度，實際資金流向（如匯率變化）更能反映市場的真實態度。在地緣政治訊息頻繁時，應以此作為判斷基準。\n3.  審慎評估高成長個股：對於短期內營收大幅成長、股價噴發的個股，需深入研究其成長邏輯與產業趨勢是否具備可持續性，避免追高風險。\n4.  留意內需市場韌性：在全球不確定性增加時，表現穩健的內需型產業可提供較為抗跌的投資選擇。\n5.  警惕產業結構性變化：航運等過去受疫情紅利影響的產業，其營收年減是結構性調整的體現，應避免僅憑歷史經驗進行投資。\n\n🏫 【曉臻財經小教室】\n今日單字：【全額交割股】\n全額交割股是指因財務狀況不佳（例如淨值低於票面、財報被會計師出具保留意見等）而被證交所列為交易限制的股票。其交易方式會更加嚴格，例如必須先繳清全部股款或券源才能下單，旨在警示投資人該公司存在較高的營運風險。透過了解全額交割股的特性，我們可以看穿市場上可能存在的「利多」傳聞，因為即使有消息，若公司基本面持續惡化，此類股票的投資風險依然極高。\n\n數據為證，理性為綱。",
   "news": [
+    {
+      "title": "記者調查揭密比特幣創始人 中本聰身分指向亞當·貝克 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNTUlOMmREUFdWQy1PNVZqRGFwc0VQWHRnNWlhRWkwTGN1RkRMWnQ4N0V6MmFSVFpkaGNRQ001eEozTmZzaVJxSzZSdmdhZlp4ektFNkFERk1vSnQwTVhiS3hjQjFMN0ZrS3B4cTN0MFowMC0wckJKQ3FsT2dZLWthZ1Z5OTU4LWNKaDkyWkdxeF9KRjktQ2x0T2ZTX2p1MGl4WW5NYVZ4Q1RUQWx4UEN6RU1MNmI1b1pqbDZtUlJ0NUlXNEwzV1Qxb1JlWkFCWFVFOTlqNmlnMWJSRUx6MklWQlJnX1dJWGtVS2FRRHIzUURPTDIzX004RnRlYlNuQTFPamZBNmNGRW1iU1c0OUJBejVnWmUxNkRuSnU1MERKNlNIQXBQell0cmtGQmplYjNQcWZlWVdsbXRzRVptOHBGSW5zOC0tZmRUdnMwUHZ0UDFacDRoOW96dHMtSUhveDdHNEEyVHc1NTNQSHUwWS1jMTZn?oc=5",
+      "summary": "記者調查揭密比特幣創始人 中本聰身分指向亞當·貝克&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T10:59:29+00:00"
+    },
     {
       "title": "Chocolate Finance在港啟動平台供閒資賺回報首十萬元年回報3.8厘 (18:36) - 20260409 - 即時財經新聞 - 明報財經網",
       "link": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxPcnNrNUpvOFROWHc3RVNrNVpiMWJEY0tDcEltemFCcEFUN3Q3d00tY0dydlRzZHdKYmE2UFd4MXBwVFRmQTlNRmRaellfSGtSeDJWcWotbEFfMmFTbHZaOEVCaGk0U1lLR0sxbHZ0Vm40T2I3b3dicU93RjBhMkZGcGExUG9ZVmJUQ3MtdUsyUXRSYk9aVVgwUm1EUHhlbEZkSnhfWUF4Smt6MXV1anp4RlBfaE1VaFAzTDl0Yk11SjYzalU4VVFZRk9oYTh1MVQ5UmZMY0IxVmVWcS1JajdPbE9HeGRtdGtsU2xUNnN6VlBjdkVKaHc2eWhzSUdoektTSVN6MGN0d3F4RVJSZUdPcmllUW5zX0o2dEFMMUVkUEU5TnBZenBZSkxYTDlJemN4bWlDUGlLYmRRRkFtdW5EU3JucEVacVZnOHpLUElNbWJoYkdDbjFvRS05Skp1MmNmZ0l0clVZQWZEblNtOEtUUXlITGN3dU40Mm5XNjBR?oc=5",
       "summary": "Chocolate Finance在港啟動平台供閒資賺回報首十萬元年回報3.8厘 (18:36) - 20260409 - 即時財經新聞&nbsp;&nbsp;明報財經網",
       "dt_utc": "2026-04-09T10:53:05+00:00"
+    },
+    {
+      "title": "【公告】光群雷國內第六次有擔保可轉換公司債轉換普通股 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxNMmg5c251bURieW1WYUV2VHN4UTR3Szk0QngxX1RGQ3UwUnFVRVlhT3dMUGlmeVkwaUUydnNfMk84QkVmMDU0LVY4eUFNUEJBZjdKeF9VRXAzd1dUNkRBeVJOUWM2U1Bud1l4WVVlR3MyVVJFSFE0aDdraDNWQUVqWThsZVpBV1JFZzdwLVFUdnhyLW1qeVh6VHBqVGV6T3Rxd19VR05xUEVmd2h4TnM3aDVSX1o1WVAyd3plY0g0cW1QZHNNVno3TTF2TGlMNnVHeFQ0ZjVhazV6eUxtcWtuZXpPUW8yTk04Z3BEaDNoX3gyclZHT1NwdHJaS2hHdERqZlV2SXMzNEt1UHZyTXZGWnQtdlE4bW9haTQwckJfQlJ3dkpMcFIxMTVLRm0teTZNQlRPQlVocjZOTGppemJlWEliXzVSZmwtVU82dXVqdWlGMjZEV1FTX0xPaEFhWDFzbGdJa2xVdTUweGUzcks5ZGlMVHZWaVpKZnp3Tw?oc=5",
+      "summary": "【公告】光群雷國內第六次有擔保可轉換公司債轉換普通股&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T10:46:27+00:00"
+    },
+    {
+      "title": "外溢保單成效揭曉 南山人壽：取得外溢獎勵者 女性占比逾6成 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMijANBVV95cUxQalE5WVBoNkpaUGF5aXZKTkxLNGtMVWlDSjFmSkMxWGdnTkNVNi1hd3NJYmhCX0JFak5Wb2FmR3J1eDFQTi1WTmFmWHJWVVB0RDlySjI3TXNZSnAybThxNW5CLVVUeVhXTEIzZWFuNkNtc29KUXo1WE1HR3pPdE9ZT2ZUUVZ6cVVUa25LSFY2NTQ5TE9udEhfUmRXTWwtSjRDcEs0ZEEzcVNiallVRkJGZnVmb0oxeHBocWpMZGNiMUhzVWloN0I0SnkwN1d0OGhwNVJrbW5CaDJHYkd0dUxmQkw0LWNRU0dTbVZrVTVqcmt6WmNTemlUclpzRGkwbmZNY0VMM05uQTgxWGJCbHdLeG9GSmFNOWRqQzBINUx6a1JobG1kOXRha2NqZ2RrUWRSX3BqcHFiVWtlUkJxYlZ2MGRQb2xXN0hGaHFQTi1KdDNRcnhHQWxqOVhsbm9qOXVNMnM3ME5CQVROSWJ5aGdmdS0xN1NULTNmQnhkY2hZRWhHVXd4SmR2MDlsX2U?oc=5",
+      "summary": "外溢保單成效揭曉 南山人壽：取得外溢獎勵者 女性占比逾6成&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T10:38:31+00:00"
     },
     {
       "title": "Middle East War Uncertainty Caps Asian Stock Markets - 富途牛牛",
@@ -118,6 +136,12 @@
       "dt_utc": "2026-04-09T09:57:15+00:00"
     },
     {
+      "title": "〈渣打投資展望〉Q2維持「股優於債」調升日、台股評等 美債4.25%現鎖利契機 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPYnVlWVEzam45V3NJVVJtTnNDNTcxZ0xhY0VRVUxfX21NeGVIX2lTekV4VFRQcjRmUnNNaEdoUDY3MzBudW55VUNDbUl1czROM1BUWHR5dkgyLThNdURFTXNDSlR4WVZaQVJFZndUeGNUMlFKRFpCU3Y4QWRrdWI5Q2NEcUZSbUxqU1lxbTdvVFFaZF92Y00tNVJudjhXRm5ma2tKb0ZTZlZFaXVqamphMkJuR3RlVG5YaTNwdDJUcm5VX1hWSTI3QlhQWURuME1ISWQ5c1NxNzJHTmExSk83RG1ic3FXdjBDcVFmVE0wVFNuOHRockZyZmY1WENWQlQzVW1Wei1zbkhSdzFBSE80X3N5SXdyTlliZEdIUl9TaGp0YmV3WmRHckhHRUw2Y2gwR19YNVJYYm9rS2ZNY0J0Rk1hWFk1T2s?oc=5",
+      "summary": "〈渣打投資展望〉Q2維持「股優於債」調升日、台股評等 美債4.25%現鎖利契機&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T09:53:57+00:00"
+    },
+    {
       "title": "Chocolate Finance推投資10萬可享3.8%年 - 香港商报",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1fYnhCbWRoX0hScXdXcGV5NnFxcVdSNDJteWN1UF9YUTEzZmdWWkQzMWFQLTdLSzN4NUFQTXZUZmhpdHhVQkZ6aWcxbnhUbmdjbHViMVJNR2tOMzFnYVFNSlFSWFQtVFc4RTBrX0YtVVhsZm5RSy1ETVdMMA?oc=5",
       "summary": "Chocolate Finance推投資10萬可享3.8%年&nbsp;&nbsp;香港商报",
@@ -158,6 +182,12 @@
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNSy1PeDR0c3MySmlnMGpHRG1PVzJpejZsX3BaeUlWX3ZqeGpjcDAzLTNnRndFNGNOREI0dUt5ejNzMmZxWDJpTXg0RXlMeGpUTTFqdXluUEY5LXdkNmZ2NlRjbEJBbW5VTFFKVXZOOXhaLWZlMktHX21Sa0pScFkzTFVYN1hWT3JIQ3dZZFQyeWthdVNPTGc?oc=5",
       "summary": "Nvidia Stock Is Tied to Fate of Fragile Iran Cease-Fire -- Barrons.com&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-09T09:28:48+00:00"
+    },
+    {
+      "title": "立萬利 公告本公司董事會決議通過114年下半年度盈餘分派現金股利案 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivANBVV95cUxPdUVITmZyU1N5c013dndHcWY3Z0NlcjdueTRJbXhqSXBENHlGRE8tZ2Z6TkRKSHNzMk8yMGZHVU9LZFZLVi1hNWFobklMdmRJbkNPdFpSanZXbW5aVkYxaXI1eUgxMWRkeU1HMjVKclhMem82UEJpbDhtTjFicDVmdnhmMllpZXR6SFpMYmJMblZVY04zT0xpaDBOTU1tME44cDJaeUlrZXI5Y3YtRHNWWWpyMkRlNUZkR1llWFFxVWI0QUtCbUFlbURvN1lHNXBnWGZBV043UjJERUZnWEduV3FvMUkxYWRDdHpBang4UDhrNDFQQUFlcEpyS2dWaU15MFptR0JTTnZzdHBCZWl0ZVdKLVMxYWVhN3VrMVA5TUJfQ0dQbTB2eDZrNTAwNEVEb0tuSmRxbXE0T1EtWkhITWJZaVd6NHJmc1J5MFRGSjZfb2NtUk1kbXVkUEI5eExTcUhacHg0VzFueWUxbm43MlZ3UmhzWFVpR1ljNkdnZHBJYlJSWjZ5R29faUpGb0E1b21MaDF3UXVjNUkydFBBdG93a2VLd2NyZkRmcVpYYTVVTzJrNnNDWmhSSk0?oc=5",
+      "summary": "立萬利 公告本公司董事會決議通過114年下半年度盈餘分派現金股利案&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T09:27:00+00:00"
     },
     {
       "title": "「洗發票大魔王」喜中4900元獎金遭追回！他怒提訴願結局曝光 - Yahoo股市",
@@ -356,42 +386,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBaTWtvbkhUOU5vZzFsa0w3T0FTeTZSQkdENGl4NDV1R09ST1c1ckFOc1FBQXVwRzVIQ0owYzdEX0YxcUZSeGxfRk1UUDhmYnRtRlJtb09VUnY?oc=5",
       "summary": "6415 矽力*-KY - 加油 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-09T08:19:59+00:00"
-    },
-    {
-      "title": "川普喊揭外星人機密！46段涉軍事重地異常飛行影片 國會喊限期交出 | CTWANT - LINE TODAY",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1kc2RqeVM4QXBxWVhCYWZxNkJuVzBnMWE2UFNZbEo0aWtISUxHc0NDcjh4eHdIQmNhNXlOVnBramduc1J5MXRtSlo2dGpiaFdSbFpGdEZn?oc=5",
-      "summary": "川普喊揭外星人機密！46段涉軍事重地異常飛行影片 國會喊限期交出 | CTWANT&nbsp;&nbsp;LINE TODAY",
-      "dt_utc": "2026-04-09T08:19:50+00:00"
-    },
-    {
-      "title": "5609 中菲行- EPS 8，股息5.6 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE01U1c5b090bDNlelBMSU56V1RpbkdSUzdNRXc1UXlhaFRJejU4aThVMjliaWQxTFVCWlU1XzBJNVp5MUlDa0xkX2JBWnIwM0VTWlhqRS1fZFg?oc=5",
-      "summary": "5609 中菲行- EPS 8，股息5.6 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-09T08:19:02+00:00"
-    },
-    {
-      "title": "又一檔股票淪壁紙！永冠-KY最快11月18日下市 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMisAJBVV95cUxNVmJ2UUpWNzU2RzNIbjdaWklhN09scWlNODZwcXNBbzJDLXJESzdUa3h3TzVWMVlIbDl5ZmNqdS1FZnlFR0RUSl83Y180cDRYaHBoZGNQeEduTUxaaTlKc3JiVXlQTzl3aXMxMFFsajdQZlZqX3JUQ2xxWjJmdGhpT3NWN1o3c3RjLWZaRnQwTmk4Q183TDBzOWZveE85UFRwUzJKMHEyVDg1WnpGUElIQS11M2hwcVFmY2RzYjZZUVlMSXAwNHJHU2NpUVRMTnQ0c2VmcndlMVFmOEdlOWwwR2ctZ0czUkVvVEtNcHNROUl0dVBFbFhXTnlDb2ZnR0lYc2stSTMtV3VFTnFHNTVCcERKb0dPeldUeDd3c2EwalNnZWp5cXRlYWtiTHZpaHJp?oc=5",
-      "summary": "又一檔股票淪壁紙！永冠-KY最快11月18日下市&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T08:14:45+00:00"
-    },
-    {
-      "title": "以太坊市場迎關鍵變革：質押與監管左右2026年價值走向 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOTjdLVElXYllVU1ltVVJ3bGpIckhGNmo4NDBHd1ZmZ2FNZmczQjZvdFd1QU0zdmdud1ZqMW56SkgzZ1VLYV9ud0VhRWpYTDdWUFJKZFk4RHNzSjBvLW1MWFRNN3RHTktKZEpsc0xhMV9KOXFZYXA5NF9wWV9xNVVSQUYyNDNqR1QtTFN4M2dSbDNvRmRoRGFqbko5WWhFOEIteERLbFllUjJDckp2OUo2T0tlVmc2LXU2RzRpR3cxVEYwUUpaa0xpR3ZSU2syUlRHeDVBeDBIWGxlNWJVbVlGN2w4WExQRC0yRl9wQ2JiV0tRVnVXd2gxTlhVdUgtbEJGRFBKNTV6YzVFNDR1SnJtcVFKVURubVJrbXpjRmhYai1selA5OXRqU2xBR0xXMnI0NjJ5M3BMZFNiNXRORjFZYzFJcUQ1Z2FxVWlFTmVwVm5neVVTTjdmcVVwc1h6V1MwRHRkdVVNc2ZiUQ?oc=5",
-      "summary": "以太坊市場迎關鍵變革：質押與監管左右2026年價值走向&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T08:12:22+00:00"
-    },
-    {
-      "title": "9904 寶成 - 慢慢的 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9PWTdZcDlnTms2c2pXaTNQSUtKWHlZYzFmbFdYWDFWSkloLTZEcXhjcXFDeDI2S2dPbWQ5UlFqSV9OUWZacE5faFQ1UU02RUlPNjNhYTFKTDU?oc=5",
-      "summary": "9904 寶成 - 慢慢的 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-09T08:08:23+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "21.46",
-    "vix_trend": "▲ 0.42",
+    "vix": "21.54",
+    "vix_trend": "▲ 0.50",
     "usd_twd": "31.80",
-    "usd_trend": "▼ 0.09"
+    "usd_trend": "▼ 0.10"
   }
 }
