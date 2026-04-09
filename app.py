@@ -327,7 +327,7 @@ button[kind="primary"]:hover {
 )
 
 # =====================================================================
-# 【區塊 3】資料讀取與快取函數定義
+# 【區塊 3】資料讀取與快取函數定義 (終極無敵完全體)
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -348,18 +348,31 @@ def list_history():
 def fetch_yf_data(symbol, name):
     try:
         t = yf.Ticker(symbol)
+        
+        # 🌟 第一重閃電裝甲：優先使用 fast_info 確保加權指數秒速出現
+        info = getattr(t, "fast_info", None)
+        if info:
+            last = getattr(info, "last_price", getattr(info, "lastPrice", None))
+            prev = getattr(info, "previous_close", getattr(info, "previousClose", None))
+            if last and prev:
+                change = last - prev
+                return {"name": name, "ok": True, "price": last, "change": change, "pct": (change/prev)*100}
+                
+        # 🛡️ 第二重備用裝甲：如果 fast_info 沒抓到，再用 history K線備援
         hist = t.history(period="5d")
         if not hist.empty and len(hist) >= 2:
             last = float(hist['Close'].iloc[-1])
             prev = float(hist['Close'].iloc[-2])
-            return {"name": name, "ok": True, "price": last, "change": last-prev, "pct": ((last-prev)/prev)*100}
+            change = last - prev
+            return {"name": name, "ok": True, "price": last, "change": change, "pct": (change/prev)*100}
+            
     except: pass
     return {"name": name, "ok": False}
 
 def render_tile(name, q):
     render_ok = q and q.get("ok") and q.get("price") is not None
     if not render_ok:
-        return f'<div class="tile"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
+        return f'<div class="tile" style="padding: 10px;"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
 
     ch, pct, price = q.get("change") or 0.0, q.get("pct") or 0.0, q.get("price")
     
@@ -368,9 +381,9 @@ def render_tile(name, q):
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
     return f"""
-    <div class="tile {bg_cls}">
+    <div class="tile {bg_cls}" style="padding: 10px;">
       <div class="name">{name}</div>
-      <div class="price">{round(float(price), 2)}</div>
+      <div class="price" style="font-size: 20px; margin: 2px 0;">{round(float(price), 2)}</div>
       <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
     </div>
     """
@@ -393,13 +406,13 @@ def generate_countdown_html(start_year=2026, target_year=2035):
     today_date_str = today.strftime("%Y-%m-%d")
     
     return f"""
-    <div class="countdown-card">
-        <div class="card-date">📅 今日：{today_date_str}</div>
-        <div class="card-main">
-            <div class="card-title">🎯 {target_year} 財務自由倒數</div>
-            <div class="card-days">{days_remaining} 天</div>
+    <div class="countdown-card" style="padding: 14px 16px;">
+        <div class="card-date" style="margin-bottom: 6px;">📅 今日：{today_date_str}</div>
+        <div class="card-main" style="margin-bottom: 6px;">
+            <div class="card-title" style="font-size: 14px;">🎯 {target_year} 財務自由倒數</div>
+            <div class="card-days" style="font-size: 18px;">{days_remaining} 天</div>
         </div>
-        <div class="card-progress-bar">
+        <div class="card-progress-bar" style="margin: 8px 0 6px 0; height: 5px;">
             <div class="card-progress-fill" style="width: {progress_percentage}%;"></div>
         </div>
         <div class="card-progress-details">
@@ -412,17 +425,14 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
-    # 🛡️ 升級偽裝術：換上超真實的瀏覽器指紋，騙過 HiStock 的守衛
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
     }
     try:
         res = requests.get(url, headers=headers, timeout=10)
-        res.raise_for_status() # 遇到 403 阻擋直接拋出錯誤
+        res.raise_for_status() 
         res.encoding = 'utf-8'
-        
-        # 🛠️ 修正 Pandas 報錯：使用 io.StringIO 包裝
         tables = pd.read_html(io.StringIO(res.text))
         
         df_inst, df_fut = None, None
@@ -431,11 +441,12 @@ def fetch_histock_tables():
                 tbl.columns = [col[-1] for col in tbl.columns]
                 
             cols = list(tbl.columns)
-            if '外資' in cols and '投信' in cols and '總計' in cols:
+            # 🎯 找回遺失的外資雷達：改回用 '日期' 判斷，且期貨放寬為 <= 6
+            if '外資' in cols and '投信' in cols and '日期' in cols:
                 if '自營(總)' in cols:
-                    df_inst = tbl.head(3) # 🌟 鎖定 3 天
-                elif '自營' in cols and len(cols) == 5:
-                    df_fut = tbl.head(3)  # 🌟 鎖定 3 天
+                    df_inst = tbl.head(3) 
+                elif '自營' in cols and len(cols) <= 6:
+                    df_fut = tbl.head(3)  
                     
         return df_inst, df_fut
     except Exception as e:
@@ -447,16 +458,16 @@ def render_table_html(df, title, icon="📊"):
     col_width = 100 / len(df.columns)
         
     html = f"""
-    <div class="panel" style="margin-bottom: 16px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <div class="section-title" style="margin-top: 0; margin-bottom: 12px;">{icon} {title}</div>
-        <div style="overflow-x: auto; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; text-align: right; background: #fff;">
+    <div class="panel" style="margin-bottom: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div class="section-title" style="margin-top: 0; margin-bottom: 8px; font-size: 14px;">{icon} {title}</div>
+        <div style="overflow-x: auto; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 12px; text-align: right; background: #fff;">
                 <thead>
                     <tr style="background-color: #1e293b; color: #ffffff;">
     """
     for col in df.columns:
         align = "center" if col == "日期" else "right"
-        html += f'<th style="width: {col_width:.2f}%; padding: 10px 6px; text-align: {align}; font-weight: 700; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{col}</th>'
+        html += f'<th style="width: {col_width:.2f}%; padding: 6px 4px; text-align: {align}; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{col}</th>'
     html += "</tr></thead><tbody>"
     
     for i, row in df.iterrows():
@@ -464,12 +475,12 @@ def render_table_html(df, title, icon="📊"):
             bg_color = "linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%)"
             date_color = "#b45309"
             row_weight = "900"
-            font_size = "14px"
+            font_size = "13px"
         else:
             bg_color = "#ffffff" if i % 2 == 0 else "#f8fafc"
             date_color = "inherit"
             row_weight = "normal"
-            font_size = "13px"
+            font_size = "12px"
 
         html += f'<tr style="background: {bg_color}; border-bottom: 1px solid #e2e8f0; font-weight: {row_weight}; font-size: {font_size};">'
         
@@ -477,7 +488,7 @@ def render_table_html(df, title, icon="📊"):
             val = row[col]
             align = "center" if col == "日期" else "right"
             
-            style = f"padding: 10px 6px; text-align: {align};"
+            style = f"padding: 6px 4px; text-align: {align};"
             
             if col == "日期" and i == 0:
                  style += f" color: {date_color};"
