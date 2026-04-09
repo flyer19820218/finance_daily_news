@@ -76,6 +76,18 @@ p, span, h1, h2, h3, label { color: #000000 !important; }
 """, unsafe_allow_html=True)
 
 # 3. 數據抓取
+@st.cache_data(ttl=60)
+def fetch_yf_data(symbol, name):
+    try:
+        t = yf.Ticker(symbol)
+        info = getattr(t, "fast_info", None)
+        if info:
+            last = getattr(info, "last_price", getattr(info, "lastPrice", None))
+            prev = getattr(info, "previous_close", getattr(info, "previousClose", None))
+            if last and prev: return {"name": name, "ok": True, "price": last, "pct": ((last-prev)/prev)*100}
+    except: pass
+    return {"name": name, "ok": False}
+
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
@@ -100,34 +112,43 @@ def fetch_histock_tables():
                 
             cols = list(tbl.columns)
             
-            # 🎯 精準狙擊您截圖上的欄位
+            # 🎯 精準狙擊您截圖上的欄位，並且一次抓 8 天的資料回來
             if '外資' in cols and '投信' in cols and '日期' in cols:
                 if '自營(總)' in cols: 
-                    df_inst = tbl.head(5) # 這是現貨買賣超 (有自營總額)
+                    df_inst = tbl.head(8) # 現貨買賣超
                 elif '自營' in cols and len(cols) <= 6: 
-                    df_fut = tbl.head(5)  # 這是期貨未平倉 (較窄)
+                    df_fut = tbl.head(8)  # 期貨未平倉
                     
         return df_inst, df_fut
     except Exception as e: 
-        print(f"⚠️ 抓取外資籌碼失敗: {e}") # 失敗會印在後台，不再死得不明不白
+        print(f"⚠️ 抓取外資籌碼失敗: {e}") # 失敗會印在後台
         return None, None
 
 def render_combined_foreign_table(df_inst, df_fut):
     if df_inst is None or df_fut is None: return ""
-    html = '<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
-    max_rows = min(3, len(df_inst), len(df_fut))
+    
+    # 🌟 標題更新為近八日
+    html = '<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近八日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
+    
+    # 🌟 終極防禦：直接把扣打拉到 8 天！
+    max_rows = min(8, len(df_inst), len(df_fut))
+    
     for i in range(max_rows):
         date_str = df_inst.iloc[i].get('日期', '')
         spot_val = df_inst.iloc[i].get('外資', '')
         fut_val = df_fut.iloc[i].get('外資', '')
+        
         def get_color(val_str):
             try: return "#16a34a" if float(str(val_str).replace(',', '')) < 0 else "#ef4444"
             except: return "#0f172a"
+            
         spot_color = get_color(spot_val)
         fut_color = get_color(fut_val)
+        
         row_style = "font-weight: 900; font-size: 15px; background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);" if i == 0 else "font-size: 13px;"
         date_weight = "font-weight: 900; color: #b45309;" if i == 0 else "color: #64748b;"
         html += f'<tr style="{row_style}"><td style="{date_weight}">{date_str}</td><td style="color: {spot_color};">{spot_val}</td><td style="color: {fut_color};">{fut_val}</td></tr>'
+        
     html += '</table>'
     return html
 
