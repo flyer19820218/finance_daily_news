@@ -99,40 +99,63 @@ def fetch_yf_data(symbol, name):
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    # 🛡️ 升級偽裝術：換上超真實的瀏覽器指紋，騙過 HiStock 的守衛
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+    }
     try:
         res = requests.get(url, headers=headers, timeout=10)
+        res.raise_for_status()
         res.encoding = 'utf-8'
-        tables = pd.read_html(res.text)
+        
+        # 🛠️ 修正 Pandas 報錯：使用 io.StringIO 包裝
+        tables = pd.read_html(io.StringIO(res.text)) 
+        
         df_inst, df_fut = None, None
         for tbl in tables:
-            if isinstance(tbl.columns, pd.MultiIndex): tbl.columns = [col[-1] for col in tbl.columns]
+            if isinstance(tbl.columns, pd.MultiIndex): 
+                tbl.columns = [col[-1] for col in tbl.columns]
             cols = list(tbl.columns)
-            if '外資' in cols and '投信' in cols and '總計' in cols:
-                if '自營(總)' in cols: df_inst = tbl.head(5)
-                elif '自營' in cols and len(cols) == 5: df_fut = tbl.head(5)
+            
+            if '外資' in cols and '投信' in cols and '日期' in cols:
+                if '自營(總)' in cols: 
+                    df_inst = tbl.head(3) # 🌟 鎖定 3 天
+                elif '自營' in cols and len(cols) <= 6: 
+                    df_fut = tbl.head(3)  # 🌟 鎖定 3 天
+                    
         return df_inst, df_fut
-    except: return None, None
+    except Exception as e: 
+        print(f"⚠️ 抓取外資籌碼失敗: {e}") 
+        return None, None
 
 def render_combined_foreign_table(df_inst, df_fut):
     if df_inst is None or df_fut is None: return ""
+    
+    # 🌟 完美保留您的特製版字體大小 (font-size: 25px)
     html = '<div style="font-size:25px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
+    
     max_rows = min(3, len(df_inst), len(df_fut))
+    
     for i in range(max_rows):
         date_str = df_inst.iloc[i].get('日期', '')
         spot_val = df_inst.iloc[i].get('外資', '')
         fut_val = df_fut.iloc[i].get('外資', '')
+        
         def get_color(val_str):
             try: return "#16a34a" if float(str(val_str).replace(',', '')) < 0 else "#ef4444"
             except: return "#0f172a"
+            
         spot_color = get_color(spot_val)
         fut_color = get_color(fut_val)
+        
+        # 🌟 完美保留您的特製版表格字體 (18px 與 16px)
         row_style = "font-weight: 900; font-size: 18px; background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);" if i == 0 else "font-size: 16px;"
         date_weight = "font-weight: 900; color: #b45309;" if i == 0 else "color: #64748b;"
         html += f'<tr style="{row_style}"><td style="{date_weight}">{date_str}</td><td style="color: {spot_color};">{spot_val}</td><td style="color: {fut_color};">{fut_val}</td></tr>'
+        
     html += '</table>'
     return html
-
 # 4. JSON 讀取
 LATEST_FILE = "data/latest_report.json"
 HISTORY_DIR = "data/history"
