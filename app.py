@@ -412,13 +412,18 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
+    # 🛡️ 升級偽裝術：換上超真實的瀏覽器指紋，騙過 HiStock 的守衛
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
     }
     try:
         res = requests.get(url, headers=headers, timeout=10)
+        res.raise_for_status() # 遇到 403 阻擋直接拋出錯誤
         res.encoding = 'utf-8'
-        tables = pd.read_html(res.text)
+        
+        # 🛠️ 修正 Pandas 報錯：使用 io.StringIO 包裝
+        tables = pd.read_html(io.StringIO(res.text))
         
         df_inst, df_fut = None, None
         for tbl in tables:
@@ -428,12 +433,13 @@ def fetch_histock_tables():
             cols = list(tbl.columns)
             if '外資' in cols and '投信' in cols and '總計' in cols:
                 if '自營(總)' in cols:
-                    df_inst = tbl.head(5) 
+                    df_inst = tbl.head(3) # 🌟 鎖定 3 天
                 elif '自營' in cols and len(cols) == 5:
-                    df_fut = tbl.head(5)  
+                    df_fut = tbl.head(3)  # 🌟 鎖定 3 天
                     
         return df_inst, df_fut
     except Exception as e:
+        print(f"⚠️ 抓取外資籌碼失敗: {e}") 
         return None, None
 
 def render_table_html(df, title, icon="📊"):
@@ -513,7 +519,6 @@ def generate_anchor_audio(text):
             return audio_data
         return asyncio.run(_generate())
     except Exception: return None
-
 # =====================================================================
 # 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
 # =====================================================================
