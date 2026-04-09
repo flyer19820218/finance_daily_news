@@ -1,8 +1,32 @@
 {
-  "updated_at_utc": "2026-04-10 05:54:28 (TW)",
+  "updated_at_utc": "2026-04-10 06:09:22 (TW)",
   "title": "全球局勢與市場情報 2026-04-10 盤前",
-  "report": "🎯 【一分鐘戰略速讀】\n今日市場訊號顯示，儘管地緣政治消息紛雜，核心市場指標如VIX恐慌指數與美元/台幣匯率卻呈現穩定趨勢，VIX下跌，台幣升值，這表明市場整體並未被短期情緒噪音所主導。AI領域內部出現分化，硬體供應鏈如台達電表現穩健，而部分美國軟體股則面臨壓力。記憶體產業受HBM需求推動，展望樂觀。投資人應堅持數據導向，辨識市場噪音與實質趨勢的差異。\n\n📊 【重大事件：交叉驗證報告】\n\n伊朗地緣政治消息紛雜與市場反應 (重要度：★★★☆☆)\n**事實核對**：新聞提及「伊朗再封海峽 油價又飆 股市挫」與「中東地緣政治推升鋁價迎爆發」，同時也有「美伊有望停火推升美股大盤」及「中東地區停火前景不明」的矛盾論述。然而，今日VIX恐慌指數下跌1.55至19.49，美元/台幣匯率下跌0.17至31.73（台幣升值）。這兩個核心避險指標的走勢，均未顯示市場對地緣政治風險有明顯的恐慌情緒或資金大幅轉向避險資產的行為。油價雖有波動，但非全面性的「噴發」式反應。\n**解讀**：市場對於中東地區的政治動態解讀存在顯著分歧，且整體資金流向並未反映出廣泛的避險需求。投資人應謹慎看待單一具煽動性或情緒化的地緣政治標題，並以實際的市場指標作為判斷依據。\n\nAI產業鏈表現分化：硬體持續成長，軟體面臨調整 (重要度：★★★★☆)\n**事實核對**：新聞指出「AI續旺 台達電營收締最強Q1」，明確指出硬體供應鏈的營收增長。但同時報導「AI壓力升溫！美國軟體股重挫、SaaS族群今年跌近四成」。這兩者並非矛盾，而是反映了AI產業內部結構的變化。\n**解讀**：AI熱潮並非均勻分佈於所有次產業。目前市場資金可能更青睞具備實質產能與營收貢獻的AI基礎設施和硬體供應商。而部分前期估值過高的AI軟體服務(SaaS)公司，在資金成本或市場預期修正下，正經歷股價回調。投資人需精確識別AI不同板塊的動能與風險。\n\n瑞銀調升美光目標價，HBM產能效應擴散 (重要度：★★★★☆)\n**事實核對**：瑞銀報告指出調升美光目標價，主要原因為HBM產能排擠效應帶動整體記憶體價格上漲。此符合當前AI伺服器對高頻寬記憶體（HBM）的龐大需求，以及記憶體產業週期性復甦的產業邏輯。\n**解讀**：在AI晶片需求激增的背景下，HBM作為關鍵零組件，其供需緊張正帶動記憶體整體產業進入上行週期。台灣相關記憶體製造及供應鏈廠商，有望受惠於這波漲價趨勢，需持續關注訂單能見度與實際獲利表現。\n\n英特爾股價受「最新勝利」傳聞推動 (重要度：★★☆☆☆)\n**事實核對**：新聞多次提及英特爾股價因獲得「最新勝利」而看漲。然而，相關報導並未提供任何關於英特爾在HBM4或2nm等先進製程領域取得可與台積電匹敵之「大單」或實質產出良率的具體證據。\n**解讀**：在缺乏透明數據和客觀驗證前，此類消息應視為公關策略或市場情緒推動。投資人應保守看待，避免盲目追漲。台積電在先進製程領域的技術領先地位及其穩定良率，仍是業界公認的基準。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數收於19.49，較前一日下跌1.55點，顯示市場避險情緒有所緩解，投資人對未來風險的預期相對穩定。美元/台幣匯率報31.73，下跌0.17，代表台幣兌美元升值。這兩個科學儀表板數據皆表明，儘管新聞中充斥著地緣政治的緊張訊息，但資金並未大量流向美元等傳統避險資產，台股的外部系統性風險壓力也相對趨緩。\n\n💰 【台股影響與板塊點名】\n台股今日在外部風險趨穩的環境下，仍將聚焦於產業基本面。\n受惠板塊：\n*   **AI供應鏈**：如台達電營收表現強勁，顯示AI伺服器及相關零組件需求穩固，相關散熱、電源管理、光學元件等廠商值得關注。\n*   **記憶體族群**：受惠於HBM產能排擠效應與漲價預期，台灣記憶體製造商與模組廠有望迎來獲利改善。\n*   **半導體**：儘管英特爾傳聞其「勝利」，但台灣積體電路製造公司（TSMC）在先進製程與CoWoS等先進封裝技術的領先地位，仍是全球AI晶片發展的基石。韓國SK海力士作為HBM主要供應商，與台積電在AI產業鏈中扮演關鍵角色，其需求溢出效應將持續傳導。\n\n📈 【投資觀察指引】\n1.  **數據為王，情緒為輔**：面對市場多元且常矛盾的資訊，優先考量VIX、匯率等客觀市場指標，而非單一新聞標題的情緒性字眼。\n2.  **辨識產業結構變化**：AI板塊內部正在經歷結構性分化，仔細區分硬體、軟體、基礎設施等不同次產業的實際動能。\n3.  **聚焦基本面支撐**：投資決策應立足於企業的實質營收、獲利能力及產業趨勢，而非未經證實的傳聞或公關訊息。\n4.  **地緣政治，謹慎評估**：地緣政治風險雖是常態，但其對市場的實際影響需透過避險資產的表現來驗證，避免過度反應。\n5.  **合理分散風險**：在市場存在不確定性時，透過資產配置降低單一產業或個股風險。\n\n🏫 【曉臻財經小教室】\n今日單字：【融資維持率】\n融資維持率是衡量投資人以融資方式購買股票，其資產價值相對於融資金額的比例。它能幫助我們「看穿市場假象」，當市場在非理性下跌時，若維持率過低導致強制平倉，雖帶來短期恐慌，但也可能代表市場籌碼的過度清洗，為長期價值投資者創造逢低佈局的機會。\n\n結尾：\n數據客觀，真理自現。",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，恐慌指數 VIX 持續回落，新台幣兌美元匯率走強，暗示廣泛市場並未因地緣政治消息而產生顯著恐慌。儘管有報導提及中東情勢緊張，但避險指標趨勢反向，證明此類訊息多為情緒噪音。台股在穩健的外部環境下，個別 AI 硬體相關企業營收表現亮眼，並有多檔個股創高，整體呈現偏多整理格局。然而，美國軟體股的壓力與國內房地產開工量腰斬的數據，提醒投資者，結構性挑戰依然存在，需審慎辨識不同產業板塊的真實動能。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治升溫，避險資產卻未反應 (重要度：★★★★★)\n**事實核對**：部分媒體報導中東地緣政治風險飆升，導致油價與股市波動，並建議轉向高息股避險。然而，今日 VIX 恐慌指數下跌 1.55 點至 19.49，美元/台幣匯率下跌 0.17 點至 31.73。美元與 VIX 作為主要避險指標，其走勢與報導中「地緣政治風險飆高」導致恐慌的論述存在直接矛盾。\n**解讀**：市場對地緣政治事件的反應已趨於理性。當避險資產指標未見顯著攀升，且恐慌情緒指標下降，表明資金並未大規模逃離風險資產。投資者應警惕將個別事件與廣泛市場情緒連結的過度解讀，回歸數據，判斷其是否對資金流向構成實質影響。當前數據顯示，此類消息對整體市場的系統性風險貢獻有限，更多是區域性或情緒面的漣漪。\n\nAI產業分化，硬體亮眼，軟體承壓 (重要度：★★★★)\n**事實核對**：多則新聞指向 AI 產業持續暢旺，帶動高速運算與光通訊等板塊受關注，例如台達電 Q1 營收創下最強紀錄。然而，另有報導指出美國軟體股重挫，SaaS 族群今年已跌近四成，且 Snowflake 等個股單日跌幅超過 8%。\n**解讀**：AI 趨勢的確是市場重要驅動力，但其效益並非全面性擴散。具備實質硬體產能、高速運算基礎設施及關鍵技術（如 CPO 封裝）的供應商，正享受訂單與營收增長。相對地，部分軟體服務（SaaS）公司可能面臨估值過高後的調整壓力，或因 AI 應用競爭加劇而受到衝擊。投資者在布局 AI 概念股時，需精準識別產業鏈中具備核心競爭力及獲利實證的環節。\n\n台股創高與法人關注，顯示市場信心 (重要度：★★★★★)\n**事實核對**：台股出現 42 檔千金股，13 檔個股創歷史新高，權值股如台積電也獲法人按讚。市場預期台股可能朝 3 萬 5 挺進。今日 VIX 恐慌指數與美元/台幣匯率雙雙呈現下跌。\n**解讀**：在外部系統性風險趨緩（VIX 下降）且資金面相對穩定（新台幣走強）的環境下，台股展現出強勁的內在動能。市場信心充足，資金敢於追逐有基本面支撐的權值股與高價股。這表明市場目前對台灣企業的獲利前景持樂觀態度，但投資者仍需留意個股基本面是否能支撐高估值。\n\n全台住宅建物開工量腰斬，實體經濟存隱憂 (重要度：★★★)\n**事實核對**：新聞指出全台住宅建物開工量大幅腰斬。\n**解讀**：此數據反映了房地產市場供給端的明顯放緩，可能受到營造成本上升、利率高檔以及市場觀望情緒等多重因素影響。儘管股市表現強勁，但此數據是實體經濟的重要領先指標，警示營建、水泥、鋼鐵等相關產業可能面臨營收壓力。這提醒投資者，並非所有產業板塊都能同步受益於當前的市場多頭氛圍。\n\n🔥 【市場情緒與壓力測試】\n今日的 VIX 恐慌指數收於 19.49，較前一日下跌 1.55 點，表明市場恐慌情緒已有所緩解，壓力計讀數顯示整體風險偏好正在改善。同時，美元/台幣匯率下跌 0.17 點至 31.73，新台幣走強，進一步印證資金流向並未呈現大規模外逃，反而顯示部分資金回流或外資流入的趨勢。這兩項關鍵科學儀表板數據，為當前市場的樂觀情緒提供了客觀的依據。\n\n💰 【台股影響與板塊點名】\n在當前外部風險趨緩與內部動能強勁的環境下，台股主要受惠產業為**半導體**及**AI 產業鏈**。台積電作為全球先進製程的領導者，其在高速運算與先進封裝（如 CoWoS 及 CPO）的技術優勢，是 AI 發展不可或缺的基石。雖然報導未直接提及台積電與海力士的強強聯手，但台積電的領先地位將持續吸引全球 AI 晶片設計公司，進而帶動周邊供應鏈如高速運算、光通訊、散熱模組等板塊持續受惠，例如台達電 Q1 營收表現已驗證此一趨勢。\n相對地，受到衝擊的板塊可能包括部分**軟體服務（SaaS）**公司，尤其是在美股市場已見到調整壓力。此外，**房地產相關產業鏈**，如營建、建材等，因開工量腰斬而面臨的潛在需求放緩，亦需投資者保持審慎。\n\n📈 【投資觀察指引】\n1.  嚴格以宏觀指標判斷市場真實現況，避免被單一事件的誇大報導影響判斷。VIX 與匯率數據是極佳的客觀篩選工具。\n2.  AI 產業雖前景光明，但內部存在分化。應精選具備實質訂單、技術壁壘及獲利能力的硬體製造商與關鍵技術提供者，而非盲目追逐概念股。\n3.  台股當前動能偏強，但「千金股」數量增多亦提示需留意市場情緒過熱與個股估值風險，建議優先配置於有基本面支撐的穩健龍頭股。\n4.  房地產開工量數據為實體經濟的警訊。投資者應密切關注其後續發展，並評估對營建、水泥等相關產業供應鏈的潛在衝擊。\n5.  美國軟體股的調整，提供了一個檢視高估值科技股的機會。在 AI 熱潮下，仍需理性評估成長性與獲利之間的平衡。\n\n🏫 【曉臻財經小教室】\n今日單字：【融資維持率】\n融資維持率是指您股票市值與融資金額的比率。它揭示了投資者透過借貸資金持有股票的槓桿程度，數值過低可能引發追繳或斷頭賣壓。透過觀察整體市場的融資維持率，我們可以看穿市場假象，判斷散戶多空情緒與潛在的系統性風險，例如在股市下跌時，低維持率可能預示著更多被迫性的賣出，而非市場的基本面變化。\n\n數據定盤，理性為鑑，真金不怕，市場自現。",
   "news": [
+    {
+      "title": "那指100期 可留意 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRUtSdzlkX2ZEZW9xTW5uVW1EWkx1aFFqZVcyaC0tT2V6aTE4YTZyUmUxZmxPXzFxR3Vzb3RnN0h4NE5MaE9nWDFQT003ckJl0gFWQVVfeXFMTzdMZHpHNkpzdDdFdlRFU28zaWE4TlczTUV0YVF3eVRfU0NMdFFLZTRXWkFiSVhRQlpFM1FlekJ0U3FZZ1NoZGtOM0FkVl9SYmJiOGppb1E?oc=5",
+      "summary": "那指100期 可留意&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-09T22:02:12+00:00"
+    },
+    {
+      "title": "就市論勢／高速運算、光通訊 聚焦 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5DTkx5Z1FYdmYzS0piaWhMTG5xXzVyY2NUUzYtUUJsOXNFYXdwZmZVS1h4UmdWaUY2ek1oZzFMM0hOdmwzUW1YWHFOenkwWHp50gFWQVVfeXFMTnhJRzdqOEM0LW9OMDBfS3RWdGNMeXdZVUh1VXhMblczaUpuaTFvbm9ScGJCdl9WQ2FseERfblVWbGRqRWxtaThUQ055aU9MSy1DTVNOZlE?oc=5",
+      "summary": "就市論勢／高速運算、光通訊 聚焦&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-09T22:02:12+00:00"
+    },
+    {
+      "title": "台指期 高檔震盪整理 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB6NFV6S2F1LXpoTVNLcGxhU1lNTmFReWNJR3paMzZiWHc2R3c3bEFYUDN6dVdPUGVKRnd5YWRHNWxyUnM0OG9VNTZKbS10dnR20gFWQVVfeXFMUGRTNnBKaXkyZDUxS0hHcjU1bHBkZWxNdGtPV0Y5T1RrV2ZxMkdQcFRfMDF0ZnVTSGpsZEJUX3pocjBQb0JmUWpBdXFzSXpmRXRGb3VzTGc?oc=5",
+      "summary": "台指期 高檔震盪整理&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-09T22:02:12+00:00"
+    },
+    {
+      "title": "台股閃見42千金 13檔創高 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBRaFgydVVXSkl0U0NNbjQ2OE9ZOXEzSGFtbzkwZU16NVc0NkNnN01PMWk0Q0VWUXlMREdRUjBxQWhxaUxBOU1rMzV0S1F4VXl60gFWQVVfeXFMTlJtcmY2TW9HRkl1VlFyY0gzM1BqVnE0aWlLc0w3RUdmTDJ1UGx0TjBuaER2LTRiU0JDcUhWTElEMThrUHNISWZlZXBmQ0dhRXQtcVRIOVE?oc=5",
+      "summary": "台股閃見42千金 13檔創高&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-09T22:01:06+00:00"
+    },
     {
       "title": "Better Home & Finance董事Talwar Harit購入164,431美元股票 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5VNW1ZLVl2TVA0cFBLbmRSSTlLTGpUazBGQTFPUzN6a2JUS3ZMNk9ZdjlfZ2RiZUhHZGlmOVk4UHFTYnNJLTQ2R0F6MUJkUnBmc0VrNFhwUkF1TzRpVFR3dzV5UTkyci14SWp4NzlCSDdkT1ZyVW9Dc1p2Zw?oc=5",
@@ -28,6 +52,12 @@
       "dt_utc": "2026-04-09T21:25:38+00:00"
     },
     {
+      "title": "〈台股盤前要聞〉台股朝3萬5挺進、乙烯2月以來翻倍漲、亞洲海運區間航線兩波調漲 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxOdV84NDFyVUxiOEpTemNpUWRjU082blVlYTBsSm5MX3NuMl9PTzVuVWFrbWM3XzRYZTBpMThEcFcxSi02YWl4QkRMUnl6RG5od3VDUnlnWHhFbHpqWEZrc1J0YkFKLUhpcmg2QU1MUW9sbmlSSFFFdlJlbGdrS1BqQTBGUUlaWU1DZDB1QkNXZ3U0WVRZMlBtN2RVeHVZcWQ5clRzcTFqNnFRbk05emN0ZndMTXU1bmF3WDAxLWhQYnRTUm96VFFYcURFV0tqa1hZMEpoOFlMWXVjaWh3MElfTEVsY3ZrcUt0WTRQd1VLU3ZCUFUtZ1ctTllqbGIxenlWZDBlSmxZZHpIdF9KSzBuQVNUWHVKTXphRHYwWE5kN29mS0lGanpyVkJobFhBOHYwNmx5SWotQW1ZOUs1dmJlM1A2V2R4bzYwU1N4TXFSX0dadTNZQU9XRkV0enFJNW1jeUwza0Fpc0FhMDlVWXFhbmhxSVJDVlF1OEpZVWZGM3paVnFQdEZaQWlCMmtSS1FmLXdMS2N5Qlo1UnpDOGN4V0RydGVhcUl0VUNnaXRXaHFkR1V4dkEtUXE3S0hLWmNhWFJpaVFwcV80blVwTXAwQ21PcWw3UDhoRGYwMWU1dUJXZkU?oc=5",
+      "summary": "〈台股盤前要聞〉台股朝3萬5挺進、乙烯2月以來翻倍漲、亞洲海運區間航線兩波調漲&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T21:10:02+00:00"
+    },
+    {
       "title": "習心腹王小洪異常隱身逾三週 傳聞紛飛 - 大紀元",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE42T0xsb1hGOUpWZ3dLYkFNNWhoMkNDYmgwaVIzLW85N3BsT0VRXzhQdWRsV2pLQnVGVndlUUxNUnZ3aE5YSHlUMTNVNjZWREpCaGYxQ2ZYMWk2NklFVVJJ0gFkQVVfeXFMTVN2cTNURG1Gam40LXFMY0ExY3V4cjk3SGY1bDl6MDhuYXNqQkRYYjBsalR5bkI3bkRndGVpaUNIUUtiXzBwbTJyZDFUZG1KNmlYb1ptYUhkWlNMcDhvQjhaeW9PLQ?oc=5",
       "summary": "習心腹王小洪異常隱身逾三週 傳聞紛飛&nbsp;&nbsp;大紀元",
@@ -44,6 +74,78 @@
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVFZDZ0FySjJfcWM5d2xEd3pxeC1WNzJkVjNsYTh2VGNBb3BRN2FfUEJacV9CcU5scjktVlNNblNvaE1HbGhsUWlsUTF4SjNScXdKZjlZZmhzTFdSOS1zc2VzLXg0QVp1MGVyYm1wSVBkLTBENkJmamRzeEh4SXpZNlRnMmdvZzdXQ1NFOV9jQjl3dlpKQmVLc1NxS28tZG8?oc=5",
       "summary": "Investors Bid Up Amazon Stock After Chief's Annual Letter -- WSJ&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-09T20:47:10+00:00"
+    },
+    {
+      "title": "台積電、中砂 法人按讚 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPamZMejFtU2Y2LTBSbTJyOFhxa3pyOFNWRXVGZkZtUmlNQ2w3MnE2UUQ3VG4zWThHQ2NvNDN3b0UxUVk5b0IxQnNJVThLVTNVMFhsMGtlTlJ1ZWlRQXBfaGJvNXRCY1QxWmV3NjVvaDRxRmk4ZmJVa2R3SkhUTmxrZ3NJNy1Jd2Q0UzdoLU5xUi1XRzJUaW1HN291QTY4TWdpNTN2NWxjT28yYnBtRGlaQ0VkdjRkQV9lWlkwd2JjVERHRXRNc3Q4RkxR?oc=5",
+      "summary": "台積電、中砂 法人按讚&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "證交所 防詐專區全新改版上線 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPa1pvN1VfX3JzZTJHWnBrcDZpMDFoNS1LTXJrN2xEcWpDbGN4T1BqZVFCRzRJaTFCd0FsSWN5N1BrME5TTW5XRDRqcHZhTzlOdXA0cmxTdnpEOFZGeUlaREFHT3RKOEVJTEhTc04tWXJVbVZlalcydG1HVXhCcklKSXVHNGFnbXZNem5LOGREOGR0cTVSNFBjdm5yc2Jib0p0QWZRQWpNMGo2NHFuUkgwMFJaUS1Va1Z1cDE5aTlHYUFmQXJQNHQtVFZxWkxXVzVTSExZVnpfWWcyVE9WdE9QYlAwbU5NTlNEVHJCc25zWjdpR3dHQkVTTg?oc=5",
+      "summary": "證交所 防詐專區全新改版上線&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "台股ETF除息秀接力 湧200億活水 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNY3FKOVY1STlxOVdRUmEtV0p0SUg1NWNZNUVuUWY0eDg2dE8tZnQxcG1nNXlobUo5bW16Zks2T1lpdG9wVXhpaVZIRzR0SEJFNTRYQ0RUQ0JLSW9GbVhTZ2V6dzJnSFRnQ0xuYlUxRDlwRXJjZmlJOFhMODlxQ3g1d0ozTGRpWUxFQ0QwSlgxV2I5QVZoVlVyeWpscFZ4Q2xNUkFDanJoM0NtaElIQko4Z2hXWkNVVHkyRWFHRkVXUlRMVDNHc0lpdUYtM3dpQnQ4eXJiTDY0ZU0xdDE1VlJDeWlicnJvWndv?oc=5",
+      "summary": "台股ETF除息秀接力 湧200億活水&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "普發1萬 尚有40萬人未領 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQclFqb2pBRzBaUi0xWlpKX0ptVTQxSXJNUjY2QTdfM1JxZDh5cWc3Rk5LT1JpNkpQVHVyNVRZRExuSENlQWV5czBzcGoyN09tdDZYU0kyb3BNY0dOWGUzblJrRWJPMmVKUGRXYlRBVU1JTFF4R0RyeEJIY0FTenFyZjc5TkRTeVp6OTFRSHFrVFBiZUdlSVlNcThkZUt0LXdhRERzNmU2U1hqM2lnVlJzR202NUo4NENnVGR1d3RORWp4V3BRc1g2enk1ZkE?oc=5",
+      "summary": "普發1萬 尚有40萬人未領&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "2026理柏台灣基金獎》債券投資巨擘 聯博三連霸 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxNSHZPNzVRU0xQdjRkUFJ3ZjY4V1hSWWxpOW5TTHVqZTAwRkZBTFZ1MVpCUFY5OVVKQXYwcVQxRllSMjBVdVNRXzA0TDBDbXV3LVpWVUlEcjRxS2hRSjNiZDc5T21hT2tMV0JadVlrNXRWb1d2aWtUV2QwOVZvZGlyemY0NnFBUDJGNUVhNS1ha0FEVWY5ZUV5NDQ4UHBJOTctME9KYVhUaUNUUl93ZlhkVDBPWTdWUDVBVW9iSTZOMHd0WDd1TEE0bC1QdlJMZ3QzcWxFazZJSnhZQWN6clBqSUxwWGxZODZnY3Q4Mng3WUxWaEd4dHVTUld4djRMQWpOb0VwanpaWm54dkxRUDZNakhkOUJVLTl1LTI1SERIQkhMLXZnTUJOTmlKcEl4TkxUZnJXWEd4Zks1Wkk?oc=5",
+      "summary": "2026理柏台灣基金獎》債券投資巨擘 聯博三連霸&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "2026理柏台灣基金獎》理柏基金獎 8檔揮出全壘打 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNc3hzN04tb01WUFplVmEteXhTeHoxR21jX2ctWG81VTd6OWpjbXZvcE13WERwalR0MlNKZ3BiNFZnbTdON0JWYWpUOGpqbjRXYmNUSzYzUjQxSjhnVmlKR0FpWXp5VERfTUoyWG9vbHVNbDZqakJmVmJ5WlZwcEZGb1pnSlRxbDRqMHQ1dVJGcFQ1TlFfZTEyUzJqWnFJbkRzR1E3SmdoSHZLUXV5Y25rdTVjUDJwbzF0cHRsWkllbkFkQ0l4cDd2cngzQW91LWNDM1hTV2pUalpRWV9FakZKeUdJWlI0SlZSTE1vaFQ1RmptWFpxVzIwRDlzeWtSUUhIems4TFdVbkpzU0oxSHZ3cUZ1clNHcW1BWkVNY3hyZll2eG5VZTBRWFpzbWdMUW9EYWktTlUtSE12bFo2?oc=5",
+      "summary": "2026理柏台灣基金獎》理柏基金獎 8檔揮出全壘打&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "2026理柏台灣基金獎》利安資金管理 亞太獲獎展佳績 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxObUpydWtkajU3SU1fVWhRQWJxSVVzSDNkc2lhUFRfa1AzblhnTHNEN2RTUmlFOVBRVHZOQmlZWVg2V1RDT1BybkVpd3Z4cDNLV0N2X2dDazZPMXdhb0kxZUZJZmxJbnZnRENNZW1fYUdTcWVacWlaMVZpTW9LU2swYWlRSGlWblpRd1NoeW5LZTdIX3pyTU51Y1d3dHhhUVhBLWZGSFJaVTVXSDZobzJJQWxTczFibHRfQ0k3Q3ZGMXlTMkQ0UHRYV3N5THh0NzRpYzBHQmZFb3l6eGtnZnRfRml3UzVlTzEtUnlaVElLQTRyNjJFSmFiLXBRNW9mSGpqU2gta3Y0bFliSjVLQjExeTYtSUxxanFwT3A5Q2s1ajhJVTd1MFJ4RU94bFk1a29DUWF2N25ncXd3UG5mYnhDbWVtTUFQN0RHZVgtcU51Rm1YeU0?oc=5",
+      "summary": "2026理柏台灣基金獎》利安資金管理 亞太獲獎展佳績&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "壽險新賽道 9業者搶Q2送件 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPb2xpY3h5UzgwenBvNVBLdXJZMWpsRnlrOWZYSkdwTnY4LWJPa3VRbkw4R3NyR0hjTVFuekhwS21HMlhjWk1mTFYxeVZPdlVxeVVrRmpyTVp5b3ZsZkwzdXVPaHMzZzBSbVZER1FWU3hjMUFreGhZUFJ3eUp6QzQ4cFlWRmhzLU9SdXY3SzNqWFd1REN3ekVQVGk3T3lCMTFRblh2SlZkN3BjcDZpNUpPQVdfQnRMZG9mZUlqMFNJY2xKRmI0TG9fck9DeE5GZ2pPVGF2TXVveUo?oc=5",
+      "summary": "壽險新賽道 9業者搶Q2送件&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "虹彩新品齊發 今年登興櫃 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNMUJuQmdYM2Q2SF94bi1KcVV0SlMzajVLQ2tVR2h4bmw0VW5fS3ZPeU1ueUhCWFlVeS0yT3NhakQxWXZvUXhCVDdaOGx0a0gxYURPazYxbmdQMVJ2SUUyRy1ad3JHLW9xbVpNaU1hMFBzenBvdWJUX0xnN0M5YnZkQXNjZ2V3aU8zMldtSUVpdzdPZnZaX05qSldDT20tMFc1bzVVWC1ob1NQclJRZWJWWXBMcjI2cU5WSTUxRUk1ZUx5MkNlQ1dETS1QMVktbHk0cTZvSUJlckFfanpsVzlDeQ?oc=5",
+      "summary": "虹彩新品齊發 今年登興櫃&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "三利多 連鎖餐飲Q1旺 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZXIzSE1CYmlmcWpybXlZTDQ4dGU1QlFESDR0WXVXSkJxMUdGTVVpcmNMMXlCazF0Nkdab0Y5dktkRUxFUWNLSXZ3T3N4bndzbUduMzluM3JlaFFNb285djJsOWtzNzJNQVNLVXlTc1NlbjJ2NWdrYUgxcS1GTlJtOGdfV1hVbnRHcC0xWm42c3l4dnFkcjRUM2tjMXVWY3ZwRXhMUzBCVWxjNEQ3QktWQUNURG9jS3VsVFpNVmtaUQ?oc=5",
+      "summary": "三利多 連鎖餐飲Q1旺&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "全台住宅建物 開工量腰斬 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNbkdQc2dNME43Z3RYRlhUY21zVm1hdFk5NkpZS3ZaZTVURFpsTkc5dkxCSFVzRTlicFpWVXhqQzBCdEtzTV9meXVLSm93RFFFYlRlR1pFMmVuOWNCOTM2bjk5M2oxcUpjOGFSWFBMSEZJcHNWSENrLVFwc2dlQTZGOXlua0tUeF9yaXVLb211NlF1T2p6WVNTRk9LYjVwb25KYmd2R3VzRG84M05ac0V5a3ZDcEN2R1ZjTE1nZk01a3l6WmoxWnBWWEIxMnpzQ0g5djBHV1p5TVhDcDlzdC1abA?oc=5",
+      "summary": "全台住宅建物 開工量腰斬&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "食品通路冰品戰 提前開打 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOLTFDek1USHdwNExzWjZDdlZFemlxclRCNkctUlltUFh4WDZjdXVpMWdORjhIZ1pwQ0RnNC12NVpLcG5uMXVRLWhhYUc3Y3RNSWcwR193d29uc3Y3ekZiSW9qTzIycm42S1NTRm4wMXRuakNnNFRaYlN0UVZ4QUlEdHpoRXlRYm1vdXY0WERaWjR1TGJoNG1YTVZrS1ZyRkVHNktCRFBOenBSVmVPRWxrb2FHQUptTkNRalcwc0ViRm5DeXNGM05mbWdzT3JqVldINW51OWVLSXFXbmFTd3RQag?oc=5",
+      "summary": "食品通路冰品戰 提前開打&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-09T20:10:00+00:00"
     },
     {
       "title": "印度股市 中長線動能不變 - Yahoo股市",
@@ -110,6 +212,12 @@
       "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOYndXTFdlV1B3ZlhJLXVsMnp1SW5Pc1pDRFowUjRsRjVZT1FTYmUwWDViVDBJOFAxZU1jdGRJcWxCMXBHSldlbGc2TF90dk9mcWxfeHZyNmF5aEZqREx1SDBPYkphS0xYSC05RHJzdXptR2pYS2hrR3J5ZnI1cTY5Vm14T0gtM2F3b2g3UW1wY21iTnViNjRwcUpQZHJvbU9LNnpsbUliNThTVTMzQXhNdVpEWlhzWFVfTEhtanRKNmtvT3BvaW1oNkFmLUVwZ0drUmRxM3VrRXdjTGh6QkljZjA1TjZnZENvVUNOY292dDk?oc=5",
       "summary": "光陽光電 跨越CPO封裝量產挑戰&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-09T20:10:00+00:00"
+    },
+    {
+      "title": "9938 百和- 軍工材料新商機❤️ - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83d2hCOWRmVWpYVVBtOHZ5ZjRwNUZTaEJOZWNSQkQ5cFY0TjdOUTNwdEh5SlhXaTVPVkpGb1FnUUxtRFRELUhudHFnNXhadi1oWmZHMzNpdU8?oc=5",
+      "summary": "9938 百和- 軍工材料新商機❤️ - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-09T20:02:59+00:00"
     },
     {
       "title": "【即時新聞】美伊有望停火推升美股大盤！預測市場估四月底結束軍事行動機率達53% - CMoney投資網誌",
@@ -278,114 +386,6 @@
       "link": "https://news.google.com/rss/articles/CBMi4ANBVV95cUxPRXd6TFNPa3hVNW91cGlqZVJUdWx5N1RIenJ4YV9oNVN5eUwzZ1AzSXNQdHhyeEQ5aXp4dFJjdDRNX0x1TWh3RDNOX3R3OXkxUnlLbnZRU2dHa2kwUlppNWItbUlfWlFEcWN4YmFLS1h0ZUtGSFpkRG5EaE12VkRjNWFNejUxTVRfc0tRemViUkRlc3l6dkZVRzRhZzZ1clQyWW8wRnJ4d0hFZUlMUHU3ZWxBOGlhUVRsTDZPRHNqazB1UVludDY0RE9PUWdmWVgxeDhoTTI2b1JKdnZENVBEYmFpcFVURDVyZnBhNEVpUW85eU9kS0ozNTBsN0hTWTJ6QXpHcERFYUNEc0VETDc5Z19GVFZ0LTB5bF9rNTUzelI0TVQ5OTVtQ1hFU0tPcGxKaUhNZ1E2bjBTS2g4UmQxNlV1OWVrejVOdG1tTVRka3lTUUVhdnloVGRVY21VWkJjWExKbWlHbTRwREJyOFFqUEZUd3FIRXh6VEJhS2RSdEM5dzZycHZINEhFUkZibDlzWDFUWTJ3cjJIZThCQ253N05ubW9rSlpzRGpBU19PVy1lOWtuWG1xNlc4cFN5d0k4T3VZSWptNXRwREI0akNsVksyc3h6eXE2Y3VIMnJsSm8?oc=5",
       "summary": "法國報紙摘要 - 巴基斯坦推動美伊間接對話，以提升自身地緣政治地位&nbsp;&nbsp;RFI",
       "dt_utc": "2026-04-09T14:30:59+00:00"
-    },
-    {
-      "title": "3576 聯合再生- 加油讓主力繼續吸籌碼- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBkbXVVdWgzUU1SRHdEcGQzNWhSMGN2cHU3N2RqeXBNRF9NVGJ2bVk0WFRYcHBHaENFak8zcWdEX2VpeEhNZHlseU5WS2J1NUdMZ0lraHR0VFQ?oc=5",
-      "summary": "3576 聯合再生- 加油讓主力繼續吸籌碼- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-09T14:30:44+00:00"
-    },
-    {
-      "title": "Intel's Stock Is Set to Extend Its Hot Streak. Here's the Company's Latest Win. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNTVFKVW1tMWVoNXVJZ2dpWEhYY3h3TGVoTEd4VUpIdmVNUUNjTEpGc2pudkx1ck1lWTUxc1p3Wm5valBieW11RWRtdzRQRzBwdElyWDlzaTJUSnlNeU8yYmQtaTFGSHhjdlRjc0xDSHpyX3VCTzlFLXhRYldtemhYcjFUNG5oZWtGdDV2bjN4dw?oc=5",
-      "summary": "Intel's Stock Is Set to Extend Its Hot Streak. Here's the Company's Latest Win.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-09T14:26:59+00:00"
-    },
-    {
-      "title": "川普態度翻覆！美伊停火市場半信半疑 美股4大指數3跌1漲 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxPSnZnbVByVUxyVE5FRWJrb09GNC1KUlJxSmotVlJDYnNYLTB5VUhFRWJRWjNUSmRqdVNwbEJpN2RLdUlKR1pFZG5CVUZsSGVEdndWNnJwTHA2enhabVdtREdxdVlXb2xBdTdaWFpKdUNZa2RhRU1KRlNzWVVBMnZqVElRX1VzdUl1Q0lYV18xUmJuX0tnaHJicjcxaHowUkJMVnZSbjRvdGw5OFpwUVVBYVlUNTZKZ0drNTIwRjVRNHB5UmJVMlhUWUFOVUx2SC0tRUh4WVRVbHk3cVU5UDhVakcybzdYdWhaN0NpUHREaldsM2l2MEV5WHhBc2dETnd6b1lNUXcxY0o0VGNuY0cwQlB1RzBDYXJEZE5RUXVST1dDb0JCTzUwS2VjZ2hNZ0haMzBLRHBVZUdfQ3ZxTk9MQk9FZFBwQlVrQmdXcjJ0bmR6RUhMWlZhaldBUERQU25ScE9adl9ZSUstMEt6SXpHekE0RWozdw?oc=5",
-      "summary": "川普態度翻覆！美伊停火市場半信半疑 美股4大指數3跌1漲&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T14:25:00+00:00"
-    },
-    {
-      "title": "被德國納粹軍事法庭判死刑 用來處決的木柱 (圖) - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMixgJBVV95cUxQRkF2aktRWU1LcGoyRHFYZVRJRmRLUDdrYWhvd3FzMVZlNzdZTHIzRWFGcjBPZGg2dlF0VDI0VWtNcWlhQ0Nya1FULVhrWi1XVHBOd0FsWVk4Uy1pMnowWVYwSGtNNlkyUk5IamJYYnlEQjVXLU1WQ1lpaWhDNU1nbFNkQXRDVWNXZ01KTUR5QnlyQUFoeVNJRVpnYVg0eGpOd3l1R0UyQWlFZDJEQ2VwSFl5TVJpX0R2M19wSE5VSmxoZGcxN3BmZlBEZ1JEbnMwclM0T3VDOWpFRlBobXNfNVJlSDIxbllvM2JvR3VUS19mNGJlWGZCYWZlS2pERlVBYk1VLUFQSG4xaGVuY0hXM0FhTFU3dThwQkZ0Snlzb3ZEbXdsZGpZdERXZDg1bmZORW5USjhxWGZLWTN1SXk2ZmNjcnV3QQ?oc=5",
-      "summary": "被德國納粹軍事法庭判死刑 用來處決的木柱 (圖)&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-04-09T14:20:59+00:00"
-    },
-    {
-      "title": "Intel's Stock Is Set to Extend Its Hot Streak. Here's the Company's Latest Win. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQnFEYkdUcU5BNVVCOUZUQW1sNEtDUGhxNk9FT0dYZnJyR1k4RVZCSWJRYmdBeWcwU3lINFVwaFRLdjZQM3c2cnNkX1hFMFFKb3ViTnZmNEV0Q0k3bmZNZTI4bUM3SGZkcG9ybHp4WVNJRFQ3TEJjVkxwZ2lVbzhpeUpfRDRTN1gwRVhsX21TMA?oc=5",
-      "summary": "Intel's Stock Is Set to Extend Its Hot Streak. Here's the Company's Latest Win.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-09T14:17:00+00:00"
-    },
-    {
-      "title": "《歐股》美伊停火協議面臨壓力 歐洲股市下跌 - AASTOCKS.com",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBGMmJBbkFsSVE4T016Z0ZLREtoNDlNemF0Tng5cVVTNDRwWFRpUkZST24zY0o3Z2kyZmVLT3R6a3dQZm1rdjVIdEU0M2N6NzRRWkpzelNsV2VOTzVpVUlJdERQeXRfejZBaHVFdVZBUQ?oc=5",
-      "summary": "《歐股》美伊停火協議面臨壓力 歐洲股市下跌&nbsp;&nbsp;AASTOCKS.com",
-      "dt_utc": "2026-04-09T14:14:00+00:00"
-    },
-    {
-      "title": "《歐股》美伊停火協議面臨壓力 歐洲股市下跌 - AASTOCKS.com",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWUpRZWY1TFBTVnRFT1Z6bmlhU0VSamlTVmlTQUhwZk1UR0NuZExvZ1pEQmlKVmExWml4aklJRTdOQ1VISHpGU1JrNU1xdmcyWWZQU0p5TmNyTnNsTU1PU25vLWRyclFkdFJFM0hYS1pWbzZkS2dzbmJMUGZKeElCOUdB?oc=5",
-      "summary": "《歐股》美伊停火協議面臨壓力 歐洲股市下跌&nbsp;&nbsp;AASTOCKS.com",
-      "dt_utc": "2026-04-09T14:14:00+00:00"
-    },
-    {
-      "title": "中東地區停火前景不明 美國股市開盤走勢分歧 - 壹蘋新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOXJLLVFPblVGSnN5R096UDI2c1EtV0ZIZm1wSjgwbUptbURJMWRnbm53cWplb3FyeThPaFptRFkwZ25IS3NJYVRKeEZCdngxQXpQN3dKS1phc2FtQVhzOWl0aDZvTWdxbEhRQXhEQmcxNE9YV09kNlAwY2cyX2p6SXdB?oc=5",
-      "summary": "中東地區停火前景不明 美國股市開盤走勢分歧&nbsp;&nbsp;壹蘋新聞網",
-      "dt_utc": "2026-04-09T14:09:00+00:00"
-    },
-    {
-      "title": "U.S. stock movements | WTI crude oil futures rise back above $100, with widespread gains in oil and gas stocks. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQb2JCSDczbVdqdWgyTnVON3U0RzNmblJ4dkJJSjFoY2tzRno2aF9CT1JJTG9ZY3RQVzdXSHlUdXdqZjBqd2JsYnVzUTlCa2tHUVBWd3BrQW9XNU90dDc5WlNnYlJEZFRaMDc1b0hGMDhRT0hvZnBRSmZpZUFoU0VSLXh5RjA1OG1RVUR5dnV2d1ZmUHdRdDd0NVFZVkM5UQ?oc=5",
-      "summary": "U.S. stock movements | WTI crude oil futures rise back above $100, with widespread gains in oil and gas stocks.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-09T14:02:37+00:00"
-    },
-    {
-      "title": "Chocolate Finance登陸香港 首10萬元保證3.8厘回報 - singtao.ca",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93ZW04bFY4TXJEZWpBTC1kSlBPMTFxRDVoZjFYeGNseXhiT0RpQ09IMkthZk03SklUdTlRN3c5SE1yUEo5SHc0M1dJclAwVnZicVVwZ3hUQlF2aHE1RzhJX2VtTFhXSDjSAYoBQVVfeXFMTk5uM2dRc3lGa0dBdU9KbU9VN1Fsem03Q2NsYU9xbHRYZlQ3WmpoeE1OTFo5akc2OHdzWEJvelRhemlxZlNGQzFFemo4RGxhUkxSWUMzeEthaUxqSTBWNUxpQUZJWjRQd21SeEtJQzBOazlyRVByYXlIVEViZUM0M1RETENpXzRHMHB3?oc=5",
-      "summary": "Chocolate Finance登陸香港 首10萬元保證3.8厘回報&nbsp;&nbsp;singtao.ca",
-      "dt_utc": "2026-04-09T13:57:17+00:00"
-    },
-    {
-      "title": "中東地區停火前景不明美國股市開盤走勢分歧| 證券 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5OLXU3cm51WERkUGs0ZC1EVzFuZHZnOEp4MmxFbWxaNmtydFp2ai1hcm0tVmxKSDk0M3RvcFZvVU9TdGV5ZmJNOTgxTldCTHMwWFlBamwxNU8tRW9YU2c?oc=5",
-      "summary": "中東地區停火前景不明美國股市開盤走勢分歧| 證券&nbsp;&nbsp;中央社 CNA",
-      "dt_utc": "2026-04-09T13:56:00+00:00"
-    },
-    {
-      "title": "〈美股早盤〉美伊停火疑慮推升油價 主要指數走低 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMizgJBVV95cUxQS2c5SnVBQXhLR3F0VDRpT25heHVZODRTeVl2U0xJN3VFUDVleHJBS1V5U29IN243Qk9NeHBGZ1ZLWFlNcUk1azc0UkswUVhHNWQxbzluVmV6Tmkxb1JDcVh6MDF5cDF1a2VtVkFuZkZGTHdpUjBjYlAtbGhQNEFBMzlYZXVRcWpTMlMwd2J4U3h2TmYweFM0YjZGNUVkMnNnaERkZmVZQlRZYXBLWkJVM0NGTkgwRHk3TWVXTkctTE5wTkd0R2NZd29UNC1YdHVkU0M4MWdZUC1iakVvOFNBXzZHNTBWWXA5ZUlRcEF3NWQyUzFQZ2QzTW9xZnhteGNUU2ducTU4QmlBSkw0YzRUckpvMHJWLTFPakZWdURwVXZvem01Y2JaUW5PVTRYOW1YSmlOOTlBMURKZERabkFoczF6YXN3V0xVdTl5X3Jn?oc=5",
-      "summary": "〈美股早盤〉美伊停火疑慮推升油價 主要指數走低&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T13:40:02+00:00"
-    },
-    {
-      "title": "Intel's Stock Set to Extend Its Hot Streak. Here's the Company's Latest Win. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNQUdTYmJyRDRjZndVcTdqdGF2RTg3aVFwejJVUjhfMlBKM1h1Qm5Vc2FmVjg1MklqcUhzNnphM0NBMWZNc3ktYjFWQWtRemRCUjNONzZQS1ZYeTJ2YmV3eXFyN1RCMzJ1OVBLdDc4UjIyUWQ2cG5rR1BTSUxXWjIxbkphNXpxVDdGaWVIMWc5R2VsZw?oc=5",
-      "summary": "Intel's Stock Set to Extend Its Hot Streak. Here's the Company's Latest Win.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-09T13:34:48+00:00"
-    },
-    {
-      "title": "Intel's Stock Set to Extend Its Hot Streak. Here's the Company's Latest Win. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTnVHR1VEdEI0WW1FTE9STmxmd3JXbTBLa1NPMEdlRUI1MnZLeUxNUW95SlpnbzEtU3NMOUFmd2p0bWZ4bGpBNFZqYVplRmZaUWJ1UUJZX01JX3dRNWdWbHdvcGh1QlNGY1hqMVJFX25uS1V4NGp6VHBBRERpRkoxRlZWdXAweGRrVVQyc3F2MGFldw?oc=5",
-      "summary": "Intel's Stock Set to Extend Its Hot Streak. Here's the Company's Latest Win.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-09T13:26:33+00:00"
-    },
-    {
-      "title": "Chocolate Finance登陸香港 首10萬元保證3.8厘回報 - 星島頭條",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNWlJFcTNKQXZxNkRQUVlCNnh0UmRKbTRJaExobU5kZ3ZlZFRFXzRENjM5eU9ldlBmLV92SnpTdDZpQ21xSXMxWjdzVElBdWQ4UTZJVTV2cVJvaXA1Qk1WZS1ZbzF4LS1sZ2d2a3E2UDdOV2dUckh6ZThqdHBrVlZwU2tyekI5ZnBfbXY4QlpSSnZhcUJxOEVyUTVISEJyN1owWDZ2TlVBQ0NFUjlCUDdqdXRDa2JxcGV3QTZZSkZUd1paSFJycEJwdTUyWlg3VnBOVHBhVUZoX2tYQm1WdG5vWnIyY2J0cF9RR0JmNUFSMUdMb2JnR3dkeVpyM2x5Zl9ycWpDNzJJZw?oc=5",
-      "summary": "Chocolate Finance登陸香港 首10萬元保證3.8厘回報&nbsp;&nbsp;星島頭條",
-      "dt_utc": "2026-04-09T12:56:59+00:00"
-    },
-    {
-      "title": "瑞銀最新報告調升美光目標價至535美元，HBM 產能排擠引發連鎖反應，台灣記憶體族群有望迎來最強漲價月｜股市話題 - sinotrade.com.tw",
-      "link": "https://news.google.com/rss/articles/CBMisgVBVV95cUxQWXRyOVhLR2M1ODRMRzRSWUJvMHR5UDh0NVVPSU9ndlFJakpiclpYWTJuQ2ZCbDNVeFRiNV80MGt4VVRwc2xaTHZ4MFAtVFRSaVVVX0N2dlBEaklNM3lBeV9vcjJSR3lrVVZNbmxnbGd0S19QM3pWWDJ0MVlFREx5MmZBTFo0N21mQTZsNGtiNXhZVzBxQUxSZUtYSVZURFkzekp6VVBhQjNWRGtDaHFzSUM3aVpoNE9pdlUtRWhuLTJoU0dCNEw2aV91ZktPWFZQUU9KMDJGT0ZYbnFrSGRIazlnV3VjS09GdWtwWU9ZanViV1pHOWYxX2ZQaVo3YXFwRDRRcHJnTFZLbVFuc0ttYXIyTWZqRXBHeUQyUnVrLTlqeXZWV3BFa0tidFpJSUx6amdUTmZReW9SeC1hUlhscWIyNTVhT0VDWnN1ZVRKb3VvTUk5X0dyay1OdWs4S3dmR2RQRWxKQ0F3NnMxVEgtU3FsZGdNUmV6V3h6azFpdjhpVkx4QV9iUEFQS1FmSEhocl9veUI2eE4xVHM1UHV0NjNaZGFEQ2JwWEdPT2p4VEhiQUl2WlJ4RzBhZ1pZenF0WUZlMVVqd1hWcFFNanV1RDZhYnVlajhoMW9MeXhMNk8xRlhJbDI5YkNRTWxPXzllX3YzbFo3cW4wbFdZRENmVndEUTRQTk15cVhjZzBWR1NHYzhNWUFBVElEdFM3MWpuYmpadGZPX2lCYi13MF9SOEZCSVpZTzRVbjBBUDcwSjdfSktCTDRuenBGT05mbVFyc0pGWC11ZGtDdG85Nk4zeVRlUUVTRV9Kd3RoM1BHc2ptZjBBaTdvYWo0NHo0Zno5b3N1M2djeU5jRmFWUTdQRzRwSFgxYnByNl83c21WcVZBNWszOW9UOVRMX1BPdTBJanc?oc=5",
-      "summary": "瑞銀最新報告調升美光目標價至535美元，HBM 產能排擠引發連鎖反應，台灣記憶體族群有望迎來最強漲價月｜股市話題&nbsp;&nbsp;sinotrade.com.tw",
-      "dt_utc": "2026-04-09T12:45:08+00:00"
-    },
-    {
-      "title": "目標價上調至292元！外資變心清倉南亞科、同步減持3檔記憶體 友達也挨刀1.4萬張 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3ANBVV95cUxPMHJrYzBWQ05GV2VkRnU0MUo1b2ViSjJueVNobHlqWlRMOUxQazdxOTBBaGdCOEZZT2FhNHpnUW5UWEdRZWljM3NyaEVWOFN2NDNndEFEQXFadENVVDh1dk03anBIM3M3TWJVVjZfV1FkYUZraTJRYVdnbmFacTlSNDJWc0NpOHZXRHBfUGo0ZlBkZGxsZzBYM3N3S0FhVjFlVVNhcTJhRUdDbmFOTHIya3FGSnY3RHlfMmhnZjFONHBSeHBESW4xM3h1bWllc3hXQWVSUXRJUXgtdzVPZk5WdU4zTUZfRlRMSXotOEF4WXpBQ2F1QkZDa3M5WXNlY3d6bkRFblVHQTd5enBIMXBtdjRkMzZLbEhiaEUyTHdVVmFja0pOZU9uQlUtZDFjSlp1VUc3OGZfYnY5cnljVDNnd0JVYW9nTTZ1d2MyZm5sZ0tHV0lUVEtaTXZYUE1CSVZKQ2RscGRKeG5vdGVsNkFfM3JfZzRBckpCVHdHZ3lkbVdjNGxqV0paQ3lZc08zRUt2UGhoV29faFY3RVBLeHlvV1dfNXZETFpYN0JKY1E0dEpsWkN4bzF0RGVEMnNidTNMcU01WTVMZHlNbmV3dGdVWGpLRkJsVUpiSU5RQg?oc=5",
-      "summary": "目標價上調至292元！外資變心清倉南亞科、同步減持3檔記憶體 友達也挨刀1.4萬張&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T12:30:00+00:00"
-    },
-    {
-      "title": "買穩定幣免門檻！奧丁丁聯手Visa 金融卡 可入金刷卡現金提領 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMijwNBVV95cUxQRkpWaHloNE5uVXRkak5UYkh2U3VjT0kzcFNZSUIzb1gzVEVoNHY5YnNYZkN0ZDNDWnN0Zm00RVV6RFhYRng2V2R3VDBnMi1YaThRV20tc1lFSGJKZl9GTk5zV2dtR3VYNjEyTXdOMzBVcWlpbjc1WjhiNzd6VWphZnJ2ZWdTWTA3eGJhaFdlMXY4S0tQcVJwWElHZERTNTZwZ0w2VnB5bWFPS1JieVdqQ2h1YVRQNVJyZGkwdFpnNkxCT3pnWmtQNDVHdjg4N3lmdlpBdEdaQ2N4MUFFNkNlY0dUaklKa2FSbHh4eXExQXVQSkhVQkZZejZ1ZUJseW03ZGczVlNwM1JGWEhwMGwzbHJiTEE3VUFpU1BTTVNuRDgyckxlOFJKMk9udkNaOV92TUxFZlBEY0RYNjZyZVlqRENDWUhESjl5SlZqUkRuMXNON1ZVTTNqbC1heU5mdVdQaEVETzM0NnJDd0ZGQ21oTkVxV0hfVTVKNnlIUGVYQkhOMVFTa0ZWRVV2c0haTkU?oc=5",
-      "summary": "買穩定幣免門檻！奧丁丁聯手Visa 金融卡 可入金刷卡現金提領&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-09T12:30:00+00:00"
     }
   ],
   "risk_indicators": {
