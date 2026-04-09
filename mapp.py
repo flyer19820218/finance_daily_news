@@ -91,47 +91,41 @@ def fetch_yf_data(symbol, name):
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
-    # 🛡️ 升級偽裝術：換上超真實的瀏覽器指紋，騙過 HiStock 的守衛
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
     }
     try:
         res = requests.get(url, headers=headers, timeout=10)
-        res.raise_for_status() # 遇到 403 阻擋直接拋出錯誤
+        res.raise_for_status()
         res.encoding = 'utf-8'
-        
-        # 🛠️ 修正 Pandas 報錯：新版規定必須用 io.StringIO 包裝
         tables = pd.read_html(io.StringIO(res.text)) 
         
         df_inst, df_fut = None, None
         for tbl in tables:
-            # 處理多層表頭
             if isinstance(tbl.columns, pd.MultiIndex): 
                 tbl.columns = [col[-1] for col in tbl.columns]
                 
             cols = list(tbl.columns)
-            
-            # 🎯 精準狙擊您截圖上的欄位，並且一次抓 8 天的資料回來
             if '外資' in cols and '投信' in cols and '日期' in cols:
                 if '自營(總)' in cols: 
-                    df_inst = tbl.head(8) # 現貨買賣超
+                    df_inst = tbl.head(3) # 🌟 縮編回 3 天
                 elif '自營' in cols and len(cols) <= 6: 
-                    df_fut = tbl.head(8)  # 期貨未平倉
+                    df_fut = tbl.head(3)  # 🌟 縮編回 3 天
                     
         return df_inst, df_fut
     except Exception as e: 
-        print(f"⚠️ 抓取外資籌碼失敗: {e}") # 失敗會印在後台
+        print(f"⚠️ 抓取外資籌碼失敗: {e}") 
         return None, None
 
 def render_combined_foreign_table(df_inst, df_fut):
     if df_inst is None or df_fut is None: return ""
     
-    # 🌟 標題更新為近八日
-    html = '<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近八日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
+    # 🌟 標題改回近三日
+    html = '<div style="font-size:16px; font-weight:900; margin:15px 0 8px 0; color:#1e293b;">🏦 外資籌碼動向 (近三日)</div><table class="combined-table"><tr><th>日期</th><th>現貨買賣(億)</th><th>期貨未平倉(口)</th></tr>'
     
-    # 🌟 終極防禦：直接把扣打拉到 8 天！
-    max_rows = min(8, len(df_inst), len(df_fut))
+    # 🌟 限制只顯示 3 行
+    max_rows = min(3, len(df_inst), len(df_fut))
     
     for i in range(max_rows):
         date_str = df_inst.iloc[i].get('日期', '')
