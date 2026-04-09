@@ -327,7 +327,7 @@ button[kind="primary"]:hover {
 )
 
 # =====================================================================
-# 【區塊 3】資料讀取與快取函數定義 (終極無敵完全體)
+# 【區塊 3】資料讀取與快取函數定義 (終極暴力破解版)
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -349,22 +349,33 @@ def fetch_yf_data(symbol, name):
     try:
         t = yf.Ticker(symbol)
         
-        # 🌟 第一重閃電裝甲：優先使用 fast_info 確保加權指數秒速出現
-        info = getattr(t, "fast_info", None)
-        if info:
-            last = getattr(info, "last_price", getattr(info, "lastPrice", None))
-            prev = getattr(info, "previous_close", getattr(info, "previousClose", None))
-            if last and prev:
-                change = last - prev
-                return {"name": name, "ok": True, "price": last, "change": change, "pct": (change/prev)*100}
-                
-        # 🛡️ 第二重備用裝甲：如果 fast_info 沒抓到，再用 history K線備援
-        hist = t.history(period="5d")
-        if not hist.empty and len(hist) >= 2:
-            last = float(hist['Close'].iloc[-1])
-            prev = float(hist['Close'].iloc[-2])
-            change = last - prev
-            return {"name": name, "ok": True, "price": last, "change": change, "pct": (change/prev)*100}
+        # 🛡️ 裝甲 1：閃電通道 (fast_info)
+        try:
+            if hasattr(t, "fast_info"):
+                last = t.fast_info.last_price
+                prev = t.fast_info.previous_close
+                if last and prev:
+                    ch = last - prev
+                    return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
+        except: pass
+        
+        # 🛡️ 裝甲 2：K線通道 (history)
+        try:
+            hist = t.history(period="5d")
+            if not hist.empty and len(hist) >= 2:
+                last = float(hist['Close'].iloc[-1])
+                prev = float(hist['Close'].iloc[-2])
+                ch = last - prev
+                return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
+        except: pass
+        
+        # 🛡️ 裝甲 3：傳統通道 (info)
+        info = t.info
+        if 'currentPrice' in info and 'previousClose' in info:
+            last = info['currentPrice']
+            prev = info['previousClose']
+            ch = last - prev
+            return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
             
     except: pass
     return {"name": name, "ok": False}
@@ -426,8 +437,9 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 def fetch_histock_tables():
     url = "https://histock.tw/stock/three.aspx"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
     }
     try:
         res = requests.get(url, headers=headers, timeout=10)
@@ -435,19 +447,28 @@ def fetch_histock_tables():
         res.encoding = 'utf-8'
         tables = pd.read_html(io.StringIO(res.text))
         
-        df_inst, df_fut = None, None
+        valid_tables = []
         for tbl in tables:
+            # 暴力清理欄位名稱中的隱藏空白或奇怪符號
             if isinstance(tbl.columns, pd.MultiIndex):
-                tbl.columns = [col[-1] for col in tbl.columns]
+                tbl.columns = [str(col[-1]).strip() for col in tbl.columns]
+            else:
+                tbl.columns = [str(col).strip() for col in tbl.columns]
                 
             cols = list(tbl.columns)
-            # 🎯 找回遺失的外資雷達：改回用 '日期' 判斷，且期貨放寬為 <= 6
-            if '外資' in cols and '投信' in cols and '日期' in cols:
-                if '自營(總)' in cols:
-                    df_inst = tbl.head(3) 
-                elif '自營' in cols and len(cols) <= 6:
-                    df_fut = tbl.head(3)  
-                    
+            
+            # 🎯 暴力破解雷達：只要欄位裡面同時有外資跟投信，就直接抓來用！
+            if '外資' in cols and '投信' in cols:
+                valid_tables.append(tbl)
+                
+        df_inst, df_fut = None, None
+        
+        # HiStock 的前兩張表就是現貨跟期貨
+        if len(valid_tables) >= 1:
+            df_inst = valid_tables[0].head(3) 
+        if len(valid_tables) >= 2:
+            df_fut = valid_tables[1].head(3)  
+                
         return df_inst, df_fut
     except Exception as e:
         print(f"⚠️ 抓取外資籌碼失敗: {e}") 
