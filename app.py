@@ -327,7 +327,7 @@ button[kind="primary"]:hover {
 )
 
 # =====================================================================
-# 【區塊 3】資料讀取與快取函數定義 (終極暴力破解版)
+# 【區塊 3】資料讀取與快取函數定義 (代理穿牆版)
 # =====================================================================
 @st.cache_data(ttl=60)
 def load_json(path: str):
@@ -349,7 +349,7 @@ def fetch_yf_data(symbol, name):
     try:
         t = yf.Ticker(symbol)
         
-        # 🛡️ 裝甲 1：閃電通道 (fast_info)
+        # 🛡️ 第一重：閃電通道 (加權指數秒出)
         try:
             if hasattr(t, "fast_info"):
                 last = t.fast_info.last_price
@@ -359,24 +359,13 @@ def fetch_yf_data(symbol, name):
                     return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
         except: pass
         
-        # 🛡️ 裝甲 2：K線通道 (history)
-        try:
-            hist = t.history(period="5d")
-            if not hist.empty and len(hist) >= 2:
-                last = float(hist['Close'].iloc[-1])
-                prev = float(hist['Close'].iloc[-2])
-                ch = last - prev
-                return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
-        except: pass
-        
-        # 🛡️ 裝甲 3：傳統通道 (info)
-        info = t.info
-        if 'currentPrice' in info and 'previousClose' in info:
-            last = info['currentPrice']
-            prev = info['previousClose']
+        # 🛡️ 第二重：K線備援通道
+        hist = t.history(period="5d")
+        if not hist.empty and len(hist) >= 2:
+            last = float(hist['Close'].iloc[-1])
+            prev = float(hist['Close'].iloc[-2])
             ch = last - prev
             return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
-            
     except: pass
     return {"name": name, "ok": False}
 
@@ -386,7 +375,6 @@ def render_tile(name, q):
         return f'<div class="tile" style="padding: 10px;"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
 
     ch, pct, price = q.get("change") or 0.0, q.get("pct") or 0.0, q.get("price")
-    
     cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
     bg_cls = "up-bg" if ch > 0 else "down-bg" if ch < 0 else ""
     arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
@@ -435,44 +423,48 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
-    url = "https://histock.tw/stock/three.aspx"
+    # 🌟 代理伺服器穿牆術：第一條路是直連，第二條路是透過 AllOrigins 代理繞過 IP 封鎖
+    urls_to_try = [
+        "https://histock.tw/stock/three.aspx",
+        "https://api.allorigins.win/raw?url=https://histock.tw/stock/three.aspx"
+    ]
+    
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    try:
-        res = requests.get(url, headers=headers, timeout=10)
-        res.raise_for_status() 
-        res.encoding = 'utf-8'
-        tables = pd.read_html(io.StringIO(res.text))
-        
-        valid_tables = []
-        for tbl in tables:
-            # 暴力清理欄位名稱中的隱藏空白或奇怪符號
-            if isinstance(tbl.columns, pd.MultiIndex):
-                tbl.columns = [str(col[-1]).strip() for col in tbl.columns]
-            else:
-                tbl.columns = [str(col).strip() for col in tbl.columns]
+    
+    for url in urls_to_try:
+        try:
+            res = requests.get(url, headers=headers, timeout=10)
+            if res.status_code != 200: 
+                continue # 如果被擋了，就換下一條代理網址試試看
                 
-            cols = list(tbl.columns)
+            res.encoding = 'utf-8'
+            tables = pd.read_html(io.StringIO(res.text))
             
-            # 🎯 暴力破解雷達：只要欄位裡面同時有外資跟投信，就直接抓來用！
-            if '外資' in cols and '投信' in cols:
-                valid_tables.append(tbl)
+            df_inst, df_fut = None, None
+            for tbl in tables:
+                if isinstance(tbl.columns, pd.MultiIndex):
+                    tbl.columns = [str(col[-1]).strip() for col in tbl.columns]
+                else:
+                    tbl.columns = [str(col).strip() for col in tbl.columns]
+                    
+                cols = list(tbl.columns)
+                # 🎯 只要有這兩個字，就無情開抓！
+                if '外資' in cols and '投信' in cols:
+                    if '自營(總)' in cols or '總計' in cols:
+                        df_inst = tbl.head(3) 
+                    elif len(cols) <= 6:
+                        df_fut = tbl.head(3)  
+                        
+            # 只要抓到任何一張表就代表穿牆成功，立刻回傳！
+            if df_inst is not None or df_fut is not None:
+                return df_inst, df_fut
                 
-        df_inst, df_fut = None, None
-        
-        # HiStock 的前兩張表就是現貨跟期貨
-        if len(valid_tables) >= 1:
-            df_inst = valid_tables[0].head(3) 
-        if len(valid_tables) >= 2:
-            df_fut = valid_tables[1].head(3)  
-                
-        return df_inst, df_fut
-    except Exception as e:
-        print(f"⚠️ 抓取外資籌碼失敗: {e}") 
-        return None, None
+        except Exception as e:
+            print(f"⚠️ {url} 抓取失敗: {e}") 
+            
+    return None, None
 
 def render_table_html(df, title, icon="📊"):
     if df is None or df.empty: return ""
@@ -508,9 +500,7 @@ def render_table_html(df, title, icon="📊"):
         for col in df.columns:
             val = row[col]
             align = "center" if col == "日期" else "right"
-            
             style = f"padding: 6px 4px; text-align: {align};"
-            
             if col == "日期" and i == 0:
                  style += f" color: {date_color};"
                  
@@ -551,6 +541,9 @@ def generate_anchor_audio(text):
             return audio_data
         return asyncio.run(_generate())
     except Exception: return None
+
+
+
 # =====================================================================
 # 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
 # =====================================================================
