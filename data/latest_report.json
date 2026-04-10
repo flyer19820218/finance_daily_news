@@ -1,8 +1,38 @@
 {
-  "updated_at_utc": "2026-04-10 16:10:10 (TW)",
+  "updated_at_utc": "2026-04-10 16:25:44 (TW)",
   "title": "全球局勢與市場情報 2026-04-10 盤後",
-  "report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
   "news": [
+    {
+      "title": "US Stock Movement | Chinese New Energy Vehicle Stocks Rally in Pre-Market Trading as China's Auto Exports Surge Beyond Expectations in March - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcWlrdm1TT0hxWFQ1YTh1TlMxYnlGeWNyYTVuMnBsM0pSNzM4X3B5eUFpWTNiMjN4V2RuczNHR1I4T1M1WTRGSlJhSFdBQlNPOWNaNGtaUC0yZ3I3VVZ6VGdpSkpvcW4xWkwwbThjM09BUXJBcjE2YXc3U0p0bGUwd2lBZXBnbXRPNHY0ZXJ6dkdrMUZaZjNveUtaZVN1Y0xPQlBJ?oc=5",
+      "summary": "US Stock Movement | Chinese New Energy Vehicle Stocks Rally in Pre-Market Trading as China's Auto Exports Surge Beyond Expectations in March&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-10T08:24:03+00:00"
+    },
+    {
+      "title": "Hong Kong Stock Market Review: Explosive performance of CITIC ignites brokerage stocks! Hang Seng Index closed up 0.55%, while Changfei Optical Fiber surged then retreated, closing down 7.5%. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdmo5QThWamNqUXhYYjJ0ZUhfNmkwVTMzckxzTDZ1WV80LWV1SndkQWsyYlBiTF9Bcy00UUhRTVI2QW9UUnpaSUtTZDhESXAzcWZackF2RDRhNl81UkFCU0Rod2RnTy1CVnV4aG5fSjFVc3liVVprM1R5S2hkYlFDblBRTUUyZWJLemhYYkg5Mm1ITGFYdEcxeThPeTZVdlk4cHFMMDdSQ3pGTGd2VlE?oc=5",
+      "summary": "Hong Kong Stock Market Review: Explosive performance of CITIC ignites brokerage stocks! Hang Seng Index closed up 0.55%, while Changfei Optical Fiber surged then retreated, closing down 7.5%.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-10T08:17:31+00:00"
+    },
+    {
+      "title": "轉會傳聞、新聞：阿森納將從雙重出口籌集1億英鎊 - citytimes.tw",
+      "link": "https://news.google.com/rss/articles/CBMi8wJBVV95cUxQM3lKSmxuS19KQlI0U0dmRzZmTGJ1QmM5aHJDOTZRZVE3alBySV9JRmFLWjF2c1I4OS1DT09ZMG5QRjQ3cncxT24tOFpFOGF1R1dCVEtYWkpHRzhTYVdLTXZORWhIc1RaSnk3MjZ6N2xlaXRRa3RvNDRSR1JCNkpmOUNueUowMFdkbjNJTDBWMXREeUhlWlM4QzkyVjZuYlEyLVdqaVJNWlV2dk5kQWx6a3JRSTNNUTBFRGtDQTlDUzM3OFZXWlRjaEM3by1mUmFjS3F1TDVuak5oc2dTdnZhRElKRlgtZEY4VUJCU1VudkRHNG9faGNkZXFaajNUUFN6THQ0UkI4UWZiekNQa2lrZGFGYXlYU2UyQVJka3RJQlBVOTFTLXU0cEJZd05qMlpPTzRvYUVVdHpjcHBzaTJQaFhaQ1ZVeHdjOUxNMzRtWGNsdndHM1ZmWm81VTY1N2pQYTkzTDFkLUtBcW1INlM4MU9yMA?oc=5",
+      "summary": "轉會傳聞、新聞：阿森納將從雙重出口籌集1億英鎊&nbsp;&nbsp;citytimes.tw",
+      "dt_utc": "2026-04-10T08:08:47+00:00"
+    },
+    {
+      "title": "【即時新聞】地緣政治降溫迎爆發！Apple(AAPL)獲華爾街名嘴看好股價持續狂飆 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcjRVcjRjVENiN1I3UHhmODloZkVYamc4V0hyV3dZR3BhSHpSdmhqeFpTUktrdXJDTnowMEpUcldHaGdTMGZ5U3RwaFBjdDBMVHdoY2phSUpwaHFzQUVZeThRckZ1cGdjTWNvUDRXTnZ0ZnJxNTBLZkJTbldYNTJ5QVZrUzBTcGp3d2VEM2FweFk?oc=5",
+      "summary": "【即時新聞】地緣政治降溫迎爆發！Apple(AAPL)獲華爾街名嘴看好股價持續狂飆&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-10T08:08:43+00:00"
+    },
+    {
+      "title": "冒用股市名人名坑殺5000萬元 刑事局逮假投資兄弟檔等21人 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxOM3djWWlWWW83a2VDbWJvcTVSZnFTVGVUSEpPZGs5MFlWc1FqMGRpSktab2lpaVpESmFxWENOWTZYLTk3dkFhT3ZoVUpMSjBleEh5WTB3T3dLRDlWaF9mTTIyZDFOanlCYjZFemN0aURVX0pkNlIwWkFRVWJISmxTcWZybFRaY0Y5VGNLWmo1NHJEQ1pxYXg5RDAtMC1ydm44Q1JBQ1JaeGtNaFVvcVA1U2tPN193b1l4MndodndRZkx6UnhBY29GWXlId2FyRTRFNHJRSXdQNi1MQ005eWlEOHpEb3ZqWGNkdGlaZVI5SlBVMG5ONGxKRDlTUkY1dGc2bm1fUmJRZVMxR0txc2pabGxVVUpmaHFBLUZ1SFh1a25mWU5nY3dCTUFKLWwyLXJXV1hzS2JKR1d0bGlwYUNab3BJS0V2Wld1X2E3c0VyM1pzcDM3SmpYUjlwX29Va19jN2ZuWEs0RjBvQXA2TkdXLQ?oc=5",
+      "summary": "冒用股市名人名坑殺5000萬元 刑事局逮假投資兄弟檔等21人&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-04-10T08:08:23+00:00"
+    },
     {
       "title": "【Follow法人】外資本周掃貨台股1884億元 分析師：回補還有續航力 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMilgNBVV95cUxOM2dBaUFzMm9kS2xtZkk5bWRCY1hfaTFrbzRJX2xwaldqT3J4V21NdjQ3UEI2WDN3QUVHU2NmcnU5aUo1VkJJNVpaaUhTSDFIQXRZZGRkZDFVYXE3cG52RmVPRlJWZVlZYTJTU3FId21TVDJ1ZUFDVVJBU2l5R2s3cWhiamtVZ1lQWVhxVWVCV0lMeFl1aDdxTDlSREh6b2VZdUFlZ3hyZGZyVG1mX1BmV3VrdUtRNlEtemhqYzFPdERrbzh6X0I1WkZxMkhYZ1Zaczhfck1vbWxPWEk3RVp6Y3diTXlrVmVPRWVLWWIzSW9Fa3VqejFQMzVNTnd0bEwyelNGUjBwbHRjb1I0alAtUzl3TnByOV9tVkJYQ0pDd3dveFJ3X00xWWo2QkNGUG5hSnJPelZWUTA5LVdQVlJXc3Vad3FhdDF3YjdIOTZUM2k1RDkxbEQ0UExXTXlpUFJua0FKVTdmVFRBNDB0Mko4UzdEZ29aNzBZTloyTk83STJVck1Oc1RFVVZ5bUdyVExTcGNjWjR3?oc=5",
@@ -16,6 +46,12 @@
       "dt_utc": "2026-04-10T07:51:15+00:00"
     },
     {
+      "title": "國泰世華銀app網銀出包 已過四小時還沒解決 公司回應了 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxPaDA1NDlvS056ODN5T1hoQ3F1MVJWTHRWMF9pM2Q2bDZQRWRsVWVUNkp5bHRsUm1yRnF6ZFNkMHVRandzUG9IVGxnNGtUaXpzRnktRlJlM2JLVE9KbFo4YjQyaEV1SzBFb1Q4cHIzWW42eTNkemhXcVd2VEJxd3RrQXNFeDNPU250Y1czLTJ2amtHNE00RGthNXFtbU9GTXJpZXRSc21LX3JwdkN1MWtPam0zSnNjZzZLM2tsaFcxcFR3YlFwUkt4aWlxblNfTEtnTHo1NlpqVDNMcGdQSjV2UC10XzMyTjBEWDY5ZmZaNzdhb3B2NUNwQmxiZndmVzhUNklnLVV2emRja0tWU2tsNDQzM3FLd0RLeU5ZcXVoVmQ2cTlFeS13YzFVZnhCSDd4N0d4bEJBU2F4UmtpSzBhbzVXZ2x1Zm5BcjZxTTFzUWdseUhNLWt0b0ZieFRURGl5S0dZb3JiVk5zM3ZEUDhvX1lCRzhfdw?oc=5",
+      "summary": "國泰世華銀app網銀出包 已過四小時還沒解決 公司回應了&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-10T07:51:04+00:00"
+    },
+    {
       "title": "開戰逾40日美轟伊非軍事目標 文化遺產、基礎設施難逃戰火 - 公視新聞網PNN",
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBMRi1ZOEI2WEpuekpRX2QwMHVvd210cGJ4b3ByODNYMkphSUhzZ1FGMEZiX1NaVHJEWHR0TDFJd2ZzRTNZcU5GUGNUbkRYTm8?oc=5",
       "summary": "開戰逾40日美轟伊非軍事目標 文化遺產、基礎設施難逃戰火&nbsp;&nbsp;公視新聞網PNN",
@@ -26,6 +62,12 @@
       "link": "https://news.google.com/rss/articles/CBMioANBVV95cUxPSFR6SjhyaDFRVHZPU25qSjZWNGViMzE4TkFOUEVRQnUtUVRLVk1xZGd3M1Vvc19TWk5Gb3ZsMnBZVTMzcjdBSHlsY09NZldhbWNWSFcyRHhELXVXX0NyWnFFQ1kzZHFPZm9fWHE4WTk1SmlUaTNYcC1CN2ZaVllXclAzbzVuVjA1cUhwVk5EcW12dzVMVUM3ZUhhU0NlcFM2WHBpcEV3dmUtTmRFZzRMVVBsQ0xDanJ2blluelNQOVhoMlB0S0tBNE5tX2lpM0Z3azYwT2ZLbUFpaWlBMEJYN2JWWDJnbTUtNTcxdnkyMXAtMFZuOXhuMEU2WmN0NU1fNllpVy1vM1Y2dmpDb0RWaGV3VlFHUnVNYWpHU0ItZkUza2d2d1hIZlFGT0RmdzhnT1pkeDRHMk40aGtOWXZMaWNZRGxwUTQ5dUFWOFRPd0kySUYtd3hmTHFIWUxqRV9hZFJjRWZiT1pRRWhkQUNVRmotNU5WMjFFMlhib3BBNHFrREtaVUJqb0hFdmdaUTQxR0RrYmtOandDeGFWR1VIQQ?oc=5",
       "summary": "全聯塑膠袋不漲價、不限購 董座林敏雄：我們一動大家會緊張&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-10T07:46:21+00:00"
+    },
+    {
+      "title": "帳面獲利2.5億！假冒股市名人騙投資 台北退休師all in慘賠5000萬 - 自由時報",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oejI3SmltcWpRWFY5c0lOc2lKZ2Rzel9NU1g4UTJuZHVaN2lYSTExS2RxbUNYTjF6MHpSVnBMZUgzMzVSWV9QWWNtcVJLQlVoa0dtT1YyZDhrY21qb0dHSUhsRVJOSDdm0gFuQVVfeXFMUDJCT2FXaDFZWElpZVp3Si13anpJOUNYcEZkZ1pYTWRSSjliTkJDcUM5VmFwTVJ6NmJSSkNZak1XNXFPQ1NSMF84di1QSkNBc1F1dVI1Q3A4OW9DbnBuRHJQbEVHUmdBQ1FHMXAxamc?oc=5",
+      "summary": "帳面獲利2.5億！假冒股市名人騙投資 台北退休師all in慘賠5000萬&nbsp;&nbsp;自由時報",
+      "dt_utc": "2026-04-10T07:26:51+00:00"
     },
     {
       "title": "帳面獲利2.5億！假冒股市名人騙投資 台北退休師all in慘賠5000萬 - 自由時報",
@@ -68,6 +110,12 @@
       "link": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxNX1A4Q1ZaRWxPWE9mX1E4OVhXNXVfMElFUzk3QS1GV204WUZ3VjlWMXBEYm5NZXNiNTRXdXFCMDlrSmVlM3ZDZ2V3bmFCSEdEQ19XeFBnSjVIRXRmX2xka3ZRN0RzbkVCdVE4TEZ4ei1wLUJaUVBfN1NCLV9hU05uRExaTHlaYjdZWVVOUFBxREh0ejFkMTBXNXFOaThsV2ZDa0JpMF9oSVViRlFWT01GLXNlMi16TTBJX1ViX3dLc3E1RDZyY2RJMy03MXNfb0s2VTgtMGI1a0I4SWZVcUs1X3V1YnNyZkRQMG1fMHdRQVFuaXhpT0JZQzVjQ0NOaFpoT2VDNzlCRmNtd2VOYWpSQnlYS1NzUjNLVzVadFhkeEdjRW9feW8td29sTFhsaGZfNUZUdFlab2dISTJpR2s2dkZDX3EwdmtFZUJEMkx3bnh4d0xpWGwyTlZoa25sTV9vMjNheXR3U3BJcVduajNnYm44SzJHQldZa1ZBQkZiR05qNWVHakVWTlBYMA?oc=5",
       "summary": "台塑小金雞帶財！南亞第一季每股盈餘1.8元 單季賺贏前三年&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-10T06:47:23+00:00"
+    },
+    {
+      "title": "全球地緣政治重塑汽車產業鏈 歐中策略分歧影響深遠 - PChome Online 新聞",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaTJjMFg3MXVIYlB0LTNrRkV1RU5KcWZVWjJuWFMwRkcyWm1vdk9OcDhhZXFOcVJhWUFYSTM4NzRiZXVUZmFRcnNxRlRob2FhRzRzdVVmWWtvUjZIWVY5czdXbUdnOFVKNGdEendYdEMtQ3M2d0FveXRoMTV1bGwyYVJaQlo5Qm5fX3QwSg?oc=5",
+      "summary": "全球地緣政治重塑汽車產業鏈 歐中策略分歧影響深遠&nbsp;&nbsp;PChome Online 新聞",
+      "dt_utc": "2026-04-10T06:46:10+00:00"
     },
     {
       "title": "全聯再砸10億元導入電子價卡！2028年6月前全台完成上線 - Yahoo股市",
@@ -292,6 +340,12 @@
       "dt_utc": "2026-04-10T04:22:23+00:00"
     },
     {
+      "title": "第一次買台積電！ 她小賺離場卻擔心「賣太早」 過來人曝經驗：有賺就先贏一半 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPemtIZ3ZBZElrU2gyT19EZWtYNjQ5ZDNMR3pSSFo1aGdLZ2NNVWlWS19qbnZIbWJUa0lJa19sOHphMmo3WTRZZjJ3c3h3VVhtcGhyZXVTOERrbVM4M25jdXk5SUtfNGhZb2NYX2hja0pLZDlKR25JMG1wTkM3NnJJNTNFNUo0bW9yTFNkbDNVN0VUMW01S1M1c2FSR2lSN0dHdHpmUWVBNXN5MXhDblBqOGVCTzlJalZ2cThoTHR5NzE5UEZNLThsaWdRMmNPNjBfRzV6UkU2MlVYekltc2RNejZCSHdOOWVYekxPOFdLTnlrV2FpSjBsYUcxWVFQYnJsRFJNWUtnSHJ4X1BjcEpsaVdKZHFMeFRvZ1VmRnJvNDU5RnhuRXRER3hsSlBuc1NmWnk1SE1iVUwwM0s5TzEtT256ZW9SRWpQRFZSMTBSWk5DckhsOW92NGJhYml6OW5DMGlCYjJiWFpnTFNvRW95Q190R2E?oc=5",
+      "summary": "第一次買台積電！ 她小賺離場卻擔心「賣太早」 過來人曝經驗：有賺就先贏一半&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-10T04:18:45+00:00"
+    },
+    {
       "title": "Okinawa FG --- Observations indicate an upward revision in the target stock price by domestic securities. - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOallSWFMyNG5aaDRncWEtQTNPRmN5emRuZW84Y3Y5OU50ZDZ5ejdMdEVVd1dIS0dVeGpPc3FuYjFOOXRjS213WnhLSjJSZHVrLVpoV25sc2hRWmt5NmxrVWswMHdveE5aSzgwUlZYWklRTjN2d1NiRzlkRHVxZGU2cUF1Vi1CbDRfZjFIMHg1STRkSGY1bXRQZXRJWExRVVBEU2VPSGJTUzBTdw?oc=5",
       "summary": "Okinawa FG --- Observations indicate an upward revision in the target stock price by domestic securities.&nbsp;&nbsp;富途牛牛",
@@ -332,65 +386,11 @@
       "link": "https://news.google.com/rss/articles/CBMiswNBVV95cUxPUk0yQkRtWk1wbWs1VnUtSm56YVQ1QS02LTZ0V1U2cWxNaFZiOTJLS1BKci1rWFNUVUw5eUtCbTdUNVVxcnNKamo1cWxNdlRHcjktdXk0bjUzVWtMTTJqTlN0bGhBNDUwRmNXSUFPMTNKVTNhTnh0NGRoZ1pqdlpKX0p3NTZzT2NxN0lWLUpERVFZXy11QXhUQk1xeXp3YlhpZmRfWk50Zzl2cXpWS19SRFpYT0k1UlczVmxoMDA3UVZtNEsyM3hRYlREcHhfYXE0QVJrVjJVN2ZWZkxVLWxQcmQzbDRvRFl6ci0wWExldnJybDdkanJsckN2d1E0ajEtcGllV1pja0pYNkZONFZPRzBHUUY1cmRrSEpBM2RsTXpQUkRjbndlbE9lVTFUTUN6TVdfVTlmSW8tTEtzMVkzMTVtclJvaS1LR3ZqYzhpcGtPdWR2QmI4WEJJLThkRlhDcmFWUkozM1FYX1ZfTmdWTVo1WTZPbVB5VnVFenhKWnl1cXhobEIxMjhYVHRzS1h5QUpOUFNScVY0VlpvdU5oV1ZPeVpTQkkyOGVnZF9VazFIRUk?oc=5",
       "summary": "記憶體全面回神！「這檔」再攻漲停衝連6漲牽旺宏等3檔亮燈 南亞科、創見、群聯齊飆逾8%&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-10T03:33:45+00:00"
-    },
-    {
-      "title": "台積電「AI爭霸戰」終極贏家？外媒點頭「加碼曝黑馬」 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxOVkJWZ3lfNnRMbjBLaVY2M0F4Z3pURVVSQVRWTlFMTi1ZZlRSV1FEckh3NktqbFdLOVpuWS1FYzJEQUZwbnlsZTFmdm11SmRBOTh4clE5MWpSVDU3QklkS0xNMk45R3lvQ1hBQnZYdmZtQzNKbDlST3A5Q0lwSjlJVTlFc2FZNmRrUHd5ZVRFQzBmQUd2dnY5VnRXLTVmS0QySzZRdXp2SGdqVlJvcGtDbjF0TTJyRlB5RElSY05YTnhVWnJNQVdPazhwcWtrdnZDSzRuUXY4VzZTRnIxcGRmNUtianM3NG1jTG5iMlR6amxObl8wRXlidE9MWDQyTEFab01RWXM0VUJTTTdSdHpVNDZIZkhhRzRZR1BJVndYRnZucXRuc1A4ZWtTajM1Nms4OE5vNFdQaTlFWlp3WUh3Y1ZTOE11WGs?oc=5",
-      "summary": "台積電「AI爭霸戰」終極贏家？外媒點頭「加碼曝黑馬」&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:29:06+00:00"
-    },
-    {
-      "title": "美國電網瓶頸牽制AI資料中心擴張前景 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxOaDhpNFdtaU40R01Ld1p3QmZMMVc4eXhpOUhsZGt4TXBDdkh4MXA5cVdWRlpYTFg5VkIzd2ZLSlkwcUhzRjdsNHB5UjJSQk1tMjlqRXR2OHBuTFRNbUJMc01zcklWVUlYenp5WUp2TmRhZUlMcERibUxWTVJLcW5sbldVVEFKRW9zZDZqVm15NmpFb1Y1S05rZDRuaGFlREYxQWRiaFIwY2NhUnZMTl9qUGoyVXVSZEV1V0lxcEotdTl1eWFramk2RWNmNlFpREQ3RV9MbzBRSHlZNUt2c0sxUEVmRGZ0MF9DU0gwMVN0SXNoRjdOWmtYWHdhM1dxTUxWNWVaXzhYanNMa3VrbWk0bmVOTFdLUzQtbE1HTTNR?oc=5",
-      "summary": "美國電網瓶頸牽制AI資料中心擴張前景&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:27:36+00:00"
-    },
-    {
-      "title": "Stock Movement | Changfei Fiber Optic Cable (06869) dropped over 10% in early trading as shareholder Yangtze Communication plans to reduce its stake by no more than 0.12%. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNTXluODVVeFl6WnJwMFJBUE1KRldoalZnd1VYV0d4ODNYajgxQ1g2X2FwNDJPZVZORWJzXzAwRThYaklwRFVVQVZOdWxJZ1E0VUZlcHFteTZSRFBqTGZSMmQ2azBwRFQyNF9NanFfbWdsMy16bTI0UHlZU3U5UlQ3emRXdzkyWXBLbHRVY1hOOEEzQndGWlV0SXNCaXpwNVZIOWUxUEppOA?oc=5",
-      "summary": "Stock Movement | Changfei Fiber Optic Cable (06869) dropped over 10% in early trading as shareholder Yangtze Communication plans to reduce its stake by no more than 0.12%.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-10T03:27:23+00:00"
-    },
-    {
-      "title": "〈房產〉六都購屋族熱買屋齡帶 台北市40年以上房屋交易逾四成 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMijANBVV95cUxOemZuZHBpemVicXdMekxneVFfX2JYZjFYUXdpRTVCVWZkcldHN2tEalBsOFZMOFFJQlFULUx3cTlGWEpXeU80VGFUZkNRVExlbHgyanZULUVrR0ZfVTV1Rk8zOF9MODFhOGVrbVlHUkpqeUJGSmozdUtmWlo0S1FzUjFHdjI3dUZKVWRBb0ExOHc4M1pMZ0J2S3Nld2RuZ0wtdVMwOE1zVmwtTFFiRmtwbGQyV1N4di1KRkdIOEQ2dVhPN3NKLV9LUkhJaVlPTmlGM1Y4ajY4OFQ3eFFSckpDR1FfTmQxck1lYm1IUVpVR2tFcFVldG1PVTBWbDlpX2YzMndseEJiTGFxR0ozZk44ak5PTm4tcjI4UDdxdDhkejFqaGhfMW5yMXc2Y0w5MFFMbzVsVFB2cVdwcXdESjNPOTBtQlFfWlp5T0lBR0dsc3FtaW1WNlB3X0lUdEVib0NzYmdKYTFyWGlvMDdFMHptcTVDMFNaTWc2cUxYYWN4QU1USVRGZTJEN1V1MHQ?oc=5",
-      "summary": "〈房產〉六都購屋族熱買屋齡帶 台北市40年以上房屋交易逾四成&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:24:05+00:00"
-    },
-    {
-      "title": "比特幣挖礦陷成本泥淖 幣價低於生產成本 礦工轉型尋生機 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiigNBVV95cUxQa20yYVRDc3lhZUNHWDFmUmM2cmxHRTJOdkx5dEJRaTB6dmhEZ09GRXlLci1udm1QbGlVaWZORVVkMktpc0R5TVBzNXVhdHgwQndWcDNXZ0R0SEVkbUNvdS1ONUpRb0FCUnlvdjZMZWE3dFNwUzlzMllJSHlvV0FyMFNPODVPUlpiSHY4eTZQQ2FxeElmZzhMSWJNQVpYQzhxdVdkZ0IwNW93UVNGOHRJTnFWV0Voa3hHalNyMGFGWTE0cFE2RHg4TE9IWmlmY1ZPV1E5Z0NwSS1BbG0xOF9xWFFaYWotOVFLSHlBOWpyVnJrNEN1VFdDQjFjSnhvSHBURlkzY3FoaFJwa1lRSUtNdXoxTGYyOW1WaEcweWhIRXNzU1pULTdXX3BvRkVfdGFQY0dhU2x4bGtOck1rWjZqT1QwWk0zZGNqUVFPNE1ZbXFDRHdXNnlNQ3FUZ2JFNFE3SUJ5T2dfY050TzFFX3NZUEZ4ZXhjRk5BRDV1QU1GV2E1ZHFBWWRRWHR3?oc=5",
-      "summary": "比特幣挖礦陷成本泥淖 幣價低於生產成本 礦工轉型尋生機&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:22:30+00:00"
-    },
-    {
-      "title": "國安基金13日召開例會第十度進場護盤？股市名師黃文清：台股超強「無需浪費子彈」 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMimgRBVV95cUxPWF9kY3lLXzFFTGVLSElfbl85Y0Nva29NX1BwX2Zsc1VxWVd0NmlWRjVwQk9DTEZPUTIxc1d1WkR6WGZrNjd3OEFkRTZ1SHBIRmpXMzFpMDlLRlVVWWlZcWJmVlBFTWtiM05jTXYxakxhbERNdWhzSmlwbzB5TmNsUmRKTFl2ZDJrMTVraTZpT05YM2p0NzFHZVUzckxPT1gwYndlSkdnbGNSbTJXb29rd3hCLUtPQ1FzWlE2aUdleXFDOFRVUG8tdlJFYzNiRml3bFRZTWVDOWtzTU44cW53MkVlN0hzdWpzVWFqMGs2amVkQ0pPNW83T1VmaUNjX2JnOHBKZmRUR1VuaXo3eGdBOUVhc1ZqMFVXZFZ0czVHOEdZU0NxaGxUQUpiNzRySmN6bGdZSUd0UF9tVkdSdmxXTTR5SHlXU1FmT01LbDNSZGw5NE1TNVhxampDdmkxZlotbWZLTzRVMTRlaHFiSWVxck1mTm9yd0l0QmEtd1RVS0c4RklQaUxqbnZDU1RXYW9DaGFjenlxbnE0Y1FzdzhkUkZmSkJIU0lYOWFoVTZ5TllPajJGbGdQandNanZ3VlBaMW15cFBXTUdWZktDNWJnYk04QlJjelhZOHV0a0RramJQcVgwNDM0XzQtMVlFejZfc1B3THRSYkloZWJ1aU1iTmdVRXNnck5PNEpiTjd4dVpQN3pSak1WMkdB?oc=5",
-      "summary": "國安基金13日召開例會第十度進場護盤？股市名師黃文清：台股超強「無需浪費子彈」&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:21:47+00:00"
-    },
-    {
-      "title": "貝瑞看空論發酵 Palantir崩近8% Anthropic強勢崛起蠶食市占 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxPRjc0Ny1icnNINE9hRTBSU3JFaHIyYWh2T1Q4UGdVYmVGWHNLZmdjbGlLZDlBLXNkZl8tX3BoUEpzZ3drVUtrZ2czWWx0MXpVTWozUWNBLVpZdzhvams1bGhNMURLWnR2ZV9fWmloTy05Qmk5Vi1tMjNGeHBRSVU3SnFYTHB4dDNDbWpDWU9tSFIwcjNCV0xJQTFZaEhiR2I2ZGJPQW96LVhrOXBFRGh4b1pfVFFUbURuT1pwcE55T1RwS0x2bVJEVDJQaEllek1UVkc3Z2NmNDBncVlOZ3p5b1E2SUU2YzRlN2lPdmtwME5lTUNmcTBOdWU2d0hrNnh6OEtxU25yTUtnWXFka1FkeC02WUgyWDM0bkt3aWFUeE5YN1RFZUNQUmZ5QkJ3dkxhdm9JMFFMZ3BpYWotTHFSWXJR?oc=5",
-      "summary": "貝瑞看空論發酵 Palantir崩近8% Anthropic強勢崛起蠶食市占&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:19:51+00:00"
-    },
-    {
-      "title": "2401 凌陽 - 真的有夠爛 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5EUXozRUdYd3QzWGUxSjBMeVZsNnBjSHNldW5TTmZmZU51b284OE1nMFNqcU9DU29hWlRUVGJJMVBGbWNlVlpmRTZmaFh4b2hiY3pXcEJnM28?oc=5",
-      "summary": "2401 凌陽 - 真的有夠爛 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-10T03:17:52+00:00"
-    },
-    {
-      "title": "第二座神山在崛起？台達電市值衝破4.5兆元大關 成台股史上唯二 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiowNBVV95cUxNQ3ZzU3pRWHdwRTlIM0Y5ZlFJNHFPUExwTFctMXlYZklFal9FU1lUYkxYMFpzQ0k1ZDY1S1BMNWVQeTQ4NkMxcUJwNi0wQ1A1UTBzSTlzbTBqLVc4QTE3c2JnZnFkVi0wUEQwLUd2N0ppY0VaS3BVb3JJVHMtS3JGX3paMFlMaU5DbFFycGs4b2k1N3VTRnFOLUxsb0hWRndzcENyV0YyaV9HNC1XZmk0SU81bEtnR3d5aW9xYjU0eEx6LVQ4akkySWg5VmhFd0hwQTZWYXBVZXpGRXJqa0p1aE43NHJNYzhHQTVOZ09KVnR5VDVIYVRyTHFHT3k3WE9wUnVDVGZmWHdpWVZwQXltMWhMQUxobnRZZkh4aTlhRDJ5RFNyY3E3V2Nja2JDdzhxT18tRW0wVXlKWG9Rc1ZQR0pKa1YweTJ1VVFjYmJuTXNLTXRKTHZOU296VVUxUzhlWFNXQV80eWM3OWJlcFZocGNFRy1Vb2N0cWQyZWxHVWxDMlNsbjhEMWZ1WERidHhUR1U2VUFwM3V2T2lwd0hQcXBVSQ?oc=5",
-      "summary": "第二座神山在崛起？台達電市值衝破4.5兆元大關 成台股史上唯二&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-10T03:14:05+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "19.54",
-    "vix_trend": "▲ 0.05",
+    "vix": "19.56",
+    "vix_trend": "▲ 0.07",
     "usd_twd": "31.78",
     "usd_trend": "▲ 0.06"
   }
