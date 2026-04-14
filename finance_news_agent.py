@@ -299,10 +299,6 @@ def ai_analyze(news, period_str, risk_data, today_term):
     ⚠️【最高指令一】：條列項目首字禁止加星號。保留【重大事件】中的 ★ 指標。
     ⚠️【最高指令二】：嚴禁問候語。第一行直接開始「🎯 【一分鐘戰略速讀】」。
     ⚠️【最高指令三】：如果今日日期是每個月的 1 號（不管有無交易），請務必在報告中針對台灣宏觀景氣循環進行「長線投資觀察」的戰略補充。
-    ⚠️【最高指令四】（破音字語音規範）：文章中若使用到以下詞彙，請務必在其後方加上括號標註，以利後續語音朗讀系統正確發音：
-        - 「重磅」請寫成「重(重)磅(棒)」
-        - 「定調」請寫成「定調(掉)」
-        - 「軋空」請寫成「軋(嗄)空」
 
     🎯 【一分鐘戰略速讀】
     約 200 字精華。請用科學實驗般的口吻，解析今日「真理篩選」後剩下的市場乾貨。
@@ -354,12 +350,14 @@ def run_daily():
     if weekday == 6: period_str = "週末特刊-下週展望"
 
     old_report = "📊 AI 報告將於指定發報時間自動生成。"
+    old_tts_report = "" # 🟢 處理舊有存檔
     old_news = []
     if os.path.exists(OUT_FILE):
         try:
             with open(OUT_FILE, "r", encoding="utf-8") as f:
                 old_data = json.load(f)
                 old_report = old_data.get("report", old_report)
+                old_tts_report = old_data.get("tts_report", "")
                 old_news = old_data.get("news", [])
         except: pass
 
@@ -394,16 +392,24 @@ def run_daily():
         # 在終端機印出序號，方便教官核對進度
         print(f"🧠 執行任務：呼叫 AI 撰寫深度報告... (今日單字序號：{term_index}，單字：{today_term})")
         report_text = ai_analyze(final_news, period_str, current_risk_data, today_term)
-        send_telegram_message(report_text) 
+        
+        # 🟢 魔法替換：專門產生一份給曉臻唸的隱藏版「注音小抄劇本」
+        tts_report_text = report_text.replace("重磅", "仲棒") \
+                                     .replace("定調", "定掉") \
+                                     .replace("軋空", "嘎空")
+        
+        send_telegram_message(report_text) # Telegram 還是發正規文字，畫面不受影響
     else:
         print("📰 執行任務：僅靜默更新新聞，不呼叫 AI。")
         report_text = old_report 
+        tts_report_text = old_tts_report if old_tts_report else report_text.replace("重磅", "仲棒").replace("定調", "定掉").replace("軋空", "嘎空")
     
-    # 🌟 準備存檔封包
+    # 🌟 準備存檔封包 (🟢 新增 tts_report 欄位)
     payload = {
         "updated_at_utc": now_tw.strftime("%Y-%m-%d %H:%M:%S (TW)"),
         "title": f"全球局勢與市場情報 {now_tw.strftime('%Y-%m-%d')} {period_str}",
-        "report": report_text,
+        "report": report_text,          # 給畫面顯示用的 (有錯字會很糗，所以保持正常)
+        "tts_report": tts_report_text,  # 🟢 給語音系統專用的 (包含仲棒、嘎空)
         "news": final_news, 
         "risk_indicators": current_risk_data, 
     }
