@@ -1,9 +1,33 @@
 {
-  "updated_at_utc": "2026-04-15 06:25:40 (TW)",
+  "updated_at_utc": "2026-04-15 06:41:35 (TW)",
   "title": "全球局勢與市場情報 2026-04-15 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 19.387994007s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 19\n}\n]",
-  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 19.387994007s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 19\n}\n]",
+  "report": "🎯 一分鐘戰略速讀\n\n今日市場數據顯示，投資者的避險情緒顯著降溫。VIX恐慌指數回落，新台幣兌美元匯率走升，同時國際原油價格因美伊談判預期而大幅下跌。這些客觀指標與部分地緣政治緊張升級的報導不符，證實市場正將焦點轉向風險資產。在科技領域，台積電ADR表現強勁，AI資料中心需求持續爆發，鞏固了半導體產業的領先地位。大型金融機構如花旗的穩健財報也為市場提供信心。整體而言，全球資本市場在宏觀環境改善下呈現風險偏好回升的趨勢。\n\n📊 重大事件：交叉驗證報告\n\n地緣政治風險降溫：美伊談判進展與原油價格波動 (★★★★★)\n**事實核對**：VIX恐慌指數下降0.76點至18.36，美元/台幣匯率下滑0.25元至31.52，國際原油價格因市場預期美伊可能重啟談判而下跌近8%，Brent原油價格回落至95美元以下。這些數據明確顯示市場的避險情緒大幅消退，資金流向風險資產，與部分關於中東局勢升溫或美軍集結的報導形成直接對比。後者可視為情緒噪音。\n**解讀**：地緣政治不確定性降低，是當前全球股市普遍上漲的關鍵驅動因素。投資者風險偏好提升，有利於股權市場的資金流入，特別是對能源供給依賴度較高的地區，成本壓力有望緩解。\n\n科技巨頭與AI動能：台積電ADR與AI資料中心需求 (★★★★★)\n**事實核對**：台積電ADR上漲2.8%，台股加權指數受神山（台積電）帶動走高，市場對AI資料中心需求爆發的報導持續，如甲骨文擴大電力布局、Bloom Energy飆升22%。這些表現與台積電作為全球先進製程領導者的地位及其在AI供應鏈中的核心角色完全吻合。\n**解讀**：半導體產業龍頭表現強勁，直接反映了市場對AI技術發展的樂觀預期與實際需求。台積電及其相關供應鏈（如ABF載板、AI伺服器零組件）將持續受惠於這股趨勢。投資者應關注其營收指引與產能利用率等實質數據。\n\n大型金融機構財報：花旗首季營收增長14% (★★★★☆)\n**事實核對**：花旗首季營收大增14%，服務業務表現尤為突出。此為企業公布的具體營運數據，直接反映其經營狀況。\n**解讀**：大型金融機構的穩健表現有助於提升市場對整體經濟復甦的信心。營收增長表明企業在當前市場環境下具備成長動能。投資者可將其視為經濟活動穩定的佐證，但個股表現仍需結合其具體業務結構與展望進行評估。\n\n市場資金動態與情緒：VIX下降與新台幣走升 (★★★★★)\n**事實核對**：VIX恐慌指數從高位回落，顯示市場對未來波動的預期降低。美元/台幣匯率走貶，意即新台幣兌美元升值。這兩項關鍵指標均指向資金從避險資產流出，轉向風險型資產，反映了整體市場情緒的改善。\n**解讀**：VIX恐慌指數與匯率作為重要的宏觀情緒指標，其走勢確認了市場對於短期風險的評估趨於樂觀。新台幣升值可能暗示外資淨流入或出口前景改善，有利於台股的整體表現。然而，投資者仍需持續監測這些指標，以應對潛在的突發事件。\n\n🔥 市場情緒與壓力測試\n\n今日VIX恐慌指數錄得18.36，較前一日下降0.76點，明確顯示市場避險情緒顯著緩解，壓力測試結果為平穩。美元/台幣匯率同步下滑至31.52，新台幣兌美元升值0.25元，這表明資金對新台幣資產的信心回升，或國際美元走弱，進一步印證了市場風險偏好的回歸。\n\n💰 台股影響與板塊點名\n\n在VIX下降及新台幣升值的環境下，台股市場整體受惠於國際風險偏好的回升。\n**受惠板塊**：\n*   **半導體與AI鏈**：台積電ADR強勁表現，帶動台灣半導體產業鏈。AI資料中心需求爆發，使台積電作為核心供應商持續受惠。ABF載板供應商如南電、欣興因缺口擴大而獲得外資看好，智邦、毅嘉等相關零組件廠商也獲得法人連買，反映市場對AI概念股的追逐。\n*   **金融股**：金控首季獲利預計挑戰同期高點，在整體市場穩定時，金融股有望維持穩健表現。\n*   **電動車與綠能**：電動機攻國際、東元發表電動巴士動力系統，顯示電動車相關產業仍具發展潛力。\n\n**受衝擊板塊**：\n*   目前無明確受系統性風險衝擊的板塊，但在國際貿易摩擦升溫（如歐盟鋼鐵關稅）的背景下，部分依賴出口的傳統產業可能面臨長期結構性壓力。\n\n📈 投資觀察指引\n\n1.  **關注實質數據而非表面訊息**：地緣政治事件應以VIX、原油等實際市場反應來判斷其真實影響，而非單一煽動性新聞報導。\n2.  **緊盯半導體龍頭動態**：台積電作為全球科技領頭羊，其營收、法說會指引及未來資本支出計畫，是判斷全球科技景氣及AI產業發展的關鍵。\n3.  **審慎評估貿易政策影響**：國際貿易政策的變動（如關稅調整）可能對特定產業產生結構性影響，投資者需分析其對供應鏈與企業獲利的長遠衝擊。\n4.  **系統性風險指標優先**：在個股利多或傳聞頻繁出現時，仍需將VIX恐慌指數及主要匯率走勢作為判斷市場整體風險的「科學儀表板」。\n5.  **定期檢視資產配置**：在風險偏好回升的環境下，可檢視投資組合中風險資產的比例，確保其與個人風險承受度相符，避免過度集中。\n\n🏫 曉臻財經小教室\n\n今日單字：【三大法人】\n三大法人指的是外資、投信和自營商，他們是台灣股市中主要的機構投資者。透過觀察三大法人的買賣超動向，我們可以洞察資金的實際流向，看穿市場上可能存在的短期消息面或散戶情緒所造成的假象，進而更理性地評估股票的真實供需狀況。\n\n數據為鑑，去蕪存菁。",
+  "tts_report": "🎯 一分鐘戰略速讀\n\n今日市場數據顯示，投資者的避險情緒顯著降溫。VIX恐慌指數回落，新台幣兌美元匯率走升，同時國際原油價格因美伊談判預期而大幅下跌。這些客觀指標與部分地緣政治緊張升級的報導不符，證實市場正將焦點轉向風險資產。在科技領域，台積電ADR表現強勁，AI資料中心需求持續爆發，鞏固了半導體產業的領先地位。大型金融機構如花旗的穩健財報也為市場提供信心。整體而言，全球資本市場在宏觀環境改善下呈現風險偏好回升的趨勢。\n\n📊 重大事件：交叉驗證報告\n\n地緣政治風險降溫：美伊談判進展與原油價格波動 (★★★★★)\n**事實核對**：VIX恐慌指數下降0.76點至18.36，美元/台幣匯率下滑0.25元至31.52，國際原油價格因市場預期美伊可能重啟談判而下跌近8%，Brent原油價格回落至95美元以下。這些數據明確顯示市場的避險情緒大幅消退，資金流向風險資產，與部分關於中東局勢升溫或美軍集結的報導形成直接對比。後者可視為情緒噪音。\n**解讀**：地緣政治不確定性降低，是當前全球股市普遍上漲的關鍵驅動因素。投資者風險偏好提升，有利於股權市場的資金流入，特別是對能源供給依賴度較高的地區，成本壓力有望緩解。\n\n科技巨頭與AI動能：台積電ADR與AI資料中心需求 (★★★★★)\n**事實核對**：台積電ADR上漲2.8%，台股加權指數受神山（台積電）帶動走高，市場對AI資料中心需求爆發的報導持續，如甲骨文擴大電力布局、Bloom Energy飆升22%。這些表現與台積電作為全球先進製程領導者的地位及其在AI供應鏈中的核心角色完全吻合。\n**解讀**：半導體產業龍頭表現強勁，直接反映了市場對AI技術發展的樂觀預期與實際需求。台積電及其相關供應鏈（如ABF載板、AI伺服器零組件）將持續受惠於這股趨勢。投資者應關注其營收指引與產能利用率等實質數據。\n\n大型金融機構財報：花旗首季營收增長14% (★★★★☆)\n**事實核對**：花旗首季營收大增14%，服務業務表現尤為突出。此為企業公布的具體營運數據，直接反映其經營狀況。\n**解讀**：大型金融機構的穩健表現有助於提升市場對整體經濟復甦的信心。營收增長表明企業在當前市場環境下具備成長動能。投資者可將其視為經濟活動穩定的佐證，但個股表現仍需結合其具體業務結構與展望進行評估。\n\n市場資金動態與情緒：VIX下降與新台幣走升 (★★★★★)\n**事實核對**：VIX恐慌指數從高位回落，顯示市場對未來波動的預期降低。美元/台幣匯率走貶，意即新台幣兌美元升值。這兩項關鍵指標均指向資金從避險資產流出，轉向風險型資產，反映了整體市場情緒的改善。\n**解讀**：VIX恐慌指數與匯率作為重要的宏觀情緒指標，其走勢確認了市場對於短期風險的評估趨於樂觀。新台幣升值可能暗示外資淨流入或出口前景改善，有利於台股的整體表現。然而，投資者仍需持續監測這些指標，以應對潛在的突發事件。\n\n🔥 市場情緒與壓力測試\n\n今日VIX恐慌指數錄得18.36，較前一日下降0.76點，明確顯示市場避險情緒顯著緩解，壓力測試結果為平穩。美元/台幣匯率同步下滑至31.52，新台幣兌美元升值0.25元，這表明資金對新台幣資產的信心回升，或國際美元走弱，進一步印證了市場風險偏好的回歸。\n\n💰 台股影響與板塊點名\n\n在VIX下降及新台幣升值的環境下，台股市場整體受惠於國際風險偏好的回升。\n**受惠板塊**：\n*   **半導體與AI鏈**：台積電ADR強勁表現，帶動台灣半導體產業鏈。AI資料中心需求爆發，使台積電作為核心供應商持續受惠。ABF載板供應商如南電、欣興因缺口擴大而獲得外資看好，智邦、毅嘉等相關零組件廠商也獲得法人連買，反映市場對AI概念股的追逐。\n*   **金融股**：金控首季獲利預計挑戰同期高點，在整體市場穩定時，金融股有望維持穩健表現。\n*   **電動車與綠能**：電動機攻國際、東元發表電動巴士動力系統，顯示電動車相關產業仍具發展潛力。\n\n**受衝擊板塊**：\n*   目前無明確受系統性風險衝擊的板塊，但在國際貿易摩擦升溫（如歐盟鋼鐵關稅）的背景下，部分依賴出口的傳統產業可能面臨長期結構性壓力。\n\n📈 投資觀察指引\n\n1.  **關注實質數據而非表面訊息**：地緣政治事件應以VIX、原油等實際市場反應來判斷其真實影響，而非單一煽動性新聞報導。\n2.  **緊盯半導體龍頭動態**：台積電作為全球科技領頭羊，其營收、法說會指引及未來資本支出計畫，是判斷全球科技景氣及AI產業發展的關鍵。\n3.  **審慎評估貿易政策影響**：國際貿易政策的變動（如關稅調整）可能對特定產業產生結構性影響，投資者需分析其對供應鏈與企業獲利的長遠衝擊。\n4.  **系統性風險指標優先**：在個股利多或傳聞頻繁出現時，仍需將VIX恐慌指數及主要匯率走勢作為判斷市場整體風險的「科學儀表板」。\n5.  **定期檢視資產配置**：在風險偏好回升的環境下，可檢視投資組合中風險資產的比例，確保其與個人風險承受度相符，避免過度集中。\n\n🏫 曉臻財經小教室\n\n今日單字：【三大法人】\n三大法人指的是外資、投信和自營商，他們是台灣股市中主要的機構投資者。透過觀察三大法人的買賣超動向，我們可以洞察資金的實際流向，看穿市場上可能存在的短期消息面或散戶情緒所造成的假象，進而更理性地評估股票的真實供需狀況。\n\n數據為鑑，去蕪存菁。",
   "news": [
+    {
+      "title": "TWA00 加權指數- 白天台積電休息小股表現- 股市爆料同學會 - 理財寶",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBiTzdrSV9SeFM2VVktMjlhTDdVNWh6dHp1SUN1WWhNWmRqRGN3QU1sTDcyVHZaQzAxb2lreS1ubmVOeUhPWkNoN0k1TXlqQXF1TVBkU0ZuQTA?oc=5",
+      "summary": "TWA00 加權指數- 白天台積電休息小股表現- 股市爆料同學會&nbsp;&nbsp;理財寶",
+      "dt_utc": "2026-04-14T22:37:14+00:00"
+    },
+    {
+      "title": "Implementation of Stock Split and New Share Allocation List [Implementation of Stock Split and New Share Allocation List] - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNazkwb0JpeHRiRDBtaldvRkJ1c2tyRDhRajZZdzVvN0tJM2k0dzVZYXF1NFlLMThNRUNyYlNhdkZKRFZvYldVbTYtLWJYSjJpYld3ckNQanlJb2pmZzVoWkNqbmkwSk9CRXliREJ4Y200REs2RkhzZnlNRGRLQkpWSG9rX0VDcDF0Y2VidmxIdE9zVFRZNEZ5YUpMclk4RVExM3NJSS12bDBLdXNHNDRmd2tLY2JSQQ?oc=5",
+      "summary": "Implementation of Stock Split and New Share Allocation List [Implementation of Stock Split and New Share Allocation List]&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-14T22:30:29+00:00"
+    },
+    {
+      "title": "【即時新聞】花旗(C)首季營收大增14%！服務業務狂飆，執行長霸氣回應併購傳聞 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOMXd2NmUtNF90clIydmlzWG5YQV9QQUp4SGItangtRWlkSDhsb0Uzckp2eF9mdE1pMjFlQkFXRW5YWEo3VUVZeE1qeTlnLWctNU1Fbnk2eFJ5SUhkR1dBLWpoTnRpRWhBWkp6d1U5SXZ1QTFLWkJldFpVMFEwQm1tZVBVZkVOaElqSXItNVAwdTk?oc=5",
+      "summary": "【即時新聞】花旗(C)首季營收大增14%！服務業務狂飆，執行長霸氣回應併購傳聞&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-14T22:22:11+00:00"
+    },
+    {
+      "title": "投資人樂觀美伊談判！美股收高 台積電ADR強噴2.8% - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNQU9fLWJybEZSaEU0ZGtXcGlXNHBOMEdrNmROM0c4Y050akg4aDdmSFdWeXc2SV8zZ3JYWmdWT3AwRlNreHNvU1dwdnJreFhveTV6VGRFVGNCSE1EVXFWeXgycWFXMkU5ZFFrSGFwejRTVWhBU1o5WFBnWV92aGtUcmJob2t6cXFZRVBGUjVnaGlZMEl6NHZTYzFsV1hzWlFqYjlJUWtiN2NSNWI3ME9lODNSVWFhM1JnTnYyRmpHbmVIeFdRU0U3TG00UDRTNlhaWHVfWVl1MFZoZjJuUnFsbllJU1YtY05hQk14S1cxZ1Z5UmYweFNLTXlnbVREbFB1NU1yMWpmaHBQaV8wUmhoLTROUzVGbGlQeENKZDJoa1Z5akM2aTEzelUwZlozR3RLbncwV2tzX2JRZVY0VUE?oc=5",
+      "summary": "投資人樂觀美伊談判！美股收高 台積電ADR強噴2.8%&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-14T22:04:17+00:00"
+    },
     {
       "title": "海外ETF績效 紅不讓 - 聯合新聞網",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ORXhWWEFhbk5zSkpmZ2RSSlV4aFNLS2xjRHR0blNwUnhYSnBBRkFQU3hSTmNVWXFGZTdtUHNFb0E4aWJENkJDeXd1WGhfQldESXfSAVdBVV95cUxNQ2I0ajdMRUxvdUU5SUgxc1FpLURjb0twSmZiM3h3cm1jZTMzZzVTLXQ3clRJU2hkcmtLNWlibGphaVdJblJ5WnZLS1JSNjl1SFRUa2FmbDA?oc=5",
@@ -35,6 +59,12 @@
       "dt_utc": "2026-04-14T21:43:51+00:00"
     },
     {
+      "title": "AI資料中心需求爆發 甲骨文擴大電力布局 股價連日上漲 Bloom Energy飆升22% - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMioANBVV95cUxOWHdEV0hrNURfaW5TYnFqOFpUdlQ2bk83MEFqTVJfaWltM1dVZlZROHBETU5udmNTcEtBVUZiWFVKUzYwbFB5Rzl3OGs3bk1BT2NtLUZXUGtZWm9RRk9YU0ZQaHphZ2FYbmY3OG85azBsSC1pWEctSWhlenE1S1Q5VWV0aHBfSzRKbzJ1ejNHdkJUczlOa2xjN3Byem56NE81Y05NQ19jWW05T2ZVTXVLUXFBU0tITXkwSnlTQVo5NDIwOHBWYnM0UUVRZm9fODNTMlVVeTFwVG1GbkRQNExkZ3Z0alpfQmh6RFVKbENIYnRqeGh5VmlPWW1aOXhsNldwdnFkb0ZLNmpDaWFDeUFOVDN4LUpoVW5Xd3JaSVdLeHYxeE94MWhaU0pmdUhyenN4NkRlZDdvYWItakoxMnU0d2tMcURFREhYSnZ3VnN3X3FZWU14SjBFa0dlaFRpRFY0RnBTWVVsMV9iaWVMR1g3QXNwRUU1dkQtRmsyRkhBNkZIRzB3aXhkTW5kR3dlUlVYLWtHT0tFQmkyX0EtSUtDSg?oc=5",
+      "summary": "AI資料中心需求爆發 甲骨文擴大電力布局 股價連日上漲 Bloom Energy飆升22%&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-14T21:40:02+00:00"
+    },
+    {
       "title": "〈能源盤後〉荷姆茲海峽變數降溫 市場押注美伊重啟談判 原油跌近8% Brent摜破95美元 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMi3wNBVV95cUxPUjBhT1RPSnN1TE9WYlhPNzNORS1WUUFUdXl2YWh0eUpTejQ0SUdZRGtITW90N1V2MzRKT3M5c2UyRkctOERTMlQxR2pScUF1YWxWQ3hLcXhNVlhvUWRhREFDLUtxSHlrZHRvbS03YmlfNnNVWlJNRU1IQVh3dkJuZUFhUGNPUWQ3bldjRnVJeDVTdUtHLTdSMk82cURLQ21WZTYtQTFGR0JHSE5FTTR0RWJrbDlhaHg5Tkd1UjhGTG5mckU1M2szZ2dGU1VmVmdmRUhVb01jdWNCQjZwMEN6Yk85aHlJSVlqSWpFbDFnSTBaMkk3VjNZeWlvcG5ONjI2TU9ET2lrdGlYMllfcURTaE1jZkQ2WFROWXJUZnM5cTFudzlieHRaTkt4U2hBRkxCNk93RENhaEU1M2lucWk0eGFVdHdKaFJyaUNsZjlST1A5eGtjWk5EM2s3UGdjRWJ2REhJWUhLNGNvbXFvWUR3U3hzdTB6cEJlVXhQc0Q0Vms3NkNmeWl4MGZaQ3ZqNnB3eENWUVVfYnlaVzhMT21DeTl5blUwWWk2Y2RldVBUdFpUeUxycWhQV2Y5Y1pRekg0SEU1VkZEQVlhNE5Dbld1ZUtFaDI1VzZia29nOXdKZw?oc=5",
       "summary": "〈能源盤後〉荷姆茲海峽變數降溫 市場押注美伊重啟談判 原油跌近8% Brent摜破95美元&nbsp;&nbsp;Yahoo股市",
@@ -45,6 +75,12 @@
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB2cmcxMFdDeUJzdlFEYmxGMnBXby1NcC1CNXAtZ1Nzc0lUem92V2stQjB4STRJaHJ6U2k1SVRZSVdBbmN6Q1JDXzN6Y2RkVFlyRG1WTkpjWjVKTjUyM29mXzBMZEY4Y2VkZ2puTkNQcw?oc=5",
       "summary": "Monroe Capital完成資產出售並與Horizon Technology Finance合併 作者 Investing.com&nbsp;&nbsp;Investing.com 香港 - 股市報價& 財經新聞",
       "dt_utc": "2026-04-14T21:20:09+00:00"
+    },
+    {
+      "title": "CAPE系統正式上線 美政府下週一退還違法關稅 逾33萬進口商受惠 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMihwNBVV95cUxNaGVURmttQjgtVHJKVEkwR2xrcmlfeWhGTllvT291QTJ6TEE3enlSTWR1SkhBbHF5b2F6S0hoSUZMSnZUMnRmTXJMU1F6QW1tOVFSWHVzaU9IbkhWUjEtNklMN1lBMzZPS2dwcmxEdkhMTDdQRWpIdzNYU01HbjFJQkRaWDJtYmJOOGdPVk1UUmRXUjlpV3IxMEFHOVpoU0ltZTJkMXNpMGNOMjVZYzlOOW1EYVhPTWl5eUdVOEROZjRNQWVTNUtpbVR3VXNNUHExdEVxYThRbnVzOTNhWS1GOHpRTlZhVTNkOHlPS1kycGpIV0Z0M2JyVkxUTzVsSldXU04wcnBrcmFMSGlXMWFobXpUbldQcTQ5NE5vdFhEdmh4Mkx1SDhPNUpSSF9hZF9xTmVSdEtFLTY1ZXBsQWo1ankwZDdyZTBkUFZZMHZJUExuWldVMzNDUWNUS2x5RzRHNEdrTzVBaXBkUUVvS1dESmhwVkFDNVB0VDJDNDZiVGhUV2NZNEFV?oc=5",
+      "summary": "CAPE系統正式上線 美政府下週一退還違法關稅 逾33萬進口商受惠&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-14T21:20:03+00:00"
     },
     {
       "title": "美國股市繼續上漲，因對伊朗重啓談判結束戰鬥的期待（15日） - 富途牛牛",
@@ -105,6 +141,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1Ra3F5ZlkzSlpLcUtXTS1HaU1SRUpiVkpmbVR2RGRIdDJFWkg0VDJ6RTUxcHdxUjc4dGl4Q3Ftazd5OXdLZXlaZjVEamllbDktWE14ZWVFUW4?oc=5",
       "summary": "3346 麗清 - 拖累大盤 何時下市？ - 股市爆料同學會&nbsp;&nbsp;理財寶",
       "dt_utc": "2026-04-14T20:11:51+00:00"
+    },
+    {
+      "title": "金控首季獲利 挑戰同期高點 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMUFqVVVOb0pfM2JON0t1bHRmdVFqcmI4ajZhZTNBS2NyMl9KQjgzMUhQYVNwYV9WdHRTajNDMUtTZFVEdXVlem1pSEhzMXcwN2puY2JuZWc5X3lMZjQ0cnlvWGw0eWh3TkN3aHJQSEgyYVVkaUU3dmdVY20tR2V4RjlJblpjQXVYMHN1c0FHQ19YWDBoNF9KcmRXLTVOWTRuTzJBeXZhOWJiamcwSFhmenJEbVp0TVp0OUNxREcyeWZmOFVPZC1fcl9iTTRqUmxwRUxnZWN2d2x5aWlPQy1NZjk2TS10MWZoY1Z2dg?oc=5",
+      "summary": "金控首季獲利 挑戰同期高點&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-14T20:10:00+00:00"
     },
     {
       "title": "ETF今年規模增7,771億 - Yahoo股市",
@@ -345,48 +387,6 @@
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5BUFE0dlVzdUFhSmhhdDRXbGFJV1psWTI2RlJSSHR4eVZDcUZxNTRYRVVSUnQyY3ZQZ1NRQXFkNFhxTlpiakgzLV8tOTByN29LOGR4QldPZ1lnWnhTLWVfQdIBZkFVX3lxTE8yUnJQRVlTV2V4OXM0NHZXRUpBOTRDNW9NRGYwd2tWVktZaDN6RTFnaURQSWlOcnJ2RzBrQ3cxTFM1cExNcEpwU1ZxQkJ4TkFablZ2QTc2eTVVSmV5TVRiREQyaUphQQ?oc=5",
       "summary": "受美伊再談判預期提振 股市上掦油價下跌&nbsp;&nbsp;新唐人電視台",
       "dt_utc": "2026-04-14T14:34:44+00:00"
-    },
-    {
-      "title": "Globalstar's Stock Is Soaring. Amazon Is Buying the Company to Challenge Elon Musk and Starlink. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdEw5akpUM2JrVGVhdWp0M3M0aFQ2SXlTbXkwSms1bTl6OUlWWGFFQ0NTVDB6c0FiSG5pUkE3THFEV1NaM1d2SlBuVWhuTlpkRGlkUWQ5eVNabTBsYW1tMHdOUFV6UTB2ekZwTkRxXzZUNHhvclFsa2ZkZzBLN2w0NllzTGVra3dvbzVkekxTdGY5ZThGMjBrZ3lWWVZKcFkz?oc=5",
-      "summary": "Globalstar's Stock Is Soaring. Amazon Is Buying the Company to Challenge Elon Musk and Starlink.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-14T14:30:00+00:00"
-    },
-    {
-      "title": "不挺護國神山？「國家隊」結帳台積電抱68億離場 「這檔」強攻漲停遭出貨2.5萬張最慘 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiqANBVV95cUxORmpGY29BajNBdUpPbk93RGFuY21WWFhjeFktM3p1bU55Y0FZLXFHNDFFLWRwTlFuVGpwdzNONjEyc0RuYkN5ejNqR3hLT3cyWTF6U2hzUEpRM1dLb01PeHRkdGhOd2pYUjEtQS1yTnZXLWZnTlN2OE96VDQyamNVUjdfa1dLUld0UDd4MFZ6Z3VKSTljSU5SNGtIYVdrWGhqNG9ZZ2VocVJHMkUzUnd2VkQzbFZ0dnZYSVUxMEx5Y19hSHlLSDVHSDlWUjFic0xXdldzeUxxYTFOVGN6RzBtaXZCTHh4TC0xVnZRX0MxNEZiNHpXSVRIQl8tZ1BBaV85enhDeWxPSkJ4NTVERUtkdW9qWHcxdjh2VHRqQnZ3a3lINDVPRTh6NXhWWC03S3NoM3U0MVJQcmtmeTBpcnFLZjVCd0Q0cDhpLWo0TzZuN2xQeEdlTjdCMDdXbVZtaUd0dmVQOXVlUHBGOEVnQWNtS3QwaXJpTlVReGI0amw0eTk3eGkwWmFCSlE1d0xhYU45dEZkVWVBOHk1VHg3ZGJrcWRPbjYyLTUx?oc=5",
-      "summary": "不挺護國神山？「國家隊」結帳台積電抱68億離場 「這檔」強攻漲停遭出貨2.5萬張最慘&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-14T14:30:00+00:00"
-    },
-    {
-      "title": "SanDisk Stock Already Is Up 300% This Year. It Could Jump Another 180%, Say Analysts. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONkRGRVc2RlBCd050Nm5Qd1dqekFVRnV3MkhZdlVuSmhfb1FCYk5TckxlR29pM1E5dVFoT1pUN3BmdnhkX0RJaGJSUTZiWWlkV2NnU1JWYUs1OGtVSmZ5TklmbTJHLWVtV2VJVkFaWEg3QVRIZHUza3NwZHU0eEx1em9Mb29xeFNyVVhGU3NjdnlQczBFOEE?oc=5",
-      "summary": "SanDisk Stock Already Is Up 300% This Year. It Could Jump Another 180%, Say Analysts. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-14T14:17:56+00:00"
-    },
-    {
-      "title": "啖台積電擴產紅利！「這檔」連拉3根飆新高 它訂單破500億收連5紅、朋億累漲17.1% - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiugNBVV95cUxNbGlGZDEzTi1mcGl6SXhkMVpzVzl6OE9GMEI0akpIaU5aaS12b0Nub0FJTGl6X1Zjd0JkODZNWEhnUDN6TVEyMVNhLXJQd3F3T0twejJFaWZtWm1KZ0VGTE5QR2lqcGk5MWxyQkZHQ2EyT0J4a3YtMEFGQTFmY2tlMlNFRzRSNWIxVlJwcWE5N1VsRWZCRW93WWJHMEdEbUQ3akFueE45eEdGZTI4MTNpWm1zeXFnMnhVZkJxUUVoeC1RU09kUkZNd05La0YxUFNHUUtYQ1dRR2ZCWDRZakpyLVVWSjJXcDIzQVJxWXYwakpKdnpYUVZ6UTFpQmlVbnNpaXBudjNHcEd1ZWlmNGl4bjE0UzVWMVZLVk5JQjFTMWlLek1EdnZ6MHBvSEFLcS1fYjd2ekJxcGV2YzFNU25LMm1CbHJOVU1ZQXFlR043S1gxS2dZS0ZseTN2TW5mb3lQeUl0VEJWVUxLa1N3TENSQ0pyZEV6akpMSTNpMG9FOEV5UE9oa0ZjQnRGR0t1TjlVTkJZbFFyT3EwTUVhTWN2dm5iWTVLb2V6NkJPVjhuSV81LUZGV0ExallB?oc=5",
-      "summary": "啖台積電擴產紅利！「這檔」連拉3根飆新高 它訂單破500億收連5紅、朋億累漲17.1%&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-14T14:15:00+00:00"
-    },
-    {
-      "title": "U.S. Stock Movements | Broad Gains in Cryptocurrency-Related Stocks, Strive (ASST.US) Surges Over 10% - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNalNNQWpUWVNxcEkxTGpEUm5WSnNodzByY21wUGROZDc4NVhQT3lyVGFKSTFCRlZUZHpJNzZpWWY5RUZ1N3ZZck4wbkhxck1wWnhNZU9QRko1WGNmVTI4Skw5TWk3RW1oQ0t5T2N0bmlqdlpvMjRnLWdBWWw1R0NPSWpIMGF2OFEtQTZjbEhjX3dTdEV1T244Ym03Ykt5VDJBQnFMNHVKWmV2LWlvcGllbQ?oc=5",
-      "summary": "U.S. Stock Movements | Broad Gains in Cryptocurrency-Related Stocks, Strive (ASST.US) Surges Over 10%&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-14T14:03:43+00:00"
-    },
-    {
-      "title": "中東衝突緩解！華爾街3大指數開盤走高 那史達克漲幅最高 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxPN0h6c195NW9FU2N4R2pqUlM1SU5DYWJBeEE1SmE2RHBRTklscGJpSURTQ3VOa291NENEeUhwRUZrbmxzNGM4YmdHaUFNbXhDMUhZV2NwUXBxZXhoUmFCUUt5QXhOSWxkTHpuVTU4Z21ubzNJemlsanJrZWM2UHI3YlRNYy1BUlZUR0V5ZTN0UUNCd19hcEtvOTR1UmlMS0R4amVJbFNzSGUwdWJ0OFdkemZSTkZ5OTktbk5xS1pjTm12NmpaclBGXzhvYmVyQ25ITENTNmtXd181YmwyQ3BGMmZLY1pXc2wyMUNmNXJPVnp0VkFDUW1sbnpmZ0c0V050RUxzMFBINjJsUnVWUjl0UFdHQThla0JWX0pIcTZxTjlYbzQwNXE2T2MyMU1FdkxyUmtoUk0tWm9oOFQxV2ViOXdXSFBvemdZT1ZFV1U1bkdTRGg4NDlhOTVnS08wbXVESFZkd0pFa0VWUlYtc29FYko2aDkzQ3ZUZUxkZHZEUQ?oc=5",
-      "summary": "中東衝突緩解！華爾街3大指數開盤走高 那史達克漲幅最高&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-14T13:49:33+00:00"
-    },
-    {
-      "title": "【21:48 即時新聞】Dell Technologies(DELL) 跌逾5%／併購傳聞破局、漲多回吐壓力出籠 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdWE5blUtYkk1alE1bHpvRWIydFFfbUtxMm1ldi03QlBCaktrLUhhdnMzVm80Y0ZsRGpMbFNCUVFaUzZJaVgzWVF3V19oU0JfR0VxZ0Q5Nm5CcEVZR29MdG5HTE85TDdLMUhDLXNJVUlwNlFXb1Bhd0UwczlmNDVnbUlCeXkxcGJuRWt6cjVB?oc=5",
-      "summary": "【21:48 即時新聞】Dell Technologies(DELL) 跌逾5%／併購傳聞破局、漲多回吐壓力出籠&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-14T13:48:17+00:00"
     }
   ],
   "risk_indicators": {
