@@ -1,9 +1,33 @@
 {
-  "updated_at_utc": "2026-04-15 18:00:12 (TW)",
+  "updated_at_utc": "2026-04-15 19:01:40 (TW)",
   "title": "全球局勢與市場情報 2026-04-15 盤後",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 21.951306443s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 21\n}\n]",
-  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 21.951306443s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 21\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，在伊朗和談傳聞的推動下，地緣政治風險有所降溫，恐慌指數 VIX 維持低位穩定，美元兌台幣匯率亦未見波動。此一情勢為全球股市帶來正向激勵，尤其亞洲股市表現轉強。台灣股市在資金活水挹注下，加權指數持續上揚並屢創新高。觀察產業動態，金融業整體獲利表現穩健，然而個別金控間存在差異；AI 產業依舊是市場焦點，國巨法說會樂觀看待後市，但相關市場仍須警惕仿冒晶片等風險。整體而言，市場正從宏觀風險趨緩中尋求成長動能，但投資決策仍需基於數據驗證與實質基本面。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治緊張緩和，風險資產受惠 (重要度：★★★★★)\n*   **事實核對**：新聞提及「伊朗談判傳聞」、「美伊停火帶動亞洲股市轉強」，同時數據顯示 VIX 恐慌指數維持在 18.34 的低位，美元/台幣匯率穩定於 31.64，且國際油價（美油）跌破 94 美元。這些市場指標並未呈現地緣政治衝突升溫時常見的避險情緒（如 VIX 飆高、美元走強、油價大漲）。相反地，市場數據與地緣政治緊張緩解的報導相符，表明避險情緒消退。\n*   **解讀**：地緣政治風險的暫時性降溫，降低了市場不確定性，為風險資產（如股票）提供了支持。這顯示投資者對於區域衝突的擔憂目前已有所緩解，有助於資金流向風險性更高的資產。\n\n台灣股市表現強勁，外資大舉加碼 (重要度：★★★★★)\n*   **事實核對**：台股收盤上漲 426 點，日K連七紅並續寫新高。外資在今日加碼 557 億元，創下今年第五大買超金額，且兩天內累計買超達 1246 億元。在 VIX 恐慌指數和台幣匯率穩定的背景下，此資金流入並非因避險需求，而是基於對台股基本面的信心。\n*   **解讀**：外資的大幅買超，明確指示國際資金對台灣市場的青睞。這主要歸因於台灣在全球供應鏈中的關鍵地位，特別是在AI相關產業的領導優勢。投資者可將此視為市場信心的物理性展現。\n\n金控業獲利分化，國泰金、富邦金首季衰退 (重要度：★★★★)\n*   **事實核對**：金控整體首季獲利達 1882 億元，年增三成，但其中龍頭如國泰金和富邦金卻出現獲利年減 1% 與 19% 的情況。相對地，中信金董事均酬破億，顯示其營運表現或策略有其獨到之處。這表明金控板塊內部，個別公司的經營績效和風險管理能力差異顯著。\n*   **解讀**：金控業的總體數據固然亮眼，但投資人應深入分析個別金控的財報細節，理解其衰退或成長背後的原因（例如資產配置、保險業務表現或投資收益）。高管酬勞雖是市場關注點，但其正當性應與公司整體獲利能力和股東回報率相匹配。\n\nAI 產業機會與風險並存，需警惕仿冒品 (重要度：★★★★)\n*   **事實核對**：國巨法說會樂觀看待 AI 動能，預期營收獲利有望季增，顯示部分供應鏈企業受益。然而，海關查獲輝達仿冒晶片，市值逾 700 萬元，此一事件凸顯 AI 產品市場快速擴張下，存在品質與知識產權的灰色地帶。\n*   **解讀**：AI 領域無疑是當前市場的主要增長點，但投資者在追逐熱點時，必須提高警惕，避免投資於缺乏實質技術、存在仿冒風險或僅靠炒作的公司。應聚焦於具有核心技術、穩定供應鏈及良好商譽的企業。\n\n詐騙猖獗，假投資真斂財 (重要度：★★★)\n*   **事實核對**：新聞報導「竹聯幫冒股市名人假投資，北市女高管遭詐 3 千萬」，此為刑事案件，反映社會上存在利用投資名義進行詐騙的行為。\n*   **解讀**：此事件非市場基本面變動，但警示所有投資人，在當前資訊爆炸的環境中，對於任何聲稱「保證獲利」或「名人推薦」的投資機會，都應保持高度懷疑。務必透過正規管道驗證投資資訊與平台合法性，以物理事實為依歸，避免情感驅動的非理性決策。\n\n🔥 【市場情緒與壓力測試】\n今日市場的科學儀表板顯示：VIX 恐慌指數為 18.34 (▼ 0.02)，維持在相對低點，未見市場普遍的恐慌情緒。美元/台幣匯率為 31.64 (▼ 0.00)，呈現平穩，未有因避險需求導致的急遽升值或貶值。綜合來看，當前市場情緒相對穩定，系統性風險指標未釋放出警訊。\n\n💰 【台股影響與板塊點名】\n台股今日在強勁買盤與樂觀情緒下收漲，主要受惠板塊為：\n*   **半導體與 AI 鏈**：台積電股價創歷史新高，顯示其在全球半導體產業的龍頭地位持續強化，且在 AI 晶片高階製程上的領先優勢是市場的明確共識。AI 動能也帶動相關供應鏈，如國巨對後市的樂觀展望。在 AI 記憶體方面，海力士在 HBM 領域的技術推進，與台積電在先進封裝的合作，構成 AI 時代的強強聯手，對整個生態系統至關重要。\n*   **金融板塊**：雖然部分金控獲利衰退，但整體金控獲利仍有顯著增長，且中信金等表現亮眼，顯示部分金融股仍具備穩定的獲利基礎與投資價值。\n*   **被動元件**：國巨對 AI 需求帶動營收獲利季增的預期，有助於該板塊的信心。\n受衝擊板塊方面，目前沒有明確的板塊全面性利空，但外資重砍記憶體個股（旺宏、華邦電），顯示記憶體模組與製造商的競爭態勢仍需審慎評估。\n\n📈 【投資觀察指引】\n1.  **實證為先，避免傳聞：** 地緣政治消息與市場反應需經 VIX、油價等物理數據交叉驗證。非數據支撐的「樂觀情緒」或「恐慌」均應保守看待。\n2.  **區分總體與個體：** 金融業雖整體獲利亮眼，但個別企業表現差異大。投資應聚焦於公司基本面與實際獲利能力，而非板塊總體趨勢。\n3.  **辨識 AI 投資真偽：** AI 趨勢明確，但市場充斥投機與仿冒風險。投資應著眼於擁有核心技術、明確商業模式及可驗證營收的實體公司。\n4.  **宏觀風險持續監測：** 儘管短期地緣政治風險降溫，但全球經濟、通膨及各國政策仍存在不確定性。應定期評估其對全球供應鏈和資金流向的潛在影響。\n5.  **系統性風險優先考量：** 當 VIX 和匯率等系統性指標平穩時，個股訊息較能獨立判斷；但若系統性風險升高，任何個股利多都可能被市場整體壓力所掩蓋。\n\n🏫 【曉臻財經小教室】\n今日單字：【三大法人】\n三大法人是指在台灣股市中，對市場影響力最大的三類專業機構投資者，分別是：外資（外國機構投資者）、投信（國內證券投資信託基金）和自營商（證券商以自有資金操作買賣）。他們透過大規模的資金流動和專業研究，其買賣動向往往能反映對市場未來走勢的判斷，有助於投資人看穿散戶情緒和市場噪音，理解資金的實際流向。\n\n數據為本，理性為綱。求真務實，穩健致遠。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，在伊朗和談傳聞的推動下，地緣政治風險有所降溫，恐慌指數 VIX 維持低位穩定，美元兌台幣匯率亦未見波動。此一情勢為全球股市帶來正向激勵，尤其亞洲股市表現轉強。台灣股市在資金活水挹注下，加權指數持續上揚並屢創新高。觀察產業動態，金融業整體獲利表現穩健，然而個別金控間存在差異；AI 產業依舊是市場焦點，國巨法說會樂觀看待後市，但相關市場仍須警惕仿冒晶片等風險。整體而言，市場正從宏觀風險趨緩中尋求成長動能，但投資決策仍需基於數據驗證與實質基本面。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治緊張緩和，風險資產受惠 (重要度：★★★★★)\n*   **事實核對**：新聞提及「伊朗談判傳聞」、「美伊停火帶動亞洲股市轉強」，同時數據顯示 VIX 恐慌指數維持在 18.34 的低位，美元/台幣匯率穩定於 31.64，且國際油價（美油）跌破 94 美元。這些市場指標並未呈現地緣政治衝突升溫時常見的避險情緒（如 VIX 飆高、美元走強、油價大漲）。相反地，市場數據與地緣政治緊張緩解的報導相符，表明避險情緒消退。\n*   **解讀**：地緣政治風險的暫時性降溫，降低了市場不確定性，為風險資產（如股票）提供了支持。這顯示投資者對於區域衝突的擔憂目前已有所緩解，有助於資金流向風險性更高的資產。\n\n台灣股市表現強勁，外資大舉加碼 (重要度：★★★★★)\n*   **事實核對**：台股收盤上漲 426 點，日K連七紅並續寫新高。外資在今日加碼 557 億元，創下今年第五大買超金額，且兩天內累計買超達 1246 億元。在 VIX 恐慌指數和台幣匯率穩定的背景下，此資金流入並非因避險需求，而是基於對台股基本面的信心。\n*   **解讀**：外資的大幅買超，明確指示國際資金對台灣市場的青睞。這主要歸因於台灣在全球供應鏈中的關鍵地位，特別是在AI相關產業的領導優勢。投資者可將此視為市場信心的物理性展現。\n\n金控業獲利分化，國泰金、富邦金首季衰退 (重要度：★★★★)\n*   **事實核對**：金控整體首季獲利達 1882 億元，年增三成，但其中龍頭如國泰金和富邦金卻出現獲利年減 1% 與 19% 的情況。相對地，中信金董事均酬破億，顯示其營運表現或策略有其獨到之處。這表明金控板塊內部，個別公司的經營績效和風險管理能力差異顯著。\n*   **解讀**：金控業的總體數據固然亮眼，但投資人應深入分析個別金控的財報細節，理解其衰退或成長背後的原因（例如資產配置、保險業務表現或投資收益）。高管酬勞雖是市場關注點，但其正當性應與公司整體獲利能力和股東回報率相匹配。\n\nAI 產業機會與風險並存，需警惕仿冒品 (重要度：★★★★)\n*   **事實核對**：國巨法說會樂觀看待 AI 動能，預期營收獲利有望季增，顯示部分供應鏈企業受益。然而，海關查獲輝達仿冒晶片，市值逾 700 萬元，此一事件凸顯 AI 產品市場快速擴張下，存在品質與知識產權的灰色地帶。\n*   **解讀**：AI 領域無疑是當前市場的主要增長點，但投資者在追逐熱點時，必須提高警惕，避免投資於缺乏實質技術、存在仿冒風險或僅靠炒作的公司。應聚焦於具有核心技術、穩定供應鏈及良好商譽的企業。\n\n詐騙猖獗，假投資真斂財 (重要度：★★★)\n*   **事實核對**：新聞報導「竹聯幫冒股市名人假投資，北市女高管遭詐 3 千萬」，此為刑事案件，反映社會上存在利用投資名義進行詐騙的行為。\n*   **解讀**：此事件非市場基本面變動，但警示所有投資人，在當前資訊爆炸的環境中，對於任何聲稱「保證獲利」或「名人推薦」的投資機會，都應保持高度懷疑。務必透過正規管道驗證投資資訊與平台合法性，以物理事實為依歸，避免情感驅動的非理性決策。\n\n🔥 【市場情緒與壓力測試】\n今日市場的科學儀表板顯示：VIX 恐慌指數為 18.34 (▼ 0.02)，維持在相對低點，未見市場普遍的恐慌情緒。美元/台幣匯率為 31.64 (▼ 0.00)，呈現平穩，未有因避險需求導致的急遽升值或貶值。綜合來看，當前市場情緒相對穩定，系統性風險指標未釋放出警訊。\n\n💰 【台股影響與板塊點名】\n台股今日在強勁買盤與樂觀情緒下收漲，主要受惠板塊為：\n*   **半導體與 AI 鏈**：台積電股價創歷史新高，顯示其在全球半導體產業的龍頭地位持續強化，且在 AI 晶片高階製程上的領先優勢是市場的明確共識。AI 動能也帶動相關供應鏈，如國巨對後市的樂觀展望。在 AI 記憶體方面，海力士在 HBM 領域的技術推進，與台積電在先進封裝的合作，構成 AI 時代的強強聯手，對整個生態系統至關重要。\n*   **金融板塊**：雖然部分金控獲利衰退，但整體金控獲利仍有顯著增長，且中信金等表現亮眼，顯示部分金融股仍具備穩定的獲利基礎與投資價值。\n*   **被動元件**：國巨對 AI 需求帶動營收獲利季增的預期，有助於該板塊的信心。\n受衝擊板塊方面，目前沒有明確的板塊全面性利空，但外資重砍記憶體個股（旺宏、華邦電），顯示記憶體模組與製造商的競爭態勢仍需審慎評估。\n\n📈 【投資觀察指引】\n1.  **實證為先，避免傳聞：** 地緣政治消息與市場反應需經 VIX、油價等物理數據交叉驗證。非數據支撐的「樂觀情緒」或「恐慌」均應保守看待。\n2.  **區分總體與個體：** 金融業雖整體獲利亮眼，但個別企業表現差異大。投資應聚焦於公司基本面與實際獲利能力，而非板塊總體趨勢。\n3.  **辨識 AI 投資真偽：** AI 趨勢明確，但市場充斥投機與仿冒風險。投資應著眼於擁有核心技術、明確商業模式及可驗證營收的實體公司。\n4.  **宏觀風險持續監測：** 儘管短期地緣政治風險降溫，但全球經濟、通膨及各國政策仍存在不確定性。應定期評估其對全球供應鏈和資金流向的潛在影響。\n5.  **系統性風險優先考量：** 當 VIX 和匯率等系統性指標平穩時，個股訊息較能獨立判斷；但若系統性風險升高，任何個股利多都可能被市場整體壓力所掩蓋。\n\n🏫 【曉臻財經小教室】\n今日單字：【三大法人】\n三大法人是指在台灣股市中，對市場影響力最大的三類專業機構投資者，分別是：外資（外國機構投資者）、投信（國內證券投資信託基金）和自營商（證券商以自有資金操作買賣）。他們透過大規模的資金流動和專業研究，其買賣動向往往能反映對市場未來走勢的判斷，有助於投資人看穿散戶情緒和市場噪音，理解資金的實際流向。\n\n數據為本，理性為綱。求真務實，穩健致遠。",
   "news": [
+    {
+      "title": "第一名不是台積電！中信金董事均酬1.17億元 上市公司唯一破億元 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMipANBVV95cUxPYzNJZFZ2LUw5NXRPUUR6elI5V25SZ0dQVDh6cjhGanBXMm91cEh4eDBtSGZsRGFjX2g0aFpuS3dFVzRCVVd2SmhkdFNwcjl4X2t5UHlZY080UUx0dE12SENJSm1PblVWUTFOLVl1WHJCTG5xSHB4bmZkZ3V3N2VjTXhGYjI1dlFzSjgwcGE0V3VtSmlkYkxvSG1yNUpFbFZzdi1NZmh4QnpidmFiMGliNFpDdnpWeDdXV1dYV05VQ1BSS21fX2tyeXVfeGxlUHRpUjUyY1lxZFJKdGdYR2pELXdCZGRTaURaYzh1SC0yUU5RWGNDQ1JqTEtQdy1TRkt1Nm5xcWZGajJZWWNDdnRscUhaMVdHSE1LbHkyN3o1YV9ab25pYmJDMlloUTdLcXNzRU95QUtiYm9hRjFVVjhwWXlvdl9KZWNGSHA3WEY0V1NDRzliSHRLbWVUTl93ekQyUU55c3hSbGlGQkgzd2NRTjVGSmdVY2hpcWhGQUFRc1NFSzhIQTF2OGRVSW9hM05oUVJZTmEzZ1piMjdyVkZPM2lENk0?oc=5",
+      "summary": "第一名不是台積電！中信金董事均酬1.17億元 上市公司唯一破億元&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T10:31:54+00:00"
+    },
+    {
+      "title": "AI熱也有假貨！海關查獲輝達仿冒晶片 市值逾700萬元 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxQLTR4dF9kUHkxSDdsQTgyTTFjNUlqcF9ZOVRYS0k1VUM3U2otVF96c2NMNzRSRnVUS2hnVzEyUzBsYmRxcVdMa28xMi1OWFNBeGcydE9TcDRHWFo3dHBreF9rMnBYU1llZkFQT0JmMlhMOEJUc05Wa0hnTXJHVmN2Q1B1Vml4QXRocDVqMXNBSUtOSWFXRTZGeHh0Q3NmNW1sSlNOaUZHQ01rRk5CRWxaR1p0WE91UUM1NDc2R19rQnZXeERLSFI1c2drY0lzYW9ERnBENFZTbjZFM2pPT08tUEtmY3pLQWg2enJ6SThYNEFWTEIyajZWbEtxUmJoY3dkdzVMRnM1U0Ewc2dYeFZmbXVaTTF5NDJTX2JaY3ZzdEItMjRQcTFNdGNTdWRac3VDZ21PMG9vUU0wSXcwRFBNV2xOWXRzTHRwRjU5V1FCendYOHdLNVVzUGlJSFhIaHM?oc=5",
+      "summary": "AI熱也有假貨！海關查獲輝達仿冒晶片 市值逾700萬元&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T10:15:40+00:00"
+    },
+    {
+      "title": "國泰金、富邦金唯二衰退！一表看金控首季獲利1882億元年增三成 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMipANBVV95cUxOQ2xtOHYzVHRXQTBaekJVYWZXMEJEUHQ3Q1ROa2hiX2l2Rms4MjJzVWw4dzBlclFXRF96RVpMLWZxUVlLR2F1ak1Ba0RMY0UwWk00czVSUDFlb2ZFcUFTYlpWejdDYjdKSHdXQVc5WGIzSXN2WG1UdHdHbnpvNEU3OHlLZGdOcUxqdzdzTnBiUHEzSDZ6RTBkSU9HdHk0WGY5Y0lHWUlQeDR4TnFnb00wblVySm1XTldGS01mN0VCVUhLbWExekJIWEtiZk9mMlpfNWZTM3hXbmtVMlpLRGJKNmlfenkyUE5uTmU3Sl90UFB6VHluV0pYSjhNVGt4R2E3cDBsdWctVlY2NFJsY053ekpVdGU3YjZyQ0RFb2Q2ekxCRkpXR1djQmc1VGQ2ZGdIM0VLdEp6YWdIR05XaDRBb05Ud0ptWTlxZVVoYlpmQkNJYlFGd1JiWW9jZlhPZ2lEbXdEc2VGLUVGWnlhaFA5NVFsZXJiMks4dkpBWWZVaWprbUxyTHRiVl92Q0lrTEFiNFk5U1pnMlJ6V2ZWWURxcTVqN2w?oc=5",
+      "summary": "國泰金、富邦金唯二衰退！一表看金控首季獲利1882億元年增三成&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T10:03:04+00:00"
+    },
+    {
+      "title": "台灣新導演「軍事題材」踩紅線！發聲反擊：已觸法但不涉國安 - 自由娛樂",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5lMmpTWGxJTHhjdHR4eGw1ZEd5RE5BZ29nQ3FvN0hjbW9nNFh4Y0xNZmhNWjdiOHhmb09QNGZUMjdYNUdDZWR1NndIMGVUVi1XVHgxa2t0dFZ3VnNy?oc=5",
+      "summary": "台灣新導演「軍事題材」踩紅線！發聲反擊：已觸法但不涉國安&nbsp;&nbsp;自由娛樂",
+      "dt_utc": "2026-04-15T09:59:16+00:00"
+    },
     {
       "title": "竹聯幫冒股市名人\"假投資\"! 北市女高管遭詐慘噴3千萬 - Yahoo新聞",
       "link": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxQTkV2aE94QUhzRjd2RFBiU1prTy1NWXFyUFZRWU0taGl0Uk5ieDdPS2E3NE1FeldVcDhpRkhUbHJhbjNGby02bUc1MFpZQVFfQUhNUkc3ZVlKNTJaeGdtNFFheDYwck5EZnV4c2xmanRzazZsYUdUVGlKTUJOSTF2clNlZGh3bEw2MWdkTk9LVlowbVh1YjNtZXlkQ0ZvVlA2dURNTGxoTmUtckxVN0F6SHlOcHh4cE0xZENFQ3k2cFI2ZmxqOFZ0NFRYSWpESTUxa1RQckZsdC1VNjBlNWJJaUtZV2U1UTUyOWo0Zk9zRVduc0VuZ21HUHpQX1BuUjZqYXFfdDBTcHhlc0dJZ3lOT0NGb0NfZjgxVmdhNHJLV3dwM2xESnk1X1h1NUgxOW9JMWt4Y0pHUE9Rb216NUtWcDJDUFR4eEFBd3o2Skp0aWQtV0lvWG9OSFhJR2NuVHc?oc=5",
@@ -21,6 +45,24 @@
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZFVEc0laUDhDQ1BwMkhmX1Q2TjdzaVNuRmF1Wk5YTTZ3cUNSOHN0YmJ2d0RzamNHY044LVVsQWJBTlVJU01ZdkpxRWMtX1BqQlByQkVfREtzY1pENm1aY1FPOFF2RHMzdVhlTnZwYTlnXzN3NGo3X3o1WjlkdWhNMHVmLVR2YWJjNXNFZHFsLXM?oc=5",
       "summary": "【即時新聞】博通(AVGO)盤前領漲逾3%！伊朗談判傳聞激發市場樂觀情緒，美股期指微幅走高&nbsp;&nbsp;CMoney投資網誌",
       "dt_utc": "2026-04-15T09:41:57+00:00"
+    },
+    {
+      "title": "不法所得逾１億！竹聯幫冒股市名人「假投資」 北市女高管遭詐慘噴3千萬 - 民視新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ocWtKZEt6QUMwajIxT1dhM3lRblZfXzRHYm9hckRsYzRDUF9PMTlwRnZoUjJWbWdDeWFRNENIQ1RvbVM0V2lMSjdQS01SejVNeEk4d3VWUDVneHJxQ0xFcw?oc=5",
+      "summary": "不法所得逾１億！竹聯幫冒股市名人「假投資」 北市女高管遭詐慘噴3千萬&nbsp;&nbsp;民視新聞網",
+      "dt_utc": "2026-04-15T09:40:14+00:00"
+    },
+    {
+      "title": "你有嗎？國人前2月實質薪資平均達4萬4,021元 寫近7年新高 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxPUlZwVzhyMWRUQ21vZFNPWWN1eVJDaUlfc3R6TzRvRGpRMVpaYjUyUHAxOVYxVnpfWUp5X3VZc3hrbFQybG9zd052MDFscXpyQW1ITUNFV1lEbktfazdJQldfcll1SjRLc2NJTGliZ1ZtZlZ0YjdmM3h3Q0dfcmlGX251TkdtR3c1bGVhQkZObXpBc21EYkdBbndaekVRY2xyUkNDcXU2MlI5d3dRVHpZQ1BMd2pEaHF3Z0dXRFNrdUl4c3JPLWQxLVFxYnpIQ0RkYk45a1hxQ2hKaHZuSXVaOW5wZXh5S1ZfMS1JYVpiQndrZm1CSnlsTVVfQ1B2U3pLZEFab09FVzYzSE1iOWx6VWNsSl9JNG05M1Aza1A2N3ZFc2ZXc2pYTTY3LUN5S3lFRGZnWWY0cVg1X0ZWVUdHR1JVdzhKNEpmZGJ6TlhZLUZpeFVNcTRmSjlPV0xsc01QSEZKa09VZkdrdndKeFE?oc=5",
+      "summary": "你有嗎？國人前2月實質薪資平均達4萬4,021元 寫近7年新高&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T09:34:11+00:00"
+    },
+    {
+      "title": "《亞洲股市》17:30，菲律賓漲50.25點，為6063.35點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQR0YydXNnUXhzSTUxVUpHZDhETXRWV1lsWFM3aGFhaEpsLUdjNjJoNjdnN1N1c2J5T1E3a19MekdFNnlzVDAwNkNVRXRLOFVwMjhUXzMxNklWdnJjb2xwaWx3aDZra3VEU2ZMdEY4dGZpUktfa3FOeHJjT2hHTHBGUS1wZWdCUUtk?oc=5",
+      "summary": "《亞洲股市》17:30，菲律賓漲50.25點，為6063.35點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-04-15T09:32:00+00:00"
     },
     {
       "title": "國泰金3月獲利淪季軍！ 首季316億元年減1% - Yahoo股市",
@@ -47,16 +89,34 @@
       "dt_utc": "2026-04-15T08:57:57+00:00"
     },
     {
+      "title": "投資人注意！股市冥燈巴逆逆被追繳網紅稅 要「賣股票湊稅金」 - TVBS新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1XVFU5eGZPdWZfX2Q3R3hKd3Q2UksxbnVYSFd1Q0ozdFpiUnZHRHl2TjViNTRtN2RCejd2UFVHUjVnNXpHN0UzSzVyTW9pZE0?oc=5",
+      "summary": "投資人注意！股市冥燈巴逆逆被追繳網紅稅 要「賣股票湊稅金」&nbsp;&nbsp;TVBS新聞網",
+      "dt_utc": "2026-04-15T08:57:00+00:00"
+    },
+    {
       "title": "Lenovo Group Stock Advances 1.4% in Hong Kong - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPMGpFOGwzLXhydjJ2NFhGc3o3VWloMGF0bWd3NURjU1pnMHRLdjIyR1d6WldQd2lZY3dHNXhPRDZxdGNSRmFYWUh6MXBDc0NhSkIyV182M0xLcWwtako0eElXUEFrNzFqZU1JbFB6REozbzNJRmdDVTRFTHVxeU01RHdmV2lrN2VuUXNYcWFB?oc=5",
       "summary": "Lenovo Group Stock Advances 1.4% in Hong Kong&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-15T08:56:47+00:00"
     },
     {
+      "title": "【國巨法說】AI動能續熱 公司樂看後市：營收獲利有望季增 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxQQWxMVm1XRG5iZzBJN1BGR1N0ZUhXTHlQdldscGx2S0VjeWs5bzhlV3liVUxacVRtNDlWSUlKcWR4UFczdHB6bGx3eHRHVkFBSkxhaGYza1R2ei03cHBkbUllcW9ZYTZhaGprOXNsY1o4WW8xemR1Si15ZkEzc0tKLWxuWF91VGRpdURINGFOTHhpRlgydS1RODVQWnltdU51VVk1aW1JbTNBV056MHRmaFJfcXhXNUFZVF90TS1ZSVdJb3JmdUZIVXZ0Mm45VUtBb3phM2I5TzdwNndQc2ljaFJ5U3ZLYU02c0QtaHpOLTU1YTFJTEYwQnBNUDlBcmFlVXRycVNLcFdERzAzcmp1MXFkS183XzBoSXAySFBwM1F1aFhhdWNaZ2ZoTktGbWhGU08xQXJoN0pKRFpfc0dyMDZSa052bnhPT1BPYlBqVkJGTDlLRGlrLUhYU1NpS2NMN1VxR05tNlZvNzlkQ2xGYno3WWhjRHhiS09CVWdlbTVpQ3JBZmplQ1NvYw?oc=5",
+      "summary": "【國巨法說】AI動能續熱 公司樂看後市：營收獲利有望季增&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T08:55:35+00:00"
+    },
+    {
       "title": "期貨漲勢謹慎：伊朗和談傳聞提振美股 但長端殖利率攀升暗藏風險 - forecastock.tw",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNV1lERF9sSW0xeGRJcGx0SHY4SEdNTVdLY3VNTmEtcXBNVF84NlZRQzF3dVh4NGMzM0J6dUFvLXJpdEw2QUFleEpYRU9yOEtvYkJ6MFBkOEZvSHcwV0VEMjVYN2ZIM3FUaXVfM3Q4UnREM0RIWDBvb2hheU9yNTZ5NnEyQ1BVZmg5cGI2aGJwcEh5Z2pT?oc=5",
       "summary": "期貨漲勢謹慎：伊朗和談傳聞提振美股 但長端殖利率攀升暗藏風險&nbsp;&nbsp;forecastock.tw",
       "dt_utc": "2026-04-15T08:48:01+00:00"
+    },
+    {
+      "title": "國泰證：美股仍看正向；AI資本支出支撐中長期趨勢 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxQd3QwRTZZQjNDWTZTdzI0TzRpWjFqZVB5ZkVQUFgyUEdzMkpDZ2Q5eFJKa0VNcUJ4cHdHOHA1em5Rb2lsS0xES0N3UjM0VGZ5SzZ1d0FJbmluckNMa196elV6X0NPNHBnWHh0Z19YZUF0VnZESXVrSXJLODBhMTVlQ25uUmN1QUpZNE14OFFSMnNfT0c4ckhWMFMxYlVpSmpSbkVEalNkWFo3NGFMSk1pOXdGQUtWRFhzdFVIRlhJZTdvaHVyNlhzdUVuUUIwb21BX3ZzekQ2U1hQRFlxSHVlTGhneU9aQi1xd2tfaWRxUm9iajNaX2ZtdDVXQ1RHcm5xZ043MTQ4aGF4akZDZVd4MHgzWDZVTWI1LWhFT1Q5QjB1aDR5NHVHZm9ya0VLRXBrUkh4WFd1eHE0NWtzaUxFZFVYUERMVG1mdWI4ZnNhY0s?oc=5",
+      "summary": "國泰證：美股仍看正向；AI資本支出支撐中長期趨勢&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T08:42:00+00:00"
     },
     {
       "title": "Haidilao International Holding Stock Slides 2.1% in Hong Kong - 富途牛牛",
@@ -117,6 +177,12 @@
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaWJISjNtUE8tSUkwTGw5Z1N4em5FdmZGQmtlYmZYckZjYmdVbmk2VF9OWWJBek95clI5SkxYcVdyN3RHVmFOZXZIbV81M3BZWHZ5NFU4X2NnTWNGTExiMU5ReGtRSERQbGp1MzN6YUFLQjBCcVd0WndIRUxiSTVhVUc4aW15akpG?oc=5",
       "summary": "《台北股市》投信15日買超前十大 9檔電子股 智邦連砸24億&nbsp;&nbsp;富聯網",
       "dt_utc": "2026-04-15T08:25:00+00:00"
+    },
+    {
+      "title": "《台股盤後》收漲426點、日K連七紅，續寫新高 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPZFQ1NzQ0b0F6SXBVTDdERHVfbXlBZWhibWNxQmNQX041dWtEeWxaaThJTWxJenJUZTFseWdpUlpOakx4SVRiLVZ5M2NVTGtPek5rcW9Rb2J4ZEtSSmN6b1VtVjNaaERRV1NrajNaYVlvRnoyNUhzdWpNTmdRdGUwTnRiaXd3OEwtS1dET2g0cTAzZm04dmREX0o1cHNodDlleVF0c21ORm85eFh1M1djZloweld0VjVkOXNPdFhzT01HaXQ1TGQwa3R4NTBXUVJwNHpxM2s5bEQwdlVkS2dNb282TFJ5SkNCY0xndjJRY21YdnN4bF9LNTB3LUl1ekcxVFdua2t2eFBtN3NaekNaWVE0enVqZFFz?oc=5",
+      "summary": "《台股盤後》收漲426點、日K連七紅，續寫新高&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T08:22:00+00:00"
     },
     {
       "title": "克雷默警示：最大恐懼「沒發生」 股市逆襲證明別輕易退場 - forecastock.tw",
@@ -321,78 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMisgNBVV95cUxOUU5jOVdseHRtQk9DVmRJNEJFOWhUYkpyUjhIRGF2cm80d0wtcF9qZW9vWU9xbzl0RGZrZ3R0QUJmN1lxT3lvWV9GUTVTNkQ0d0lRREk0bGw3RjVGZ0s0V1FCMTd4M3UxYVV3YnlpUk1tVVlvS1IxVEhtWUlnLXhmNE9zcXI1cG85TlE0NHoyYnhYc0R4MHFwRnJPdGJhZlBQQ25MYVg3TkwwbElWZDlxdlJ3VWRlUmpUTGlIbTJzM3pTN0poYWYzbUNRdzk0TW5ITkowRmhkTm1TbEVEYlZKYU5zamtoNGVxeGhfQmpSSjVJaDR5N1dUOHBVLU9aTlVSdWVKY3UxREJKYk1qd0dYSkY5ZDRtajNJblFrZHQ3TnFQaTFPVVBhaEY3dms3YmRUZ3BMRS12V3hsTU1WUGh5Rnl0YlBOMjl5aHo0aC1NazQway1mcVV1dktlRTJlTXQ2ZmdRMzVGZDhPUG5HNjNQQk9TWUVRRzVSa3g5YkJuc09kQUFBa2E1dzRtZFZhRXl6NktyZzdqLXEwMDI1bktIejFJbDNSenJlTGVDTERhWm40UQ?oc=5",
       "summary": "Uber共同創辦人卡拉尼克遷居德州 科技富豪出走加州恐因財富稅壓力&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-15T06:03:38+00:00"
-    },
-    {
-      "title": "死抱2年績效慘輸大盤！！他怒砍800萬「垃圾美債」全押0050 內行狠戳盲點：流動資產上億再來談 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilwNBVV95cUxPOTN2MjdRZDNtVmVpaXUyWV9MNWdUcmZPYkM4NjVQS0ZBUnpsRk8tUU5DanB4MUczcGptdlFCZk8yTjdlc0pYeU50YjVXLW82WkgxUTBxLUZNalktWWtXeVFSVjVrSUJxSWRySXN1N3hPTGpUandEMm5oVFluSmozMTJlWWRab3ljNVFQQ281N2VVbXF6RjEyb29wSkEtY1JrSWZIUXRzZU5qR3o1N3dtQU5VRldWbDFGR3YtNVp2bDdTcm5vZEJ2M1NITFRrMGE4N3hmenlaN1BlazJqOXlpcmJTNHR5dmt3ZFBreXNQMGZCcmF3bjZkQ25xb1FIeGQ1N3pNcXJOaUFYWklpOHF1eGVOYVlsYkhaRVBGSGhYcU9jM2t6RHNYbFBlcmVHMmJoakVXMnJ1SzNMelFkUGJXMmI5cUZ4U1hER3ZtenYwcEFncFd3clZTSE54NjhMRWxQNFQ5TGNsaWVqQkpCNWNUeG9heWxZSzFjSXBmbGJGVWFSSnlTM0pxYy1vcHVqMjUwOHUzRVl4SQ?oc=5",
-      "summary": "死抱2年績效慘輸大盤！！他怒砍800萬「垃圾美債」全押0050 內行狠戳盲點：流動資產上億再來談&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:57:29+00:00"
-    },
-    {
-      "title": "High Roller Technologies聯手Crypto.com拓展美國預測市場 股價飆升逾六成 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxOZ3R3OG1RRDZYb05fanhXZXVPcHVhaFB3TERKT2JQeE9vTExodmxnMTdzcmk4bDV5VTdabGZpODJDVlZmWjV1N0JrRDVJSTVNUEo0SEhlMXhJUV9PT2ZsV2NLR2dHMWVKS3pQNlBIMHptb202ZnRXaVc5U0p2YmlIdkhpWWozeGR0Tm9LUzNNb25ZNjFxLW1ERlk2MmdSSEx3N25ySFRBSDl1WTRWNjZCVUNUYXFab1NreGJPV0ZZandHNW5Wc1UtNkZCMUdWMlg0SHY2Vm43QjZwOVU4OERTUW9NTW9FRHRPYjA3Q2MxUWo4U1A1cWphZU9aX3owZ3hIQ0NhWnN1UHhuUGd4MnNoMm5PZHBELWVqNzFaY0FIWk01MEFDNjRjVHJSdVJ4X2t1c0YwQUdFR21JOWkteTNCU2psYno1anJDa2NJVm52R2ZPYlZzLUE?oc=5",
-      "summary": "High Roller Technologies聯手Crypto.com拓展美國預測市場 股價飆升逾六成&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:57:29+00:00"
-    },
-    {
-      "title": "台股再戰3萬7！漲426點收36722點 續創史上最高收盤 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNYUxqQV9raUM2VVFoeUdhNjNmMDRodFV4blVOQXE4XzdhR25SOV9mSXgtWUdqSDN4NzA0Z2hRZXlqVVEyUEI2U0JJb1RMT0tCQnU0YkFrUUF6ZXFGQWdVMG93elU2TE51R1NqdTcyVno2a1BIQzY2WDkxMDJITDAzWWdiaHNhNGNrTXBLWjZxM1BiR0d6MzJpRlo4TkVHYkRtNUtvNW80UWlYQnFfYnZsWFJGX3ZXd28yNHRwaDM2NGZWd3JBVG9HandxMi1HZm1ObDBnWmJZWTZMMTVfblROWEhoZ1BVd284SENNaUZNMXZDV0xTWnc1aGVwZUNmTjJjRDJHREJIYVhaVUxydV9VMnN3ZzNMY25vbGlEVklUWHNyVEhsVE1wVUtoNm9vblp5Wmk1R3BoMGdyX0tfMkNNSy1R?oc=5",
-      "summary": "台股再戰3萬7！漲426點收36722點 續創史上最高收盤&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:55:45+00:00"
-    },
-    {
-      "title": "Visa加入Tempo區塊鏈成錨定驗證者 強化穩定幣支付基建 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxNWVdCVnlWT00yQnU3UWVWT3hCWk9Beks2QTFmZXlxLWpKb3BCUXBOOVU2TnJ2NzhhNXE5dVJlUkRMb1JBNzZsZWxIM3o0SjdKZnRheDlmVmpfdDdBMjVZZmk5alBQV1JjVkRVaVc3dWJEeGFISkc1Tk0yQ3p4dDVyXzdSLVY0R01QMHpqNExBbnhRalA5aTZ2cHlPdW8yVTAxNm14bE1QMmNtcUgwYnlGcU0zMi1LSm04S1FiUGoxSXRIbmdjNGhKQW4zd2x6bzNqVUFmRHNGSmYyM19MMi1Eb2toU3YwcExUNzNpVHFiRXk2RjBQSVh6YWxLMmYtV3VtNkdpTk9rM0NhZGxzYW9LbGcxY2ZGZVRxUVlXQXk0UDRKYlEyZExrM0NrdTNoM2p6V0dmMElQc2VyQzItRFBFUjBUNTNDSmhPOE9qRTE1QlhnQkVXeGFTVQ?oc=5",
-      "summary": "Visa加入Tempo區塊鏈成錨定驗證者 強化穩定幣支付基建&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:54:51+00:00"
-    },
-    {
-      "title": "兆豐金控3月獲利亮眼 第一季EPS達0.63元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOVDhKNElaZWZ6TXJ4SWpsWExSOUt4OHVVY19sRlJ3QUhGODZyQnVvNXNvRlR1UUVFT1ByQ0JWR2pLUzNyalJyazE2NmlHOWhYUlB0bHRWZExSMmhPTUZHeUsxVjQ0bG1lNEtuV3lJSTNVMFdPM3ZnMkVXM2o5VG1wdVBkb2VXV1o2bk5wdTgxSl9qQUZLT0t1c2U0aTVMLUxhUXY1dmhSUEtfWENvMFh6MENLQUZod2I0TnhWS0FJWlp1SGVYSjBCUEc1VVZDTEd0OW1qLWxJV09Ic1ZsZ1NrcWw5SjFuT2dlS3hrUGRnQ3Ric1JsQnRKOXpaaUJpYkY5TV80?oc=5",
-      "summary": "兆豐金控3月獲利亮眼 第一季EPS達0.63元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:48:45+00:00"
-    },
-    {
-      "title": "黃金市場風向變了 全球央行買盤退場 新興市場帶頭「賣金」 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxORzl0UktOQWdtSEhWek9uN2hBR09CVkdaV1JkNDY2ZExpZnNTM3ZWLXJnRTMtMnJCMkUzYThsOVhSNGRsTFVpdUtEMTJKMnNQa1drbnF4RnVFVHRudXc1TkhMVWpqTVNsejZqYWpQYnVGTXRKajlHbm5oVm9RVW5RblpJLTdSLWZDM1lYdHl3Q09uYnFhTGMtZjdQckJRbWZYMzIyMV9tT3NrcmFqZnVZQkJUalpsdFA2TEs1ZU54WXpyTmNRM2NkM0JXMXVIY0c0c2ZoR0ZtVGpuYmJhZzBfMGtaalo4VS1Kdm0wSHBMcGJDUTNTNThZRGdDSFRfNnRUeHJRQ3U4aVpIdVlPdVhjZzhRUTJUX2sxY29FWFdiQmdVRHlYalF6MklrVlJhT2k5SnJRVVB0UlpXNkh2UjRyOF9SNzdYYUNuRjNWd1ZZYWotR0NqWjZNNDZtMmV3R000WW1zVVlENVRoem9hcWR1Snlmb1NheE55cmcxZzA4OA?oc=5",
-      "summary": "黃金市場風向變了 全球央行買盤退場 新興市場帶頭「賣金」&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:48:39+00:00"
-    },
-    {
-      "title": "戰爭催避險資金狂湧！黃金猛漲2%、白銀飆升5.2% 專家急喊後市緊盯1關鍵 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxQTkp2MmpKZWJuRlVwSVl5UkNuaXM1SzROaGkyY3dlSDdXY2NuTkdTT1BlRzJ1ZmxnRVByTEFEdDUteE8taktXWkZVenZLa1FQN2oydnJMbDJrUXNGUkxfYkJwLVZIZ29Dbklkb0xHejZDVm9yTWZTR2V1Z05JeWIyQWEwTVhuN1JsZXdielBtSkRkVUlXWDdqRTQ3WFhvUWpzdV9YSHNLX1prcm5YY3hMaThCa1hMRTlJWlpSWi1Fa0wwTE9BV0RzTXNjMU1DMXlPX3FFcjVzUTdCeElNUFA2RUR2UDh4a0gzLWhmV0U1Z1M4dWdXRTdvd1dnREhfRFBOcE8wZmZiRmc0c3FCUjdRakg2U2V2d3Ewa3lIcGFlay03cEhuaURveFJMOFRuRGVYTU9SOWhoaEFOQnZmQUcxeHhlbXpBeW9SYWR5ZzU0UHVVZ3VVeko5NmFWWmFkRTFjS3VYX1l1SlR5S2Q0ektVX0VOVmdJZDZKUk5qaUdxUXpfMEJEYlRyQndnc3pnZTNlQUh1LXVsamVYU3J4YWRPRTZpVXJYTFEtTUE?oc=5",
-      "summary": "戰爭催避險資金狂湧！黃金猛漲2%、白銀飆升5.2% 專家急喊後市緊盯1關鍵&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:43:41+00:00"
-    },
-    {
-      "title": "統一投信推主動式ETF 00403A鎖定台股前200大拚超額報酬 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMixgJBVV95cUxPMl94dklTdG1LVDZ3UUl0dDItbXpJRnRGS3dSOWJrNDlwUGhZQktoYllrTWZYQ3gzYUlRTXo0STdFSldQQnhaVjV6aDgxODFqVmVIaU1jNFNwVXBLTHB5V0VfWU4yS21VRXkySU82ejNEQjdNZzBLSEpyWUI0OFNGdExsNjRDQXZHUjM5SGowTmE2bl9qS25DdFZ3bHpGQkdCYl8xMTFzSU9BWk5GOHZLVXZic0Y5S3dOa2dwQWNRTkI2cFlGNDB4bjl5UGJ6azY1RGItaWw5NEJnc0lHaUttOVRmNDZnTmE3WXF6ejBfM1NTdlAyZlF6MzJWa3dvN3NvMzdXazhGNHdLb0JLbkpSYnRsLWhNbzBhSWVyckRsa2o2TFRhNExDWWxkdWFjZ1JqVEUzVllOQ1U5WHNxSXZEV0lkdFdVUQ?oc=5",
-      "summary": "統一投信推主動式ETF 00403A鎖定台股前200大拚超額報酬&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:38:39+00:00"
-    },
-    {
-      "title": "這18萬別忘了！ 財政部親授「房租節稅秘笈」 申報門檻一次看 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxQYWJUbTZ4V3pmLVo2czF1b1pwNjhEeVh4enJaSVIyUFhkQjF0aU51cklZblgtaWtqZ21Za1FLcjFvU0VWa2ZLZkFoNWRad1doeURWRHlnVXJqZnZtclEyMVdUcUhIbEsyOEoxZFUzMmVXRDc2cTkyZGxuLWQ3MnJDenlxWFBCTFVWbnBfd211aDFFNVpjVEhuakVkZWxlWXBIZ1ZNN2FCYjNEdzZaUThMY2ZRWlM4RjhYaVFweTFmaUF1Qk9jNVMxbGxvUWVTMEVNNnUyZm9tQklnV29vdmxzeHRWUjRMQzU2NnR2UE55M05rX3A2NjkxQ1N1MFNyc0Y0eVhOeU5sbkFKTWQ5Z05SemR0Uk5BRWZRT2VHUGlGSTZ6NWJyV0dWandjQ0xTSDhXYjJMWnpRZko0QXczYlFlNlJYanJvbjNjSTFkbTlQbWFzaERyYVREbU9Qd1NWM1k3ZWFfVjRWU0VITUk?oc=5",
-      "summary": "這18萬別忘了！ 財政部親授「房租節稅秘笈」 申報門檻一次看&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:37:30+00:00"
-    },
-    {
-      "title": "想跟著46萬香燈腳朝聖卻沒假？104調查：僅9.3%企業給假優於法令 75%新人沒特休 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxPYzhiSmM4VFlVUVVyM1VPTl94NkNTSXE4WTJPZXJMZ0Zaam8weUU2eUVVYTQ0aEI1SExyRG16c1VJak9LUERyTVUyOTFGcUhfbXphVEtncXRqRlNFSWo3bENEalNtV2Z1Z1hmNUhSNTlqTjNDdlA3ZTd0dDhLNktyV05yYkZQdVhQZVU5aUJkODdNWk9mYS1QcVhZZjJQSHBfeE4wVGdxcWZfLWFWYXM1VjlDZmQ5b2JsVTV2dHA0LVVBWDcxWGkxWTRJci1UX1YyNnRRSWxxS1dmMzlUTzlCX1RUSTNtWUxZZGllTzd1SGtYLVNzclQ3bm94alVQazNVMFAyelpXNk1ianUzSWZyRl9WWjNtaE52aXRJUFcwaEJZUUZXWVd5eUZGSE9rX3dfeXN4ZDdOSDA3NXhpRERWdzhoRENyTk1Fc1Jzd2RjbjZLZEhUcHJNNzlkbVdmNVY5OEg5cy1MemtQdy1hN3hHZm1vTVlxaEloRXVtYkJR?oc=5",
-      "summary": "想跟著46萬香燈腳朝聖卻沒假？104調查：僅9.3%企業給假優於法令 75%新人沒特休&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:37:20+00:00"
-    },
-    {
-      "title": "貝萊德近3億美元押注比特幣 助推新幣Pepeto預售狂潮 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxONWNkdUE0WE5kNUo5VHU5Qi13eXZDZUNDQ1ExRWZ3aWJGVWUwWHYyME1HZnM1cWp0aDJ4MThhNnlLVlhHdWJ0U0Z2aFhpemJQdTJvUldOQTZFTTBnbXZWWmMzek9Icnp0U1Z2dW1qQ3VnazFTVk5URlRjOVJmUkJ5bUVZZGN5WHVmNWhvVS14LUIwNTBhYk1ub2lTR2hEQUlGSHNESHV2SWFLR0IzMWN2VUhIV1pzVUFXdENKWC1IYkxaSm5KSkd1TjFQQkU4bElfQlU0RTJ3X0JqQVdBQjZPaXpacU9pMmdzSWNCYnhQdDNSZ2dTcXFOUmhGMTZhdlZya1BrTFFTZkZSNGkwY1hlRjR6M0pDWDV2Vi1hcmluMmQzU2dLMmJsUjlQN0tzcHhHT2RWbnd5bW5KN2dOb09pbk9iU2JKMVM2U19Ha0tiZzdGVF9LQVE?oc=5",
-      "summary": "貝萊德近3億美元押注比特幣 助推新幣Pepeto預售狂潮&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T05:33:38+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "18.30",
-    "vix_trend": "▼ 0.06",
-    "usd_twd": "31.61",
-    "usd_trend": "▼ 0.03"
+    "vix": "18.34",
+    "vix_trend": "▼ 0.02",
+    "usd_twd": "31.64",
+    "usd_trend": "▼ 0.00"
   }
 }
