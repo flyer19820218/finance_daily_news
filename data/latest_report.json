@@ -1,14 +1,122 @@
 {
-  "updated_at_utc": "2026-04-16 06:23:35 (TW)",
+  "updated_at_utc": "2026-04-16 07:26:12 (TW)",
   "title": "全球局勢與市場情報 2026-04-16 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 23.647607291s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 23\n}\n]",
-  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 23.647607291s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 23\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日盤前市場數據顯示，VIX恐慌指數微幅下滑至18.17，表明市場整體情緒保持穩定，並未因近期地緣政治緊張消息而產生顯著波動。美元兌台幣匯率小幅走高至31.59，台幣略為貶值，但此幅度尚未構成資金恐慌性外流的明確訊號。在產業面，台積電法說會前夕釋出強勁成長預期，為科技板塊注入積極動能；鋼鐵產業亦傳出復甦訊號。儘管有報導提及通膨壓力，但市場指標顯示其影響目前被評估為可控。整體而言，在理性數據檢視下，市場主要由產業基本面驅動，而非地緣政治或通膨的「情緒噪音」。\n\n📊 【重大事件：交叉驗證報告】\n\n*   台積電法說會前瞻，大摩預期營收與投資增長\n    *   重要度：★★★★★\n    *   **事實核對**：此新聞聚焦於台積電作為全球半導體領導者的關鍵地位，預期的營收成長與龐大資本支出皆與其在先進製程領域的技術領先地位及市場需求趨勢相符。摩根士丹利的預期為具參考價值的分析師觀點。\n    *   **解讀**：這對全球半導體產業鏈發出明確的正面訊號，預示著先進製程需求持續旺盛，有望直接提振台積電及其相關供應鏈的市場表現。這也間接支撐了AI發展所需的算力基礎建設。\n\n*   中東地緣政治緊張與美國軍事規劃消息\n    *   重要度：★★☆☆☆\n    *   **事實核對**：新聞報導伊朗重建飛彈基地、美伊角力升溫，並提及美國可能對古巴採取軍事行動。然而，VIX恐慌指數本日呈現微幅下跌(▼ 0.19)，顯示市場整體風險情緒並未因這些消息顯著升高。美元/台幣匯率微幅上揚(▲ 0.07)，台幣略貶，但不足以佐證大規模避險需求或資金恐慌性流出。\n    *   **解讀**：儘管地緣政治訊息頻繁出現，但市場實際反應相對平靜。根據「地緣政治 vs. 避險資產」協議，此類新聞目前應定調為「情緒噪音」，短期內對主流金融資產的實際影響有限，不應過度解讀為系統性風險的急劇升高。\n\n*   鋼鐵產業復甦訊號與美國通膨壓力報導\n    *   重要度：★★★☆☆\n    *   **事實核對**：中鋼預期鋼鐵產業進入復甦週期，此為產業特定利多。部分報導提及油價上漲與關稅風險可能帶來通膨壓力。然而，VIX指數微幅下滑，並未顯示市場對通膨風險產生普遍性恐慌。報導中「油價暴衝」等煽動性詞彙與VIX表現不符，市場對此類風險的消化能力尚佳。\n    *   **解讀**：鋼鐵業可能正迎來週期性底部後的反彈，值得投資人進行產業基本面追蹤。至於通膨，市場對油價與關稅影響的反應，顯示其被評估為可控，或尚未轉化為普遍性的系統性風險。投資人應關注官方經濟數據，而非單一報導的誇大語氣。\n\n*   美國科技巨頭表現強勁，AI理財版圖擴張\n    *   重要度：★★★★☆\n    *   **事實核對**：微軟股價創三年來最強表現，輝達連日上漲，反映了市場對科技巨頭穩健業績的信心，以及AI領域的持續熱度。OpenAI進軍AI理財領域，顯示AI應用正向更多垂直領域滲透，這是基於技術發展與戰略擴張的事實。\n    *   **解讀**：美國科技股，特別是AI相關板塊的強勁表現，顯示市場資金對高成長型資產的偏好持續。AI技術的應用邊界不斷擴寬，為相關產業鏈帶來長期成長動能，投資人應密切關注其產業趨勢與實質落地應用。\n\n*   台灣股市千金股活絡與櫃買指數攻頂\n    *   重要度：★★★☆☆\n    *   **事實核對**：台灣櫃買指數創高，以及千金股的活躍，均為市場實際交易數據的反映。這顯示台灣中小型股以及高價股表現強勁，市場流動性充足，且風險偏好較高。\n    *   **解讀**：台灣股市展現出內生動能，反映資金對具高成長潛力公司的追捧。這可能部分受益於AI供應鏈的拉動，但同時也提醒投資人應審慎評估個股基本面與估值，避免追高風險。VIX指數的低迷也支持目前市場的風險偏好。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數收於18.17，較昨日下跌0.19點。此數據作為市場「科學儀表板」顯示，儘管存在地緣政治緊張與通膨討論，市場整體恐慌情緒仍處於相對平穩區間。與此同時，美元兌台幣匯率為31.59，微幅上漲0.07元，台幣的輕微貶值，雖可解讀為資金的細微調節，但並未構成大規模資本外流的警示。綜合判斷，市場對外部雜音的承壓能力較高，未出現明顯的系統性風險警訊。\n\n💰 【台股影響與板塊點名】\n受惠板塊：\n半導體產業：台積電法說會前瞻利多，以及摩根士丹利看好，將持續引導資金關注半導體先進製程相關供應鏈。台積電在先進封裝與HBM技術上與SK海力士等合作夥伴的強強聯手，預計將進一步鞏固其在AI產業鏈的核心地位。\nAI相關產業：美股科技巨頭與AI應用的擴張，將持續帶動台灣AI鏈供應商的需求。\n鋼鐵產業：中鋼預期產業復甦，有望提振鋼鐵類股表現。\n中小型股與高價股：櫃買指數攻頂與千金股的活躍，顯示資金對具潛力中小型股的偏好。\n\n受衝擊板塊：\n目前市場數據未顯示有明顯受衝擊產業，地緣政治與通膨訊息均被市場較為理性地消化。\n\n📈 【投資觀察指引】\n1.  密切關注台積電法說會：會議結果將直接影響半導體板塊乃至整體台股的短期走勢及中長期展望。\n2.  理性解讀地緣政治新聞：以VIX恐慌指數為主要判斷依據，避免被新聞標題的煽動性詞彙影響，做出情緒化決策。\n3.  關注通膨數據與油價走勢：雖然目前VIX未反映恐慌，但通膨壓力是潛在風險，需長期追蹤其發展對企業成本及獲利影響。\n4.  審慎評估高價股動能：台灣股市千金股的活躍需建立在堅實基本面之上，避免盲目追高，注重質化分析。\n5.  持續關注AI技術應用進展：AI的擴散式應用是長期趨勢，投資機會將從硬體拓展至軟體與服務領域。\n\n🏫 【曉臻財經小教室】\n今日單字：【外資買賣超】\n外資買賣超，指的是外國機構投資者在台灣股票市場淨買入或淨賣出的金額。它能幫助我們看穿市場假象，因為外資的連續性動向，通常反映了他們對台灣整體經濟與企業基本面的長期判研，相比於單一新聞的短期情緒，更具備結構性的參考價值。\n\n結尾：數據為證，理性佈局。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n今日盤前市場數據顯示，VIX恐慌指數微幅下滑至18.17，表明市場整體情緒保持穩定，並未因近期地緣政治緊張消息而產生顯著波動。美元兌台幣匯率小幅走高至31.59，台幣略為貶值，但此幅度尚未構成資金恐慌性外流的明確訊號。在產業面，台積電法說會前夕釋出強勁成長預期，為科技板塊注入積極動能；鋼鐵產業亦傳出復甦訊號。儘管有報導提及通膨壓力，但市場指標顯示其影響目前被評估為可控。整體而言，在理性數據檢視下，市場主要由產業基本面驅動，而非地緣政治或通膨的「情緒噪音」。\n\n📊 【重大事件：交叉驗證報告】\n\n*   台積電法說會前瞻，大摩預期營收與投資增長\n    *   重要度：★★★★★\n    *   **事實核對**：此新聞聚焦於台積電作為全球半導體領導者的關鍵地位，預期的營收成長與龐大資本支出皆與其在先進製程領域的技術領先地位及市場需求趨勢相符。摩根士丹利的預期為具參考價值的分析師觀點。\n    *   **解讀**：這對全球半導體產業鏈發出明確的正面訊號，預示著先進製程需求持續旺盛，有望直接提振台積電及其相關供應鏈的市場表現。這也間接支撐了AI發展所需的算力基礎建設。\n\n*   中東地緣政治緊張與美國軍事規劃消息\n    *   重要度：★★☆☆☆\n    *   **事實核對**：新聞報導伊朗重建飛彈基地、美伊角力升溫，並提及美國可能對古巴採取軍事行動。然而，VIX恐慌指數本日呈現微幅下跌(▼ 0.19)，顯示市場整體風險情緒並未因這些消息顯著升高。美元/台幣匯率微幅上揚(▲ 0.07)，台幣略貶，但不足以佐證大規模避險需求或資金恐慌性流出。\n    *   **解讀**：儘管地緣政治訊息頻繁出現，但市場實際反應相對平靜。根據「地緣政治 vs. 避險資產」協議，此類新聞目前應定掉為「情緒噪音」，短期內對主流金融資產的實際影響有限，不應過度解讀為系統性風險的急劇升高。\n\n*   鋼鐵產業復甦訊號與美國通膨壓力報導\n    *   重要度：★★★☆☆\n    *   **事實核對**：中鋼預期鋼鐵產業進入復甦週期，此為產業特定利多。部分報導提及油價上漲與關稅風險可能帶來通膨壓力。然而，VIX指數微幅下滑，並未顯示市場對通膨風險產生普遍性恐慌。報導中「油價暴衝」等煽動性詞彙與VIX表現不符，市場對此類風險的消化能力尚佳。\n    *   **解讀**：鋼鐵業可能正迎來週期性底部後的反彈，值得投資人進行產業基本面追蹤。至於通膨，市場對油價與關稅影響的反應，顯示其被評估為可控，或尚未轉化為普遍性的系統性風險。投資人應關注官方經濟數據，而非單一報導的誇大語氣。\n\n*   美國科技巨頭表現強勁，AI理財版圖擴張\n    *   重要度：★★★★☆\n    *   **事實核對**：微軟股價創三年來最強表現，輝達連日上漲，反映了市場對科技巨頭穩健業績的信心，以及AI領域的持續熱度。OpenAI進軍AI理財領域，顯示AI應用正向更多垂直領域滲透，這是基於技術發展與戰略擴張的事實。\n    *   **解讀**：美國科技股，特別是AI相關板塊的強勁表現，顯示市場資金對高成長型資產的偏好持續。AI技術的應用邊界不斷擴寬，為相關產業鏈帶來長期成長動能，投資人應密切關注其產業趨勢與實質落地應用。\n\n*   台灣股市千金股活絡與櫃買指數攻頂\n    *   重要度：★★★☆☆\n    *   **事實核對**：台灣櫃買指數創高，以及千金股的活躍，均為市場實際交易數據的反映。這顯示台灣中小型股以及高價股表現強勁，市場流動性充足，且風險偏好較高。\n    *   **解讀**：台灣股市展現出內生動能，反映資金對具高成長潛力公司的追捧。這可能部分受益於AI供應鏈的拉動，但同時也提醒投資人應審慎評估個股基本面與估值，避免追高風險。VIX指數的低迷也支持目前市場的風險偏好。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數收於18.17，較昨日下跌0.19點。此數據作為市場「科學儀表板」顯示，儘管存在地緣政治緊張與通膨討論，市場整體恐慌情緒仍處於相對平穩區間。與此同時，美元兌台幣匯率為31.59，微幅上漲0.07元，台幣的輕微貶值，雖可解讀為資金的細微調節，但並未構成大規模資本外流的警示。綜合判斷，市場對外部雜音的承壓能力較高，未出現明顯的系統性風險警訊。\n\n💰 【台股影響與板塊點名】\n受惠板塊：\n半導體產業：台積電法說會前瞻利多，以及摩根士丹利看好，將持續引導資金關注半導體先進製程相關供應鏈。台積電在先進封裝與HBM技術上與SK海力士等合作夥伴的強強聯手，預計將進一步鞏固其在AI產業鏈的核心地位。\nAI相關產業：美股科技巨頭與AI應用的擴張，將持續帶動台灣AI鏈供應商的需求。\n鋼鐵產業：中鋼預期產業復甦，有望提振鋼鐵類股表現。\n中小型股與高價股：櫃買指數攻頂與千金股的活躍，顯示資金對具潛力中小型股的偏好。\n\n受衝擊板塊：\n目前市場數據未顯示有明顯受衝擊產業，地緣政治與通膨訊息均被市場較為理性地消化。\n\n📈 【投資觀察指引】\n1.  密切關注台積電法說會：會議結果將直接影響半導體板塊乃至整體台股的短期走勢及中長期展望。\n2.  理性解讀地緣政治新聞：以VIX恐慌指數為主要判斷依據，避免被新聞標題的煽動性詞彙影響，做出情緒化決策。\n3.  關注通膨數據與油價走勢：雖然目前VIX未反映恐慌，但通膨壓力是潛在風險，需長期追蹤其發展對企業成本及獲利影響。\n4.  審慎評估高價股動能：台灣股市千金股的活躍需建立在堅實基本面之上，避免盲目追高，注重質化分析。\n5.  持續關注AI技術應用進展：AI的擴散式應用是長期趨勢，投資機會將從硬體拓展至軟體與服務領域。\n\n🏫 【曉臻財經小教室】\n今日單字：【外資買賣超】\n外資買賣超，指的是外國機構投資者在台灣股票市場淨買入或淨賣出的金額。它能幫助我們看穿市場假象，因為外資的連續性動向，通常反映了他們對台灣整體經濟與企業基本面的長期判研，相比於單一新聞的短期情緒，更具備結構性的參考價值。\n\n結尾：數據為證，理性佈局。",
   "news": [
+    {
+      "title": "衛星影像研判 伊朗疑重建飛彈基地- 軍事 - 中時新聞網",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSFk0MHdJTVlsc0JBZXRpSTRoWG81TGVpbHVOWTVJQzlYN0lpYzRobmZHTlZONDUyaEpSOTA5aFFCaDF1Sll5aFU5Sms3Mi1wMzJ1X21xZ0pueWFQTmFlRnhhN1h6YVZ2R3Z6RW03NkVEeWR5d1I4X1VsMFYtMm4tNEVTUnF0R2FJQ3FrSWk0OA?oc=5",
+      "summary": "衛星影像研判 伊朗疑重建飛彈基地- 軍事&nbsp;&nbsp;中時新聞網",
+      "dt_utc": "2026-04-15T23:21:11+00:00"
+    },
+    {
+      "title": "Implementation of Stock Split and New Share Allocation List [Implementation of Stock Split and New Share Allocation List] - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZEcteHBINnMzN2tQRDZIZnA0WjNYQTlrbnM4bUk5MmpWSEU5X1R3Ym1ZTDJwMlZxWDdCaHd0NWpmY3FnVUpKcUp2b1liUVVfWm84a09oZUpNeUp5SUI3Z01fWmJwbVlGanhCTldmdC1kYjNjc1FqRVZIR25FcUpFd2dMSThTVHdaMWtmTXRIOWVaYzJtcW9laTM0dEEzanQ3Q2tyZnZXMGpHMXUySThFTThXSlNCUQ?oc=5",
+      "summary": "Implementation of Stock Split and New Share Allocation List [Implementation of Stock Split and New Share Allocation List]&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-15T23:18:52+00:00"
+    },
+    {
+      "title": "股市要聞：週三(15日)股票市場鉅額交易概況 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONXo3NVZQVUJvVG9CQkV4TXBDWDVKUUFqQmszeEhiT2JyU290U09NS05ObDVSY0dSMlRjQnNVZmJvaHg3cTJoVDFFdmRzSi04TTM3TElPUzdTZXdsY25zekpxTFExTXROekhfQTFtVk5uWGFadkR0TVlGSGI4WTZEcTFmT3V0dGtp?oc=5",
+      "summary": "股市要聞：週三(15日)股票市場鉅額交易概況&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-04-15T23:16:00+00:00"
+    },
+    {
+      "title": "中鋼：鋼鐵產業進入復甦周期 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnTEFwaUh0QjJlV2wzWURHcVNfUDVqcTg3TnJxdUY0bjl4eVdnTlNiOU9UR2QtUVVlWTg1eEZVRERMVTRBMjhWN195dnhuTFRsN0JCWHJzdmFrOFV5RFJYZXNRcjdVZlQ0LXQxVk1RM2JvR0nSAVZBVV95cUxNaTA0cWVrc2Q5YklIS1ladHBzdGFzMC0yRDJQMUxtNnV2cjlQRDk5T2pEeVh5QjRKaUdnUzltWmRWZk9KdnpkZWh0WXFWSV92UU0yTzdSQQ?oc=5",
+      "summary": "中鋼：鋼鐵產業進入復甦周期&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T23:11:01+00:00"
+    },
+    {
+      "title": "萬年清深耕印度 報捷 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBScXg3cHJ4ZDFvTHhUX2I1bXk0Wm5FV3dieXJVU3R5NGpqVnlNVll2aEN0T29lNzd2WjlFRzJ6QjY4Rnl3UnY3VEM5eU1EbEJvOE1VWDliVjRYRmU5Y1JhUXFBNkliel9XbVNIUGpuUVZabFnSAVZBVV95cUxQck9rYXRSVkxpWVBncnI3S0tmWXlDNFV5bWc3SUpuNXdwOUpPZU5MWWlBaWNndUpEX04tbjRuVVliTHBjQ1BuQS1hNzJ4TVg4ajJodVRyZw?oc=5",
+      "summary": "萬年清深耕印度 報捷&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T23:10:59+00:00"
+    },
+    {
+      "title": "「5D反詐」提升防護力 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBkdklGUHcyMkZ2cHJfUkl6QS12RHQzQWRVRGNHa3JESGRrS1g4SmtvTjduMDVjSGt0TjI4RFY5Um5JUlV4OUx1amJsM2lVRjhXUkFxVGRvQTY5djdhR1AxbXVNeTktNkkyQzAzTDVoMmFwajDSAVZBVV95cUxOa0dJem5KbGNubzZhdzAyMGhrRlRnb0ZSS2lBUHJTSnZDbzVGZEpMRFptelhwVHZ6ampsak5lVHFVc1JfbzF6NHdpWWQ4S0NCZElOc1ZxQQ?oc=5",
+      "summary": "「5D反詐」提升防護力&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T23:10:25+00:00"
+    },
+    {
+      "title": "法說會來襲！台積電恐丟出「營收暴增35%＋三年砸2,000億美元」雙核彈大摩喊：將撐爆先進製程、股價再衝新天價在望 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxNVzVGSFo5LXpUWVA4SlJMcmtQVThaejJfSDFiNlB4YkF0cmlBU1lLRmJyN01rMjlGQnBWc1dtOWs5MFZwekM0UHA1bkNoU1IweXJFQ3JodURsclBySjNjbEJDWXlkN0VMX3JOWDZKc0dqTU5Lbl9yWW9ibXQwX2N3RXM1T2FibGNheWYxcmFHQkhZRjlnM1hVVlhDQ1lYVHVaczR4d1RaRUZ4amlqTnhLWlZnZUFIQ1hVQ254dHJoeTNHS1d1dmo2cDhMLUF6R0NZVWZCWFdRQzlURzB6LWxSdVJDT3lHS1JkcF9zWVlXYmpZcEFWMEk1TEpvUjN6Vnlsc1RUZ2Fodm1tT0RMVG1McGxNbmdtY0N4N2kxeGNvMGtWeTNaSFF2NVh5NlJ3TGFrOVJManR6cjk2bVFQN2dacmhELUVKeElkZHpUU3Qyd1hDSFBkeEd5Vk43bkdFSWxBVXNWag?oc=5",
+      "summary": "法說會來襲！台積電恐丟出「營收暴增35%＋三年砸2,000億美元」雙核彈大摩喊：將撐爆先進製程、股價再衝新天價在望&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T22:50:00+00:00"
+    },
+    {
+      "title": "新興美元債 潛力十足 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBaSWZnSmRGbzd6c0dhWEc5c1VOcXNiVmZzVWNYei11UElzZ0tMYkRveDVIcjlWTXZncERrdEdzbmx6eUFXOGJZenlLSjlpQ3N6bGfSAVdBVV95cUxOb3RvUFhQOG5lc0d6RWpXNWRKREFmZm5YbW9Qa1BFY09qTHROaVpIbEJXemM3SjFDdWp0di01c1NYd0Y4V0RGX0ZGdjNXRDYzcmlxTHNRcjg?oc=5",
+      "summary": "新興美元債 潛力十足&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:49:57+00:00"
+    },
+    {
+      "title": "風險資產 多頭格局延續 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBCWGlFU2MwR3o1ai1SbktoWTJKUEtvd3h3QVM2NmNMcXdfaUpGX1IxeGVRS0RsdUJaS2hObWVMb3llazhZdzVCOExoaTdWb29PN0HSAVdBVV95cUxNMjRJb0l6RWlmclZWWWlWMzVNZ2REbXpqRXhhXzdqeERiTHhUYl9NcmJkMVVyck56SF9uUW1JMGZGcEZxc2JsbEwyTmFGZy00eEFfRVFLY2s?oc=5",
+      "summary": "風險資產 多頭格局延續&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:49:56+00:00"
+    },
+    {
+      "title": "元大新主流績效好威| 基金 | 股市 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SQlNOaHJOR2ZuQloxUTNwZ01XRmtNeUR4a2lkaDNvMUc4U0FXWWNoT19kdENoaW9nWHZwVEhBVHJISTE4cXEtRUZPdkFJbVVHOHc?oc=5",
+      "summary": "元大新主流績效好威| 基金 | 股市&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:49:53+00:00"
+    },
+    {
+      "title": "布局亞洲產業 長線釣魚 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1vdlFUUXJ6cTQtNUZPcDdEMm1IYzNrMy12by1MZFpXT1YyM0VLU0tzWXhCTW5LLXZJLUlLQ19fdXRaRkVPRjBvR09qTy05MXlTb1HSAVdBVV95cUxOVHBwdUxKYjkwSGRubzRBV1VoT1FqWWV6Slh4VmRuTFB5MzhQcWJady1qSHV4OEl2TWY1dm0wSHU0ZnVmN1JucnhNcGpfVk1CQl9xbFVnN0U?oc=5",
+      "summary": "布局亞洲產業 長線釣魚&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:49:50+00:00"
+    },
+    {
+      "title": "鋼市能見度 穿透第2季 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5FX2cyYzlwVE1oMGo3Ujc4UVZmTlQ2bkpTV0Y5ME8tV1FnYVVhVThoRXBoaF9lNnJ3eU1PZXJXSHR1ek04QUhCcmZHc0h5NEpZ0gFWQVVfeXFMTVA1UzRISmc0TnduSDJHbzcwTzJBb2txOEdueHZtd09UZHBmV2IwWWRnWVR3Uzl3LVJVUWtaMFdkWlFfbUJ3MHVwN1U2QzhtTkZKS0M5OGc?oc=5",
+      "summary": "鋼市能見度 穿透第2季&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:27:27+00:00"
+    },
+    {
+      "title": "台指期 上攻動能續航 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9sUFYyMDVsMVduRmk3d3F3U0tOa1FXZERKeW9RQThxdEtla0FsWXhlbVBkMHBqY0J3Zll1bTc2c1ZoUzlHTy0xc0ZnSVd0RWNR0gFWQVVfeXFMTWRMTmZTbkhncEhCZnFDaE9TTHdZdW1BTktUT1A2WjQtU1ZWeWtralMyOVFwU2l4cEZTZHNOUF9BekdVNWhFNWZDZ0Q5S21BM2gxUVRQaGc?oc=5",
+      "summary": "台指期 上攻動能續航&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:27:19+00:00"
+    },
+    {
+      "title": "台指期 偏多格局 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE02ZGJ6MDFIUHdnVmdHb1htczdSbC1LSEJoUUgyVWxfZFJ3cS12Sk9kQnpST0xpOXg2N2t1dmJSU05wcjBxNVNTR1dhb0lwMTdL0gFWQVVfeXFMUEdFTm1BTUQzVTlIUl9wZmJSX0UzYXlycG1HcFphWjVpR2k5TkFoTFZqOFVlc185a1l4TDJOUmxWUFFyRGlvOTZmMmtEUjlkUkZpaFNDSUE?oc=5",
+      "summary": "台指期 偏多格局&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:27:16+00:00"
+    },
+    {
+      "title": "匯率期 避險利器 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wRzNMYmJmRzQyQmxzVFpCVndPQUo2N0RvS0x1RkNkVzJPV1BfbXRkUUdiRWNUdmxmdkQ4TWxGWnZROXNDNmhob0EyUjZPLXV50gFWQVVfeXFMUEtWWHp2amtiRGgwaFdsOEVXWHpJNlBBaVQ2Q0pucXFVbUlUZUt3LWhMcVBLRlkyRjB2ZklwTnpwUXdkOWZDQ1M0S3ZudDF1SFRaUXBtUmc?oc=5",
+      "summary": "匯率期 避險利器&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:27:14+00:00"
+    },
+    {
+      "title": "三能加速印尼購地建廠 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9WU2lIRzBMWTRGTUlsSDR5U2tSQXg4bGlyME1XVHlpR3VhcDZ3WnlVcWhlV1htTWp0RnlzY190UUZ3WE1FaTdtdEZkY1pjQkxQ0gFWQVVfeXFMT1N4WnZyMGpFalY5MGRrb3RXaWxWdXJvSmtkZ1dCQlkyak5kaUExX0NGREM3WTdfSW5kZ1F1S1poNDFzQWJFdE1yS2YtWkk4NXB2azktZ2c?oc=5",
+      "summary": "三能加速印尼購地建廠&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:25:58+00:00"
+    },
+    {
+      "title": "事欣科接單動能強勁 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1qbmxfOGRBNFJuVWl2SllGX1lMblZ0TzVWV1pDVFJqSDFmZUNMQWszeTVfYkJqRVNCb2lBTlkyMEZfN1pJU2dfcEE5OWZnYjl30gFWQVVfeXFMTVJ0dFZFckFOZ2lTdHJUeG5qYlpmRUdrTVQ2OWZSMk5LR29nR2NTLTJtYzA1UjZpUGVTOUR5UU9lV3VDLWd6ZXBfWGktODJSazZ4WVhsUUE?oc=5",
+      "summary": "事欣科接單動能強勁&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:25:50+00:00"
+    },
     {
       "title": "Microsoft's Stock Has Sprung Back to Life: It's on Its Strongest Run in 3 Years, by One Measure - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQbnNvc3lUMVVVVjdqcldGTTdDN2dGTS1ocWdXRm1TU1ZWZU9vUGpTa3F3T25KckM4OGU4QVd3eE5nWkY3NTZya05QSEpsYUlsOFNyelhBTjdoRVBIRjVOeUNCell4LVlPUUVmQ2JQVnA2VmJkR2hQVHFlRTA1MzVrc3p6ZFozX1RTR25nRXJHOVE?oc=5",
       "summary": "Microsoft's Stock Has Sprung Back to Life: It's on Its Strongest Run in 3 Years, by One Measure&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-15T22:18:02+00:00"
+    },
+    {
+      "title": "千金股氣盛 櫃買指數攻頂 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5od0g1SFZYc2h3RjRyYmx3THFCMWFIOGJjUlhNNF9jdkZkVDFHc29CcTVSMFZDQzFmNWUtazBkS3pPV3lEYWk4VHhZSWlFOV9k0gFWQVVfeXFMTXlZOGN0TVpJU19oZEdWRWRyZlZFTWtnVng0VHRBanl4V3FQb3doTjZxLVFsYks0blpwY3Nrd0hpWGNUam53bURrNzZpWkt6dTU0elp3b2c?oc=5",
+      "summary": "千金股氣盛 櫃買指數攻頂&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-15T22:04:11+00:00"
     },
     {
       "title": "千金股氣盛 櫃買指數攻頂 - 聯合新聞網",
@@ -23,10 +131,22 @@
       "dt_utc": "2026-04-15T22:01:59+00:00"
     },
     {
+      "title": "美伊角力升溫！ 停火喊話、軍事擴張與制裁同步加劇 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxPbm5yb253RnZtNGh4cW9oVkplWVpVM193b2dKUHM1SEVSWjNBYXJCbTV5bzY0Q00xRmZqQlZjOTk5ZE9Od25uWHhpVHF6WkFPMkFEOTlUZ01QM3BDX1J4QXpwaklWTHZIYm5jX2FJak1LSGU1TjhUTTRqRHNkWU92czIyRWplS1ZEem50VmVVYU8wM0JTbW10TzdxUWx1ckREVE1jMFcwYmVpd2xna2VpYjV5dFE3MHM4eXdQZTRxalhWXzZYaVUxYi1MeXhqWmFXbkd0WUdDWk5NcERYTFN2dWcyeEt1RDZ3eVhhNERCX0dPZzY3bmtiTktISXhlWk1kLVNQa3RCVnhXNUU0Y0dlSFFKTVNnZlhDZkpENGxKQ3hwbUU5ZTkwdXVoZGRXcTFqeHZ5WU1NaHZmbnJuODdZSVB5OHAtWldMbkI1Z1VZYmxjdw?oc=5",
+      "summary": "美伊角力升溫！ 停火喊話、軍事擴張與制裁同步加劇&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-04-15T22:00:23+00:00"
+    },
+    {
       "title": "Vicor(VICR.US) 10% Shareholder Sells US$3.75 Million in Common Stock - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUWZxN3JYZzJNc2pGaWNlYzR6Zm84WVZGbjhtMS1HQ0h3Znd5Z2VpX2k4T2RBZ0ppWGU1Q3BLNEhVend2Wk9aeVlkcURReUVJQTVqUjZrQkNCbmh2U01pWE5vZklfNWEtbG9wOTZLeENzMVQ1SHZ2dWdSU1o0MHRLU21jWFVHZWduVWRHZmZWNUtVeWgyQ2RjdA?oc=5",
       "summary": "Vicor(VICR.US) 10% Shareholder Sells US$3.75 Million in Common Stock&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-15T21:51:03+00:00"
+    },
+    {
+      "title": "47比52！美參議院四度否決限制川普對伊朗戰爭權力 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNaXlfZUZGcDROb1FhLUcyM1c0bjZHd0oxUjBqdDFZazF0Y0o3QzFjNUdLMlBrNVpoVWlhZm5CdjZLa1k3cDVPSnVRWUlZMHI2b2UzZEFSVzBCWXlLVm1BNzVYN3hsdXFuZHN4RDQ5ZzlRVVI1Q2Z6NTFOVnRQZ2hGck9rUXdPRVlrNDdKa1Z0X1dta2lrQ3hrdXlWNkxwX2tKOFl4MFhuYnJITUl5NUlfZjZENm9PXzdld3B6NVlLOWRNTG8xWG56OGNpMEhWSFNyd0doY2dGcDVoalgwSUdrbUloZGk3dVppQmVMMzJGLWVuc3lBSW5Ya1JiWUNfd0IwSDNTNWR3RWJGbHYtajZ3TnVoN29sUkFCVkdSbFliNTAtaGZZNWpfckZZWG9hRk9mUTJJc19XeTd2ZWtJQmh2bElzMzh0OUFLSzhpVmY4Z0M1UQ?oc=5",
+      "summary": "47比52！美參議院四度否決限制川普對伊朗戰爭權力&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-15T21:50:03+00:00"
     },
     {
       "title": "Lamb Weston(LW.US) Director Buys US$6.37 Million in Common Stock - 富途牛牛",
@@ -81,6 +201,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBlWExpWVl1MF9uS3VaUUhrUnktY2dnVlRNLVJSYmJuUi1GWjM5V2dLQ2tLR3F2cjk5MVFRMU9EMUlVSVRBdzFfcjlTbkNDbGpSWVJzRnAwVXY?oc=5",
       "summary": "3357 臺慶科 - 準備營業 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-15T19:54:37+00:00"
+    },
+    {
+      "title": "油價暴衝、關稅風險齊發 美國通膨壓力回馬槍衝擊產業與股市 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxON1M2YWc3RXZzRXpBcGxMakNCLUJHdWFYUXhfcm1YYlpsYlIyblNvMS04X0p4MjJYUTZwTjB3Tm04cFhvRVNXeFpYaFNPYnh2Vmp5NzVESVdOY19mVDF2TVMtMmJEUzlmVVEzTXF4cGZhS1N2R01WQUxFOVhrSDBDZDBTYUxweTA1cTQ3Szl3?oc=5",
+      "summary": "油價暴衝、關稅風險齊發 美國通膨壓力回馬槍衝擊產業與股市&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-15T19:00:26+00:00"
     },
     {
       "title": "三星中國事業縮減傳聞持續發酵 社長龍錫宇：多方研議中 - DIGITIMES",
@@ -261,138 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOT3RIQmVkSmkyUDdUWXJkcE5UTkNYZXBHTGpDczVqTnYzaHZWeFVmbUk3aEZNZUJib3NRTVZXdGgyajlvYW1aS0VkTGVyTG1VMjBJMEZzTmZGV0ZkeDd5VTBROVJ2YXY5VnRJcWlIUF93Yi1vaXdnUVhLUW5wRHFXQm5yRkMtbmJRdWdibmRkc2FjWDlhdG9CRkJuRkJoUmhwOWtHcVBhX1VnQjFRVDlIYVpFSGI?oc=5",
       "summary": "Stellantis Stock Rises. Deliveries Were Strong -- but Risks Remain. -- Barrons.com&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-15T13:20:56+00:00"
-    },
-    {
-      "title": "Runway Growth Finance Corp.的Exchange rate effect – FWB:0KG - TradingView – 追踪所有市場",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcy1EVDlmc2J2dXRfQXBYWE1CZjB3Wi1jRUp5R3hCaWtXQUxxSkREY0NKREV0NFhIckRNM0lmSnNlVHYzMk9TMDFMMm5sUkk2aVdqWW5nYUNabUhvRjZ2bVlOclY2akFUVnZyYXNHcHh4XzFZdzdJUHlqQlV3OS1JMTZPUHY1QkV6WTNnWGpB?oc=5",
-      "summary": "Runway Growth Finance Corp.的Exchange rate effect – FWB:0KG&nbsp;&nbsp;TradingView – 追踪所有市場",
-      "dt_utc": "2026-04-15T13:14:58+00:00"
-    },
-    {
-      "title": "4763 材料*-KY - 4/15 法人買賣超- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4ybW54bjNBWGx6WFVXdk9wcDlxV0hHajZWTFBVbWxQLXpRWkltcEJMOV9lbDRab2J0UEhoRjYzVy1CS1lPZkNZSWlLb2tDRk41NWJyUU9zNjY?oc=5",
-      "summary": "4763 材料*-KY - 4/15 法人買賣超- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-15T13:14:04+00:00"
-    },
-    {
-      "title": "Microsoft Stock Got Punished by AI Fears. The Market's Been Too Harsh. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNk9HSXBOWHlWSloteUlCWlUyVnVqSUUwTHd4ZXJtemZsekZ6TklwRjhKb0JFal9DZTVrYUVVM25MQ3ZIakNlUEgtcE4zSnNrcXhfX3VBQjVyWWo5NFMwamUzNFRrQlJaV1E0VFY1M0loTXV2OGpKQlhvTFl4TlpMR3F5N3p0V1JhZEd5ZW5xcFpKcXREX2ZzXzRB?oc=5",
-      "summary": "Microsoft Stock Got Punished by AI Fears. The Market's Been Too Harsh. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T12:38:58+00:00"
-    },
-    {
-      "title": "川普樂觀喊盤！美伊戰事接近落幕、股市要起飛 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5ncnhHVDNzbHdYWHVoS1FwS1hmSElIazR4RlZOX3FXRkZBNnFiNk1kbU1Xam5TVjlqMVNfQnQ4VkRpTmJRbHZ4UVNjNDNuV3M?oc=5",
-      "summary": "川普樂觀喊盤！美伊戰事接近落幕、股市要起飛&nbsp;&nbsp;news.cnyes.com",
-      "dt_utc": "2026-04-15T12:30:08+00:00"
-    },
-    {
-      "title": "Argan(AGX.US) Director Sells US$5.05 Million in Common Stock - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRlRxWFNNVm0wY3BvTjlWOGJoS3NabWxBWlFrWXhxS1BZZkR4RjZtdUdBMF9QLU4wd1czNHBoRk5WLXJIX2E3bEJWMmVHdXM5bTBOR09Ial9OSXZqRWhmaDlNZFBkTEVYMGZKWTdTSDFRV0lwM01Bb1hLb1FkZUZFZXNvMHVpbi0yUVBfUHhCWUxCRTEtaVhuMw?oc=5",
-      "summary": "Argan(AGX.US) Director Sells US$5.05 Million in Common Stock&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T12:26:44+00:00"
-    },
-    {
-      "title": "2330 台積電 - 法人買超排行榜- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBTeVZCNEwzVW1SWWotdzFvRlR1WG5KV0NGOVEtbm5lbXczSmptdEp6VTNDNUloanRxdjlYVlN0X1ZwSTBvOWV4V0ZZSDBjNFl1X04yZkZXZjI?oc=5",
-      "summary": "2330 台積電 - 法人買超排行榜- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-15T12:15:46+00:00"
-    },
-    {
-      "title": "印度股市上漲：美伊和平談判希望與原油價格下跌之間，Sensex、Nifty 上漲 1% - citytimes.tw",
-      "link": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxQdDVYX29JcmFXcHpNd0dpNVFSVUZjc0RXNUZFMEVIbTFOVkxva3ptS0xvNXZRN0YwUWtxZmdxVUllV0c4cWNTWERIQ1EwRUd2X3E2TDRqYkZCSnBXSkVsVklYbkYtb0dDSE16RFhxX1c1RWR5ck01UGFLdzZ6c09fclR0QWJ2WmNxTFR6blN3Vm52SnV0bHR3WXZoVEZKbkZubzU5UkNzRUctOU52YzljQ3NVRXFEeXRpYmJONUhXUXVKdk5IOGxBazFsNmRfSVkwcEJibW1CSHNBcjNzQTdHTVo0WFZTWGgweklVLTNKTjJsRTJrOHc3RUV2NGp3VHdGTUpDcEZaR2ZrZWhidl9OUjZEMjJQUVFoanhWVUEyU0lQYktlWGpwNmQyU2M1RlV0d1UycHN3QmU2eFpfaEUtVWk5c3FNOEFOTTB6VHNFUmg0eEpNM0lNazM4dHYyLU9nOTA1Z3R3?oc=5",
-      "summary": "印度股市上漲：美伊和平談判希望與原油價格下跌之間，Sensex、Nifty 上漲 1%&nbsp;&nbsp;citytimes.tw",
-      "dt_utc": "2026-04-15T12:06:52+00:00"
-    },
-    {
-      "title": "Kuaishou-W (01024) issued 1,000 shares due to the exercise of stock options. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWkIzSTY3dS1XeUw0OHpqZzZueEc0ZHJSSGpwNkJVYzZReEU2a1pISG1ZSGVRUzBKS3RDbElhOXpfaDFuSDhUcXlSM0QyeW02VDBBWDRZaWRVTlNveVU2VmVGQ3p1aWhZWDk5NzB5N19pY1RIekw2bjNEc3ZjTXpIOTdQVFNOalZaUEZZZTlWTG45bl9FdFBfeDl3d2k?oc=5",
-      "summary": "Kuaishou-W (01024) issued 1,000 shares due to the exercise of stock options.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T12:04:47+00:00"
-    },
-    {
-      "title": "Tesla Has Some Robot Competition. The Stock Is Up. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZ19MWTBIMHpYczlpVExoNm1nUW1RVkpFNXdnd0xTaGVjUkoyYjdWRU95YXlTck9tMU9GREUwY2pxMkhGWUlXUllmOXhoUGRSTWNDX3lQYVpsbm5HaFFQSFBqbUMySkVlVmR6YjR1cER5R0stMW5FZ1czOXFEV1U5M3gyWUtaeE5aUjhYbVNOc1B3eTBSeTZ5S09xdjBEdUgwcWc?oc=5",
-      "summary": "Tesla Has Some Robot Competition. The Stock Is Up. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T11:46:41+00:00"
-    },
-    {
-      "title": "金馬新銳導演游智傑竊軍事機密 緊急聲明澄清：無涉及國安議題 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMimgNBVV95cUxNelZNbmhRMHNEZFhiNFpXcl9DUVBRQkpBRk9YOExDRjg1WG1kUXM0R2dfTU43amdnRXVCMjE5UTJXWTZSUWZ6RUVMc0NrcnhMaDlaSjVNUHl5eXpfRXk3c3hBenFMT2dORnFZT2wwM1pnbmE5dUFjcmJjN0x3T1FmLXN4MDdyVVBIbEYybWg2c1pJb2lVdmprbGlJZXlwZE5jb2Z4SFVJSDB1ZDV6X2R4M3RZc1QwWWY0a2xLZEhnOTRYNUVibjNLRUUyOTlCZG1weFZrWVFlVW16ZEw3NWZrSWppYkxGQ2x2aWNvNDg4Y1ZKVy1WRndMWjlHZU1NQ1RnQ0R5Q0xSenRCTlR6aGp3V1hQMlEwM0N4SVBZQm4zWWZKOHJoMldWOU5mSlM1TXVFdXVRei16VkIxV0hfT1lkd0dTeTFwQWp4YkhXZGZaczFtWl9ZX1JJMWR2bkhPdEstTnhMSzhIN2l2WmJ2elhNUmpBa3RQaXNUelc2MnRoRHFBaXQ1dmFRd0Z3TlpuS3dLcl9jdVBvb05mQQ?oc=5",
-      "summary": "金馬新銳導演游智傑竊軍事機密 緊急聲明澄清：無涉及國安議題&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-04-15T11:38:47+00:00"
-    },
-    {
-      "title": "中工董事提名爭議逆轉！商業法院裁定應列回寶佳陣營名單 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMikwNBVV95cUxPTDFwSEk1UnRDRE9aWjFJQlhBZ19tNVlZR2txSHluS0xFQllCb1Vidk00VGdDeUhTYldHZEYzUGpJb1lQaUtEZ0NUM1Rwbm1JWTNtV1JqeDlfTDFjbEVTVnNlTFI1dU1QbFhvUjJTelJCTUUzU29kQUVCOGluRVJlY2dNR0dCOEdXZFJoU05sdk8tTVdOWDFZbEVDU0FJbC1iMXVRcTJpOGtyQko1MjlCOUMxTldGdkV2WnZpYlJJVk4zUUVfYk13ME0weV9wbEs2c3BwdEd0VThXY2I5dWFfTlZMSW9Lblk0ZjZYUXRCZGxPZ296WTZNU1ljV2FBR0VXSnZrTUc1VnhQQ0Q2SmZid2VzcVRjc2cySHVmY19mdkpwQl9SVUZYcWNEdl9hTVBtVW8yUjZzcU53alN6NzJHZXVoSFVhR1NSQmV0d1Bnb0NlbE5kWVV5LWdpVzUxUi1xajRlczg3T3F1TmVxMFRGQS1vdzBWdE1DQWFXcjBJV19wd1IyemN3OV9IOFJGRF9xZ0ZZ?oc=5",
-      "summary": "中工董事提名爭議逆轉！商業法院裁定應列回寶佳陣營名單&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T11:29:38+00:00"
-    },
-    {
-      "title": "台灣支付系統太方便！央行：零售數位新台幣沒急迫性 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxPeEs1bUNBa0NaRXNIV3BjNnl1bW1GUDJaaV91OW1hQTh3cTYzUGxGcG1ZYUJXUC1DUm8tZlRTaFJvbmtDQkdyc1ZYYjNMRHZUOWdnZWhYU1FEdXVkYVY3ZTdCOTdnQ3ZQellPWmNaM2UyQkNLa05xU01xWThiWlgzRERHREZqNXZqOUNwUzUtNTZVakxCdk9uN19yM3dFa1FsMHBVSEw5M2xSa1BxaXEyS251MXFsdS1HU0x1UklfcE1WTVcxdzVTVzlOYWIzVWNjRXExWUV6czNOcGN4NVRVM2QtMi03T3pHRDYxcVNLTmZFNW5reXlQMXlHbmVxeWVJdEFLM0xfU21JdXZRVzJfNjRva2J6LTROeWhXX0NFLVM1SzR1bzdIODd3ZndVRlBXTnU1QkItYlNEbkVtZHFzT281LVVtV0ZCM2t5ODl3MWZqVkpiSGFGQ0RVaGhXbUJwU2ZTZEhKWVV1NldnbUtvT0JTVXF1WlZqTzNR?oc=5",
-      "summary": "台灣支付系統太方便！央行：零售數位新台幣沒急迫性&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T11:13:31+00:00"
-    },
-    {
-      "title": "2605 新興 - 今天BCI收3,964 +293 漲7.981% - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8tLXJmZ1NDOEJGaEk2ZEE4TzczS1pOajhTM3VKazJrY25IRTBOcEZvdGc1UWxTQ2dhcm55UWQ2aHRqQjdmUzBUVlM3bEhjQXZqT2dlLWNZLTE?oc=5",
-      "summary": "2605 新興 - 今天BCI收3,964 +293 漲7.981% - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-15T11:11:59+00:00"
-    },
-    {
-      "title": "華郵：美國向中東增兵上千兵力 為談判破局保留軍事選項 | 中央廣播電臺 - LINE TODAY",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxRzh1THhPTmFfbGh6TVJOLVZmQk1DXzBuMG1zQ2QxVUhKU29FM1ZvUkdNRy1SYl9ZSkpaR2JwYUt0NnRuNE11c3JrNEx2cE45WGNyMDRB?oc=5",
-      "summary": "華郵：美國向中東增兵上千兵力 為談判破局保留軍事選項 | 中央廣播電臺&nbsp;&nbsp;LINE TODAY",
-      "dt_utc": "2026-04-15T11:08:46+00:00"
-    },
-    {
-      "title": "6547 高端疫苗- 真的被打臉了- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ZSlp1aG5JeFF4WThaaDctc0VRN2tSbXp2aVB0bUdOeC1OYUgxLU1QSjczSUxfRDhLdjRrTklfeWpsZFJKZ0RpUkllZ2J1TXZmdVZ1bVFtZ3g?oc=5",
-      "summary": "6547 高端疫苗- 真的被打臉了- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-15T11:08:10+00:00"
-    },
-    {
-      "title": "薪資追過通膨卻無感？學者：經濟成長並沒有全民共享 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxNVGlMT2lZVUlMZlVoNl9ZeGNYY2ttT1I0eVN6NjgwMEQ2Z05GWUxsZkpnV3oxSEZMeHBiUFNxeXdaRV9nVVVtTzZPb1N0T3Q3YUtYOWVSMFA1Mm9GUzFRYk43MzdmOEdPbENnYXZScXJLV0poNUVONkszRGhSLUxkVWdtcE1SMWJhMFpKZkk4bjdGbzQtZkdReDBDMlF4MUlhX3llMjg0MkVESFFaMW40bndrWjVZTjlRN1pBTHNfdTE2ejRERmFWV040cTRvX0xGbWpNb3hzRnRBNXJDTEZBOXg4ekk4dUEwTW9TYklEWDVjNTYzN0lQQzR1eWl3S1hVUnladmNhSjIzejg3VklxT0dWd05aYnc3Z3hwbV9nclE0ZHJHNkJwV0pGYmlCblhQRHFuSzF5RGF4Q0JrclhINW5vcXlyLUtwSFZ3TXBSRTdacWxpUWlFWTFoU1lXTzlKeWZuYVRhenJxLWNmM1FNRHlvbU0zLUJJelB3?oc=5",
-      "summary": "薪資追過通膨卻無感？學者：經濟成長並沒有全民共享&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T11:05:41+00:00"
-    },
-    {
-      "title": "S&P 500期貨交易解析：掌握指數結構與市場驅動因素 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxOT2xNUTF6cVI3Z0pmT21COTZkNWZlRlR6R1lqTW9MVFVOWndVT1ozUlpBRmlKdXpJOGRjWDBqdkdjdGxwc2o4d0duTC1IOTk2WW1DWWxSQklfeG1hN0ZPQmYzNFpjRy1tTDZZRVRRZVNuNGV1Q0pqWVhYZDNJcXg3RzFRWmNRQm5RWDRheXN3OWw0VnFPSVIyRnZIdmNZa2RyMEtWN0dhdFY0Y21TRUhKSWd2NjFGcDl6VElEeDJuUDREQ2lRUElGTVBSdjVZOE1YbkhBdlBJME1VNXRCUzlELTV0OUZvQnlkclBfMlJncmVnRk92RXVEcTBXeFlIVTljMFJXRVVaUUx4R0Zmcl9aQ3gyZlozSUhhS0xyNnBqeE5Pd0NScFFmT29rZ0pfZTJGZC0wZGdhclZ5eWI0bHNDUV9ZbVhmNlE?oc=5",
-      "summary": "S&amp;P 500期貨交易解析：掌握指數結構與市場驅動因素&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T10:54:27+00:00"
-    },
-    {
-      "title": "Middle East Outlook Elevates Asian Stock Markets - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOVC00LVBhaXFGc01iNmVva1gzSGF5VlRBSVdOV29hSnUwRDVyRTBQQ08wSGNRa3QweGYzT2ZlTDdUOWo2Tmx5R0pvYUx5bFdkc3pza01GN3BxdmVlbEdvTjh5M2ZidUd0YlZjQTFfMWJLV2wxQ3R4VjhFdXMzWVJYbThjTVptZC1RT1FONHltWk9fRnM?oc=5",
-      "summary": "Middle East Outlook Elevates Asian Stock Markets&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T10:44:30+00:00"
-    },
-    {
-      "title": "GitLab Stock Jumps on Google Cloud Boost. It's Still Having a Terrible Year. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSDFMbUFQVXpnMTVsNnpCcGgzWkk5SW9wb0xhcVhaY0U5aDZoMVZnWDBPVTZQcnBVaW1ma3dMY0R1T0QzUVhDUEFsTUFKSnFSMHF6ZjNQeHVnU2ljdl9hYjNOLUowME5kQmY2U2RFZlNnelo1TTBZOGRPYmlYdXBvUC1VX3lXQlAyNERNbGdtVDQ4b3NGZzY4?oc=5",
-      "summary": "GitLab Stock Jumps on Google Cloud Boost. It's Still Having a Terrible Year. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-15T10:41:00+00:00"
-    },
-    {
-      "title": "第一名不是台積電！中信金董事均酬1.17億元 上市公司唯一破億元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMipANBVV95cUxPYzNJZFZ2LUw5NXRPUUR6elI5V25SZ0dQVDh6cjhGanBXMm91cEh4eDBtSGZsRGFjX2g0aFpuS3dFVzRCVVd2SmhkdFNwcjl4X2t5UHlZY080UUx0dE12SENJSm1PblVWUTFOLVl1WHJCTG5xSHB4bmZkZ3V3N2VjTXhGYjI1dlFzSjgwcGE0V3VtSmlkYkxvSG1yNUpFbFZzdi1NZmh4QnpidmFiMGliNFpDdnpWeDdXV1dYV05VQ1BSS21fX2tyeXVfeGxlUHRpUjUyY1lxZFJKdGdYR2pELXdCZGRTaURaYzh1SC0yUU5RWGNDQ1JqTEtQdy1TRkt1Nm5xcWZGajJZWWNDdnRscUhaMVdHSE1LbHkyN3o1YV9ab25pYmJDMlloUTdLcXNzRU95QUtiYm9hRjFVVjhwWXlvdl9KZWNGSHA3WEY0V1NDRzliSHRLbWVUTl93ekQyUU55c3hSbGlGQkgzd2NRTjVGSmdVY2hpcWhGQUFRc1NFSzhIQTF2OGRVSW9hM05oUVJZTmEzZ1piMjdyVkZPM2lENk0?oc=5",
-      "summary": "第一名不是台積電！中信金董事均酬1.17億元 上市公司唯一破億元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T10:31:54+00:00"
-    },
-    {
-      "title": "AI熱也有假貨！海關查獲輝達仿冒晶片 市值逾700萬元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxQLTR4dF9kUHkxSDdsQTgyTTFjNUlqcF9ZOVRYS0k1VUM3U2otVF96c2NMNzRSRnVUS2hnVzEyUzBsYmRxcVdMa28xMi1OWFNBeGcydE9TcDRHWFo3dHBreF9rMnBYU1llZkFQT0JmMlhMOEJUc05Wa0hnTXJHVmN2Q1B1Vml4QXRocDVqMXNBSUtOSWFXRTZGeHh0Q3NmNW1sSlNOaUZHQ01rRk5CRWxaR1p0WE91UUM1NDc2R19rQnZXeERLSFI1c2drY0lzYW9ERnBENFZTbjZFM2pPT08tUEtmY3pLQWg2enJ6SThYNEFWTEIyajZWbEtxUmJoY3dkdzVMRnM1U0Ewc2dYeFZmbXVaTTF5NDJTX2JaY3ZzdEItMjRQcTFNdGNTdWRac3VDZ21PMG9vUU0wSXcwRFBNV2xOWXRzTHRwRjU5V1FCendYOHdLNVVzUGlJSFhIaHM?oc=5",
-      "summary": "AI熱也有假貨！海關查獲輝達仿冒晶片 市值逾700萬元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-15T10:15:40+00:00"
     }
   ],
   "risk_indicators": {
     "vix": "18.17",
     "vix_trend": "▼ 0.19",
     "usd_twd": "31.59",
-    "usd_trend": "▼ 0.06"
+    "usd_trend": "▲ 0.07"
   }
 }
