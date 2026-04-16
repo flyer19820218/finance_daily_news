@@ -1,9 +1,15 @@
 {
-  "updated_at_utc": "2026-04-17 05:24:42 (TW)",
+  "updated_at_utc": "2026-04-17 05:52:29 (TW)",
   "title": "全球局勢與市場情報 2026-04-17 盤前",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 15.564426828s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 15\n}\n]",
-  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 15.564426828s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 15\n}\n]",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，VIX恐慌指數維持在低點，全球市場對地緣政治風險的擔憂顯著趨緩。美股主要受美伊和平協議預期及強勁經濟指標推升。台股表現亦引人注目，總市值攀升至全球第六，主要由AI與科技產業帶動。儘管有部分新聞提及中東戰火影響，但避險資產的表現並未支持此論點，資金流向明確偏好風險性資產，尤其是科技領域。企業在AI領域的佈局持續，但部分個股或新興概念的熱潮，仍需以實質產出與產業常識進行審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治局勢與市場反應 (重要度：★★★★☆)\n*   **事實核對**：新聞指出「美股受美伊和平協議預期推升」及「中東衝突趨緩，交易員急翻多、狂追科技股反彈」。同時，【盤前真實市場指標】顯示 VIX 恐慌指數為 17.94，呈現微幅下降趨勢。\n*   **解讀**：VIX指數的低檔運行，明確指出市場對地緣政治的恐慌情緒處於緩和狀態，並未出現因戰爭升溫導致的避險需求激增。這直接打臉了部分「中東戰火擾市」或「美伊戰衝擊」的言論，表明當前市場將其定調為情緒噪音，或認為衝突已獲有效控制。投資人應關注數據而非單一報導，避免在情緒驅動下做出非理性決策。\n\n台灣股市的全球地位躍升 (重要度：★★★★★)\n*   **事實核對**：新聞提及「台股站上37000點大關總市值衝上4.14兆美元超越英國成為全球第6大股市」。與此同時，台幣兌美元匯率微幅貶值，【盤前真實市場指標】顯示為 31.56 (▲ 0.04)。\n*   **解讀**：台股總市值躍升為全球第六大，反映了全球資金對台灣科技產業，特別是AI相關鏈的高度認可與配置。儘管台幣小幅貶值，這並未影響整體市場的強勁動能，資金實際流向顯示，外資對台股的投資信心依舊強韌，主要受到產業基本面的驅動。這是一個結構性而非短期的資金配置調整。\n\nAI晶片自主化與量子運算概念股 (重要度：★★★☆☆)\n*   **事實核對**：新聞報導「AI晶片自主化 馬斯克啟動Terafab 打造一條龍製造帝國」及「輝達新模型點火量子行情 概念股一周暴漲最高50%」。\n*   **解讀**：馬斯克宣稱的AI晶片一條龍製造帝國，需待實質產出與良率驗證，目前應標註為戰略宣示。而輝達新模型帶動的量子概念股暴漲，儘管技術前景可期，但股價短期內的劇烈波動，在缺乏具體財報支撐下，投資人應保守看待，警惕市場對新概念的過度投機。高漲幅背後可能存在較高的修正風險。\n\n半導體產業競合與領先優勢 (重要度：★★★★☆)\n*   **事實核對**：新聞提及「Intel's Stock Has Been 'Absolutely on Fire.' Now It Needs to Deliver on the Hype.」以及「學者觀點－台積海外產能滿 迎半導體異地備援時代」與「埃世代 魏哲家：愈難愈好」。\n*   **解讀**：英特爾股價表現強勁，多半基於市場对其未來轉型與技術追趕的預期。然而，在先進製程如HBM4或2nm的實質產出與良率方面，台積電（TSMC）仍保持顯著的領先地位，並持續佈局異地備援以強化供應鏈韌性。投資人應區分「市場預期」與「實質產出」，在缺乏實體證據前，對競爭者的宣傳保持科學的判斷。\n\n政策動向與市場實際影響 (重要度：★★★☆☆)\n*   **事實核對**：新聞報導「美伊戰衝擊 政院提補貼虧損產業」。然而，【盤前真實市場指標】顯示 VIX 恐慌指數呈現下降趨勢，美元/台幣匯率僅微幅上漲。\n*   **解讀**：若中東戰事真如新聞所言對產業造成嚴重衝擊以致需要政府補貼，恐慌指數理應飆升，避險資產如美元或黃金也應有更劇烈的噴發。目前市場數據並未支持「美伊戰衝擊普遍虧損」的說法，顯示政府的補貼政策可能為針對特定產業的預防性措施，或為應對區域性、非系統性風險的策略，並非市場普遍認同的「系統性危機」訊號。\n\n🔥 【市場情緒與壓力測試】\n今日 VIX 恐慌指數為 17.94，較前一日下降 0.23，表明市場的整體恐慌情緒處於相對低點。美元/台幣匯率為 31.56，微幅上漲 0.04，顯示台幣略有貶值壓力，但並未出現大規模資金外逃的避險跡象。此數據與多數「中東局勢降溫、美股上揚」的新聞內容高度吻合，對地緣政治風險的擔憂已非市場主旋律，資金風險偏好回升。\n\n💰 【台股影響與板塊點名】\n受惠於全球科技股的強勁表現和AI熱潮，台股整體呈現上揚格局。半導體產業仍是領漲主力，特別是先進製程的領導者台積電（TSMC），其在全球供應鏈中的關鍵地位穩固。AI鏈中的散熱、伺服器供應商（如奇鋐、富世達）以及AI PC相關概念股（如微星、宏碁）預期將持續受惠。此外，儲存模組的宇瞻、面板驅動IC的奇景等也顯示出良好營運表現。值得注意的是，韓國SK海力士與TSMC的合作對於HBM技術發展至關重要，雙方共同推進HBM技術演進，將進一步鞏固兩者在AI記憶體與先進封裝領域的優勢。\n\n📈 【投資觀察指引】\n1.  **數據先行，情緒其次**：在評估地緣政治事件時，應優先參考VIX恐慌指數、黃金、原油與美元指數等避險資產表現，避免受單一新聞報導的煽動性情緒影響。\n2.  **關注實質產出而非口號**：對於科技大廠如Intel、三星或AI新創的技術突破或「大單」傳聞，務必比對台積電等領先者的技術進程、良率與實際出貨量，警惕公關策略與市場炒作。\n3.  **解析資金流向**：政策利多或經濟數據應結合該國貨幣匯率進行交叉驗證。若匯率走貶，則表明實際資金流向與政策宣傳不符，需警惕「政策利多」可能只是表面現象。\n4.  **系統風險優先於個股**：在市場情緒不穩或系統性風險升高（如VIX飆高、台幣重貶）時，個股的利多傳聞應持保守態度，系統性風險對資產價值的影響通常更為劇烈。\n5.  **長期佈局，分散風險**：全球經濟雖有復甦跡象，但結構性挑戰仍在。投資應著眼於具備長期競爭力的產業領導者，並透過多元配置來平衡風險。\n\n🏫 【曉臻財經小教室】\n今日單字：【投信作帳】\n投信作帳是指基金公司為了拉高基金績效排名，在季底或年底前，集中買賣其持有或看好的股票，以推升股價。這可以幫助我們看穿市場假象，識別股價上漲是否因基本面改善，還是僅為短期人為操作。\n\n數據為證，理性投資；風險衡量，洞察真金。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，VIX恐慌指數維持在低點，全球市場對地緣政治風險的擔憂顯著趨緩。美股主要受美伊和平協議預期及強勁經濟指標推升。台股表現亦引人注目，總市值攀升至全球第六，主要由AI與科技產業帶動。儘管有部分新聞提及中東戰火影響，但避險資產的表現並未支持此論點，資金流向明確偏好風險性資產，尤其是科技領域。企業在AI領域的佈局持續，但部分個股或新興概念的熱潮，仍需以實質產出與產業常識進行審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n地緣政治局勢與市場反應 (重要度：★★★★☆)\n*   **事實核對**：新聞指出「美股受美伊和平協議預期推升」及「中東衝突趨緩，交易員急翻多、狂追科技股反彈」。同時，【盤前真實市場指標】顯示 VIX 恐慌指數為 17.94，呈現微幅下降趨勢。\n*   **解讀**：VIX指數的低檔運行，明確指出市場對地緣政治的恐慌情緒處於緩和狀態，並未出現因戰爭升溫導致的避險需求激增。這直接打臉了部分「中東戰火擾市」或「美伊戰衝擊」的言論，表明當前市場將其定掉為情緒噪音，或認為衝突已獲有效控制。投資人應關注數據而非單一報導，避免在情緒驅動下做出非理性決策。\n\n台灣股市的全球地位躍升 (重要度：★★★★★)\n*   **事實核對**：新聞提及「台股站上37000點大關總市值衝上4.14兆美元超越英國成為全球第6大股市」。與此同時，台幣兌美元匯率微幅貶值，【盤前真實市場指標】顯示為 31.56 (▲ 0.04)。\n*   **解讀**：台股總市值躍升為全球第六大，反映了全球資金對台灣科技產業，特別是AI相關鏈的高度認可與配置。儘管台幣小幅貶值，這並未影響整體市場的強勁動能，資金實際流向顯示，外資對台股的投資信心依舊強韌，主要受到產業基本面的驅動。這是一個結構性而非短期的資金配置調整。\n\nAI晶片自主化與量子運算概念股 (重要度：★★★☆☆)\n*   **事實核對**：新聞報導「AI晶片自主化 馬斯克啟動Terafab 打造一條龍製造帝國」及「輝達新模型點火量子行情 概念股一周暴漲最高50%」。\n*   **解讀**：馬斯克宣稱的AI晶片一條龍製造帝國，需待實質產出與良率驗證，目前應標註為戰略宣示。而輝達新模型帶動的量子概念股暴漲，儘管技術前景可期，但股價短期內的劇烈波動，在缺乏具體財報支撐下，投資人應保守看待，警惕市場對新概念的過度投機。高漲幅背後可能存在較高的修正風險。\n\n半導體產業競合與領先優勢 (重要度：★★★★☆)\n*   **事實核對**：新聞提及「Intel's Stock Has Been 'Absolutely on Fire.' Now It Needs to Deliver on the Hype.」以及「學者觀點－台積海外產能滿 迎半導體異地備援時代」與「埃世代 魏哲家：愈難愈好」。\n*   **解讀**：英特爾股價表現強勁，多半基於市場对其未來轉型與技術追趕的預期。然而，在先進製程如HBM4或2nm的實質產出與良率方面，台積電（TSMC）仍保持顯著的領先地位，並持續佈局異地備援以強化供應鏈韌性。投資人應區分「市場預期」與「實質產出」，在缺乏實體證據前，對競爭者的宣傳保持科學的判斷。\n\n政策動向與市場實際影響 (重要度：★★★☆☆)\n*   **事實核對**：新聞報導「美伊戰衝擊 政院提補貼虧損產業」。然而，【盤前真實市場指標】顯示 VIX 恐慌指數呈現下降趨勢，美元/台幣匯率僅微幅上漲。\n*   **解讀**：若中東戰事真如新聞所言對產業造成嚴重衝擊以致需要政府補貼，恐慌指數理應飆升，避險資產如美元或黃金也應有更劇烈的噴發。目前市場數據並未支持「美伊戰衝擊普遍虧損」的說法，顯示政府的補貼政策可能為針對特定產業的預防性措施，或為應對區域性、非系統性風險的策略，並非市場普遍認同的「系統性危機」訊號。\n\n🔥 【市場情緒與壓力測試】\n今日 VIX 恐慌指數為 17.94，較前一日下降 0.23，表明市場的整體恐慌情緒處於相對低點。美元/台幣匯率為 31.56，微幅上漲 0.04，顯示台幣略有貶值壓力，但並未出現大規模資金外逃的避險跡象。此數據與多數「中東局勢降溫、美股上揚」的新聞內容高度吻合，對地緣政治風險的擔憂已非市場主旋律，資金風險偏好回升。\n\n💰 【台股影響與板塊點名】\n受惠於全球科技股的強勁表現和AI熱潮，台股整體呈現上揚格局。半導體產業仍是領漲主力，特別是先進製程的領導者台積電（TSMC），其在全球供應鏈中的關鍵地位穩固。AI鏈中的散熱、伺服器供應商（如奇鋐、富世達）以及AI PC相關概念股（如微星、宏碁）預期將持續受惠。此外，儲存模組的宇瞻、面板驅動IC的奇景等也顯示出良好營運表現。值得注意的是，韓國SK海力士與TSMC的合作對於HBM技術發展至關重要，雙方共同推進HBM技術演進，將進一步鞏固兩者在AI記憶體與先進封裝領域的優勢。\n\n📈 【投資觀察指引】\n1.  **數據先行，情緒其次**：在評估地緣政治事件時，應優先參考VIX恐慌指數、黃金、原油與美元指數等避險資產表現，避免受單一新聞報導的煽動性情緒影響。\n2.  **關注實質產出而非口號**：對於科技大廠如Intel、三星或AI新創的技術突破或「大單」傳聞，務必比對台積電等領先者的技術進程、良率與實際出貨量，警惕公關策略與市場炒作。\n3.  **解析資金流向**：政策利多或經濟數據應結合該國貨幣匯率進行交叉驗證。若匯率走貶，則表明實際資金流向與政策宣傳不符，需警惕「政策利多」可能只是表面現象。\n4.  **系統風險優先於個股**：在市場情緒不穩或系統性風險升高（如VIX飆高、台幣重貶）時，個股的利多傳聞應持保守態度，系統性風險對資產價值的影響通常更為劇烈。\n5.  **長期佈局，分散風險**：全球經濟雖有復甦跡象，但結構性挑戰仍在。投資應著眼於具備長期競爭力的產業領導者，並透過多元配置來平衡風險。\n\n🏫 【曉臻財經小教室】\n今日單字：【投信作帳】\n投信作帳是指基金公司為了拉高基金績效排名，在季底或年底前，集中買賣其持有或看好的股票，以推升股價。這可以幫助我們看穿市場假象，識別股價上漲是否因基本面改善，還是僅為短期人為操作。\n\n數據為證，理性投資；風險衡量，洞察真金。",
   "news": [
+    {
+      "title": "The U.S. stock market rose on expectations of strong economic indicators and a peace agreement with Iran (June 16). - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObnVNSG0zRWF5X28ta21aamt5TnhHN3dPd2JEQlBVYVM2a3diQWV5VkNWZ3FVdmVGZHFPUzlNbUh0M1pGbDNpNllGR3ZvM1ZCU25Gam4zUnNmbC1iTzlCcEFhSFlrMGlIVjNHX3F4VHpaRDZGMjJGb2FEN0JRQk9fWFNhTDE0UGhETjdlOHRGMndPd045Mnh3RzBhcUZoS3EwNFE?oc=5",
+      "summary": "The U.S. stock market rose on expectations of strong economic indicators and a peace agreement with Iran (June 16).&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-16T21:11:10+00:00"
+    },
     {
       "title": "神田真人：地緣政治危機下應強化本國貨幣 - 日經中文網",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVkFPUTc2RGplZWVON1llWnNkU3VHa3owZGt3T25fQ0MyNmNOSnB1aVRhNllEeEFOY3A1Unl1NGlrdmMyd1FrQnptMXdtb2hIODhOLWRIVDJEYm1EZ29zOGFWYnNjQThTRmtTM3M3VzZBRWZFbW9hTEZUbEZrZTNVU2Nhcl81LWVs?oc=5",
@@ -23,6 +29,12 @@
       "dt_utc": "2026-04-16T20:48:00+00:00"
     },
     {
+      "title": "AI晶片自主化 馬斯克啟動Terafab 打造一條龍製造帝國 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPanc2NGVtWDBlUm9fU3dmVEZ1WEZPVU1XN3J5c2JTNHlaTi13THgtOTRoUjE1WVN2TXJhYlQ1d3B5TDFKTjBDa2tLYXd6UXVVenVNRkNFRmRzZThPYUFSc2dKUnJ2THNHMFRQbHYtZUdSVzFFYWJTWU9remRVY1BKVjFIbVVILVdFeVFoeWZvOXpxbVljSXpHbDdZWXJnMXBCMzcyVlhyZER0RmlsWE83U3gwUEs4MF9aaEJsUzROelVrMzRWbmowRDJGaXNZWG1vdDAxWjBBNHFDTlRHclJBUnpkc2RtYzFmQUJPQmhWNVNUOFM2dlBQMWh5UkRLSV9TLWV2MXJjRnBuOTk5aHBMYUJVbTNpdW9OOUZsbnNDTzVLelNhX0Q3Qmw3eVR2Q2FFd3g4NG9WNXlCWG5Qa3AwMklPdw?oc=5",
+      "summary": "AI晶片自主化 馬斯克啟動Terafab 打造一條龍製造帝國&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:40:02+00:00"
+    },
+    {
       "title": "Corning Stock Is Falling. Why J.P. Morgan Disagrees With the 'Blue-Sky Scenario.' -- Barrons.com - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdThoWmk0QVEtdUw3YkxmOTNsNmV2ZEJXUmU0LUM5dk5PaGRHZV9senVGRFg2VDNmTmQxMDdKZ3h3OWtJS1J6N3ltSlp3S2lZeUoxamh4UUZlR25pNTVYcndvbnp4M3hWem1qbm96bXdDOUQ3LTdvdmZQLXhQUFNxQVN2TVplWmZWbHhhN2hTMkNIUlR5dmZaREJTVnRkN2c?oc=5",
       "summary": "Corning Stock Is Falling. Why J.P. Morgan Disagrees With the 'Blue-Sky Scenario.' -- Barrons.com&nbsp;&nbsp;富途牛牛",
@@ -33,6 +45,168 @@
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1IcmJKN1d0ZS14X3JKb3FDMllvYUlMZDMyR0tDZEN5TzN1UlAxS0FkSGZtZUczV2JydGw1ZWdRWXZob0llVzlLSDZSQW1ubzBhX1JFS0hGaGF0RkhRN3JBbFJIU2NwSUpPUXN6THo4REFsUkM1amww?oc=5",
       "summary": "騰訊：地緣政治加速AI開源發展- 財經 - 香港文匯網&nbsp;&nbsp;香港文匯網",
       "dt_utc": "2026-04-16T20:10:53+00:00"
+    },
+    {
+      "title": "中東戰火擾市 Q2多元配置為佳 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQX3NCRmRpME5MRkNOeEt3VEtseUVvSFZPTEk0ZEQ5c1Rva0JHRHB4Rm5GRkFTTVFvLVo3SmtNRFB2ZTdPVUJoMzRiNnpkZE5aTGVFd2ZKcEJ3LS1UUC13VHo1NkhKeE5jM2lFS2Rjc3NxVHV3eE82WXZNQVR6Z19sQXNmMkNINzlPRExkTUJxQkVTVTZwNE5VTWRZYU1nVnA0OEQyc1RMLU1pUElIOWJmaEJMWkxxdG0wUGVDS1gtMG9iRW9Ra05ld0hnNHNzSkZRa2hsY1Q2NWpFTnNNeVExNkZlSm9zWWM4TTNUdjNVUQ?oc=5",
+      "summary": "中東戰火擾市 Q2多元配置為佳&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "越跌越買！台股ETF 3月定期定額新戶增 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNbnBvU0RZYzlpbE43STFvTVdPcVBtRUpFRTY2NnVISGlJb2JxWUpNX3QxWlpxTFEyR2FCMlk3b2U5aU9DSXlDVFhZeVdBZHotS2dYeXZNZmNjcWRCQlJZYkxfNFc2OVgxcnpPVkt6QXEtVzA0TkxxbG5MQ1d2RUliNjc0a1JpZi1saVJ3dFBoRHhyem5OcGJhaUJTVnZ5dGNVc0FVQjhBMV9nazYwNWZ5VXpSaHJkM3VWcEJwbjV3NVFtTlV4bDUtUkRqYVE2WjVubC1BZER4QmZpczNGdDkzYTlzRDJrOEhWdDFHTDlKUjlzel96LUhESkE1Vm1PaTRtNVViT05DWm02bjg?oc=5",
+      "summary": "越跌越買！台股ETF 3月定期定額新戶增&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "通膨預期升溫 投等債＋非投等債 攻守兼備 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOR0tzek9DXzVmMmYtd2YtOG1uOU5MR3pUdEFaUHRZTTJtM1d0d1FxUURvMXlha1dIbHRwSWFibXM0NE5CWXozYmt2NGd5dTVIck9xazFBb2lGMVdXLWJTajEyUGJSQklNVjZtT0NCSTdES1MydHU3REhTeVViLW41c2RsMG5kNkYwVUZ4N1p0a0o3VGdvUXB4bGVKeFJHOTdSMHltbDdrY2JqaUlIUG81NXo0ZE9aTGg4NEtvd2k2bzBQMVFhVmZ5ZlFHUVVvTUJlVlozSjRxRVJYMnotQUFCck94SURST3UteVlXQ0tCcFNuU1FHUU5XNWhRRENuZS1CNEFIem00Vy1LX1RJTEFKNEhuMGxfamQza2p3M0tjSVNlb1lRdWZsLUthbw?oc=5",
+      "summary": "通膨預期升溫 投等債＋非投等債 攻守兼備&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "奇景 台股迎「雙萬金」時代 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQU3Yyb0dVV012T3AwODkxZEJiQXJTNVhpQXVUci1qSUczRGZsTUptT19zUTk3MmpQbkhVNlVBN0VGMWNTYmFqd3pvc3RKSGFIR0xXMWVEZHJSazgycXUycWFjNzVYak9JY2gyZmVPbjlUR3h2SXRJSF9iUUdsb3ZwY29ZcnJCUUlnR3dLd3MwMGJHSnVjbHR2WTdOSHZLZHJCYWVfeVRNTXhDb2toSE8teHJ1Mmx5ZnNSZk50Y2xJdnUyd0F2QW5sQzFxV3llX0ZQbERYSXBqcw?oc=5",
+      "summary": "奇景 台股迎「雙萬金」時代&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "主動式海外股票ETF夯 新兵掛牌爆量 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOWGREOVBDVkM0TWhuZmRlOTRodEg0LWtoSXc3cWdDZThLOF9QdmYzT19XdnRqWWlKdl9xR24xSjl6X2RTU28wb1paVHJEckMtYm5CdW5QbEJIUEE2RTB1VU9HZVdIOFZfdkk0S3JWNkZvSHhRbGhmN3JleUZDakROb1UyTEF3QjZEY2U2YWZDYmR4ZWRubXhpVXA0T1IzYjFTcWdDc2kxQW9kVVJlcEtVbDJ1MWNad3g0bXVNWFBjVEJMNFdnbi1JQk1YbHZwNnozbnJ3Q01JYTFqZDEzMFVWNFBMUkQ3c0c0Y08zbENuYkpJdmFBR0p6SHhJZmRSaGNTTkpDQ096YUo?oc=5",
+      "summary": "主動式海外股票ETF夯 新兵掛牌爆量&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "人民幣穩定幣 機構：有望3～5年推出 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPakRWOHYtaHhNYjBnQVdEZnhZQjNuV0xhazM4aVBRMXNFbEZNQ3pRNjRCM3YxTkU1QjNZaVk0cEVWOVRxNmoxZU9XR2pVTWZIT3hzY0dtTWNTd1N4c044SEtfcmdsY3V5SV90cXhHYVEzZmdjRXJZdjh6VXR0d3Q1V0o3WnBJQXhSS0Y0eWU1VXlWODY4UEZIWnR1eUd4SlJHczdDZjVrQnNwYndwQ29DLWFvcmstYUc0bnVZb2tYaTVvT3BxclNxWGN0dl9xLTFrdGQ1ekd4YzdFd2dtbmNJOGJ4Y3htUUlwdzB6UUx0eW1ZVXVvWC0xYjFQQ0NSQQ?oc=5",
+      "summary": "人民幣穩定幣 機構：有望3～5年推出&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "聯博00984D 年化配息率逾1成 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPd3FaTlE3WWdMcEVnVFVmXzFnb0tIb0tGcFJsRkg4TnJ6dzY2eTFnNlRIWm9uYnhVYWxLNFh0UVlydkNKdWYxakltU2dRMkNNNC1JQlBjbW0yNUFwd2s2TGRtN3JwNk1NNDM5dVpCOFEtcnNwNjhHY1hFWXhYa1JzbF9ManY0YVFKSUNNQTA1dmptWEgwWmlzRW1FaHdTVHVjZ1dKbW11cjRpZnJSUk54OER6V0VSTlBxMnhtTDVDS08wWGpTWHNlWEFzWG96SlRVakE?oc=5",
+      "summary": "聯博00984D 年化配息率逾1成&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "凌陽創新 申請上市 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUFZuVGhRRlJweDBUVGJWeDk2Tm8zNFRoTVRJMWhCNlVKTGNoQkpER2RENjZfU0NmVlp3TG9yQVc4Q0pDb19Ya3pIemw5Qk1nb2tGT25ILV9rYXNZalZzUl9EUWlrMmVpRU5RSkNSQTRnQ25hU0pBSlNkWVpnRmE3ZjZVWHJjcFJUSVB4a3NVemFTMFh5VmY4NkxINjcyeDlZckt5OENPczdhWC15SHZyb3IzVE5adHdPbDhBZQ?oc=5",
+      "summary": "凌陽創新 申請上市&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "觀望味濃 公司債發行量大縮水 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNaDJELXhZR256YlU1VVVhZU5Dc2dBSGVUakxEelpyUGVkSFQ2WTVOVzZPQWFQdFhEdGdRc2MwZzdqZ1B6U0JhQzctd3NpcjJjdHJnZXlrMEpfNGlDajZ0a3ZwNnh4VG5oR1lGTnVYWXJqRHNvZnBvQnhsbTdBa0JkUzNScnJrRVdBVURGeEoxOE83V19neGpub21MclM3ODB0NnVLNFRQOUpMa3pfTDRnS2VHUUx4UzZhTzB6ZFRfNDUzc0xTMjk4cVFoOW9kYWlZS2RfVEcwM0M2WHhYVWxYc3p4SlVWN0pnZjYtRFZHOWh2SFFDU3hkUQ?oc=5",
+      "summary": "觀望味濃 公司債發行量大縮水&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "美伊戰衝擊 政院提補貼虧損產業 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOdmdfNnRTTkcxMXd4a1Y5cjYzaXRTUjFtRG9NekRMXzJ5Rmk1c29hMHQzaDdMNE9oWGJOVVJ5cHhITDNVZ3FyMDVMcDY0bEZnanpZdGo3T1lRWl9lZHNPNGU3VGFCUUptYW9BVnVpY3E2UEJnaVAyNVJLYy1KRkdPZ3l5NXRYazYxTUNNNHRmNlFkNWlYSmRPZUNuMXNPN3ZmRjJLYlpWWllueHQ0c1pQemxGcFJzODV1ZWVlT1JIQ2RXZmtTRkR3VElsanNrNFBSdXJ3V041UDBSdFczd0FvTGlYV05nenBrLXlmU0ZiSW5ZN2xNaWM5dkJSakl0REhqc3o5Sw?oc=5",
+      "summary": "美伊戰衝擊 政院提補貼虧損產業&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "掛牌五日 國泰00400A規模登百億 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxORUNtVkt3RGNpSjJhX2tVeFBCSjRQMDNXTU1zTE43enFHeFdKaEJlWVczTC0wWnFhNWQ0enpQTENKVDdTMlBlQUxoaTBMbWRPMThzU080Nzk4b1RZbDdtdmVrWXZ0Y3drMzdBWDF5cHNvazNSUkRJM0FNYzlnOWYtN1A2QW02d0I0cV8xbjdJa2szZEphRERhM09wckFJOGNfQnR5b2YyNktUUm9fU0c4eWo4QUdMN0Y5dkg1N2dRUEdmNFNydlRRX0o0ZkFSOW1KVEpaZU5vUDV5cE8xNkxkSzBpSVp4ang2?oc=5",
+      "summary": "掛牌五日 國泰00400A規模登百億&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "致茂 3月EPS 3.39元 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMWZ0QVRfQ3RzRnY1Wk5yTmlBQXZ3UkROLXl2X1kzX1pCaW1qSHY5WEdPY2NxZE1zMUluQloyYTBWWnNVcm5NTDdxenJCdGNiY2hvNmlOdDFTSmwyNEJRd1RHZ0hTaTZ2dHhJSDdlLXAtTjBGWHBSVnE5MWN0NW04Wnp5cGpfVkRXbjlvQ2lYdUJCNE1JRXRvWA?oc=5",
+      "summary": "致茂 3月EPS 3.39元&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "宇瞻Q1財報讚 締4大新猷 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbG55c0lpSUt6MndNS0RyU3RkN2YxdXJLMWVjcDluS2pTVFdRV1MwY3pWbXcyamhrOEVHZEdLZEt3VGJnTnJhQ2lSYnVURXZxWXdpendERko4cGFFMWJSZGtHc0s3SnQ1TGZpYVhVZm45M1FkMXU4S2RLaEZ1U1JYa3B4N0ZjRExybWlBM2tKbDVlamZHbGRzZFRyTHp5cl9fajVsWF9HS0VFemhNZWl2Tm92b2p2d09XalZxMWdYQWVHOUhVbm9vZEtUR1E?oc=5",
+      "summary": "宇瞻Q1財報讚 締4大新猷&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "沾光台積 家登、辛耘權證熱 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSGlFTzhFVkd6WU1NZkFMSzFmZGlOWTVaMlRjSHItNXhfYkxGeE1DTFhid01wdEhHTVowZkxjV0pMR3lZdC1uTUhyS0J5QVYwbzQxRl9XQ0ZCMnZDT1B1a24yMFRVM1ZhT1A0a1FUeVdxZERjN0xQUjFvczBJMndLTGg2WHhQdkNQTVgyUURZZEFGSWx0ZG1hTFRPbEJSQ3hEMU1RN290SzRmZ1BueUMxUE8zN1NCd2lKNEd0Q0VKV3g3bkZ5SDdSYWh5UGp2MTFqaEFnaWdEc2JRMkFNR3dJY293?oc=5",
+      "summary": "沾光台積 家登、辛耘權證熱&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "台中北屯首件都更 品臻曦熱銷 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOd1VHMTlwR0J2SjdudmRlN3BUWW56WE9KVUIxSU1MSzl6a1NfU0FPODRPd2NsTFVVTThnRTJPSWhuS2FFMW9zVXJGOTRISzVwV2lGOXpkWTlPNXo1R2VudXFRQ29MMGtiMXBuQjU5WFN6MENrYTNObjFpV29wVk9QYVozUTFVcmlFdUJtWFV3TGV2Z2d1bzVFd3ktMjJhR1pvYzZ5TG90Rl9LVHVXU0tlV05EaDZwaHpDVTUyZ0gwdm1DalJxdTRvS0hweThzUDFralowb01XUno4TGlGMzVyQzhqRzB5QTVYNFkzSmhMNXV5R2g4ekFfdA?oc=5",
+      "summary": "台中北屯首件都更 品臻曦熱銷&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "埃世代 魏哲家：愈難愈好 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbjhwTHM1VHlVcGR0SDJCZUdKb0pVYnl5TWVRREU3dG9iRHMza2VBemVUZGxXWHZKYUN6U1hoOUtRcUotNDdPWkIyX1JRcDJfRHZqY2w1bkR2eVI4SkpNVEdpVnJQU3BPR0NkcUJSbWFuODZ3MWxNLTJRVHo1YWtzVVRobm1yb2lKRmVTc1E5eXJnZW9LUkVlVFBRd2FmVERCaGp6aXp1TFplNTlCY2dXRENhRGw0OWtYRXZJSFNfVHdjZm9MWE10UVR4T0ZMd3BBaGV4Vy1n?oc=5",
+      "summary": "埃世代 魏哲家：愈難愈好&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "遠企豪宅、德運安和 銷售創佳績 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNSTVHVkFvNkhrZFNCd05rSWlaZXZXVTJGbk1neVBiV3E4VWJ4anlZUGh2Vkltb01Hek9rTTBhbDNCLTJfR0Y4UmpSdUdSWjhyc2otUy16NWJNeXZLYnhQXzY5akl3V3JEUFpCNHh0U29nU1Q0WlRnQ09heWZlVXVNQXdnQ3JEX3FWQm5walMybDNrUlF5Q3QwWWJlSzVIcFRqcjZsc0JNY2YyTjJRaEZqM2JoOGJSb3BZYkNuRWc5T3hCbWtPNzF6OEl2ck9lbDFjSlU5ZndoODZVcEVEdGFoVEVjMG9qeGM2c014djktVEhHcHdWUkVjSjF3?oc=5",
+      "summary": "遠企豪宅、德運安和 銷售創佳績&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "學者觀點－台積海外產能滿 迎半導體異地備援時代 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNR0lwQW82UXFobU5GMzUxeVNGcnBuQWNTZHFJVmt3UER6LTBxVDJLZXVFV3hsbUtjTjVnckZtMzZzTmVGS3dkbjFaOVZEeUN2ZURZVURTWGJtQVJac2dDbDlvcTdYMndNMXVBSEp4S0ZmZFZRZ3A4dmlOOTBndEZjTEhsbFhXcFdBTVE5WDJ5V2owUmZMMzM3MURoR3FtaEI5NEEwaVhrZ2FkaElDeDJuZFhxVFlhTUw5Rk9tYjVYaUZuR19xYklXRklNcmE1c05jWjNDZ2hDTkNaOXBfNzdHSV8tTjhOWjFVUmZ3UUU0bEJtX0JrTWJPMEZMQmtkUHdQQWtubWtlMUNtTEs3QS1oZjZNVFNnV2hMOHlHUjctdUM1amdpWG9RUU82SHR6Umh4RUMwU3RFWHZIaVpHZVdOa1czSV81RWdkWFV4NV83U3haN2hRem9JbTd3?oc=5",
+      "summary": "學者觀點－台積海外產能滿 迎半導體異地備援時代&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "IFRS S2工作坊 報名 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTnBSUHZlUnI2X0tlZl9ZM0UzbXA2T19VU0ZrOW14aHAzRWJhb05QRUM2R3loWnRyT2FUNU82MlEyMUpORWlzbU5PVER1cXdja2VPVWpSbkRLaDlDRm53U0VsUkNTX05nRnJCZWtMNUc1YU43b1VPd3BYdDZkYmx0VVpmQUxMdGlxVUZ2aUd0VW1uNC1kNjI5OHhGVTJDUlRoS2c?oc=5",
+      "summary": "IFRS S2工作坊 報名&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "奇鋐、富世達 擴產助攻 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVmZUdUU5dmZDekVVM1ZEMmpYTEdJUlVYalV3bEdZTXoybHJKVU5aeHBzSmxUYkVZQTZqTThZdVRCVnZqaXFGUjg1NnBYZnp1TEpSeEYyaW1nNnNLN0Q0bkF1cl9DSjdNZzk0cDk1M0pLekNaaThaY25IYWVMYzQ2N1pWY09EVnZzYVBETGljSFgyTGRhbWhBN1NPODRMOFNfcnRvbGUycEhtd2M0ZTJfRkZ3SjZlS0pvd2dheEVCZVF1VlhIWllsVnJR?oc=5",
+      "summary": "奇鋐、富世達 擴產助攻&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "需求熱 晶碩、視陽Q2營運看旺 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNbnQxZFZWMW8xclE5T1pTR3RybVpEbnc0bG5sUzFzUnJhOF83bU1PZTl2ZjhBT1FGdlV4QlptaFR2ZGgxS0pqS05CNE4xOXcyUXU1UkVRc3I2LXdrWGgtOVdBN3hkRFpwemNwOEc3SHR2eGJpOTIxaDNzdW9aM1ZPcFBvcWEzR3MyYkVfSm9IbWo5Vkl5RHd5cVFmOVBjVGRLaDFrQUl5dHY2WTZ5UXRUV29IMExlOWZzajAyelBQSHB6UzdqUFc5TXJNb0R0VmlodWJGaHNYbUVMXzZaNTcweXFKMWE?oc=5",
+      "summary": "需求熱 晶碩、視陽Q2營運看旺&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "1980愛的迴響巡迴展 移師台中 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVHMwa3pNYUp4QkNLTWdkWUxlWEdJRG9UbU5jNmVtcGNoYWVtWVVwUl84T1hJX3BoTUFUNTZENHBaUDlybmFRRUhjaUpMazc0UnJkc0VUSlg3czhCb0d4T3VXVUdNMGs0ZGFod0ljVDhJVnVXYktsdFNlYklibWNwSGNSNW8yMG9IVUh3SmZLQ1Q5Zy1hZzUySFphRlNtSTduNTVBY0tvcHV1SUlGQzBLUkRZYWZ5US1BODFuN3BnbW9CazhTemNqaVZSeGlqNnJacno3UlBkcFpuXzdwVWU2eHNOZ2NQUQ?oc=5",
+      "summary": "1980愛的迴響巡迴展 移師台中&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "總預算破冰付委 先動支718億 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOaEdNaFcybjJJRGJQUTBHQzhGYVBUczdNNERYNkR6WXhTbkJSMVprU2RZV05hTkQxc0xRdW1qcWNkN2ZybXMzSG9GbUI2SFhhWUx3UFhJa3pKY04zdmhlM3daY3V4OXJHMUFNQ1U2SjZMN1dfLXZMalhkWTk5cHhTQTRlUGlManM1dW5BVUstN29aQ25VcVBmU2lLZlVHSDN2R011RnBOU2lGZ29fajN6NjVYa1o4bXZocUppQ0ZiMHRnc2JPcHFJbGxqNmhIclpuWEZHbzV1MENjTmxZN2pDaENXY1U?oc=5",
+      "summary": "總預算破冰付委 先動支718億&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "群燿光學崛起 跨足AR眼鏡有成 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUjFObTdYaWxZYU9qZ1laV2daMmcteFpaNlJlNTNFejk1dW9oYmJrT29kaWw2REN5TENIN1RkQjlSOVZqV292aUlZRFFqUVVfMnJLc05jbkNCdU1VUUdEODhYMmoxTmFKU3gtSGRqTXlXUWJwTnFtSVltR1JZaDV1RnNSYmhuYjJYZHRCTk5HeGE1bFhYcDdyOXRueW91cmduWG9yTVdxeFljZFF4VmsyUG82TW05V2lsUGpXQ1F5TlMzVzZPZnRlU1hCRXM3N2NTX1ZFZjh3eGc2eWpmbURESXZaVVBDWDQyTi1CVzZzWQ?oc=5",
+      "summary": "群燿光學崛起 跨足AR眼鏡有成&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "微星、宏碁 搶輝達NemoClaw商機 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcnUzVTZKaEJyWnVjb2Y0VHZZYzA5NlpVcHJ3a2FCVTkwZHg2RUNfbjJxdzZENkVoTzZFbjdOVDNTRnZlaUxaVFBTSEF5MXliLW5vY012S0NSd0E2SGIzcGp4YVlDVHpNZmFTbU1odWpLeXhZYzFPQUxtZDVBWW9iWFgxNEk3cXhIS3hVYTlUQ3A0bmJIM09zSEt4U2dsalM0cTZIWkN1VmZTcDJBd1FuZHRyWDNNeEtfelpRTmhBTUtycS1XZXBHSHBQNWJfNGs2MUZPNg?oc=5",
+      "summary": "微星、宏碁 搶輝達NemoClaw商機&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "易威擬併健亞 打造製藥平台 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQX29NYXRZalY5OXdDYjVTdHAxbUtqOHd6NGNFTFQydnpXLWVXYUF4aklkZXU0Ml91dlVtaFUwemJyOTRaMHhzWmgtV1JibkxzSWxPYmpsS01iYnNCLUhMaC04V2JmWkEzWXJEYVlneWZXUE5LNHFQYVktbUZOUWJ2UjhZWmI2ZXRfb2dZWG1ILWVGYVJvMl9Sd1lKdzZYN3laRkl4ZTk3NUc0M1k4RWtTMjF4YThkVE9jVTBTMXdSU3luenZRaEI5LWZvRHhOOGkyamx5bXVpSV9pY1lMTjY1U2VsNWgxN1MtMF9NbQ?oc=5",
+      "summary": "易威擬併健亞 打造製藥平台&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
+    },
+    {
+      "title": "高雄三地標改建 周邊房價搶先漲 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOb1RsUTFOWlhYWnFoZUJHUE5xSHhwMnAzNi1OX1RiOFgzSjN6TmZWSzllQjFpZUw3b0s2NURPWlFySGdDZHFjdTdMUzV2aGFGdy01Q0lBZzN3Y3AxUzlfLVNITFZRTUxiSmxGeXJQd2htb2w5ZVdGYktKT0pDQ0lfUG1Xbjh4UG1SaVRNaFlBT1BIbDRoRzdLNV9Fb2ZHcDcxRm5iWGpQZnZkVGY0TVZPV2ZaZHpsczROY0JVY3RRYWRzbWJRVU1aT21FOURYN1BWY3p0bWc3SkpIbC1XSTB0anRnckp4M1R2QnFOT2ctekZlcWJlLThsREV5NE9yS0VoRzJuYg?oc=5",
+      "summary": "高雄三地標改建 周邊房價搶先漲&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T20:10:00+00:00"
     },
     {
       "title": "科技股撐腰高盛看好台、韓股市- 全球財經- 工商時報 - 中時新聞網",
@@ -213,180 +387,6 @@
       "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNRTRFRl9aNWdfN0RET2ZxeGxzM0ViRVZYM3RTdm5mYnpMYloyWlBxNHFEbHBLVjVORmVPNjhGVHZuRnhGS1hzY3BlT2VrZVEzckUzV09fRmJWZ2JKbE11NnpCQ3U0VmMxZURtSUFUSnRIR1ZESmtQUDdScWpuMlNydDZkTUV2NERDR2d6eXJKVVJKTU1LUkMxNnJSb1NpZW8waFhZWWFBVFY4X0dXaEE4cGtVSTRJVmRzZmROUEs0ZER3enJHRjRlc3V1MUdkaWw1U3BWejVJcnhycHUxUXpfa1dEUUVFbHRITVQzcjY4UTd0ZmdHTXoxRE9MSmZBYU96WGV6dU1VTVJIYTJIRjFDX1hRbGd5akE?oc=5",
       "summary": "中東衝突趨緩？美股齊揚 標普漲幅達0.21％&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-16T14:03:33+00:00"
-    },
-    {
-      "title": "澳洲軍事支出大幅提升 防長示警：中國解放軍在印太持續擴展 - 自由時報",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzMWR5aHFZdGFDSVNTa1BoSmc2WFNVSTJjajlEazNCYkdoczQ3SlRCeXh3dlN2SXdPT21oSDJYcnVRVnYzZXhSUEtOd2V3SEItazFWc1J1YjBFSmN3WXVUcUx5T2wwUdIBa0FVX3lxTE1HV2h1M1B6S1Y4cnA5QlVpRUo4YlFEY3A5bzZ1WkplR0xDbnk0TnprTVlRX1dYd2xtM0R5QlJuRmRiRldsTHo2RXJBVXQycTJTUk9LTXRMZ0g3TmFoVDNLajFQR0VLR3d6M0pZ?oc=5",
-      "summary": "澳洲軍事支出大幅提升 防長示警：中國解放軍在印太持續擴展&nbsp;&nbsp;自由時報",
-      "dt_utc": "2026-04-16T13:50:18+00:00"
-    },
-    {
-      "title": "台股躍升全球第七大股市 星展總經理林鑫川眼中的台灣精神 - 財訊",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5aR2RXc294TVZtRzRIdlg5VWUxckE4V2NHQ2pfclg1QzNCeVEyOFNlUm9FWGd0VGdONkxnalBnVnZITzlJU25sbkVnUFpiclU1NWlSMkstSHlDQlNneHVpdEwxdlE5ZVZPb0pXd2FfOWdHcjYzR0k1NlB0QQ?oc=5",
-      "summary": "台股躍升全球第七大股市 星展總經理林鑫川眼中的台灣精神&nbsp;&nbsp;財訊",
-      "dt_utc": "2026-04-16T13:48:07+00:00"
-    },
-    {
-      "title": "〈美股早盤〉中東外交轉機與財報提振市場 主要指數走揚 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxOd2IxZ3hKY0x3MXRvNFN0dkJPTXU3aDlkd1I4b1RvXy1EZnFENDdSc3dDMGIxOUlpdXR4NUMxdDJVajdxZ09CY05oY2hpQUhoLWNUbG5tVC1DVUFONFE3bGlnNjh4M3ZSck5SYzZWZ1Bnd2t4aWZEaWNPb1dkUWF4aHRhVC1kTm0yR2JsRHdlbEpXaVZBR3FUbHhrSVd2d3pSc21fRHpoQ2ZBRXkzWmdETVJWXzBDT2ZjMHQ2cmNMUjV0ZVoxdXJhOE44TXF6QU5ySVRKZlVFcTdoMmhGRFgtS2M0VnFCOVR5WG5uWjFPWUxydFZGVzJUQVZtNll2dFFzUG5uZ29FMHB6aVRpbzRkbWF2X1dtbHBPR3dxU0VFdDdmOU1EWUYydFJxdE9uRFAwTUU4S2hkeVJqV3pSWk9mMnNRdlpaRWFHTDlxTnZORVNXSmVWbEZtSEtIVmkxNmpfVmNpbXZxaE84V0NPN292WGpR?oc=5",
-      "summary": "〈美股早盤〉中東外交轉機與財報提振市場 主要指數走揚&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T13:40:39+00:00"
-    },
-    {
-      "title": "賣廠大賺197億！三大法人反手重砍「它」4.9萬張居冠 友達、鴻海全進提款名單 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxQUXYxT2h4aFUwZmNyTlV2SVRsQ3RUYWpRa1pvTzA0QWFlSU9hU2lXQ290aU5pV053ZjJ3Ry1ZSVN0VzBUb0dPUFFnNFpWUGU0andIdVpKbDRBSUZQajE4UVZWc3FWd0pSOUt6Q2hNQWxTSHY2bGk5TDBUbXlHR3ZHeHNnS0lKbXJUVlc2VHU1Zl9vMGdQY0Vib1J4bGp3Q3lRelJ5UFY5VUhoa0dDQ0wtUWx3OGdsdG1hRXJhdmhrTlAtUUtmUGxtQ1ZyclZzcHNOZ2licjY1N0tHOXpZX2JCWXhROEVXQmtoZVVCRWdpbEJ0eG95TnMzQXdGUmx1cEI0YVFhWVBKMW9EY3YtYjJ4a0ZsdWpLa0FYaHBHOVNuLUlYX29aV1RCY1JpeG9DdFVBSWtQS3h1WmxZXzFyMC1r?oc=5",
-      "summary": "賣廠大賺197億！三大法人反手重砍「它」4.9萬張居冠 友達、鴻海全進提款名單&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T13:30:00+00:00"
-    },
-    {
-      "title": "台股衝破37000大關！三大法人連4天掃貨「這面板股」 3檔金融股也獲注意全登買超榜 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3ANBVV95cUxPdkZqaFNSVGgxYmp2MDR3MVBzanhLMzdWX0xXSGVhejQ1M3NNMFdVTGUxMUY0ZGUzMmtvOXdING1lb1dwc2lDTG8yQUk1a2ZuczItYVBNbXBqSF8xdXBNWGVmamczS0FaVDkxdTlyRnJyeGRsUWhNTXhaWmxreFJZQ18wc2dzRTN1Uy1ROHd0T0NxNkIyVDd1d1BjUjg4dmlyZE96MG9VMC1qaTZfRFFxNUJCbEJ5Q2E4UGtkeU5tZ2ZSRnFCY0c2OUtzck5OOVFubjlRMm5vQVFWVkdlcmNHbnFCRDlrbmlEaXJpdEEtVHZlNm5qenl5cGF4dGljWUx5bWVFMkdJd2lQTE9kMFhCcWRaU1hRVWpodG81Z1NlbU1HQm9pV0ktek9GTEx1cndpVWpwV1NTX1QxZlB6c0Fyd0NOT2FYNkFmem1UU25waV9XTGFWVU0wY25FZnRqWWlST05zeEJpS1dlUGg4YVVXdU1WbU1ZcFIyN29VX0kxU1NLTk9aQXA5VU9tTUJ6c3ZuTUxwekUyaEpQc3hXVjdSTnVjQk1HLUlsRXpCZW5tdkpIOVVDNmtmbk5RYmNLVU9FSzViRlRMR0gwRjhzblJxaUs1OU1iUUhfR2dJaw?oc=5",
-      "summary": "台股衝破37000大關！三大法人連4天掃貨「這面板股」 3檔金融股也獲注意全登買超榜&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T13:00:00+00:00"
-    },
-    {
-      "title": "徐副部長視導軍博館工程 瞭解施作現況及營運規劃 - 軍事新聞通訊社",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMS1UeFRBZ2M5RjRZbTFhdkNEdVlxdzhlc2YzQWZ5MFMydG9ZTEhnOGRndHBMN0ptcG9LTWZIQ19rNWtLU0pPbkQzTGt5WUEwUGtYOFFqcGhwWEdneVZVOHBEOWtxMElhb1psMDZ3RXpOTXFRbjlHLS1NWTRBSXExOXZNTWRFLW8?oc=5",
-      "summary": "徐副部長視導軍博館工程 瞭解施作現況及營運規劃&nbsp;&nbsp;軍事新聞通訊社",
-      "dt_utc": "2026-04-16T12:46:33+00:00"
-    },
-    {
-      "title": "台灣經濟屢創奇蹟！彭博專欄作家點出「這3件事」：值得記住 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxOTHJFbG16QlNJbTBfU3NWOThNYTEwenMtVDhWd2I2OWZwbjZwQmRubVN5ZkJ6MUNrOERsNHhXelY5d0xQeXFDTzVtaktBZnhCSlM0S28tcU5NNmQ2MERuX2U1U3YwclpLOVpsc3FkSGtVYU9EWWQ3UXRHOFRyYkFXbnQ3blgwWjVQcjFKcGFpUnBhVVZzTDNHSFBKRk10NFljMmNHTXB0VjhjLXQwUVhiSzhSS0xTYjhxUnFYN1VyZC05TXB5NHBkeXByNzdsTnJUbkZEWUtHbkRneTg4OWNrRXpuWWl1dmRjOHAzV05jMVpzNURBeWdlTmQ1TFphTkVCQnNWYXlNZ2JXMThXbWZZSDNLRDkySV9wZjVjVlQyX0tCaU1Gdm5PR0dxM0I5bldTYkE0X0RIcmlwZW53akRmN0ZWNHlSY2E5YmNoanVhMWM2TC1PX2VOQVB4ZXh0a0NTVExIZEtHWldLS0ZSTVZ4YTNpRFo?oc=5",
-      "summary": "台灣經濟屢創奇蹟！彭博專欄作家點出「這3件事」：值得記住&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T12:45:00+00:00"
-    },
-    {
-      "title": "Abbott Stock Tumbles on Earnings. Nutrition Business Is Struggling and Merger Costs Biting. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdF9kSWZlaTYwZVBEcXEya1ZITlI0VHhvTExIZE1hbnlHOVpQVkloaWp6UGJNUUNkeXlOemRlT2JlNXYxUlRBaUlRd2JRM3g5OW9KdXEwQ3FGaFJnOHNnUXd6Z0R4SHFxd295YkhjVFlSdjJ5NHBOTWJjYTBqMW40NWVKajhhVkRrMG95X3NpSkRLTk1iS1d2WHd6bmNqNVJMNlNhWXpNUWhUbmU5ZXFj?oc=5",
-      "summary": "Abbott Stock Tumbles on Earnings. Nutrition Business Is Struggling and Merger Costs Biting. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T12:37:40+00:00"
-    },
-    {
-      "title": "「面板雙虎」慘淪提款機！「這檔」賣廠補血、財報亮眼外資不買單仍狂賣4.8萬張 回收13.7億 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiswNBVV95cUxNN1padzZFeU52Ny1ucGxCeDMwc01pQTNjYmxBeThlN3EzM2xpaGxRdmNUdWhzbmFXZlMtTDg5ZWF5TzFTN3MyaTdHcW8ybjY2UkxwcFo1cHZzMVdhdUMwSVNRVXJXdF9TdnYzOU1IWmw3Q2E0RzZ4WFQzRmtOc1JwWnA0VUxoX25xWU1ZcWJYOVljT184TGFabzd0Z3hwcy1iMGpKR0tiU09vbHFCOUxnY0U0TkJOZjJHUHk2M0R5Y0kwV1BrY1F1bklkYzNDaklFRl9QcTZrcFNKUHEzdXl0M3lxdEtNbjhyVU9qc05ZVkp5QkVNWTJpeG1acWhGNEZsUkdhMlRIZ1BfUHA5VUJPNWdfQkdtNDlDU1V2Z2dNbmtqajR5c0RMRnF5TkV6NDNDZ1dHeXVxSWlPbFhfaDFvTk9mU0xxeHh6a2tISHhoM2tYTmV4Qklidm4yMnM3QUNLenFFZ1hjWVo0ajJxMzQzSWhKYVRvQnZ5Nm1NVG1Lc0F6MkRRdGJSTVZ1dzJBcjNFd1NoQnlFYlI5Zkp1NlFhRDhpTEVfaHo2SUlIRUJuYVNIVUE?oc=5",
-      "summary": "「面板雙虎」慘淪提款機！「這檔」賣廠補血、財報亮眼外資不買單仍狂賣4.8萬張 回收13.7億&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T12:30:00+00:00"
-    },
-    {
-      "title": "Nomura Warns: Do Not Bet Against the U.S. Stock Market Rally! Unless Two Critical Warning Signs Emerge - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVFMxcVRYcnFEQ1g4Z1dWZ3ZjVjRRR3BEZnN5WjVfbHIwMUtPZ2VmY2t5RDhXUktyeE54UnQ0dEozVUw0MTctM3c0YWJGNlpPdXNQeVFlQ1RrSEZrVVVKS3NGTUEtR3ZBREVNWGxVYTd6T0RFeWJfYlRQYmlKUVRKQlMwNDcwRlhhRk4yMzBRUmttQk0wWXd3?oc=5",
-      "summary": "Nomura Warns: Do Not Bet Against the U.S. Stock Market Rally! Unless Two Critical Warning Signs Emerge&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T12:15:40+00:00"
-    },
-    {
-      "title": "記憶體重獲外資青睞！單日豪砸19.4億補貨「2檔指標股」 股民挖苦：騙人上車 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMihgNBVV95cUxNcGpLUFpDTk1KOWplMzJaMU5LZ3hIZ2NMUHhnMVB0c01LdEV4WG80NGVTREdWUTVaNWl6MS1BQWZPdHVjeHVWVnJlbV9NU2dqU0ZPZUp0UHNRQ1BLTHJYckhRdXlJQ2lfVFZ0LXhVeGhaNUtkcnBPSjB3X2g0aVBzODFwdUVVb0Fta1NaaWl5dzd4d1dsbDhuX0pKY0Rkd2NyQmJBTVdfTDdaSkhVYzdYY25meWdTakhER2tRSUc2WmdaVXFEMXBTdHd6c2FtRURRQnZqSUg5ZGJYYU8zM0c0ZUQxQlpiNmhuZzdFejU3TjI0UldXcDVpdDNaNWlpRnR0eUt2RjVSY3lGQ09IeXZJQUZNRGJaTGRPbkJSa1F5cGZUSEV0U0pvak9hMHNCWEc0MzUxdWZQOThDVkZ6cDQ5TDk3X2E5ZEd0VXZEWlhMWE9qcFFXQUV5NnRFVVpXbm90b1pzQWkzWTJIM3h5a05KeS1TZmxIWnJWRUFSQXRaS0tiQ1ZBN3c?oc=5",
-      "summary": "記憶體重獲外資青睞！單日豪砸19.4億補貨「2檔指標股」 股民挖苦：騙人上車&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T12:15:00+00:00"
-    },
-    {
-      "title": "NBA擬於歐洲成立新聯盟 吸引私人信貸機構關注 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMixAJBVV95cUxPV1VmdDlEbExqSjR1ZmJBdE5LN0JDNzZsYWp6NmVNMWZwSmIzdC1FY1IyVHd5X3VIcUd1aXRORm9FVzBxZDk5LXFLV1loazBSSU1yLVpxUXVnVUYyTE5UcThyeDk5YzlKQl9TZHVTSmRVZ0lOMWZ3UDRMVXR2eVpMM3ZTQ3lBNF9CUmNvT0t2ODh5cWZ0VGhPOTZrWHhzbFZDSGNJNXAycGx2WnJPczlaWmNtb1h3NWFyWUk5MjhYdW05YWdWY2p5ZWNCNzBMNDNsbUU3WjhnbHRkVmtTYjdiQWhrUkVBQTJNUzYwZDNqQlh6Zk9xeGJVc3gxb0gyS0JkeGpDcjRiSzJVS2xIdHdOV2cwLV9TOGpMbXZlNklJUEVJYzlLN2RQRWNaakJrQWNmRkYzdnJ2Nlp0TUpKQ1FsekZNVXM?oc=5",
-      "summary": "NBA擬於歐洲成立新聯盟 吸引私人信貸機構關注&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T12:10:18+00:00"
-    },
-    {
-      "title": "Tesla Supplier CATL's Stock Jumps After Earnings. How It's Defying Weak EV Sales. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbkwwNzFqNDduSmlWMFA5T2h1MERqNXhSeDJBMW9vbkpOakZqQk5jMjJkTXE1QWZZOF82LURjSG9fbEhmWWx5eXBzOUxkbXI3Sk9PSUNRN3VmQ0ZCbHZjUklDbnBnb3NySEZYM3huc3ZjMTcxbmdMdk5UN3ZTSG9TeUZCdU8xS0YyVDZ5N0tFdGZhSjQ2R2lmWUlQSWs?oc=5",
-      "summary": "Tesla Supplier CATL's Stock Jumps After Earnings. How It's Defying Weak EV Sales. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T12:10:00+00:00"
-    },
-    {
-      "title": "〈台積電法說〉3奈米大擴產、LPU訂單報捷 七大重點一文看懂 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxNSzAwdkdMUDFxRGpkbFZDaDU4OWtkWENlaFJXNTM4V2VGbzFRbE10ZV9fZWIxOE52VXdtVHlaby02d0ZZeUhFQ2pPOWdYWHJHQ0dGc2RuSFFoVl95aVotVFkxS21oVlA4ZWxoLVZybFhaTGItY3VER1lURkUyM0VrZGE1Qy1OcXR4RGZGQ18wazZDSW1rYVRtNzRZRzlwWDZCQU5GSkNiODlEYktSSThyUDRCcGR3ZHNLelh0dFRENUhpLWFoUDNEbnFUZEpmYmF1dDFUbExaWEgxdjFJX2VZS2MxblkyQmg3MHZlSkJVSGtpUnl4WU44ZnFPUm5jYWl2VW40Vk5mbEZaNUpNdE0wal9RY2tzb3pLOGZVZ3k2eE5BcUk5SEp3akg1Q2RoQzg1WlBjNUYyandOanFQa3pFNDRnUXkyMUtvQ2pNbDdyaDAyckFiSURacmE1V2ltQnhCWlE?oc=5",
-      "summary": "〈台積電法說〉3奈米大擴產、LPU訂單報捷 七大重點一文看懂&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T11:38:00+00:00"
-    },
-    {
-      "title": "台積電領軍台股總市值衝破131兆元 14檔個股組成兆元俱樂部 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMigwNBVV95cUxOQkdwWVhjQ0VYS1l5Q213UzYzSU9rajIwcXBGSEhhWWRUcFBGUjRsYXRiYjFjLVBoUm41T2twZ0pfdWRlMmJsalVMbm1MN2Y5cE4tN1BOenZZVVJOOVdfQTF1Rkp5LXhMR01IVlp5SVpmTC12LXpYSHN6dHl2RTA0UzJqNU11NkNDZGV6d1ZFOUtSMXVWRU5xeWJaWjh6YTJ0Nnh2MzVrOWFmQ25kTWhvc2oyQXdQT3VQTkNjSTJLYnVCTFVDZkdORllqVWRydVRUQ2JLZ0FRbF81YUlUWDVjTUxzT1h5a2tWdU00N2pNcV82NDk1Z18zanN5WmJRYUJ2T1pQOE5aaklremVlZjJvQWFuTmZsMmo1eHlCU01BRG1oNEY4b3B6dUo5ejE3dUJ1azlPZUd4LVNHVVpGNXIzU1Nwb1VSeGh4dFlCeXkyWGhGMDBtMXV4LXRpZVJPRU5FVUdPZ3BqdUwzcF9tWi1pdjRJWktzbEdjemFkeGh3SmEyOUE?oc=5",
-      "summary": "台積電領軍台股總市值衝破131兆元 14檔個股組成兆元俱樂部&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T11:35:15+00:00"
-    },
-    {
-      "title": "Nvidia Stock Tests $200. What's Driving Its Longest-Ever Hot Run. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPeHFVZ3pEWVZiZFQ5VnJIcGNDUFh2UkJkUUlPcE1qSDY3cWdGQUFtX3ZiTE9xdVM4UFBINkZnRjhVRmR5NVRFZDJ5b1kzTDF5ckNYYlJtSC13X0dCemZ1T1FrMGRQR1l4SXE5bW5RUDRJTWtid0EzLWJYY3BFeFd6eFJLaGE0NTRxU3BlWElIdzVNZDFYVjRfZWQ0NA?oc=5",
-      "summary": "Nvidia Stock Tests $200. What's Driving Its Longest-Ever Hot Run. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T11:19:09+00:00"
-    },
-    {
-      "title": "Oil Prices Are No Longer a Problem for the Stock Market. That May Quickly Change. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNb2FDaXotNmRaZnJvcGt1M2Y0QklPVFFmOFFrQjc5eEdONjNiZ1REeW5jWnFBUHFtbVpVRUVvYjNtbzVVSExWQm01U0pNcHVwQlZ6X3U5eUF4R2I2T2R4Y2VtdkgxZUlWSE42QlU4V180TDJfRGtCeURnWkJLQWJERWRxX0k1WGRtN0xnblZUQVQtcDA?oc=5",
-      "summary": "Oil Prices Are No Longer a Problem for the Stock Market. That May Quickly Change. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T11:04:00+00:00"
-    },
-    {
-      "title": "訂單滿到下半年！投信狂掃「功率元件廠」3千張入袋 斥資59億建倉台積電、聯發科5檔千金股 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMitANBVV95cUxPQmZ6Y1JqdVdmTE9xNnluN0k2ZnhTLWkwVGZlUmcyU1NydUZhU0NOWUM3NERNWHJvcmlNNkZNSjNiTUJodkljSFFEMng4cTZ4MVJZNDhWSldXWmlHMEk4VGZwV0pUOFdoUE9McTBLOU5yZEZNbElDajQtS25xNkxCeEZiOHhXY2wzczIwTTM5SGtLSDduU2tNYVY3RXA2eUJlbU1PRGFjcExWU1prcDZIYWVmZFZCb0RKQnZmY3ZqMUhnWXNBbVdNa2pUc2ZyS3lITUZReFhzNDhtLUN3X081b2JheFI4YVVrbE1JNjZVaENKcVdmYXY0ZGd2ODJucWxya1laNHZOTXpmNGVDTGJXd2hLTEw3dU9ERnRTOUdrQ0E5ZXFacTljU09QTUxzbk92T2RYVFdURF9VTEVPYWNxVjBnNnNWWVBmcEg3aUFzdklCa1ZjNUxNdWxYZU9Ecmw1OXNNYUZFNDdra2VyUXpEdmpFY3NtOHhzZnBjMTdjSVI3TXV4NlZ4QWpmaHJzeFpPTGt5Y1MtdGVDS2k0Q3FNRnV4ZzR0YjdWb2ZxWGg1M1lqRzVi?oc=5",
-      "summary": "訂單滿到下半年！投信狂掃「功率元件廠」3千張入袋 斥資59億建倉台積電、聯發科5檔千金股&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T11:00:00+00:00"
-    },
-    {
-      "title": "這1檔ETF報酬達42.28％！專家揭0050「背後風險」 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNMlZQVDA2NzZKbUNLRzRCRDROTmItS0hoWXVVZ3pTNkRHN3BOQXJCX0dKRi05cmJIbk9EXzdIWFJtb3JtUFQ4NFFCYjZBVXhPYWhiN0VqeFhzRmY4VGE3SlpSdm5BbW5yVmd0eWlHZ1UxMzJxRXZGX19KSVdhbUJWYUJIcWMtcUxtbWdxX1cyb0hvR0ZIY0RUUncyaUZUTW1wQzdWSjR4UTl4YzZLaDMwOS1pYm1uZDhxRkZoaTlKbF9UcGVCVjNGY2c2ckdhclFHNjU2M1VGNzRhVDFjTUtDOE5DaVFLZnR1VU5JS3ZLaHpMYXVDMldSTEFINkpyVEE?oc=5",
-      "summary": "這1檔ETF報酬達42.28％！專家揭0050「背後風險」&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:56:40+00:00"
-    },
-    {
-      "title": "聯準會褐皮書示警 戰爭與關稅夾擊企業轉趨觀望 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxPWWlZTmtkbDhDbUtwcmtPTEdVb1Z6UkY4OFJjYlFhcm8yX2hsOTRNV2FkWHRFWjAwckhDM0tTTS1xeGRqTnhsR2RLUkVvR1NEOTNGWnRndXQyTU5PWHVBSUFXX3RoOEh3ZHEwVzc4WkM0Y19yZjA2U0xXeXJzSzlHMjN3ZDhHb1pZMkNvQlk4cm85Z2YtRk9DaU5Wbk5yNlNJMTBBN3JrNkFtRTZ4eFBYWjhWTmVIVmZKNlEwVFVZQTVkYjd3RnlIQ1BYeFNiLTJsNGg0d1hsM0RpV2RoNDBXY01SWUUxdS1SSENzOS1hcTU0WXBMcDlwZGczWWV3ZTNYQWpYdkdES1lvWWwwQVlKZGJkQ3F5Z3BiUlVhVDNLUlQ1X3h3R3dvMk9NUXMwSUhJNzQwaFYtbUtBek5TVmJydVJyTm41cVNzc2ZtZGRGdkhubDVreVQ3VA?oc=5",
-      "summary": "聯準會褐皮書示警 戰爭與關稅夾擊企業轉趨觀望&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:37:06+00:00"
-    },
-    {
-      "title": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxOQTRVQk45UTJwaE9mXzZGc3ozNjF1VjdySUItQnlGdE04Wkt1Z3R0SmppaTNKaV80eWlWcFNDQnItcFVjTExzMUJuTmdyY0xleUVYU3VlSXlCNXFGYllza0tIU29VdFFCYTkxd1BDVVhySjFqYU1pSF9Ibm9xbHdMOEUtNTN6NGktSnZZUlV1aGU1WEg3VGJLR3pwS2g1blNWTlRNQ1d3SXN6WFVFOVpud0c4RzJVRDdYRlBqNndGZGNrRklrUkh3anJrR09SWXFkN05SUTF6OTBKd1dHNkV3ZUdteURqZnJ4Unl6T2hkQThjYlZ6MUJianljdXd6UlFBSEdFd1NHLWpKeG5wc1VEMVVCc2NtdU13aVBJcmpzSDQwSjNsc2Y3bXh4cmp5ZWdVbks5MmQ2LXlvdlBxb21GVjgtZnMyQVZCOWJYRE9RNks5eGE1RnhZSmRpaU5LaFRqWjR2SGNRN2Z4alJINWNOdVpKcm9WQVlGRGJ2aGh4Y2piOHlMbTE4Nw?oc=5",
-      "summary": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:35:53+00:00"
-    },
-    {
-      "title": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序 - 商傳媒",
-      "link": "https://news.google.com/rss/articles/CBMikwNBVV95cUxOcEZLTkVQYWtsb3lDZXkybjd4cTZUcWZaLVB4S1pWNEVmbVNUbzZTMlgtMndTVGF4MjlHX3ZLbGdIUV9DSzJ3al82eGdDZ1B0WGtXQklZTk4yWTJPVERMZmlsN09NY0dIZWg0TEdRdmVPWlB5am9kNG5Sa3d5WFRSWURBRENYTmFwSUdkdE11X3pMQ1JIUkZVLWVyenh4TGtJN0Z1Vl9md2FlZ2hZbi0zTW1naE1QUWRIVUd1c2pMVEpmZzFBbTFia3IzNDdDOHNwc0p2aFBMMDg2QUtKVGRmMGlfSGltcW93dVFjMXVJLWZsamJBQUFSNkNORTRFeDEzRXo5ZWZueW9zTkItcWtIRjZiQm1yREplaHZJV1dqb2VUdG1iV1lDRC03SUoycHZ3NG1WbmZaa0dmaGpGX2NwX0tvVVA1OGxtS0drVHZIa2pDSERneVJEaDVBbm9jcHVsR2t5a2xBLXRTSW5Vd3ljX3lHQk96YjRNcGZGUWpyUUpKRlZoZ0lzNUIwTkJ6UUEwX2lZ?oc=5",
-      "summary": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序&nbsp;&nbsp;商傳媒",
-      "dt_utc": "2026-04-16T10:35:53+00:00"
-    },
-    {
-      "title": "中東戰火衝擊精品市場 愛馬仕與開雲財報承壓下修 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxPeFR1N293RHU0TExQN3FkaEVTY2R6bF9iMDVENzlubGJXVkZPcXg1bTNjQUJDNHd0ODJzMGhHcGFhRUxuRENuemhtZTVzSElrb3ZZMzkwbHRUR1F5WXZHQ0JEaDcwdnZkT1psLWRtdTRIazExZEVwZXVWWF9DZVBfTkZMUFpPTDREZ1h4SWg2cjljYm1KWXBiUTRVcFJ2em1JYTdsbEhTaEFIN1NYSF9VZm1sTUFSZWpZN2JYTThfVzFDWXBDZGk3NmFWNGFyMEVLT3JTM2FZTmFUNXpLS05FcEJNOF9WaEpJOTk0RldXOWJhd2J6RGZJNmJsMS12TEJmbE9MMk5GTXBEZTRzUTFzcXZRMDY2cVpmQ1k1QWpQUlFra25PUnBUMDZKTmVyLW1XcEdINGxXai1qOTB2b0VMMlRQWGZub3dpZV8wVnRTVUEzdkhwZWlKdVJOTDJQSDkyRU95Wg?oc=5",
-      "summary": "中東戰火衝擊精品市場 愛馬仕與開雲財報承壓下修&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:35:51+00:00"
-    },
-    {
-      "title": "化肥與燃油成本飆升 美活牛期貨創新高衝擊食品市場 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxPSnNnb3U3bGFuUjJ0V0JXX2FQNGRQX1d0eXp1d2ZXdGM5Y3FJd3h6dElRWXlNVWljX241c0VRNGVnTXFJeHdmRGxvX1k0TVJfNkhzMXpoWTd1WjBJUm42bkFQbDNOREZKTGtWMFBwUWRJLWpUVmtwVWZScE1OX2hhQk91c040NGMwVzlfVTNhdWdzWmhoV2tMY3ZZNjRtcmVnZjJIR0lwQlRVQV9iSF9PckxxSmY4UXBvTlE4OEZCSWEtQWJ0Y0Q1OXdjMXVYNHJtTVlPMHA1RWJkNkl3b19vSml5eUNZZ3IwajVaQjQzQ3hMc1pfcFdjMWhpYldPckdJenRoOXVPbzRrMFp4Z3M4LWtGOHpNUjVfWWFMbU9xcExxM0NMYVR3NzNlMVBmcWtsWElkSWN1QXd3MWxkZEhzWWhNdjh5Tm1CdUZZMHpoWkJKRGxILWtCUHRGeUJMYTdvc0RDUWpWeENKUmtGXzFsUw?oc=5",
-      "summary": "化肥與燃油成本飆升 美活牛期貨創新高衝擊食品市場&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:35:42+00:00"
-    },
-    {
-      "title": "AMD Stock Is on Its Best Run Since 2005. The Streak Can Keep Going. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOd3dBSGNnaThIUHFZeTVDcDFfNURWMXBPdWhjUXpRbWV3cVNhU1pEUmhUd3ZoZVVQMThhUnpFYVZUNkExeXZFRDZxV2tSYWJZWkhLc2N5amZkakN1REpoR19VS01QeEo1R2trUjdmcFlPaVdKUnpYMzZBQjVtbVVkemtvMHVJd19DVnZVaw?oc=5",
-      "summary": "AMD Stock Is on Its Best Run Since 2005. The Streak Can Keep Going. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-16T10:34:30+00:00"
-    },
-    {
-      "title": "中東和平曙光與科技股狂熱助攻 亞股普漲 日經指數創歷史新高 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiogNBVV95cUxQVmJMOXpDYjFQOXZCbVk5MGs1LTNQcjFGWU5RVkFVbXhRTXRYSFdCYno0Wko2SjF6T3Y5anBpM0RTY3dGVk5rbHJWNmJ3TjNHVmhvRXFIajFIMUZJelB4ODZZUGUxX3J0dEw1bGJwYkNUMUF1eWtQS1hfdE5rLXdWUXExTGdQdl9UN1RvZFBxMUlFdGYySmIxUDQtbWIwMDVtUDdUMHU5WDRTRENwZnFCQjlTdUhYb0pQU2xMMlBlRUVyS3A5OENnT2NoY3BrYlkxaFljdTM3Zlo2NFRITS1nZ0l6Y182ZHlpRS1GUExySWE0MFo3dnMxVlJ5QjRqRjRjMWFhZlotY1FUbk41U0MzZXA0TDFtaXFmay0tSUJXT0x5dmhOenZ2SnlacS1iNFk0dHowU21JaUNaTzdVdU1hdklHd0ozSzcwc0tmbkhxRlpWSlVFR3ZaMEd5SlI0dTVteHQ3LTJQX2Q1MGhMSUNtT01zaDVwTlptV0xEeFhfUmwzd3l0TFVKc1ZUaWI3bUlkTlFFQkx6cExJRjl5MWVwczhn?oc=5",
-      "summary": "中東和平曙光與科技股狂熱助攻 亞股普漲 日經指數創歷史新高&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:30:24+00:00"
-    },
-    {
-      "title": "台股衝破3萬7！外資豪買440億 卻大砍「這幾檔」美股與債券ETF - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxNenMxRlhZa2FsVHlMbWhrRjBPMjdwT1lzV1FBcHFQeWFBZUJvVUlfbnVXeU9ROGxQdG9OWDd6X3RITHZrODJkaVRrWnRhSmo2c3ZhNGVKQ0JvbHUzRmVicjU4aGVjUlVMWk1LcVpqZGIwMXVLdFBpU2FkTDNKM3dIeFVmaXpJNnJyc1FQQk5KWFRkRnFCWG5NZDUtQjJ5a0R4QnRlTl8zNHVBVGVNX3NEbnNKN2dUdEUtNEVpUUNYdXplZlB5dlNxOGxkREwyUUJ4TW1uTzBLNWhpWTllLTZKZVBJaFJaZG1FUjFZS3prdUd2SGZNM3ktLTdzQ3c5dlM0a0diWlQ1WXNMeEhvWUdkRWxmY3loeUpEd3pxWjVmZ2xaVzZWdlJINTJrbmJaU3F1SURhU0FlWWdkd3JxT01feC0wR1M3LUlQdTN6cEtaRGR5VS1tcjdqZ2o4RUdMcnlnNnoyRjdJOA?oc=5",
-      "summary": "台股衝破3萬7！外資豪買440億 卻大砍「這幾檔」美股與債券ETF&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:30:00+00:00"
-    },
-    {
-      "title": "正面回應秘戀子瑜傳聞！男神許光漢曝想學這運動 - Yahoo運動",
-      "link": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxQNU0tVUMtUE8xZ0psTmtXeHdsRjZINHNYY1BNelBDa2VYaWV2ZFNXdjVXLXMxODVtcHhWVGhaaDlZdkY2YXRWWUltQnRTNVBFZVd2NGQtZnY0WW5IbkdvNE9uR2NZSG01ZFdhOVYxeWVDdWlObG1CQ3BRYXFLU3NlS1o4aGFERGl0N0QweG1Fak9ha3A4a3hER2hRMDBHQjZHemc1amxVbG1iZmh3YmZpdFozaDlRcl9wbUZlUGhoZk9KMnBNRTVSMTJoS3F4OERyNkhXbUNHTkZ0TWdMN042dV9KZU94em0yOURlTndGbVBpVmZqQVJQVUtEVmYwT3l0MzlHWGVEWERsclFjZE0tbkNkbGV0UWhvdmxSS2Z1Z0lnZUZVOThsZWhaa3dsc3ZnVHloSmlHTkFxSndvYkg2Qm1NYl8wYjZDTGo0bmxRUGYxT2NiYjNnS25R?oc=5",
-      "summary": "正面回應秘戀子瑜傳聞！男神許光漢曝想學這運動&nbsp;&nbsp;Yahoo運動",
-      "dt_utc": "2026-04-16T10:16:18+00:00"
-    },
-    {
-      "title": "全台缺工26.3萬人！製造業占逾3成 住宿餐飲業缺工率續居冠 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiggNBVV95cUxPT3ZEcGFZbWU4bk1FSjdRQjQ1eUZWXzU5N2tHSWVFZkhRUzNwWHBMMGdSamd6azUzNEFwc1dIMzk5akJzVkhOUzZpZ0NoM1R5LTk4ZDBUYndKdmxaRmV5QUZ3RnhUM3dIcW9HcFU4YTM1djFuSF8xZFZ2RkM3ckp3MHMwd1YxLWZyZVpib1JRVndwNDBwTTZUOTZFcnBxeVVyMEF2OGRWZE9CSEk2MmFXVXAybWRfTTgxWm5kd3g2d2RGS0NEekxIbC05TU90UmdNbWpQaE1VMDhDYlpMcUNxQjJqcUNDNDVMTkhpaVVuRlZNOTBHdFZ6bTA0eXFmUm92bzVuZC1TWlRrMTVxN09WbllVVW53TEZBam9RczhvcjlrVGR1Q2VxUGQyR0xhZ1pQOHBUSGdCVDNNUzRwUGR6eGVPc081WGo5SVU2NFRNaHhVTU1jU3piSnFIT2lOVkt1SDhWLXN2cDBfMmdnb3dIOHo0WkliUTZVV290NVdRRF9aUQ?oc=5",
-      "summary": "全台缺工26.3萬人！製造業占逾3成 住宿餐飲業缺工率續居冠&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T10:11:58+00:00"
     }
   ],
   "risk_indicators": {
