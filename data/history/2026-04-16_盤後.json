@@ -1,14 +1,110 @@
 {
-  "updated_at_utc": "2026-04-16 17:59:23 (TW)",
+  "updated_at_utc": "2026-04-16 19:40:48 (TW)",
   "title": "全球局勢與市場情報 2026-04-16 盤後",
-  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 47.255304467s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 47\n}\n]",
-  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 47.255304467s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 47\n}\n]",
+  "report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 59.125488939s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 59\n}\n]",
+  "tts_report": "AI 情報官連線失敗: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 59.125488939s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 59\n}\n]",
   "news": [
+    {
+      "title": "Nvidia Stock Tests $200. What's Driving Its Longest-Ever Hot Run. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPeHFVZ3pEWVZiZFQ5VnJIcGNDUFh2UkJkUUlPcE1qSDY3cWdGQUFtX3ZiTE9xdVM4UFBINkZnRjhVRmR5NVRFZDJ5b1kzTDF5ckNYYlJtSC13X0dCemZ1T1FrMGRQR1l4SXE5bW5RUDRJTWtid0EzLWJYY3BFeFd6eFJLaGE0NTRxU3BlWElIdzVNZDFYVjRfZWQ0NA?oc=5",
+      "summary": "Nvidia Stock Tests $200. What's Driving Its Longest-Ever Hot Run. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-16T11:19:09+00:00"
+    },
+    {
+      "title": "Oil Prices Are No Longer a Problem for the Stock Market. That May Quickly Change. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNb2FDaXotNmRaZnJvcGt1M2Y0QklPVFFmOFFrQjc5eEdONjNiZ1REeW5jWnFBUHFtbVpVRUVvYjNtbzVVSExWQm01U0pNcHVwQlZ6X3U5eUF4R2I2T2R4Y2VtdkgxZUlWSE42QlU4V180TDJfRGtCeURnWkJLQWJERWRxX0k1WGRtN0xnblZUQVQtcDA?oc=5",
+      "summary": "Oil Prices Are No Longer a Problem for the Stock Market. That May Quickly Change. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-16T11:04:00+00:00"
+    },
+    {
+      "title": "這1檔ETF報酬達42.28％！專家揭0050「背後風險」 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNMlZQVDA2NzZKbUNLRzRCRDROTmItS0hoWXVVZ3pTNkRHN3BOQXJCX0dKRi05cmJIbk9EXzdIWFJtb3JtUFQ4NFFCYjZBVXhPYWhiN0VqeFhzRmY4VGE3SlpSdm5BbW5yVmd0eWlHZ1UxMzJxRXZGX19KSVdhbUJWYUJIcWMtcUxtbWdxX1cyb0hvR0ZIY0RUUncyaUZUTW1wQzdWSjR4UTl4YzZLaDMwOS1pYm1uZDhxRkZoaTlKbF9UcGVCVjNGY2c2ckdhclFHNjU2M1VGNzRhVDFjTUtDOE5DaVFLZnR1VU5JS3ZLaHpMYXVDMldSTEFINkpyVEE?oc=5",
+      "summary": "這1檔ETF報酬達42.28％！專家揭0050「背後風險」&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:56:40+00:00"
+    },
+    {
+      "title": "聯準會褐皮書示警 戰爭與關稅夾擊企業轉趨觀望 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxPWWlZTmtkbDhDbUtwcmtPTEdVb1Z6UkY4OFJjYlFhcm8yX2hsOTRNV2FkWHRFWjAwckhDM0tTTS1xeGRqTnhsR2RLUkVvR1NEOTNGWnRndXQyTU5PWHVBSUFXX3RoOEh3ZHEwVzc4WkM0Y19yZjA2U0xXeXJzSzlHMjN3ZDhHb1pZMkNvQlk4cm85Z2YtRk9DaU5Wbk5yNlNJMTBBN3JrNkFtRTZ4eFBYWjhWTmVIVmZKNlEwVFVZQTVkYjd3RnlIQ1BYeFNiLTJsNGg0d1hsM0RpV2RoNDBXY01SWUUxdS1SSENzOS1hcTU0WXBMcDlwZGczWWV3ZTNYQWpYdkdES1lvWWwwQVlKZGJkQ3F5Z3BiUlVhVDNLUlQ1X3h3R3dvMk9NUXMwSUhJNzQwaFYtbUtBek5TVmJydVJyTm41cVNzc2ZtZGRGdkhubDVreVQ3VA?oc=5",
+      "summary": "聯準會褐皮書示警 戰爭與關稅夾擊企業轉趨觀望&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:37:06+00:00"
+    },
+    {
+      "title": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序 - 商傳媒",
+      "link": "https://news.google.com/rss/articles/CBMikwNBVV95cUxOcEZLTkVQYWtsb3lDZXkybjd4cTZUcWZaLVB4S1pWNEVmbVNUbzZTMlgtMndTVGF4MjlHX3ZLbGdIUV9DSzJ3al82eGdDZ1B0WGtXQklZTk4yWTJPVERMZmlsN09NY0dIZWg0TEdRdmVPWlB5am9kNG5Sa3d5WFRSWURBRENYTmFwSUdkdE11X3pMQ1JIUkZVLWVyenh4TGtJN0Z1Vl9md2FlZ2hZbi0zTW1naE1QUWRIVUd1c2pMVEpmZzFBbTFia3IzNDdDOHNwc0p2aFBMMDg2QUtKVGRmMGlfSGltcW93dVFjMXVJLWZsamJBQUFSNkNORTRFeDEzRXo5ZWZueW9zTkItcWtIRjZiQm1yREplaHZJV1dqb2VUdG1iV1lDRC03SUoycHZ3NG1WbmZaa0dmaGpGX2NwX0tvVVA1OGxtS0drVHZIa2pDSERneVJEaDVBbm9jcHVsR2t5a2xBLXRTSW5Vd3ljX3lHQk96YjRNcGZGUWpyUUpKRlZoZ0lzNUIwTkJ6UUEwX2lZ?oc=5",
+      "summary": "荷莫茲海峽擬收加密通行費 地緣政治衝擊能源與金融秩序&nbsp;&nbsp;商傳媒",
+      "dt_utc": "2026-04-16T10:35:53+00:00"
+    },
+    {
+      "title": "中東戰火衝擊精品市場 愛馬仕與開雲財報承壓下修 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxPeFR1N293RHU0TExQN3FkaEVTY2R6bF9iMDVENzlubGJXVkZPcXg1bTNjQUJDNHd0ODJzMGhHcGFhRUxuRENuemhtZTVzSElrb3ZZMzkwbHRUR1F5WXZHQ0JEaDcwdnZkT1psLWRtdTRIazExZEVwZXVWWF9DZVBfTkZMUFpPTDREZ1h4SWg2cjljYm1KWXBiUTRVcFJ2em1JYTdsbEhTaEFIN1NYSF9VZm1sTUFSZWpZN2JYTThfVzFDWXBDZGk3NmFWNGFyMEVLT3JTM2FZTmFUNXpLS05FcEJNOF9WaEpJOTk0RldXOWJhd2J6RGZJNmJsMS12TEJmbE9MMk5GTXBEZTRzUTFzcXZRMDY2cVpmQ1k1QWpQUlFra25PUnBUMDZKTmVyLW1XcEdINGxXai1qOTB2b0VMMlRQWGZub3dpZV8wVnRTVUEzdkhwZWlKdVJOTDJQSDkyRU95Wg?oc=5",
+      "summary": "中東戰火衝擊精品市場 愛馬仕與開雲財報承壓下修&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:35:51+00:00"
+    },
+    {
+      "title": "化肥與燃油成本飆升 美活牛期貨創新高衝擊食品市場 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxPSnNnb3U3bGFuUjJ0V0JXX2FQNGRQX1d0eXp1d2ZXdGM5Y3FJd3h6dElRWXlNVWljX241c0VRNGVnTXFJeHdmRGxvX1k0TVJfNkhzMXpoWTd1WjBJUm42bkFQbDNOREZKTGtWMFBwUWRJLWpUVmtwVWZScE1OX2hhQk91c040NGMwVzlfVTNhdWdzWmhoV2tMY3ZZNjRtcmVnZjJIR0lwQlRVQV9iSF9PckxxSmY4UXBvTlE4OEZCSWEtQWJ0Y0Q1OXdjMXVYNHJtTVlPMHA1RWJkNkl3b19vSml5eUNZZ3IwajVaQjQzQ3hMc1pfcFdjMWhpYldPckdJenRoOXVPbzRrMFp4Z3M4LWtGOHpNUjVfWWFMbU9xcExxM0NMYVR3NzNlMVBmcWtsWElkSWN1QXd3MWxkZEhzWWhNdjh5Tm1CdUZZMHpoWkJKRGxILWtCUHRGeUJMYTdvc0RDUWpWeENKUmtGXzFsUw?oc=5",
+      "summary": "化肥與燃油成本飆升 美活牛期貨創新高衝擊食品市場&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:35:42+00:00"
+    },
+    {
+      "title": "AMD Stock Is on Its Best Run Since 2005. The Streak Can Keep Going. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOd3dBSGNnaThIUHFZeTVDcDFfNURWMXBPdWhjUXpRbWV3cVNhU1pEUmhUd3ZoZVVQMThhUnpFYVZUNkExeXZFRDZxV2tSYWJZWkhLc2N5amZkakN1REpoR19VS01QeEo1R2trUjdmcFlPaVdKUnpYMzZBQjVtbVVkemtvMHVJd19DVnZVaw?oc=5",
+      "summary": "AMD Stock Is on Its Best Run Since 2005. The Streak Can Keep Going. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-16T10:34:30+00:00"
+    },
+    {
+      "title": "中東和平曙光與科技股狂熱助攻 亞股普漲 日經指數創歷史新高 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiogNBVV95cUxQVmJMOXpDYjFQOXZCbVk5MGs1LTNQcjFGWU5RVkFVbXhRTXRYSFdCYno0Wko2SjF6T3Y5anBpM0RTY3dGVk5rbHJWNmJ3TjNHVmhvRXFIajFIMUZJelB4ODZZUGUxX3J0dEw1bGJwYkNUMUF1eWtQS1hfdE5rLXdWUXExTGdQdl9UN1RvZFBxMUlFdGYySmIxUDQtbWIwMDVtUDdUMHU5WDRTRENwZnFCQjlTdUhYb0pQU2xMMlBlRUVyS3A5OENnT2NoY3BrYlkxaFljdTM3Zlo2NFRITS1nZ0l6Y182ZHlpRS1GUExySWE0MFo3dnMxVlJ5QjRqRjRjMWFhZlotY1FUbk41U0MzZXA0TDFtaXFmay0tSUJXT0x5dmhOenZ2SnlacS1iNFk0dHowU21JaUNaTzdVdU1hdklHd0ozSzcwc0tmbkhxRlpWSlVFR3ZaMEd5SlI0dTVteHQ3LTJQX2Q1MGhMSUNtT01zaDVwTlptV0xEeFhfUmwzd3l0TFVKc1ZUaWI3bUlkTlFFQkx6cExJRjl5MWVwczhn?oc=5",
+      "summary": "中東和平曙光與科技股狂熱助攻 亞股普漲 日經指數創歷史新高&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:30:24+00:00"
+    },
+    {
+      "title": "台股衝破3萬7！外資豪買440億 卻大砍「這幾檔」美股與債券ETF - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxNenMxRlhZa2FsVHlMbWhrRjBPMjdwT1lzV1FBcHFQeWFBZUJvVUlfbnVXeU9ROGxQdG9OWDd6X3RITHZrODJkaVRrWnRhSmo2c3ZhNGVKQ0JvbHUzRmVicjU4aGVjUlVMWk1LcVpqZGIwMXVLdFBpU2FkTDNKM3dIeFVmaXpJNnJyc1FQQk5KWFRkRnFCWG5NZDUtQjJ5a0R4QnRlTl8zNHVBVGVNX3NEbnNKN2dUdEUtNEVpUUNYdXplZlB5dlNxOGxkREwyUUJ4TW1uTzBLNWhpWTllLTZKZVBJaFJaZG1FUjFZS3prdUd2SGZNM3ktLTdzQ3c5dlM0a0diWlQ1WXNMeEhvWUdkRWxmY3loeUpEd3pxWjVmZ2xaVzZWdlJINTJrbmJaU3F1SURhU0FlWWdkd3JxT01feC0wR1M3LUlQdTN6cEtaRGR5VS1tcjdqZ2o4RUdMcnlnNnoyRjdJOA?oc=5",
+      "summary": "台股衝破3萬7！外資豪買440億 卻大砍「這幾檔」美股與債券ETF&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:30:00+00:00"
+    },
+    {
+      "title": "正面回應秘戀子瑜傳聞！男神許光漢曝想學這運動 - Yahoo運動",
+      "link": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxQNU0tVUMtUE8xZ0psTmtXeHdsRjZINHNYY1BNelBDa2VYaWV2ZFNXdjVXLXMxODVtcHhWVGhaaDlZdkY2YXRWWUltQnRTNVBFZVd2NGQtZnY0WW5IbkdvNE9uR2NZSG01ZFdhOVYxeWVDdWlObG1CQ3BRYXFLU3NlS1o4aGFERGl0N0QweG1Fak9ha3A4a3hER2hRMDBHQjZHemc1amxVbG1iZmh3YmZpdFozaDlRcl9wbUZlUGhoZk9KMnBNRTVSMTJoS3F4OERyNkhXbUNHTkZ0TWdMN042dV9KZU94em0yOURlTndGbVBpVmZqQVJQVUtEVmYwT3l0MzlHWGVEWERsclFjZE0tbkNkbGV0UWhvdmxSS2Z1Z0lnZUZVOThsZWhaa3dsc3ZnVHloSmlHTkFxSndvYkg2Qm1NYl8wYjZDTGo0bmxRUGYxT2NiYjNnS25R?oc=5",
+      "summary": "正面回應秘戀子瑜傳聞！男神許光漢曝想學這運動&nbsp;&nbsp;Yahoo運動",
+      "dt_utc": "2026-04-16T10:16:18+00:00"
+    },
+    {
+      "title": "Tesla Stock Rises. How It's Joining the Rally in a Big Way. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUHlsMExKYk4xbVVkSmNpTFdkcDUxcVdaM0w2WVlUN3FvWXg0WXRGWF9QM3BsTFlLazd4VFI4aXgwYzNQZnBsVkZiRzdoZk52b1JBMm9Dcm5LTnp2d3NpVUM2VXh2R2xQZXNROE1mdkRZSnhmZmtkS3NVTFlMN1dyV0pJSThyVG9VT3dwazNCTl9KQQ?oc=5",
+      "summary": "Tesla Stock Rises. How It's Joining the Rally in a Big Way. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-16T10:08:00+00:00"
+    },
+    {
+      "title": "為何國發基金一退場，聯合再生就跌停？解析台股「大房東」：國發基金是什麼？與國安基金有何不同？投資人如何跟著國家隊賺？｜投資診聊室 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2wZBVV95cUxPNW5NbGFCeVZucEIwcXNGbEJpN1k4dEgzTGJEbnJZR0phMlJ2THR0RElhMl9TOTJ6S1oxU1NjUE12TUZ4YzAwWUVEOUJzS1Z2UUdGTDhoWXhyOUp5QmdkSHRTRFA2UmFNeXg0RTBqVlNwZjh1blRiT2stLVVWdzliYUxzNTdrdVF6cGdNVHNqTFVwZThQczdiejI4bXFOWVNSQjdGZ3hNNGlLNVZFMkhIMkpBdUg1blRJNHBEdExWcmctamtXMkxGNG5PTTNabktqLTF1d2lwS0wzeFgwVlFiaUFzOGFrdjRjdFA0NzRqN2xKOE9kWFg3RFMzYnlZWG9iRF9qdXlPc09SdlpiRHRHTFdVbEQydmVIVFM4cDVITEh3cTBqMzVacUhLMzl5YWtCak5TNHZlb3ZPZ1RYLUZVbkNkVUtReExtRTFGSm5kTjBPQUtFblk1bDRDZ3ZwcVl1QnlNakhRRkNuNjVfT2dESWlZVVBYMmFKRGtQdTFvRDh1QVkwRENQQi1UQ3VORlVzQV9wbm9VSHZqeG5lYzh4aFRUWndReTBVRlprWDJNWWg4NVo0RUNQUGlkNjhUWHd5SDh0bHIxdHJ0cnM0WGVHelpnalJTOGJqaVlweExBTG9Gei1ZY0JUaHZ6STM1SkR0a1hQMzY0Si1TYmowSlpMeVVkWGtzQTNWUDRzZmhIaGlBUW5YMHpqc3BMQWlKMncxZDB5a3p2ZmpKa2xpYzdha3EteVN1RE9lZ0pla2tNVFhSZWprYVFiZC0xYzVwNkFGcXFHd1NIaEE2M3NNcFpGeEZsQTZmOUtSZkJmWHJYZFJXSkdobWE0LS10d0hpUmVNSUVTd3Bmb05TUWZLQ1VZVnFBMHFzZ2JwbGRDdXY2MWhLTlA3emNvdHZQUzlZekpSckhwM0lWUFlDakpfQ0MyOG93UFZqZHY5RXNodmJFTFFvZHllN1RzTHp5a2hwZzRfMElwUVJBY2lMUGJNdUYwVDFlNmJDVDVDN2hJcnpONk9pd09vZ1doM2RZakd1M1ZYOTdoZGU4eGV5djNieEdsQTl4ZW1lYjR2b2gyMDRrSjd6RWE3S3dZcVZ4cDFCN2p4WjFHdmxTcmUyeEdtVkwxSFlMdW9BblFJY293?oc=5",
+      "summary": "為何國發基金一退場，聯合再生就跌停？解析台股「大房東」：國發基金是什麼？與國安基金有何不同？投資人如何跟著國家隊賺？｜投資診聊室&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T10:00:00+00:00"
+    },
+    {
+      "title": "台積電賺翻了！Q1大賺5725億每股盈餘22.08元 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNeDJ6ZFdJaHdkTzl0bDBLeEpBZ29DQlJBUS1FUkNwNmlJc0JzSENkRjFkbFhSc3duUGJXUVp3RzZCSG1pX1dxUG1VM0ZMeng0OEJCWkFqNG5kcnFYU0wzM0ZmcmZDcmpmVWVtbGFIdHlUTEhnekRjakFLNzNqTzlIdVRaUGdJREJqTGRmXzdyN1NucG9JVzUyMHU2VW5nRDVYS1dLSUpWVGVzTFN2b3lrbmFQamR6YVhPSV8yOUJ4MGZGNTJYN0JLaVZYc2FVQUQ2bUxTSHE0bkE1QjJ1VzNZXzhseDBwVmlNbmlMSjR5dG0yNEI4ckl0MHNyMjNzNGFGLVd1RHNNcS1DRHE3emR2NUpBVQ?oc=5",
+      "summary": "台積電賺翻了！Q1大賺5725億每股盈餘22.08元&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T09:52:57+00:00"
+    },
+    {
+      "title": "金融業朋友「一堆想逃」他不解？ 過來人嘆：領猴子錢操台積電心 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMigANBVV95cUxNQ0RsN2FGZ1VxRlFCMzNhT05Dd0NPWW1ESVZLVG5DaVRLZUk3MmVZMmJST0otWXJoeXBBWXJyckwwTWVJOG4zcVVaTmstUmh0ZmU4M2pSeWZxcGN4VVh6R0RpNDA0LVQ4YzRJVzRMWUlEWFFsVE9CVTBHcHg3OC1LM3JPR2ZVYXJmd01yXy1DRUotZExlZmdjVVBHMjVqOE5FR2tMMmdKQWswdVc1VDlSOWExZHhyZ25wWGNKMS1lcllaWk10WkZxOS0zcXlXOEl5TlFNcVh6RU1UaThlTFV3QkRPRTQyLUlYTTByNUlKUVc2c205c2ZzMkkya2ZzNGNlb3E2X2Y0eTRVNU1aRlgxU2F4emVPbXZiTC1xTFp5TTdjWTNqSWpNbS1JLXdvU2p0ZF9WaEJPY0FEZ0p0TFdzbGF1cHZYR05rU29GSEJaQ1FNbU11aGlWUUdhRlFpLXJFemhuXzU2TVFOa2V0d2tXdVFNS00zNmd2b255R0pOaUw?oc=5",
+      "summary": "金融業朋友「一堆想逃」他不解？ 過來人嘆：領猴子錢操台積電心&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T09:49:00+00:00"
+    },
     {
       "title": "聯博非投00984D首次配息出爐！估年化殖利率達10% 5/4除息 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxQcEhoMndwNzB5S1JWY3lHbjI5UVVzQUZ0MnhSX0J4Tk9WZXducHZWSi1QaEdvT25vMi1qdXg5ZWJzOG91d3I4UkdyVzFRZkJqY2xVQUt5V0ozVXZVd3RPU3hBOE45Q244bmhjZjNNRl9HeGFodlVmSDNlQ0Y1Qkd2aUJSZC15Zk1YWlkyWUhOeURCcUVuSEwyaHk0eHo0SVYtUVozU0t5a1ljU3FLNnpXNUZ4TElraTc4OWpWUExuQ0RxbC0ycmFGcVRnUnR3bFk4NTJRSm9pWWhxNUE5RjNtU1NLT1FtVnJnUWRlODJQTHpfazA5elM0VUtQQkJqR0twZzVDM2FSZHlGT1pHUEpBdjVvMGVIbVhvZnk1V2FtTllRVUptN1RPZFdaTW1oN1ozWjU3ZEpyS3EwOC1OREo3dmdENG0tV3pNaWZ2dUNtRG9VVXZMcUZGRXln?oc=5",
       "summary": "聯博非投00984D首次配息出爐！估年化殖利率達10% 5/4除息&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-16T09:42:59+00:00"
+    },
+    {
+      "title": "全球企業高層如何評估伊朗戰爭影響？ - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPNDhnT20wakVJTlZlblRZYW9SVVFuXzBrVHJIQXdiTnpqVnkwQl9DZzA1YXBqU3ZGSUNiRGh1cUlseFB2NUw1T3Z4NTFlazFEbTFZRnNUWDczRnU3NTJnb0dWTm43TC1jTDBqdm05Q01EQUc5ZlBIOWVITWU1cnVfMG1OOE0zenc0Zm5fT21zUnlUdU1ra1B6QndrYnEyT3c5X3hyNU9vajgydmZ2bFB3R0ZLQ3RUSXhCcXJ0VGNDaHZ5b2xRdzd2SXNxM1pVTE5iYXFmRnBESk93NUZFaF8wNm1lVklhbXVjTDlGaWd2YnFpRHR5ZURCMXVHLVRVSUlWNmIxczVub2VXY3prTUV1RUVrSkk5ajdRUmxv?oc=5",
+      "summary": "全球企業高層如何評估伊朗戰爭影響？&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T09:40:04+00:00"
     },
     {
       "title": "中港股市｜12月至2月錄140億美元淨流入持股達4660億美元創新高法巴：美資對中港股情緒回暖 - Yahoo 財經",
@@ -21,6 +117,12 @@
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQRUpLZkZid1NNYU9FVHhXZk9nWUZfcGRUUndJS3pBZ0hubzNnUlVIS3JxcEdqTjNobU5tMmhZdE4tMW5CZEVXeUN4Y2tQOVE0dXlKb29oS3RXY1puTzdZNm5Id3JtSEZfVHJiVFhVMkkxNWxtYXJHbEo0aWVGNFR2emNQNWxBV0JGdkZabElMTUhsdHRQeWQ4?oc=5",
       "summary": "Stock Futures Tick Higher as Optimism Continues -- WSJ&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-16T09:36:00+00:00"
+    },
+    {
+      "title": "債市震盪非投等債ETF抗跌！00984D首配0.085元 想領息「這天」最後買進 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxON0xNWGRuT0N2M2JGdnBidTBiQjdza194Z214TGgtQkNZVUZtaWR4MlJyWG54UnJQMEdwUm9Ca3YzRDY3ODVrOHNNTFVNN080MXdvWFNWWHlYbGQ4c3ZRZ0t4LXJsVFNURmZ6QmhqWlpmZ19maTAzOWl6R09nc1RUejFmWGp4NTBYVEViOXMwVnF5M3dRZktYQWFWN1NmZzRYUzJpZ3h1VTRJY1BCdHpEa0VvQzVDaGNSdnBucThjWEZPTWNseFcxaDlsa3J1bGFpbnI0OXdaenhfN1h1anNyTF9yaFM4Q1l1ZXhPN242bFgwZUFvdENNNnJxaUFiNU01cTVlODNlelVidnIwaExJZ0duQ1pqQjhHQU43YmhCbk5FUWJqYmQxQ3NVemUwQ2pyX2x6TWhmNTZzZWcyaFdhd2ZKZlRPMXlKaFE?oc=5",
+      "summary": "債市震盪非投等債ETF抗跌！00984D首配0.085元 想領息「這天」最後買進&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T09:28:18+00:00"
     },
     {
       "title": "新北市房價改寫天花板！板橋每坪125萬元創紀錄 - Yahoo股市",
@@ -105,6 +207,18 @@
       "link": "https://news.google.com/rss/articles/CBMizwNBVV95cUxQNEFSTWdFX2hLOWh2OFVrYjExeC1Ia3puT1haMmxLMUQ2b0pFNWdpRXJtVHNtdjdmUkpteUpTb3Bna1RrWEpDRS01aHpMNTNQbWI2TzNHd0tpallSaEU3Y2tLRlVFbzU1MjFrU3RQUVZYeHJ6T3lIWnQwa0FQejhkdk10X0xWU2ZwR0tvZUV0aXNYWlhZQlktbUJJRkZ1c2R0UTk0aVhkRmhCT1g2eVgzcGdla0V3NGNSN1k3a1JUdmVPTTJ4SmxnRUcxRVRpQmI4SFJnUmF3VlFad1EteGljTDNMQ3pUeFRHZ21mb2dXUzlvaWlRalRIRzh5X0dxaWJFTDVFcTBMdDRXNnNfTGZmdzQ1TmNuQThyaGhnYkpuTWdtUno3ZURnOWNTYURNUldLTlJMSjZRa01vMlBFUFlRNW1ydVZjLTVMWUNONUhGdVFQX24xZExRaFZ0TG5uZDFMU01yZENFS3ZoRW00bTVLX0FmV2lxMFF3RUlLdS1nU0wzbUVhbjg3WHlaN3g4VWsxaHV4azUzX19DYy1VQmFuLVpPazdvXzMybkV0TjBXVFR4TFFVZjZ1bVd3eHA5NGJhNFh1NDlMRUFGRDNzXzFB?oc=5",
       "summary": "台股破3萬7大關！三大法人買超515億元「投信竟站賣」 股民驚：大哥收割追高小兒&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-16T09:05:00+00:00"
+    },
+    {
+      "title": "中國股市收升0.7%，創業板指續創11年新高！深成指刷新4年高點 - Yahoo 財經",
+      "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxOaG40dW9KUlpqUVNMWmVaV1VYUEZ4WFhrR0Q3TS05S1R3c3hxS1Jla0d0aGNhcE1qSjVhbG5IVXppUWUyVVlTVHV6blBQTjdwRHlYX1ppX25oUWhRUXVySV9VRVRTWjJXX09ZWUt6Vjl0TUFqRjRNSHJTbHY3V3ZxaEs4ekROaVhDeWJvTGdNSWozWE8xaE1oUXVvWE0xVDdyU0xhSHN4cllTLXRsTXRmcUxpdmE1NWZja0p4SWRvVE9JZjY2NG5kVEhaWWZScEJrSnM5X1QzX1dDZEhVNHFkazQtNndlZ0xUaEZuakFkVkxtS3gyeFBxUEhvemJ6em5ERW91Q3Foa2huOWYxTktIM0lBblRfLTJsYW9xc0Z6djhJNjZhWG1lQXRONHJQVlExZFE3OEZLZEdqcVBNNVZfQjUweHlOd3VBVlhMeTQ2LXh4VEQ0bG9WZGRMWXhjVHNwcjZDU0x2LU9rOU1OSy1OY0RLZzVSOWpBWm8wNA?oc=5",
+      "summary": "中國股市收升0.7%，創業板指續創11年新高！深成指刷新4年高點&nbsp;&nbsp;Yahoo 財經",
+      "dt_utc": "2026-04-16T08:57:11+00:00"
+    },
+    {
+      "title": "〈台積電法說〉不給對手機會！罕見回頭擴產3奈米 台美日同步布局 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxOMnVydUlNbXVmMk1NWE56YkthNDItcnBENUVmR1l5WmhEX093NTdQTFFETTZFQ0RlSnRWaExEZUVQZ0txSVJWMmZudGZrb1Z3ZjQ3YkxOTzVyMm5IS0tyU0V0MjREQjI5M0hKcnNHQUN6aDJSNlNJTUR3M2xqZEF2LXN0VUNlRlNRZ096Mzg5MFRFM18tcnJKbzR1a2ZiVnNpRE9WSVpVbTZGc1IwRzVLRXAyVGdZZDg4OF9lZjVYWENLUmdqNlQ3X1FQTXNtU21FcnlTa29iWEo2YWdyYlo3dUxWWTZkWjBDQkdrQjFyWDA0SDM1V1FsZHFiQTJkSmlURXBZLTdPN09lU1lFRmtZLUctZDJ4SVZYQ0Z6WnBDS0o2eG0zQ0dIOFFkdlJCUTJfTVZOTXZTd1dULUFrNWI0TW1mNDNZTGladHppUUVURFVtLWZ1bk1BWTJzYkpVaEM2Y0NDXzhXbDZDNU5VdWdTNG5RWXpjV0FPSXpqb0RDU1pRb0oxazE5MkxDQXIxd2E0eWpLdmVzNWc?oc=5",
+      "summary": "〈台積電法說〉不給對手機會！罕見回頭擴產3奈米 台美日同步布局&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-16T08:55:07+00:00"
     },
     {
       "title": "聯博優選全球非投資等級債券主動式ETF每受益權單位擬配0.085元5/4除息 - Yahoo股市",
@@ -273,126 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMigANBVV95cUxQVW1NNTZobUd5RGx4eTNDWWJ0Ml9pVmFtNjNIRi0tNGpjSWdiSnRfWWJPYVQ4MURmcHM0dllETEhlQXRGZzJNS3ZORzJQSWV3QkdubWFRakZCb2RsRDY5THh5eGloNzR6SkN6REVNYkFINjZ5YzQ2Q19nRTB0SXpXZjZKdG5xMURBVmpkMzhmUWhFWTEwMmwyMjVkQ1BadlVJOFJTaFdMSENXWlZKZF9xTEpEcjg1ZFJaWXVmbGRmblUzak5zQnBzS0szS2V2ZktONnVkSGVaTlhkdDIyUmF0anRYNE9MYUxKd0VCZEhuVk90bUN6bmVHdkpsQ2ktVWRwVXpKOHJGQU55ZkhxS2s0WS13THA0cnFzR3JaNVRJWUxPcXVFMHo4NWMxZC1sYkZqUHJmd2lhRmV4ajFKclVtSE5Pa200amNHakVIMVBfVjhQUHozOENPbDRZVlR3V2xKLWVyandfQzV3RnlZdjUyRXQ5NGNtN0h3ZW9mdjR3N3E?oc=5",
       "summary": "最強航母「福特號」陷入癱瘓 創紀錄部署背後的美國「航母荒」危機&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-16T08:11:00+00:00"
-    },
-    {
-      "title": "【公告】係因光鋐有價證券於集中交易市場達公布注意交易資訊標準，故公布相關財務業務等重大訊息，以利投資人區別瞭解。 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiwwVBVV95cUxQSW5uMDN3dm9PZlZtWERIY0lkLTdSc0dpc3BhanhTeE9JMndRZVJpMEZ6N2swUElZYnIyVHdnQXZPRDZKRF9OYmhKYTJxNExXNWNScnBybnl6Y1NSakpsSlQtQTJ0Y3dEY0lvSE5NalZHWHNmdXJNcnRPaXRkSjFlSF9Uc21rNEZKNHg0SEdmZlBJcjlXdXNIRllhNXQ5YWk2Y0tKR2RTRl9VYWxtQVU3SFJVLXNLQm92Z2hGX1M5bzlUZnRtU0paWFFKQ2V5aHB6amJjcDBJN2FaNmM1cDhITXBLbXllMzVOU21CMFpUVVlNbV9DcTBHNU1NR3dMLVNLQXFrNUh3YjZqeGJzYi16eHBpNEc5cUtwWlFCMU56T09KRVVtS0dDS3FjaVlvYXJsbGw5TGRsSnU2T29PN0IxdmtXQWlNLVFUN1IydVZOeGUxOGtjcloySlhfMEc1M3ZXeDh3T2FnekJ5RTZXV3ZSQk02SUE4NlFWOE1aN3JBYXFKVXJEM0hGMkdjVWdaNGp6Y1dlMm90WDZQQnpUbWZ3a3h6VVhsQkZ3eEQ2M0hDNkF4VXFfY2xvX25pQ1g5dlZOS2YzTjJ5cnBOdUVod2M1V3YzN2dOcTdkMXNld2kyMUdnMUUzUVpjUDgwM0RyQko2VDZPVmFaaFdlZ2Y3UXpQUWxGcFNBMkFLaE5iYmg0Z2RNV094RjkxMkJxRkl5OGhxeEhEQzZqWmJtaEhhS3g3Z3kyX0RCZmZxbVA3N1pHSXJOMVlzZEdDMjZBcEtIYTRyZkJFd3dUVXhKX1pMaFFybDk5bF9sckVTNEEwRFE0VUlEbTRGQTllNTR5Ym82RlN6TUhsVi1ENnh3SWhIU3dPSUtwNXpEZml4ZFRDUFVjWEczdExXeFlyX2R3ZHlLUy04LWo5M09TbjQ1SlJkT3hyYVJTRQ?oc=5",
-      "summary": "【公告】係因光鋐有價證券於集中交易市場達公布注意交易資訊標準，故公布相關財務業務等重大訊息，以利投資人區別瞭解。&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T08:04:30+00:00"
-    },
-    {
-      "title": "哈梅內伊軍事顧問、革命衛隊內部強硬派代表雷紮伊：若美國在霍爾木茲海峽“執法”，將擊沉美方船隻 - RFI",
-      "link": "https://news.google.com/rss/articles/CBMi3ARBVV95cUxOa2N4OTdoWWlWa1Z3enROUnM0T0d6bHVSQkJZaXNNdzBaZFA2WXQxd3FLVVpISE43RDhsUERGTEF2aHdyVlNhU0s4UHE4OWZNald2T3Awc29MZnBzR3F2Sjh5Yl9EUFVGTU1NN2M3dWJ5aUlOcXd0czFBYUpPai14RmNhbG8wZ2VZMzY4NU9tMnBqRGhGSHNVc1g3NVNvTTFWSVRhbkJBcmpZclVaOUo4T2VxNG1yWWNjQ244RFY0LUlxdzctejdVc3BjOUZ6ai1ROG1mc2l3NGJUb3o1NVJZVnlDbnZVRmVXbm9BNU1IcUJ0NEdVWmg2TlR4SzRfd3FyR3FLdFdHOEthdk9RSWUyZ2lFaFg2aVdDMTEwSk1qcVR2WEdqYjN0RURmMnpUbUl2SWo0aEw4dFlXM0p4NHNBZFhmRFJGQThsck5kZ05sT2VJTGpjOVR1NXdadjB4QW00RUNvdW0wNzQ1RTRLQU9XNGRVTWZ6eGtYamVPbDdpWHhNeUkzYlE5clNEa01IeGRSREdPODZ1Xzl2cldjNEtFblJfSFU0M3lSbjNUZVdVd01QOTlpNmtrdUFZcXdmdFFBRnItMjZqVldUV2diSzNqZHlJaHFra3hwVTlMMDJTTG5rMzBkNDVOQlJKU2M3d1YtNFJMaVBCUWRaN1JGdjNaZS1JMy0xb1VWWUNES0pXZGlRQXNmTS1fUEdmOTQ2Z2hMZ0dvRldwT3hIUENHc2lNRG51X3hrV3JDZnc1WUpfLUZfVWdtSzNPOUtWcFNUZ2NBSDJvcmdOUklYNk1V?oc=5",
-      "summary": "哈梅內伊軍事顧問、革命衛隊內部強硬派代表雷紮伊：若美國在霍爾木茲海峽“執法”，將擊沉美方船隻&nbsp;&nbsp;RFI",
-      "dt_utc": "2026-04-16T08:01:26+00:00"
-    },
-    {
-      "title": "【台積電法說會】明天會漲嗎？期指開低網嘆「夜盤不給面子」分析師：攻2100元機率不高 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiqARBVV95cUxNeENDQVpHR1N2ekRCY3M1U0VtbV9XOUx6OEhvSGh6U0pBUkE1VFFLUExLbXg5MzRWR1NDSE9KR0pzdE04YWQ0UTY4MHJMejdKcmd6OGZCYXB4WWxwdTR6MVU2R3dSMEJmbDNzZ3NoRFEtMjFDRkVQUDJBX0ZYajRkVFpJUVp1QkQwdlJFTUZoaE5SaXUwWGZoVi1IR2h5cnUzYzVPUmlFVjlqeERKNmZUeWRGX0hYRDJHOElzZ2RfNkwzaXQ2YkJMNDVCRVUzQU9uSXh6cHN5UmRZaURuWFVJTWhmSmZmMVFFWFJlbTFlVG9oWVRrbVdzTW5aUGFqaVlpcHhWeFk2NUZZaGI3MHRDTW9yNEFXRUhjVl83d1lTUkU3OF9abFFuRDd3ZVk5cHZpbnEtUVo1dlJ1TUJMd3h1RlZyaVlTbkZLYWN5eWFQTk9qdHNtQ3Y3YUpmRUxPSUM5WXloQndWYjRTalVBc0EySDZDNDNOWnN5YmdlZ0Y3NUFGNS0xUWRsS0FMLXJRRmUtS2hVNUszTHgwS3VqZ0N2b2o5eEoycDNrZEZ2RDNmenRvM0ZCOG1XRy0zenlsYkdrYnh5YTc3LWdPWGhNbWpQM1E5aTNvTTBDZERiV2JqRnhRZE4zS25lYlFLcTg3WnRseTRrbE5FQlVaRkNLUGNfQ211QWhKTHZLUGdzZFBVR2IwVFMwMzFDX2xyd1dLV1dWWGJvaEpaSFI?oc=5",
-      "summary": "【台積電法說會】明天會漲嗎？期指開低網嘆「夜盤不給面子」分析師：攻2100元機率不高&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T08:00:56+00:00"
-    },
-    {
-      "title": "福特汽車CEO改口稱，尋求擴大與中國車企合作關係 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxOalA3NE82OWoyN2tqQm5sSmxuVUl5T1BBbndGRklNUHZDWEl0d0VTT0JkeDhnYkhIRFh4TTdKYnNsWkZFUUNVeWRnNzFqT253eUxKTjFzamxwOWRqZmFySE9DMmRIMFdzSU80Zk1uLUMweTh4VzBwQ1VPSjJvcnlFQzgydGUtS3Z4VnhlTUt4QnFqeVBONThBMVM2MGRuYThoSFVJX09sdHh1R3ZtTllUc3A4d2ZEb2tuSXdDVjVmV2ZIRTgyTW9PYjlfZ0Y1QlEtbXIyWWRWLXNmZk9BaGRrRm5FUzJXV1U4WnIxcmI2aEg5cFZCbl9DTjE2TlVMM1RsSEpjV2J0WW5ubTZDdUw1VnJHMWJYRk9jSkpPcmRwU3VZVHQxOS1zN3QwRFM0MEcxNVFtand4ek9CcGFqUy0yd0xqY2xsaldZMUZibm9pbUg?oc=5",
-      "summary": "福特汽車CEO改口稱，尋求擴大與中國車企合作關係&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:55:05+00:00"
-    },
-    {
-      "title": "超狂！台積電Q1獲利狂增58%續創紀錄 先進製程貢獻逾七成 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxPTHVMTjZGTFVXbzh2UGNYVENxVk9zSkhWX1JHZ0VCUEpDamgyUkk1UTJfRGJubjFPMXA0Q1lrX3I4MWpXQk5XWWl5dDlJQjJMaHJBSmRfN1BHVmNMYXpwNEdxdUNJbjRuMUktTjlVTDR4V1JBOERTaE5KQkhrTmd4OXdIemY4clQ4R21GdWdHdEhkTXhOVFRnX2pjOFcxYVBqVFF3Xy01el8tQXRDcFlMcmdacTZYNjQzbVJlQk5Ed1FYeFN6VXk4OFU4ZE1tN0s0cHVHYzJPN0ZLZ1pBR2tPcVlJeEwzOW9uMlF0VEhZV0h2TDlHdEpjSERGdjRlR0NQbXhiRzJFaEV4eENIcDNtQlJyWVRySjhiOUdjZGdlUXpNeFRUenRyQWZ1czBsak8zQS1MempqSVlLdmZMeElJX3lVaEZfN3o3Nk9NTGlVTG4tT0FBWlZsVnp3X3Y5SUhjLVZRMXVsbXZ2eFJ5?oc=5",
-      "summary": "超狂！台積電Q1獲利狂增58%續創紀錄 先進製程貢獻逾七成&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:52:54+00:00"
-    },
-    {
-      "title": "20260413盤前，不要跌破5個3就好! - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5HLVlBSHFHVlg0OUJGdk9jZ3lvUHdzNFJWTVdydG9tMWx0a3hqVWN0Q3BGRk9fRXpqOEg5VEhGQzJiTFY5RTNnMjlnN2YxdmRIekYyamRLX18?oc=5",
-      "summary": "20260413盤前，不要跌破5個3就好!&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-16T07:51:48+00:00"
-    },
-    {
-      "title": "記憶體封測超級循環！南茂今飆漲停 全年營收有望逐季上漲 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiigNBVV95cUxNU1doNEVVazE5bzJ4bVctQ0JmektST0ljTUx0blpheHBQN3lmTktVakJwWE1FSktfYS04YzNlM3J2UlNVQlk5U2FwVzYwNGlEUE8taTNBbmhUV3h1ZkpQbDhPWVQwZnp0QU40TTRCRGZaNE4wUjhpbTdFLW9rX1BCWkVhZWp2dTRtZ2YzSE5lUF83aVRBQ3hraWtYejR1T3R2TDY2aUozeERKTlItM0pXeDlhdzVFMGxWRW4xZDY0UGVFbndjZm1RelREVzUyYzc1V0d0bjRfVWV0OVJUMkdQVHYwQ1h4UFNaLXZEclhpekwzdk5JYk1FOGNMRUdUTGVjVWNXeTlIRTRLTl90RnJIMHY2amU2MERwNTFjc3RlZUZKM2JKT2RzN2lUVnFoMzBwZXhyRnpkbDVXcGdVSWdrTUJrYTFyYTFTNjBBbjVnQUZYTEFQSkVxYUhlX28zV0F3VWpMMTBDaW5yZUp4MzdyVVdKVDI1YmRwaVlES3VKSG5PTXI3WkJuaXdn?oc=5",
-      "summary": "記憶體封測超級循環！南茂今飆漲停 全年營收有望逐季上漲&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:50:00+00:00"
-    },
-    {
-      "title": "晶片巨頭聯手押注Wayve 自駕AI競爭升溫估值衝86億美元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQVmFiOEN3MGFDWXhFTjBHMEhKSzVGcUdOVEY4VW83blhzZTd5d3d5cTllRXlnWHNKVHRwWVMyalMxTjNPVlBad0ZodjRvZV80elhIWUZtQ3BjVUdNY1Z0cm1qcFhadDgxTlVvZXBzWC16UDJYc2plNnRDVnEyRHBuQlRScjQ2VzlNZWtOd3d5VWxXdlRuZlVNZzFQR0tLa0JIM2lPRkcwckpvRVNHNGpVdTFpYmtseTl5MWg5bmdYal9lVEdwOC0yVkw4MDRTc1BMNVZFUGZmQk9kZVVqS3VYcV9CUE5NSVlkUFVZc2ZqUmc5ME0xRVM3anVNZzJjYmlkQ2VLM2VvU1c3UVhGRE5QdnBZWUhaZ0taODdNYm1VcFV3X1d6X250SlRlekV1MnhydUdHUC12M3Zxc0l5cDFMVmI3WGEzbVI3cDE5MnBCZkdRUTlsQ2Y4eA?oc=5",
-      "summary": "晶片巨頭聯手押注Wayve 自駕AI競爭升溫估值衝86億美元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:50:00+00:00"
-    },
-    {
-      "title": "大立光法說／營收年增7%，獲利承壓毛利率下滑｜股市話題｜豐雲學堂 2026 年 04 月 - sinotrade.com.tw",
-      "link": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxPV0pZeVFGT09ILVFjdnRSdG9NQWh5UDZXX2kwRmdwVU9Xb0lpd05BMG1QbHdIVlhtcXNFYjAtTTFibmZkNHRNZWM1WE92bGJrQ2dzMFZEaGh4a2pRbGZsWDhNZTFrZTVOUXVweHJhU2psQTU0aHNaYnh0MzJhSUZKUDdMMGFxRGExaG0taVN6Zmtpd0t3MHN0MVZHWTVGRENHLWFoTU9jdmRuajVRemxDLWlTc1RTamE1MmdFYnVaV01NR0w1bXNJbF8zZWU0UUxlV05tQVVybW5fNXRnZTBfZmdGcGRYcDJIMnNxUG1lVlQtaUtSRnFCREpSVldqaDFiclJDNHdoWlFmNG9LVU95VE5HRWw2MFdwRWZQd1BRYVk3bldsQ29hN2Q4SkxpdmdBVFY4X3Nwbk9sSkF5SFBua3k5NE51YTAyRV8wQTJqcFh3SVJ3NFFtVlFzQkpPUVpxaDd0bFgxOEI2cmlqY0d1NGNxdmlrODZGYmV4bmd1MmEtdUFYVVluYzBCQQ?oc=5",
-      "summary": "大立光法說／營收年增7%，獲利承壓毛利率下滑｜股市話題｜豐雲學堂 2026 年 04 月&nbsp;&nbsp;sinotrade.com.tw",
-      "dt_utc": "2026-04-16T07:45:31+00:00"
-    },
-    {
-      "title": "印度移工來台引爭議 工總潘俊榮：反對的人不了解產業需求 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilANBVV95cUxNV0xFN1FvUGthYXRielgwWHdhZFBPS3NSeFFRRVEzcFFGYnhqYUZsZHF6MFJoajBDcGdLUzRiMGxlZ2NUR0hXaFhhNTJYWnI2VnBnRkFvckJXQW10d3RoUEdIdHlSY2VvWkktOHItY0VUbnhWbXF1bENLeEg2UUk3ZzR1U1RKcU9tQlpXMEFfaE9qZ2Y2MXd5cnNyNGNnTm5VN3paYnpSNjZfRHhTMXVrYU9MbUdzMUwtZ1RwMzRzYTItMGlqYV9vaXpUTXpqektqZVNkMFlGWF9sNjVZNEYxS1pta1pZNDZiU2xyQ2lhcjYxU1UyQktEWnZyQmpfMVZ2eGcyQzFpeHI5RmxBeWo2NW5fclE0aURnNDU4OVF2V3dZV1hUc21BdE5FVVFFc3ZfSmNxMWRSeGFlR2NfbnZqTWlrQU9WSU83dFN3T19hdzlfb25GU3N4SlVXMkt0Smk0Qk16a0NlQjNCN3RrbnV4QnpNNEtqMlNhTnI0cW9Vd1FHb2J3SHZaWDA3NmkzNUlfVjlweQ?oc=5",
-      "summary": "印度移工來台引爭議 工總潘俊榮：反對的人不了解產業需求&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:43:15+00:00"
-    },
-    {
-      "title": "台積電法說前夕登場 AI晶片需求強弱成市場風向球 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxNRG85WC1OdTNNcmNsbk5HVUdPeVJiRFU3RHY0dlAxSnYxa0dvaUZseHZ4dW5rN1B1MGZRWTZBUnlHcm9vVTY5T3FyZ0s0TDVQWkxmbmNWdGhTZUxTTGtGd201Qnktam4zNkZPc21OS0R4cWJOU2w2dHRObkdiT2pnRmV1MnVqN1czbWVRazNDTGxYWC1seEpCRmJqUnhNRThJYUFScmxQTW5FZ2RFaWdQdFNNNHBPOFBTZ0hVemU4aEN6NXhrYjJHZG5zZjNUZkFHQm1YQTV5LW11YUx2bFBSQUdFSnJLMmlpU1RBdTlDbXMyM2NFa3VyVy13X2h0Y3JMNnVWS2Q0ZV9EZi1Ka29fblJ0RU0yQkRabllvNjl4MWNVdWJWeTc2dVNtRVVneVN5SkdHOGNRY19NUkdmaGRMUzhwSWl5MzRmV2h3WnZ5LTZzRlN1Sk4wNHZVQQ?oc=5",
-      "summary": "台積電法說前夕登場 AI晶片需求強弱成市場風向球&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:42:23+00:00"
-    },
-    {
-      "title": "國泰投信旗下4檔海外ETF收益分配公布，17日最後買進日 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxPaXFvektlTkd6TWpsQmgxT0k5ZEVSQS16V1hBWG5OSWxhMjlSMEo1TFM1SFhtSjZRUkhXX3h2eWVPekZrV2dZVGQ1THFfMGh6ckdTdzF1UmxIT21Jc2Z4d1RSMW9aOEVOSmRxdW0wdkdzRzUwbm9WV1JlYzZJNzIxVXExMHl3NGQwZ0h0UlE1VmwxSWlVT3RJYU10NzZmbGJpY09USmkzRE5DSUhoT1labkpUSGIwVDgtR1hZYzA4TVVhWXRkMzc3Q1p4bTkwQmhiZG92ZFZnQ0dKUFg5V0Zzc0gzSGNQZUZKWkh1Nm5RRDBTMmExNTdDR0NVa19SV3hLd2lsOWlid3FJa3NWNkl2aUxITUxwVGlfMTVfb3dVaF80d1czcFp6b0FnSzUzVXlSUlM5QXIyZ2tHdlBuTmZLekxMUi02dVdJV1hGdWtrNERSdUxIc0dPQWhLdjdUZnMy?oc=5",
-      "summary": "國泰投信旗下4檔海外ETF收益分配公布，17日最後買進日&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:41:54+00:00"
-    },
-    {
-      "title": "伊朗：若美國持續封鎖 將進一步阻斷紅海與波斯灣貿易 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxQbFdBT3c1REx5RVoxakhwZURXNkxnSl9oWlF5U1RkMEpIUlo2TFk5LUpVWDFFcEdzWkxsczQ1eG9hR1Rpb2dYQ2RXb1dSRlJNc2Y2M296anZubDJEcGZGZXlxdlZvdklfZURwcVZwQXl5b3U3SGJiYXNhUUhEUnpWdjBJUG9RcWt0TFIyWko0bWx3dkwzajdZWlotU0tsTkhxQTlreU5XNjlURloyVlVhTXZmQ2J0cFFldHN2WHJoUTR5bDRlcEJHZHJhSm1hWDhtRktrMFl4M3Nra0w1enFlZkNJX2pnLXpmNm80ZFJILUVPS0o3SjVlSERwaHl4YjVKekNhcHByWVpLOGZZSG41NGZDV0JFYnYxWVpjeW5lN2hyT0FfU2cxZDNvY2RqcGlEM1A1WVhHdXVtQTFPbk1NUkVrNmhFajNtaHFhTmw1bTFRa09nSVJOMG4xZjdjVWk3T0ljQlFCMA?oc=5",
-      "summary": "伊朗：若美國持續封鎖 將進一步阻斷紅海與波斯灣貿易&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:40:10+00:00"
-    },
-    {
-      "title": "台積電Q2財測出爐 毛利率上看67.5% - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNMm4xcmVHSF8xMEozQjFJOTRvSE1rajhoQktHcHZOTE8tMGtaVmZIOTFoZzBKS0k3bS14RE9pa2tnSDkxNll5eFdkNER3UGhOal9ESW41M0xfMFg3Z1Z2amdEdDVHQWRCTEZVVHU1d3BOSEVlaC0wVjgxQk90cEVteHNTSkozb2dJYmxSMHlwdjVyVmx4WEZQd2RIMmx1RExtR3dXYnZOa2VnQ3dpMHNvYUJ6bGIzbUh5c2tCeDBTTHVlN1B5dWFmUjA5S0xpS2U1WVJMdEVmSjk0ai1SSWhhSjVaY0UtMnlpY1ZVTWtXc1NvY2Rv?oc=5",
-      "summary": "台積電Q2財測出爐 毛利率上看67.5%&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:36:00+00:00"
-    },
-    {
-      "title": "健亞將開股東會 大股東強生表態 持股近4成否決合併案 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8wJBVV95cUxQNUd0ZDczc3VieWoyQ3A5SlhaZ1ZOQUFaTExHQldzUnlab2lKRDNEaTMtR3VKQ095ZEl2MWlvRVg2cFVCVzVfUks1SG1kS2c1UGpjS1dLbFZMRXR5alA4LTVXMVRQd1ZaamZVSHVQZkJvbVBUVEZwTkQ3TmNIYW05WkxldVdoNjM5ZG04aHBpX2lvVFdLTUlidGk4SVRaZWZ1SU1TcFhCb080Wlp1NTBHMjRRUU44cnNETXlWb2otMV81bGI1RzZvTVkwZUFkSktLNUdoNkJYaUJBbV9jSDJWMDdKRjZtbnllN25tMHpyOHVNNzdVbGlfMlNUN0phTXZxTk1yZnNoQ2htTHBpVkk0YWZNb09RV0RHVkhUWlBHQWh1UThWMHYwZ2NJWHI0N2Y0NVI0ZTVBdzJqMkRkV01QSzI3WGZCbEV2bUoyQV9icHNHX0ExdnFfdjZnaVhaU2ZiLUFsdVE3ZVdsN05sRFE4X3VFUQ?oc=5",
-      "summary": "健亞將開股東會 大股東強生表態 持股近4成否決合併案&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:34:01+00:00"
-    },
-    {
-      "title": "財務壓力山大、串流搶市！BBC宣布將裁2000人 官方示警：恐成串流時代「瀕危物種」 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilgNBVV95cUxOWmJUVnI5YTJyVWF3Tk9PUExiNnJNbktrTEZ3enRCaUFTVTFud1lCMzFPUWVvS0FFTVk2V0dOekd3d0tzRWZ0TVdRVWFxcERCdVViWUtmWDFDbmhoZzBiX3I4MnRZR3RvLW9RdjdYaXNNbHBrMFFUb2JMX0pEekZZWmJNSVFKSkQ1QUZWbVUwMVF3eDdhZXFnNkgwRmxVT0RFendONzY4UFMyVlJFRlZBeGZjZ2w2Ry1HeFl4dGE0Vi00T0ZjOXU1V0t2UUxxMk9FZVZGS01JNTNzV2x0QmlSTEthd0Y5eVc3WTZzOGVaSXQzOFVhNjhwWUxHMzU2dDE0WDlTdXZLOS1UbGFnMjkyOEptaTJVWk5ITHJEVHFDUG9HVjdCdDZpX1JGNXJadVQxZERiRTFoanZmbEc0RG0zWnBnX0pBNTFTNE1BZzV0eGR4dDNVeTJmTDl2Ulc4NnZReDlEc2RVS281VnNMY29Hd0htMXc1R2tzYjREbG1nNUVJSzk1NjhjNWNCWS11UVBpa1BZUnRn?oc=5",
-      "summary": "財務壓力山大、串流搶市！BBC宣布將裁2000人 官方示警：恐成串流時代「瀕危物種」&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:34:00+00:00"
-    },
-    {
-      "title": "台積電擴大3奈米產能，美/日/台同步展開 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPSWxmOTktcUdGeHh4MlJPbUpRTHh1WlpoRVpCb1AwS3hWQ3BEYUs0TGlsV2MxRFJZWm5DOWdub0lPaXRJQlpDaDlnMnRXVkdyLThFazAzSlFKSDl2VmpYTUxubmR4RmxvTWp1dWF2YTIzeHhmZ25iZG1laEJtY2J4MGR5UkV5MnJNRW9oSTd4NVZjbnBxY0VzcGtJN1dxWlVBYVFLSWRYNHhQcVpYUG43cm13clNvVktFSUhXQUZyeFdPWXNEdDhna01UejRXdkV2V3VUenczd1dueE1NV29IZXh5X3gza2MwWnNIQXI5TFdLRDQ5WGIxaG5WSHI5RmJIaU0xWTBVQXBzUC1NejhwRlNfZTZSRGVoOWM4a3lTbGU?oc=5",
-      "summary": "台積電擴大3奈米產能，美/日/台同步展開&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:32:00+00:00"
-    },
-    {
-      "title": "綠電兩成連二年跳票挨批！經長拋「改制」不看發電比例 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxNdGQ4UFg1aUQwdmZ6MllyMFNDYWJoSWN5YmZvN3pBbG9nSm1QREZUNTdDcGg1UWhNU2hoODV0TGRMS2ZkNUZ6R0l2QWZwYmkxNDVmampNa2hNTjd2RmQ1UFg2QmZza1d0TEE3SFdlekFnTnVJZlFnZHU4QmlWazAtYm1LUVJ2amo0d0N4a0NWVVRFZGpxc2J3NjZRNHl6T0JGQ19fVFRzWWZxeDNwRXJhSjdVMTYxazRDbWFlZ1A5TEs4S3RVb0tjOG5LbDR4alhONHVRX0RZMExLMnhWUEJpY2ZqOHJ6NWs4V0gwU25QSjZaeDlsSUhTQkxIY1F5d2hlTVp4a1h2Q2lobVFiZ0lEWjRyeW5GS3g2djgwSXlNUkZ6aDJVSXV5U2tUZE9nRjUzdmN2LVBycmFneGR0RzlIYkY4ZkFYZjNpSHg2VXVnUldDY1RlZDZjNW5tZ3NTcmtsZDhDdVk0NA?oc=5",
-      "summary": "綠電兩成連二年跳票挨批！經長拋「改制」不看發電比例&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:31:38+00:00"
-    },
-    {
-      "title": "澳元匯率強勁反彈 兌日元與美元均創下多年新高 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQVTVMZVN0U3pZWmEyQ1l4Ri1iR1hkdEQtUTFBMEtGemZZa3RqZjNJY0dSSWc4VGt4Tm5nalFjXzJXRVlIWnZjeUJkbWxnNXV3Zk50ZmVRWnBsZHhZVDBMNHZCc1F2OVQ4eTRqVFBXMWhwa1Q0cS1HVjBJSmpSQjNNSDVFSDJiZ0VRNUI1SlFXcFp4a2ROemdTRkNIS3VKSFd0ODZzUTB1YzZ0X1hobXVTMXNXV09ycXVndUdvYTk1U0dwblpfdC1vYlVIMFo1MVRBUjdQQThYbmdmcXBuOF9tdDllcE01UGlGSlNKVThKdVptLTZqRDVOREFrOWJHdjBEdzlDcno2NkQ0eHFpU1pwcVR5MUZjSWJxTjk0QlY3RXU1R0xYNTU5eTdDT2FCZkpoZ0Y3QXJQVUpaZzJfZ1R1YWRtbjhILUFaTUVYWGZrYkVSNDlVTzlKTg?oc=5",
-      "summary": "澳元匯率強勁反彈 兌日元與美元均創下多年新高&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-16T07:29:05+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "18.11",
-    "vix_trend": "▼ 0.06",
-    "usd_twd": "31.58",
-    "usd_trend": "▲ 0.06"
+    "vix": "18.25",
+    "vix_trend": "▲ 0.08",
+    "usd_twd": "31.57",
+    "usd_trend": "▲ 0.05"
   }
 }
