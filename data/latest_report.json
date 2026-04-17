@@ -1,14 +1,74 @@
 {
-  "updated_at_utc": "2026-04-17 20:39:15 (TW)",
+  "updated_at_utc": "2026-04-17 22:06:14 (TW)",
   "title": "全球局勢與市場情報 2026-04-17 盤後",
-  "report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-  "tts_report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
+  "tts_report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
   "news": [
+    {
+      "title": "運算力緊縮致AI模型價格攀升 台灣半導體供應鏈受矚 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxOR3BWWGpfTm9UVlpCY2FKdDZld3hSVEpUTjhVWTBEZGtZYUs4YkZSY0VsRlAyd2xic25DazI4NlZIa2dNdUttNDZVOG5jVzNWc0xnVGZoTGFucl9RTkdjN1l4TFJQQ1VOS3JDTnZYZzBycGtDbWc2NktyS2ctMmthLXhTRkFmRU1kdE5UZFY4TDB2VmlTb3RUWWpqMGU2N2I5bWNfNHBVNkVBbGZOME9semV4ckdMNkFqVEYxTVMzbEZ1dDcxVk5WQjRfSURjTFZlZTR5S1pnMWZaQW0wbzhXQml2QnAzcmxaNkF5eXVNLVlFLWMwb0RLSFpkdFp0S1lkZVdkd0dMSXZXNGRiTWpjR04tQlNpWXU1OVdYQlp6WUpna0FtbzNsaFpRM1otbmZ3LUEzNjRSY09DQ1JpTWhGa1pIa1JmSHdUUHo2Rm1hMVNZSW1Fc2JTbmpiMmtaajZwVEp0WXJudw?oc=5",
+      "summary": "運算力緊縮致AI模型價格攀升 台灣半導體供應鏈受矚&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T13:35:27+00:00"
+    },
+    {
+      "title": "【21:30 即時新聞】United Airlines(UAL) 飆漲逾8%／盤中突破102美元 受與 American Airlines 併購傳聞推動 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdTR3QXMyTVlYQzhPZHB5Sndqc0NJX0JhUXFqQlg2N1lWWUItaEQ1d1IzZHQzTFVPTFRPUXE0Mk5FWnp4TVlYWjduZHBUNk1icUFMUnNIWkc5QUplXzByV25CeU1jRHAwbHhVMFJoLVUyTDZ5LTFCZHlMeEx4WEhpRUdyVno5eXdOaHpvRC1R?oc=5",
+      "summary": "【21:30 即時新聞】United Airlines(UAL) 飆漲逾8%／盤中突破102美元 受與 American Airlines 併購傳聞推動&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-17T13:30:41+00:00"
+    },
+    {
+      "title": "台積電再創佳績! 魏哲家年薪破24億 專家:非常合理 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNSnNxRzVIOUtqeFBZZHNzUDJrSGNtZmdiNzBaTHZGb05yd1pqN1lRdkpXdXk5UTlFa2tteGk4ZTRUQ09qQ2ctZjRLOUtPdUtVUE1qcHllNXhxTE4zSHdZUk1hS0ZXYkVpbm5xeS05VXJTcXZVMV9VbkpvRmxETEhwRnhZWHByR2hmMjFPT0x3cHlrNXRhRnZFc2pfU3o3SUxGNC1qSDc2eWNaZTRqSTlBeG14Ym5QWjJ6MkJGdS1Rc21hdWxKUEdEVk1ZMElYUGpCcmNFZU9KWUc1OERoQndJbWN4OWJVT3FQeEpJY0VQU3NxSEhQajhzcm5uZlpsZGFzamtTRHlBajVaZVdsd2IxSEY0UU81Q3FhNlRRcUZDSjB1SW9GdFlIUnhfbkc2cGRVWDRzLU9WcUhxMzItNXl5UUlLRllhMnZzU1ZOTGY5NTl1QQ?oc=5",
+      "summary": "台積電再創佳績! 魏哲家年薪破24億 專家:非常合理&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T13:23:25+00:00"
+    },
+    {
+      "title": "台股市值超英奪全球第7！阮慕驊憂K型經濟：不投資恐就淪低層 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMijANBVV95cUxPX0t4ZURyUGhHREhJY3JWUUJkd05GZWwzR0xaUEFrQVVCM1k3ZWRFaXBrcGxnSl9TQ0VRbzB6UGpzTVJzYWtfNWcxNnVUaE1MbkY0T1VwY1BaQ2JHYWs1NjFkNEI5SDFJMHlodk1RSlNxNXF4ZFVtQ2VPblBsLU8zQ2pXZzBBeHM2QXhuY3p2dVZWbmZiSVlHVHhhVWVTa09rcF9ud21TTnpyWHdEODJxYVg5YVQwUnIzOWZuQlkxRWY2VnduTUFVUHROcnYycXJBazdJUEZGb182akhPY05fYkl3YTJ3ckhhRXJ1ZE9BelV6ZUFKd1U1YTd0NEg4R1cwRV90M1VtbmVwMWVIdkxxZGQ4YmRTNVg0LTF4XzFIT3IzZnJYd0xRNjE2STFtOWdGNW1wZFhYNGpueWVnUHJZZVJmak14MGNjTE1JWXV0S2VGQll1UHc1UzMwTExQQ1RENWZ0WHhQRG5zX1lnV3lXeWZzbEJrLVNLTVNmZEVmSEd6d3NhTnFsM2cySG0?oc=5",
+      "summary": "台股市值超英奪全球第7！阮慕驊憂K型經濟：不投資恐就淪低層&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T13:10:00+00:00"
+    },
+    {
+      "title": "台積電獲利飆破5800億！外媒列3理由急喊：現在就上車 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxNbDRON3V4N2t6RWpsZHdySDJaUmt1YzFDZzZ0cHdKQmZXTkpGeThKUVYwR3NVemFOaDMwT3ZaeUEycVBzeWdxU0d2LUVPdVZ2bTR5VmUxT0R0WkdSdVJtSDBmX3VlaUZxSjlmN2VTY3FCbFhpMWRES1c3TmVUUHBYZXd1UWlGeHd2Ri1oTk1UR3JMbnctTDIwVlpkWFp4T29qRm12YTBVVGpseWRFS3pqeTk2SmRpOVp3VkdMWE1zM2hTZVJIbldjZlc4cDBnallfV19CelF0SEkwbFN6b0QyVzc3cVN6dFNPM3RNR1dFcWN6V2dFV3FCVGtKRTMwengtNmhzc0l5aEptOVpyVzNYTTJndjAxX1UycHdqMndpdDhNSXRhOG10VUI0Y1daYXJtbmR6d21MN2R1bjJtU2NCSThRc2RXVXQwZWFQd1pnaS1CV3Rq?oc=5",
+      "summary": "台積電獲利飆破5800億！外媒列3理由急喊：現在就上車&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T13:01:44+00:00"
+    },
+    {
+      "title": "Netflix Stock Slumps 10%. Buy the Dip, This Analyst Says. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQOG8zN21WQWNuc0FMRmFWZGdoSjRHM0dCbjVQOVotUDI5YWxwbmo0ZmtkSVVKY0xsR01jT2NncE1USGFEVmJxQkpOdnFTVzBSTTFDRkdoOWdBeUpRX3F4M0lTaVhwLVJKcVBVZWNxRUdjc09XVmhoSkxyNF9TUFBGYmFleFpmWVNyWnNTWGM5amVOREpfWlIzV1FR?oc=5",
+      "summary": "Netflix Stock Slumps 10%. Buy the Dip, This Analyst Says. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-17T12:55:37+00:00"
+    },
+    {
+      "title": "Google傳與五角大廈洽談AI協議 Gemini模型擬用於機密軍事行動 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxPU0gtVWF3U2RIbWxIdUtNamk2UkRFWFl3b2V6Nl9WdlZpZVRlRS1XVWs0bTBsOFQtSzJQM1pGbG9fNzdTNDhRb2w5NVprdnJUY3NfRWtBVlJVYUNZbF9XYzRWMWVXTjVNVk5EdmtlWnNDNmoxQ29xRHRueEdmQUFUSkwtbVBzR0NCRHQ1X2dMcjlXTkhmTzIxd1Q1MmpEdjFKSHhKV2UyMVFyUGNEMzdnaXlMOE43czBJUDB1VDU2NW4xRXYwZXpVTkZaaUVTQXZ1aUkyRGs1RFhrRGc2TzViSk10RkFGc2xKNktzZjgzYkFUTTJoalhvM1hScUVfeEt3NDZkLWl1dWx1b21MaDBNSEhKWjJsVHRYTm5ESEtFQk53SjEtS0dHdkZWZ3ZfZmQ0R1B1UW5KRkwxOUlhZXZYbDRuME53RUQ2Tkw0cXYtVUJDcEYtRTJmeUJsS2VMd1pzTmFTcjUxNU9CY0E?oc=5",
+      "summary": "Google傳與五角大廈洽談AI協議 Gemini模型擬用於機密軍事行動&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T12:53:35+00:00"
+    },
+    {
+      "title": "Fosun Henlius (02696.HK) has granted a total of 810,000 stock options and 810,000 restricted share units. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeTZCYm5Ca05Oa3BGUnhGeHR5R1NpcjdORFNJa2FZWUxycmRCMlJIU1JHT2pDRDVac1lFaUdlWUo0MUszSFhRVEN5MkpqRVJCRk5SSWVrcWVXVlZoQXVHUHg3TUxERldMU0JDcVJlcjVNeVUzMERjNmZlTWhrWXpNcDZjZzROeHVXb0dRaTlXYnk0Z2F1czBrcw?oc=5",
+      "summary": "Fosun Henlius (02696.HK) has granted a total of 810,000 stock options and 810,000 restricted share units.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-17T12:42:21+00:00"
+    },
     {
       "title": "川普為什麼這麼在意股市？答案可能藏在美國越來越明顯的 K 型經濟裡｜美伊談崩-川普篇｜美股評析 - sinotrade.com.tw",
       "link": "https://news.google.com/rss/articles/CBMi5gRBVV95cUxOdlJtU2RUb3NGUjhJTVJUMFhvcWNsOFM5V0hjMGRid25iQmF1eUg5cjRBX0JESkM4RXYweFF4ak1MUlVMSUtZNDJ0WlJ4MTA1X2ZGOUJhLUVDVDVjWDU1QklYeVozS2V2aWwxMVFXX3FGMmp0ak9iMzBtdnFYcHlrUUQ0V2hfYk9xOVRocTVRcmlodmM2YlQwSGdwTXVTc3dlV2t6dUNCVmIyUWo4Qlg4RmRYMzlfTUVOQTB6MTBqS0lHcHJrSjVxUXZuMVRieGlBN2lLVmVETkFlMlhTbGlIZWVJX2NQbGYyQVcwR0ZWYXR2b0xZcWFQRHdvRDJpejhmUjVBZVRZamZPVjF0aGxSbUc3SE1CQWxKRjlVX2h3RDAwcFI4VmVjNWt5aTBHU0ZfQjdxRUNPRXVDQ0piTUVrMjNEY2YwV01sc1NST2NTYUhDNzF3Y3JIckgxMWZRUEpzX3VZeTFmTmNtamxhdHdMVk1xTk1tMDU1WHdXT2JOX0xjQ0JfSlNUdlJQZUdoTDN3Zkh5T2VPeTBqQnVUMXl6b3k0ZGVjdzJLRmI1TU43M09lSjZvSERXUlYtRWhKMVp3aHN6dTZsY2dJRy1RT1E5ZTlLeGw0cFdNQUF1WFRQTVdSNUktcWc2VE8wSkVlRmFKQjhsOEZZR1BZQ3ZGUjNId3d1TW1YeTdOMVhUZUJaT0I1a3lwMHF2TDFwSWs4U014aDlRN19mMzZkbTNodUIxTFhGQ0owSjBpalBrMUdHRHhkeDc4TjlrSFRBMU5HbEN4TjEzV3YtMmxId0VIbGlmdWVqZG5Kdw?oc=5",
       "summary": "川普為什麼這麼在意股市？答案可能藏在美國越來越明顯的 K 型經濟裡｜美伊談崩-川普篇｜美股評析&nbsp;&nbsp;sinotrade.com.tw",
       "dt_utc": "2026-04-17T12:26:23+00:00"
+    },
+    {
+      "title": "韓國投資證券AI股市分析熱潮 「現在市場是？」十日吸百萬點擊 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMigANBVV95cUxNLVctcGs0Si1PcGh6T21TNUNwb1Y0WURvOWpOR01xNFdpaFlCamJFa0V0M21vTm5wOGUzeU8wV2d5M2RpaFVqX0JfQVhmYlVBTWZ3SWw5ODQzOURiWHhTbHEtRC1JQ1BjQ0NBTXQzTkNJdGNNcWN3OGlSU2xUbUJ0T2xuM19uRDd6NkhCbE9KVjhGckN4ZnplRFFGZE94ZWlsVjh1MXBBRFR6eEVHb2szalZ0QS1Za05UdEo4VEpGaXUxRGtsSnNyRFZCYUZ0dlF0cEd0YVhlWkNtcGVPU1pDRUs1T2xJMm5Xd3FxU3FjVllZdFpxUUszd1NoNGhWRk1CbTZsNFdGNll3elFVbUExenhDU0tnakduUjZLa3BGWGFJN1labTJwSGlqZE5tMHB4cEpxTTJDM1lLQkZTSy16SHRiTVFNN1FDcW1GWjVHMG5CMjFUS0NERlRTcGNkdkZiX3ZrSWNNb25tWHVkLXFoQVFrcDM2QlVLT3B1OXVoUEM?oc=5",
+      "summary": "韓國投資證券AI股市分析熱潮 「現在市場是？」十日吸百萬點擊&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-17T12:23:00+00:00"
+    },
+    {
+      "title": "招收男生惹禍？嘉義女中爆「廁所四腳獸」傳聞校方澄清：非性別事件| 教育 - 太報 TaiSounds",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1makRnZkFPZm1iUmF1akptVWdCcUtQVUY1Tlc2Z0tnOV9YcHktM1NaUHdSamI2d183RnZETFFscnkzaFJhTFFveThCUVRiRXJVd0VhcFI1TG1uWVVo?oc=5",
+      "summary": "招收男生惹禍？嘉義女中爆「廁所四腳獸」傳聞校方澄清：非性別事件| 教育&nbsp;&nbsp;太報 TaiSounds",
+      "dt_utc": "2026-04-17T11:41:26+00:00"
     },
     {
       "title": "招收男生惹禍？嘉義女中爆「廁所四腳獸」傳聞 校方澄清：非性別事件 - Yahoo新聞",
@@ -135,6 +195,12 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYjhBbFVTV3R0aWVXakw3MlFtWC03QmQtQW92TUcybHRiSmJWa3lfdkhLYVRhLXQ5aDJpMkY4TzBMbDZ2aDF3WGhmVktCZFFMbHlHcDBKc3Z1U2dLTkVUZWxYcFZTV0RvSERab3pUUzBzRWI2eEdpUXk1MDU5TUZHSHItVTRnX3JaYTBtNjdhYkQ1UQ?oc=5",
       "summary": "《亞洲股市》17:00，菲律賓跌64.56點，為5999.13點&nbsp;&nbsp;富聯網",
       "dt_utc": "2026-04-17T09:03:00+00:00"
+    },
+    {
+      "title": "《台北股市》三大法人17日賣超前十大面板重災區群創友達共砍22萬張- 上市櫃 - 旺得富理財網",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wU19XTG9iUjdNcG0yeHRHX3pMVnNWUE1Fd1FMb1hIUUZWdzdlUy03SkVBMThqT0VUTGh5cF9OS2FUMXJuNmdkMDd6TG52UEY5bklrVEFKX0dGY21YcVVyLVVZbEVucDFtVFE?oc=5",
+      "summary": "《台北股市》三大法人17日賣超前十大面板重災區群創友達共砍22萬張- 上市櫃&nbsp;&nbsp;旺得富理財網",
+      "dt_utc": "2026-04-17T08:52:10+00:00"
     },
     {
       "title": "【Follow法人】三大法人聯袂賣超 外資大砍面板雙虎逾21萬張 反手狂掃聯電逾5.7萬張 - Yahoo股市",
@@ -321,78 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQQmUzeWRPRmVjd3F2RXJIMVJiRVFIbV9XejhKRkxOVUozcmQ4dUo5THB2c1J0SHp1VGpvdEZnREdtN3hueDVxYk9nQk9DOG9ZRTV4MXVQRkZiSTNBRnRpay1mQV9Zb0JGSTBzR1lCT1JONElmdXUzTFZDbkFnU3NibHdaMk1zYkYxekdpRGxjS0UxWmxqS0FyY1M4U3VZWHVDU2d4VDYtUGVwWGQ2UkRsdWtSQ1d5WkZ2dHFUNE1wYTJmSnpYM0VxMVIyamxyMWNObk40NzJDNVh4TGZrSmQ3S0ZuNER6QUVuQWxJczFyQnREVzRGTXVTRTR6b0dZNTlUREZjNV9QbjRKZ0lfa0p3M0ttN2d2RkRfeTVsdEpoUDE3NG1femdWZ3hpblRQNk5YVFh1UWJGeUZLOTJfMkVGOVJTVFh6M3NRV3FkelJxQnMzdUZuVldEMmFpeFVFWDBSeC1zeFNyWU9DSjd1ZzMwb1JvMVd4aDlEWW9ELWowV29OOWhXWng2NWx2UFlkNm5WVzZOVVZ4b1RBQl9FVGg4Um4wUFBZTldfNFVwd0ppaw?oc=5",
       "summary": "【公告】代東森之重要子公司東林資產(股)公司公告改選董事及監察人&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-17T07:24:23+00:00"
-    },
-    {
-      "title": "【公告】振曜董事會決議114年股東常會通過之私募現金增資發行普通股案不再繼續辦理 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMihARBVV95cUxNZXREZlZMNkt3MHI1Y0ZrTEk0SEQyT19LRUsyYnlIeV93OVB5cVZISDh4NjZsWnBabmoyam1RNDE3UUxlU0dQUmRwMnB3WGFPQm5TVzBNRDYxaDRMQndqUTUzWWdaQTNzQnphVUJQTmFiRmVkVlFER3lxaFBmR2pheFV2WGM0TWpROUh2bm9LWmFTNGlvanRqNERZUFNVNmpZTEVGYlo3SmxKNTBYcFpmNTlGa0lNcmpGdEF5NjBYbzVCUnN2RmxWZTdFbW5JeXN4ZlNTdk9RRENaR19sY1M1S3pNUTBCaWNrSi1QMndHN1pDTU5JZ19YYjBLTHREb0hheWZlbVJmdFk4RWNGVkZRdFk1T0pTaUdmYjlhT3NmV1JSeDJsdDh3TElhLUdkQTZQTnV4VXlvQlVDalRtakc2Z3E4cmZHbkJxODg1TEV4YlkxRDFkeXRwUm5ITEhHRTdkVnRVUC10NGdWSml0bF9TaGJERUVsYzZGUl9ZZUZXbTdRLXlFQ0p0UHM5Y0ZSelVsMkN1ZkE4WTZJQ0J2MHZ0Q1BkS3B5WDJ4UWxBZGp1ejhweVJMSmZYVnFwVDZBRFF0QTZNOHl2d1hOUS13TGgzVThjVFNtdU9JVENobDZnT0M5RWU1NG5fSGRyMjNqZ0xLYXNNSGJyOEhlS1F4MTltMWpSR2c?oc=5",
-      "summary": "【公告】振曜董事會決議114年股東常會通過之私募現金增資發行普通股案不再繼續辦理&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:24:19+00:00"
-    },
-    {
-      "title": "嘉女廁所公告歪樓變傳聞？校方急澄清 校友不滿：招收男學生惹禍！ - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMimwNBVV95cUxPWmhFTmk3WG9pdHZERWVOeXo3M09QbGZoY1FCNzh5a3J1UE00TGJYOTFRQXRvZ0hGUjl1QzNkc0NlNFpDSmRGTnl5R3pWN1FtZmt1ZHdrbjJPN0Flbkx4eFQ0SG1QNGhMQmNVZDdNeV9OVDRSbENBUWd2WWZ3SlFsZ3lQdFAzLW11cFNJb2RKMUpQYTg3Y2tZbkpydWVBS2wyaUNza3Yxd0Jfb3pSR0VQYzNxRUtfbGM4RkVIVDBleXhMbmhpV3U2OUZCQndSS2tSbWdweFhzQXc5LU05WWVaZzVndXp4NDk0ZGNFajBMWm5mUGVKRzFRVlc1MXNtT2VkNFZoOWphSlpvblN4NE0zcW9pOEtQS3ZvdE1HYi1TR0ZOYXpPbWNROEdiRWxPMExzTktuN2VmdVE5Mmo2Ylk1OFhyWF9aN2ZHc0dCU1oxdS1jNF9aRUZldUV1VW5Vc3FkM3F2NVpsVHdNdllrRkhCSlNLR3l2UmNpTlBHd0tSaS1GUzNzM0hDd1ZZUzhObmk5WWozcVhXNWZFTUE?oc=5",
-      "summary": "嘉女廁所公告歪樓變傳聞？校方急澄清 校友不滿：招收男學生惹禍！&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-04-17T07:22:00+00:00"
-    },
-    {
-      "title": "美台股市強勢 國泰兩 ETF 填息 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1DcDYwRk95WS11WU9TQUtoWEwtUFhZZ1RvanVnLVVMWFB0eFJTT3kwSzFsQ19qY1ZNMENHOS1aUE1zdUhGaFI4MEVodnY1MVFlYmRz0gFYQVVfeXFMT04zOTRrbVFYTWZFWkxvOVJsQUI0T1pWQ1RORGVWYk8zN0lkVVgwVmRSZ3dTOUduTjB5YzZXZUhNNWI0cDhVc3pId25BdS1xbVZqay12VWNwWA?oc=5",
-      "summary": "美台股市強勢 國泰兩 ETF 填息&nbsp;&nbsp;聯合新聞網",
-      "dt_utc": "2026-04-17T07:21:30+00:00"
-    },
-    {
-      "title": "日圓逼近危險價位 日銀干預與升息抉擇進入關鍵時刻 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxOZl9tcTFBSktpQnEtZk1EU3dheW9OUmV5bFBFQjkxdDJzQ0FaMVRvYnpiZXFzaTc2MnNXWmFwRFdHZlQzLVhnZHRTS2tyTnh4a3kzejljZWpFTUtsVkVndmtVRVZRN291ZDMxb3p4NFRUQ2JkakQyZDBCbkdnSTI4c1VGa1JIcWwzaW9SSHlpQUZLUVZ2VGJEbTNqUHY2cVBKM0J3R1NBdmh2Q0pBVTBsRmZ6ZFpoRFZCM1Jrc3JQVVFVd3ZqaVNVYXlCMWZfUDc0Um82RVhOckVMUy1uNTg2SjVYVjJBdlJHMUphelJDMUVTZ3FWb2E3VTJqZk5hdzdUWWJEV0JsRS1QLUZ6R2M5NVhWc2EycGY5eUhpa1o4ek90VUsxZ0ZCWVZGRGpOcmlCUzA4cW1XcndSOUtMbFU2VGNOWjFSVWdGYm1YeXZ5ODg4Q2R2Qk4wZHZYNnlib0FjM3lwZm4xYl8xREFIRHE5bg?oc=5",
-      "summary": "日圓逼近危險價位 日銀干預與升息抉擇進入關鍵時刻&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:20:00+00:00"
-    },
-    {
-      "title": "嘉女廁所公告歪樓變傳聞？校方急澄清　校友不滿：招收男學生惹禍！ - 三立新聞網SETN.com",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBIOFFnbzhucWk3SkNDNi03UlBsOUhlOExTSnhEa3BXSHNYTksweml3TlR6STROSGlrOE9hbFlMTFhpTFprMFo5RzhiaW5sRkdabVU3d0FUZVPSAV9BVV95cUxOM2xidWpKRDMtZmQ5Y0NlbGYzcVBBZE9yd2x6Ul9HZFhZYlVOVzJUYTNXbWJtTC1KUVcwMWhnRVBoYWRfYllnRXJRTVh3eWxVOUN6Ul9sWGhud285N0lLQQ?oc=5",
-      "summary": "嘉女廁所公告歪樓變傳聞？校方急澄清　校友不滿：招收男學生惹禍！&nbsp;&nbsp;三立新聞網SETN.com",
-      "dt_utc": "2026-04-17T07:17:00+00:00"
-    },
-    {
-      "title": "【Follow法人】三大法人聯袂賣超 投信連4賣狂砍279億元 分析師喊免驚：短期現象 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3wNBVV95cUxOdDdSTHAycjluQ0tJXy11ZUNZT25JT1Y5aVB1LTZJS0JNV3B2T3czQlpLczI4YmhfalROc3liYnRnWVdhYlFDM0pzTXZuWWVVLVZmcFVlVXBROXdBR09sRjlxT2VBMFF6ZEVzbkltT3FZVzdoZkplRGVZajVIWXl4V1hzbVU1RzcwLURYc1NKRWZNcnZ6OUdpSnpNRWFaOGludmh4WlhyYm4tYUdLcWN5LVpJLURNVUl5OWZKMmxaaDhtUkhDU1h5RlFsU3JDTmVmMnBPREZfbXFjbXZseTc4N0JZZzJ1aTZkOG1mUHNDdW5hM2hqTEZ3V3NKeHl6bmhFLVhHV29ISVJDbi1XYlk1VVFjSHhqNHNWZTUzcWFGaHZldlEwa1FiUjJId1BabDZZcFk5OFFTNGJpNUlrM3JoY01vX1RyWXB1R3dRd2dKOExuWkVoZkFZcFkxOXp6ZnFPU3Nob0R5THA2U2FtWTRYdWNKY2hyemU5VjRFbmcwM3FJNVR2WFJCNGRMaElXVk1Idk1JRW10eVhKS0txZXRWay1fb0JrQ1FTb0tVQ0I1RHhyd2NOemFXNWNGQnYtbE42TXVOd1FWVHhQbjY3UHdETEhVQnRKb05nQWoxOXR6aw?oc=5",
-      "summary": "【Follow法人】三大法人聯袂賣超 投信連4賣狂砍279億元 分析師喊免驚：短期現象&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:13:12+00:00"
-    },
-    {
-      "title": "【Follow法人】三大法人聯袂賣超159億元 投信連4賣狂砍279億元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxObGVBeXVQUnFnNU1PXzVmVU94N3o5TE5rZzBDZ3A2Z243VnBlTElfNDJxQmNIdmJJLV9iN3hzTmhEOHNYcERNZm9qVFo4RjlGUm1na3pWeGhtakplTDByVlByY2NfcTJfd19MRmI1ZDI1U3pSeWxQa0hGME93c2RjMG9fWkVQdW80N0prcVNZNmJsOVRxVHdFTGVwT3h0NzU2MVM1cDFMZVVUZjdMbDBNZ1dLQS1TMXktWjN2SjRxcmtManRmUFltTklkaWIyZzlhMzNLamk2VXFsSXg1aWxGdk5ncWZ2R1JRbE9OMzdsS1p1Q050MTVNOElWa24td0FCYzQtUDNldVpPUUtzeUdLLXQ5ZXo2Ym0yeEp0Yzc3Uk45eWt0cGp6RFNjYmtqVnRidWJSMHh6MTBDdEYxNkNiMWszd3hZdlU1T0N3MVJTckNFQkYzSTR6U1FSNTdGNHNSUTFuT0lyQl9ZdVlScTZBMFJJSDI0UQ?oc=5",
-      "summary": "【Follow法人】三大法人聯袂賣超159億元 投信連4賣狂砍279億元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:13:12+00:00"
-    },
-    {
-      "title": "亞洲股市：今(17)日亞洲股市目前指數 - 富聯網",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTWtJRGVJSkNwUTJUN0RRNUpVTEltd2pRQUlPLXZSdF9oa2hMSGJBT2tvRFV2RTd5Zm15QTJLWnJISG0xZzI3YXprR00wY2lTVElmaHIzbzVmejVDSnZhcjQ5Rl9FLWNieW9kWjNBZVBqVFljN2JLQnV0WE42MWpIS21Jb1NNa0M3?oc=5",
-      "summary": "亞洲股市：今(17)日亞洲股市目前指數&nbsp;&nbsp;富聯網",
-      "dt_utc": "2026-04-17T07:13:00+00:00"
-    },
-    {
-      "title": "三大法人賣超台股159.19億元 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPRG14MzQtYVNtTU9teEZGaENpVTJBVlhad0wtVGFsXzh6Qm5VMDhGQVlQTzBJS2VQVW01eHFxRFhsTFVPU29hYWdLZGJBM2gtWVA5X0xJTkUzRjU2VjRjTzBqMVY5cHZVYnpJeFRyVTh3RWU3bThIUUc2TmU3bnh5SldURG0xenlVdndGSk9SYlE5MEkycndCaGMyTEkwcW9WQVZTY1N5WW4wcldhVV9rV1JMbmZqcXVJcEVVd1FQbkZIZS1uUFc1Z2l0VlF0VzhndnlHdWZReG5JVWs?oc=5",
-      "summary": "三大法人賣超台股159.19億元&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:09:21+00:00"
-    },
-    {
-      "title": "75萬股東看過來！凱基金股東會最美紀念品揭曉 花鳥彩繪筷延續故宮碗熱潮 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi1ANBVV95cUxNUVFmRVh1WE42dHhWTlhQbHJsSGo5aXVMSEphUDQ4Vmk2Y196SnhyenNMM1llaThVNlF4azBKcUwxZ3VzQmJ1LWk5N25ybGRZWWxtS09ZSTFWLUVuSVY2V01KRlRReG14YjlvZjE0T1JHaDEtQ3JhaElFWng4aXVpMWFLTWJyQ01hS3JYRVlKcVJXT2ljUHRfdE1vR1lRZGNfc19TOTlRVTQ4NzJOMHFJbk9kM2Vqbmh0eU16bDl2TzZndnZTcHRIV1k0OXNHcmZCWWhZLXQ4LXRsakNWVXItb2FVQWZVVV9LQTZqX2hoZlVRN3hET3oyTFlGYjEwYTUtZDZQN3pBTEtyYmhOSUd0YWx0NzVncXYteTJKRHNUVGEtNGtvQVFUZGMyV1dqQ3drSEdURU5fOGUtTXZXOGMwR3FObVNpVHVZaDl1S0lwRWZ0RC1DNTV0YmlZVUlleFkzemd2UTlDMHJYbUZ3R3hOZ2U4Rk5Ia2MyNHhGU2xJNUVhMnRYTjRFaGtBTTE5bkZ0SEdDcWhQOEdkZTIyUldBLThPSmNiNGdWRkJrOTJTbVFjUlM5NW1DWS16N3Ffc3l3Ti1jcHdPWnY2YldlWjROZ2hLWjM?oc=5",
-      "summary": "75萬股東看過來！凱基金股東會最美紀念品揭曉 花鳥彩繪筷延續故宮碗熱潮&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:05:00+00:00"
-    },
-    {
-      "title": "暑假搭飛機 長榮航提供「兒童玩具包」多款備品同獲國際級肯定 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMirANBVV95cUxPUExRWTJLSG5TbjA0UG94WUowMEtSZ2VOY2tfbmVLOG5mQWZoYVMtelNRM1JkQVdqMFlQWXRFWE5VQThMaEh5QWxtRnMwaWVSZjcwNTMxZWZKS0prNmJEb2wyMWdOekRqb1pfeE0yOFdfbW9xQUhBYmZLMGx6QlQ2NUxwMXBYNGd0YS1pVWk1M2dyTjNQR183RU9PdTc3cDEtNXhGLTJ6WHVHVE50ZjhfWFA5bjUyZktVT3Vqb0NRbVhJMjI5ZTdVaHdVS3FtNUJDdThyWkRLWFhxMUpxQVlTblZWWFRyNnJCcDA3Z3VZd1Q0WlF5eXlCVUJXZzZYTkpRZUd5OVVBMDh2RUhjRGE2X3F2R3pwVXpVZWNtbnAwb1pzX1k0eXhxYUh3ZE9ZUi14b1E1OWRpLWk3c3d4bTJUR1VLMlVUWUtvR3JUNHYtRXU4bXpvZTQ0LVR1bWZjdTZHQmxvNkRYck83ekI2M2Jmbm1aSkYwOEtBeVk1Rk5tSWFvcUlWbEpvVThjQWNQYkl0SWhIcEo4MEVXa3RzTGZ5ODNiN1RmeVZVcGUyRw?oc=5",
-      "summary": "暑假搭飛機 長榮航提供「兒童玩具包」多款備品同獲國際級肯定&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T06:58:07+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "17.79",
-    "vix_trend": "▼ 0.15",
-    "usd_twd": "31.50",
-    "usd_trend": "▼ 0.09"
+    "vix": "17.77",
+    "vix_trend": "▼ 0.17",
+    "usd_twd": "31.43",
+    "usd_trend": "▼ 0.16"
   }
 }
