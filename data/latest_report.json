@@ -1,9 +1,27 @@
 {
-  "updated_at_utc": "2026-04-17 22:06:14 (TW)",
+  "updated_at_utc": "2026-04-17 23:40:09 (TW)",
   "title": "全球局勢與市場情報 2026-04-17 盤後",
-  "report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
-  "tts_report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
+  "report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "tts_report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
   "news": [
+    {
+      "title": "荷姆茲開放了！美股嗨翻 道瓊盤中狂飆逾1000點 - 自由財經",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE80dFRzWG1VZGd6QWxHT1c4QjRUbFhOZWw3eG0tLVFpbnc4eHYxWndLX1l5MFdtQjBueXUzLWtuaENYRXphanFENUtfUTQxUUJnWEhnTmxRNS1uNDNZdWRr0gFkQVVfeXFMT24wb2tNYTVzYUZaVHRjTUZGeDFHUkk1RkFzZjRITTh1Vy1uaUxydDRCOUR0RzdHblVmcUROMUZRMnQxV1NETm9TOHZQbHU1QVJVWmJnbFA5cGZ6UFNTLWtvaU8yUw?oc=5",
+      "summary": "荷姆茲開放了！美股嗨翻 道瓊盤中狂飆逾1000點&nbsp;&nbsp;自由財經",
+      "dt_utc": "2026-04-17T15:00:00+00:00"
+    },
+    {
+      "title": "U.S. Stock Movement | Cryptocurrency Sector Rises Collectively, Strategy (MSTR.US) Surges Over 12% - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQW5OVUt0aVhMVXVyMXVjTVRhX2dqNk1sMGRpMkcxWVhOWl9XZWNUeHlLQng3S3NrTDlRSWIxamRzckk3ZkhwZHdyRGI3NjZDUkg5cVYwaGc1VDJWbmM2ZDRCZmZvd3BwbjVidEJuRmwxV1BESDFheTJVTUJSaFN2ZnZGMWtrY0IwLWo3cExlS1Z1dlpQNnk2SzFaODRaTFV4cmVDVzJfelF3M2J2NnNsYzdvenVFLXdIODFwUFZ5TQ?oc=5",
+      "summary": "U.S. Stock Movement | Cryptocurrency Sector Rises Collectively, Strategy (MSTR.US) Surges Over 12%&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-17T14:33:07+00:00"
+    },
+    {
+      "title": "股市資金悄進場買這三類不動產 專家：這三種人股市賺錢不轉進房市 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8zZ3ZuZm1KVWdRenpJM1ozRWk1MjhNMzJLRlBTWDg5NjY0VlZWYTg0QVhGTElfNDc1bjRYTmE0VFdRYTA3cllZbkRqQzMzX2xrQWM40gFYQVVfeXFMTWJYSHpLLVdiSFZYWFl5U2VOcnRBclZmSmt1Q2dUN2FyNDJsNDJacEZ3dElwZ182TmZnaE5Gc1o3a2dWcktUSnhqRUdVUGV4OHpoZTFFYi0waQ?oc=5",
+      "summary": "股市資金悄進場買這三類不動產 專家：這三種人股市賺錢不轉進房市&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-17T14:31:34+00:00"
+    },
     {
       "title": "運算力緊縮致AI模型價格攀升 台灣半導體供應鏈受矚 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxOR3BWWGpfTm9UVlpCY2FKdDZld3hSVEpUTjhVWTBEZGtZYUs4YkZSY0VsRlAyd2xic25DazI4NlZIa2dNdUttNDZVOG5jVzNWc0xnVGZoTGFucl9RTkdjN1l4TFJQQ1VOS3JDTnZYZzBycGtDbWc2NktyS2ctMmthLXhTRkFmRU1kdE5UZFY4TDB2VmlTb3RUWWpqMGU2N2I5bWNfNHBVNkVBbGZOME9semV4ckdMNkFqVEYxTVMzbEZ1dDcxVk5WQjRfSURjTFZlZTR5S1pnMWZaQW0wbzhXQml2QnAzcmxaNkF5eXVNLVlFLWMwb0RLSFpkdFp0S1lkZVdkd0dMSXZXNGRiTWpjR04tQlNpWXU1OVdYQlp6WUpna0FtbzNsaFpRM1otbmZ3LUEzNjRSY09DQ1JpTWhGa1pIa1JmSHdUUHo2Rm1hMVNZSW1Fc2JTbmpiMmtaajZwVEp0WXJudw?oc=5",
@@ -185,6 +203,12 @@
       "dt_utc": "2026-04-17T09:20:00+00:00"
     },
     {
+      "title": "從旁觀者變操盤手! 巴基斯坦軍事強又與各方交好成美伊停火最大斡旋者| 國際 - Newtalk新聞",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9KMGNZdFJVWE5heU1rbDRiMHBrR3hjcUZ5Um5ibmQ4T0J3cHlTMVI5aE1hZmNEOVZGeS1qcEhwTnVDRXdMR0tXRzQ3ZWpwelg1X0U1N2JNOTAzWDg?oc=5",
+      "summary": "從旁觀者變操盤手! 巴基斯坦軍事強又與各方交好成美伊停火最大斡旋者| 國際&nbsp;&nbsp;Newtalk新聞",
+      "dt_utc": "2026-04-17T09:07:56+00:00"
+    },
+    {
       "title": "從旁觀者變操盤手! 巴基斯坦軍事強又與各方交好 成美伊停火最大斡旋者 - Yahoo新聞",
       "link": "https://news.google.com/rss/articles/CBMiygNBVV95cUxNdHN6S25XOGtHWDRCNTVKTkhXN0NEMXR3bEFrREtFcGNBZGZLN3Q4VHpLSG4wNkpobHcxRzMzbk1xTG8yc2lfUlI4ZjhLR2RDRjJ5MlMxbXVReUlIMmtoc19YRTIxTWpmVTQyODlEVFFiSzhwVHg1ME5zWHRQRUQwUVdpZUc2TVlYMGRGWktVdVlLazhkRlBvZXBiTmNqSVZfY01hQlFKek85cTdKNU1pd3hnNjhMOGdEdXRZOU5uNy1lQ18tU09talhVVDR4X1lEakJSQ2ZNUWdfdlRHcm9xS2ZtX19ZZEJlSzNMUmtlaU9kbDlCNHJnXy1mSUJxQ2x1M0xBM3RxT3gzMlI5VHRBVDBlRk5HcmtzbTR0bFA5b1BIX3ZtbXoyQkgzcndMd28wdkFSc0wyM01BenFCY2djOWVuWjRPTjBISXhNVnR4TWtFazRGLXE0TDVURl8zN0tYUEVoU1E2Z3JPenFRaEwzZ04yQzJaZ2FvWmo3aXR2WWdXcHZwaGpBeTM4YlZpMXRqNm5SM2xfSEp0RzhkTzdUTHpiWEFDcVI5cmNkeHlndDNYS1RrdGdZS3N1LXc2RGZVTV9LU0hUUm9uUQ?oc=5",
       "summary": "從旁觀者變操盤手! 巴基斯坦軍事強又與各方交好 成美伊停火最大斡旋者&nbsp;&nbsp;Yahoo新聞",
@@ -195,6 +219,12 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYjhBbFVTV3R0aWVXakw3MlFtWC03QmQtQW92TUcybHRiSmJWa3lfdkhLYVRhLXQ5aDJpMkY4TzBMbDZ2aDF3WGhmVktCZFFMbHlHcDBKc3Z1U2dLTkVUZWxYcFZTV0RvSERab3pUUzBzRWI2eEdpUXk1MDU5TUZHSHItVTRnX3JaYTBtNjdhYkQ1UQ?oc=5",
       "summary": "《亞洲股市》17:00，菲律賓跌64.56點，為5999.13點&nbsp;&nbsp;富聯網",
       "dt_utc": "2026-04-17T09:03:00+00:00"
+    },
+    {
+      "title": "US Stock Movement: Yinbei Wadian rises 2.6% pre-market after reaching major energy infrastructure agreements with Google and Amazon. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZE9lRy03ZXZNM0JsN2prM2ozRmR6a2plVjZ1d0V0aUNwbnNaS0Zrbktvbmg2OTJGZXQ0U2xzbk9xb1pvbUswbjliQ1JNSUhIWTJLRWYxTlVheS1HWWhOeUJUSUt5RUdXSjNpYUNYak42bWZQU1ZlRy1xdWxBZUQtS3dONlJzVW1KWlhEQUx3SWhYVW9KMDcycw?oc=5",
+      "summary": "US Stock Movement: Yinbei Wadian rises 2.6% pre-market after reaching major energy infrastructure agreements with Google and Amazon.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-17T08:56:38+00:00"
     },
     {
       "title": "《台北股市》三大法人17日賣超前十大面板重災區群創友達共砍22萬張- 上市櫃 - 旺得富理財網",
@@ -293,6 +323,12 @@
       "dt_utc": "2026-04-17T08:14:15+00:00"
     },
     {
+      "title": "在恐懼中買進、喜悅中賣出！他5度破產靠「農場投資法」翻身：散戶只要守4件事 - 財訊",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBzR2RhbUE1TXVkcER3dmtSZHlsM1dza3ZHMEg5NmRMbHBmV2NEV1J0Q3BISEZ0TE03TjlwTXVnZFJuWnY1UnBYenc0UGNSMDZhOFZvbHpJQjJ4ZGVuLWRKZVFyWmFBUkJGaV9xSDlvbDhFZ29XTFNqRWFlOA?oc=5",
+      "summary": "在恐懼中買進、喜悅中賣出！他5度破產靠「農場投資法」翻身：散戶只要守4件事&nbsp;&nbsp;財訊",
+      "dt_utc": "2026-04-17T08:10:00+00:00"
+    },
+    {
       "title": "8112 至上 - 今天期望收86.8以上🫶 - 股市爆料同學會 - CMoney",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBZRjlrVU1VeEE4dDVKSk5VZ1RXWnV3REp6M202VmtvS3l6a0xhU0tXRmtzeWFIaUNvLWl4ejhoNnZWMFk0bndIRWhXNnZEMTk3VXN1dmVQSFo?oc=5",
       "summary": "8112 至上 - 今天期望收86.8以上🫶 - 股市爆料同學會&nbsp;&nbsp;CMoney",
@@ -351,48 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMiwwVBVV95cUxQZUgwaTJITHBTdkg4YlBsTGJZSl9iTkEzQ1ZZZV9ZOVBsbzR5NnVvRVQwdmFpcU5Vc0lWT2xiSzFGZl9QUmhoYmFLaUt5WUcteFBCX0JvVy16UWt5M09tU0pseWUwSmtFcnNkbHJwd0YzdVQ0LTA2clk2R1F0emxtanRXSGNkZTRqSDFxY1FJWUF5ODBwUkhIMXIzeFNqR0s0U1FaZHpLWm1sU1R4OFNwX0dGRS1EYm96RW1ONlFMSmtnYS1KNVMwVndlaWVPcEpTSS14a0J0SnlGZTd1VkxOYTdhaUhjamE5Y2RQS0NKLTNRNFhiM1NiVFpvLWU1MmwyMlhkbGpxSi1sMkNfcWd3OWQzekVjcnJZY2pfM3dvMjBHc1BpUmJzTHZYQkNsVkx1U0UtenY5MV9kQS0xRzBFVEZYc3ZBeXpDSmlpemFmVVV1anlMVzBpOGhRdklNX1F2M2RXbXRBRzRlU2U4OU9UOEhUaVowNWU2ODR5TC1zS2xsclNtX3JhV1lLakJoRXRkaVRlV3dCRDJCMkMxQkFJbFlPTGF2Q0JpNE8xMEZOWUtLUkNjVEVVMGJCYkl0T3VXc0pLNzJwNlk5VFAyYnpSQVV4NU9CRTlIZ2FtS2VrLTBrM2JGeEZzT0lSRDQ3MlpFSDdnWEtsZ0ZuMncwUVBvVDdpd3g0UEhoZktFaDNYdEVGT3V3SWlucmZraVhpek9DZm03NjVEX182bDk4UmdZdFNtcHUzZVZaeEZlZTJWMFpyQWN1NWlVOU40Yl9VWnJDdFVkLWJBWVMwdXhJVkVKYksxaHBMd1d3c0h6TFY5Z0FQaC1OUm5ONmRibmhyYm1BMXdnNnQwMjJXNUhObnMwbzFWRGdLeDB4eHJxZGNKQnI5UXM0aG9rcUdZMTdiWTlfaTZYYUpQS2lyb1FRRW5YaXYybw?oc=5",
       "summary": "【公告】係因希華有價證券於集中交易市場達公布注意交易資訊標準，故公布有關財務業務等重大訊息，以利投資人區別瞭解&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-17T07:40:22+00:00"
-    },
-    {
-      "title": "財報季波動升溫 元大期貨推美股CFD強化避險策略 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxPSlg0QzZPY0t4NUYtZ2VXR2o3aVpUNGpiclRfVjZVcGd2RXRQcFRZRk9FOEY4V3h6dThVU2xLdUtwb0ZlaGF0SDRtN2FwOFpMa3dzRXk3Z3A1UU8wblRUU3FtZmNiVXlFZG9vOW1CQUx2dE9zWnZweVZXc3VlTFRKSEJfcThwNmJFUXhlOWt3RGZnaktjaEVZN2dDTjBCTjlzWTNGVEl6U3hzZFozT1lvWUhVV09IUWR5N093X1ozUDRRM1FIdHB0ajhVU1E5RmV5Y1FKN2ppOW40NWVNdW05bDdSYnRvR1U0aWhNaWllU1NzYlNaN2JTRTNHSU5IRVZhbWE0eEdUWmw4M1JNYkZ0dVNDU1JSUGlMWVRVdmlKc3ROSU5iYTc3SzFUWVU0OHkxVUEzanU1RWtnUTI1Zlh4dmN3U2pVS1ZSVVFpT1BxbF8?oc=5",
-      "summary": "財報季波動升溫 元大期貨推美股CFD強化避險策略&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:40:00+00:00"
-    },
-    {
-      "title": "5/1武財神生日！ 命理師曝「5大徵兆」：一見就發財 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPTmdla3o3S0doZ0YyYTl4Tlh6LVlJVWF4SThVRzlKTDVkOWRCbmJWTzliajRsa1JRSXRGcXV0NEs3OThZLW5xb2pfYU40RlJtWVItSUM0Z2lWTENIY1FhYjNiUmFCWFVObFFUTUo5UUQ2Q3NsR05LX2JiamlxZ1lrRUN4d3ZTeEx2V2Z2U3loMkY2MTlaM2ZPaWNCdnEzMXRFUGR5SzRhX0ZVcVdKbUJwVHQ3Nm1NOFhOdWZQYnNESWx5SDNJMlUtd2ZrVmFmRlpGNWV1Z2oxZkxfNEpTUU82YUJFMFNraXVwRFJoUGFIYzFQeUNFZTJMWnlRamRZUl84VHdlOTdpQ0ZGbTlYVEV6YVZoWnQxY1gtZ0dtUU5jTVFnSFBG?oc=5",
-      "summary": "5/1武財神生日！ 命理師曝「5大徵兆」：一見就發財&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:34:00+00:00"
-    },
-    {
-      "title": "戰爭燒掉1.57兆救命錢！「這12國」撐不住了 下一個崩潰是誰？ - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMHdOWkJVLVc0OURpeFVkbC15UXdfcXVrSGYyQUMwUmc0MFdBZjFrV1VuNG8zY25pNUhTdW5jNVl6azBFZ2FKVlQ0ZDFiU3pYSThlWFAxazlxOUUwV255aXpka1JubHFrdVFMa0RVSm9wTE16Z0hnYUUwLXNOSzBKN3dnQzZ4WmpodnZSdUNTcy1SeWcyRl9vM0tzaW5NMi1wTDNNWmZ2TC1BQk9DZ2ZjV0ZzdnIxbTRtNngtaGxOREtUSjdjN0NJb2dxTHNXeWJlcU11NDdMaGNPR2xDMnNoeDI0WGs1S2trOG0zWDAyVy1FbVdWd1BZYmF4dUFvVGUtNlhrdGdvVVB4Ti1ndVBVR3ZMU2R4Y21zZHRZ?oc=5",
-      "summary": "戰爭燒掉1.57兆救命錢！「這12國」撐不住了 下一個崩潰是誰？&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:33:59+00:00"
-    },
-    {
-      "title": "【股東紀念品已到貨】 94萬多人關注！中石化等11家已到貨 機能襪、益生菌好物開領中 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMikwRBVV95cUxOOTZ2Sktxd01TNkQ4ZFNwZHRFWTZGeW9RcnJHZnJlZFE5cmRzMmJfUlBUZUo5ajNma01FMF9XRU0wS0p0QVdGYWowUzVnNmNNWF96bnpzV0tIalBkcW1iVEVxcjI0TXJteHhacll5T1pHaE9zMTU2THdnOU9WWmR0VUdtaDEySUtjMUk1Mk9vR0tYemVZek9HVzQ4MWVzUVV3MFBVRDNWVzhYX3RWaGZYbFBfU3JnOUl3aEtEUEZ0X09NdHJaOEN2ODVUTTNMc0xfdzItTnJidnN2emRfV1N1MjhJQ0VTY2xSTWR4eUZpUG5tSFZ5TC1Yc25aMjNaM25jRkZvM2lYWWdibmg5LVlLajI4cnZIVi1NVURSZFZiMVQ0cVZyNzlGZUtoNnRUdkl6NWFsQkpDcW5oNnFkNXZ5MnBrYjBXbnludUd0dVlYNzRuZG9wZ295QlZsTEpvVTZGcWhNMkJfNjBhYVlBczVfQTRMT3pwM3BlVEkweFRLYVlUTTRqYmQyVl9QVUlSZnBGbWJ4MDROWDhxUC1uMEkwZ29jdlVIVTU5cG9PVjBKQ1pHNUNuVVFGQnRiSTdXZ1ZmU0QzLXNwQkloclFyaEVRb0llT3dqakpycnJyRFBsRXlkZndqY25Wb2k4VVJ2M3dmTmM4cVBGejFIQ2x5bDNuVWZMNzAwTm9FNUVYU2R0cUMxOWc?oc=5",
-      "summary": "【股東紀念品已到貨】 94萬多人關注！中石化等11家已到貨 機能襪、益生菌好物開領中&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:30:00+00:00"
-    },
-    {
-      "title": "【公告】代重要子公司金駿營造(股)公司公告董事會決議114年度盈餘分配 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiswNBVV95cUxQU2RKOWZNTlA3QXBZSnZwTkdrd0RubW1xT0p5aGp5YmhmSDdUVGRvU2ZONGh2cHBjTjBjNzdKUHZLQ0x4b2Y4TVpmUVhFYm5OQS1Zd2JJSjJxbWkxTmZhLTFLZ0JyWFhjb21WcHdFeGRjQTZoWGNDb0xMU2tTUHVkdTBrVlFHOUNJWWRlTXlNSmZ6eTdMZ194ajdZV2haaUswS3hhZlh1N0l4b1NMUkw1U1pybFF2QnE4OS1CUzFuWlU1dFFiM19LY19iX0tueGdqejJRUFNlVmx1NDFkWmpsVHpMZlhId2RQSDA4NlNWemdXLVUtdFI5LUxHSjVVQXdjaWZubUNxVzJGanEyMDduS3lqSHBSQms5aW9iTWdqUm1tdGx2ZnJ6enJSUXFrekJvQTBlOHBJbUNCeVd0bnJqVFBWM2Fkczl1N2FIUkFTOEJSLUZHbmp2S0FlbS1hbWgxYTZKMjE4YVMzb2xTT284dHlLTWZEN1RTUF9fcm53Y3YyMlNzQ1NiSlM2YXRaWXM0WE82b0d2V0JzMXRrSkY5eUJYekZVRlN6ejAxOXZqbDBmaWs?oc=5",
-      "summary": "【公告】代重要子公司金駿營造(股)公司公告董事會決議114年度盈餘分配&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:24:25+00:00"
-    },
-    {
-      "title": "【公告】代東森之重要子公司東林資產(股)公司公告改選董事及監察人 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQQmUzeWRPRmVjd3F2RXJIMVJiRVFIbV9XejhKRkxOVUozcmQ4dUo5THB2c1J0SHp1VGpvdEZnREdtN3hueDVxYk9nQk9DOG9ZRTV4MXVQRkZiSTNBRnRpay1mQV9Zb0JGSTBzR1lCT1JONElmdXUzTFZDbkFnU3NibHdaMk1zYkYxekdpRGxjS0UxWmxqS0FyY1M4U3VZWHVDU2d4VDYtUGVwWGQ2UkRsdWtSQ1d5WkZ2dHFUNE1wYTJmSnpYM0VxMVIyamxyMWNObk40NzJDNVh4TGZrSmQ3S0ZuNER6QUVuQWxJczFyQnREVzRGTXVTRTR6b0dZNTlUREZjNV9QbjRKZ0lfa0p3M0ttN2d2RkRfeTVsdEpoUDE3NG1femdWZ3hpblRQNk5YVFh1UWJGeUZLOTJfMkVGOVJTVFh6M3NRV3FkelJxQnMzdUZuVldEMmFpeFVFWDBSeC1zeFNyWU9DSjd1ZzMwb1JvMVd4aDlEWW9ELWowV29OOWhXWng2NWx2UFlkNm5WVzZOVVZ4b1RBQl9FVGg4Um4wUFBZTldfNFVwd0ppaw?oc=5",
-      "summary": "【公告】代東森之重要子公司東林資產(股)公司公告改選董事及監察人&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T07:24:23+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "17.77",
-    "vix_trend": "▼ 0.17",
-    "usd_twd": "31.43",
-    "usd_trend": "▼ 0.16"
+    "vix": "16.96",
+    "vix_trend": "▼ 0.98",
+    "usd_twd": "31.41",
+    "usd_trend": "▼ 0.17"
   }
 }
