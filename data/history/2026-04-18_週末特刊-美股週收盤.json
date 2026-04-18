@@ -1,9 +1,63 @@
 {
-  "updated_at_utc": "2026-04-18 13:25:48 (TW)",
+  "updated_at_utc": "2026-04-18 14:48:52 (TW)",
   "title": "全球局勢與市場情報 2026-04-18 週末特刊-美股週收盤",
-  "report": "🎯 【一分鐘戰略速讀】\n\n今日市場氛圍呈現風險偏好回歸。隨著荷姆茲海峽重新開放，國際油價應聲下跌，歐美股市普遍收紅，標普500指數創下歷史新高，那斯達克指數更是連漲。地緣政治緊張態勢的緩解，直接反映在市場恐慌指數VIX的下降與美元兌台幣匯率的走貶，這兩項關鍵指標均顯示投資者對未來市場波動性的擔憂減輕，資金流向風險資產。儘管黃金價格逆勢上漲，這可能反映了其他潛在的通膨預期或長期避險需求，而非短期地緣政治風險的激化。整體而言，在系統性風險降低的環境下，市場焦點重新回歸個別產業與企業的基本面表現，特別是半導體及AI相關供應鏈，以及法人資金的實際流向。\n\n📊 【重大事件：交叉驗證報告】\n\n*   地緣政治降溫與市場反應 (重要度：★★★★★)\n    *   **事實核對**：新聞指出伊朗開放荷姆茲海峽，導致油價下跌、歐美股市收紅，比特幣強勢突破。此現象與VIX指數下降0.46點至17.48，以及美元/台幣匯率貶值0.12元至31.46的數據高度匹配。這些指標皆指向市場風險情緒的顯著降低，資金流向風險性資產。然而，新聞亦提及「黃金上漲逾2%」。若純粹是地緣政治風險降溫，作為傳統避險資產的黃金理論上應承壓。此處黃金的表現與「地緣政治風險降低」的論述存在數據上的不匹配，可能反映黃金受到其他非地緣政治因素（如美元長期展望、通膨預期或央行儲備多樣化需求）的推動。\n    *   **解讀**：市場顯然將荷姆茲海峽重啟視為中東緊張局勢緩解的明確信號，促使全球股市與加密貨幣等風險資產上漲。油價下跌對全球經濟而言是利多。黃金的逆勢走強，則提醒我們即便主要風險消退，市場中仍存在對未來不確定性的長期考量。\n\n*   美軍事核能航太科學家死亡失蹤事件 (重要度：★★)\n    *   **事實核對**：此類新聞涉及國家安全與機密，通常若構成實質的地緣政治威脅，會立即引發市場恐慌，表現為VIX恐慌指數飆升及避險資產（如美元、黃金）價格上揚。然而，今日VIX指數為17.48，較前日下降0.46；美元/台幣匯率為31.46，美元呈現走弱。市場指標與此事件可能帶來的「恐慌」情緒完全不符。\n    *   **解讀**：儘管新聞內容引人關注，從金融市場的即時反應來看，此事件並未被投資者視為足以影響全球經濟或引發系統性風險的重大因素。當前市場的資金流向與避險意願，未因此事件產生顯著變化，可定調為「情緒噪音」，而非實際驅動市場走向的核心事件。\n\n*   Intel樂觀前景與半導體產業格局 (重要度：★★★)\n    *   **事實核對**：新聞提及「Why Intel Stock Is a Buy Even After Its Big Rally」，傳達市場對Intel股價表現的樂觀。在評估半導體巨頭時，需對比產業常識與領先地位。在全球先進製程領域，台積電（TSMC）無論在技術世代、良率及量產能力上，均保持著明確的領先優勢，尤其在2nm及更先進的技術節點上。Intel的股價表現可能反映市場對其IDM 2.0戰略、政府補貼及潛在客戶訂單的預期。\n    *   **解讀**：市場對Intel的樂觀看法應「保守看待」。雖然股價上漲反映了投資者對其轉型戰略的信心，但就實際技術與量產能力而言，台積電仍是半導體先進製程的領導者。投資者應關注Intel是否能拿出實質的量產進展和具競爭力的良率，而非僅憑股價漲幅來判斷其產業地位。\n\n*   法人買賣超動向：聯電、聯發科等獲買超 (重要度：★★★)\n    *   **事實核對**：富聯網報導顯示，投信與外資17日買超聯電、聯發科、南電等，而外資同時賣超群創、友達、台新新光金。今日VIX恐慌指數下降，美元/台幣匯率走貶，均表明系統性風險偏低，市場情緒穩定。在這種環境下，法人對特定個股的買賣動向，更能反映其對該個股或產業基本面的判斷，而非受廣泛避險情緒主導。\n    *   **解讀**：在系統性風險降低的背景下，法人資金的實際流向成為觀察市場熱點的重要指標。投信與外資同步買超聯電、聯發科等，顯示市場對部分半導體及電子零組件股仍抱持正面看法。投資者可將此視為專業資金對個別企業前景的信心訊號，但在投資決策時仍需結合公司基本面與自身風險承受能力。\n\n🔥 【市場情緒與壓力測試】\n\n今日盤前VIX恐慌指數為17.48，較前一交易日下降0.46。此數值低於20的長期平均，明確指示市場對未來30天波動性的預期處於較低水平，投資者恐慌情緒明顯緩解。同時，美元/台幣匯率為31.46，較前一交易日貶值0.12，反映美元相對台幣走弱。這表示外資可能持續流入台灣市場，或者本地資金外流壓力減輕，均是資金對台灣股市看好的積極訊號。這些「科學儀表板」的讀數，為今日市場普遍呈現的風險偏好回歸提供了堅實的數據支持。\n\n💰 【台股影響與板塊點名】\n\n在地緣政治風險降溫、全球股市表現強勁的背景下，台股有望延續資金流入態勢，風險偏好提升有利於成長型股票。\n\n*   **受惠板塊**：\n    *   **半導體與AI鏈**：作為全球科技產業的核心，台灣半導體（特別是晶圓代工與IC設計）將持續受惠於全球AI需求增長與終端市場復甦。台積電憑藉其在先進製程（如3nm、2nm）的絕對領先地位，以及與如SK海力士在HBM等高頻寬記憶體與先進封裝技術上的強強聯手，依然是產業的基石與主要驅動力。儘管市場對其他競爭者有所討論，台積電的實質產出與技術優勢仍無可取代。\n    *   **航運板塊**：荷姆茲海峽的開放降低了航運成本與保險費用，對全球貿易物流是正面消息。\n    *   **電子零組件**：法人買超聯電、聯發科、南電等，顯示資金對這些具備產業競爭力的公司抱持信心。\n\n*   **受衝擊板塊**：在整體風險偏好上升的環境下，無顯著受衝擊的單一板塊。但個別題材股或未具備實質基本面支撐的公司，可能會面臨資金轉向的壓力。\n\n📈 【投資觀察指引】\n\n1.  **數據先行，情緒其次**：當前VIX與匯率數據顯示市場風險情緒偏低，但個別新聞的情緒化描述仍需濾除，回歸客觀數據判斷。\n2.  **核心資產，長期持有**：台積電、0050等代表台灣經濟核心競爭力的標的，在穩健的系統性環境下，仍是長期資產配置的基石。\n3.  **技術為王，慎防傳聞**：半導體與AI領域的投資，應側重企業在先進技術（如台積電的2nm、HBM封裝）上的實質進展與量產能力，而非僅憑市場傳聞或股價波動。\n4.  **地緣風險，維持警覺**：儘管短期地緣政治降溫，但國際局勢仍具潛在不確定性，對避險資產的異常表現（如黃金上漲）應保持追蹤。\n5.  **法人動向，指引參考**：持續關注外資與投信等主要法人資金的流向，其對個別股票的買賣超數據，可作為判斷市場偏好與板塊輪動的參考指標。\n\n🏫 【曉臻財經小教室】\n\n今日單字：【自營商避險】\n自營商避險是指券商的自營部門在持有特定股票、債券等現貨部位時，透過期貨、選擇權等衍生性金融商品，建立反向部位以降低市場價格波動風險的操作。當自營商避險部位顯著增加，尤其是在市場表面利多消息頻傳時，這可能暗示專業交易者預期市場存在潛在波動或下跌風險，從而幫助我們「看穿市場假象」，辨識隱藏的市場風險。\n\n數據為證，理性為帆，波瀾不驚，行穩致遠。",
-  "tts_report": "🎯 【一分鐘戰略速讀】\n\n今日市場氛圍呈現風險偏好回歸。隨著荷姆茲海峽重新開放，國際油價應聲下跌，歐美股市普遍收紅，標普500指數創下歷史新高，那斯達克指數更是連漲。地緣政治緊張態勢的緩解，直接反映在市場恐慌指數VIX的下降與美元兌台幣匯率的走貶，這兩項關鍵指標均顯示投資者對未來市場波動性的擔憂減輕，資金流向風險資產。儘管黃金價格逆勢上漲，這可能反映了其他潛在的通膨預期或長期避險需求，而非短期地緣政治風險的激化。整體而言，在系統性風險降低的環境下，市場焦點重新回歸個別產業與企業的基本面表現，特別是半導體及AI相關供應鏈，以及法人資金的實際流向。\n\n📊 【重大事件：交叉驗證報告】\n\n*   地緣政治降溫與市場反應 (重要度：★★★★★)\n    *   **事實核對**：新聞指出伊朗開放荷姆茲海峽，導致油價下跌、歐美股市收紅，比特幣強勢突破。此現象與VIX指數下降0.46點至17.48，以及美元/台幣匯率貶值0.12元至31.46的數據高度匹配。這些指標皆指向市場風險情緒的顯著降低，資金流向風險性資產。然而，新聞亦提及「黃金上漲逾2%」。若純粹是地緣政治風險降溫，作為傳統避險資產的黃金理論上應承壓。此處黃金的表現與「地緣政治風險降低」的論述存在數據上的不匹配，可能反映黃金受到其他非地緣政治因素（如美元長期展望、通膨預期或央行儲備多樣化需求）的推動。\n    *   **解讀**：市場顯然將荷姆茲海峽重啟視為中東緊張局勢緩解的明確信號，促使全球股市與加密貨幣等風險資產上漲。油價下跌對全球經濟而言是利多。黃金的逆勢走強，則提醒我們即便主要風險消退，市場中仍存在對未來不確定性的長期考量。\n\n*   美軍事核能航太科學家死亡失蹤事件 (重要度：★★)\n    *   **事實核對**：此類新聞涉及國家安全與機密，通常若構成實質的地緣政治威脅，會立即引發市場恐慌，表現為VIX恐慌指數飆升及避險資產（如美元、黃金）價格上揚。然而，今日VIX指數為17.48，較前日下降0.46；美元/台幣匯率為31.46，美元呈現走弱。市場指標與此事件可能帶來的「恐慌」情緒完全不符。\n    *   **解讀**：儘管新聞內容引人關注，從金融市場的即時反應來看，此事件並未被投資者視為足以影響全球經濟或引發系統性風險的重大因素。當前市場的資金流向與避險意願，未因此事件產生顯著變化，可定掉為「情緒噪音」，而非實際驅動市場走向的核心事件。\n\n*   Intel樂觀前景與半導體產業格局 (重要度：★★★)\n    *   **事實核對**：新聞提及「Why Intel Stock Is a Buy Even After Its Big Rally」，傳達市場對Intel股價表現的樂觀。在評估半導體巨頭時，需對比產業常識與領先地位。在全球先進製程領域，台積電（TSMC）無論在技術世代、良率及量產能力上，均保持著明確的領先優勢，尤其在2nm及更先進的技術節點上。Intel的股價表現可能反映市場對其IDM 2.0戰略、政府補貼及潛在客戶訂單的預期。\n    *   **解讀**：市場對Intel的樂觀看法應「保守看待」。雖然股價上漲反映了投資者對其轉型戰略的信心，但就實際技術與量產能力而言，台積電仍是半導體先進製程的領導者。投資者應關注Intel是否能拿出實質的量產進展和具競爭力的良率，而非僅憑股價漲幅來判斷其產業地位。\n\n*   法人買賣超動向：聯電、聯發科等獲買超 (重要度：★★★)\n    *   **事實核對**：富聯網報導顯示，投信與外資17日買超聯電、聯發科、南電等，而外資同時賣超群創、友達、台新新光金。今日VIX恐慌指數下降，美元/台幣匯率走貶，均表明系統性風險偏低，市場情緒穩定。在這種環境下，法人對特定個股的買賣動向，更能反映其對該個股或產業基本面的判斷，而非受廣泛避險情緒主導。\n    *   **解讀**：在系統性風險降低的背景下，法人資金的實際流向成為觀察市場熱點的重要指標。投信與外資同步買超聯電、聯發科等，顯示市場對部分半導體及電子零組件股仍抱持正面看法。投資者可將此視為專業資金對個別企業前景的信心訊號，但在投資決策時仍需結合公司基本面與自身風險承受能力。\n\n🔥 【市場情緒與壓力測試】\n\n今日盤前VIX恐慌指數為17.48，較前一交易日下降0.46。此數值低於20的長期平均，明確指示市場對未來30天波動性的預期處於較低水平，投資者恐慌情緒明顯緩解。同時，美元/台幣匯率為31.46，較前一交易日貶值0.12，反映美元相對台幣走弱。這表示外資可能持續流入台灣市場，或者本地資金外流壓力減輕，均是資金對台灣股市看好的積極訊號。這些「科學儀表板」的讀數，為今日市場普遍呈現的風險偏好回歸提供了堅實的數據支持。\n\n💰 【台股影響與板塊點名】\n\n在地緣政治風險降溫、全球股市表現強勁的背景下，台股有望延續資金流入態勢，風險偏好提升有利於成長型股票。\n\n*   **受惠板塊**：\n    *   **半導體與AI鏈**：作為全球科技產業的核心，台灣半導體（特別是晶圓代工與IC設計）將持續受惠於全球AI需求增長與終端市場復甦。台積電憑藉其在先進製程（如3nm、2nm）的絕對領先地位，以及與如SK海力士在HBM等高頻寬記憶體與先進封裝技術上的強強聯手，依然是產業的基石與主要驅動力。儘管市場對其他競爭者有所討論，台積電的實質產出與技術優勢仍無可取代。\n    *   **航運板塊**：荷姆茲海峽的開放降低了航運成本與保險費用，對全球貿易物流是正面消息。\n    *   **電子零組件**：法人買超聯電、聯發科、南電等，顯示資金對這些具備產業競爭力的公司抱持信心。\n\n*   **受衝擊板塊**：在整體風險偏好上升的環境下，無顯著受衝擊的單一板塊。但個別題材股或未具備實質基本面支撐的公司，可能會面臨資金轉向的壓力。\n\n📈 【投資觀察指引】\n\n1.  **數據先行，情緒其次**：當前VIX與匯率數據顯示市場風險情緒偏低，但個別新聞的情緒化描述仍需濾除，回歸客觀數據判斷。\n2.  **核心資產，長期持有**：台積電、0050等代表台灣經濟核心競爭力的標的，在穩健的系統性環境下，仍是長期資產配置的基石。\n3.  **技術為王，慎防傳聞**：半導體與AI領域的投資，應側重企業在先進技術（如台積電的2nm、HBM封裝）上的實質進展與量產能力，而非僅憑市場傳聞或股價波動。\n4.  **地緣風險，維持警覺**：儘管短期地緣政治降溫，但國際局勢仍具潛在不確定性，對避險資產的異常表現（如黃金上漲）應保持追蹤。\n5.  **法人動向，指引參考**：持續關注外資與投信等主要法人資金的流向，其對個別股票的買賣超數據，可作為判斷市場偏好與板塊輪動的參考指標。\n\n🏫 【曉臻財經小教室】\n\n今日單字：【自營商避險】\n自營商避險是指券商的自營部門在持有特定股票、債券等現貨部位時，透過期貨、選擇權等衍生性金融商品，建立反向部位以降低市場價格波動風險的操作。當自營商避險部位顯著增加，尤其是在市場表面利多消息頻傳時，這可能暗示專業交易者預期市場存在潛在波動或下跌風險，從而幫助我們「看穿市場假象」，辨識隱藏的市場風險。\n\n數據為證，理性為帆，波瀾不驚，行穩致遠。",
+  "report": "🎯 【一分鐘戰略速讀】\n本週市場回顧，全球金融環境顯現出風險情緒的顯著緩和。中東地緣政治的緊張態勢有所降溫，特別是荷莫茲海峽的重新開放，此一發展直接促使國際原油價格出現約10%的明顯跌幅，緩解了市場對能源供應中斷的擔憂。與此同時，衡量市場恐慌程度的VIX指數同步下行，顯示投資人對未來不確定性的顧慮正在消退。在全球主要股市方面，美股在空頭回補的強勁驅動下呈現顯著上漲，高風險資產如加密貨幣比特幣亦表現活躍，共同標示著資金正回流至風險性資產。在台灣，新台幣兌美元匯率小幅升值，反映出外部資金環境的趨穩與國內市場信心的增強。整體而言，全球市場正從先前的地緣政治陰霾中逐漸釋放，資金流動明確指向風險偏好型資產，為投資者帶來新的觀察重點。\n\n📊 【重大事件：交叉驗證報告】\n\n*   中東地緣政治緊張降溫與油價大跌 (重要度：★★★★★)\n    *   **事實核對**：新聞指出中東地緣政治緊張局勢降溫，荷莫茲海峽開放導致國際油價跌幅逾10%。此數據與盤前VIX恐慌指數的下降(▼0.46至17.48)及歐美股市普遍收紅的表現高度匹配。原油價格下跌直接反應了供應風險的降低。儘管有報導提及黃金上漲，但在VIX與原油價格的明確走勢下，市場整體趨勢定調為風險規避情緒的實質性減弱。\n    *   **解讀**：地緣政治風險的實質性緩解，使得此前因預期衝突而推高的風險溢價得以消除。這對於全球通膨壓力構成一定的緩和作用，並為股市提供了正面支撐。投資人可將此視為一次「實質性風險解除」，而非單純的「情緒噪音」。\n\n*   美股逼空行情與高風險資產表現強勁 (重要度：★★★★★)\n    *   **事實核對**：報導稱美股受空頭回補驅動，標普指數突破7100點創新高，那斯達克指數創下長連漲紀錄，比特幣亦強勢突破7.7萬美元。此與盤前VIX恐慌指數的持續下滑(17.48)以及美元/台幣匯率的台幣升值(31.46，美元走貶)趨勢完全吻合。市場普遍接受風險並投入高流動性資產，而非呈現系統性風險飆高的跡象。\n    *   **解讀**：系統性風險降低，市場流動性充足且對未來預期轉為樂觀。這鼓勵資金從避險資產轉向成長型或高風險資產，形成良性循環。投資人應關注此趨勢下，各板塊的輪動機會。\n\n*   美國晶片設備管制法修訂以維繫AI優勢 (重要度：★★★★)\n    *   **事實核對**：新聞指出美國修訂晶片設備管制法規。此為一持續性的產業政策佈局，旨在鞏固其在人工智慧領域的領先地位。此類政策變動往往具有長期且結構性的影響，其真實效應需時間驗證，非短期市場指標能直接反映。\n    *   **解讀**：此舉凸顯AI技術在國家戰略層面的重要性，並預示未來晶片產業鏈的競爭與合作將持續受地緣政治因素影響。對於台灣半導體產業而言，這既是挑戰也是機遇，需密切關注政策細節對供應鏈的潛在衝擊與轉單效應。\n\n*   台灣部分題材股表現活躍：Micro LED、半導體光學、玻纖布 (重要度：★★★)\n    *   **事實核對**：報導點名特定個股如「鴻家軍」Micro LED概念股、GIS-KY及玻纖布相關個股表現強勢，呈現週漲幅可觀的物理事實。在VIX低位運行及台幣匯率穩健的背景下，系統性風險並未顯著壓制個股表現。然而，部分題材（如Micro LED「有望」切入蘋果供應鏈）仍處於「傳聞」階段，尚未有具體訂單或量產實績。\n    *   **解讀**：市場在整體風險降低的環境下，資金尋求特定題材的投資機會。對於「傳聞」性質的利多，投資人應保持警惕，等待實質證據。此類表現更多反映了市場對特定新技術或產業前景的「預期」，而非已兌現的獲利。\n\n🔥 【市場情緒與壓力測試】\n今日市場的「科學儀表板」顯示，VIX恐慌指數錄得17.48，較前日下降0.46點，已處於相對低點。這明確指示市場整體風險感知度處於緩和狀態，系統性壓力正在降低。同時，美元兌台幣匯率為31.46，相較前日下降0.12，意味著新台幣小幅升值。此數據共同佐證了當前市場資金的風險偏好回升，傾向於流入高風險資產，且外部流動性狀況相對有利。\n\n💰 【台股影響與板塊點名】\n在當前全球風險情緒回穩的背景下，台股市場預期將受益於資金回流及風險偏好的提升。\n受惠產業：\n*   **半導體產業**：儘管外部晶片管制政策持續演變，但AI產業的長期趨勢不變。台積電作為全球先進製程的領導者，其2nm及未來技術的進展，將持續鞏固其核心地位。海力士在HBM領域的領先地位，與台積電在CoWoS封裝上的強強聯手，共同支撐AI供應鏈的發展。聯電、聯發科等亦受法人買超青睞。\n*   **電子零組件與光學**：Micro LED、半導體光學如GIS-KY等題材股，在市場情緒樂觀下，有望吸引更多關注，但需審慎評估其基本面與傳聞的真實性。\n*   **傳產中具特定題材者**：玻纖布等產業因特定需求爆發而受惠。\n受衝擊產業：\n*   **部分能源概念股**：國際油價大跌，可能對部分依賴高油價獲利的能源相關企業造成短期壓力。\n\n📈 【投資觀察指引】\n1.  關注實質利好，警惕傳聞炒作：在風險情緒改善的市場中，特定題材容易被放大。對於缺乏實質訂單或技術突破證明的「傳聞」，應保持科學分析與謹慎態度。\n2.  審視地緣政治對供應鏈的結構性影響：美國晶片政策的修訂並非短期事件，其對全球半導體供應鏈的長期重塑，值得持續追蹤與評估。\n3.  系統性風險降低，但不代表個股無風險：VIX走低為市場提供較為穩定的環境，但個股仍存在其獨特的基本面與操作風險，選股應回歸企業價值。\n4.  留意資金輪動板塊：在全球資金湧向風險資產時，需觀察資金在不同產業板塊間的流動，找出具備成長潛力與獲利支撐的產業。\n5.  長期持股，優於短期頻繁交易：如台積電等優質龍頭股的長期報酬顯示，時間是投資的複利。面對短期波動，穩健的長期持股策略可能更為有效。\n\n🏫 【曉臻財經小教室】\n今日單字：【自營商避險】\n自營商避險是指券商的自營部門在進行選擇權等衍生性商品交易時，為平衡其部位風險而進行的反向操作。它能幫助我們「看穿市場假象」，因為自營商的避險買賣行為，有時會造成個股股價的短期波動，但這並非基於對該公司基本面的判斷，而是單純為了對沖其衍生性商品部位的風險，因此不應被誤讀為市場對該個股的真實看漲或看跌意圖。\n\n結尾：\n風險釋放，市場回春；擇優佈局，穩健求真。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n本週市場回顧，全球金融環境顯現出風險情緒的顯著緩和。中東地緣政治的緊張態勢有所降溫，特別是荷莫茲海峽的重新開放，此一發展直接促使國際原油價格出現約10%的明顯跌幅，緩解了市場對能源供應中斷的擔憂。與此同時，衡量市場恐慌程度的VIX指數同步下行，顯示投資人對未來不確定性的顧慮正在消退。在全球主要股市方面，美股在空頭回補的強勁驅動下呈現顯著上漲，高風險資產如加密貨幣比特幣亦表現活躍，共同標示著資金正回流至風險性資產。在台灣，新台幣兌美元匯率小幅升值，反映出外部資金環境的趨穩與國內市場信心的增強。整體而言，全球市場正從先前的地緣政治陰霾中逐漸釋放，資金流動明確指向風險偏好型資產，為投資者帶來新的觀察重點。\n\n📊 【重大事件：交叉驗證報告】\n\n*   中東地緣政治緊張降溫與油價大跌 (重要度：★★★★★)\n    *   **事實核對**：新聞指出中東地緣政治緊張局勢降溫，荷莫茲海峽開放導致國際油價跌幅逾10%。此數據與盤前VIX恐慌指數的下降(▼0.46至17.48)及歐美股市普遍收紅的表現高度匹配。原油價格下跌直接反應了供應風險的降低。儘管有報導提及黃金上漲，但在VIX與原油價格的明確走勢下，市場整體趨勢定掉為風險規避情緒的實質性減弱。\n    *   **解讀**：地緣政治風險的實質性緩解，使得此前因預期衝突而推高的風險溢價得以消除。這對於全球通膨壓力構成一定的緩和作用，並為股市提供了正面支撐。投資人可將此視為一次「實質性風險解除」，而非單純的「情緒噪音」。\n\n*   美股逼空行情與高風險資產表現強勁 (重要度：★★★★★)\n    *   **事實核對**：報導稱美股受空頭回補驅動，標普指數突破7100點創新高，那斯達克指數創下長連漲紀錄，比特幣亦強勢突破7.7萬美元。此與盤前VIX恐慌指數的持續下滑(17.48)以及美元/台幣匯率的台幣升值(31.46，美元走貶)趨勢完全吻合。市場普遍接受風險並投入高流動性資產，而非呈現系統性風險飆高的跡象。\n    *   **解讀**：系統性風險降低，市場流動性充足且對未來預期轉為樂觀。這鼓勵資金從避險資產轉向成長型或高風險資產，形成良性循環。投資人應關注此趨勢下，各板塊的輪動機會。\n\n*   美國晶片設備管制法修訂以維繫AI優勢 (重要度：★★★★)\n    *   **事實核對**：新聞指出美國修訂晶片設備管制法規。此為一持續性的產業政策佈局，旨在鞏固其在人工智慧領域的領先地位。此類政策變動往往具有長期且結構性的影響，其真實效應需時間驗證，非短期市場指標能直接反映。\n    *   **解讀**：此舉凸顯AI技術在國家戰略層面的重要性，並預示未來晶片產業鏈的競爭與合作將持續受地緣政治因素影響。對於台灣半導體產業而言，這既是挑戰也是機遇，需密切關注政策細節對供應鏈的潛在衝擊與轉單效應。\n\n*   台灣部分題材股表現活躍：Micro LED、半導體光學、玻纖布 (重要度：★★★)\n    *   **事實核對**：報導點名特定個股如「鴻家軍」Micro LED概念股、GIS-KY及玻纖布相關個股表現強勢，呈現週漲幅可觀的物理事實。在VIX低位運行及台幣匯率穩健的背景下，系統性風險並未顯著壓制個股表現。然而，部分題材（如Micro LED「有望」切入蘋果供應鏈）仍處於「傳聞」階段，尚未有具體訂單或量產實績。\n    *   **解讀**：市場在整體風險降低的環境下，資金尋求特定題材的投資機會。對於「傳聞」性質的利多，投資人應保持警惕，等待實質證據。此類表現更多反映了市場對特定新技術或產業前景的「預期」，而非已兌現的獲利。\n\n🔥 【市場情緒與壓力測試】\n今日市場的「科學儀表板」顯示，VIX恐慌指數錄得17.48，較前日下降0.46點，已處於相對低點。這明確指示市場整體風險感知度處於緩和狀態，系統性壓力正在降低。同時，美元兌台幣匯率為31.46，相較前日下降0.12，意味著新台幣小幅升值。此數據共同佐證了當前市場資金的風險偏好回升，傾向於流入高風險資產，且外部流動性狀況相對有利。\n\n💰 【台股影響與板塊點名】\n在當前全球風險情緒回穩的背景下，台股市場預期將受益於資金回流及風險偏好的提升。\n受惠產業：\n*   **半導體產業**：儘管外部晶片管制政策持續演變，但AI產業的長期趨勢不變。台積電作為全球先進製程的領導者，其2nm及未來技術的進展，將持續鞏固其核心地位。海力士在HBM領域的領先地位，與台積電在CoWoS封裝上的強強聯手，共同支撐AI供應鏈的發展。聯電、聯發科等亦受法人買超青睞。\n*   **電子零組件與光學**：Micro LED、半導體光學如GIS-KY等題材股，在市場情緒樂觀下，有望吸引更多關注，但需審慎評估其基本面與傳聞的真實性。\n*   **傳產中具特定題材者**：玻纖布等產業因特定需求爆發而受惠。\n受衝擊產業：\n*   **部分能源概念股**：國際油價大跌，可能對部分依賴高油價獲利的能源相關企業造成短期壓力。\n\n📈 【投資觀察指引】\n1.  關注實質利好，警惕傳聞炒作：在風險情緒改善的市場中，特定題材容易被放大。對於缺乏實質訂單或技術突破證明的「傳聞」，應保持科學分析與謹慎態度。\n2.  審視地緣政治對供應鏈的結構性影響：美國晶片政策的修訂並非短期事件，其對全球半導體供應鏈的長期重塑，值得持續追蹤與評估。\n3.  系統性風險降低，但不代表個股無風險：VIX走低為市場提供較為穩定的環境，但個股仍存在其獨特的基本面與操作風險，選股應回歸企業價值。\n4.  留意資金輪動板塊：在全球資金湧向風險資產時，需觀察資金在不同產業板塊間的流動，找出具備成長潛力與獲利支撐的產業。\n5.  長期持股，優於短期頻繁交易：如台積電等優質龍頭股的長期報酬顯示，時間是投資的複利。面對短期波動，穩健的長期持股策略可能更為有效。\n\n🏫 【曉臻財經小教室】\n今日單字：【自營商避險】\n自營商避險是指券商的自營部門在進行選擇權等衍生性商品交易時，為平衡其部位風險而進行的反向操作。它能幫助我們「看穿市場假象」，因為自營商的避險買賣行為，有時會造成個股股價的短期波動，但這並非基於對該公司基本面的判斷，而是單純為了對沖其衍生性商品部位的風險，因此不應被誤讀為市場對該個股的真實看漲或看跌意圖。\n\n結尾：\n風險釋放，市場回春；擇優佈局，穩健求真。",
   "news": [
+    {
+      "title": "逼空行情引爆美股 空頭回補930億美元 高風險資產成最大贏家 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMijgNBVV95cUxONkx3NWRkQ1pzZzgwcUFla0Rtd2ZYQlZ1cF9EWjM2MVRXY2RST1VBeVI3SmlvdkpUM1o5Qk9XZ0NkZl9aNlZGZUtFNExCMkdzbnNsVFljWVI0RGZpYzJrWW9sMEx1Z3ZOb2tJcXVCaEVQamJnTkVGdXNTNjZWTnk1aUZxQUZzM3MyaXVWY3lqXzB3ZThEN0p2cXpHMVh2WGc0eVdmeVZCcGVJM2paYm1ra3k2d0JoRTJTNGtsYTN3OWF4ai1nUUxpNXFBcTZSUjNvcnZlb1QyMzI4NG5qRVg4WFVobUdDWkg4SUhsVnZhUXJSaHliV0FrYzFmZ1J3VVFBYzk1TWU2SnlMbmZHbExDdTVNbm92SDcybHZLS0RhR3V1VUpsZy02Y3JaajY2S2JDNF9fS244NEpzXzBiMWdTeVV1Wl9ncEJodGJ0cHg2dkxZd3RYbTJWZ04tejBYZl9mblQ1RHRpdmozT254Y3R1d2dzTEVCZHNaVDBhcFI4VmZjRXBQVWVqVGZYVlpJUQ?oc=5",
+      "summary": "逼空行情引爆美股 空頭回補930億美元 高風險資產成最大贏家&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-18T06:46:20+00:00"
+    },
+    {
+      "title": "下週最新油價公布了！中油持續補貼 美伊戰爭後已吸收114.7億 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMihANBVV95cUxNc2U0dFFCOWx0ZmwtWkxmY0FPWFNVel9oMmJlQU5tdS1xTHRjMmx3Uld1Z014S2NtWUVXU3hPZU5jRi1PQlVsN2MtVHpoRUdER0tqZmMtdy1ONWVOelBidWdERUUyUmVfSjVQZEw0X2k2bnBxUk1GRHlFZXFyV01mYmNLdzhrLTAwU0V1bFFKVnliRW9TVGpldnN0bkpmcUd5cWxCS09vOU1IT1V2emNlRloyX0I3bFByb01iOHY2X1g1ZHN6UFA0UlNpYklEOUVrczlPSG9tSnJabExuTTBPTU1aTkE5eDN6XzVGTUs3dlNTaGMteHdKQlVSdUFvUF9KajNPd3lNSXotWVMtZ2ZXb1kydG5McVJUSnRYLVpHUG9MVjBreUk1d3BidkpZck1Kc3VlN216d2RQZENtVWVFUEdtZlE2YkJKbWk2WmpUYklsWUJFNHdEYUxjWHJvVVE4cFRkcmRuTlVOd3VfV2syQUtNV21USlZzUkFCeWR0ZWRXUldm?oc=5",
+      "summary": "下週最新油價公布了！中油持續補貼 美伊戰爭後已吸收114.7億&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-18T06:28:24+00:00"
+    },
+    {
+      "title": "投資真的要懂高等數學？他苦讀BS模型掀熱議 網點1關鍵：心態更重要 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMipwNBVV95cUxNU1BPTG54VEVDeXpZVGxZT05HZnExMnk4ODZnUXd5My1fdW9YTUR3SnpaUXpfYVFTOHBwUjRYVzJidG1TYldISVJNeTg3VzczZ1FvdEdoUmRjbUFLSlFWZmRvZUhnWTUtRzNiT1U3eW1BanAtTDFWZHhfUl9fSktvXzBQcFN0dVk3VUc5blZxekFMSWd2dFFzUU1jVDEyajRXM1NyTnBoemsxYTFlRDFOMU1fU005OXAtSU9tMEx0SmJJWUtFZEc5bmJDZ3VHUHo0cXF4OVR1bEdjTHF6UElDdmtHNW5UNnJELUFRUTRPRE5sUDZBNFJuYjJPSzE4NlBkTEt5Z2tGeXRQZXVhNUVOV1lvVDd1ZDdlT0N5ZjFkcG5ObS1uVnRHRnFqWXVJRmlVR0tWcmRDMlhOMkVqcEhRU0NSZFBIQ1RtdENiZzBvNTRqLXBYbVBmQVFVWllrLXZrSEZ0Z2EyNGZQRkIza01rYldnVDhKdU9IdEpIQkJxLXdlbExMcTFhX2Q3RUxEZEc5SlIxUWtyVXVFRkhscUJYQXBGLVRHN3c?oc=5",
+      "summary": "投資真的要懂高等數學？他苦讀BS模型掀熱議 網點1關鍵：心態更重要&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-18T06:11:15+00:00"
+    },
+    {
+      "title": "荷莫茲海峽一度重開 股市大漲 油價暴跌 - 世界新聞網",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE12Z3B1ZkZnZzRyZkU5ZGxSQnM3YV8tNFpRTmpkWUJYcjJNR29DNkZVUkVrUG9ZVTVQTDF6eEN2X01VRTd4NWdLdnVOeTR4MUNHTWEyVHdVR3FtUTVxYk5VdEZhZzduSEx3Q0c3TVl2a2ZlNjJuc19lUk1WRVdLQdIBZ0FVX3lxTE9HRGJHWkFvYVpBeDJDeTdmNV9HeGZUSURtWHpWbGtYMVJ5cE5HQWZFaWFjTDRpYmpCQmxoRXM3YkZYQnlsa21oYzktbFVxX3o0WmdORHVlV3V0V3VYUEZzOEdNM3FsU1E?oc=5",
+      "summary": "荷莫茲海峽一度重開 股市大漲 油價暴跌&nbsp;&nbsp;世界新聞網",
+      "dt_utc": "2026-04-18T06:00:00+00:00"
+    },
+    {
+      "title": "200萬獲利全吐回去！他股災中「押反向槓桿」慘賠150萬：落入「追高殺低」陷阱 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxQZE9RQTg1eUwyOTRlUk44NVJ4V29CaWNGMVNsTGJSM3gyZmI1MEFHZDlMZl84aEtlWV9yZ3A2TnNwMWM0alItUnlwdnJtejMzZFZIYW5VdExFMmVxV2VNU0hZanNHUVpHNEhOcDJUTzBqcHd3VkJUYlY0a1J6aFRTRmtOeHVIM01ta1ZlTk9MNy1kWTJFazFIaTFycml0Z0N6Um9Dc3FzLTZRLXZyVDhaYWR1LWJSbFloaTBocU9KRDlxR2ItRC1mTjBidWROYkNIV2dZQjRlOGRBU1lHd0tWLVpLRWhUdldhZ0x1QTN4bGluZWl3clhRN1dpc3FEVnJZVVJ1SEhaNXJGSWNxbHdsT1J3a3BzOUh5YUlWcVRsSkFtMi10NmJkM29wejc5ckxpdmt2VHhYR2JOMFpfbEg1YUk2R21CZWExc1Y3dmF0aTVrN18wbzRUMDBTUzIzUjhTOHFacQ?oc=5",
+      "summary": "200萬獲利全吐回去！他股災中「押反向槓桿」慘賠150萬：落入「追高殺低」陷阱&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-18T05:48:45+00:00"
+    },
+    {
+      "title": "Micro LED題材加持！「鴻家軍」週拉3漲停噴47%炸14.1萬張 有望切蘋果新機供應鏈 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQTXVTWlpJMDctUUpZODBfcEJPcTdVd3o2LWZaaHpoVzZERW9qaEdyWnk0Rk5USUo1NVlFQWdUNE5paFQ4LU5vTkQ3R1hwdGozck1aV3diRGtySW9vMGNtdko2cDQ5aEtOZWxZdVVqNk9sT1RPTUJtSV9zai0ydnNPN0tWajNsV2FCUXVUYURqd09ieFlfdlRUNmJXOWFLZ3hZVDJWQkdKak1iSENXb2xmSzRHaXMzNmNBeHlkY0Ric1pac2ltT1lHQVVVWmZUSzRWUXJlLVdIZFdnRkh3V0NmMmRkdDJkb3hWMkktWHhLczFpZ2xMTXhQOXpMVjd6ZHZQbFlNVzJVd3VROGRudkE?oc=5",
+      "summary": "Micro LED題材加持！「鴻家軍」週拉3漲停噴47%炸14.1萬張 有望切蘋果新機供應鏈&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-18T05:29:51+00:00"
+    },
+    {
+      "title": "【即時新聞】中東地緣政治緊張局勢降溫致油價大跌逾10%，Liberty Energy(LBRT)等能源股跳水 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOUlpYb0tkM09WSjVDLXlYTjB1VnZabnQ1OTAyb1h2MFBhWHRnM3RxV21JR3Z1RzdzeXJIUUJMTG9vSV8zdW44UXNZajdNeVpleHk0RGp0TFI3Z3dmeUFtVmtoRGRCcEZVTVB6WGpXUHpPbHVuNmNESUhUSFRaLTIxX2xlMWdJbVo0NnVUb29VMFE?oc=5",
+      "summary": "【即時新聞】中東地緣政治緊張局勢降溫致油價大跌逾10%，Liberty Energy(LBRT)等能源股跳水&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-18T05:27:29+00:00"
+    },
+    {
+      "title": "伊朗「有限制」開放海峽！ 油輪商船觀望 股市大漲、油價暴跌 - TVBS新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1tUWNRSjNXMzNmTjBXaFBtVUhMRS1ubklXV3pvTmxTb0hjX0VzQk5ZWkpKY0ZIcDJYTEt1RU4tZzcxdVoydzdZdnJDeHRQeXc?oc=5",
+      "summary": "伊朗「有限制」開放海峽！ 油輪商船觀望 股市大漲、油價暴跌&nbsp;&nbsp;TVBS新聞網",
+      "dt_utc": "2026-04-18T05:23:00+00:00"
+    },
+    {
+      "title": "伊交長宣布開放荷姆茲海峽 國際油價跌1成、歐美股市收紅 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxQVGdVdkFDOHVlcmpTMXA3VUdwbWJmZUNLRW1saHlQUGIzY0psVWI5eTdhcEJnRzZ5eE5ZdFFpeFNZVWxYOThFVks0Wkx4NVBpMVl2T0M3dDdaVVVFLTFjcC1YY01WNkxLRTR0bGhLcmVYc0I1U19TT19rbnJ5RTc3ZFVJWDR3NkN0VkxLQlFDTE5TZzB4c19lLVBHd2Q3WDR1QmF3NjhjUEFYbElXdXY3RlQ1WHJTbE0xZFdKdnp1alJyN2p6ZUp0TmlLYWNUOVNYeFZqaTJpTS1fdXdaVFl4QzhJSk9OVTljb1BrbDU4SFpMYTFCY1RxMXMxLVR0T093cFZ4Q01keEhBUFkzNXhxSW1ab2JhY0IyMC1YLTAwWGlkZGR4Uk1JTkItcUE5SWhNbmdTY2JjR1FJcHgtOTRlb3JxVlNhMk5qb1p6MUctREJqSWRFZTFSbER2VkgzV0I4WS1RQjExNTh4UkpxWXlUbXZYU1dvc00?oc=5",
+      "summary": "伊交長宣布開放荷姆茲海峽 國際油價跌1成、歐美股市收紅&nbsp;&nbsp;Yahoo新聞",
+      "dt_utc": "2026-04-18T05:06:04+00:00"
+    },
     {
       "title": "「毫無用處」川普怒批北約「紙老虎」 美歐裂痕再擴大 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQMWNuSmVUN1FYQzdHS3hnQ0hGaTB5M2JuTE1LYWJJWk1Od1h5SmM1a0Fma1Q3ODRyYWs2Q2tFYjF0S3RlVC02RG9BYUNPYW1hMTliUEMyZFBTb0pWSGQ5cWRqYUltNVh0LTBFYUZpUHUzeHBSc3JPZVJKX1R6RU5iRjVtd0FpT0xzb2pteWx2SnNxdVdWNVBNRFg2OGtjbEhXOVN2R2h0azI4TE9la0lxZGlyY282R3hNNURyMEdFVFpPX3VCLXc2TWFwRGRGVWY1WlNRMlVxMHVRMWdsZnc4emp0QVA1VmNzOW82Mm1SRnVDZW95N3B0S1JYNHdPc3JobXNheTRGMEhoZ2R6SHFzek51Q2hPRVQtNTUzekNUMVVTM05tWVhIQWhVOHV2Y1ZyVXVxY0tkRkRsbk5BRmlMdk4xZjFncVZKa0FLTUlRcw?oc=5",
@@ -35,6 +89,12 @@
       "dt_utc": "2026-04-18T03:24:17+00:00"
     },
     {
+      "title": "陸軍104旅軍事訓練役第260梯開訓暨授槍典禮 - 軍事新聞通訊社",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV3dRekdZWG1odzN4MGZiVGlJcjNFUDVKUjN5M293TGRwbVFKTENHekxVZVJaTTdwQ1dpZVNTWFFqOHk2LXEwWkRsbTU0TmZXUGtsZktQVzlPdFZwejJBbERXWlpRaFdSYUJTWkFSb082LVYxdjdaT0daTmxqeU1kaE9iNk1QM00?oc=5",
+      "summary": "陸軍104旅軍事訓練役第260梯開訓暨授槍典禮&nbsp;&nbsp;軍事新聞通訊社",
+      "dt_utc": "2026-04-18T03:16:15+00:00"
+    },
+    {
       "title": "美軍事核能航太11科學家接連死亡失蹤　白宮聯手FBI調查 - ETtoday新聞雲",
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1oU09VbE9XZ3dBSTNxYmZtdHB0SjZ4bFFCbWJ4cXJyaUYzeFd3aGFxYWdYR2VIeGx2eWQ5bzlTYXI3MElpa1BEbzRxaEx6eTVSbzhQZE1wYWg5Zy10SXfSAWhBVV95cUxOSi13SjMydExmbDJtbndXUURXMFdvdk15WENuR19kNnc0SlAxQV9haVQyd3BQZkJLUi1zWlJKenQ4ZjFvdTNqS0xOU3hrTkMxR08xMkxtRERsYXZCNGJic0RLelFVTV9Edw?oc=5",
       "summary": "美軍事核能航太11科學家接連死亡失蹤　白宮聯手FBI調查&nbsp;&nbsp;ETtoday新聞雲",
@@ -51,6 +111,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBWaGxJdHFMUXVIUWRrOVFFVmRtd3g3ZlV4MzZaYUN6U05mWktxWHc4Yi1XMHB0QV9WTEc2VmFpNUtkMDZQTkdVaXlSNmR4Q0xYcjJDaE9FSEI?oc=5",
       "summary": "2603 長榮 - 本週數據- 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-18T02:39:31+00:00"
+    },
+    {
+      "title": "股市震盪難選股！資金找避風港 經理人點名它 - 三立新聞網SETN.com",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8tdS1ONWNmRzdNSlRWMjhkSmhrZURBczhLMk1reGhqR2QwU0ZJdDZGZU1vZC1JN2p2d1k0dEhVOUVmeWJjOU9tUDMyTQ?oc=5",
+      "summary": "股市震盪難選股！資金找避風港 經理人點名它&nbsp;&nbsp;三立新聞網SETN.com",
+      "dt_utc": "2026-04-18T02:31:20+00:00"
     },
     {
       "title": "股市震盪難選股！資金找避風港經理人點名它| 財經 - 三立新聞網SETN.com",
@@ -321,72 +387,6 @@
       "link": "https://news.google.com/rss/articles/CBMihgNBVV95cUxQQ0IzeVl2Y0NMWEJ3Z0ZRZ0Vxb1k5bUxfNm5UQ1IyaXN4cGlfaWY2UHlNTFQyTFBqRzFnaW4tbmZIOGRNN21KSlExNHBVcmd1RTdMNXRCZ042NzVQSlpwaE5PQ19CTnRDakxDZ1VRcWlXdWNlWjlNYnNhR1ZpYVB2akkxbGlmT2NhcV94Y25iY1Q5Ym8yc3RFVjB0QVVFY1pfYmdyejRCOFJhY1ZDNlFENC1WV3BfNFE0VGZNeTkwZlFwNGpjcU85X2VPd214bVlUWF8zTEJXcExNT042cUVrZXFTTW9waXczLXVXWGNrQ3BLZEhjcHVwWVo2ZTA0RkZrNVNCWElZLV9JWEl3NV8zVUFZTEpWU2FGUjNTdXJkdVJ1VnN4azBsczNlaWdNOW9sOE1ndkF6elVLT2Mzb2YyaEFlSk9RLWFhcVd4ZkZsRERKVHhwY2NGVHBuX2gxdWdqTnBELTRzTnk1UGZWRXZHVmlROGdmMHFkNGg1THlpU1k2Uy1OLXc?oc=5",
       "summary": "受霍爾木茲海峽重新開放的消息推動，華爾街股市大幅收高&nbsp;&nbsp;arch-web.com.tw",
       "dt_utc": "2026-04-17T21:02:29+00:00"
-    },
-    {
-      "title": "停火不穩？伊朗：與美仍有重大分歧 核談判未達協議 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxQWVJ3YWN6Yjk3NThYN2QzaGZrQmphdnlNVnNSSWxVaEFuQW1zajZQVWZuSy1QWU80Znh2a1JpWFBZcF9vV0MzU3cyMVBNWlNWRW1MYl9rUlh1YzNyd0N2VjVheWdwRzV6N1FhN1JIeXUxdGNOOVd5bm1oQkYwMG5vNFlnYmhRd2hWQWVMckNtMVJfUk5fUTRiVkM0c1NLR3p5Uy1TcTR3Q3N5VGp1NnE0SlJYNUJaR3BJWnhmS3RnVlpYMDJUMW1Vci1KNUNYRHBEV3B3XzhneFoydnFXeXZyX2pvNi1LY3Z4QXFaZk9LeDRWXzMwWlJkTVM2eUJzZm5DZWctLWVISDVVZmFaVnN2LXBJV0pXcEJza2JlWjBGalNYa3lYdlh5SDRhYWRFMnUtcXRXbUk1elZocVh1VWNuQjFwSko5T2JBUDdGdGVTU0ViU0xiLVRjTVlSdw?oc=5",
-      "summary": "停火不穩？伊朗：與美仍有重大分歧 核談判未達協議&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T21:00:02+00:00"
-    },
-    {
-      "title": "6548 長科* - 就是等.... 100up..... - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1NNWhOTVFyNEwtOEJoNmtKVkRJSXczNmR4S2NvSEVrUmpsNzVoX0tUODJiSTNZaW10QmxWNzZPME5McHZzVHVOWTdYMzJfZy1lVGYtYWlFcUE?oc=5",
-      "summary": "6548 長科* - 就是等.... 100up..... - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-17T20:43:10+00:00"
-    },
-    {
-      "title": "Press Release: Bank of America Declares Preferred Stock Dividends Payable in May and June 2026 - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPc2JOVlFDMVVqS1R1R3J4NmdSRXd4MzE3M0s5X29jZFB5by05UDFGRFpOVkhXeGN1WGthSFpKajZBNTUzcjZKeHcwYUk2dFdsdFZrV1VtMWk0UlJDWGlodFBWcDM3VmRqc1A2bTQ1VFpqYU81Q1FqbTVKLUFIUGhWTmo3WXJhUGJYaTViaFNVWFhBcFdQVDJLd2ZKZEhZd0tNTEFINUx2bTdEMktvVk5ZRzd0dw?oc=5",
-      "summary": "Press Release: Bank of America Declares Preferred Stock Dividends Payable in May and June 2026&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-17T20:22:26+00:00"
-    },
-    {
-      "title": "2230泰茂 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1hb09Eb3NYdDF0SUdISGp5RDhWME9ackthNU9JaU96amliaThSVU1SQVdUNHRPUld0cy1kY0IxN2dveGJ2WXZ4UVNkU1c5MnFkaWp1Q01PM04?oc=5",
-      "summary": "2230泰茂&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-17T20:10:44+00:00"
-    },
-    {
-      "title": "達人心法－提四大核心建議給投資新手 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNeWR6bHNxZXc2Z2x5aEd5V2hvUVFxN2xlMTB4WW1TVkxma1Boc0gtZUdmTFZ4VzFqMWJmZGFMMkNjUTZqVS1JYXhZdk1GYVlYRWFlQWxOdmozY1M4VFhyZGg3UTVBYVJEQUdKdjhmOEU5UGJCcG0wcWJlU2p4b3VJQ29RR2R6MWxfZTZJQjBnQXRuZjRfMF9BVWhQQWNhU0IzT1E3aGNWT2FpWVNHZUZRWnMxNmNYQnUzLTd5QkEzcHBvcGJGNkRESV9ZTF9VTVhvZ2sySUZuYWZSZGl6am1pOE5kNFNxTHY5MS1CUEpNbEdTRU9HdFBkczdwbjVOcVBHUGp5dlBTYkVVdERCaFl0cGdfTk9JekNFSDdLVA?oc=5",
-      "summary": "達人心法－提四大核心建議給投資新手&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-17T20:10:00+00:00"
-    },
-    {
-      "title": "黃金期正常捕魚陸駁軍事集結說- 兩岸新聞- 旺報 - 中時新聞網",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE92OUZrTXYyMzRiSkJoU1hHX0tkTENfcW9QNFNjVXZpWEg3U3F5OWRScE1hQWdIXzBraDB5b3RIRkNMNm9vdGU4Qk41bHNSODFMUjNNMlFVZlp0RHJ1UERKSjJuRExDdjN5SlR3?oc=5",
-      "summary": "黃金期正常捕魚陸駁軍事集結說- 兩岸新聞- 旺報&nbsp;&nbsp;中時新聞網",
-      "dt_utc": "2026-04-17T20:10:00+00:00"
-    },
-    {
-      "title": "Amazon's Stock Peeks Into Record Territory, as the AI Script Has Flipped to a Positive - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbzJ3eHp1U0NSTU5mVF8xSko5UXF4NnUtRUFyZXlQZ1lhX3RKVk9DV0I3c20xR0d0cjRiQm1EYnBwVVMxQkRESXNCRHRyRnBCeGV0a1dFSjFXQTMzeXFqOXlHZzNKNWYxV0NadjhWeWpDb1hyeGVlS1lfcGdHQ1RKaENEM3R4TVpkeXZiOHViRGI4M0E1OUp2Zg?oc=5",
-      "summary": "Amazon's Stock Peeks Into Record Territory, as the AI Script Has Flipped to a Positive&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-17T19:32:00+00:00"
-    },
-    {
-      "title": "【即時新聞】地緣政治降溫！伊朗重啟海峽促標普500(SPY)創新高，那指挑戰連13漲 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9HbjhybnZweWs3VWFEbUZBM1MzamtTWDZYZmxUR3lNLVliREFYaFh5TTBIcUE1ZENUWlBOZDk4MEdvWXJxc3FUS3NkZmZ6b09OZi1CaVROQ0tnTzFFeFhkMmpycU1mSU0?oc=5",
-      "summary": "【即時新聞】地緣政治降溫！伊朗重啟海峽促標普500(SPY)創新高，那指挑戰連13漲&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-17T19:30:35+00:00"
-    },
-    {
-      "title": "【即時新聞】地緣政治降溫！伊朗重啟海峽促標普500(SPY)創新高，那指挑戰連13漲 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUlFsUDJKX1c4cXVGbXVQMHhSdW9hdEphLUlBMnpidldneEtGY1VtaExTM0hZM0JfX01GTWFjdUN0Szc0clROUFQ4MzZpRWV1aUp2ckFZeEVoSmtSLXAzYW5Va21mVjV5Z2dRaXNITDJpTjFuNzRfT3k0dzNDR3BwQlYwVXV2eTV5ZG9Xek5QOUU?oc=5",
-      "summary": "【即時新聞】地緣政治降溫！伊朗重啟海峽促標普500(SPY)創新高，那指挑戰連13漲&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-17T19:30:22+00:00"
-    },
-    {
-      "title": "TWA00 加權指數- 當初558買的，現已經變885 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1jYVFiVFFUdVNaSlBZTGVWWWhGUmxESUtKUGJSeHJGMGxLbzJJUWlQa3llMGJYU2V0M0w2MjRrVEJTVWpfdHBaYWlPdTFjYkJsc0Jqd2tZck0?oc=5",
-      "summary": "TWA00 加權指數- 當初558買的，現已經變885 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-04-17T19:30:01+00:00"
-    },
-    {
-      "title": "【即時新聞】傳激進投資人有意卡位！PayPal(PYPL)股價週五勁揚3%，收購傳聞再起引發市場關注 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcElkS05QejZjUWZmV0RHMGxUd092di1HQ2xzRDJySlJPdzZYaC1zd1RQM2JiOGJnWVpUSG53WUo1QmkwUV9uWXNua0RGWS1WTzVZNGhMcFFZQXFlYmZjMHk4R1N3N3Y1cVpnR0dFbWpoNWtXRld5MDdvZVA0VXN5QUtQTlZtTVlodGpQTUVic04?oc=5",
-      "summary": "【即時新聞】傳激進投資人有意卡位！PayPal(PYPL)股價週五勁揚3%，收購傳聞再起引發市場關注&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-17T19:28:57+00:00"
     }
   ],
   "risk_indicators": {
