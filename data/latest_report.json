@@ -1,9 +1,75 @@
 {
-  "updated_at_utc": "2026-04-19 15:55:08 (TW)",
+  "updated_at_utc": "2026-04-19 17:26:46 (TW)",
   "title": "全球局勢與市場情報 2026-04-19 週末特刊-下週展望",
-  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，恐慌指數 VIX 下降，新台幣兌美元匯率走強，表明市場整體避險情緒有所緩解。儘管部分新聞提及地緣政治潛在風險，但避險資產的實際走勢與之不符，暗示這些訊息對市場的即時影響可能屬於情緒性干擾。AI 仍是市場核心主軸，從新創募資、巨頭佈局到應用拓展皆有進展，然而，關於其估值與對生產力提升的時程，市場分歧意見並存，顯示投資人對 AI 板塊需保持審慎的結構性分析。\n\n📊 【重大事件：交叉驗證報告】\n\n*   **中東局勢牽動日股走勢，美伊臨時停火協議本週到期 (重要度：★★★☆☆)**\n    *   **事實核對**：新聞提及「伊朗情勢牽動日股走勢」、「美伊臨時停火協議本周將到期」，並有「荷姆茲海峽封鎖再起」等報導。然而，盤前 VIX 恐慌指數下降 0.46 至 17.48，美元/台幣匯率下降 0.12 至 31.46 (新台幣升值)。這些避險資產的指標，並未顯示出市場因地緣政治緊張而產生避險需求。反而有報導稱「中東局勢趨穩促市場信心」。\n    *   **解讀**：市場當前並未將中東相關新聞解讀為需要大規模避險的實質風險。投資人應辨識此類訊息為潛在情境討論，而非當前市場恐慌驅動力。實際資金流向與避險情緒指標不符，顯示市場情緒相對穩定。\n\n*   **DeepSeek 首傳啟動融資，估值上看 100 億美元，3 倍高薪挖角震盪核心團隊 (重要度：★★★★☆)**\n    *   **事實核對**：此為特定 AI 新創公司的融資與人才動態。估值與薪資數字反映了 AI 領域的激烈競爭與資本熱度，符合當前 AI 產業發展的整體趨勢。此訊息本身不直接與 VIX 或匯率相關聯，但可視為 AI 產業持續吸金的例證。\n    *   **解讀**：AI 領域的資金與人才競爭白熱化，證明市場對此技術的長期潛力仍抱持高度期待。投資人可關注新創公司的技術突破與商業模式，但仍需審慎評估其估值與實際獲利能力的匹配度。\n\n*   **英特爾衝刺晶圓代工拚 AI 新霸權，台設備訂單大增 5 成 (重要度：★★★★☆)**\n    *   **事實核對**：英特爾積極發展晶圓代工業務是既定戰略。然而，在先進製程領域，台積電 (TSMC) 的技術領先地位與良率歷史積累，是業界公認的基準。即使英特爾設備訂單增長，這僅是產能投入，其能否在 HBM4 或 2nm 等關鍵技術上實現與台積電和海力士 (SK Hynix) 比肩的實質產出與市場份額，仍待後續觀察。\n    *   **解讀**：英特爾的行動代表半導體產業競爭加劇，可能為相關設備供應鏈帶來短期利多。然而，投資人應避免單純因「訂單增加」而過度樂觀，需持續追蹤英特爾在先進製程上的實際良率、量產進度以及客戶採用情況，與台積電的競爭關係仍是長期觀察重點。\n\n*   **台股屢創新高！他怕泡沫化 「95%持股全賣光」 網曝關鍵：AI 還沒倒別擔心 / 創紀錄股市估值掩蓋對臨時獲利催化劑的依賴 (重要度：★★★★★)**\n    *   **事實核對**：台股市場確實處於高位，但 VIX 下降、新台幣升值，顯示系統性風險警訊並不明顯。關於估值過高及泡沫化的討論，是市場長期趨勢中常見的警示。大摩提及「生產力紅利恐滯後 10 年以上」亦是一種基於歷史經驗的審慎觀點。\n    *   **解讀**：市場高位引發部分投資人獲利了結或擔憂泡沫，此為正常現象。然而，在系統性風險指標未明顯惡化之前，盲目清倉可能錯失潛在機會。關鍵在於，當前市場的漲勢在很大程度上依賴於 AI 帶來的獲利預期，一旦此預期未能兌現，或遭遇其他利空，市場將面臨重新評估的壓力。投資人應側重個股基本面與產業趨勢的審慎分析，而非受單一情緒影響。\n\n🔥 【市場情緒與壓力測試】\n今日 VIX 恐慌指數為 17.48，較前一日下降 0.46，顯示市場整體恐慌情緒有所緩和。美元/台幣匯率報 31.46，下跌 0.12，反映新台幣相對走強，資金並未呈現顯著的避險外流傾向。這兩項關鍵指標構成市場信賴度的科學儀表板，它們的平穩表現，對照部分地緣政治新聞，能有效過濾其中的情緒噪音，揭示當前市場在宏觀層面趨於穩定的事實。\n\n💰 【台股影響與板塊點名】\n當前台股主要受 AI 趨勢驅動，半導體板塊是核心動能，特別是與 AI 晶片、HBM 等相關供應鏈。儘管英特爾積極追趕，台積電 (TSMC) 在先進製程的領先地位仍穩固，與海力士 (SK Hynix) 在 HBM 領域的合作也持續強化其生態系優勢。AI 應用服務、散熱、伺服器等相關產業鏈仍是市場焦點。同時，市場對高估值疑慮升溫，非 AI 相關且基本面缺乏支撐的個股可能面臨回調壓力。\n\n📈 【投資觀察指引】\n1.  **數據導向判斷**：面對眾多資訊，優先參考 VIX、匯率等客觀市場指標，判斷實際的避險情緒與資金流向，避免被單一新聞標題影響判斷。\n2.  **AI 產業鏈深入分析**：AI 仍是長期趨勢，但需細究產業內各環節的技術壁壘與競爭格局。區分真正受益者與題材炒作股，並關注其獲利是否能支撐高估值。\n3.  **地緣政治影響再評估**：地緣政治事件的影響通常是複合且延遲的。當前市場反應趨緩，但潛在風險猶存。長期投資者應將其納入風險評估，而非作為短期交易的直接訊號。\n4.  **留意資金配置結構**：全球股市高位運行，部分資金流向非美元避險資產，以及日本等區域市場。檢視自身投資組合的多元性與風險分散程度。\n5.  **警惕「預期」與「現實」落差**：部分科技股的高估值已充分反映未來多年的成長預期。一旦實際獲利或技術進展不如預期，股價修正的幅度可能較大。\n\n🏫 【曉臻財經小教室】\n今日單字：【八大行庫 (國家隊)】\n「八大行庫」通常指台灣八家大型公股銀行。它們在市場中扮演重要角色，其進出股市的動向，常被視為具「穩定市場」或「政策性護盤」意涵的「國家隊」資金。當市場出現非理性下跌時，八大行庫的買超，可幫助我們「看穿市場假象」，判斷這是一次正常的修正，還是因外部因素引發的系統性風險，為市場提供心理支撐。\n\n八字臻言：數據驗證，去蕪存菁。",
-  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，恐慌指數 VIX 下降，新台幣兌美元匯率走強，表明市場整體避險情緒有所緩解。儘管部分新聞提及地緣政治潛在風險，但避險資產的實際走勢與之不符，暗示這些訊息對市場的即時影響可能屬於情緒性干擾。AI 仍是市場核心主軸，從新創募資、巨頭佈局到應用拓展皆有進展，然而，關於其估值與對生產力提升的時程，市場分歧意見並存，顯示投資人對 AI 板塊需保持審慎的結構性分析。\n\n📊 【重大事件：交叉驗證報告】\n\n*   **中東局勢牽動日股走勢，美伊臨時停火協議本週到期 (重要度：★★★☆☆)**\n    *   **事實核對**：新聞提及「伊朗情勢牽動日股走勢」、「美伊臨時停火協議本周將到期」，並有「荷姆茲海峽封鎖再起」等報導。然而，盤前 VIX 恐慌指數下降 0.46 至 17.48，美元/台幣匯率下降 0.12 至 31.46 (新台幣升值)。這些避險資產的指標，並未顯示出市場因地緣政治緊張而產生避險需求。反而有報導稱「中東局勢趨穩促市場信心」。\n    *   **解讀**：市場當前並未將中東相關新聞解讀為需要大規模避險的實質風險。投資人應辨識此類訊息為潛在情境討論，而非當前市場恐慌驅動力。實際資金流向與避險情緒指標不符，顯示市場情緒相對穩定。\n\n*   **DeepSeek 首傳啟動融資，估值上看 100 億美元，3 倍高薪挖角震盪核心團隊 (重要度：★★★★☆)**\n    *   **事實核對**：此為特定 AI 新創公司的融資與人才動態。估值與薪資數字反映了 AI 領域的激烈競爭與資本熱度，符合當前 AI 產業發展的整體趨勢。此訊息本身不直接與 VIX 或匯率相關聯，但可視為 AI 產業持續吸金的例證。\n    *   **解讀**：AI 領域的資金與人才競爭白熱化，證明市場對此技術的長期潛力仍抱持高度期待。投資人可關注新創公司的技術突破與商業模式，但仍需審慎評估其估值與實際獲利能力的匹配度。\n\n*   **英特爾衝刺晶圓代工拚 AI 新霸權，台設備訂單大增 5 成 (重要度：★★★★☆)**\n    *   **事實核對**：英特爾積極發展晶圓代工業務是既定戰略。然而，在先進製程領域，台積電 (TSMC) 的技術領先地位與良率歷史積累，是業界公認的基準。即使英特爾設備訂單增長，這僅是產能投入，其能否在 HBM4 或 2nm 等關鍵技術上實現與台積電和海力士 (SK Hynix) 比肩的實質產出與市場份額，仍待後續觀察。\n    *   **解讀**：英特爾的行動代表半導體產業競爭加劇，可能為相關設備供應鏈帶來短期利多。然而，投資人應避免單純因「訂單增加」而過度樂觀，需持續追蹤英特爾在先進製程上的實際良率、量產進度以及客戶採用情況，與台積電的競爭關係仍是長期觀察重點。\n\n*   **台股屢創新高！他怕泡沫化 「95%持股全賣光」 網曝關鍵：AI 還沒倒別擔心 / 創紀錄股市估值掩蓋對臨時獲利催化劑的依賴 (重要度：★★★★★)**\n    *   **事實核對**：台股市場確實處於高位，但 VIX 下降、新台幣升值，顯示系統性風險警訊並不明顯。關於估值過高及泡沫化的討論，是市場長期趨勢中常見的警示。大摩提及「生產力紅利恐滯後 10 年以上」亦是一種基於歷史經驗的審慎觀點。\n    *   **解讀**：市場高位引發部分投資人獲利了結或擔憂泡沫，此為正常現象。然而，在系統性風險指標未明顯惡化之前，盲目清倉可能錯失潛在機會。關鍵在於，當前市場的漲勢在很大程度上依賴於 AI 帶來的獲利預期，一旦此預期未能兌現，或遭遇其他利空，市場將面臨重新評估的壓力。投資人應側重個股基本面與產業趨勢的審慎分析，而非受單一情緒影響。\n\n🔥 【市場情緒與壓力測試】\n今日 VIX 恐慌指數為 17.48，較前一日下降 0.46，顯示市場整體恐慌情緒有所緩和。美元/台幣匯率報 31.46，下跌 0.12，反映新台幣相對走強，資金並未呈現顯著的避險外流傾向。這兩項關鍵指標構成市場信賴度的科學儀表板，它們的平穩表現，對照部分地緣政治新聞，能有效過濾其中的情緒噪音，揭示當前市場在宏觀層面趨於穩定的事實。\n\n💰 【台股影響與板塊點名】\n當前台股主要受 AI 趨勢驅動，半導體板塊是核心動能，特別是與 AI 晶片、HBM 等相關供應鏈。儘管英特爾積極追趕，台積電 (TSMC) 在先進製程的領先地位仍穩固，與海力士 (SK Hynix) 在 HBM 領域的合作也持續強化其生態系優勢。AI 應用服務、散熱、伺服器等相關產業鏈仍是市場焦點。同時，市場對高估值疑慮升溫，非 AI 相關且基本面缺乏支撐的個股可能面臨回調壓力。\n\n📈 【投資觀察指引】\n1.  **數據導向判斷**：面對眾多資訊，優先參考 VIX、匯率等客觀市場指標，判斷實際的避險情緒與資金流向，避免被單一新聞標題影響判斷。\n2.  **AI 產業鏈深入分析**：AI 仍是長期趨勢，但需細究產業內各環節的技術壁壘與競爭格局。區分真正受益者與題材炒作股，並關注其獲利是否能支撐高估值。\n3.  **地緣政治影響再評估**：地緣政治事件的影響通常是複合且延遲的。當前市場反應趨緩，但潛在風險猶存。長期投資者應將其納入風險評估，而非作為短期交易的直接訊號。\n4.  **留意資金配置結構**：全球股市高位運行，部分資金流向非美元避險資產，以及日本等區域市場。檢視自身投資組合的多元性與風險分散程度。\n5.  **警惕「預期」與「現實」落差**：部分科技股的高估值已充分反映未來多年的成長預期。一旦實際獲利或技術進展不如預期，股價修正的幅度可能較大。\n\n🏫 【曉臻財經小教室】\n今日單字：【八大行庫 (國家隊)】\n「八大行庫」通常指台灣八家大型公股銀行。它們在市場中扮演重要角色，其進出股市的動向，常被視為具「穩定市場」或「政策性護盤」意涵的「國家隊」資金。當市場出現非理性下跌時，八大行庫的買超，可幫助我們「看穿市場假象」，判斷這是一次正常的修正，還是因外部因素引發的系統性風險，為市場提供心理支撐。\n\n八字臻言：數據驗證，去蕪存菁。",
+  "report": "🎯 【一分鐘戰略速讀】\n2026年4月19日市場數據顯示，恐慌指數VIX持續收斂，美元兌台幣匯率同步走貶，綜合判斷當前市場風險偏好未見提升，資金流向趨於穩定。部分新聞報導雖提及地緣政治緊張情勢，但關鍵指標並未顯示避險情緒升溫，因此應定調為局部性資訊，而非全面性系統風險。AI產業鏈則呈現分化，部分企業公布的營收數據證實需求增長，但同時亦有分析報告提醒AI生產力紅利恐長期滯後。整體而言，市場正處於對個別數據進行審慎評估的階段，而非依據單一事件進行全面性方向判斷。\n\n📊 【重大事件：交叉驗證報告】\n\n*   美伊衝突升溫與市場避險情緒 (重要度：★★)\n    *   **事件標題**：美伊下一論談判遙遙無期！伊朗拒無框架會談、警告美國違反停火將付出代價 / 〈台股風向球〉3萬7攻防再起 提防美伊局勢急轉直下 法人避險情緒轉強\n    *   **事實核對**：VIX恐慌指數本日為17.48，較前日下降0.46點；美元兌台幣匯率31.46，較前日下降0.12元。黃金、原油與VIX指數並未出現避險資產普遍應有的噴漲或顯著波動。\n    *   **解讀**：儘管新聞標題暗示美伊情勢緊張，並提及部分法人可能萌生避險情緒，但實際市場指標VIX與匯率數據並未呼應此一論述。這表明當前市場對於中東情勢的解讀，傾向於局部性事件，尚未轉化為廣泛的系統性風險，投資者應避免過度反應，將此類訊息歸類為「情緒噪音」。\n\n*   AI伺服器供應商勤誠營收增長 (重要度：★★★★)\n    *   **事件標題**：AI火力全開！勤誠3月營收25億「年增逾44％」 股價強彈重返千元俱樂部\n    *   **事實核對**：此為企業公布之實際營收數據，具備高度真實性。\n    *   **解讀**：勤誠3月營收年增逾44%，此數據具體反映了AI伺服器相關硬體需求在特定環節的增長。這證實了部分AI供應鏈的業績動能，為AI產業的實質性發展提供了證據。對投資人而言，這提示在AI熱潮中，應聚焦於有實際業績支撐的企業，而非僅依賴概念或預期。\n\n*   摩根士丹利對AI生產力紅利的審慎觀點 (重要度：★★★)\n    *   **事件標題**：AI是革命還是泡沫？大摩回顧歷史經驗示警：生產力紅利恐滯後10年以上\n    *   **事實核對**：此為金融機構提出的宏觀經濟分析與歷史回顧，旨在提供長期視角的風險評估。\n    *   **解讀**：這份報告提醒市場，科技創新從投入到產生實質性生產力提升並轉化為企業獲利，可能存在顯著的時間差。在當前AI概念估值高漲之際，投資者需警惕生產力紅利兌現的時程，並對長期投資報酬率抱持理性預期。這並非否定AI潛力，而是呼籲投資回歸基本面分析，評估AI技術落地與商業化進程。\n\n*   日本澳洲大規模軍售案 (重要度：★★)\n    *   **事件標題**：日本戰後最大軍售案啟動！日澳簽署70億美元協議 三菱重工接下11艘護衛艦大單\n    *   **事實核對**：VIX恐慌指數本日為17.48 (▼ 0.46)，美元兌台幣匯率31.46 (▼ 0.12)。全球避險資產未見大幅波動。\n    *   **解讀**：日本與澳洲的軍事採購協議，儘管金額龐大，但其主要影響範疇為區域國防工業與地緣政治平衡，並未在全球金融市場引發廣泛的避險情緒或資金流向劇烈變化。全球投資者應將此事件視為個別產業利多，而非足以扭轉全球市場走向的因素。\n\n*   台股屢創新高下的市場泡沫疑慮 (重要度：★★★)\n    *   **事件標題**：台股屢創新高！ 他怕泡沫化 「95%持股全賣光」 網曝關鍵：AI還沒倒別擔心\n    *   **事實核對**：VIX恐慌指數本日為17.48 (▼ 0.46)，美元兌台幣匯率31.46 (▼ 0.12)。系統性風險指標趨於平穩。\n    *   **解讀**：市場創高後，部分投資人對泡沫化的擔憂屬於正常心理反應。然而，當前市場的VIX恐慌指數處於相對低點且持續下降，顯示整體系統性風險指標並未同步飆升，台幣也呈現升值趨勢，暗示資金並未大規模外流。這提醒投資人，個股或個人情緒上的擔憂，應與宏觀市場的客觀數據進行比對，避免在數據無明確警示的情況下，過早判斷系統性風險。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數報價17.48，相較昨日下降0.46點，顯示市場情緒壓力處於相對緩和狀態，並未觀察到恐慌性拋售跡象。美元兌台幣匯率為31.46，較昨日下降0.12元，台幣表現相對強勢，這指示外部資金流動可能有利於台灣，或美元整體呈現溫和修正。兩項核心科學儀表數據均指向市場當前波動性受控，並未放大傳聞中的地緣政治風險，投資決策應基於此客觀數據進行校準。\n\n💰 【台股影響與板塊點名】\n當前市場氣氛偏向穩健，AI相關產業仍是主要焦點。勤誠等AI伺服器零組件廠商的營收表現，證明了部分次產業的實際需求動能。在半導體領域，台積電（TSMC）的先進製程與封裝技術，仍是全球AI晶片發展的關鍵基石。同時，海力士（SK Hynix）作為高頻寬記憶體（HBM）的領導者，與台積電在先進封裝（如CoWoS）上的「強強聯手」，共同構築了AI運算的核心基礎，使其在AI供應鏈中具有不可取代的戰略地位。因此，相關硬體製造、晶片設計與高階封測產業，在AI趨勢下仍具結構性成長潛力。\n\n📈 【投資觀察指引】\n1.  理性看待地緣政治消息：依據VIX與匯率等關鍵指標判斷，若無實質數據支持，則視為「情緒噪音」，避免非理性決策。\n2.  聚焦AI產業的實質營收：避免追逐純粹的概念股，優先關注已能提出具體業績增長數字的AI相關企業。\n3.  審慎評估長期報酬：對AI生產力紅利兌現的時程保持耐心，並考慮長線投資的風險與報酬比。\n4.  利用指標校準情緒：當市場傳聞增多時，回歸VIX與匯率等客觀數據，對自身投資情緒進行校準。\n5.  分散配置，穩健布局：在市場高點附近，透過分散投資以降低單一板塊或個股的集中風險。\n\n🏫 【曉臻財經小教室】\n今日單字：【八大行庫 (國家隊)】\n八大行庫是指台灣八家大型公營或半公營銀行，如台灣銀行、土地銀行等。它們常被市場稱為「國家隊」，因其在股市動盪時，有時會受政策引導進場買賣股票，以穩定市場情緒。理解八大行庫的進出，能幫助我們判斷是否有「國家力量」在支撐或調節市場，從而看穿短期市場情緒或主力操作所營造的假象。\n\n結尾：數據為證，理性為綱；風險可控，穩健前行。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n2026年4月19日市場數據顯示，恐慌指數VIX持續收斂，美元兌台幣匯率同步走貶，綜合判斷當前市場風險偏好未見提升，資金流向趨於穩定。部分新聞報導雖提及地緣政治緊張情勢，但關鍵指標並未顯示避險情緒升溫，因此應定掉為局部性資訊，而非全面性系統風險。AI產業鏈則呈現分化，部分企業公布的營收數據證實需求增長，但同時亦有分析報告提醒AI生產力紅利恐長期滯後。整體而言，市場正處於對個別數據進行審慎評估的階段，而非依據單一事件進行全面性方向判斷。\n\n📊 【重大事件：交叉驗證報告】\n\n*   美伊衝突升溫與市場避險情緒 (重要度：★★)\n    *   **事件標題**：美伊下一論談判遙遙無期！伊朗拒無框架會談、警告美國違反停火將付出代價 / 〈台股風向球〉3萬7攻防再起 提防美伊局勢急轉直下 法人避險情緒轉強\n    *   **事實核對**：VIX恐慌指數本日為17.48，較前日下降0.46點；美元兌台幣匯率31.46，較前日下降0.12元。黃金、原油與VIX指數並未出現避險資產普遍應有的噴漲或顯著波動。\n    *   **解讀**：儘管新聞標題暗示美伊情勢緊張，並提及部分法人可能萌生避險情緒，但實際市場指標VIX與匯率數據並未呼應此一論述。這表明當前市場對於中東情勢的解讀，傾向於局部性事件，尚未轉化為廣泛的系統性風險，投資者應避免過度反應，將此類訊息歸類為「情緒噪音」。\n\n*   AI伺服器供應商勤誠營收增長 (重要度：★★★★)\n    *   **事件標題**：AI火力全開！勤誠3月營收25億「年增逾44％」 股價強彈重返千元俱樂部\n    *   **事實核對**：此為企業公布之實際營收數據，具備高度真實性。\n    *   **解讀**：勤誠3月營收年增逾44%，此數據具體反映了AI伺服器相關硬體需求在特定環節的增長。這證實了部分AI供應鏈的業績動能，為AI產業的實質性發展提供了證據。對投資人而言，這提示在AI熱潮中，應聚焦於有實際業績支撐的企業，而非僅依賴概念或預期。\n\n*   摩根士丹利對AI生產力紅利的審慎觀點 (重要度：★★★)\n    *   **事件標題**：AI是革命還是泡沫？大摩回顧歷史經驗示警：生產力紅利恐滯後10年以上\n    *   **事實核對**：此為金融機構提出的宏觀經濟分析與歷史回顧，旨在提供長期視角的風險評估。\n    *   **解讀**：這份報告提醒市場，科技創新從投入到產生實質性生產力提升並轉化為企業獲利，可能存在顯著的時間差。在當前AI概念估值高漲之際，投資者需警惕生產力紅利兌現的時程，並對長期投資報酬率抱持理性預期。這並非否定AI潛力，而是呼籲投資回歸基本面分析，評估AI技術落地與商業化進程。\n\n*   日本澳洲大規模軍售案 (重要度：★★)\n    *   **事件標題**：日本戰後最大軍售案啟動！日澳簽署70億美元協議 三菱重工接下11艘護衛艦大單\n    *   **事實核對**：VIX恐慌指數本日為17.48 (▼ 0.46)，美元兌台幣匯率31.46 (▼ 0.12)。全球避險資產未見大幅波動。\n    *   **解讀**：日本與澳洲的軍事採購協議，儘管金額龐大，但其主要影響範疇為區域國防工業與地緣政治平衡，並未在全球金融市場引發廣泛的避險情緒或資金流向劇烈變化。全球投資者應將此事件視為個別產業利多，而非足以扭轉全球市場走向的因素。\n\n*   台股屢創新高下的市場泡沫疑慮 (重要度：★★★)\n    *   **事件標題**：台股屢創新高！ 他怕泡沫化 「95%持股全賣光」 網曝關鍵：AI還沒倒別擔心\n    *   **事實核對**：VIX恐慌指數本日為17.48 (▼ 0.46)，美元兌台幣匯率31.46 (▼ 0.12)。系統性風險指標趨於平穩。\n    *   **解讀**：市場創高後，部分投資人對泡沫化的擔憂屬於正常心理反應。然而，當前市場的VIX恐慌指數處於相對低點且持續下降，顯示整體系統性風險指標並未同步飆升，台幣也呈現升值趨勢，暗示資金並未大規模外流。這提醒投資人，個股或個人情緒上的擔憂，應與宏觀市場的客觀數據進行比對，避免在數據無明確警示的情況下，過早判斷系統性風險。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數報價17.48，相較昨日下降0.46點，顯示市場情緒壓力處於相對緩和狀態，並未觀察到恐慌性拋售跡象。美元兌台幣匯率為31.46，較昨日下降0.12元，台幣表現相對強勢，這指示外部資金流動可能有利於台灣，或美元整體呈現溫和修正。兩項核心科學儀表數據均指向市場當前波動性受控，並未放大傳聞中的地緣政治風險，投資決策應基於此客觀數據進行校準。\n\n💰 【台股影響與板塊點名】\n當前市場氣氛偏向穩健，AI相關產業仍是主要焦點。勤誠等AI伺服器零組件廠商的營收表現，證明了部分次產業的實際需求動能。在半導體領域，台積電（TSMC）的先進製程與封裝技術，仍是全球AI晶片發展的關鍵基石。同時，海力士（SK Hynix）作為高頻寬記憶體（HBM）的領導者，與台積電在先進封裝（如CoWoS）上的「強強聯手」，共同構築了AI運算的核心基礎，使其在AI供應鏈中具有不可取代的戰略地位。因此，相關硬體製造、晶片設計與高階封測產業，在AI趨勢下仍具結構性成長潛力。\n\n📈 【投資觀察指引】\n1.  理性看待地緣政治消息：依據VIX與匯率等關鍵指標判斷，若無實質數據支持，則視為「情緒噪音」，避免非理性決策。\n2.  聚焦AI產業的實質營收：避免追逐純粹的概念股，優先關注已能提出具體業績增長數字的AI相關企業。\n3.  審慎評估長期報酬：對AI生產力紅利兌現的時程保持耐心，並考慮長線投資的風險與報酬比。\n4.  利用指標校準情緒：當市場傳聞增多時，回歸VIX與匯率等客觀數據，對自身投資情緒進行校準。\n5.  分散配置，穩健布局：在市場高點附近，透過分散投資以降低單一板塊或個股的集中風險。\n\n🏫 【曉臻財經小教室】\n今日單字：【八大行庫 (國家隊)】\n八大行庫是指台灣八家大型公營或半公營銀行，如台灣銀行、土地銀行等。它們常被市場稱為「國家隊」，因其在股市動盪時，有時會受政策引導進場買賣股票，以穩定市場情緒。理解八大行庫的進出，能幫助我們判斷是否有「國家力量」在支撐或調節市場，從而看穿短期市場情緒或主力操作所營造的假象。\n\n結尾：數據為證，理性為綱；風險可控，穩健前行。",
   "news": [
+    {
+      "title": "怡安集團：升級顯示器報酬率更高 建議PC玩家重新思考預算分配 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxQTU1NYzY5M2Y4M0hmRWZobld0OXVhVlFteWRqaGUzaEh6bnR0bmhhMGlQRHF0S0RuMzVTWXBoVUNuTU84UEJwS2pqNGRDaHRad0c3SkFmT2ZfMlFfRGlJaXU2MlliMXRqelNmWGI2UjhDa0hoNGJ3LUIyWEV2Z2t6WnNZWW5GaElDYXVCRlV6aTRkNzBPcnJRbUJJOTJYRFpIcVBQbDYzbC12T1N6Ry11dUR1R3pzWVZ6MWRwSjhObzJ2MWdlNWlkeGNyOU11VnFFVV9RZkV6em1EVmNJNm1YX0loY0xmN3Z5QkNvZDB4MU1hMmlieEQtMTZrOWo4MmJCYmthZVBjWEZBVmhTbU9YVDRiT0Y0WXNibTlQaEtOY05uOGhqS3JRX2lIcnFWNWR2WGc0cWFDSDl1TlhBREpKRkVYcVVzN1p2NFVOZWZPVXZoYlZDQ3FmSnFZcFBoRTY5WEJFU25wdHNnZWZJTHhYLVlyWWpQd1l1ZHY2WV9xOHJ4UkNITGtzcHJPendxLTdGbDdhZ2thamY?oc=5",
+      "summary": "怡安集團：升級顯示器報酬率更高 建議PC玩家重新思考預算分配&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:58:50+00:00"
+    },
+    {
+      "title": "印度企業擴大體育投資 劍指國際主辦權與400億美元產值 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPcFFJS3ZLT2h6RkFXbk5PLU5RTmFVSU5qRjVtcmdMQUxpNGNFYWRnc0JjdS1IYUpxSU12Wll3NXYtM280cFdSa0dEWWNndWJWT3FyMktQdTFEZVJ6TlhPNUJZTC1kNmJrNFNCb2pUOUVwSmFxMzhUYzRQM0tIc3hEdFNvZmpDSHplMUhSV0FCNTBrTzR4X1FzbGRNdHpMY1MwckhYMmhDblJxa01VMVYwbkZ2WTM4dlZsa0ZJdjVQbklpVXEwa1dOczJYNVRXX2oyZXlyWHRLMlFFcU9QNEMxcm1qUUROakJCQmh6Q2ZIRHVsQmNDM2lNRjJvME9SX3FURDdIeEVZSzU3Tl9zTTFMUzJRYmk2MW1xa1JXNERQUVozREhCNGJrTTV6c09hZDZMdFA2SGtRTGQ1dTRLWXQ4cDcwWm5PUnItNkNPSnBIZldzRDNfUGlRWUhrOEl1Vi1IZkNDQUdEamo5SmsxWVZ2VnEtSHA?oc=5",
+      "summary": "印度企業擴大體育投資 劍指國際主辦權與400億美元產值&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:57:29+00:00"
+    },
+    {
+      "title": "綠：惠台10條是舊政策剪貼軍事威脅不停善意不可信| 政治 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE11WUhFM2UyV18ySmh2YUh1N3RuRjJ1WGtHZXFKN0hMT0NjVkFaNWx0Z2RCdlpZV2w3RHVxX1Z3OWxqMzJDekpVWUJYVW1mOFZkTGk2VFdETkpaTWdOV0Vz?oc=5",
+      "summary": "綠：惠台10條是舊政策剪貼軍事威脅不停善意不可信| 政治&nbsp;&nbsp;中央社 CNA",
+      "dt_utc": "2026-04-19T08:48:00+00:00"
+    },
+    {
+      "title": "瑞茜·威瑟斯彭籲女性速學AI 防範職涯風險並掌握先機 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxOb3huazljdmMxZVNxUmU1eDBOQ1BCbUFCanlOaEs3Rl8xZlJJUUkxWjlaOHJFQVE3cm8yVDZNV2xSQ3ZJTng0OVNPbjFsczBYWEpJNHBVSkxZdm9VNUt4WURWZXhMY0NqRnIzMWZlNXpVOVgtTVFVcjBCbTRZMXlsSU5VeHpncVNKX3ZCNFdpZEFCT1pCRl9rdTdYNG0wdjJVUUxKSE5VUnpleXA0amJnbmdLeHZUbjJjMkNNd2lmeGVJaGtRWEdBdzREa1NDVF9iODdDR1I4eFJmWjNRdzlXS29YUk1KbFEteFJJWkFlNFpWWGswbl9HOEJlcS1yUzdjSkpsQUR5ejJucXJQaDVsTlRUanY5bTBWXzRtaU1VLWtwYlowMzc3emJIU2FDM2ZuRG1BUlhwSGJENnp3SHZodmhHanB0QkZ5OFBJczdqYl9aeVBHUHM2REpadmdDY2tDR1JkS3lsbGo?oc=5",
+      "summary": "瑞茜·威瑟斯彭籲女性速學AI 防範職涯風險並掌握先機&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:46:41+00:00"
+    },
+    {
+      "title": "2330 台積電 - 第25天不賣台積電- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE92WWlfMzNudE9zS0dmZDVtQXdtN0FmelFZM1Qxd1ZDZDd1OWxNOTI1UTFSY2NIWjBJV2V0MkpwWnhZOWZfZ3ozaVNlNDJSbG1IR3lXU3c0dmg?oc=5",
+      "summary": "2330 台積電 - 第25天不賣台積電- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-19T08:39:20+00:00"
+    },
+    {
+      "title": "思佰益積極併購保險業 再鎖定預別產險潛在機會 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQZE8wQmxXdWNYYWkzdkZRN2Z6cWhiQVB2MmxrcFZMWkc2eHBpNmRzOXQtWEhNbVh1SUhJN2U2MEJPaGhnVUhZZGJobGdsLWNuSUpQdmF0MTlGMkNOTk55dUpPaWo4SFRRZVN1T2RRcU9sTHM0MG1Sa0ItbDRmZ2ZwVENUZnFZN3ZhNFVCOGExeUVlMTNYcXlQc29DNVJXZmhUb0dWMEs1OTdRX0RWbWhFTlk4d0xpU0Nvek9pZUZ5MUhjekkxWVhHUGtxOC1DQ0lQd0JmeDFjVm4zbl95S1JnWTF5N1p5TlM2UF9RV2ZrV3JDNkVobThSa0JiZk8xN1IzcHVxajNUZVhfY2hDMEZQRnFZeUQxVXRKSFlBR1FHaXRZNHJxLUdNMjl4RUprczJ1d1g4SGl1R0NqSkFMaFdiUlNpZ2JvSUhTeDh0RnMxUmVLTHU3NEZsTg?oc=5",
+      "summary": "思佰益積極併購保險業 再鎖定預別產險潛在機會&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:30:23+00:00"
+    },
+    {
+      "title": "傳北京施壓商總等7大公協會表態 陸委會:勿屈從壓力 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxOX2xtRUJEZE0tX0Zjd2NWLUxWUnRpRnpMb1pfRmw2VFF6SGRWZ09mbUVmTVBrZjJIdy1GQ0RfV2w4NGo3U0VucnVmZWJwUWV5VUV6SV9NdGx6RzFPdVctU2tZaEZtU1lKeHUzcmh1bDhVM1I4RHJGRTVuSWliM3FZVDludVV0TG9WQmdkZmR5RE1ycXdDMENfMk5sMlRJNi1CUTRSa1MtbmhneUZ4Tm1ITDNZNDl0RmFMM0xpaVdDT3J5VGViYjZ1T0Z4dEdJSEItdzVYWVIxUExqME5xcWRDRXktNl8teVFVcHNRcjUtU2U2Ni1PNGNPbVZMRnFzUzVIUENZeE1pd2cyeEJFTlQyT3JvVmNnbWpvQnRzM2wtMWItUk5rbmNjY0tGQVBVVF9zeHRfQ2ZQUHA2ajNsQnhFNm1IVG1rb3hBU213N0hlZDBMUDNFMFQtZldoSHlFY2MxRjRUUW5oQQ?oc=5",
+      "summary": "傳北京施壓商總等7大公協會表態 陸委會:勿屈從壓力&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:28:04+00:00"
+    },
+    {
+      "title": "最近情緒跟阿堅一樣暴走- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rLUh4LVBQUFJCUHNRbEpwOE5fMm1USWR2aXZwWEhROW43VVFtRkVsaXY3SDhDZ1ppN3BQOEJPV3FDZk1OeHJUcEJaOGExMHdYdmtuU19SOHM?oc=5",
+      "summary": "最近情緒跟阿堅一樣暴走- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-19T08:15:44+00:00"
+    },
+    {
+      "title": "8088 品安- 股市最新爆料，掌握股友們對眾個股股價、技術分析、新聞的第一手... - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9aei1qUUtPcmJJV0RNcGNoS21KQVBDRDlRcTBxVDlJOS1fNFptTDBDMEJibUYzT3k5amplNjJHWkRsTmRubXpIS0R1UHV3TENfVjlVczd4ZEY?oc=5",
+      "summary": "8088 品安- 股市最新爆料，掌握股友們對眾個股股價、技術分析、新聞的第一手... - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-04-19T08:13:53+00:00"
+    },
+    {
+      "title": "日本戰後最大軍售案啟動！日澳簽署70億美元協議 三菱重工接下11艘護衛艦大單 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxOa2pHRGhRVU9tMENQaUY5cm5EWmdwQnRXNW1IdnMybkF5R3dINV9pTHlIWWlUVFBiZXVwdERCYmIzNjQ3dG1nT2thb2Zxem5HR01fbFBMYzgwa2ZrelRXUFhtUmxpbGhqVEI2dk1ZTUpzcTVjdjhiSUpHZFVaQ2JLWEtsZDBxTzBOcVh1Qk1uTWpSZUx2VHhucDhPTlNlMlR0RFp4TVRGdXRhUDQ2S1V1Z0lRZHJRQXIxSGRiZ2V2SlNUZDExWWZQX1VBOWNqWWo3RjZXTWxtU2ZrLUNUanpZdm9adVY0aFdMTEUtZXlURXU5U1M4TTN6dnlIU1NFNWN4TFZUa01ia3c4cEE4RjJkcUFsZjIzUEI5ZFk3TWhPejU4ZzFHSzAtSkhTZlJGUzQtdV9iNkJ6WGZka0NjOGlZdkxkN3pBcXJFQmFDVU9BX3kzM3NYMDZaOWF3NzZ4ek5BX2hKQzJlZ0UwSWNFMFR5bWV0YklNRmlidmhfMGtJQnluS0RnX2V2SmF5UWh6dHZwY2FpNmNqd3ZlY2hxMjJVS2FHdlJrbkkwUlF6aFQ1b0RXZDdFR0V2dElBbHJrcFgzUGZGOVYxVS00UXB4THBqVkdyY19SaHY5VW5nOXZ1S2t2ZTQ?oc=5",
+      "summary": "日本戰後最大軍售案啟動！日澳簽署70億美元協議 三菱重工接下11艘護衛艦大單&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T08:10:00+00:00"
+    },
+    {
+      "title": "AI火力全開！勤誠3月營收25億「年增逾44％」 股價強彈重返千元俱樂部 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxQTXhQY2R2bndkejE1MEdvVzRxV2dueXo4RTlqSlFTeXNDZlRNN1NINTlLWnpvUV9OcFVSSmxTNGtsdXlRVmJETTh6RzMzcjY1YUNkYndSQUVCdXNEX01hbkd4V3FGMFRDREZReUJZbVZ1TTNkNFVSeXUwVHdUVGJUM01RWUI5WFlCX295R21hNHMxX08wbUUxMFItZlFUMldHQmstaVFxdTNKdVNzaENqTHNzbXJzMmJOQnlaNjR2em1oUUhtY1lTZzNIVjNUUTM2dmZIRDNMcG5EY09FcEJCUXBCQXpNX0gxVGFLcWRFdXhEd2hxUU4ydG1DaXhHXzd1Ym50a3JXUXZmTko3THU1V3lmaEdlOXJVclJsamRYM2tXbTZqRnhDTUhwdWs1LVo3OGdHYjVPSG9xSHN2ZUIwMGtkWDFSOU4wa0o4Wi1yOWE4V1ZWRjJQNzZSZU1uNGpKRWpXWTJQMWh0TXgxZTAwSTlWV0w0aDZTRmF1akVEeWZCYmhPaFBvaQ?oc=5",
+      "summary": "AI火力全開！勤誠3月營收25億「年增逾44％」 股價強彈重返千元俱樂部&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T07:55:00+00:00"
+    },
     {
       "title": "DeepSeek首傳啟動融資 估值上看100億美元 3倍高薪挖角震盪核心團隊 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMijgNBVV95cUxPcjJvWVV3bDI0SmszTzRXQjUzTVczaEpZWERZRGRHWk9GWXAtaWY4S2V6cHhHWFVrTTM0eUxCRVhhTGpmZnFPa1dpMFdLR3RCeWtrcENMWlRVUGttZnptLTlXaFZtbFphY05qdjJ1VWhuVEZCeXY3TXJHbFdEX1lIbnBJMzlTTDhCOXFLUlBrS0Q1R2loRWRXekV3SlByT1VWeGxlZXRKemswQVdnSUJpUjRrSzYxelpjWGlNME8zX1JjaEEyV01DbHc1aTRmY0RiSGhlWk8tZmVNZFlyUXFkTWs0ZGpMU0dZWlV5ZjdFMENHTnYtYzdzSGFvc0VNNjByVnpfa2JaUkVxQldWQ2t5RHNDQUdsd2xuZWoxdTRqaGVhaEhROEp3dVBUU0RlN09sbnBqNTdKMW1nTjJmSzdyRFlnaVNyaHZJRWNoWXNuQmVqa0dveTczRHEwYjlGLWtuUnp4SmNtVjhCSThBd0ZQUnNMT1k3X2kzMTEyN2I4U0ZkYWlzNE80cjBOT3JVZw?oc=5",
@@ -41,10 +107,22 @@
       "dt_utc": "2026-04-19T07:06:07+00:00"
     },
     {
+      "title": "20歲比50歲更孤獨？月薪39K新鮮人扣掉房租「不敢出門」！調查揭年輕人孤獨率7.4%居冠 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMivANBVV95cUxOSl94c215Rmpqb1RadUQxZDFyekVnaE1PSEhxVmlYU3diNUZIbFpzVnI5MG9NSXNrbzlZX3VmWEJDS1NxWlAxQm1lNGNjNjVobWhxT2RuWlVKNHZITDI4dk5xOWJXTExWX25WQW1qUk9FSVhtaEdRZlhPV0NlVEVVakJ3UjVtVGd3YktVd0FRREd3WWY4MzY3NkdYSW9VSFhLaXFyREs3RGtqNUxWRFNudnBzU2t4TTJzc3llSFVjWUZkaE1hRUcyVmZSRHIzUmE5VFFVTWpacnJUSDdISVFuTGlCNzhRTlNOWHRiRjdMdGxXUy1FOVo2cDJoeF8wX05VMFVMbHZIQldPQzNqZGZFc3B4MDIyWGFkQkEyXy03QXNjamJuVFpmbnFJVHB4LTNOZm02R0RTQnJpeHp1MTRBVlYwNG9xbzBGZUpVaTVqVUFqWHJuczZxVjhSNEJ3cGZxM3ZtVXc3bWNBT3Vab1FhbGxSMExnZFUwMHJ3U1VMUDVpcThoNHB2a3FsUjhfZE9qUWVrdXNadkFLRW1YS0lFQkxQLUY3MzNDdFhfMGp1X0h4SkZpWmJtOEgxU2I?oc=5",
+      "summary": "20歲比50歲更孤獨？月薪39K新鮮人扣掉房租「不敢出門」！調查揭年輕人孤獨率7.4%居冠&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T07:05:00+00:00"
+    },
+    {
       "title": "哥斯大黎加簽FTA夢碎？對中出口崩50％ 外貿部長直言失望 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxNWldadDU2QjRSb0FtQzgybEdlTHVNTjVMQ0Y2MW5GNnlMdGtCUlZnTnZJVXdyRG90Nm05SXgwQzRxNjM4NHBKSVhiUmo1R2gtRFVuTGEyTXNIM1EwdDFHZUswVk0tTjNhX3pweUxPRzFfcFpRcEZESmNCMmdxV3gyNUk0V3JPQWtaRE9EdFJma2tOSV9oYVFCZEU1RmFROWgxREJpYUNoUEhlZEdydGI5dFRtczRpTXhvVHpnTnJhT2IxdkRTX3JXc3JULWlqSnJ4WWNKcFN5aG92M2JFN1lvWUJfR0lxUHh2SG5abDFYRVVvVUZmMkU5Sk1haXRtaWZPTHJWYU8tZW8ybThUU2VSSkQwOXIzbEZ5blJGSFpjODhQamJxb3V2dEtqQjZ2UmRyXzZoWTVxUlRRckppTW8zTU8xUVpPRHJNeDY0VTBBQnRUQ3lyQzVKUXozNTctZ3FZ?oc=5",
       "summary": "哥斯大黎加簽FTA夢碎？對中出口崩50％ 外貿部長直言失望&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-19T07:00:28+00:00"
+    },
+    {
+      "title": "美伊下一論談判遙遙無期！伊朗拒無框架會談、警告美國違反停火將付出代價 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxNdjktSXNMZFNJcUlMM3MtdFlTUjNlZVFfWVpDODNoaUxKeHJ4clJJRE9QLUVoUmZ6dUE3aUE5VFFTbk5XN0E0d3h6dUJCa1d4LWU3NjJ2RWxScV9TcXBpM05VNXduT1MzUFpUczNkQU5pUkdnenc3Z2FaQWRmM0xIYmRqNjBONzBiVl9KS2JMS0FXTDhpY1o0RDk1RXVkUUVRMlRSVHJJR0I2ejU1U01QVnBIMnZXTnYyU3FWZUhFN3ktRjRfMWhTY0VmMUdIZGxHa1R6eWRSOGViTXg4NU9YdVo1NDJrMU1EZEsxN196a3NjVE8xUEcxYTlwSm1BX0xORWNkNlgzUGtKbmFlU1N2REp0MlJEMGUxc1hTekNLSk9EMWVRbzFOSkQ2eVpfZjhJNEl2NGFwOGZiaGIwTk5Jd1NWeXBJWTFpZTBRVTVFbGNfMThodTJDVXVZYnRWMFpYQzg2NHNlZktqbWRJUUlyUXNYZUktamxwaGV5WTNqdXNBRVQ4OGRQU25pekkwU2xwa3ROT0RKcEtxdURIVzJCQklhVGxjb2wwNzZHZnRUTkhYNlpaY20ybzRNWG1VaTJpMGtTbUZMWVRVd3lWMjJUeG9FNA?oc=5",
+      "summary": "美伊下一論談判遙遙無期！伊朗拒無框架會談、警告美國違反停火將付出代價&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-19T07:00:04+00:00"
     },
     {
       "title": "1min.AI 推平價終身 AI 服務 涵蓋 GPT-4、Gemini 僅 43 澳元 - Yahoo股市",
@@ -293,6 +371,12 @@
       "dt_utc": "2026-04-19T03:33:00+00:00"
     },
     {
+      "title": "告別公鹿倒數中？字母哥談交易傳聞未否認 直呼邁阿密「很美麗」 - Yahoo運動",
+      "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxQRlE4RzloYzlYZ0pqcXVPNlF5WUtZOHgyRW45NG5PYXhCNFBmLVdfN3hBQlI5MHctTGxOR2tPXzJGa19VeVlKSDhTTUE5anFhTXhpbzZZbHBqMUY0OW52bUZRdzc4S3BNVDRuclpyajRXakYwNmhnM2NsUDUyTGZZVUptTmN1eExDVU9ESnlnV3ZTRkpKeXpzUWNCMTNYN3l1TlVoZ2F2NlFtLXdfelJSbC1sV0s3WkVYWFh2OHY4c2E1SFlzZVNaa2pjQURObGdzUWZlQkQ0UUlpUTdselZhSVQ0TEJDbS1GSGRRQVRIUWxjM3VTRXFySVhmX1RJWXhsN3RyRmVhaGJyUmZPbzRyQ1ltdXMyYk1Ma0dMckRBZGNsWTdjYnYwZW1tRlpBbnh0b0t3UXQ3QlJOM05mS0NSRkJPSjlsRHFuejZMMkdGLTAzTFE0WkJadGtpZVZHbWo3Y0NDOWVPZkh2UVY5ZU9fSjdwYWlibEp2Ry1Oa0gtelBKc05NS1hyX1FSVE9PVVRBSWFrTWJYMmM?oc=5",
+      "summary": "告別公鹿倒數中？字母哥談交易傳聞未否認 直呼邁阿密「很美麗」&nbsp;&nbsp;Yahoo運動",
+      "dt_utc": "2026-04-19T03:14:11+00:00"
+    },
+    {
       "title": "史丹佛演講震撼「你不會因AI丟工作」 黃仁勳：懂用才是關鍵 - Yahoo股市",
       "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOUVlMUDlZc0tlcEowRHNvV3lCZV9hQlJlYmREcHg1NjFvRllCbldXd3J2SVRLNVdBXzUtSXRGU0xpdmNwTkRkblREaWhJeWhlOE9RaEVqY0RzMS1ZbEstTEwyUnZlb2tMdDFRaDV3cUN2U1BFeEVGV2xHYVVPZFV1djdHMHROUXU5bGFHWmE2aXlyM1R5UENHLWdWdVlSeE5seEJ3cWJfWUpocW9raF8zNG90UEJlQnBQSUpEaXZ0MmpReW1yV3k4bVNGRFhCWEk1RGc4OVdMaGQzLUJuWGhPa1RvWEhzcGpyOFlzcEVVWjB4SGt1b3VzOGVpZUJibXNmc0xhY2NuODNtdmJUQ0toaVRSMWcxblhVaUxTbzhoTHkyWHRVU2h4SkdVN2RCYmRuQTh4RlRjbXhKQ3E3cnF0MUJROGl0Z2dpNnF1Q2c2TGxSTWJaTURSbmNTekxpdW8zZ3FxUzZaUTRiQnFBLTR0MEI2aTZ0UQ?oc=5",
       "summary": "史丹佛演講震撼「你不會因AI丟工作」 黃仁勳：懂用才是關鍵&nbsp;&nbsp;Yahoo股市",
@@ -303,90 +387,6 @@
       "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxOME1rWURZTUI4S0pvZklyMEduRnhFQThlSlkxdU9JY0NISm5nS0c2Tk1BMGpIZXVuVXJKWWxtbGJQQi05MGlzazQ3WHYtOXU5NHJEeDM5YXRDb2xoZXBDcWZOeEE1N1RwU0J2V2ZSQlBrb25KZFNmNGh4N0RFUEdiUFRfbDFzQkxuQnlOSEtsMHgxRnhYbEZ0OXZTcHdrNTIzX0N2NFRqUUhXT1RFMXkySkFzMFN3ZEtqX1lXM3hxSXU1T1djOENoNzNiVngzcFBuYWtyN0tUY1NwaWQwMlRvZkJ6Nzl1dXlYZXNQRXdxQWFDUUY2RUlsRlhrV2tDb2JfY3E1VmJscFFRQzUwWm8yMFJDNjN4alN0V2F1bERqRmVhaExnallxTzdHamowcUotQW5BVEpmVWJSR2d3eG9NLTVMSDRubDhiTHNfd1Ffd2w?oc=5",
       "summary": "谷歌AI模式革新：智慧通話、分割畫面提升瀏覽體驗&nbsp;&nbsp;Yahoo股市",
       "dt_utc": "2026-04-19T03:11:51+00:00"
-    },
-    {
-      "title": "雅芳醫療AI平台獲A輪千萬美元融資 助醫師整合臨床知識入電子病歷 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMisANBVV95cUxQVElsRnRaMGpRUmRfVkc0TFhCOGpRcktyb2ZmZHlEbG1EcDNQaEJUTkpYRTF5ZWdNZTZtZnYzWk5aXzVGR2hfNlU4Rkp3elByNTJYOFpscm9femJmaS1KTEo4ZGJfLWZYYmFVUDJsT0NwbGNtRWI2M2V6ajVucDQ0NDg5WjZVUnpxUTIyQzNucXJsVXNOSmNUUG5ETWl2V1ZObE44UUJFdGt6U3dmS1dsNHhjU1JSY3BIaU9yYVV4NU1kUEpJcVI0Y2dKNjItODgtV3p5endmTkFJVWc5aWs1X1JxbGZrZVRNQU5MWGhHYkswQk5TU2VzbG9jZW12ZUU1Y19BamU0S0tPSC03VFRhOXBaS21xVWdOUG9rb2ltYUhwVkNvbFVNd3ZPTlhydmVCcm5ySFBSOFUyeXRnMkNLRHdraHdoekNCQXhoZU1yV0k4ek9lQTlnM04zSW1jcFNkYjVUbWN3Rk5IejBSUExyNmd2UHltdmpKYkxrLVhnM1RabHd3cmh1VU5nSFNkVEZVU0lvUlVER2FIWEc4a3pPTmpPWlVsQUQ1NGVYRTVOd2Y?oc=5",
-      "summary": "雅芳醫療AI平台獲A輪千萬美元融資 助醫師整合臨床知識入電子病歷&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:11:50+00:00"
-    },
-    {
-      "title": "外資重啟佈局日本股市 長期投資人資金轉向遠離美國 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxOTlVvVUItV0JkUERUQ2xCaEhya2gtREtsYlQ5TzI2NDdKaXRCZHdOLVZlSTdLOFhFZXRnQ1Y4YXZidUFObHZsaVNLOXFrcTN5dm5OZm9pNUlSelVDWU8yU3JWbE5DbXdJeVYxT2RqWDllZEtvSDVCaFBvTVY3ekZfOGdjcG9LMjFZVk9yTW9EaDVsaUEtQ0c4QmlKTXE2VE9fQnl1RzRhSU4wckpaS2FYbkx4VGlvVWpMSjVORl81Z1ZEZWszemNKZlcxUzB4TlZ0cmM5Y09pNmhNT0JuMWZIVDRXbkFGenAxV1NXc3hmLVoyejJ3SE03cmZNcEZhYTdYYmNpSFd0X3F1UGp6WUFHMDlDVTEyN3hZMjk2Wlp3WUhCMWE3MTNYZmJNSnFWQU9KLXRPLXJIWTlad0hsbjJ0N0VZc2E0Nl84M2FfS0tLSUdlamhUd3ZMNFNVRnFWUFg1c09abXVpajdQX0cwa2hMXw?oc=5",
-      "summary": "外資重啟佈局日本股市 長期投資人資金轉向遠離美國&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:11:49+00:00"
-    },
-    {
-      "title": "印度政府攜手谷歌YouTube 推AI技能培訓提供1.5萬獎學金 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxQN0NMM2J0QkpSdDNoWWVDNGNFNzA0c0V6Ni1nX1pKd250TU5CYmc2UUNuVlh1V0Iyd1RfR05hTHBxZ3R3Z0FPQXpyTkFxMTFMbHc4OWRYT3BSSENJV1FRTVlROVFYdE9FREhtMHgxdE1ET25JTUoyMjVmZUltTlRGd3Nlb1JBa2ZLbUFVTlBxQmp6RU1WNDZDa2NXVWdCMldQOUw1R01hVmVNSWJ1V2x5bHVrbG4tMFdTdXpNQUgtR0RMWUtYODFSUWk2bTlrd3pucWoxZW5IREdOajdJMmlEdXdwdEw0N19vUlRVZ1d0S1JzNXdZMHFfenBhZ1cwcW9ZTURKUGdpRTJBMzRRUlBGcUE4SkZPRVI3UHJFanZqcHlIS21sWEVwQ09xempiMmk4UHc3dThacVo0V0NvWFlkdWlzVVFmTE1WNWdYZm5xR3U?oc=5",
-      "summary": "印度政府攜手谷歌YouTube 推AI技能培訓提供1.5萬獎學金&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:11:47+00:00"
-    },
-    {
-      "title": "荷姆茲海峽封鎖再起！美國伊朗談判僵局未解、川普再揚言動武 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilgNBVV95cUxPX3JTRVRaMF9pdnA1Q0VURk05ODY5V1gtMmd3Z2pHYUtpWHhVSFJ1N1NnZ1JBbG4wNE9pZVVqMVRTR2J4VlRFQkJIaTBwYnF2NERDNlFzVlNEeENBWnVUa1Q1cHBNX3c0amlLaE1zLW5JOUpoaE02RkpNcllTajZzUlFRNlhGQWtka1NmWFpjVTZ0ZGM2MWlkSE1XUnozS2F0ODdaVEZvRGtXRHZlRlY4bk1sWUl6WkpmVUQ2ck44UHdzYWp2ZWZjYlROVkxHdndyM1pKT1ljQzFjU2FpbW4wYWxNSUFOdGRfYTcza0ZPOTRMS1dJVnZKQjczWXZ1Q2xzaU8wbmE5UXZULUFIakE4eExjcnBmQk94d0hBNUZ3U2JQTjlSZEl3eTFuWFZfUVFUUjR3d3RpQkI2YUhuQWJCdFp2ZTZ4UFVEY0hWQzRhQ3laMVBBZXlUSmVlVTlRczI0aHktcU16UXpZQncyYjZCRFB4NHRwTkkxRFZQWHpGNVJfbXJZTFhNWGxnZ0dtNkctSDFJb3FB?oc=5",
-      "summary": "荷姆茲海峽封鎖再起！美國伊朗談判僵局未解、川普再揚言動武&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:11:33+00:00"
-    },
-    {
-      "title": "台積電員工禮變印鈔機？「晶圓蒸盤」喊到9999元 還帶動這檔連2根漲停 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMingNBVV95cUxQc3ZBdHctM280YmJjMVduMGNnUGJqYm1HbzZhaDJXWkwxTnVVZDJPLThEZmZYRlBtSkd5b05palF6cDJiT1BvTmVTU1J5eWRkUU9IYVpuUHBrTzV3UGpWNWNuOURPLWozY3g2QlVhRHYzMDRJM3dXRG5lV0s1c3JWVGx1Zm52SEhBa3doQ0V3LVl0XzVaaDc0SVVVTVlxZHBrTGVvVDJGcDNGYzFEMG1kZDU2SHp3cThHTnl4aTQxVzZ2bzY4U205WDZOTk1vbXFYS09hVUFmc0JEd2EzMlUyWDlfMmc4VzZacVZpSXlRWDdkaUZMM21NSnNiRmhoT0VvQmUwN0RVOEV3cHN1R1ZyUXBEUl9IOWt4dVZSTVJVMFhWVnctbkN6cVVLalo0RzhfTEZXT19FanlkWUV0NkhxV2dFQTByUU5ESG9ITjE3alp1ZXdOQXpYNW4zWm80MVVIZ3p2SFVwa1Z1NmUtcnE1cEZ5RURYSjhKNHA1c3Z5U2xmaW9LaC1Dd1ZsR0laRmpXbXF6dTZjbHZfaU1WelE?oc=5",
-      "summary": "台積電員工禮變印鈔機？「晶圓蒸盤」喊到9999元 還帶動這檔連2根漲停&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:03:18+00:00"
-    },
-    {
-      "title": "綠：惠台10條是舊政策剪貼軍事威脅不停善意不可信| 鄭習會後新展望| 要聞 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE84dHc1RUgwT21uT21yR05faUR0LWFleE5NTkRGNi1FSlVQZGNzX1JfN09MTi1feTVXbWZsMDlsVTM0TTRIY3haaWE0YWxocXRJUTBR?oc=5",
-      "summary": "綠：惠台10條是舊政策剪貼軍事威脅不停善意不可信| 鄭習會後新展望| 要聞&nbsp;&nbsp;聯合新聞網",
-      "dt_utc": "2026-04-19T03:01:17+00:00"
-    },
-    {
-      "title": "川普曾說，古巴是一個失敗的國家！(#01J) 【伊朗之後下一目標！ 川普曝「可能」對古巴展開軍事行動】 （圖／路透） - facebook.com",
-      "link": "https://news.google.com/rss/articles/CBMiwwRBVV95cUxOem92T1ZmZ2JBbGNvOVo1VzdENzJpeFEzbzg1UnFtbVZzTmI2SlRvVktDVFFyRzExNS1OOGlqWlFLakt0cUFQaldCWjgzM3h5ZzAxRHpSS1AwRTl4SFQ4czliMjd1VmpBRy1nbHlIOUNwZmxmMmJaRmlsVTdxb2llaXpmc1pFLUpyLWNSbldWSG54NjdnUzI3ZE9KM2xVS2Y5VVFnaGtBSTMzb2VFZ2k3eDZJUXVNeEQzTmxNMlhLeldmWldpZkY5YW5jSmFId3JOMWFTemRpLURfaEoxeXVfX2x6MWU5b0NNcktocmhnWXFaVXRpSE9hZG5fNDRWLUdQMXVjcUhLX05BTzNyb1hsREZ6ZEEzOG8tTmxMMWtUVnVQVGl3eDIzSTMzdGZkUzZJRGJTNEVpbTFzRzdqSlFmaGtzUlhtbTh2YWpaYVdmSDY2X2YyWktFWGw5d2FTRWs5WTJwdVhaczFqRkp6YjZnRWM2RkQ3RU1MaC1WNGZlZjhPOUpNQkR2QXVrUy0tU0lOOGx2UHBpYVNGRm1oTThWa1F6dmljQkp1Wk9Yd3k0Mi01WWhOVkhJNDVROVFIM2hkOXZTUE5EZlIzYzhxdi1vbTRPenFyeWJKZlgzN25KM2N2cWtRTnh2ZFY3TVVBVlpYZzNyRm5VVGY3ZFFWV0IyRzZyS0g2bGFGaGd2ODdicnVpWjdJRlNzcjZkWFdrdWY0dHE5ZHNZMnhRTzNTamNheUtLR0U3dHhkVjRuTGxvSlRBUkU?oc=5",
-      "summary": "川普曾說，古巴是一個失敗的國家！(#01J) 【伊朗之後下一目標！ 川普曝「可能」對古巴展開軍事行動】 （圖／路透）&nbsp;&nbsp;facebook.com",
-      "dt_utc": "2026-04-19T03:00:41+00:00"
-    },
-    {
-      "title": "川普曾說，古巴是一個失敗的國家！(#01J) 【伊朗之後下一目標！ 川普曝「可能」對古巴展開軍事行動】 （圖／路透） - facebook.com",
-      "link": "https://news.google.com/rss/articles/CBMixARBVV95cUxQQTlCaTRIVl9GMi1scTFGNlFaVHNTYjctX3NuNm1jckpweXdyU0RYZUFrTUZ2Vm9kakE4VTNjUTdiRDZyQklSMHF1Nzd6eHZpMmdpaU5sVEtPQk8zTDF3RVBoUFlZUUVZcjFfZ2d4azlHUUJfWEZuYkhXblhPVHlKaHRfa3VEQlJaZG1YQWQ0LWhFbGtxNHhZd0F1RmdNNUgtTTd0dUV3VFpwOE1JRjhmc29fa0xxUkpwc3h5c3gwTTFUTXNOUVVMTzdJMGNkN1J2NFkzdW9OWVVXQjN0c1NmZlBjd2hGOTItQktFeDFHdjhhX2tGUTNKV29UV2IxdjZsQmlGSTVreXc3T0VsZkdXcHRCbWg4WHJYaFpPR0JNUlhPZEZaMnZpN2NIUEpIUGIta0pVbUJRUFNhTGtHQW1hOGNmU1kzaWI0QXpFOThtVm90czF5M0xEUHhzdW9XT0NYWmM0MjhwQTRmQms5Ql9kTnBmZUJhd3RYQlprczJMREtGdXFDd25BdjAxVDJfU2RPaWZmcjU5X0xyeXNlaTg0czU3UHhoNDdFREJQYlg2bWFQVkpYTm12WlhyRzhjNHhpNW1DU2QxNDhwWTEtOVhSUnNwUWducHFWQy1jY1VxQzZUS19LV2YwYXVROE1PRkM2QU5vWGFhcUh3RzRuMTF3Vmc0RjRqUVJmYlNkWnBjN0c5SVdqSHotTHZTX08zZEgtdTZ5NGxGdnJCMWptRjBLemtmbE5HTGRIQnJudGF0dzZjWS1w?oc=5",
-      "summary": "川普曾說，古巴是一個失敗的國家！(#01J) 【伊朗之後下一目標！ 川普曝「可能」對古巴展開軍事行動】 （圖／路透）&nbsp;&nbsp;facebook.com",
-      "dt_utc": "2026-04-19T03:00:41+00:00"
-    },
-    {
-      "title": "中東局勢趨穩促市場信心 朝鮮股市大漲 IT、半導體股領漲 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNNHY5SkM0Y1lpbDhRd0drMEQyX2dCTElVdXlCSGhGUENWZnFIU3N3SkZVQmxzc200eG9OT1dkeVJDM1ZBcExLYVF6cGY0QkZxYTRYS3hxU3ZFN1JnUTVHckxGUlg2Mmo0b3ZubTl1QXVkWDJ6VmZMdFppekVRbzJ4ZDl2eFVQZ24xYzJzM3lNNnVoVnkxbWtUSGdPQl9YSlAzQ2haWkJ1Y2NQVWhFQlJ6a3cwYW8tUEpBU2RHYV9Wc24ySHpJb2pfQzNfc2owNWhSWmk0bF93ZnQ2bU1HM2pNMnBlRWo2bk53NTZzY3Fhd085NTVNeElnXzF3X0VoMXppMXlWLUJDd3BFX3Jlc0tfRHZCRWIzbGhXVEZFX1ZHR0RUbm95a19oNXVkRnlmMzlxUVVKXzBlbVROdUdla2xwUWNZcDhrTHd3ZFR2QmxRWkdhQUJOVFFoYTdIVk9RdGpwdVBNNk9sRkJqSU55Y3RIN0R3?oc=5",
-      "summary": "中東局勢趨穩促市場信心 朝鮮股市大漲 IT、半導體股領漲&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:00:17+00:00"
-    },
-    {
-      "title": "Kelp DAO 驚爆 2.92 億美元攻擊 加密市場再陷動盪 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUi1JTUJBVVgzRkJYSGIxdzg2ZU41cUNEM0hQY1hOOHB6LTdRZGxmaUpkMjBwM0thSkpNZUstQ1J4V192cWs5dHpRZjM3bUFUT01YbzNGZUd3TnAtWFRzQUx5bnROOGdERk1GMzBSSUx0Q2Vob01iRlo4eVVieVA5b0ZfY2djZw?oc=5",
-      "summary": "Kelp DAO 驚爆 2.92 億美元攻擊 加密市場再陷動盪&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:00:17+00:00"
-    },
-    {
-      "title": "Anthropic發表Claude Opus 4.7強化AI安全 同期更強大模型恐引資安危機 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxPdjRRMnY4QWJsbExiR3kzb2RFNTVqRlZBa0pLT3pDbjVrcFEtanpTZWc5V3dlMzJzeGRJaG83R2R2RUxEX1lLVXFmSnhiOW9DQmVJc1E0Mm1RNkNrS0VGR0p3OUctbllkNk8xSWZuVzVnaUxoYzh2V3loUkV3RkVGVWYtRWwtTFE3SldZRGhqRjNlUWpaOXd2XzJZTml3ZVNDN0NlOVY1c0ZuMXBBSThBaWJHVzNmRE1IaS1DV0ZRYnhXUHRjcDZONDg3cGVFX29ubkQwTklaVU9ZamJyNFIzNkhSS19YMk9qZG1LT3B1X2p0SklFTi05ZmZRUURqcURIWUNGN3ZucFRDeUdmWmRMSnZOb3l1bEZmclliemZ3MVhMNENGWkpENzJBX0h4ZUhxbEV5MjRxYWROdUNVTWxtc1dXZldQV1REQWoyU1NkSWFXU1gycEdvOWswSWZvd0U3aURv?oc=5",
-      "summary": "Anthropic發表Claude Opus 4.7強化AI安全 同期更強大模型恐引資安危機&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:00:17+00:00"
-    },
-    {
-      "title": "Anthropic AI服務導入嚴格身份驗證 引發用戶隱私與競爭疑慮 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxPakFHaVBkeXRMdU5TMGhyQ2EyR3o3Uy1fek5RVzhrMnR1amRva3pTNkNXLTVDVjR1a2ZkMTB0S2NrZ25MaDRJLWVBMWxWX0pCYnIzcERwbmJ5ZTYzMmw0Y2FpVk5vajBrTS1LVEctYUt6UjZ4NERWYm1waTBrcWlyRWFxdHlQN09HbW84c0JxRUYyTE1WLWk1OUluZkN4bTIzTmt6bHVUbjFLcm50NVFtLXhLSTEzODVPcXowXzkxU2x5eUt0Z1dBQVNkczRtUzUwTEtSRmNWVS1lOGpBbkhSaXI5aWRRdFA3eHlBNFZudzN2MEREYXlrVFBhbXU5bWdCYXR0TmRWVTZrX0tqeDNWQ1AtSUFWSE95Y095ZXNPbEh3R2V4LTMzNTAtRDY3QTJQWXItd3g0M3BYcTNlX1JEQVN2ZGxla0hHTDJkNkhsYWtpYzZQaVQ1WXdqb1lSY2JSZk5mQ00tcnA?oc=5",
-      "summary": "Anthropic AI服務導入嚴格身份驗證 引發用戶隱私與競爭疑慮&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T03:00:17+00:00"
-    },
-    {
-      "title": "The Record Stock Market Rests on Some Big One-Offs -- WSJ - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTDFmQWszcE43ZEhJRDZQM0Q1NE05R2NFeHJMbmdwTnFRQ3RnaHlwdENZaEpfT0YtLXJKVmZRUHRvX2R6aE1Qb1F2dGNiN3Q4cFYtR3V0ZktkTldHRDhTWU9Ta0VsQUI2eUxMYThYZkR0WUI4ZTI0dU94QnpSdXI1cDN3cGdRYk85blJpQWhiVEJiVVh1SEE?oc=5",
-      "summary": "The Record Stock Market Rests on Some Big One-Offs -- WSJ&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-19T03:00:00+00:00"
-    },
-    {
-      "title": "英特爾衝刺晶圓代工拚AI新霸權 台設備訂單大增5成 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3AJBVV95cUxQYlUzblJ3U3VtN2Z4Nm5DYUdHYjBmeXViWGhLbWdFaG5BUW5xeXE0R19uMGJuTm9iZHNydkpSZm54NzBqT1NGMXdSX0g2UlM4bWFFblp3Z2VZQzltUDhOckk5dUdxdS1ibVRUb1dJVnI1a0dxSEJhX0lXMngwVmpUSDNnQWplQTRoU1dKWUVBelN0cG1WSkpNQ29OWTBkUGgzdkthbDdJT1NPLVZwV2ZYd25NekVJaC1FN2J5bEpwLUF4dGpPWE00X3k2N21IdXZ5eUd6QVl1OTR2b1JnSTFxOFdIeDFLcVdoRkQ3RVV1czhkYk1LMHVleWVfTC1PZjN0UkVtZXE0UEFJY3FoZExmMTAzSEZuNUZ4MlZzSGcxOExvY2hxcGhTYXAwVHNDM2JmOENCRmgzZmJ3QjRjVU9TSTVqUEJYMGpxd1RWMVIwcXJtcUdQVDFZLVhCaXE?oc=5",
-      "summary": "英特爾衝刺晶圓代工拚AI新霸權 台設備訂單大增5成&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-19T02:59:46+00:00"
     }
   ],
   "risk_indicators": {
