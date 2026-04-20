@@ -116,7 +116,16 @@ def save_cache(cache_list):
         json.dump(cache_list[-200:], f, ensure_ascii=False, indent=2)
 
 def fetch_news(hours=24, limit=64):
-    cache_list = load_cache()
+    raw_cache = load_cache()
+    
+    # 🛡️ 免疫系統：自動清洗快取！如果是字典就只抽出 link 字串，如果是字串就保留
+    cache_list = []
+    for item in raw_cache:
+        if isinstance(item, dict) and "link" in item:
+            cache_list.append(item["link"])
+        elif isinstance(item, str):
+            cache_list.append(item)
+            
     cache_set = set(cache_list)
     news = []
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
