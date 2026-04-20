@@ -1,9 +1,45 @@
 {
-  "updated_at_utc": "2026-04-20 22:22:16 (TW)",
+  "updated_at_utc": "2026-04-20 23:55:00 (TW)",
   "title": "全球局勢與市場情報 2026-04-20 盤後",
-  "report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-  "tts_report": "AI 情報官連線失敗: Timeout of 600.0s exceeded, last exception: 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
+  "tts_report": "AI 情報官連線失敗: 504 The request timed out. Please try again.",
   "news": [
+    {
+      "title": "Max Stock任命兩名獨立董事進入董事會 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1NckpuekticnItTG9UQ2VaQlQ0eTNfRlpkWjNyd3NzeGM2VlYtb1NXRG1fa2ZYdU9xanBsQkh1VEZIYnMyaVIzck9rNzJMbTBlOTBZS1BLWmV4M29oU1BrMUVwdzJnVGJTcEpxX0F2X0E?oc=5",
+      "summary": "Max Stock任命兩名獨立董事進入董事會 作者 Investing.com&nbsp;&nbsp;Investing.com 香港 - 股市報價& 財經新聞",
+      "dt_utc": "2026-04-20T15:48:08+00:00"
+    },
+    {
+      "title": "U.S. Stock Movements | Most leading technology stocks declined, with Intel (INTC.US) falling more than 3%. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYllsT3BIVmp1LWpJa0RnLU5sbDZLLW9ycG1rVjc3OWlyVnA4T2JhTWFUMXhKSzdDUG42NGFzMTRLcXdUazByRlNnYVZ1V1Jlamo2M0haemtEQnFPRUFydTJFUnVpUXBWajIzUmR0WlJtaUQxX3h0VnpubHZSd0Q0el9DOHJRQXc5WVB3YjZrZlE3S091WG1hcVlndmNTN1ByalVTYkt4dHVDZ2NBRV9v?oc=5",
+      "summary": "U.S. Stock Movements | Most leading technology stocks declined, with Intel (INTC.US) falling more than 3%.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-20T15:42:53+00:00"
+    },
+    {
+      "title": "The decline in the U.S. stock market widened. - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQaElsbERnUUJCYnBtV25BRE9BZnJNMGMxNVlFUWdDaTVVQktNMXc1cm5Eem5kY2k3RUJGX29vbVAxeHZCaVpUVTNKa3NMenpPYjRrMzNXS000VmliVFNjd3RTX0FRLTNaa3VlTVBRZzdybmo5bkZSVzdYdGNYMDR5aVJGU09PUjhKcjEw?oc=5",
+      "summary": "The decline in the U.S. stock market widened.&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-20T15:14:32+00:00"
+    },
+    {
+      "title": "市場傳聞：Trump 稱停火延長機會渺茫、霍爾木茲海峽將維持封鎖 - AASTOCKS.com",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUEp1bU9CV2oydDI0ZXkyZm1sUFVMVmhxQTRTWkRJaXllWndtQ0VKMi0tZ0syX252bDNXbVVsc3BybXE1VnFtZEd5NFVHLVFEbC1Eamo5bVJTdFpSaHRmSFhLcnE5ZHhqVjBnb2dKNWwyazBIMi12UlNTenN6SGZNVF9rNnVXQW0yVXc?oc=5",
+      "summary": "市場傳聞：Trump 稱停火延長機會渺茫、霍爾木茲海峽將維持封鎖&nbsp;&nbsp;AASTOCKS.com",
+      "dt_utc": "2026-04-20T15:06:00+00:00"
+    },
+    {
+      "title": "駁伊朗拒談傳聞！川普：范斯前往巴基斯坦準備談判「想與我談也可以」 - 三立新聞網SETN.com",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB2XzFfUjcxTXpXYjRWVkR3OW52alFaMV9UWGNhMV9vVnBHODJudkI4Z29fd2dLR0x0NDVEWXQybzdCT3FoN01keGhJYlVSZzYxWWR2UGdSdzXSAV9BVV95cUxQUW1iSHNzZlFINGd3MG1haHB5V0lvTkJMUXNhWTJYR3dqZTRvVklRTkhvSU9Wc1RMUy13QksxT1NYX1pVaHBYbkVYZVUtVHgzZm5YRU83Y1ZfelVxdjJTUQ?oc=5",
+      "summary": "駁伊朗拒談傳聞！川普：范斯前往巴基斯坦準備談判「想與我談也可以」&nbsp;&nbsp;三立新聞網SETN.com",
+      "dt_utc": "2026-04-20T15:03:00+00:00"
+    },
+    {
+      "title": "華爾街瘋牛、民眾怨聲載道：美國「股市榮景 vs. 民生寒冬」史上最大裂縫 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNGY4X2FkaERFai1uVElDamhSUU03UFJ6dHFnUDFOcFRJSjVxSEx3My03OUlkeXRHb1V5XzM2YXhQLUpRZjRnNlA3dml6OWhRYUJOWmhhN2RuVnZoTGozVFd4dGc0TjZ4XzVXX3JteGRVeExJclJvRklyOFVubmg3REYzOWhGbjlERFZBMEp3?oc=5",
+      "summary": "華爾街瘋牛、民眾怨聲載道：美國「股市榮景 vs. 民生寒冬」史上最大裂縫&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-04-20T15:00:44+00:00"
+    },
     {
       "title": "Google Stock Has Further to Run, Analyst Says. What the Market Is Missing. -- Barrons.com - 富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSl9ZRnh6N1Z3ckkxRVU4UUVFOGhYbzRpRWVxdHl4OS1Wai0xU1FhTXljSDlya3NoTUxQVzByVUlvc09JVnVVRWJEX0ZKMHFiWHNOdFNhcGZRbFYzTWVNWjlPMWNfdTg0N0lOdEpFbWxoc2hjMW1NM01iajFvdHNwOGczSHgyYzE5RmtQQUlRUVg4UG1IbUpiR3ZR?oc=5",
@@ -15,6 +51,12 @@
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQaWhqRlBHNUxoZVQwMUhYX2pNS1hsMWtMckJfejQtNEVWeW1HZmMtMTdmLUVsajc0aE9NOHhndjNhTklMYkszRzVOUzduUl9nWXZxWFBCX3NnLUpWQXJzR3lJajBkd3Nucng2TjJ5RXZSZ3pYbldhWUVHSUlhLWtzUVhqSjR4aXgwbU9peS1ZbWRGNlNoWnc?oc=5",
       "summary": "Amazon Stock Slips Away From Record. AI and 2 Other Reasons It Can Get There. -- Barrons.com&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-20T14:10:40+00:00"
+    },
+    {
+      "title": "斥資70億美元！禮來收購Kelonia 搶攻下一代癌症療法 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMitwJBVV95cUxOUHYxUGJtMXZVemFzRV9SRW1ndWI3RnlYLWJmSVh3TTNzTjlsQzh1YUZLOXNMTXh3S3hjRzdNdkxqV3Y4ci1EdjdLb3dvaVdXMUtianJTc25kNUhBcVRuWllKcC13N0QtZV9PRDd1c29zUUg1aUlhN2pzaF9BN0xtUkRPbWxMTk5La01hY2dmVUtPbjl6TVlZaXBGS0ROQUxHZVItcF9MTC0xTGs2VTdJc2xjYXQ1dzNxcWU0Z3NLbHdSVzBIcXk5ZFNJSHJBUl9JR09UYXA0NkxKUFlxeWdOTmw3V3R1LVQzWDNXSGRocWh5aG55WmZyb2tlQzFBVHpjXy1rVkhyZnJkTWR1Vm44bjJvY001bDBIS0V0ZzNZalBRaktVd25TU3lCYWF1dVFKMFROZ1o2VQ?oc=5",
+      "summary": "斥資70億美元！禮來收購Kelonia 搶攻下一代癌症療法&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-20T14:10:02+00:00"
     },
     {
       "title": "Fast Finance Pay在歐洲市場推出OK.pay服務 作者 Investing.com - Investing.com 香港 - 股市報價& 財經新聞",
@@ -90,6 +132,12 @@
     },
     {
       "title": "美國航空(AAL.YS)否認與聯合航空(UAL.US)合併傳聞 股價盤前跌近3% - AASTOCKS.com",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQldPaVNhaU1TMHB2OTJwVG55V1lUaTVBMjFmcXNiel9KNFNNLWdHX2lmakgxWXMxSTYxelI2NGdrRHdnc0pUUjdaWVRMQjlxdjQyamVFNUFVTlJoQjhGbW95Nnh3dWJfc2gwZFZLSVlRUEhpdmM5NE9nM1JDV0R5M2NzOTA0ZFZuWE83eXpCUnA0ZEg5dVkwR1JnbmVjbmc?oc=5",
+      "summary": "美國航空(AAL.YS)否認與聯合航空(UAL.US)合併傳聞 股價盤前跌近3%&nbsp;&nbsp;AASTOCKS.com",
+      "dt_utc": "2026-04-20T12:48:00+00:00"
+    },
+    {
+      "title": "美國航空(AAL.YS)否認與聯合航空(UAL.US)合併傳聞 股價盤前跌近3% - AASTOCKS.com",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQ0xkSmxXcU5TTGFDV2dKamN4cGxrTy1KY05CTXFYN185WFFMQ0VlUEFSYmFvbW1tbEszSWdWR0Yzanh1Z00zNHZFQUZ4Tnh6cXpjSlRvYnJMNERNZGJMT1hfeFEzN1lKRGNBWXVoWVZBSkN3RTFhZHpQUUJ4NmJNMFdDSjlvV3p1Z1E5eGd3b3BLdFhwSEhwRzc0bzlXNVE?oc=5",
       "summary": "美國航空(AAL.YS)否認與聯合航空(UAL.US)合併傳聞 股價盤前跌近3%&nbsp;&nbsp;AASTOCKS.com",
       "dt_utc": "2026-04-20T12:48:00+00:00"
@@ -105,6 +153,12 @@
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1femZmUEo4TjgxcFh3Y2dzUVFDMG94cTVYRmF6cHRnUjRCbl9TR0tqTXN2ODRESHlnSDBkTWFwejB0cWxJNll5RTdQcHpla3Y1YlpxNHJlUlZTU1BHSWY5d29YZFRkTzJoVFROVXJvZXV2T2RPVE9TUVR2VQ?oc=5",
       "summary": "台股擂台／「低調黑馬」陳奇琛：中東局勢影響淡化 股市展現強烈上攻企圖&nbsp;&nbsp;經濟日報",
       "dt_utc": "2026-04-20T12:26:17+00:00"
+    },
+    {
+      "title": "馬斯克稱不玩漏洞？特斯拉幾乎零稅負 180億美元利潤轉移結構曝光 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMipgNBVV95cUxNOEV0OV9jbkhsbkh1U0E2b1FWVHJ2M0h1Q1BXSk9BYkRtbFhDeTJyNFlRejlfQlhLWmlzcTNoVkVjeGZpcjloMGpUWThKc0dpXzVuZDlIRUlrM2stSnJVZ1E3Q1E2R0dXX0tmMUVIcFc3RXExSU5LNnMxaURTcWpWTFpZNGZ0M0V2bG13ZmlGN3FFRDB3MTljUXoxSkVFY3l0MXhid29FdC1YdmdDcWN6UnExSFVVUzNtUUhiRlU1RUN1NVI0UkgyRC1MVnl5R01EN2RiU0VIWjBXcVNoUFAwc3E2VHBWcFpEVUxzRE5nTEI0SHZmamFxUVpvOWt2WDRJRDBuNFg0WWUzWDh5M2xZaWpaV25MTHk3MFZxV3AwOUl5ZjJLMjZqVEtQVUVVeE9yM1d2ZWlxZDBLMmxkZVlZTEd0dTlNRXR0R1hZa1Q4LWR6dUlBNF9EM1BtMGkxWTctNkliTGlJT0phWE1icFJrZ3ZEYkZNcW1jSm5UZ2RCdGs5c1lmNTczMElnUU9FTTN1dWFJeU82ZnZ5U2FrTEMtbENicUlaUQ?oc=5",
+      "summary": "馬斯克稱不玩漏洞？特斯拉幾乎零稅負 180億美元利潤轉移結構曝光&nbsp;&nbsp;Yahoo股市",
+      "dt_utc": "2026-04-20T12:00:05+00:00"
     },
     {
       "title": "Sandisk Stock Joins Nasdaq 100 Today. Its Surged 300% This Year, Why It's Stalling. -- Barrons.com - 富途牛牛",
@@ -333,66 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPLUVlNTlnb3NYNjdYU2h0WWNNNHJteWV6OC1JWVRKQ1ZlNDZuVjJwb0Z2dlFMSFpmNkU4a3NMOFVib3BkdW5LNzVpLVptYU9XN255ZV9ZMmxuTXFkNkpKVWI4M09vY0UxblZlNk5Tckx2Wjh6N3Zxak1KV0FadmdXSlVzeVRqakVXZEFZeUpVN0lPSjk2?oc=5",
       "summary": "Why a $33 Billion Stock Market Buying Spree Is Now Winding Down&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-20T10:03:00+00:00"
-    },
-    {
-      "title": "【公告】匯僑 2026年3月合併營收3591萬元 年增-11.13% - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQOFpFMlFwTjR4cDBNTkRGYjlmQ3VVUW1zNUlfNngzU19DMnUxa2gxVEREOXdWQlZVQTFXRnk3a25sYzZkSVpDdGVOcGZ5REE4Ql9Cbm9jeWRnQkU4dXhvblFJdzRzeHhJWVRzN01lX3VUZUw4eUlTTng0bGFlNVNyY0piS3kxOGg3aXJCZWV0enI1WXV2ZkNYajFaQ3JzX2lrRGVQQi1KMDFXc2c3ZVRxcmQ1RFRiZlVnU1h6ekswUjU3UEpob3BrMXlnZ0QyM0JnLXBUQi0tLVgzV29RalZTQXhRRDkyRmgySy1QNFVuYmE4dTl6ajNvMXJtQkVhejRnVUpvYTNfN1RidVk5T19yUUh1ZVBrZ00?oc=5",
-      "summary": "【公告】匯僑 2026年3月合併營收3591萬元 年增-11.13%&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-20T10:02:17+00:00"
-    },
-    {
-      "title": "台灣「月薪5萬」是假象？ 網揭11行業：其實早超過 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOLXVlZTlSN19JVWxhb3cyU2VCWmRoNGNwTUVzQjRCdjJ4TUh3SUdVY3h3VnRwMnFMWjJxOXNlQ25NWGs2TVZla0JqVlpzUUFOVUh4UkNuOS0zdnFFMFl1RVoxNHRrTGxGenhGaFJ1WVFreUtwNTdDMnkzRWZmaWRJX2ZQdGZvV3dGMzJNcjEwWXZNb0EtaUZObU4zN1JtTFZhdE9aOVMwTTlFUjhINkhzU2d2TTl1ckZKWGx5bTB5aVctbVpaNVdIVFhDQmlnQUh1dG4zSDQxWlFkNHVENm1vY0xFRlZBNUNoemlOcUlJZ1NraVptUnFtczlWcVBSVUhoQ2JZNmR4Zlg1WWJzeWhKUXNEamY3bzVRRURVTEhXRDhYTFp1VlJZY0RPVUI5aDZD?oc=5",
-      "summary": "台灣「月薪5萬」是假象？ 網揭11行業：其實早超過&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-20T10:02:00+00:00"
-    },
-    {
-      "title": "地緣政治風暴下的新護城河：從印度海運保險聯盟到特斯拉Robotaxi，全球風險版圖大洗牌 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcDJsZm81bDVsc1Z2WXBvZ0pKREVzYlNkT2ZOeURtQUdBRkV1VW9zdjlnU0lyQ3NJMzRmT09nLU52VlN1aU1tcFRhMTQtaDh3VkVuT2JENnZCVDZzci03NGZncWYyeXl1bUFMQ1JKQm5XWGlZaDFLYnVCRGpWQmxfOF9SWnNQellhSzdJTWJB?oc=5",
-      "summary": "地緣政治風暴下的新護城河：從印度海運保險聯盟到特斯拉Robotaxi，全球風險版圖大洗牌&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-04-20T10:00:41+00:00"
-    },
-    {
-      "title": "跨足打入國防、太空供應鏈！這「鴻海小金雞」簽下美方合作案 股價跳空漲停 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMigANBVV95cUxObk44ek1SOWdlYlBEX0RzektjQ0c2V0Fjc29HaHFfMFdRZW1oUF9uM1JkeVBqUV9laVgxV01sUGVWUU9tOEhNZVZQa1cweWdfdFZMeTRlbzRGamd3a0U4TkV6NXFiOC1ra2FLM2F2djNidnBodzZEOWZlc09vV3A0TFlSNjdERXBmQkdCc2VYcDl1Y08yellUanpfVDhZLURRZmdwTFpmNWozWUJsekVNN0xoM05rSURyZXlnMXpwUHVkaXNHZ19FaHkwdzQ0REpyUnN3RVlMblJjdmF2amJyUURvX3lDdHhjQjhrT1VZdWc5OFNDNEpKdl9DZVdnbG44MTRKUUhRbU5OQ0xDeFFRVzdYNnBUeGE0ZkxYN2pFcm9GZnpHRU5PM2p6cmxuZzFlWUdXYWRreHdhb3o1UEU0RDlwQzFtZW9JeFRra0I0MGtnekdHd2JhTXh6Z21MVWtnckJzNTVVSWF1RmJEVjg2MnJWdno4bUQzLWpMajNmclk?oc=5",
-      "summary": "跨足打入國防、太空供應鏈！這「鴻海小金雞」簽下美方合作案 股價跳空漲停&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-20T10:00:00+00:00"
-    },
-    {
-      "title": "匯僑 115年3月營收3591萬、年減11.13% - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPd3QwYk9yNVVscUwwNktBNGk2WE1tZFF4TkJHdnFWRDlBNGRVcWptbTA4SGVRU1dSTllvb2NXZjE4ckNGbjlUTVNOM2pQWG9iUHlQM0tWRG9QVXNPUmd4VlpZbkdYTEdwOXJNMUo1ZV8xUU1laTU2eXg4N1c0cE53Y01mc2t3UkZFRXFacGlMQ1oyQWlzTlpxMWhjbXRCYjRSYnM1VlFqRWZWVHF2WXp1V1JlakFtUlgzNG1DbjltaThXU0dNQTN0bUlEbW5TcWdCNVI2YWRVVGRicU0?oc=5",
-      "summary": "匯僑 115年3月營收3591萬、年減11.13%&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-20T09:57:00+00:00"
-    },
-    {
-      "title": "統振 代子公司東旺利股份有限公司公告董事會決議召開115年股東常會 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMivANBVV95cUxOM0Z2N0N4U3RLcWYxbDJ4R0pwd3cwdnJuVk16dy13bzFOdUF5azVIU0s5VXRCVVdFZGJJazFlaHgtenJGWnFsWml6WFBaRmRZekw1WUJac29ocTJoZjNKWVgxa0pNT1p3M3VVZFdEZHVHQXRBazVMS2RtYXBOSThiLWpEcERVcUg2NU90S0VOVWxBMjhHTlBjZGs5R01SZEZ0RG5TS1ZxN1F2ZmJLQzI0aVBOTlliT3daS2owRl9YWHk5QzA3cXdzMnluVE04X0Y1a1dCazVDYmpJbXdjRGxGNVpERE1kT2NwTmFyNWxtdWN3T2hFTGJHeGR2dFVaMi1iUDAwa0NTTU5rS3ZJd3VFeVNKUnBveURMNGlVTHFfcC1JU0JzUlBFZ0JwN3Q3cG1HZ0ZrWEFHWTN0S19zV3lDV3ExT0dldWMzcF84WG8zdTRaUXh2bmUtdlpZcDFCLXJGellFTExlUjhSTG1aaC1YRmV6azluNkJfSW9zaHVGbVlGS1M0bVpveWVuN2VmTXBqYlU2V2wyOHBJSFl4SjhTM3o5T3E3WnFwc0hycHFVWXIyQTdtcjR0eEhFNnA?oc=5",
-      "summary": "統振 代子公司東旺利股份有限公司公告董事會決議召開115年股東常會&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-04-20T09:57:00+00:00"
-    },
-    {
-      "title": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注 - AASTOCKS.com",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORlZGWWxMTHlsRThvSlVSZ2c0NDd0TVNnYV9XZFZRdld1YmlGME9ERktOb1N1YnZjajhaNEZ0V1ItZlBlMENqZnc3R2dacE0xeVRIT3dJenBON0xNaUNUNzZwRVpvRHV1YW44MERfWjRKSnRzVURLTmpmdWtUVkRZekhDQ3RjS245VXc?oc=5",
-      "summary": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注&nbsp;&nbsp;AASTOCKS.com",
-      "dt_utc": "2026-04-20T09:54:00+00:00"
-    },
-    {
-      "title": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注 - AASTOCKS.com",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQdWV1WlR2aUFMN1lpaTBhUl9pblVfWmRnQXl4RXF4U3JIQjZHMFU3WVdtUlk1aXJQbkVCOXlZMDhkenp5c2tFbDd4WFdySjBGRDJLTnY3akJiSzhZQ2ZpNTBqcmlJbHczM1RzNlViN19IcWtwdU8yNzBBdktHZlVTTHNtNENiejBYUEE?oc=5",
-      "summary": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注&nbsp;&nbsp;AASTOCKS.com",
-      "dt_utc": "2026-04-20T09:54:00+00:00"
-    },
-    {
-      "title": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注 - AASTOCKS.com",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0zWFozcVVtTnAwNG55aUc4bXl4a1M3MFgwR1pBdURIYkZGQWdBMVZNN3VQaWpOTVFGQTVnal9tQ2M1bmlFcUlUaHpYU2VlSkxISDJ6MmduOWM2TnNnaXctQlZjQ3lZTHZzOTVSYnhKcw?oc=5",
-      "summary": "市場傳聞：獲亞馬遜(AMZN.US)支持的 Anthropic 估值達8,000億美元惹投資者關注&nbsp;&nbsp;AASTOCKS.com",
-      "dt_utc": "2026-04-20T09:54:00+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "18.99",
-    "vix_trend": "▲ 1.51",
-    "usd_twd": "31.42",
-    "usd_trend": "▼ 0.13"
+    "vix": "19.46",
+    "vix_trend": "▲ 1.98",
+    "usd_twd": "31.41",
+    "usd_trend": "▼ 0.15"
   }
 }
