@@ -1,14 +1,56 @@
 {
-  "updated_at_utc": "2026-04-23 05:30:37 (TW)",
+  "updated_at_utc": "2026-04-23 05:59:48 (TW)",
   "title": "全球局勢與市場情報 2026-04-23 盤前",
-  "report": "🎯 【一分鐘戰略速讀】\n今日市場呈現分化態勢。宏觀層面，美國股市因伊朗停火消息而反彈，且VIX恐慌指數下行，顯示市場整體系統性風險情緒有所緩解。然而，美元/台幣匯率微幅上漲，暗示資金流向存在細微波動。在地緣政治訊息層面，儘管部分報導提及區域衝突與軍事動態，但避險資產並未出現顯著噴發，故多數此類消息可定調為情緒性噪音。產業方面，記憶體領域有新廠動態，而個股則因財報表現而有漲跌互見，反映出市場對企業基本面的審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n*   美伊延長停火美國股市收紅 (重要度：★★★★)\n    **事實核對**：此新聞指出美國股市因伊朗停火消息而反彈。結合今日VIX恐慌指數下降0.58至18.92的數據，顯示市場對此地緣政治事件的反應為緊張情緒緩解。若衝突升溫，VIX應呈現上漲。因此，新聞的市場反應與避險指標一致。\n    **解讀**：該事件表明，區域衝突的階段性降溫，確實能有效降低市場的廣泛不確定性，為股市提供短期動能。投資人應關注此類事件對市場情緒的實際影響，而非單純的地緣政治聲明。\n\n*   〈能源盤後〉貨船荷姆茲海峽遇襲+燃料庫存大減 油價飆升逾3% (重要度：★★★)\n    **事實核對**：此事件描述荷姆茲海峽貨船遇襲及燃料庫存減少導致油價上漲。儘管VIX指數顯示整體市場恐慌情緒下降，但特定區域的供應鏈事件確實會對單一商品產生直接影響。原油作為關鍵戰略物資，其價格波動與地緣政治及供需失衡高度相關。因此，油價飆升屬於特定商品的物理事實，而非廣泛避險資產的全面反應。\n    **解讀**：這是一個具體的供應側衝擊事件。投資者應區分特定商品供需與地緣政治對廣泛市場情緒的影響。油價上漲可能影響運輸及能源相關產業的成本結構，應注意其傳導效應。\n\n*   SK Hynix Breaks Ground on New $13 Billion Memory Plant. Micron Stock Is Rising. (重要度：★★★★)\n    **事實核對**：新聞指出SK海力士啟動新記憶體廠建設，帶動美光股價上漲。此為記憶體產業的資本支出與競爭動態。台積電主要業務為邏輯晶圓代工，在HBM供應鏈中主要負責CoWoS等先進封裝。SK海力士擴建記憶體產能，屬於其核心業務發展，並不直接衝擊台積電在HBM先進製程與良率的領導地位，而是強化記憶體整體供應量，間接影響市場競爭格局。\n    **解讀**：此事件反映記憶體產業對未來需求（如AI相關HBM）的樂觀預期，刺激主要廠商增加投資。對於投資者而言，這表示記憶體市場的長期成長動能仍在，但需關注其對供需平衡的潛在影響。\n\n*   IBM Stock Falls Despite Earnings Beat / Why ServiceNow's Stock Is Sliding in the Wake of Earnings (重要度：★★★)\n    **事實核對**：部分公司（如IBM、ServiceNow）即便財報數據符合或超越預期，股價卻下跌。同時，今日VIX恐慌指數呈現下降，表示系統性風險未顯著升高。這表明市場對個股的反應，是基於更細緻的預期管理，而非普遍的恐慌。\n    **解讀**：這類現象顯示，在整體市場情緒相對穩定時，投資者對企業財報的審視已趨於嚴苛，不僅關注實際數據，更注重未來展望、指引以及市場已充分反映的預期。高預期下的「利多出盡」反應，是投資個股時需警惕的現象。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數為18.92，較昨日下降0.58。此數據低於20的歷史平均區間，顯示市場的普遍焦慮情緒有所減輕，系統性風險壓力處於相對較低水平。美元/台幣匯率為31.47，微幅上漲0.05。台幣的小幅貶值幅度有限，並未呈現資金大規模外流的跡象，也未達到觸發系統性風險警報的程度。綜合判斷，儘管個別資產或地緣事件有波動，但市場整體情緒穩定，沒有普遍性的恐慌。\n\n💰 【台股影響與板塊點名】\n在市場情緒相對穩定的背景下，台股預期將回歸基本面表現。\n受惠產業：\n半導體：SK海力士擴建記憶體廠，間接印證AI及HBM需求強勁。台積電作為先進封裝領導者，其與海力士的強強聯手狀態維持不變，持續受惠於AI晶片需求的增長。部分IC設計公司若能搭上AI順風車，或有表現機會。\n原物料：1608華榮等銅相關個股受惠於銅價上漲。若此趨勢延續，相關電線電纜、基礎設施概念股或可留意。\n受衝擊產業：\n部分電子股可能因整體供應鏈調整或財報未達高期待而面臨壓力，尤其是一些預期已充分反映的個股。\n\n📈 【投資觀察指引】\n1.  審慎解讀地緣政治新聞：觀察避險資產的真實數據反應，避免被情緒化報導誤導。VIX指數是重要的客觀衡量指標。\n2.  關注財報細節：個股在財報季，即使數據符合預期，若展望不如市場高期待，仍可能面臨股價修正。務必深入分析其未來指引。\n3.  區分產業動態：記憶體產業的資本支出與其景氣循環相關，而非直接與邏輯晶圓代工競爭。投資者應理解各產業的獨立運作邏輯。\n4.  資金流向觀察：美元/台幣匯率的小幅波動，反映資金的細微調整，但不應過度解讀為大規模資金流出，需結合其他經濟數據綜合判斷。\n\n🏫 【曉臻財經小教室】\n今日單字：【大額交易人未平倉】\n大額交易人未平倉是指在期貨或選擇權市場中，由機構法人或資金龐大的專業投資者持有的未到期合約數量。它能幫助我們「看穿市場假象」，因為大額交易人的動向通常代表著對未來市場方向的專業判斷與實際資金投入，對於判斷市場趨勢具有領先指標作用。\n\n市場穩健非盲從，數據為證判真偽。",
-  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場呈現分化態勢。宏觀層面，美國股市因伊朗停火消息而反彈，且VIX恐慌指數下行，顯示市場整體系統性風險情緒有所緩解。然而，美元/台幣匯率微幅上漲，暗示資金流向存在細微波動。在地緣政治訊息層面，儘管部分報導提及區域衝突與軍事動態，但避險資產並未出現顯著噴發，故多數此類消息可定掉為情緒性噪音。產業方面，記憶體領域有新廠動態，而個股則因財報表現而有漲跌互見，反映出市場對企業基本面的審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n*   美伊延長停火美國股市收紅 (重要度：★★★★)\n    **事實核對**：此新聞指出美國股市因伊朗停火消息而反彈。結合今日VIX恐慌指數下降0.58至18.92的數據，顯示市場對此地緣政治事件的反應為緊張情緒緩解。若衝突升溫，VIX應呈現上漲。因此，新聞的市場反應與避險指標一致。\n    **解讀**：該事件表明，區域衝突的階段性降溫，確實能有效降低市場的廣泛不確定性，為股市提供短期動能。投資人應關注此類事件對市場情緒的實際影響，而非單純的地緣政治聲明。\n\n*   〈能源盤後〉貨船荷姆茲海峽遇襲+燃料庫存大減 油價飆升逾3% (重要度：★★★)\n    **事實核對**：此事件描述荷姆茲海峽貨船遇襲及燃料庫存減少導致油價上漲。儘管VIX指數顯示整體市場恐慌情緒下降，但特定區域的供應鏈事件確實會對單一商品產生直接影響。原油作為關鍵戰略物資，其價格波動與地緣政治及供需失衡高度相關。因此，油價飆升屬於特定商品的物理事實，而非廣泛避險資產的全面反應。\n    **解讀**：這是一個具體的供應側衝擊事件。投資者應區分特定商品供需與地緣政治對廣泛市場情緒的影響。油價上漲可能影響運輸及能源相關產業的成本結構，應注意其傳導效應。\n\n*   SK Hynix Breaks Ground on New $13 Billion Memory Plant. Micron Stock Is Rising. (重要度：★★★★)\n    **事實核對**：新聞指出SK海力士啟動新記憶體廠建設，帶動美光股價上漲。此為記憶體產業的資本支出與競爭動態。台積電主要業務為邏輯晶圓代工，在HBM供應鏈中主要負責CoWoS等先進封裝。SK海力士擴建記憶體產能，屬於其核心業務發展，並不直接衝擊台積電在HBM先進製程與良率的領導地位，而是強化記憶體整體供應量，間接影響市場競爭格局。\n    **解讀**：此事件反映記憶體產業對未來需求（如AI相關HBM）的樂觀預期，刺激主要廠商增加投資。對於投資者而言，這表示記憶體市場的長期成長動能仍在，但需關注其對供需平衡的潛在影響。\n\n*   IBM Stock Falls Despite Earnings Beat / Why ServiceNow's Stock Is Sliding in the Wake of Earnings (重要度：★★★)\n    **事實核對**：部分公司（如IBM、ServiceNow）即便財報數據符合或超越預期，股價卻下跌。同時，今日VIX恐慌指數呈現下降，表示系統性風險未顯著升高。這表明市場對個股的反應，是基於更細緻的預期管理，而非普遍的恐慌。\n    **解讀**：這類現象顯示，在整體市場情緒相對穩定時，投資者對企業財報的審視已趨於嚴苛，不僅關注實際數據，更注重未來展望、指引以及市場已充分反映的預期。高預期下的「利多出盡」反應，是投資個股時需警惕的現象。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數為18.92，較昨日下降0.58。此數據低於20的歷史平均區間，顯示市場的普遍焦慮情緒有所減輕，系統性風險壓力處於相對較低水平。美元/台幣匯率為31.47，微幅上漲0.05。台幣的小幅貶值幅度有限，並未呈現資金大規模外流的跡象，也未達到觸發系統性風險警報的程度。綜合判斷，儘管個別資產或地緣事件有波動，但市場整體情緒穩定，沒有普遍性的恐慌。\n\n💰 【台股影響與板塊點名】\n在市場情緒相對穩定的背景下，台股預期將回歸基本面表現。\n受惠產業：\n半導體：SK海力士擴建記憶體廠，間接印證AI及HBM需求強勁。台積電作為先進封裝領導者，其與海力士的強強聯手狀態維持不變，持續受惠於AI晶片需求的增長。部分IC設計公司若能搭上AI順風車，或有表現機會。\n原物料：1608華榮等銅相關個股受惠於銅價上漲。若此趨勢延續，相關電線電纜、基礎設施概念股或可留意。\n受衝擊產業：\n部分電子股可能因整體供應鏈調整或財報未達高期待而面臨壓力，尤其是一些預期已充分反映的個股。\n\n📈 【投資觀察指引】\n1.  審慎解讀地緣政治新聞：觀察避險資產的真實數據反應，避免被情緒化報導誤導。VIX指數是重要的客觀衡量指標。\n2.  關注財報細節：個股在財報季，即使數據符合預期，若展望不如市場高期待，仍可能面臨股價修正。務必深入分析其未來指引。\n3.  區分產業動態：記憶體產業的資本支出與其景氣循環相關，而非直接與邏輯晶圓代工競爭。投資者應理解各產業的獨立運作邏輯。\n4.  資金流向觀察：美元/台幣匯率的小幅波動，反映資金的細微調整，但不應過度解讀為大規模資金流出，需結合其他經濟數據綜合判斷。\n\n🏫 【曉臻財經小教室】\n今日單字：【大額交易人未平倉】\n大額交易人未平倉是指在期貨或選擇權市場中，由機構法人或資金龐大的專業投資者持有的未到期合約數量。它能幫助我們「看穿市場假象」，因為大額交易人的動向通常代表著對未來市場方向的專業判斷與實際資金投入，對於判斷市場趨勢具有領先指標作用。\n\n市場穩健非盲從，數據為證判真偽。",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，VIX恐慌指數的下降表明全球股市風險情緒有所緩和，美國股市也因美伊延長停火消息而收紅，這為整體風險資產提供了短期支撐。然而，荷姆茲海峽貨船遇襲事件導致油價飆升，提醒我們地緣政治的局部衝突仍能對特定商品供需產生直接影響。在科技產業方面，SK海力士宣布啟動130億美元新廠建設，凸顯半導體及AI相關硬體基礎設施的長期投資趨勢。同時，多檔美股出現大額股東或高管出售股票，在VIX平穩的情況下，這應被視為個股層面的事件。值得注意的是，儘管部分分析提及投資者渴望參與亞洲市場，但台幣兌美元匯率微幅走貶，提示資金流向的實際狀況可能與宏觀論述存在差異，投資人應以客觀數據審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n美伊延長停火，全球股市普遍反應正面。 (★★★★)\n*   **事實核對**：VIX恐慌指數本日呈現下降趨勢 (▼ 0.58至18.92)，顯示市場整體風險情緒有所緩和，與美股收紅的報導吻合。地緣政治緊張局面短暫降溫，市場擔憂隨之緩解。\n*   **解讀**：此事件確認地緣政治衝突在短期內有所緩和，降低了市場對突發性系統風險的擔憂，為風險資產提供短期的心理支撐。投資者可將此視為市場恢復信心的訊號。\n\n荷姆茲海峽貨船遇襲，原油價格應聲上漲。 (★★★)\n*   **事實核對**：報導指出油價飆升逾3%，儘管VIX指數下降顯示廣泛市場恐慌減退，但此事件證實區域衝突仍能對特定商品供給產生即時影響，影響範圍具備局部性。\n*   **解讀**：投資人需區分宏觀風險與局部供應鏈衝擊。原油價格波動在此情況下主要反映供應疑慮及地緣熱點的局部敏感性，而非全面性的市場避險需求。\n\nSK海力士啟動130億美元新記憶體廠建設。 (★★★★)\n*   **事實核對**：此為SK海力士公開宣布的實質投資行動，強化其在記憶體及HBM領域的生產能力，與全球AI產業對高性能記憶體的需求成長趨勢一致，並非未經證實的公關傳聞。\n*   **解讀**：半導體產業的資本支出持續投入，預示著AI相關硬體基礎設施的長期發展。此類實質建設而非單純訂單傳聞，具有更高的參考價值，有利於相關供應鏈的發展。\n\n多檔美股出現大額股東或高管出售股票。 (★★)\n*   **事實核對**：Redwire及Finance of America等公司皆有大股東或高管出售股票的具體金額紀錄。在VIX指數相對平穩的情況下，此類行為更應被視為個股層面的財務或管理策略調整，而非系統性恐慌。\n*   **解讀**：儘管 VIX 指數未見恐慌，但投資人仍應留意個股的內部人交易資訊，其可能反映公司經營層對未來展望的評估，需結合公司基本面進行分析。\n\n「地緣政治不明朗，更多投資者渴望參與亞洲市場」論點與台幣匯率表現存在對位差異。 (★★★)\n*   **事實核對**：儘管有報導提及地緣政治不明朗但投資者渴望參與亞洲市場，但今日美元兌台幣匯率呈現微幅上漲 (31.47 ▲ 0.05)，意味著台幣相對美元走貶。\n*   **解讀**：此現象表明，即使有泛亞洲市場的樂觀言論，具體到台灣市場，資金流向可能並未完全支持此論述，或至少部分資金仍偏向美元資產。投資人應關注實際匯率走勢而非僅憑單一新聞標題判斷資金流向。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數為18.92 (▼ 0.58)，已回落至20以下，顯示市場對未來波動的預期降低，整體情緒趨於穩定。然而，美元/台幣匯率為31.47 (▲ 0.05)，台幣兌美元微幅走貶，儘管變化幅度不大，但與部分「投資者渴望參與亞洲市場」的論述形成對比，顯示在相對穩定的市場情緒下，資金對於台灣市場的配置策略仍有其考量。\n\n💰 【台股影響與板塊點名】\n地緣政治風險降溫有助於提振整體市場信心，降低不確定性溢價。\n半導體與AI鏈：SK海力士新廠投資訊息，凸顯高頻寬記憶體(HBM)需求持續強勁。台積電作為全球先進製程領導者，與其合作夥伴如SK海力士在HBM供應鏈中的強強聯手，將持續受惠於AI晶片需求的增長。相關IC設計公司亦值得持續關注。\n傳產類股：銅價上漲可能對華榮等相關供應鏈形成利多。扣件產業則受惠於展覽帶來的訂單機會。\n受衝擊板塊：部分受地緣政治敏感影響的商品（如原油）可能因個別事件而波動，但整體系統性風險不高，衝擊範圍較為侷限。\n\n📈 【投資觀察指引】\n1.  數據先行，情緒其次：市場新聞可能含有情緒化成分，務必以VIX、匯率等客觀數據進行驗證，避免盲目跟風。\n2.  區分局部與全面：荷姆茲海峽事件凸顯局部衝突對特定商品的影響，但VIX走低則表明整體市場並未進入全面恐慌，投資策略需具備層次性。\n3.  關注實質投資：半導體產業的資本支出與新廠建設，是支持長期成長的真實驅動力，優於未經證實的訂單傳聞。\n4.  警惕匯率訊號：台幣微貶訊號，提示投資人雖有對亞洲市場的樂觀期待，實際資金流向仍需密切觀察。\n5.  審慎看待個股內部交易：大股東或高管的出售行為，需結合公司基本面與產業前景綜合判斷，不應僅以單一行為作為買賣依據。\n\n🏫 【曉臻財經小教室】\n今日單字：【大額交易人未平倉】\n大額交易人未平倉，指的是在期貨或選擇權市場中，由資金龐大的機構或法人投資者所持有的未到期合約數量。這些大戶的部位變化往往能反映他們對未來市場走勢的真實判斷，幫助我們「看穿市場假象」，識別散戶情緒與實質資金流向的差異。\n\n結尾：數據為本，實證為憑。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場數據顯示，VIX恐慌指數的下降表明全球股市風險情緒有所緩和，美國股市也因美伊延長停火消息而收紅，這為整體風險資產提供了短期支撐。然而，荷姆茲海峽貨船遇襲事件導致油價飆升，提醒我們地緣政治的局部衝突仍能對特定商品供需產生直接影響。在科技產業方面，SK海力士宣布啟動130億美元新廠建設，凸顯半導體及AI相關硬體基礎設施的長期投資趨勢。同時，多檔美股出現大額股東或高管出售股票，在VIX平穩的情況下，這應被視為個股層面的事件。值得注意的是，儘管部分分析提及投資者渴望參與亞洲市場，但台幣兌美元匯率微幅走貶，提示資金流向的實際狀況可能與宏觀論述存在差異，投資人應以客觀數據審慎評估。\n\n📊 【重大事件：交叉驗證報告】\n\n美伊延長停火，全球股市普遍反應正面。 (★★★★)\n*   **事實核對**：VIX恐慌指數本日呈現下降趨勢 (▼ 0.58至18.92)，顯示市場整體風險情緒有所緩和，與美股收紅的報導吻合。地緣政治緊張局面短暫降溫，市場擔憂隨之緩解。\n*   **解讀**：此事件確認地緣政治衝突在短期內有所緩和，降低了市場對突發性系統風險的擔憂，為風險資產提供短期的心理支撐。投資者可將此視為市場恢復信心的訊號。\n\n荷姆茲海峽貨船遇襲，原油價格應聲上漲。 (★★★)\n*   **事實核對**：報導指出油價飆升逾3%，儘管VIX指數下降顯示廣泛市場恐慌減退，但此事件證實區域衝突仍能對特定商品供給產生即時影響，影響範圍具備局部性。\n*   **解讀**：投資人需區分宏觀風險與局部供應鏈衝擊。原油價格波動在此情況下主要反映供應疑慮及地緣熱點的局部敏感性，而非全面性的市場避險需求。\n\nSK海力士啟動130億美元新記憶體廠建設。 (★★★★)\n*   **事實核對**：此為SK海力士公開宣布的實質投資行動，強化其在記憶體及HBM領域的生產能力，與全球AI產業對高性能記憶體的需求成長趨勢一致，並非未經證實的公關傳聞。\n*   **解讀**：半導體產業的資本支出持續投入，預示著AI相關硬體基礎設施的長期發展。此類實質建設而非單純訂單傳聞，具有更高的參考價值，有利於相關供應鏈的發展。\n\n多檔美股出現大額股東或高管出售股票。 (★★)\n*   **事實核對**：Redwire及Finance of America等公司皆有大股東或高管出售股票的具體金額紀錄。在VIX指數相對平穩的情況下，此類行為更應被視為個股層面的財務或管理策略調整，而非系統性恐慌。\n*   **解讀**：儘管 VIX 指數未見恐慌，但投資人仍應留意個股的內部人交易資訊，其可能反映公司經營層對未來展望的評估，需結合公司基本面進行分析。\n\n「地緣政治不明朗，更多投資者渴望參與亞洲市場」論點與台幣匯率表現存在對位差異。 (★★★)\n*   **事實核對**：儘管有報導提及地緣政治不明朗但投資者渴望參與亞洲市場，但今日美元兌台幣匯率呈現微幅上漲 (31.47 ▲ 0.05)，意味著台幣相對美元走貶。\n*   **解讀**：此現象表明，即使有泛亞洲市場的樂觀言論，具體到台灣市場，資金流向可能並未完全支持此論述，或至少部分資金仍偏向美元資產。投資人應關注實際匯率走勢而非僅憑單一新聞標題判斷資金流向。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數為18.92 (▼ 0.58)，已回落至20以下，顯示市場對未來波動的預期降低，整體情緒趨於穩定。然而，美元/台幣匯率為31.47 (▲ 0.05)，台幣兌美元微幅走貶，儘管變化幅度不大，但與部分「投資者渴望參與亞洲市場」的論述形成對比，顯示在相對穩定的市場情緒下，資金對於台灣市場的配置策略仍有其考量。\n\n💰 【台股影響與板塊點名】\n地緣政治風險降溫有助於提振整體市場信心，降低不確定性溢價。\n半導體與AI鏈：SK海力士新廠投資訊息，凸顯高頻寬記憶體(HBM)需求持續強勁。台積電作為全球先進製程領導者，與其合作夥伴如SK海力士在HBM供應鏈中的強強聯手，將持續受惠於AI晶片需求的增長。相關IC設計公司亦值得持續關注。\n傳產類股：銅價上漲可能對華榮等相關供應鏈形成利多。扣件產業則受惠於展覽帶來的訂單機會。\n受衝擊板塊：部分受地緣政治敏感影響的商品（如原油）可能因個別事件而波動，但整體系統性風險不高，衝擊範圍較為侷限。\n\n📈 【投資觀察指引】\n1.  數據先行，情緒其次：市場新聞可能含有情緒化成分，務必以VIX、匯率等客觀數據進行驗證，避免盲目跟風。\n2.  區分局部與全面：荷姆茲海峽事件凸顯局部衝突對特定商品的影響，但VIX走低則表明整體市場並未進入全面恐慌，投資策略需具備層次性。\n3.  關注實質投資：半導體產業的資本支出與新廠建設，是支持長期成長的真實驅動力，優於未經證實的訂單傳聞。\n4.  警惕匯率訊號：台幣微貶訊號，提示投資人雖有對亞洲市場的樂觀期待，實際資金流向仍需密切觀察。\n5.  審慎看待個股內部交易：大股東或高管的出售行為，需結合公司基本面與產業前景綜合判斷，不應僅以單一行為作為買賣依據。\n\n🏫 【曉臻財經小教室】\n今日單字：【大額交易人未平倉】\n大額交易人未平倉，指的是在期貨或選擇權市場中，由資金龐大的機構或法人投資者所持有的未到期合約數量。這些大戶的部位變化往往能反映他們對未來市場走勢的真實判斷，幫助我們「看穿市場假象」，識別散戶情緒與實質資金流向的差異。\n\n結尾：數據為本，實證為憑。",
   "news": [
+    {
+      "title": "Redwire(RDW.US) 10% Shareholder Sells US$28.41 Million in Common Stock - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPSkpzdnk2LVJUTkNoeHY0d1RGeXd4eUhOUXJmUWN1OTdpeTdDcUdyQ1B3LW1sUzk3Y09aS3JTTHVxZTdRYmppSk9sTXdaNldDbkUySHpiaWlhbXBCMW92WTNzZEVKZTJETWVpQUhkRURwdW9FTUhsTDZZRXU5bGloUENlOVgzX0ZIbjV4VXhORnN5YUlWV1lLaGJvcw?oc=5",
+      "summary": "Redwire(RDW.US) 10% Shareholder Sells US$28.41 Million in Common Stock&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-22T21:52:54+00:00"
+    },
+    {
+      "title": "分析：地緣政治不明朗 更多投資者渴望參與亞洲市場 - 世界新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9wdnZSeGEwcVJYeG5GUDJfR1lrRG50NDJJckZRUWcyZ0p4d0VQalRUQXVYLUJRZGZ5dGNjazE2YkdYTUtSZkF6NzhMaERMS0t4ZHNUMUVNY1A5WXJZYlhBMWR30gFnQVVfeXFMUGd3TGpaWEhnRHlKRXU0UE1xazc3V3l2RXZUOHd2SUdaQk5laEJJMXRVLUVUVUltSzUwYTFQSms3MWxlMWVCS1c5MEJOSmJtT0ZOU29BRmZaU1FSXzJTemhZT0hyMDF0NA?oc=5",
+      "summary": "分析：地緣政治不明朗 更多投資者渴望參與亞洲市場&nbsp;&nbsp;世界新聞網",
+      "dt_utc": "2026-04-22T21:47:10+00:00"
+    },
     {
       "title": "TWA00 加權指數- 把握低檔起漲股「ic設計」 - 股市爆料同學會 - CMoney",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBEc1RKUGc1eFE1RTdMN1o4NTJ0N2xnSHhQeE84TkhPdDdfV0NJS2ZCWDNVcGJ1TWJvNmJCNG8yTXVKQUhNSHlMMThDSDFsdmRmWE1tUWtjQ2g?oc=5",
       "summary": "TWA00 加權指數- 把握低檔起漲股「ic設計」 - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-04-22T21:23:16+00:00"
+    },
+    {
+      "title": "倫飛看旺2026年業績成長 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5KSVNYUXhsdUY0ZGFhaEJZR29VcGMwc3ZOZmM4NVNUTjE2VWIxZVJZY1czUjFYWFJBb2gzcE9sZWxaTlpGTWZ4NTlGdUxkMXRQ0gFWQVVfeXFMTUZiWnNheEppZmpfRWFMRnVmckFRbXA0b1dtdTg2cEQ4clF4RnE0UWM3TjRjT1BnakVrZlRTcE1SSmRWSE05a2JpdlJfODVvWUlYM3VRVlE?oc=5",
+      "summary": "倫飛看旺2026年業績成長&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-22T21:21:02+00:00"
+    },
+    {
+      "title": "扣件展登場 聚亨、春雨搶單 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5YMEZEZGZneTF1MnNXMUtyWWxzZTRXYUltdXZQaVBYd052bkp5WDlpRVJ6RkZETDRpWkRUeWRFZU45Z2dSRUtFa3ByUTZpR2s30gFWQVVfeXFMT2g4R01lSzBOWk9Ec2tBV1JnZ29lWGw3QXlwWUV1UF9oYy1ILU9YMElsdVlrYWw4MlZ6b1pkZUstWWFXNHM4bG90c2oxeDVQOXRjNmFKQ0E?oc=5",
+      "summary": "扣件展登場 聚亨、春雨搶單&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-22T21:20:59+00:00"
+    },
+    {
+      "title": "證交所招商 前進大馬 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAyeS1IRFNlYzJ4WkNyNzZDR0N3aWg4X0UzdDJaQUF4T0VVVjdEOHFUaVM2ZzBlNHQ4RUJuYldXWVJhUWpvSGZfbGJfRGJpVG4y0gFWQVVfeXFMTVRaTjdjOU5TRmNhRXNXMkdEajRhQWItem9ySUNqQzM0VDZvWjBQWkVweTdvT3k2cFBuUHNOTjhnZjdkTmNEVkdtYS11dFQ3eFp6ZDZRd3c?oc=5",
+      "summary": "證交所招商 前進大馬&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-22T21:20:53+00:00"
+    },
+    {
+      "title": "台日連結式 ETF 投資優選 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1rZVIxSkpmNWN3eGRBVnItU0tBeE1hLVc0d2JES2MyWkV4SW5TQTBvSXNBVktTdU1YUWo3NVJGbWltZ3c4WV9SZTF0WkpZSFZ00gFWQVVfeXFMUFdlQUIxdGFpM2pwUFZwTlJLeVprRnBObTBWWENmNmg4b1VnQVNNMXpQSXVPVG5sQU1HaEM1MzdUTkJRYnJ1YXZQWGZzNEhkSlFOV3R5Q2c?oc=5",
+      "summary": "台日連結式 ETF 投資優選&nbsp;&nbsp;聯合新聞網",
+      "dt_utc": "2026-04-22T21:20:49+00:00"
+    },
+    {
+      "title": "美伊延長停火 美國股市收紅 | 路透社 - LINE TODAY",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE50Yks4NUhlRndUa1ZDZ05qTUNiMWlIX05VNnlIOThQVzhmVmx2aXFjb0VZQ2FvQjEyTWFSTmpFQTRPUHhobmF2VWtaV1NpT3B5ZFJJMDJ3?oc=5",
+      "summary": "美伊延長停火 美國股市收紅 | 路透社&nbsp;&nbsp;LINE TODAY",
+      "dt_utc": "2026-04-22T21:18:34+00:00"
     },
     {
       "title": "懶理上「艦」傳聞 漢尼斯為史特加打拼 - Now 新聞",
@@ -117,6 +159,12 @@
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GSnV3aWxpWHMzZWtlVVNaVmhhVTdFWGVraUtQdE5QY2k3Ukc4Ymx2VWhTMGs5TXdXQjR3SHIyM1FBa3Izb2pUUmVHN00xcGVSNzMwX0hGX2FzbkdWLWFJNNIBZkFVX3lxTE42bUNPVEU4QUlSbnhEclB3SHluZkRLTHhoUHBOM2tKVkxMYWZNbVRaYVNaY0g1cGVQZ0N5NGNMeDVFV0dWRHllWG1CX0gxVnJvbUNBSDdDdXA4RnRBMHFvWnpKT040QQ?oc=5",
       "summary": "【直播】聽證會：美核武和彈頭現代化最新進展&nbsp;&nbsp;大紀元新聞網",
       "dt_utc": "2026-04-22T19:44:00+00:00"
+    },
+    {
+      "title": "美股焦點：Alphabet - Class C Capital Stock(GOOG.US) | 03:36:36(GMT+8) - 台視全球資訊網",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGZPZUhXTjBxeEFkUmlOX19jN0JsRGZvbnFGRHFoSFBCQVZRVUM2M0RUQkplTzhINGhfUFg3QkRnd2pNZEhBYk4tclBEbktJTDduUnVCOXc3ZGpkVVhwdUxqLUhtbUQ0N1QtS2hpcVVMODI3YVVuSlRndnZfSEVKSnpCQ0g2ZW91cmFuQ0JyNDFXb01RNzc2VHdSZjZnWWllNWFXT1FPeEl5amc?oc=5",
+      "summary": "美股焦點：Alphabet - Class C Capital Stock(GOOG.US) | 03:36:36(GMT+8)&nbsp;&nbsp;台視全球資訊網",
+      "dt_utc": "2026-04-22T19:36:36+00:00"
     },
     {
       "title": "《TAIPEI TIMES》 Finance sector to launch localized AI - 自由時報",
@@ -281,6 +329,12 @@
       "dt_utc": "2026-04-22T13:46:00+00:00"
     },
     {
+      "title": "Pre-Market Movements | Multiple Factors at Target Hospitality Drive Stock Price Fluctuations - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObmhuUWV6bjdya09peDljQ1N0eXZpYkZCS1FIRGJYMEQ1MUM4QVphSG8wRnhaS3hQNUlZaHNHQ3pxU1RjX3VHT2lPUDJWaXRVZWp0RXRzOFZZaVB6UXl6cUp3aUhGUmp2NXJTSk42REZBbzFnSVJWRi13RF9UUm9jamJJZDhGOEU5X1lLOGZGeHRLTUIwU0RPRTlMS2dscmFuLUhBQk1oUGFUZ3hnWDR1YTV3?oc=5",
+      "summary": "Pre-Market Movements | Multiple Factors at Target Hospitality Drive Stock Price Fluctuations&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-04-22T13:33:45+00:00"
+    },
+    {
       "title": "大衛威爾科克怎麼了？死亡傳聞中的更新 – 好萊塢生活 - arch-web.com.tw",
       "link": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxOWkJwN3VVZThQNGctWGR3cHM3dWFGU2w1Z2hndEpOYzZBVU1LOUlMMTY3cTYtVGwxZm1XV1lCSTdROUJOeFd4aENqbmNLRHF5RE5WRmFvY2RnS1ZBQ3E4NFZSZTdyYWpHWmlraVdEUGxtYVRJbjctVUZ4WTM4MHpfenhRRGI2VW9xdjMxZ180Mnh6TDNVOEo5bFVyNmhKT2hOWk84SW5waVhCVmpXYXU3dlNQSWpWYUZ2OEp3UENmTFVXVWhGUzhiSUhNSENNWlZnRG9xaTdWUXlsRlRrT1pQWmtCYkE3NXVMeDhQYWpITmY1N2tJTmVVRGRRVXhuYktzaktSc3lUV2VqbXVvWHJhRzBTRXRDaGNqRXdNdGVHUEFQZ3VMYlpCVlk3b2pKVmZ0SmRkMllENHgySGtEcU93X2N5bFZTY0sya2hTYXBnQU4yUzF5ZXJ2Wkk2d05jeTBQSnhZOVJDZUhYS0RtbU9pUUNNWjVMNnhCbDh3?oc=5",
       "summary": "大衛威爾科克怎麼了？死亡傳聞中的更新 – 好萊塢生活&nbsp;&nbsp;arch-web.com.tw",
@@ -333,60 +387,6 @@
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcmRCX3d2RXlqam1QS0Iwd2R6cGtUc25OUjFLZGVSNm5CNmxyY21LdnVLV0VpTExEMmlEem94RmpWZk1QaVVXX2FMLXdJajBiaU1ucTNOZ0l2elgyX2wzWTFZWlI3UG5FbG9mUWYzenNfQjB1T0NXZW9hWDZ2SlM3YkNTcUNiTFZXbV9XVngyWE1FV0tvX0EwVllzRDhGQQ?oc=5",
       "summary": "Why Strategy's Stock Is Outperforming Bitcoin These Days&nbsp;&nbsp;富途牛牛",
       "dt_utc": "2026-04-22T12:12:11+00:00"
-    },
-    {
-      "title": "川普又TACO延長停火 CNN：伊朗已不信川普軍事威脅 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFByUWMtb0U4LVlMX2w1RUpINTJyWWxBM0QzMnprbm1vQkk0YTlDUWYxN0laVEF1NWo3eVJWanlpOE10WEJxM2Raa0tCcXF2ZTNMUXM40gFYQVVfeXFMUElGVjZQeXRNWEtjb0o3djFJT0FwemV3ZlU0a3hhTDBjanZ4Z1cxcG5URm9tdWt0ZW9HaUZtSlpFY3lhY0tNYV9EaW9QY0p4cVhCdHZoTUdkNA?oc=5",
-      "summary": "川普又TACO延長停火 CNN：伊朗已不信川普軍事威脅&nbsp;&nbsp;聯合新聞網",
-      "dt_utc": "2026-04-22T12:11:12+00:00"
-    },
-    {
-      "title": "Why Strategy's Stock Is Outperforming Bitcoin These Days - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZlBQRmZmc1gzMW1yQUlJUDFSdHo0RWZMcXZpaVVnVmtMMURzT2s1TUU0aU5Pdk43YWxZNzhCaExQcGEwS1NRUlNHVGViZHdZbG9nd0xCT25Ub0l1cE1sR19qbU95MDBTc2dSVXRCTkh0eGx4ZWlKd1laQTVlTFpVYmVHN3owaURudjFpZjFLdk03SDkxandVbTg5clNhQQ?oc=5",
-      "summary": "Why Strategy's Stock Is Outperforming Bitcoin These Days&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-22T12:06:00+00:00"
-    },
-    {
-      "title": "Why Strategy's Stock Is Outperforming Bitcoin These Days - Moomoo",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNLVhkSm9BdEdFNTFyZmJBVTJCU2NKU3BpLXljMFl1bXNBMnJvRHQ2dGVHUlpMRG15NlA2M3JPMXlhcVpncXBTQlNwSTM2UXhDZUxqYmZ2clBTcU41QWdDOC1lbUpPTVJnUDdRbElFa1B4SlpSN05OWF9IandUb0FjSkRQWHRBR21KUkxCcFJ5ckZUdFE2YlR1UW1heXpSblJuTGJKY1dR?oc=5",
-      "summary": "Why Strategy's Stock Is Outperforming Bitcoin These Days&nbsp;&nbsp;Moomoo",
-      "dt_utc": "2026-04-22T12:06:00+00:00"
-    },
-    {
-      "title": "The U.S. Stock Market Is Progressing Toward a Bubble - and Here's Where the Extremes Are Right Now - Moomoo",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWEFzLWZCRWpXbFp5ZGFfdnYzSFZnQUFJTTRmeFFWY1QzSW9SMWl0eTNyYVZ3d3JuV0R5R0hCUFQ4M0VaYmxCTXplNDd4UmRqM0l5Mm1iVjM4N1A4eTRaTk1jTzRTenZnTGJjUVpBVjJDM1Z5R0YzRlBkSFpLSTFMR0FHQTY5R3Y1Z19jOWRaY2xvejZseTZrRExkc1lXTDRLczRr?oc=5",
-      "summary": "The U.S. Stock Market Is Progressing Toward a Bubble - and Here's Where the Extremes Are Right Now&nbsp;&nbsp;Moomoo",
-      "dt_utc": "2026-04-22T12:01:12+00:00"
-    },
-    {
-      "title": "地緣政治添變數、8750 億美元債務壓境 美國多戶住宅投資挑戰中尋商機 - yesmedia.com.tw",
-      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNZUt6aW1KQ3l5UGEwaDU4dEVhZXZ4Rnc1bzJOQmItcWFkb08xSmwzTm5ZTklUZzNmWUFHT0VYd2ZKSVgxVEZIN1pqcjJISUtYSlBMUDhCOWZYV3RsXzdRSFlfN0JCZEJRU29tZHBpbzVSZEpPSjhEZjV6eF9vNHpIcHV5Tll0ZU0yS1gxYUxCMndPTWYxNGQ1RDJPUEF2NjBLWURYN3FvZldlSzRTaXNHdzlyRDR4dFY5c3JyMXdrZUdsaUw2cHQ2Tzcwb2lHVDZqQjh0ZUhVd0VhTl9yQ3QyT0d4MWZpcnBhRHBaa3VBUFJGZjZINmdoWnhVY1JuUmcwY05XdEFvYkJGZ1pCaHhBRF9UMjBzRUoyOTdNZnRpWS13cEh1UjRTMVVhb3Y5cTl3dEw0dURTb05oYklOajFJZm5kWmdDbWs?oc=5",
-      "summary": "地緣政治添變數、8750 億美元債務壓境 美國多戶住宅投資挑戰中尋商機&nbsp;&nbsp;yesmedia.com.tw",
-      "dt_utc": "2026-04-22T11:58:44+00:00"
-    },
-    {
-      "title": "U.S. stock movements | Alibaba surged over 2% in pre-market trading following reports that it is in talks with Tencent to invest in DeepSeek, which is valued at more than $20 billion. - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPWG50SzE2dnBXQTdaM3dBckdNTFcyODUwVGs5SEpheE50TTZnbWFsSHljcUhNUmxwVlNPNWZNS3hkYWRtSHRhRy1KSF9mWHlBMmxybWZZZUpxRDktZ0tYZ1BuQ1cyTEZ1UE9uWFNad09FTEVSN0dydE1HR0IwWk1ybnVSbGE3R0JubEQzSnJ4QUIzV0g1ZzhOWmo3OA?oc=5",
-      "summary": "U.S. stock movements | Alibaba surged over 2% in pre-market trading following reports that it is in talks with Tencent to invest in DeepSeek, which is valued at more than $20 billion.&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-22T11:36:07+00:00"
-    },
-    {
-      "title": "What SK Hynix's New $13 Billion Memory Plant Means for Micron Stock -- Barrons.com - Moomoo",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZXpaeWVQemI4ajFoQ1ItbkpUNUZCN20wYkl3NlNVb3hWRW5RWnQxOFFqNjJpNFJZenE5bmFpWU1wUUdTM2FwN1pZek5uUUVKcE14M3ZlczVuZE1EY2RtQzBqYm9fMW50NkpiaXY1UlVZZGZYazk4N2ljV0RDc2gzZklzbmZyLUZ6NFVrQTh3UDFiY056WElQanREalo?oc=5",
-      "summary": "What SK Hynix's New $13 Billion Memory Plant Means for Micron Stock -- Barrons.com&nbsp;&nbsp;Moomoo",
-      "dt_utc": "2026-04-22T11:36:05+00:00"
-    },
-    {
-      "title": "Philip Morris Had a Mixed Quarter. Why the Tobacco Stock Is Rising. -- Barrons.com - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQU93NXFJb0pjTS1jOFkwV2tLb0hPV1BtOThXTUJuajEzdUxJbXlxMmpiQTFWck4wMGtiYXFaYkxqNldyc3VMRjYtWm5PRk9reTNBNkZKaEdidG1Ma2JBcXpTWTZ2anpJN1g2Z0E4S2dERmhkYjR2TjBoX2llbmdPcWxuMHVhQUJVSVhTVnNvNld6QXBCVzFNUVRiQng?oc=5",
-      "summary": "Philip Morris Had a Mixed Quarter. Why the Tobacco Stock Is Rising. -- Barrons.com&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-04-22T11:36:00+00:00"
-    },
-    {
-      "title": "兩中國學生偷拍美韓軍事設施 韓檢方求刑3至4年 - 大紀元新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1xUzRqaE1rbVZSbnZwaE44T1ZPaEF6NER0QVBIQzhiaWlqZFVYcFF0NzA4SXRvaXpobXB2eFk1c2M2QnhiUEhZVHlpQ2RSQmtKRXdrM2VuU1pPMktYQ3llRNIBZkFVX3lxTE9XMUdCNGVmeXNNSkMzQkhiWndrSEdXSV9WSHVJd1Y4VW1qcU8ybGM5UzJIeTRtUFBhSVEwc3lXcnBFNEFYVkViWnAyaW9xMVJaQllmOGllTjQ5bVJYVFJlWVBjeTAzUQ?oc=5",
-      "summary": "兩中國學生偷拍美韓軍事設施 韓檢方求刑3至4年&nbsp;&nbsp;大紀元新聞網",
-      "dt_utc": "2026-04-22T11:26:00+00:00"
     }
   ],
   "risk_indicators": {
