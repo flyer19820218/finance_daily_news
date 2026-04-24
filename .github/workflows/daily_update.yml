@@ -1,44 +1,200 @@
-name: Hourly & Daily Finance Update
+# =====================================================================
+# 【區塊 3】資料讀取與快取函數定義 (網頁 5 日尊榮瘦身版)
+# =====================================================================
+@st.cache_data(ttl=60)
+def load_json(path: str):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
 
-on:
-  schedule:
-    - cron: '39 * * * *'       # 每小時新聞
-    - cron: '9 21 * * 0-4'    # 台北 05:09 晨報
-    - cron: '9 7 * * 1-5'     # 台北 15:09 盤後
-    - cron: '9 21 * * 5,6'    # 週末特刊
-  workflow_dispatch:
-    inputs:
-      task_type:
-        description: '任務類型'
-        default: 'full_report'
-        type: choice
-        options: [full_report, news_only]
+def list_history():
+    if not os.path.exists(HISTORY_DIR):
+        return []
+    files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
+    files.sort(reverse=True)
+    return files
 
-permissions:
-  contents: write
+@st.cache_data(ttl=60)
+def fetch_yf_data(symbol, name):
+    try:
+        t = yf.Ticker(symbol)
+        # 🛡️ 裝甲 1：閃電通道 (fast_info)
+        try:
+            if hasattr(t, "fast_info"):
+                last = t.fast_info.last_price
+                prev = t.fast_info.previous_close
+                if last and prev:
+                    ch = last - prev
+                    return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
+        except: pass
+        
+        # 🛡️ 裝甲 2：K線通道
+        hist = t.history(period="5d")
+        if not hist.empty and len(hist) >= 2:
+            last = float(hist['Close'].iloc[-1])
+            prev = float(hist['Close'].iloc[-2])
+            ch = last - prev
+            return {"name": name, "ok": True, "price": last, "change": ch, "pct": (ch/prev)*100}
+    except: pass
+    return {"name": name, "ok": False}
 
-jobs:
-  run-agent:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      
-      - name: Install dependencies
-        run: |
-          pip install pandas requests lxml yfinance curl-cffi feedparser google-generativeai
+def render_tile(name, q):
+    render_ok = q and q.get("ok") and q.get("price") is not None
+    if not render_ok:
+        return f'<div class="tile" style="padding: 10px;"><div class="name">{name}</div><div class="price">-</div><div class="delta flat">-</div></div>'
 
-      - name: Run agent
-        env:
-          TASK_TYPE: ${{ github.event.inputs.task_type || (github.event.schedule == '50 * * * *' && 'news_only' || 'full_report') }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python finance_news_agent.py
+    ch, pct, price = q.get("change") or 0.0, q.get("pct") or 0.0, q.get("price")
+    cls = "up" if ch > 0 else "down" if ch < 0 else "flat"
+    bg_cls = "up-bg" if ch > 0 else "down-bg" if ch < 0 else ""
+    arrow = "▲" if ch > 0 else "▼" if ch < 0 else "—"
 
-      - name: Commit & push
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto update"
+    return f"""
+    <div class="tile {bg_cls}" style="padding: 10px;">
+      <div class="name">{name}</div>
+      <div class="price" style="font-size: 20px; margin: 2px 0;">{round(float(price), 2)}</div>
+      <div class="delta {cls}">{arrow} {round(float(ch), 2)}（{round(float(pct), 2)}%）</div>
+    </div>
+    """
+
+def generate_countdown_html(start_year=2026, target_year=2035):
+    tw_tz = timezone(timedelta(hours=8))
+    today = datetime.now(tw_tz)
+    start_date = datetime(start_year, 1, 1, tzinfo=tw_tz)
+    target_date = datetime(target_year, 12, 31, tzinfo=tw_tz)
+    
+    if today < start_date: today = start_date
+    elif today > target_date: today = target_date
+        
+    total_days = (target_date - start_date).days
+    passed_days = (today - start_date).days
+    days_remaining_int = (target_date - today).days
+    
+    days_remaining = f"{days_remaining_int:,}" 
+    progress_percentage = round((passed_days / total_days) * 100, 2)
+    today_date_str = today.strftime("%Y-%m-%d")
+    
+    return f"""
+    <div class="countdown-card" style="padding: 14px 16px;">
+        <div class="card-date" style="margin-bottom: 6px;">📅 今日：{today_date_str}</div>
+        <div class="card-main" style="margin-bottom: 6px;">
+            <div class="card-title" style="font-size: 14px;">🎯 {target_year} 財務自由倒數</div>
+            <div class="card-days" style="font-size: 18px;">{days_remaining} 天</div>
+        </div>
+        <div class="card-progress-bar" style="margin: 8px 0 6px 0; height: 5px;">
+            <div class="card-progress-fill" style="width: {progress_percentage}%;"></div>
+        </div>
+        <div class="card-progress-details">
+            <div>起點：{start_year}</div>
+            <div>進度 {progress_percentage}%</div>
+        </div>
+    </div>
+    """
+
+@st.cache_data(ttl=600)
+def fetch_histock_tables():
+    urls_to_try = [
+        "https://histock.tw/stock/three.aspx",
+        "https://corsproxy.io/?https://histock.tw/stock/three.aspx",
+        "https://api.allorigins.win/raw?url=https://histock.tw/stock/three.aspx"
+    ]
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+    }
+    
+    for url in urls_to_try:
+        try:
+            res = requests.get(url, headers=headers, timeout=15)
+            if res.status_code != 200 or "Just a moment" in res.text:
+                continue
+                
+            res.encoding = 'utf-8'
+            import io
+            tables = pd.read_html(io.StringIO(res.text))
+            
+            valid_tables = []
+            for tbl in tables:
+                if isinstance(tbl.columns, pd.MultiIndex):
+                    tbl.columns = [str(col[-1]).strip() for col in tbl.columns]
+                else:
+                    tbl.columns = [str(col).strip() for col in tbl.columns]
+                    
+                cols = list(tbl.columns)
+                if '外資' in cols and '投信' in cols:
+                    valid_tables.append(tbl)
+                    
+            df_inst, df_fut = None, None
+            # 🌟 網頁版固定顯示 5 天
+            if len(valid_tables) >= 1: df_inst = valid_tables[0].head(5) 
+            if len(valid_tables) >= 2: df_fut = valid_tables[1].head(5)  
+                    
+            if df_inst is not None or df_fut is not None:
+                return df_inst, df_fut
+        except:
+            continue
+            
+    return None, None
+
+def render_table_html(df, title, icon="📊"):
+    if df is None or df.empty: return ""
+    col_width = 100 / len(df.columns)
+        
+    html = f"""
+    <div class="panel" style="margin-bottom: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div class="section-title" style="margin-top: 0; margin-bottom: 8px; font-size: 15px; font-weight: bold;">{icon} {title}</div>
+        <div style="overflow-x: auto; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 12px; text-align: right; background: #fff;">
+                <thead>
+                    <tr style="background-color: #1e293b; color: #ffffff;">
+    """
+    for col in df.columns:
+        align = "center" if col == "日期" else "right"
+        html += f'<th style="width: {col_width:.2f}%; padding: 8px 4px; text-align: {align}; font-weight: 700;">{col}</th>'
+    html += "</tr></thead><tbody>"
+    
+    for i, row in df.iterrows():
+        bg_color = "linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%)" if i == 0 else ("#ffffff" if i % 2 == 0 else "#f8fafc")
+        font_weight = "900" if i == 0 else "normal"
+
+        html += f'<tr style="background: {bg_color}; border-bottom: 1px solid #e2e8f0; font-weight: {font_weight};">'
+        for col in df.columns:
+            val = row[col]
+            align = "center" if col == "日期" else "right"
+            style = f"padding: 8px 4px; text-align: {align};"
+            if col == "日期" and i == 0: style += " color: #b45309;"
+                 
+            try:
+                num_str = str(val).replace(',', '')
+                if num_str.replace('.', '', 1).replace('-', '', 1).isdigit():
+                    num = float(num_str)
+                    if num > 0: style += " color: #ef4444; font-weight: bold;"
+                    elif num < 0: style += " color: #16a34a; font-weight: bold;"
+            except: pass
+                
+            html += f'<td style="{style}">{val}</td>'
+        html += "</tr>"
+        
+    html += "</tbody></table></div></div>"
+    return html
+
+@st.cache_data(show_spinner=False)
+def generate_anchor_audio(text):
+    if not text: return None
+    try:
+        import re, edge_tts, asyncio
+        clean_text = re.sub(r'<[^>]+>', '', text) 
+        clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text).replace("☆", "") 
+        clean_text = re.sub(r'[【】\[\]\(\)（）/\*#\-•]', ' ', clean_text)
+        
+        full_script = "大家好，這是為您帶來的每日財經精華整理： " + clean_text
+        
+        async def _generate():
+            communicate = edge_tts.Communicate(full_script, "zh-TW-HsiaoChenNeural", rate="+10%", pitch="+5Hz")
+            audio_data = b""
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio": audio_data += chunk["data"]
+            return audio_data
+        return asyncio.run(_generate())
+    except Exception: return None
