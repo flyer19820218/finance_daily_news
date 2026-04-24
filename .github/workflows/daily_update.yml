@@ -3,6 +3,7 @@ name: Daily Finance Update
 on:
   schedule:
     # 台北時間 05:09 (UTC 21:09) 每日一報
+    # 涵蓋了平日的晨報與週末的特刊
     - cron: '9 21 * * *'
   workflow_dispatch:
     inputs:
@@ -30,7 +31,7 @@ jobs:
 
       - name: Run agent
         env:
-          # 統一執行完整報告
+          # 統一執行完整報告，腳本會根據執行當天的星期幾自動判斷是晨報還是週末版
           TASK_TYPE: 'full_report'
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -40,4 +41,4 @@ jobs:
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Daily report update"
+          commit_message: "Daily finance update"
