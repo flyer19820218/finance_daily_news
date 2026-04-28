@@ -421,7 +421,6 @@ def generate_countdown_html(start_year=2026, target_year=2035):
 
 @st.cache_data(ttl=600)
 def fetch_histock_tables():
-    # 🌟 代理通道加倍：加入 corsproxy，並放寬等待時間至 15 秒
     urls_to_try = [
         "https://histock.tw/stock/three.aspx",
         "https://corsproxy.io/?https://histock.tw/stock/three.aspx",
@@ -445,7 +444,6 @@ def fetch_histock_tables():
                 
             res.encoding = 'utf-8'
             
-            # 🚨 檢查是否被 Cloudflare 盾牌擋住
             if "Just a moment" in res.text or "Cloudflare" in res.text:
                 errors.append(f"[{url[8:22]}] 遇機器人驗證盾")
                 continue
@@ -471,7 +469,6 @@ def fetch_histock_tables():
         except Exception as e:
             errors.append(f"[{url[8:22]}] 錯誤: {str(e)[:25]}...")
             
-    # 🚨 終極雷達：如果全部失敗，直接把死因印在網頁畫面上！
     if errors:
         st.error(f"外資抓取失敗報告： {' | '.join(errors)}")
         
@@ -552,8 +549,6 @@ def generate_anchor_audio(text):
             return audio_data
         return asyncio.run(_generate())
     except Exception: return None
-
-
 
 # =====================================================================
 # 【區塊 4 & 5】佈局調整：選項、資料載入與按鈕雙子星
@@ -725,32 +720,32 @@ with left_ai:
     vix_trend = risk.get("vix_trend", "")
     usd_val = risk.get("usd_twd", "-") 
     
-    # 🚨 帶有月份標示的 6 顆霸氣燈號 (10月至3月)
+    # 🚨 帶有月份標示的 6 顆霸氣燈號 (10月至3月) - 單排縮小不換行版
     light_val = """
-<div style="display: flex; gap: 12px; align-items: flex-start; margin-top: 5px; flex-wrap: wrap;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">35</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">10月</div>
+<div style="display: flex; gap: 8px; align-items: flex-start; margin-top: 5px; flex-wrap: nowrap;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4); flex-shrink: 0;">35</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">10月</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4);">37</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">11月</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ffb366, #e67300); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(230, 115, 0, 0.4); flex-shrink: 0;">37</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">11月</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">38</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">12月</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4); flex-shrink: 0;">38</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">12月</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">1月</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4); flex-shrink: 0;">39</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">1月</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">40</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">2月</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4); flex-shrink: 0;">40</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">2月</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <div style="width: 45px; height: 45px; background: radial-gradient(circle at 15px 15px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);">39</div>
-        <div style="font-size: 14px; font-weight: 700; color: #64748b;">3月</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 40px; height: 40px; background: radial-gradient(circle at 12px 12px, #ff4d4d, #cc0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4); flex-shrink: 0;">39</div>
+        <div style="font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap;">3月</div>
     </div>
 </div>
 """
