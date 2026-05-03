@@ -215,7 +215,7 @@
         
         <h3>三大核心數據</h3>
         <ul class="emoji-list">
-            <li>☁️ <strong>雲端AI需求爆發 ($6,020億)：</strong> 2026年全球CSP（Google、AWS、Meta、微軟、Oracle等）合計資本支出，年增率達40%，重點投入AI訓練與推理基礎設施。</li>
+            <li>☁️ <strong>雲端AI需求爆發 ($8,000億)：</strong> 最新財報指引確認，2026年全球CSP（Google、AWS、Meta、微軟、Oracle等）合計資本支出將飆升至 8,000 億美元，重點投入AI訓練與推理基礎設施，軍備競賽全面升級。</li>
             <li>🖥️ <strong>AI伺服器出貨量 (450萬台)：</strong> 2026年全球AI伺服器出貨量預估達450萬台，占整體伺服器市場30%，較2025年大幅成長，超過九成由台廠代工組裝。</li>
             <li>📡 <strong>邊緣AI滲透 (20%)：</strong> 2026年邊緣AI硬體滲透率接近20%，AI Box、智慧眼鏡、工業邊緣伺服器快速擴張，製造、醫療、零售等垂直場景全面導入。</li>
         </ul>
@@ -227,7 +227,7 @@
         <h3>雲端需求主要驅動力（時間軸）</h3>
         <ul>
             <li><strong>2026 — 訓練算力大爆發：</strong> GPT-5、Gemini Ultra等新一代大模型訓練需求激增，CSP大規模採購NVIDIA Blackwell、AMD MI400系列。</li>
-            <li><strong>2027〜2028 — 推理算力主導市場：</strong> AI應用全面商業化，推理算力需求超越訓練。Agentic AI佔企業AI支出17%，每5元AI預算就有1元投向AI Agent。</li>
+            <li><strong>2027〜2028 — 推理算力主導市場：</strong> AI應用全面商業化，推理算力需求超越訓練。Agentic AI佔企業AI支出17%，CSP 資本支出預計在 2028 年將衝上 1.1兆（11,000億）美元的高峰。</li>
             <li><strong>2029〜2030 — 主權AI與分散式算力：</strong> 各國主權AI資料中心建置完成，邊緣AI節點遍布全球，地端推理成本降至可大規模商業化水準。</li>
         </ul>
     </div>
@@ -246,9 +246,8 @@
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
 
-        <!-- 新增：台積電預測段落 -->
         <h3 style="color: #ef4444;">📌 特別解析：台積電資本支出與晶片產能預測 (2026-2030)</h3>
-        <p>隨著 2奈米(N2) 放量與 A16(1.6奈米) 世代推進，EUV 與 High-NA EUV 設備採購成本劇增。基於最保守財務預測，台積電為滿足 Agentic AI 與雲端巨頭剛需，資本支出將穩步攀升至 400 億美元以上；同時，全球各廠區（含亞利桑那、熊本、德勒斯登）產能陸續開出，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
+        <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <strong>560 億美元</strong>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，全球各廠區產能陸續開出，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
         
         <div class="chart-container" style="height: 450px;">
             <canvas id="tsmcChart"></canvas>
@@ -427,14 +426,14 @@
         const textColor = isDarkMode ? '#cbd5e1' : '#64748b';
         const gridColor = isDarkMode ? '#334155' : '#e2e8f0';
 
-        // 1. CSP 資本支出圖表
+        // 1. CSP 資本支出圖表 (大幅上修數據)
         new Chart(document.getElementById('cspChart').getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ['2024', '2025F', '2026F', '2027F', '2028F', '2029F', '2030F'],
                 datasets: [{
                     label: '全球CSP資本支出 (億美元)',
-                    data: [2609, 4306, 6020, 8600, 10000, 9500, 8500],
+                    data: [2609, 4306, 8000, 9500, 11000, 11500, 12000],
                     backgroundColor: 'rgba(37, 99, 235, 0.7)',
                     borderRadius: 4
                 }]
@@ -449,7 +448,7 @@
             }
         });
 
-        // 2. 新增：台積電資本支出與產能預測圖表
+        // 2. 台積電資本支出與產能預測圖表 (大幅上修 2026 資本支出至 560億)
         new Chart(document.getElementById('tsmcChart').getContext('2d'), {
             type: 'bar',
             data: {
@@ -458,7 +457,7 @@
                     {
                         type: 'bar',
                         label: '資本支出 CapEx (億美元)',
-                        data: [360, 385, 395, 410, 425],
+                        data: [560, 600, 640, 680, 720],
                         backgroundColor: 'rgba(239, 68, 68, 0.7)',
                         yAxisID: 'y'
                     },
