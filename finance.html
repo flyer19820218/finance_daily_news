@@ -152,7 +152,7 @@
         }
 
         /* =========================================
-           表格排版
+           電腦版表格排版 (解決斷字問題)
            ========================================= */
         table {
             width: 100%;
@@ -208,17 +208,55 @@
         }
 
         /* =========================================
-           手機版適配 (RWD)
+           手機版適配 (RWD) - 終極卡片式表格
            ========================================= */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .section-card { padding: 20px; }
             h1 { font-size: 1.8rem; }
             .chart-container { height: 300px; }
-            .table-responsive {
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+            
+            /* 1. 將表格的網格特性解除，改為區塊顯示 */
+            table, thead, tbody, th, td, tr { 
+                display: block; 
+                width: 100% !important;
+            }
+            
+            /* 2. 在手機上隱藏橫向的表頭 */
+            thead { 
+                display: none; 
+            }
+            
+            /* 3. 把每一個橫列 (tr) 變成一張獨立的卡片 */
+            tr { 
+                margin-bottom: 15px; 
+                border: 1px solid var(--border); 
+                border-radius: 12px;
+                padding: 15px;
+                background-color: var(--card-bg);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            }
+            
+            /* 4. 讓卡片內的資料垂直堆疊，解除原本的擠壓狀態 */
+            td { 
+                padding: 8px 0 !important;
+                text-align: left !important;
+                border-bottom: 1px dashed var(--border) !important;
+                white-space: normal !important; 
+            }
+            
+            td:last-child {
+                border-bottom: none !important;
+            }
+
+            /* 5. 特別突顯卡片的第一筆資料（當作標題） */
+            td:nth-child(1) { 
+                font-weight: bold; 
+                color: var(--accent); 
+                font-size: 1.15rem; 
+                border-bottom: 2px solid var(--border) !important;
+                padding-bottom: 10px !important;
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -300,8 +338,8 @@
         </div>
 
         <!-- 第二部分解析：EPS 預測模型 -->
-        <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (CAGR 25%)</h3>
-        <p>基於強勁的 AI 訂單能見度、先進封裝 (CoWoS) 產能倍增及漲價效應，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的高速成長軌跡。若未來幾年市場給予的本益比 (PE Ratio) 穩定落在 25 至 30 倍區間，台積電長線估值具備強大的上檔空間，這也是支撐台股大盤突破新高的核心動能。</p>
+        <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (保守防禦版)</h3>
+        <p>基於強勁的 AI 訂單能見度與先進封裝產能擴張，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的成長軌跡。若剔除市場過度樂觀的 AI 泡沫情緒，將本益比 (PE Ratio) 嚴格下修至歷史相對理性的 <strong>18 至 22 倍</strong> 區間，台積電長線估值依然具備極強的財務安全邊際與穩健的上檔空間。</p>
 
         <div class="chart-container" style="height: 400px;">
             <canvas id="tsmcEpsChart"></canvas>
@@ -558,8 +596,7 @@
             }
         });
 
-        // 3. 新增：台積電 EPS 與股價估值推算圖表 (基準 100元, CAGR 25%)
-        // 計算未來 5 年 EPS
+        // 3. 台積電 EPS 與股價估值推算圖表 (基準 100元, CAGR 25%, PE 18-22x)
         const epsBase = 100;
         const cagr = 0.25;
         const epsData = [
@@ -569,9 +606,10 @@
             Math.round(epsBase * Math.pow(1 + cagr, 3)), // 2029: 195
             Math.round(epsBase * Math.pow(1 + cagr, 4))  // 2030: 244
         ];
-        // 計算樂觀本益比 (PE 30x) 與 保守本益比 (PE 25x) 的對應股價
-        const pricePE30 = epsData.map(eps => eps * 30);
-        const pricePE25 = epsData.map(eps => eps * 25);
+        
+        // 修正為 22 倍與 18 倍
+        const pricePE22 = epsData.map(eps => eps * 22);
+        const pricePE18 = epsData.map(eps => eps * 18);
 
         new Chart(document.getElementById('tsmcEpsChart').getContext('2d'), {
             type: 'bar',
@@ -587,8 +625,8 @@
                     },
                     {
                         type: 'line',
-                        label: '樂觀股價預期 (PE 30x)',
-                        data: pricePE30,
+                        label: '高標股價預期 (PE 22x)',
+                        data: pricePE22,
                         borderColor: '#f43f5e', // Rose
                         backgroundColor: '#f43f5e',
                         borderWidth: 2,
@@ -598,8 +636,8 @@
                     },
                     {
                         type: 'line',
-                        label: '保守股價預期 (PE 25x)',
-                        data: pricePE25,
+                        label: '低標股價預期 (PE 18x)',
+                        data: pricePE18,
                         borderColor: '#0ea5e9', // Sky blue
                         backgroundColor: '#0ea5e9',
                         borderWidth: 2,
@@ -620,7 +658,6 @@
                                 let label = context.dataset.label || '';
                                 if (label) { label += ': '; }
                                 if (context.parsed.y !== null) {
-                                    // 判斷是 EPS 還是股價加上單位
                                     label += context.parsed.y + ' 元';
                                 }
                                 return label;
