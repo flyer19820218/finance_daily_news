@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台灣2030經濟前景展望報告</title>
     
-    <!-- 引入 Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="this.onerror=null; this.src='https://unpkg.com/chart.js';"></script>
     
     <style>
@@ -247,13 +246,10 @@
 
 <div class="container">
 
-    <!-- =========================================
-         HEADER 區塊
-         ========================================= -->
     <header>
         <h1>台灣2030經濟前景展望報告</h1>
         <div class="subtitle">宏觀經濟研究報告 · 2026 | AI超級週期 × 半導體霸權 × 產業轉型</div>
-        <p>台股突破40,000點，印證AI科技浪潮加速到來。本報告深度解析2026〜2030年台灣經濟重點主題：AI雲端與地端需求、台廠競爭態勢、精密工業與國防、傳產金融前景及GDP展望。</p>
+        <p>台股來到39,000點，0050 ETF 突破 90 元，印證AI科技浪潮加速到來。本報告深度解析2026〜2030年台灣經濟重點主題：AI雲端與地端需求、台廠競爭態勢、精密工業與國防、傳產金融前景及GDP展望。</p>
         
         <div class="highlight-grid">
             <div class="stat-card">
@@ -265,8 +261,8 @@
                 <div class="stat-label">全球AI伺服器台廠製造占比</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">40,000+</div>
-                <div class="stat-label">台股指數突破點位</div>
+                <div class="stat-value">90元</div>
+                <div class="stat-label">0050 ETF 預估基準價位</div>
             </div>
             <div class="stat-card">
                 <div class="stat-value">$1.4兆</div>
@@ -275,9 +271,6 @@
         </div>
     </header>
 
-    <!-- =========================================
-         CHAPTER 01 區塊：AI雲端與地端需求
-         ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 01｜AI雲端與地端需求（2026〜2030）</h2>
         <p>全球AI算力需求進入超級週期，雲端資本支出爆炸性成長，邊緣AI滲透率快速提升，台灣居供應鏈核心。</p>
@@ -304,9 +297,6 @@
         </ul>
     </div>
 
-    <!-- =========================================
-         CHAPTER 02 區塊：台廠受惠情形與國際競爭
-         ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 02｜台廠受惠情形與國際競爭</h2>
         <p>台灣掌握全球AI供應鏈命脈，從晶圓代工到伺服器組裝形成完整生態，但面臨美、韓、中的多維度競爭。</p>
@@ -321,7 +311,6 @@
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
 
-        <!-- 核心解析 1 -->
         <h3 style="color: #ef4444;">📌 核心解析 1：台積電資本支出與晶片產能預測 (2026-2030)</h3>
         <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <a href="https://flyer19820218.github.io/tsmc/" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; cursor: pointer;" title="點擊前往：護國群山戰情室">560 億美元 ↗</a>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
         
@@ -329,7 +318,6 @@
             <canvas id="tsmcCapExChart"></canvas>
         </div>
 
-        <!-- 核心解析 2 -->
         <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (保守防禦版)</h3>
         <p>基於強勁的 AI 訂單能見度與先進封裝產能擴張，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的成長軌跡。若剔除市場過度樂觀的 AI 泡沫情緒，將本益比 (PE Ratio) 嚴格下修至歷史相對理性的 <strong>18 至 22 倍</strong> 區間，台積電長線估值依然具備極強的財務安全邊際與穩健的上檔空間。</p>
 
@@ -337,12 +325,11 @@
             <canvas id="tsmcEpsChart"></canvas>
         </div>
         
-        <!-- 核心解析 3 (新增)：大盤指數推估 -->
-        <h3 style="color: var(--warning);">📌 核心解析 3：台股大盤指數推估 (0050 權重連動模型)</h3>
-        <p>採用最嚴苛的壓力測試模型：假設台積電佔台股大盤與 0050 ETF 之權重固定於 <strong>60%</strong>，且其餘 <strong>40%</strong> 成分股處於零成長狀態。以 2026 年大盤 <strong>40,000 點</strong>為基準，單憑台積電獲利增長引擎所驅動的台股未來走勢預測：</p>
+        <h3 style="color: var(--warning);">📌 核心解析 3：0050 ETF 價格推估 (台積電權重連動模型)</h3>
+        <p>採用最嚴苛的壓力測試模型：假設台積電佔 0050 ETF 之權重固定於 <strong>60%</strong>，且其餘 <strong>40%</strong> 成分股處於零成長狀態。以目前 0050 價位 <strong>90 元</strong>（對應台股大盤 <strong>39,000 點</strong>）為基準，單憑台積電獲利增長引擎所驅動的 0050 未來走勢預測：</p>
 
         <div class="chart-container" style="height: 350px;">
-            <canvas id="taiexChart"></canvas>
+            <canvas id="etf0050Chart"></canvas>
         </div>
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
@@ -388,9 +375,6 @@
         </div>
     </div>
 
-    <!-- =========================================
-         CHAPTER 03 區塊：AI 延伸基建、精密工業與國防航太
-         ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 03｜AI 延伸基建、精密工業與國防航太</h2>
         <p>除了台積電領軍的晶圓代工與前段製程，台灣在邊緣運算、AI 基礎設施與重工業領域同樣具備主導全球供應鏈的強大實力，是支撐 GDP 穩健成長的核心骨幹。</p>
@@ -409,9 +393,6 @@
         </ul>
     </div>
 
-    <!-- =========================================
-         CHAPTER 04 區塊：傳產與金融業前景
-         ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 04｜傳產與金融業前景</h2>
         
@@ -432,9 +413,6 @@
         </ul>
     </div>
 
-    <!-- =========================================
-         CHAPTER 05 區塊：台灣GDP與經濟成長展望
-         ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 05｜台灣GDP與經濟成長展望</h2>
         <p>AI驅動的出口超級週期推升台灣GDP成長率至近30年高點，2026後進入高基期調整，但中長期成長動能依然穩健。</p>
@@ -479,9 +457,6 @@
         </div>
     </div>
 
-    <!-- =========================================
-         CONCLUSION 區塊：總結與預測
-         ========================================= -->
     <div class="section-card">
         <h2>CONCLUSION｜總結：台灣2030經濟全景</h2>
         <p>台灣正處於AI科技超級週期的核心，未來五年將是奠定下一個世代競爭優勢的關鍵窗口期。</p>
@@ -542,18 +517,12 @@
         </div>
     </div>
 
-    <!-- =========================================
-         FOOTER 區塊
-         ========================================= -->
     <div class="footer">
         <p>資料來源：主計總處、IMF、美銀研究、資策會MIC、IDC、史丹佛AI指數報告</p>
         <p>本報告僅供參考，不構成任何投資建議。市場有風險，投資須謹慎。<br>製作日期：2026年5月</p>
     </div>
 </div>
 
-<!-- =========================================
-     JAVASCRIPT 圖表設定區塊
-     ========================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         
@@ -716,22 +685,22 @@
             }
         });
 
-        // 3.5 核心解析 3：大盤指數推估 (0050 權重 60% 模型)
-        const baseTaiex = 40000;
+        // 3.5 核心解析 3：0050 ETF 價格推估 (0050 基準價 90，台積電權重 60% 模型)
+        const base0050 = 90;
         const tsmcWeight = 0.6;
-        const taiexData = epsData.map(eps => {
+        const etf0050Data = epsData.map(eps => {
             const tsmcGrowth = (eps / epsBase) - 1; // 台積電相較 2026 的成長幅度
-            const indexGrowth = tsmcGrowth * tsmcWeight; // 只有 60% 的權重貢獻成長
-            return Math.round(baseTaiex * (1 + indexGrowth));
+            const etfGrowth = tsmcGrowth * tsmcWeight; // 只有 60% 的權重貢獻成長
+            return (base0050 * (1 + etfGrowth)).toFixed(1); // 取小數第一位
         });
 
-        new Chart(document.getElementById('taiexChart').getContext('2d'), {
+        new Chart(document.getElementById('etf0050Chart').getContext('2d'), {
             type: 'line',
             data: {
                 labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
                 datasets: [{
-                    label: '台股大盤指數推估 (點)',
-                    data: taiexData,
+                    label: '0050 ETF 預估價位 (元)',
+                    data: etf0050Data,
                     borderColor: '#f59e0b',
                     backgroundColor: 'rgba(245, 158, 11, 0.1)',
                     borderWidth: 3,
@@ -748,7 +717,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.parsed.y.toLocaleString() + ' 點';
+                                return context.parsed.y.toLocaleString() + ' 元';
                             }
                         }
                     } 
@@ -758,7 +727,7 @@
                     y: { 
                         ticks: { color: textColor }, 
                         grid: { color: gridColor },
-                        title: { display: true, text: '指數 (點)', color: textColor }
+                        title: { display: true, text: '價格 (元)', color: textColor }
                     }
                 }
             }
