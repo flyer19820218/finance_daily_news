@@ -2,7 +2,6 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <!-- 確保手機版面正常縮放的關鍵設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台灣2030經濟前景展望報告</title>
     
@@ -25,6 +24,7 @@
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
+            --purple: #8b5cf6;
         }
 
         /* 自動深色模式支援 */
@@ -53,7 +53,6 @@
             line-height: 1.7;
             margin: 0;
             padding: 20px;
-            /* 讓滾動更平滑 */
             scroll-behavior: smooth; 
         }
 
@@ -153,7 +152,7 @@
         }
 
         /* =========================================
-           優化後的表格排版 (解決斷字問題)
+           表格排版
            ========================================= */
         table {
             width: 100%;
@@ -166,23 +165,21 @@
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid var(--border);
-            vertical-align: top; /* 文字靠上對齊 */
+            vertical-align: top; 
         }
 
         th {
             background-color: rgba(37, 99, 235, 0.05);
             font-weight: 600;
-            white-space: nowrap; /* 表頭不換行 */
+            white-space: nowrap; 
         }
 
-        /* 鎖定前兩欄，強制不換行且佔最小寬度 */
         td:nth-child(1), th:nth-child(1),
         td:nth-child(2), th:nth-child(2) {
             white-space: nowrap; 
             width: 1%; 
         }
 
-        /* 第三欄說明文字增加行距 */
         td:nth-child(3) {
             line-height: 1.6;
         }
@@ -218,8 +215,6 @@
             .section-card { padding: 20px; }
             h1 { font-size: 1.8rem; }
             .chart-container { height: 300px; }
-            
-            /* 手機上若表格真的塞不下，允許橫向捲動 */
             .table-responsive {
                 width: 100%;
                 overflow-x: auto;
@@ -296,11 +291,20 @@
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
 
-        <h3 style="color: #ef4444;">📌 特別解析：台積電資本支出與晶片產能預測 (2026-2030)</h3>
-        <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <strong>560 億美元</strong>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，全球各廠區產能陸續開出，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
+        <!-- 第一部分解析：資本支出與產能 -->
+        <h3 style="color: #ef4444;">📌 核心解析 1：台積電資本支出與晶片產能預測 (2026-2030)</h3>
+        <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <strong>560 億美元</strong>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
         
-        <div class="chart-container" style="height: 450px;">
-            <canvas id="tsmcChart"></canvas>
+        <div class="chart-container" style="height: 350px;">
+            <canvas id="tsmcCapExChart"></canvas>
+        </div>
+
+        <!-- 第二部分解析：EPS 預測模型 -->
+        <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (CAGR 25%)</h3>
+        <p>基於強勁的 AI 訂單能見度、先進封裝 (CoWoS) 產能倍增及漲價效應，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的高速成長軌跡。若未來幾年市場給予的本益比 (PE Ratio) 穩定落在 25 至 30 倍區間，台積電長線估值具備強大的上檔空間，這也是支撐台股大盤突破新高的核心動能。</p>
+
+        <div class="chart-container" style="height: 400px;">
+            <canvas id="tsmcEpsChart"></canvas>
         </div>
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
@@ -477,24 +481,19 @@
 </div>
 
 <script>
-    // 確保網頁元素都載入後才開始畫圖表
     document.addEventListener('DOMContentLoaded', function() {
         
-        // 抓取當前是否為深色模式，決定字體與格線顏色
         const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const textColor = isDarkMode ? '#cbd5e1' : '#64748b';
         const gridColor = isDarkMode ? '#334155' : '#e2e8f0';
 
-        // ==========================================
-        // 1. CSP 資本支出圖表 (包含事實查核後的最新數據)
-        // ==========================================
+        // 1. CSP 資本支出圖表
         new Chart(document.getElementById('cspChart').getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ['2024', '2025F', '2026F', '2027F', '2028F', '2029F', '2030F'],
                 datasets: [{
                     label: '全球CSP資本支出 (億美元)',
-                    // 根據最新財報與 BofA / UBS 預測調整後的數據
                     data: [2609, 4306, 8000, 9500, 11000, 12000, 13000],
                     backgroundColor: 'rgba(37, 99, 235, 0.7)',
                     borderRadius: 4
@@ -511,10 +510,8 @@
             }
         });
 
-        // ==========================================
         // 2. 台積電資本支出與產能預測圖表
-        // ==========================================
-        new Chart(document.getElementById('tsmcChart').getContext('2d'), {
+        new Chart(document.getElementById('tsmcCapExChart').getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
@@ -522,7 +519,6 @@
                     {
                         type: 'bar',
                         label: '資本支出 CapEx (億美元)',
-                        // 2026 年上修至 560 億的最新估算
                         data: [560, 600, 640, 680, 720],
                         backgroundColor: 'rgba(239, 68, 68, 0.7)',
                         yAxisID: 'y'
@@ -544,7 +540,6 @@
                 maintainAspectRatio: false,
                 interaction: { mode: 'index', intersect: false },
                 plugins: {
-                    title: { display: true, text: '台積電中長期資本支出與晶片產能預測', color: textColor, font: {size: 16} },
                     legend: { labels: { color: textColor } }
                 },
                 scales: {
@@ -563,9 +558,93 @@
             }
         });
 
-        // ==========================================
-        // 3. 台灣 GDP 成長率預測圖表
-        // ==========================================
+        // 3. 新增：台積電 EPS 與股價估值推算圖表 (基準 100元, CAGR 25%)
+        // 計算未來 5 年 EPS
+        const epsBase = 100;
+        const cagr = 0.25;
+        const epsData = [
+            epsBase, // 2026
+            Math.round(epsBase * Math.pow(1 + cagr, 1)), // 2027: 125
+            Math.round(epsBase * Math.pow(1 + cagr, 2)), // 2028: 156
+            Math.round(epsBase * Math.pow(1 + cagr, 3)), // 2029: 195
+            Math.round(epsBase * Math.pow(1 + cagr, 4))  // 2030: 244
+        ];
+        // 計算樂觀本益比 (PE 30x) 與 保守本益比 (PE 25x) 的對應股價
+        const pricePE30 = epsData.map(eps => eps * 30);
+        const pricePE25 = epsData.map(eps => eps * 25);
+
+        new Chart(document.getElementById('tsmcEpsChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: '預估 EPS (元)',
+                        data: epsData,
+                        backgroundColor: 'rgba(139, 92, 246, 0.7)', // Purple
+                        yAxisID: 'y'
+                    },
+                    {
+                        type: 'line',
+                        label: '樂觀股價預期 (PE 30x)',
+                        data: pricePE30,
+                        borderColor: '#f43f5e', // Rose
+                        backgroundColor: '#f43f5e',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 4,
+                        yAxisID: 'y1'
+                    },
+                    {
+                        type: 'line',
+                        label: '保守股價預期 (PE 25x)',
+                        data: pricePE25,
+                        borderColor: '#0ea5e9', // Sky blue
+                        backgroundColor: '#0ea5e9',
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { labels: { color: textColor } },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed.y !== null) {
+                                    // 判斷是 EPS 還是股價加上單位
+                                    label += context.parsed.y + ' 元';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { color: textColor }, grid: { display: false } },
+                    y: {
+                        type: 'linear', display: true, position: 'left',
+                        title: { display: true, text: 'EPS (新台幣元)', color: textColor },
+                        ticks: { color: textColor }, grid: { color: gridColor }
+                    },
+                    y1: {
+                        type: 'linear', display: true, position: 'right',
+                        title: { display: true, text: '推估股價 (新台幣元)', color: textColor },
+                        ticks: { color: textColor }, grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // 4. 台灣 GDP 成長率預測圖表
         new Chart(document.getElementById('gdpChart').getContext('2d'), {
             type: 'line',
             data: {
