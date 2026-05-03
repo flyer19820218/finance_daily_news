@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台灣2030經濟前景展望報告</title>
     
-    <!-- 引入 Chart.js，加入 onerror 備援機制防 LINE 瀏覽器阻擋 -->
+    <!-- 引入 Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="this.onerror=null; this.src='https://unpkg.com/chart.js';"></script>
     
     <style>
@@ -27,7 +27,6 @@
             --purple: #8b5cf6;
         }
 
-        /* 自動深色模式支援 */
         @media (prefers-color-scheme: dark) {
             :root {
                 --primary: #f8fafc;
@@ -152,7 +151,7 @@
         }
 
         /* =========================================
-           電腦版表格排版 (解決斷字問題)
+           電腦版表格排版
            ========================================= */
         table {
             width: 100%;
@@ -184,9 +183,6 @@
             line-height: 1.6;
         }
 
-        /* =========================================
-           列表與底部
-           ========================================= */
         .emoji-list {
             list-style: none;
             padding: 0;
@@ -208,7 +204,7 @@
         }
 
         /* =========================================
-           手機版適配 (RWD) - 終極卡片式表格
+           手機版適配 (RWD)
            ========================================= */
         @media (max-width: 768px) {
             body { padding: 10px; }
@@ -252,7 +248,7 @@
 <div class="container">
 
     <!-- =========================================
-         HEADER 區塊：標題與重點摘要數據
+         HEADER 區塊
          ========================================= -->
     <header>
         <h1>台灣2030經濟前景展望報告</h1>
@@ -325,7 +321,7 @@
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
 
-        <!-- 核心解析 1：資本支出與戰情室超連結 -->
+        <!-- 核心解析 1 -->
         <h3 style="color: #ef4444;">📌 核心解析 1：台積電資本支出與晶片產能預測 (2026-2030)</h3>
         <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <a href="https://flyer19820218.github.io/tsmc/" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; cursor: pointer;" title="點擊前往：護國群山戰情室">560 億美元 ↗</a>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
         
@@ -333,12 +329,20 @@
             <canvas id="tsmcCapExChart"></canvas>
         </div>
 
-        <!-- 核心解析 2：EPS 預測模型 -->
+        <!-- 核心解析 2 -->
         <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (保守防禦版)</h3>
         <p>基於強勁的 AI 訂單能見度與先進封裝產能擴張，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的成長軌跡。若剔除市場過度樂觀的 AI 泡沫情緒，將本益比 (PE Ratio) 嚴格下修至歷史相對理性的 <strong>18 至 22 倍</strong> 區間，台積電長線估值依然具備極強的財務安全邊際與穩健的上檔空間。</p>
 
         <div class="chart-container" style="height: 400px;">
             <canvas id="tsmcEpsChart"></canvas>
+        </div>
+        
+        <!-- 核心解析 3 (新增)：大盤指數推估 -->
+        <h3 style="color: var(--warning);">📌 核心解析 3：台股大盤指數推估 (0050 權重連動模型)</h3>
+        <p>採用最嚴苛的壓力測試模型：假設台積電佔台股大盤與 0050 ETF 之權重固定於 <strong>60%</strong>，且其餘 <strong>40%</strong> 成分股處於零成長狀態。以 2026 年大盤 <strong>40,000 點</strong>為基準，單憑台積電獲利增長引擎所驅動的台股未來走勢預測：</p>
+
+        <div class="chart-container" style="height: 350px;">
+            <canvas id="taiexChart"></canvas>
         </div>
 
         <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
@@ -385,7 +389,7 @@
     </div>
 
     <!-- =========================================
-         CHAPTER 03 區塊 (新增)：AI 延伸基建、精密工業與國防航太
+         CHAPTER 03 區塊：AI 延伸基建、精密工業與國防航太
          ========================================= -->
     <div class="section-card">
         <h2>CHAPTER 03｜AI 延伸基建、精密工業與國防航太</h2>
@@ -639,7 +643,6 @@
             Math.round(epsBase * Math.pow(1 + cagr, 4))  // 2030: 244
         ];
         
-        // 修正為 22 倍與 18 倍
         const pricePE22 = epsData.map(eps => eps * 22);
         const pricePE18 = epsData.map(eps => eps * 18);
 
@@ -652,14 +655,14 @@
                         type: 'bar',
                         label: '預估 EPS (元)',
                         data: epsData,
-                        backgroundColor: 'rgba(139, 92, 246, 0.7)', // Purple
+                        backgroundColor: 'rgba(139, 92, 246, 0.7)',
                         yAxisID: 'y'
                     },
                     {
                         type: 'line',
                         label: '高標股價預期 (PE 22x)',
                         data: pricePE22,
-                        borderColor: '#f43f5e', // Rose
+                        borderColor: '#f43f5e',
                         backgroundColor: '#f43f5e',
                         borderWidth: 2,
                         borderDash: [5, 5],
@@ -670,7 +673,7 @@
                         type: 'line',
                         label: '低標股價預期 (PE 18x)',
                         data: pricePE18,
-                        borderColor: '#0ea5e9', // Sky blue
+                        borderColor: '#0ea5e9',
                         backgroundColor: '#0ea5e9',
                         borderWidth: 2,
                         pointRadius: 4,
@@ -713,6 +716,54 @@
             }
         });
 
+        // 3.5 核心解析 3：大盤指數推估 (0050 權重 60% 模型)
+        const baseTaiex = 40000;
+        const tsmcWeight = 0.6;
+        const taiexData = epsData.map(eps => {
+            const tsmcGrowth = (eps / epsBase) - 1; // 台積電相較 2026 的成長幅度
+            const indexGrowth = tsmcGrowth * tsmcWeight; // 只有 60% 的權重貢獻成長
+            return Math.round(baseTaiex * (1 + indexGrowth));
+        });
+
+        new Chart(document.getElementById('taiexChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
+                datasets: [{
+                    label: '台股大盤指數推估 (點)',
+                    data: taiexData,
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    pointRadius: 6,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { labels: { color: textColor } },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString() + ' 點';
+                            }
+                        }
+                    } 
+                },
+                scales: {
+                    x: { ticks: { color: textColor }, grid: { color: gridColor } },
+                    y: { 
+                        ticks: { color: textColor }, 
+                        grid: { color: gridColor },
+                        title: { display: true, text: '指數 (點)', color: textColor }
+                    }
+                }
+            }
+        });
+
         // 4. 台灣 GDP 成長率預測圖表
         new Chart(document.getElementById('gdpChart').getContext('2d'), {
             type: 'line',
@@ -721,8 +772,8 @@
                 datasets: [{
                     label: '實質GDP成長率 (%)',
                     data: [5.42, 8.68, 7.71, 5.0, 4.5, 3.8, 3.5],
-                    borderColor: 'rgba(245, 158, 11, 1)',
-                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
                     borderWidth: 3,
                     fill: true,
                     pointRadius: 6,
