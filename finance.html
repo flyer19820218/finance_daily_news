@@ -8,9 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="this.onerror=null; this.src='https://unpkg.com/chart.js';"></script>
     
     <style>
-        /* =========================================
-           CSS 變數與色彩主題設定
-           ========================================= */
         :root {
             --primary: #0f172a;
             --accent: #2563eb;
@@ -39,9 +36,6 @@
             }
         }
 
-        /* =========================================
-           全域與基礎排版
-           ========================================= */
         * { box-sizing: border-box; }
 
         body {
@@ -59,9 +53,6 @@
             margin: 0 auto;
         }
 
-        /* =========================================
-           區塊與卡片樣式
-           ========================================= */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -72,18 +63,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        h1 {
-            color: var(--accent);
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
-            line-height: 1.3;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
+        h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 10px 0; }
+        .subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; }
 
         .highlight-grid {
             display: grid;
@@ -100,17 +81,8 @@
             text-align: center;
         }
 
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-        }
+        .stat-value { font-size: 1.8rem; font-weight: bold; color: var(--accent); }
+        .stat-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; }
 
         .section-card {
             background-color: var(--card-bg);
@@ -121,23 +93,9 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        h2 {
-            color: var(--primary);
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
-            font-size: 1.6rem;
-            margin-top: 0;
-        }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; font-size: 1.6rem; margin-top: 0; }
+        h3 { color: var(--accent); font-size: 1.2rem; margin-top: 30px; }
 
-        h3 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-top: 30px;
-        }
-
-        /* =========================================
-           圖表容器
-           ========================================= */
         .chart-container {
             position: relative;
             height: 400px;
@@ -149,49 +107,12 @@
             border: 1px solid var(--border);
         }
 
-        /* =========================================
-           電腦版表格排版
-           ========================================= */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { background-color: rgba(37, 99, 235, 0.05); font-weight: 600; white-space: nowrap; }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top; 
-        }
-
-        th {
-            background-color: rgba(37, 99, 235, 0.05);
-            font-weight: 600;
-            white-space: nowrap; 
-        }
-
-        td:nth-child(1), th:nth-child(1),
-        td:nth-child(2), th:nth-child(2) {
-            white-space: nowrap; 
-            width: 1%; 
-        }
-
-        td:nth-child(3) {
-            line-height: 1.6;
-        }
-
-        .emoji-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .emoji-list li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            text-indent: -30px;
-        }
+        .emoji-list { list-style: none; padding: 0; }
+        .emoji-list li { margin-bottom: 15px; padding-left: 30px; text-indent: -30px; }
 
         .footer {
             text-align: center;
@@ -202,43 +123,13 @@
             border-top: 1px solid var(--border);
         }
 
-        /* =========================================
-           手機版適配 (RWD)
-           ========================================= */
         @media (max-width: 768px) {
-            body { padding: 10px; }
-            .section-card { padding: 20px; }
-            h1 { font-size: 1.8rem; }
-            .chart-container { height: 300px; }
-            
-            table, thead, tbody, th, td, tr { 
-                display: block; 
-                width: 100% !important;
-            }
+            table, thead, tbody, th, td, tr { display: block; width: 100% !important; }
             thead { display: none; }
-            tr { 
-                margin-bottom: 15px; 
-                border: 1px solid var(--border); 
-                border-radius: 12px;
-                padding: 15px;
-                background-color: var(--card-bg);
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            }
-            td { 
-                padding: 8px 0 !important;
-                text-align: left !important;
-                border-bottom: 1px dashed var(--border) !important;
-                white-space: normal !important; 
-            }
+            tr { margin-bottom: 15px; border: 1px solid var(--border); border-radius: 12px; padding: 15px; background-color: var(--card-bg); }
+            td { padding: 8px 0 !important; border-bottom: 1px dashed var(--border) !important; white-space: normal !important; }
             td:last-child { border-bottom: none !important; }
-            td:nth-child(1) { 
-                font-weight: bold; 
-                color: var(--accent); 
-                font-size: 1.15rem; 
-                border-bottom: 2px solid var(--border) !important;
-                padding-bottom: 10px !important;
-                margin-bottom: 5px;
-            }
+            td:nth-child(1) { font-weight: bold; color: var(--accent); font-size: 1.15rem; border-bottom: 2px solid var(--border) !important; margin-bottom: 5px; }
         }
     </style>
 </head>
@@ -249,7 +140,7 @@
     <header>
         <h1>台灣2030經濟前景展望報告</h1>
         <div class="subtitle">宏觀經濟研究報告 · 2026 | AI超級週期 × 半導體霸權 × 產業轉型</div>
-        <p>台股來到39,000點，0050 ETF 突破 90 元，印證AI科技浪潮加速到來。本報告深度解析2026〜2030年台灣經濟重點主題：AI雲端與地端需求、台廠競爭態勢、精密工業與國防、傳產金融前景及GDP展望。</p>
+        <p>台股目前站穩 39,000 點，0050 預估基準 90 元。本報告由呂老師鑑定數據，解析 2030 年台灣經濟閉環邏輯。</p>
         
         <div class="highlight-grid">
             <div class="stat-card">
@@ -258,11 +149,11 @@
             </div>
             <div class="stat-card">
                 <div class="stat-value">90%+</div>
-                <div class="stat-label">全球AI伺服器台廠製造占比</div>
+                <div class="stat-label">全球AI伺服器台廠代工占比</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">90元</div>
-                <div class="stat-label">0050 ETF 預估基準價位</div>
+                <div class="stat-value">$50,370</div>
+                <div class="stat-label">2029 預估人均 GDP</div>
             </div>
             <div class="stat-card">
                 <div class="stat-value">$1.4兆</div>
@@ -271,266 +162,132 @@
         </div>
     </header>
 
+    <!-- CHAPTER 01 -->
     <div class="section-card">
         <h2>CHAPTER 01｜AI雲端與地端需求（2026〜2030）</h2>
-        <p>全球AI算力需求進入超級週期，雲端資本支出爆炸性成長，邊緣AI滲透率快速提升，台灣居供應鏈核心。</p>
-        
-        <h3>三大核心數據</h3>
-        <ul class="emoji-list">
-            <li>☁️ <strong>雲端AI需求爆發 ($8,000億)：</strong> 最新財報指引確認，2026年全球CSP（Google、AWS、Meta、微軟、Oracle等）合計資本支出將飆升至 8,000 億美元，重點投入AI訓練與推理基礎設施，軍備競賽全面升級。</li>
-            <li>🖥️ <strong>AI伺服器出貨量 (450萬台)：</strong> 2026年全球AI伺服器出貨量預估達450萬台，占整體伺服器市場30%，較2025年大幅成長，超過九成由台廠代工組裝。</li>
-            <li>📡 <strong>邊緣AI滲透 (20%)：</strong> 2026年邊緣AI硬體滲透率接近20%，AI Box、智慧眼鏡、工業邊緣伺服器快速擴張，製造、醫療、零售等垂直場景全面導入。</li>
-        </ul>
-
+        <p>全球AI算力需求進入超級週期，雲端資本支出爆炸性成長，台灣居供應鏈核心。</p>
         <div class="chart-container">
             <canvas id="cspChart"></canvas>
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: right; margin-top: -20px;">
-            註：2029-2030 年預測數值參考自美國銀行 (BofA) 與瑞銀 (UBS) 之 1.2 兆至 1.3 兆美元長線預估。
-        </p>
-
-        <h3>雲端需求主要驅動力（時間軸）</h3>
-        <ul>
-            <li><strong>2026 — 訓練算力大爆發：</strong> GPT-5、Gemini Ultra等新一代大模型訓練需求激增，CSP大規模採購NVIDIA Blackwell、AMD MI400系列。</li>
-            <li><strong>2027〜2028 — 推理算力主導市場：</strong> AI應用全面商業化，推理算力需求超越訓練。Agentic AI佔企業AI支出17%，CSP 資本支出預計在 2028 年將衝上 1.1兆（11,000億）美元的高峰。</li>
-            <li><strong>2029〜2030 — 主權AI與分散式算力：</strong> 各國主權AI資料中心建置完成，邊緣AI節點遍布全球，地端推理成本降至可大規模商業化水準。</li>
-        </ul>
     </div>
 
+    <!-- CHAPTER 02 -->
     <div class="section-card">
-        <h2>CHAPTER 02｜台廠受惠情形與國際競爭</h2>
-        <p>台灣掌握全球AI供應鏈命脈，從晶圓代工到伺服器組裝形成完整生態，但面臨美、韓、中的多維度競爭。</p>
+        <h2>CHAPTER 02｜台廠受惠情形與供應鏈核心</h2>
+        <p>台灣掌握尖端晶片 90% 以上產能，先進封裝 CoWoS 與 2nm 製程已築起全球最高的競爭門檻。</p>
 
-        <h3>🏆 台廠核心競爭優勢</h3>
-        <ul class="emoji-list">
-            <li>💎 <strong>台積電 — 先進製程霸主：</strong> 全球超過90%尖端AI晶片依賴台積電3nm以下製程代工。2nm量產在即，即便至2030年，台灣仍將掌握約 75% 全球先進製程產能。先進封裝CoWoS成為AI晶片不可或缺的技術，台積電幾乎壟斷。</li>
-            <li>🖥️ <strong>鴻海、緯穎、英業達 — AI伺服器龍頭：</strong> 全球逾90%AI伺服器由台廠代工組裝。鴻海2025年AI伺服器業務營收突破新台幣1兆元，市占率超40%。</li>
-            <li>🔬 <strong>聯發科、聯詠、瑞昱 — IC設計崛起：</strong> 積極搶攻車用與AIoT市場。台灣IC設計業在邊緣AI晶片、網通晶片、電源管理IC等領域持續鞏固競爭優勢。</li>
-            <li>🌡️ <strong>散熱、電源、PCB — 關鍵零組件：</strong> AI伺服器機櫃功耗急升，液冷散熱（奇鋐、雙鴻）、高壓直流電源（台達電）、高速PCB（臻鼎、欣興）需求暴增。</li>
-        </ul>
-
-        <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
-
-        <h3 style="color: #ef4444;">📌 核心解析 1：台積電資本支出與晶片產能預測 (2026-2030)</h3>
-        <p>隨著 CSP 廠 AI 軍備競賽的急遽升溫，台積電 2026 年資本支出已大幅上修至 <a href="https://flyer19820218.github.io/tsmc/" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; cursor: pointer;" title="點擊前往：護國群山戰情室">560 億美元 ↗</a>。為了滿足 Agentic AI 與雲端巨頭無底洞般的算力剛需，以及 2奈米與 A16 世代極度昂貴的 EUV 設備採購，台積電資本支出未來數年將維持在高水位擴張；同時，整體 12 吋約當晶圓年產能將挑戰 2,400 萬片規模。</p>
-        
+        <h3 style="color: #ef4444;">📌 核心解析 1：台積電資本支出與產能預測</h3>
+        <p>2026 年單年資本支出已大幅上修至 <a href="https://flyer19820218.github.io/tsmc/" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold;" title="點擊前往：護國群山戰情室">560 億美元 ↗</a>，目標鎖定 A16 世代與全球擴廠計畫。</p>
         <div class="chart-container" style="height: 350px;">
             <canvas id="tsmcCapExChart"></canvas>
         </div>
 
-        <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長預測與估值推算 (保守防禦版)</h3>
-        <p>基於強勁的 AI 訂單能見度與先進封裝產能擴張，以 <strong>2026 年預估 EPS 100 元</strong> 為基準，並賦予年複合成長率 <strong>(CAGR) 25%</strong> 的成長軌跡。若剔除市場過度樂觀的 AI 泡沫情緒，將本益比 (PE Ratio) 嚴格下修至歷史相對理性的 <strong>18 至 22 倍</strong> 區間，台積電長線估值依然具備極強的財務安全邊際與穩健的上檔空間。</p>
-
+        <h3 style="color: var(--purple);">📌 核心解析 2：台積電 EPS 成長與估值 (保守防禦版)</h3>
+        <p>以 2026 年基準 EPS 100 元計算，若維持 25% 複合成長，長線財務安全邊際極高。</p>
         <div class="chart-container" style="height: 400px;">
             <canvas id="tsmcEpsChart"></canvas>
         </div>
-        
-        <h3 style="color: var(--warning);">📌 核心解析 3：0050 ETF 價格推估 (台積電權重連動模型)</h3>
-        <p>採用最嚴苛的壓力測試模型：假設台積電佔 0050 ETF 之權重固定於 <strong>60%</strong>，且其餘 <strong>40%</strong> 成分股處於零成長狀態。以目前 0050 價位 <strong>90 元</strong>（對應台股大盤 <strong>39,000 點</strong>）為基準，單憑台積電獲利增長引擎所驅動的 0050 未來走勢預測：</p>
 
+        <h3 style="color: var(--warning);">📌 核心解析 3：0050 ETF 價格推估 (60% 權重模型)</h3>
+        <p>假設其餘成分股不成長，僅由台積電獲利引擎驅動，0050 與大盤之連動預測：</p>
         <div class="chart-container" style="height: 350px;">
             <canvas id="etf0050Chart"></canvas>
         </div>
+    </div>
 
-        <hr style="border-top: 1px solid var(--border); margin: 30px 0;">
-
-        <h3>🌏 國際競爭態勢分析</h3>
+    <!-- CHAPTER 02 延伸：艦隊表 -->
+    <div class="section-card">
+        <h2 style="color: var(--danger);">CHAPTER 02 延伸｜台積電艦隊：先進製程利基龍頭</h2>
+        <p>這群特種部隊掌握了 2nm 與先進封裝的關鍵技術，其 EPS 爆發力（2027F 翻倍成長）是支撐台灣 GDP 質變的關鍵。</p>
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th>國家／地區</th>
-                        <th>核心優勢</th>
-                        <th>主要弱點</th>
-                        <th>對台威脅程度</th>
+                        <th>公司 (代號)</th>
+                        <th>2026F EPS</th>
+                        <th>2027F EPS</th>
+                        <th>核心戰略地位與主要產品</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>🇹🇼 台灣</td>
-                        <td>先進製程代工、完整封測、伺服器組裝</td>
-                        <td>能源供應壓力、地緣政治風險</td>
-                        <td>持續領先</td>
+                        <td>🚀 <strong>竑騰 (7751)</strong></td>
+                        <td>39.86</td>
+                        <td style="color: var(--danger); font-weight: bold;">70.00</td>
+                        <td>大尺寸封裝、鋼片散熱設備。先進封裝散熱核心。</td>
                     </tr>
                     <tr>
-                        <td>🇺🇸 美國</td>
-                        <td>AI模型設計(NV/AMD)、資金、市場</td>
-                        <td>製造能力高度依賴台積電，本土產能不足</td>
-                        <td>中等 (緩慢追趕)</td>
+                        <td>🏗️ <strong>竹陞科技 (6739)</strong></td>
+                        <td>33.38</td>
+                        <td style="color: var(--danger); font-weight: bold;">59.38</td>
+                        <td>Govison、Gobot 智能廠務。全球擴廠自動化必備。</td>
                     </tr>
                     <tr>
-                        <td>🇰🇷 韓國</td>
-                        <td>HBM記憶體(SK海力士)、DRAM</td>
-                        <td>缺乏先進邏輯代工良率，生態系不完整</td>
-                        <td>中等 (局部競爭)</td>
+                        <td>🛠️ <strong>巨漢 (6903)</strong></td>
+                        <td>32.48</td>
+                        <td>44.38</td>
+                        <td>無塵室機電工程。擴廠計畫最穩定建設夥伴。</td>
                     </tr>
                     <tr>
-                        <td>🇨🇳 中國</td>
-                        <td>AI研究論文、專利、龐大內需市場</td>
-                        <td>受禁運限制，無法獲得3nm以上製程</td>
-                        <td>低 (高階受限)</td>
+                        <td>🔍 <strong>倍利科 (7822)</strong></td>
+                        <td>26.66</td>
+                        <td>35.72</td>
+                        <td>高精度光學顯微鏡、AOI 檢測。2nm 檢測門神。</td>
+                    </tr>
+                    <tr>
+                        <td>🧪 <strong>碩正科技 (7669)</strong></td>
+                        <td>12.00</td>
+                        <td style="color: var(--danger); font-weight: bold;">30.00</td>
+                        <td>先進製程離型膜。高階耗材國產化關鍵。</td>
+                    </tr>
+                    <tr>
+                        <td>💎 <strong>頌勝科技 (7768)</strong></td>
+                        <td>6.50</td>
+                        <td>20.00</td>
+                        <td>半導體 CMP 研磨墊。本土耗材替代外商龍頭。</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
+    <!-- CHAPTER 03 -->
     <div class="section-card">
         <h2>CHAPTER 03｜AI 延伸基建、精密工業與國防航太</h2>
-        <p>除了台積電領軍的晶圓代工與前段製程，台灣在邊緣運算、AI 基礎設施與重工業領域同樣具備主導全球供應鏈的強大實力，是支撐 GDP 穩健成長的核心骨幹。</p>
-
-        <h3>🔋 AI 基礎設施與邊緣大腦</h3>
+        <p>除了晶圓代工，台灣在能源管理、高階材料與工業機器人領域同樣具備全球主導權。</p>
         <ul class="emoji-list">
-            <li>🧠 <strong>邊緣 AI 晶片 (聯發科)：</strong> 全球邊緣 AI 與智慧型手機晶片龍頭。當 AI 算力從雲端資料中心下放至手機、AI PC 與車用電子，台廠掌握了終端設備神經網路的核心大腦。</li>
-            <li>⚡ <strong>能源與散熱管理 (台達電、奇鋐)：</strong> AI 資料中心是「吃電怪獸」，台廠掌握全球最高效的電源管理系統與液冷散熱解決方案，是支撐龐大算力持續運轉的動力心臟。</li>
-            <li>🔌 <strong>高階材料與電路 (台光電、欣興)：</strong> AI 伺服器的高速數據傳輸，極度仰賴高階銅箔基板 (CCL) 與 ABF 載板，台灣在此高階材料領域幾乎囊括全球過半市佔率。</li>
-        </ul>
-
-        <h3>⚙️ 精密機械與國防軍工戰略</h3>
-        <ul class="emoji-list">
-            <li>🤖 <strong>精密機械與機器人 (上銀、研華)：</strong> 台灣身為全球工具機重鎮，傳動元件與工業電腦正全面導入具身智能 (Embodied AI) 與無人化工廠，推動下一波智慧製造升級。</li>
-            <li>🛡️ <strong>國防軍工與航太 (漢翔、雷虎)：</strong> 在地緣政治催化下，「國防自主」與「無人機供應鏈」成為產值爆發的新星。這不僅是經濟數字，更是台灣對外技術輸出與建立區域安全防線的重要戰略資產。</li>
+            <li>🧠 <strong>聯發科：</strong> 邊緣 AI 晶片龍頭，控制終端裝置的大腦。</li>
+            <li>⚡ <strong>台達電、奇鋐：</strong> 掌握 AI 資料中心之能源效率與液冷散熱核心。</li>
+            <li>🛡️ <strong>漢翔、雷虎：</strong> 地緣政治催化下，國防自主與無人機供應鏈的新契機。</li>
         </ul>
     </div>
 
+    <!-- CHAPTER 04 -->
     <div class="section-card">
-        <h2>CHAPTER 04｜傳產與金融業前景</h2>
-        
-        <h3>🏗️ 傳統製造業：分化轉型</h3>
-        <p>科技業一枝獨秀之際，傳統產業面臨轉型壓力：</p>
-        <ul class="emoji-list">
-            <li>✅ <strong>受惠產業：</strong> 能源設備（地熱、離岸風電）、國防軍工、智慧製造設備、半導體設備材料。</li>
-            <li>⚠️ <strong>轉型壓力：</strong> 傳統石化、鋼鐵、紡織；需加速數位轉型與ESG轉型，否則面臨中國產能過剩出口壓力。</li>
-            <li>❌ <strong>結構挑戰：</strong> 薪資K型分化擴大，人才流失加劇。</li>
-        </ul>
-
-        <h3>🏦 金融業：AI賦能、穩健成長</h3>
-        <p>2025年台灣金融業稅前盈餘挑戰歷史次高，顯示基本韌性。87%銀行、67%壽險已導入生成式AI工具。</p>
-        <ul>
-            <li><strong>財富管理擴張：</strong> 境外資金回流，台灣有望成為亞洲區域資產管理中心。</li>
-            <li><strong>數位資產佈局：</strong> RWA代幣化試點推進，虛擬資產服務法規逐步完善。</li>
-            <li><strong>風控升級：</strong> AI驅動的即時風控系統全面部署，合規成本上升但競爭力提升。</li>
-        </ul>
-    </div>
-
-    <div class="section-card">
-        <h2>CHAPTER 05｜台灣GDP與經濟成長展望</h2>
-        <p>AI驅動的出口超級週期推升台灣GDP成長率至近30年高點，2026後進入高基期調整，但中長期成長動能依然穩健。</p>
-
+        <h2>CHAPTER 04｜傳產金融分化轉型與 GDP 展望</h2>
         <div class="chart-container">
             <canvas id="gdpChart"></canvas>
         </div>
-
-        <h3>⚠️ 主要風險因子</h3>
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>風險等級</th>
-                        <th>風險</th>
-                        <th>說明</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>🔴 高風險</td>
-                        <td>地緣政治</td>
-                        <td>兩岸關係緊張仍是最大尾部風險，可能導致外資撤出與供應鏈重組</td>
-                    </tr>
-                    <tr>
-                        <td>🔴 高風險</td>
-                        <td>能源供應</td>
-                        <td>AI資料中心電力需求至2030年達435 TWh，台灣能源轉型速度是關鍵挑戰</td>
-                    </tr>
-                    <tr>
-                        <td>🟡 中風險</td>
-                        <td>美中貿易戰升溫</td>
-                        <td>美國對台加徵關稅或擴大科技出口管制，可能影響台廠接單</td>
-                    </tr>
-                    <tr>
-                        <td>🟡 中風險</td>
-                        <td>高基期回落</td>
-                        <td>2025〜2026年高速成長後，2027年出口動能可能出現回調</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
+    <!-- CONCLUSION -->
     <div class="section-card">
-        <h2>CONCLUSION｜總結：台灣2030經濟全景</h2>
-        <p>台灣正處於AI科技超級週期的核心，未來五年將是奠定下一個世代競爭優勢的關鍵窗口期。</p>
-        
-        <h3>🔮 台灣人均GDP里程碑預測（美元）</h3>
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>年份</th>
-                        <th>人均GDP</th>
-                        <th>里程碑</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024</td>
-                        <td>$39,489</td>
-                        <td>穩居亞洲前段班</td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--accent); font-weight: bold;">2025</td>
-                        <td style="color: var(--accent); font-weight: bold;">$42,103</td>
-                        <td>⭐ 已突破4萬美元大關</td>
-                    </tr>
-                    <tr>
-                        <td>2026</td>
-                        <td>$44,181</td>
-                        <td>主計總處2026最新預測</td>
-                    </tr>
-                    <tr>
-                        <td>2027</td>
-                        <td>$46,500</td>
-                        <td>台積電美國廠3nm量產，Agentic AI商業化</td>
-                    </tr>
-                    <tr>
-                        <td>2028</td>
-                        <td>$48,500</td>
-                        <td>邊緣AI設備出貨突破10億台</td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--success); font-weight: bold;">2029</td>
-                        <td style="color: var(--success); font-weight: bold;">$50,370</td>
-                        <td>⭐ 首度突破5萬美元大關</td>
-                    </tr>
-                    <tr>
-                        <td>2030</td>
-                        <td>$53,000</td>
-                        <td>全球AI資料中心市場規模1.4兆美元，台廠掌握核心</td>
-                    </tr>
-                    <tr>
-                        <td>2031</td>
-                        <td>$56,101</td>
-                        <td>正式躋身全球高所得經濟體頂層</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h2>CONCLUSION｜總結：呂老師的 2030 經濟全景</h2>
+        <p>台灣正處於 AI 科技超級週期的核心。2029 年人均 GDP 預計突破 5 萬美元大關，2031 年晉升全球頂層高所得體。</p>
+        <div class="footer">
+            <p>資料來源：呂老師鑑定之法人報告、主計總處、XQ 全球贏家</p>
+            <p>本報告僅供參考，不構成投資建議。製作日期：2026年5月</p>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>資料來源：主計總處、IMF、美銀研究、資策會MIC、IDC、史丹佛AI指數報告</p>
-        <p>本報告僅供參考，不構成任何投資建議。市場有風險，投資須謹慎。<br>製作日期：2026年5月</p>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        
         const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const textColor = isDarkMode ? '#cbd5e1' : '#64748b';
         const gridColor = isDarkMode ? '#334155' : '#e2e8f0';
 
-        // 1. CSP 資本支出圖表
+        // 1. CSP
         new Chart(document.getElementById('cspChart').getContext('2d'), {
             type: 'bar',
             data: {
@@ -542,222 +299,57 @@
                     borderRadius: 4
                 }]
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                plugins: { legend: { labels: { color: textColor } } },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { display: false } },
-                    y: { ticks: { color: textColor }, grid: { color: gridColor } }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 2. 台積電資本支出與產能預測圖表
+        // 2. TSMC CapEx
         new Chart(document.getElementById('tsmcCapExChart').getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
                 datasets: [
-                    {
-                        type: 'bar',
-                        label: '資本支出 CapEx (億美元)',
-                        data: [560, 600, 640, 680, 720],
-                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
-                        yAxisID: 'y'
-                    },
-                    {
-                        type: 'line',
-                        label: '12吋約當晶圓產能 (萬片/年)',
-                        data: [1850, 1980, 2120, 2250, 2400],
-                        borderColor: '#10b981',
-                        backgroundColor: '#10b981',
-                        borderWidth: 3,
-                        pointRadius: 5,
-                        yAxisID: 'y1'
-                    }
+                    { type: 'bar', label: 'CapEx (億美元)', data: [560, 600, 640, 680, 720], backgroundColor: 'rgba(239, 68, 68, 0.7)', yAxisID: 'y' },
+                    { type: 'line', label: '產能 (萬片)', data: [1850, 1980, 2120, 2250, 2400], borderColor: '#10b981', yAxisID: 'y1' }
                 ]
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                interaction: { mode: 'index', intersect: false },
-                plugins: {
-                    legend: { labels: { color: textColor } }
-                },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { display: false } },
-                    y: {
-                        type: 'linear', display: true, position: 'left',
-                        title: { display: true, text: '資本支出 (億美元)', color: textColor },
-                        ticks: { color: textColor }, grid: { color: gridColor }
-                    },
-                    y1: {
-                        type: 'linear', display: true, position: 'right',
-                        title: { display: true, text: '產能 (萬片)', color: textColor },
-                        ticks: { color: textColor }, grid: { display: false }
-                    }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 3. 台積電 EPS 與股價估值推算圖表 (基準 100元, CAGR 25%, PE 18-22x)
+        // 3. TSMC EPS
         const epsBase = 100;
-        const cagr = 0.25;
-        const epsData = [
-            epsBase, // 2026
-            Math.round(epsBase * Math.pow(1 + cagr, 1)), // 2027: 125
-            Math.round(epsBase * Math.pow(1 + cagr, 2)), // 2028: 156
-            Math.round(epsBase * Math.pow(1 + cagr, 3)), // 2029: 195
-            Math.round(epsBase * Math.pow(1 + cagr, 4))  // 2030: 244
-        ];
-        
-        const pricePE22 = epsData.map(eps => eps * 22);
-        const pricePE18 = epsData.map(eps => eps * 18);
-
+        const epsData = [100, 125, 156, 195, 244];
         new Chart(document.getElementById('tsmcEpsChart').getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
                 datasets: [
-                    {
-                        type: 'bar',
-                        label: '預估 EPS (元)',
-                        data: epsData,
-                        backgroundColor: 'rgba(139, 92, 246, 0.7)',
-                        yAxisID: 'y'
-                    },
-                    {
-                        type: 'line',
-                        label: '高標股價預期 (PE 22x)',
-                        data: pricePE22,
-                        borderColor: '#f43f5e',
-                        backgroundColor: '#f43f5e',
-                        borderWidth: 2,
-                        borderDash: [5, 5],
-                        pointRadius: 4,
-                        yAxisID: 'y1'
-                    },
-                    {
-                        type: 'line',
-                        label: '低標股價預期 (PE 18x)',
-                        data: pricePE18,
-                        borderColor: '#0ea5e9',
-                        backgroundColor: '#0ea5e9',
-                        borderWidth: 2,
-                        pointRadius: 4,
-                        yAxisID: 'y1'
-                    }
+                    { label: '預估 EPS', data: epsData, backgroundColor: 'rgba(139, 92, 246, 0.7)' },
+                    { type: 'line', label: 'PE 22x', data: epsData.map(e => e*22), borderColor: '#f43f5e' },
+                    { type: 'line', label: 'PE 18x', data: epsData.map(e => e*18), borderColor: '#0ea5e9' }
                 ]
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                interaction: { mode: 'index', intersect: false },
-                plugins: {
-                    legend: { labels: { color: textColor } },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) { label += ': '; }
-                                if (context.parsed.y !== null) {
-                                    label += context.parsed.y + ' 元';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { display: false } },
-                    y: {
-                        type: 'linear', display: true, position: 'left',
-                        title: { display: true, text: 'EPS (新台幣元)', color: textColor },
-                        ticks: { color: textColor }, grid: { color: gridColor }
-                    },
-                    y1: {
-                        type: 'linear', display: true, position: 'right',
-                        title: { display: true, text: '推估股價 (新台幣元)', color: textColor },
-                        ticks: { color: textColor }, grid: { display: false }
-                    }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 3.5 核心解析 3：0050 ETF 價格推估 (0050 基準價 90，台積電權重 60% 模型)
-        const base0050 = 90;
-        const tsmcWeight = 0.6;
-        const etf0050Data = epsData.map(eps => {
-            const tsmcGrowth = (eps / epsBase) - 1; // 台積電相較 2026 的成長幅度
-            const etfGrowth = tsmcGrowth * tsmcWeight; // 只有 60% 的權重貢獻成長
-            return (base0050 * (1 + etfGrowth)).toFixed(1); // 取小數第一位
-        });
-
+        // 4. 0050 ETF
+        const etf0050Data = epsData.map(eps => (90 * (1 + ((eps/epsBase)-1)*0.6)).toFixed(1));
         new Chart(document.getElementById('etf0050Chart').getContext('2d'), {
             type: 'line',
             data: {
                 labels: ['2026F', '2027F', '2028F', '2029F', '2030F'],
-                datasets: [{
-                    label: '0050 ETF 預估價位 (元)',
-                    data: etf0050Data,
-                    borderColor: '#f59e0b',
-                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    pointRadius: 6,
-                    tension: 0.1
-                }]
+                datasets: [{ label: '0050 預估價位 (元)', data: etf0050Data, borderColor: '#f59e0b', fill: true }]
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                plugins: { 
-                    legend: { labels: { color: textColor } },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.parsed.y.toLocaleString() + ' 元';
-                            }
-                        }
-                    } 
-                },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { color: gridColor } },
-                    y: { 
-                        ticks: { color: textColor }, 
-                        grid: { color: gridColor },
-                        title: { display: true, text: '價格 (元)', color: textColor }
-                    }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 4. 台灣 GDP 成長率預測圖表
+        // 5. GDP
         new Chart(document.getElementById('gdpChart').getContext('2d'), {
             type: 'line',
             data: {
                 labels: ['2024', '2025', '2026F', '2027F', '2028F', '2029F', '2030F'],
-                datasets: [{
-                    label: '實質GDP成長率 (%)',
-                    data: [5.42, 8.68, 7.71, 5.0, 4.5, 3.8, 3.5],
-                    borderColor: '#10b981',
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    pointRadius: 6,
-                    tension: 0.3
-                }]
+                datasets: [{ label: '實質GDP成長率 (%)', data: [5.42, 8.68, 7.71, 5.0, 4.5, 3.8, 3.5], borderColor: '#10b981', tension: 0.3 }]
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                plugins: { legend: { labels: { color: textColor } } },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { color: gridColor } },
-                    y: { ticks: { color: textColor }, grid: { color: gridColor } }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
     });
 </script>
