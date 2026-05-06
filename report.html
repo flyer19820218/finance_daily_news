@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南屯指揮部｜資產月報 2026.05</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #334155;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #f8fafc;
+                --bg: #0f172a;
+                --card: #1e293b;
+                --text: #cbd5e1;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.2rem; letter-spacing: 2px; }
+        .subtitle { opacity: 0.8; font-weight: 300; margin-top: 10px; }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-label { font-size: 0.9rem; color: #64748b; margin-bottom: 10px; display: block; }
+        .stat-value { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+        .stat-card.profit { border-top-color: var(--success); }
+        .stat-card.profit .stat-value { color: var(--success); }
+
+        /* Progress Section */
+        .mission-section {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+        .mission-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .progress-container {
+            background: #e2e8f0;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent), var(--success));
+            height: 100%;
+            width: 20.3%; /* 假設目前2030萬 / 1億 */
+            transition: width 1s ease-in-out;
+        }
+        .progress-text { margin-top: 10px; text-align: right; font-weight: bold; color: var(--accent); }
+
+        /* Table Section */
+        .details-section {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(37, 99, 235, 0.05); padding: 15px 20px; font-weight: 600; }
+        td { padding: 15px 20px; border-top: 1px solid rgba(0,0,0,0.05); }
+        
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .badge-warning { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .stat-value { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🏔️ 南屯指揮部：資產物理觀測月報</h1>
+        <div class="subtitle">Mission: 2035 破億階級躍遷計畫</div>
+    </header>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <span class="stat-label">系統總位能 (總市值)</span>
+            <div class="stat-value">2,029.9 萬</div>
+        </div>
+        <div class="stat-card profit">
+            <span class="stat-label">累積純作功 (總獲利)</span>
+            <div class="stat-value">+687.8 萬</div>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">核心裝甲 (維持率)</span>
+            <div class="stat-value">405.9%</div>
+        </div>
+        <div class="stat-card profit">
+            <span class="stat-label">真實本金爆發率 (ROE)</span>
+            <div class="stat-value">77.2%</div>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-header">
+            <h2 style="margin:0; font-size: 1.2rem; color: var(--accent);">🚀 2035 破億目標達成度</h2>
+            <span style="font-weight: bold;">目標：100,000,000 TWD</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="progress-text">20.3% 已解鎖</div>
+        <p style="font-size: 0.9rem; color: #64748b; margin-top: 15px;">
+            💡 <strong>理化筆記：</strong> 目前資產已脫離大氣層，進入複利軌道。4500 萬房貸引力正隨著通膨與時間衰減中。
+        </p>
+    </div>
+
+    <div class="details-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>核心資產</th>
+                    <th>數量 (張)</th>
+                    <th>校正均價</th>
+                    <th>現價</th>
+                    <th>狀態</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>0050 珍珠</strong></td>
+                    <td>212</td>
+                    <td>$64.65</td>
+                    <td>$95.75</td>
+                    <td><span class="badge badge-success">超導噴發中</span></td>
+                </tr>
+                <tr>
+                    <td><strong>南屯不動產</strong></td>
+                    <td>1</td>
+                    <td>---</td>
+                    <td>增值中</td>
+                    <td><span class="badge badge-warning">房貸穩定稀釋</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 30px; background: rgba(37, 99, 235, 0.05); padding: 20px; border-radius: 16px;">
+        <h3 style="margin-top: 0; font-size: 1rem; color: var(--accent);">📝 指揮官戰術筆記 (Markdown 思維)</h3>
+        <ul style="font-size: 0.9rem; padding-left: 20px;">
+            <li><strong>靜力平衡：</strong> 維持率 400% 以上，無視市場高頻雜訊。</li>
+            <li><strong>動態策略：</strong> 拒絕預測高點，讓台積電 A16/2nm 推進器持續工作。</li>
+            <li><strong>傳承準備：</strong> 所有的數據與理化教案均已同步至 MacBook Air，準備交棒阿淮。</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>最後觀測時間：2026-05-06 21:27:54</p>
+        <p>數據驅動 · 紀律執行 · 2035 終點見</p>
+    </footer>
+</div>
+
+<script>
+    // 增加一點啟動時的動畫感
+    window.onload = function() {
+        const bar = document.querySelector('.progress-bar');
+        bar.style.width = '20.3%';
+    };
+</script>
+
+</body>
+</html>
