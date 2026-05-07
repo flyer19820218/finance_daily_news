@@ -36,7 +36,6 @@
 
         .container { max-width: 1000px; margin: 0 auto; }
 
-        /* Header */
         header {
             text-align: center;
             padding: 40px 0;
@@ -49,7 +48,6 @@
         h1 { margin: 0; font-size: 2.2rem; letter-spacing: 2px; }
         .subtitle { opacity: 0.8; font-weight: 300; margin-top: 10px; }
 
-        /* Stat Grid */
         .stat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -70,8 +68,8 @@
         .stat-value { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
         .stat-card.profit { border-top-color: var(--success); }
         .stat-card.profit .stat-value { color: var(--success); }
+        .stat-card.warning { border-top-color: var(--warning); }
 
-        /* Progress Section */
         .mission-section {
             background: var(--card);
             padding: 30px;
@@ -90,17 +88,17 @@
         .progress-bar {
             background: linear-gradient(90deg, var(--accent), var(--success));
             height: 100%;
-            width: 20.3%; /* 假設目前2030萬 / 1億 */
-            transition: width 1s ease-in-out;
+            width: 0%; /* 由 JS 控制動畫 */
+            transition: width 1.5s cubic-bezier(0.1, 0.42, 0.41, 1);
         }
         .progress-text { margin-top: 10px; text-align: right; font-weight: bold; color: var(--accent); }
 
-        /* Table Section */
         .details-section {
             background: var(--card);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
         table { width: 100%; border-collapse: collapse; text-align: left; }
         th { background: rgba(37, 99, 235, 0.05); padding: 15px 20px; font-weight: 600; }
@@ -114,8 +112,8 @@
         }
         .badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
         .badge-warning { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .badge-danger { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -126,6 +124,7 @@
         @media (max-width: 600px) {
             h1 { font-size: 1.5rem; }
             .stat-value { font-size: 1.4rem; }
+            td, th { padding: 10px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -139,20 +138,20 @@
 
     <div class="stat-grid">
         <div class="stat-card">
-            <span class="stat-label">系統總位能 (總市值)</span>
-            <div class="stat-value">2,029.9 萬</div>
+            <span class="stat-label">系統總位能 (淨資產)</span>
+            <div class="stat-value">3,818.0 萬</div>
         </div>
         <div class="stat-card profit">
-            <span class="stat-label">累積純作功 (總獲利)</span>
-            <div class="stat-value">+687.8 萬</div>
+            <span class="stat-label">股票純作功 (總獲利)</span>
+            <div class="stat-value">+742.9 萬</div>
         </div>
         <div class="stat-card">
             <span class="stat-label">核心裝甲 (維持率)</span>
-            <div class="stat-value">405.9%</div>
+            <div class="stat-value">417.0%</div>
         </div>
-        <div class="stat-card profit">
-            <span class="stat-label">真實本金爆發率 (ROE)</span>
-            <div class="stat-value">77.2%</div>
+        <div class="stat-card warning">
+            <span class="stat-label">流體壓力 (月金流)</span>
+            <div class="stat-value" style="color: var(--danger);">-2.0 萬</div>
         </div>
     </div>
 
@@ -162,11 +161,11 @@
             <span style="font-weight: bold;">目標：100,000,000 TWD</span>
         </div>
         <div class="progress-container">
-            <div class="progress-bar"></div>
+            <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div class="progress-text">20.3% 已解鎖</div>
+        <div class="progress-text">38.18% 已解鎖</div>
         <p style="font-size: 0.9rem; color: #64748b; margin-top: 15px;">
-            💡 <strong>理化筆記：</strong> 目前資產已脫離大氣層，進入複利軌道。4500 萬房貸引力正隨著通膨與時間衰減中。
+            💡 <strong>理化筆記：</strong> 總位能由 0050 珍珠與三座地產堡壘組成。目前逃逸速度穩定，雖然金流有微小摩擦力（-2萬），但整體慣性極強，房貸正隨通膨快速稀釋中。
         </p>
     </div>
 
@@ -174,27 +173,42 @@
         <table>
             <thead>
                 <tr>
-                    <th>核心資產</th>
-                    <th>數量 (張)</th>
-                    <th>校正均價</th>
-                    <th>現價</th>
+                    <th>核心資產項目</th>
+                    <th>估值/數量</th>
+                    <th>淨值貢獻</th>
                     <th>狀態</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>0050 珍珠</strong></td>
-                    <td>212</td>
-                    <td>$64.65</td>
-                    <td>$95.75</td>
-                    <td><span class="badge badge-success">超導噴發中</span></td>
+                    <td>212 張 (@98.35)</td>
+                    <td>2,085.0 萬</td>
+                    <td><span class="badge badge-success">太陽系邊緣巡航</span></td>
                 </tr>
                 <tr>
-                    <td><strong>南屯不動產</strong></td>
-                    <td>1</td>
-                    <td>---</td>
-                    <td>增值中</td>
-                    <td><span class="badge badge-warning">房貸穩定稀釋</span></td>
+                    <td><strong>惠宇清寬</strong></td>
+                    <td>2,850 萬 (8成貸)</td>
+                    <td>570.0 萬</td>
+                    <td><span class="badge badge-warning">資產硬化中</span></td>
+                </tr>
+                <tr>
+                    <td><strong>國泰美禾</strong></td>
+                    <td>2,933 萬 (8成貸)</td>
+                    <td>586.6 萬</td>
+                    <td><span class="badge badge-warning">資產硬化中</span></td>
+                </tr>
+                <tr>
+                    <td><strong>磐興寬境</strong></td>
+                    <td>2,432 萬 (8成貸)</td>
+                    <td>486.4 萬</td>
+                    <td><span class="badge badge-warning">資產硬化中</span></td>
+                </tr>
+                <tr>
+                    <td><strong>現金庫存</strong></td>
+                    <td>流動能</td>
+                    <td>90.0 萬</td>
+                    <td><span class="badge badge-danger">金流摩擦力(-2萬/m)</span></td>
                 </tr>
             </tbody>
         </table>
@@ -203,23 +217,23 @@
     <div style="margin-top: 30px; background: rgba(37, 99, 235, 0.05); padding: 20px; border-radius: 16px;">
         <h3 style="margin-top: 0; font-size: 1rem; color: var(--accent);">📝 指揮官戰術筆記 (Markdown 思維)</h3>
         <ul style="font-size: 0.9rem; padding-left: 20px;">
-            <li><strong>靜力平衡：</strong> 維持率 400% 以上，無視市場高頻雜訊。</li>
-            <li><strong>動態策略：</strong> 拒絕預測高點，讓台積電 A16/2nm 推進器持續工作。</li>
-            <li><strong>傳承準備：</strong> 所有的數據與理化教案均已同步至 MacBook Air，準備交棒阿淮。</li>
+            <li><strong>防禦結構：</strong> 股票維持率高達 417%，即便房產有貸款壓力，股票部位仍具備極高的變現動能與容錯率。</li>
+            <li><strong>動態平衡：</strong> 目前月金流為負，由現金庫存（90萬）提供緩衝，預計可支撐 45 個月，足以等待 0050 下一波配息補給。</li>
+            <li><strong>傳承核心：</strong> 房地產提供抗通膨底蘊，0050 提供爆發力。這套「雙引擎系統」是留給阿淮最穩定的物理結構。</li>
         </ul>
     </div>
 
     <footer>
-        <p>最後觀測時間：2026-05-06 21:27:54</p>
+        <p>最後觀測時間：2026-05-07 10:20:15</p>
         <p>數據驅動 · 紀律執行 · 2035 終點見</p>
     </footer>
 </div>
 
 <script>
-    // 增加一點啟動時的動畫感
     window.onload = function() {
-        const bar = document.querySelector('.progress-bar');
-        bar.style.width = '20.3%';
+        setTimeout(() => {
+            document.getElementById('progressBar').style.width = '38.18%';
+        }, 300);
     };
 </script>
 
