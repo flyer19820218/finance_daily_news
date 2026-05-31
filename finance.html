@@ -47,7 +47,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
             scroll-behavior: smooth; 
@@ -60,12 +60,12 @@
            ========================================= */
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 45px 20px;
             background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
             border-radius: 16px;
             border: 1px solid var(--border);
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         }
 
         h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 10px 0; line-height: 1.3; font-weight: 900;}
@@ -89,24 +89,51 @@
         .stat-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; }
 
         /* =========================================
-           🔥 2026年6月報 專屬視覺區塊
+           🔥 2026年6月報 專屬視覺區塊 (溫暖文字版)
            ========================================= */
         .june-report-section {
-            background-color: var(--june-bg);
-            border: 2px solid var(--accent);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--accent);
             border-radius: 16px;
-            padding: 30px;
+            padding: 35px 30px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
         }
-        .june-badge {
-            background: var(--accent); color: white; padding: 6px 18px; border-radius: 50px;
-            font-size: 0.9rem; font-weight: 800; display: inline-block; margin-bottom: 15px;
+        .june-title { font-size: 1.6rem; font-weight: 900; color: var(--primary); margin-top: 0; margin-bottom: 20px; line-height: 1.4; }
+        
+        .warm-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
         }
-        .june-title { font-size: 1.6rem; font-weight: 900; color: var(--primary); margin-bottom: 15px; line-height: 1.4; }
+
+        .warm-link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .warm-link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+            color: #ffffff;
+        }
+
         .video-container {
             width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden;
-            background: #000; margin: 25px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: #000; margin: 30px 0 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
@@ -153,10 +180,11 @@
            ========================================= */
         @media (max-width: 768px) {
             body { padding: 10px; }
-            .section-card, .june-report-section { padding: 20px; }
-            h1 { font-size: 1.8rem; }
+            .section-card, .june-report-section { padding: 22px 18px; }
+            h1 { font-size: 1.7rem; }
             .june-title { font-size: 1.4rem; }
             .chart-container { height: 300px; }
+            .warm-link-btn { font-size: 1rem; padding: 14px 20px; }
             
             table, thead, tbody, th, td, tr { display: block; width: 100% !important; }
             thead { display: none; }
@@ -183,7 +211,7 @@
     <header>
         <h1>台灣2030經濟前景展望報告</h1>
         <div class="subtitle">宏觀經濟研究報告 · 2026 | AI超級週期 × 半導體霸權 × 產業轉型</div>
-        <p>台股來到39,000點，0050 ETF 突破 90 元，印證AI科技浪潮加速到來。本報告深度解析2026〜2030年台灣經濟重點主題：AI雲端與地端需求、台廠競爭態勢、精密工業與國防、傳產金融前景及GDP展望。</p>
+        <p>台股來到 39,000 點，0050 ETF 突破 90 元，印證 AI 科技浪潮加速到來。本報告深度解析 2026〜2030 年台灣經濟重點主題：AI 雲端與地端需求、台廠競爭態勢、精密工業與國防、傳產金融前景及 GDP 展望。</p>
         
         <div class="highlight-grid">
             <div class="stat-card">
@@ -206,27 +234,24 @@
     </header>
 
     <section class="june-report-section">
-        <div class="june-badge">📍 LATEST UPDATE：2026年6月報</div>
-        <h2 class="june-title">巨頭聚首 —— 近 2,000 億美元 CAPEX 落地與台灣實體經濟的結構性擴張</h2>
+        <h2 class="june-title">當月焦點：外資近 2,000 億美元 CAPEX 的實體落地效應</h2>
         
-        <div class="highlight-grid" style="margin-top: 15px; margin-bottom: 25px;">
-            <div class="stat-card" style="border-color: var(--accent); background: transparent;">
-                <div class="stat-value">~ $200B</div>
-                <div class="stat-label">年度在台資本支出</div>
-            </div>
-            <div class="stat-card" style="border-color: var(--accent); background: transparent;">
-                <div class="stat-value">9.9 %</div>
-                <div class="stat-label">2026 GDP 成長預估</div>
-            </div>
-            <div class="stat-card" style="border-color: var(--accent); background: transparent;">
-                <div class="stat-value">45,000</div>
-                <div class="stat-label">大盤長線基準預期</div>
-            </div>
-        </div>
-
-        <p style="font-size: 1rem; color: var(--text-main); margin-bottom: 15px; text-align: justify;">
-            <strong>總經物理觀測：</strong>本月核心驅動力正式由「晶片訂單預期」轉向「實體資本支出落地」。經查證，NVIDIA (1,500億美元) 與 AMD (100億美元) 領軍的在台採購與建廠投資總額已逼近 <strong>2,000 億美元 (約新台幣 6.4 兆元)</strong>。外資絕非來台做慈善，這是對台灣 200 公里供應鏈的物理性鎖倉，瞄準 2028-2030 的產能變現。
+        <p class="warm-text">
+            當我們看著市場指數不斷攀高，內心或許會伴隨些許不安與疑惑。但請您放心，支撐這波行情的底氣，並非虛無縹緲的市場題材，而是來自跨國科技巨頭實打實的<strong>資本支出 (CAPEX) 落地</strong>。
         </p>
+        <p class="warm-text">
+            我們為您仔細查證了最新數據：輝達 (NVIDIA) 已將年度在台採購與建廠規模擴張至 <strong>1,500 億美元</strong>，加上超微 (AMD) 承諾的 <strong>100 億美元</strong>，以及微軟、Google、美光等大廠持續挹注的基礎建設投資，整體規模已正式逼近 <strong>2,000 億美元 (約合新台幣 6.4 兆元)</strong>。
+        </p>
+        <p class="warm-text">
+            這筆相當於台灣四分之一 GDP 總量的資金，正沿著台灣 200 公里的半導體聚落穩健推展。為了讓您更安心地抱緊核心資產，我們特別為您準備了本月的深度總經報告與影音解析，希望能為您的長期投資帶來安定的力量。
+        </p>
+
+        <div style="text-align: center; margin: 35px 0 15px 0;">
+            <a href="2026junefinance.html" class="warm-link-btn" target="_blank">
+                <span style="display: block; margin-bottom: 5px;">📖 點擊閱讀《2026年6月總體經濟報告》</span>
+                <span style="display: block; font-size: 0.85rem; font-weight: 400; opacity: 0.9;">深度拆解 2,000 億美元背後的實體經濟與資本戰略</span>
+            </a>
+        </div>
 
         <div class="video-container">
             <iframe 
@@ -235,10 +260,6 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
             </iframe>
-        </div>
-
-        <div style="background: var(--card-bg); padding: 20px; border-radius: 12px; font-size: 0.95rem; border-left: 5px solid var(--accent); margin-top: 20px;">
-            <strong>💡 戰情室戰略解讀：</strong>當前的信貸與質押滿載並非龐氏泡沫，而是投資人基於「高度確定的獲利成長」進行的提前配置。當 2,000 億美元熱錢溢出到實體社會後，房地產與核心權值股將是唯一的巨大蓄水池，這是一場剛性的資產重估。
         </div>
     </section>
 
