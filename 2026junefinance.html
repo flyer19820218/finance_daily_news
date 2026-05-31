@@ -98,14 +98,17 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 28px;
+            padding: 32px 28px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
             text-align: justify;
         }
 
-        h2 { color: var(--primary); font-size: 1.35rem; font-weight: 800; border-left: 5px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 15px; }
+        h2 { color: var(--primary); font-size: 1.35rem; font-weight: 800; border-left: 5px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; line-height: 1.4; }
         h3 { color: var(--accent); font-size: 1.1rem; font-weight: 700; margin-top: 25px; margin-bottom: 10px; }
+
+        /* 確保粗體字更明顯優雅 */
+        strong { color: var(--primary); font-weight: 700; }
 
         /* =========================================
            🎥 16:9 智能影音內嵌容器 (全設備適配)
@@ -118,7 +121,7 @@
             overflow: hidden;
             background-color: #000;
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            margin: 20px 0;
+            margin: 25px 0;
         }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
@@ -129,7 +132,7 @@
             position: relative;
             height: 320px;
             width: 100%;
-            margin: 25px 0;
+            margin: 30px 0 20px 0;
             padding: 12px;
             background: var(--bg-color);
             border-radius: 12px;
@@ -139,9 +142,9 @@
         /* =========================================
            📋 移動端友好的響應式列表
            ========================================= */
-        .bullet-list { list-style: none; padding: 0; margin: 15px 0; }
-        .bullet-list li { margin-bottom: 15px; background: rgba(30, 64, 175, 0.02); padding: 14px; border-radius: 10px; border-left: 4px solid var(--border); }
-        .bullet-list li strong { color: var(--primary); }
+        .bullet-list { list-style: none; padding: 0; margin: 20px 0; }
+        .bullet-list li { margin-bottom: 15px; background: rgba(30, 64, 175, 0.02); padding: 16px; border-radius: 10px; border-left: 4px solid var(--border); }
+        .bullet-list li strong { color: var(--primary); font-size: 1.05em;}
 
         .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border); }
 
@@ -151,14 +154,15 @@
         @media (max-width: 600px) {
             body { padding: 12px 8px; }
             header { padding: 25px 12px; margin-bottom: 15px; }
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 1.6rem; }
             .highlight-grid { grid-template-columns: 1fr; gap: 8px; }
-            .stat-card { padding: 12px; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+            .stat-card { padding: 14px; text-align: left; display: flex; justify-content: space-between; align-items: center; }
             .stat-value { font-size: 1.3rem; }
             .stat-label { margin-top: 0; font-size: 0.85rem; }
-            .section-card { padding: 18px 14px; margin-bottom: 15px; }
-            h2 { font-size: 1.2rem; }
+            .section-card { padding: 22px 16px; margin-bottom: 15px; }
+            h2 { font-size: 1.25rem; }
             .chart-wrapper { height: 260px; }
+            .bullet-list li { padding: 12px; }
         }
     </style>
 </head>
@@ -189,10 +193,10 @@
     <div class="section-card" style="border: 1px solid var(--accent-border); background: linear-gradient(to bottom, var(--card-bg), var(--accent-light));">
         <h2>🔥 當月焦點：外企近 2,000 億美元 CAPEX 的實體落地效應</h2>
         <p>
-            外資絕非來台做慈善。當前全市場狂熱背後的剛性底氣，來自於跨國科技巨頭實打實的**「資本支出（CAPEX）落地」**。
-            經數據查證，輝達（NVIDIA）已將年度在台採購與建廠規模擴張至 **1,500 億美元**，加諸超微（AMD）承諾之 **100 億美元**，以及微軟、Google、美光等大廠持續灌入的雲端資料中心與 HBM 基礎建設投資，總規模正式逼近 **2,000 億美元（約合新台幣 6.4 兆元）**。
+            外資絕非來台做慈善。當前全市場狂熱背後的剛性底氣，來自於跨國科技巨頭實打實的<strong>「資本支出（CAPEX）落地」</strong>。
+            經數據查證，輝達（NVIDIA）已將年度在台採購與建廠規模擴張至 <strong>1,500 億美元</strong>，加諸超微（AMD）承諾之 <strong>100 億美元</strong>，以及微軟、Google、美光等大廠持續灌入的雲端資料中心與 HBM 基礎建設投資，總規模正式逼近 <strong>2,000 億美元（約合新台幣 6.4 兆元）</strong>。
         </p>
-        <p style="font-weight: 500;">
+        <p style="font-weight: 500; margin-top: 15px;">
             這筆等同於台灣四分之一 GDP 總量的資金，正沿著台灣 200 公里的實體半導體與機櫃聚落無情展開。請觀看下方當月總經核心影音解析，透視這場國運級造山運動的底層金融邏輯：
         </p>
         
@@ -221,8 +225,8 @@
         <p>
             目前的全球總經體系呈現極端不對稱的「K 型復甦」。只要與中國通縮房地產、或是歐洲停滯性通膨深度綁定的產業，表現均極度慘淡。然而，由美國 AI 科技巨頭與台灣先進製程所構成的「AI 鐵幕陣營」，則在雲端軍備競賽中瘋狂暴走。
         </p>
-        <p>
-            最關鍵的總經質變指標在於：**美國從台灣進口的貿易總金額，歷史性首度黃金交叉超越中國。** 台灣輸出的是極度昂貴、具備絕對定價權的「算力奢侈品」，這徹底反轉了台灣過去三十年的勞動力與貿易結構。
+        <p style="margin-top: 15px;">
+            最關鍵的總經質變指標在於：<strong>美國從台灣進口的貿易總金額，歷史性首度黃金交叉超越中國。</strong> 台灣輸出的是極度昂貴、具備絕對定價權的「算力奢侈品」，這徹底反轉了台灣過去三十年的勞動力與貿易結構。
         </p>
     </div>
 
@@ -248,7 +252,7 @@
         </p>
         <ul class="bullet-list">
             <li>
-                ⚠️ <strong>資源掠奪效應：</strong> AI 先進製程與算力中心屬於吃電、吃水的極端怪獸。龐大的資本投入將導致島內工業電價、水價及土地成本持續看漲，這將對無轉型能力的傳統製造業（鋼鐵、塑化、工具機）造成毁灭性的營運擠壓。
+                ⚠️ <strong>資源掠奪效應：</strong> AI 先進製程與算力中心屬於吃電、吃水的極端怪獸。龐大的資本投入將導致島內工業電價、水價及土地成本持續看漲，這將對無轉型能力的傳統製造業（鋼鐵、塑化、工具機）造成毀滅性的營運擠壓。
             </li>
             <li>
                 ⚠️ <strong>長鞭效應隱患：</strong> 當前這場年砸數千億美元的 AI 軍備競賽屬於 B2B 階段。若未來 2~3 年內，終端消費者（B2C）端的應用無法成功變現，導致美國科技巨頭削減資本支出，長鞭效應的反撲將會引發極度劇烈的庫存調整與資產洗盤。
