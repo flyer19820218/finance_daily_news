@@ -33,7 +33,7 @@ header {visibility: hidden !important;}
 /* 專門狙擊右下角的氣球標籤 */
 div[class^="viewerBadge"] {display: none !important;}
 
-:root { color-scheme: light !important; --up:#16a34a; --down:#ef4444; --text:#0f172a; --muted:#64748b; --border:#e7ebf3; }
+:root { color-scheme: light !important; --up:#ef4444; --down:#16a34a; --text:#0f172a; --muted:#64748b; --border:#e7ebf3; }
 .block-container { padding: 0.8rem 0.6rem !important; }
 html, body, [data-testid="stAppViewContainer"] { 
     background-color: #FFFFFF !important; 
@@ -59,8 +59,8 @@ p, span, h1, h2, h3, label { color: #000000 !important; }
 .combined-table td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; }
 .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 20px; }
 .m-tile { background: #ffffff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 2px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; }
-.m-tile.up-bg { background: #f0fdf4 !important; border-color: #bbf7d0; }
-.m-tile.down-bg { background: #fef2f2 !important; border-color: #fecaca; }
+.m-tile.up-bg { background: #fef2f2 !important; border-color: #fecaca; }
+.m-tile.down-bg { background: #f0fdf4 !important; border-color: #bbf7d0; }
 .m-name { color: var(--muted) !important; font-size: 9px; white-space: nowrap; letter-spacing: -0.3px; font-weight: 700; }
 .m-price { font-size: 16px; font-weight: 900; margin: 3px 0; color: #0f172a !important; letter-spacing: -0.5px; }
 .m-pct { font-size: 11px; font-weight: 800; }
