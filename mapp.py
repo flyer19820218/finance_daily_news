@@ -301,7 +301,7 @@ market_banner_html = f'''
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
         <div style="flex: 1.2; min-width: 250px; border-right: 1px solid #e2e8f0; padding-right: 10px;">
             <div style="font-size: 16px; color: #64748b; margin-bottom: 6px;">恐慌指標 / 匯率</div>
-            <div style="font-size: 25px; font-weight: 700; color: #0f172a;">
+            <div style="font-size: 20px; font-weight: 700; color: #0f172a;">
                 VIX {vix_val} <span style="font-size:16px; font-weight:normal; color:#64748b;">({vix_trend})</span> 
                 <span style="color: #cbd5e1; margin: 0 10px;">|</span> 
                 TWD {usd_val}
