@@ -31,11 +31,9 @@ jobs:
 
       - name: Run agent
         env:
-          # 統一執行完整報告，腳本會根據執行當天的星期幾自動判斷是晨報還是週末版
-          TASK_TYPE: 'full_report'
+          # 優先讀取手動觸發選項，定時排程則預設為 full_report
+          TASK_TYPE: ${{ inputs.task_type || 'full_report' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python finance_news_agent.py
 
       - name: Commit & push
