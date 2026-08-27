@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>台灣 3～5 年總體經濟戰略分析報告（2026 年 9 月號） ｜ 護國群山戰情室</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="window.chartLoadFailed = true;"></script>
+    
+    <style>
+        /* =========================================
+            🎨 核心色彩變數與豐富視覺階層 (非純白高對比設計)
+           ========================================= */
+        :root {
+            --primary: #0f172a;
+            --accent: #1e40af;
+            --accent-light: #eff6ff;
+            --accent-border: #bfdbfe;
+            --bg-color: #f1f5f9; /* 柔和雅緻灰藍底色，徹底告別生硬純白 */
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border: #cbd5e1;
+            
+            /* 豐富主題強調色 */
+            --c-blue: #1d4ed8;
+            --c-cyan: #0284c7;
+            --c-purple: #6d28d9;
+            --c-amber: #b45309;
+            --c-emerald: #047857;
+            --c-rose: #be123c;
+            
+            /* 柔和標籤背景 */
+            --badge-blue: #dbeafe;
+            --badge-amber: #fef3c7;
+            --badge-emerald: #d1fae5;
+            --badge-rose: #ffe4e6;
+            --badge-purple: #ede9fe;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #f8fafc;
+                --accent: #3b82f6;
+                --accent-light: #1e293b;
+                --accent-border: #334155;
+                --bg-color: #0b0f19;
+                --card-bg: #151e2e;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border: #334155;
+                
+                --c-blue: #60a5fa;
+                --c-cyan: #38bdf8;
+                --c-purple: #a78bfa;
+                --c-amber: #fbbf24;
+                --c-emerald: #34d399;
+                --c-rose: #fb7185;
+                
+                --badge-blue: #1e3a8a;
+                --badge-amber: #78350f;
+                --badge-emerald: #064e3b;
+                --badge-rose: #881337;
+                --badge-purple: #4c1d95;
+            }
+        }
+
+        /* =========================================
+            📱 極致手機排版與防白屏優化
+           ========================================= */
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.85;
+            margin: 0;
+            padding: 24px 16px;
+            scroll-behavior: smooth;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; }
+
+        /* 頂部看板 */
+        header {
+            text-align: center;
+            padding: 38px 22px;
+            background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%);
+            border-radius: 18px;
+            border: 2px solid var(--accent-border);
+            margin-bottom: 26px;
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            header {
+                background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        h1 { 
+            font-size: 1.95rem; 
+            font-weight: 900; 
+            color: var(--primary); 
+            margin: 0 0 10px 0; 
+            letter-spacing: -0.5px; 
+            line-height: 1.35;
+        }
+        
+        .meta-info { 
+            font-size: 0.98rem; 
+            color: var(--text-muted); 
+            font-weight: 600; 
+            margin-bottom: 26px; 
+        }
+
+        /* 四大指標卡片 */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card.c-red { border-top: 4px solid var(--c-rose); }
+        .stat-card.c-blue { border-top: 4px solid var(--c-blue); }
+        .stat-card.c-cyan { border-top: 4px solid var(--c-cyan); }
+        .stat-card.c-green { border-top: 4px solid var(--c-emerald); }
+
+        .stat-value { font-size: 1.38rem; font-weight: 900; color: var(--primary); }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; margin-top: 6px; }
+
+        /* 卡片共用樣式 */
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 34px 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+            text-align: justify;
+        }
+
+        /* 專屬章節頂部彩帶 */
+        .card-ch1 { border-top: 6px solid var(--c-blue); }
+        .card-ch2 { border-top: 6px solid var(--c-cyan); }
+        .card-ch3 { border-top: 6px solid var(--c-purple); }
+        .card-ch4 { border-top: 6px solid var(--c-amber); }
+        .card-db  { border-top: 6px solid var(--c-emerald); }
+        .card-focus {
+            background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+            border: 2px solid #bfdbfe;
+            border-top: 6px solid var(--c-rose);
+        }
+        .card-summary {
+            background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+            border: 2px solid #bbf7d0;
+            border-top: 6px solid var(--c-emerald);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .card-focus { background: linear-gradient(145deg, #1e293b 0%, #172554 100%); border-color: #1e3a8a; }
+            .card-summary { background: linear-gradient(145deg, #1e293b 0%, #064e3b 100%); border-color: #065f46; }
+        }
+
+        h2 { 
+            color: var(--primary); 
+            font-size: 1.38rem; 
+            font-weight: 900; 
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            line-height: 1.45; 
+        }
+
+        /* 🎨 彩色子標題設計 (賦予視覺色彩層次) */
+        h3 { 
+            font-size: 1.15rem; 
+            font-weight: 800; 
+            margin-top: 26px; 
+            margin-bottom: 14px; 
+            padding: 8px 14px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        h3.title-blue   { color: var(--c-blue); background: var(--badge-blue); }
+        h3.title-cyan   { color: var(--c-cyan); background: #e0f2fe; }
+        h3.title-purple { color: var(--c-purple); background: var(--badge-purple); }
+        h3.title-amber  { color: var(--c-amber); background: var(--badge-amber); }
+        h3.title-green  { color: var(--c-emerald); background: var(--badge-emerald); }
+
+        @media (prefers-color-scheme: dark) {
+            h3.title-cyan { background: #075985; }
+        }
+
+        /* 粗體加強與特殊強調標籤 */
+        strong { 
+            color: #0f172a; 
+            font-weight: 800; 
+            background: rgba(254, 240, 138, 0.35); /* 柔和螢光底亮色，提高閱讀效率 */
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            strong { 
+                color: #ffffff; 
+                background: rgba(59, 130, 246, 0.25);
+            }
+        }
+
+        .tag-pill {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* 列表區塊美化 */
+        .bullet-list { list-style: none; padding: 0; margin: 20px 0; }
+        .bullet-list li { 
+            margin-bottom: 16px; 
+            background: #f8fafc; 
+            padding: 18px 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--c-blue); 
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .bullet-list li { background: #1a2234; }
+        }
+
+        .bullet-list li.border-cyan   { border-left-color: var(--c-cyan); }
+        .bullet-list li.border-purple { border-left-color: var(--c-purple); }
+        .bullet-list li.border-amber  { border-left-color: var(--c-amber); }
+        .bullet-list li.border-green  { border-left-color: var(--c-emerald); }
+
+        .bullet-list li strong { font-size: 1.05rem; }
+
+        /* =========================================
+            📊 表格排版 (色彩對比提升)
+           ========================================= */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 22px 0;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .data-table th, .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .data-table th {
+            background-color: #e2e8f0;
+            color: #0f172a;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .data-table th { background-color: #1e293b; color: #f8fafc; }
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: rgba(241, 245, 249, 0.6);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .data-table tbody tr:nth-child(even) { background-color: rgba(30, 41, 59, 0.4); }
+        }
+
+        .badge-red {
+            background: #fee2e2;
+            color: #b91c1c;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .badge-blue {
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* =========================================
+            📈 圖表容器與備援機制
+           ========================================= */
+        .chart-wrapper {
+            position: relative;
+            height: 320px;
+            width: 100%;
+            margin: 28px 0 16px 0;
+            padding: 14px;
+            background: #f8fafc;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .chart-wrapper { background: #131b29; }
+        }
+
+        .fallback-table-wrapper { display: none; margin: 20px 0; }
+
+        .footer { 
+            text-align: center; 
+            color: var(--text-muted); 
+            font-size: 0.84rem; 
+            margin-top: 45px; 
+            padding-top: 26px; 
+            border-top: 1px solid var(--border); 
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 14px 10px; }
+            header { padding: 24px 14px; margin-bottom: 18px; }
+            h1 { font-size: 1.6rem; }
+            .highlight-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-value { font-size: 1.25rem; }
+            .stat-label { font-size: 0.74rem; }
+            .section-card { padding: 24px 16px; margin-bottom: 20px; }
+            h2 { font-size: 1.25rem; }
+            h3 { font-size: 1.05rem; }
+            .chart-wrapper { height: 260px; }
+            .data-table th, .data-table td { padding: 10px 8px; font-size: 0.84rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <span class="tag-pill" style="background-color: var(--badge-blue); color: var(--c-blue);">🔥 宏觀戰略展望 · 2026年9月號</span>
+        <h1>台灣 3～5 年總體經濟戰略分析報告</h1>
+        <div class="meta-info">護國群山戰情室 ｜ AI 資本大週期定錨 · 全球三足鼎立 · 機櫃全域算力</div>
+        
+        <div class="highlight-grid">
+            <div class="stat-card c-red">
+                <div class="stat-label">🚨 7月景氣對策信號</div>
+                <div class="stat-value" style="color: var(--c-rose);">41 分 (連八紅)</div>
+            </div>
+            <div class="stat-card c-blue">
+                <div class="stat-label">📈 2026 經濟成長率</div>
+                <div class="stat-value" style="color: var(--c-blue);">11.05 % (39年高)</div>
+            </div>
+            <div class="stat-card c-cyan">
+                <div class="stat-label">📦 7月外銷訂單</div>
+                <div class="stat-value" style="color: var(--c-cyan);">979.4 億鎂 (創高)</div>
+            </div>
+            <div class="stat-card c-green">
+                <div class="stat-label">💎 台積電 2026 EPS</div>
+                <div class="stat-value" style="color: var(--c-emerald);">首度叩關 100~107 元</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 置頂外掛特報 -->
+    <div class="section-card card-focus">
+        <span class="tag-pill" style="background-color: var(--badge-rose); color: var(--c-rose);">🚀 置頂外掛特報</span>
+        <h2>🔥 2026 年 9 月核心導讀：跨越概念泡沫，迎向實體硬體「去偽存真」的大驗收時代</h2>
+        <p>
+            近期全球金融市場在科技權值股創歷史新高之際，歷經了短線的高槓桿去化與物理高壓釋放。然而，若抽離市場短期的交易情緒、回歸底層資本熱力學與實體出貨統計，台灣總體經濟正邁入前所未有的<strong>「黃金超級週期」</strong>。
+        </p>
+        <p>
+            輝達（NVIDIA）最新公布的 FY2Q27 財報，將全球四大雲端巨頭（CSP）的資本支出能見度直接定錨至 <strong>2028 年</strong>；台積電德國德勒斯登廠正式動土，宣告<strong>「美、日、歐」全球三角戰略矩陣</strong>完全成型；算力硬體更迎來從「單晶片」向<strong>「機櫃級一體化與全域算力」</strong>的系統級躍遷，並實質外溢至全球<strong>電網現代化與「搶銅大戰」</strong>。
+        </p>
+        <p>
+            本期月報立足於國發會、主計總處、經濟部與財政部剛公布的<strong>全套官方宏觀數據</strong>，為長期投資者與策略分析建立未來 3～5 年最堅實的戰略座標。
+        </p>
+    </div>
+
+    <!-- CHAPTER 01 -->
+    <div class="section-card card-ch1">
+        <h2>CHAPTER 01 ｜ 主軸一：AI 資本支出大週期定錨至 2028 年，硬體「去偽存真」檢驗確立</h2>
+        <p>
+            市場過去半年最核心的疑慮在於：「全球 AI 基礎建設的軍備競賽究竟何時見頂？」本月公布的重磅數據徹底化解了這層焦慮。
+        </p>
+        
+        <h3 class="title-blue">📊 關鍵數據與事實：輝達 FY2Q27 財報定錨長線三年軌道</h3>
+        <p>
+            輝達（NVIDIA）公布 FY2Q27 財報，單季營收達 <strong>962 億美元</strong>（年增 106%），其中核心資料中心營收高達 <strong>890 億美元</strong>（年增 117%），毛利率穩居 <strong>75%</strong> 的歷史極限高位。官方對下季給予 <strong>1,080 億美元</strong> 的強勁指引，並明確表示受惠於 B300 規模放量與次世代 Rubin 晶片出貨，<strong>預估至 2028 財年營收將再增長 70%</strong>（且該預測完全未計入中國市場）。
+        </p>
+
+        <h3 class="title-blue">🔭 未來 3～5 年長線戰略影響：</h3>
+        <ul class="bullet-list">
+            <li>
+                <strong>消除資本支出見頂疑慮：</strong>
+                <br>全球四大雲端巨頭（Microsoft、Google、AWS、Meta）的算力資本支出（CapEx）並非短期泡沫，而是持續至 <strong>2028 年以後的長期結構性剛性投資</strong>，為台廠提供了前所未見的高能見度訂單跑道。
+            </li>
+            <li>
+                <strong>淘汰純題材概念，資金向實質「造鏟者」集中：</strong>
+                <br>市場正式告別「沾邊即漲」的炒作階段，進入嚴苛的<strong>「實質 EPS 與自由現金流」</strong>檢驗期。缺乏實質營收的概念股面臨估值殺戮，全球資本加速流向掌握實體產能、先進封裝與高良率出貨的<strong>台灣伺服器與半導體供應鏈</strong>。
+            </li>
+        </ul>
+    </div>
+
+    <!-- CHAPTER 02 -->
+    <div class="section-card card-ch2">
+        <h2>CHAPTER 02 ｜ 主軸二：台積電「全球三足鼎立」戰略成形，外資全面上修未來三年 EPS 能階</h2>
+        <p>
+            台積電（2330）已經徹底跨越傳統景氣循環股的範疇，轉型為掌控全球資本與 AI 發展咽喉的<strong>「終極算力水電電力公司」</strong>。
+        </p>
+        
+        <h3 class="title-cyan">🌍 關鍵數據與事實：全球戰略三角矩陣落地與 EPS 階梯突破</h3>
+        <p>
+            台積電德國德勒斯登廠（ESMC）正式動土（歐盟晶片法案首案），美（亞利桑那）、日（熊本）、歐（德勒斯登）全球三角戰略矩陣成形，在地緣政治上奠定不可撼動的矽盾韌性。外資法人機構在最新訪查後，全面調升未來三年獲利預測：
+        </p>
+
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>預測年份</th>
+                        <th>外資機構 EPS 預估區間</th>
+                        <th>成長動能與結構性關鍵</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026 年</strong></td>
+                        <td><span class="badge-blue">99.8 ～ 107.6 元</span></td>
+                        <td>首次歷史性叩關<strong>「百元 EPS」</strong>大關，3 奈米滿載、2 奈米年底小量試產</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2027 年</strong></td>
+                        <td><span class="badge-blue">125 ～ 153 元</span></td>
+                        <td><strong>2 奈米全面放量</strong>，CoWoS 產能翻倍，先進製程傳聞調漲 <strong>5%～10%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2028 年</strong></td>
+                        <td><span class="badge-blue">165 ～ 198 元</span></td>
+                        <td><strong>A16 埃米製程與面板級新封裝</strong>大規模量產，三年總資本支出挑戰 <strong>2,000 億美元</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-wrapper" id="canvas-container">
+            <canvas id="tsmcEpsChart"></canvas>
+        </div>
+        <div class="fallback-table-wrapper" id="fallback-table">
+            <p><strong>備援數據：台積電外資預估中位數 EPS 階梯</strong></p>
+            <table class="data-table">
+                <tr><th>年份</th><th>2025 (實績基期)</th><th>2026 (外資預估)</th><th>2027 (外資預估)</th><th>2028 (長線推估)</th></tr>
+                <tr><td>EPS (元)</td><td>58.5 元</td><td>103.7 元</td><td>139.0 元</td><td>181.5 元</td></tr>
+            </table>
+        </div>
+
+        <h3 class="title-cyan">🔭 未來 3～5 年長線戰略影響：</h3>
+        <ul class="bullet-list">
+            <li class="border-cyan">
+                <strong>「全球算力水電公用事業」地位確立：</strong>
+                <br>面對全球不可逆的算力需求，台積電憑藉 <strong>2 奈米與 CoWoS 的極端良率護城河</strong>，成功將龐大的海內外建廠折舊完全轉嫁給終端客戶，享有跨景氣週期的<strong>絕對定價權</strong>。
+            </li>
+            <li class="border-cyan">
+                <strong>0050 的每股實質重估底氣：</strong>
+                <br>台積電佔台股加權指數與元大台灣 50 (0050) 權重逾 <strong>55%～60%</strong>。當台積電 EPS 跨越 100 元向 150～180 元推進，以歷史中性本益比 20～22 倍推估，其個股能階將扎實站穩 <strong>2,000～3,000 元以上</strong>，直接為台股大盤與 0050 的長線資產複利注入最強物理動能。
+            </li>
+        </ul>
+    </div>
+
+    <!-- CHAPTER 03 -->
+    <div class="section-card card-ch3">
+        <h2>CHAPTER 03 ｜ 主軸三：算力硬體典範轉移：從單晶片進化為「機櫃級一體化與全域算力」</h2>
+        <p>
+            算力產業的競爭維度已經發生質的相變——單顆晶片的算力堆疊已觸及散熱與通訊的物理極限，未來的勝負在於<strong>「機櫃級系統集成」</strong>與<strong>「全域算力部署」</strong>。
+        </p>
+        
+        <h3 class="title-purple">🚀 關鍵數據與事實：GB200 放量、Groq 3 LPX 量產與太空算力拓展</h3>
+        <p>
+            輝達 <strong>GB200 NVL72 液冷機櫃</strong> 於第四季進入大規模交貨與 2026 上半年放量；搭載最強推論架構的 <strong>Groq 3 LPX 機櫃</strong> 亦全面進入量產，台灣代工巨頭（鴻海、廣達、緯穎等）產線全面滿載。同時，SpaceX 正式宣布搭載輝達晶片的首批 AI 衛星 <strong>Starmind AI1</strong> 將於明年度提前發射，標誌著算力已正式自地面資料中心突破大氣層，跨入<strong>「全域軌道算力」</strong>。
+        </p>
+
+        <h3 class="title-purple">🔭 未來 3～5 年長線戰略影響：</h3>
+        <ul class="bullet-list">
+            <li class="border-purple">
+                <strong>系統級代工的極高附加價值（System-Level Integration）：</strong>
+                <br>現在的伺服器代工不再是簡單的螺絲組裝，而是整合高階液冷散熱、高速共同封裝光學（CPO）、備援電池模組（BBU）與超大瓦數配電系統的極限工程。台灣硬體製造商掌握全球 <strong>90% 以上</strong>的機櫃整合能力，享有極高技術護城河。
+            </li>
+            <li class="border-purple">
+                <strong>推論（Inference）應用迎來爆發潮：</strong>
+                <br>隨著模型商業化落地，企業端推論需求呈現幾何級數增長，驅動<strong>客製化特殊應用晶片（ASIC）與推論機櫃</strong>進入長達 3～5 年的換代超級週期，推動二線供應鏈迎來實質獲利暴增。
+            </li>
+        </ul>
+    </div>
+
+    <!-- CHAPTER 04 -->
+    <div class="section-card card-ch4">
+        <h2>CHAPTER 04 ｜ 主軸四：算力物理約束浮現：AI 資料中心引爆電網升級與「搶銅大戰」</h2>
+        <p>
+            AI 算力擴張的實體邊界，最終撞上了最古老也是最不可妥協的物理鐵律——<strong>「電力供應與能源傳輸」</strong>。
+        </p>
+        
+        <h3 class="title-amber">⚡ 關鍵數據與事實：GW 級資料中心引爆電網重構與設備長交期</h3>
+        <p>
+            最新財經與產業調研顯示，全球 <strong>GW（百萬瓩）級</strong> 超級 AI 資料中心的快速興建，導致高階電力傳輸設備、高電壓變壓器與特種導電銅線進入全球搶貨潮。台灣重電與變壓器廠（華城、士電、中興電等）外銷訂單能見度已全面延伸至 <strong>2027～2028 年</strong>，變壓器海外交期維持在 <strong>3～4 年</strong> 極端緊繃狀態。
+        </p>
+
+        <h3 class="title-amber">🔭 未來 3～5 年長線戰略影響：</h3>
+        <ul class="bullet-list">
+            <li class="border-amber">
+                <strong>算力瓶頸徹底轉向能源與電網：</strong>
+                <br>晶片運算再快，沒有足夠的電網承載力也無法運作。<strong>「發電、輸電、配電、散熱」</strong>成為 AI 基礎建設不可分割的四位一體，各國電網現代化升級具備長達十年的剛性防禦屬性。
+            </li>
+            <li class="border-amber">
+                <strong>科技資本支出向傳統重電與材料製造業外溢：</strong>
+                <br>AI 巨頭的數千億美元 CapEx 實質漫溢至重電、特種線纜與散熱金屬產業，打破了以往「僅科技軟體獨贏」的狹隘局限，為台灣實體重工業帶來歷史級的結構性重估。
+            </li>
+        </ul>
+    </div>
+
+    <!-- 總經基底數據庫 -->
+    <div class="section-card card-db">
+        <h2>📊【總經基底數據庫】最新官方發布指標與歷史戰略意涵</h2>
+        <p>
+            宏觀戰略的底氣，必須立足於最權威的官方實體統計。以下為國發會、主計總處、經濟部與財政部截至 <strong>2026 年 8 月最新公布</strong> 之官方數據：
+        </p>
+
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>總經核心指標</th>
+                        <th>最新官方數值</th>
+                        <th>歷史紀錄與戰略意涵</th>
+                        <th>主管機關來源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>景氣對策信號<br>(景氣燈號)</strong></td>
+                        <td><span class="badge-red">41 分，續亮「紅燈」</span><br>(連續第 8 個月亮紅燈)</td>
+                        <td>創下 1984 年現行制度以來 <strong>42 年第二長連紅紀錄</strong>，領先與同時指標持續向上。</td>
+                        <td>國家發展委員會<br>(8/27 最新公布)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>經濟成長率<br>(GDP)</strong></td>
+                        <td><span class="badge-blue">2026 全年上修至 11.05%</span><br>(上半年實質成長 14.15%)</td>
+                        <td>創下 <strong>39 年來新高</strong>（1987年以來最高增幅），每人 GDP 歷史性突破 <strong>45,332 美元</strong>。</td>
+                        <td>行政院主計總處<br>(8/14 最新發布)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>外銷訂單統計<br>(出口貿易訂單)</strong></td>
+                        <td><span class="badge-blue">7 月單月衝上 979.4 億美元</span><br>(年增 61.9%，連 18 紅)</td>
+                        <td>創<strong>歷年單月歷史新高</strong>，累計前 7 月突破 6,000 億美元，9 月有望挑戰千億美元大關。</td>
+                        <td>經濟部統計處<br>(8月最新發布)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>海關出口貿易<br>(貿易總值)</strong></td>
+                        <td><strong>全年商品出口估達 9,036 億美元</strong><br>(全年出口年增率估達 41.19%)</td>
+                        <td>創半世紀以來最強出口擴張，高階資通訊與半導體產品輸出動能極端強勁。</td>
+                        <td>財政部統計處</td>
+                    </tr>
+                    <tr>
+                        <td><strong>工業與製造業生產</strong></td>
+                        <td><strong>7 月工業 145.24 / 製造業 147.65</strong><br>(雙創歷史新高，連 29 紅)</td>
+                        <td>積體電路指數衝上 <strong>174.96（連 31 紅）</strong>，電腦電子光學業年增率高達 <strong>95.62%</strong>。</td>
+                        <td>經濟部統計處</td>
+                    </tr>
+                    <tr>
+                        <td><strong>上市櫃企業獲利</strong></td>
+                        <td><strong>上半年獲利突破 3.6 兆元</strong><br>(全年獲利預估達 7.2～7.8 兆元)</td>
+                        <td>全年獲利預估大增逾 <strong>50%</strong>，實打實的企業淨利直接支撐台股獲利基本面與配息動能。</td>
+                        <td>證交所 / 法人彙整</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="title-green">📅 核心指標近 6 個月連續時序表（2026 年 2 月 ～ 7 月）</h3>
+        <p>
+            觀察過去半年國發會景氣燈號、經濟部外銷訂單與財政部海關實際進出口出超差額之變化軌跡，展現出高度一致的實體擴張節奏：
+        </p>
+
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>統計月份</th>
+                        <th>景氣燈號 (分數)</th>
+                        <th>外銷訂單金額 (年增率)</th>
+                        <th>海關出口金額</th>
+                        <th>海關進口金額</th>
+                        <th>實際出超差額</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026 年 7 月</strong></td>
+                        <td><span class="badge-red">紅燈 (41分)</span></td>
+                        <td><strong>979.4 億美元</strong> (+61.9%)</td>
+                        <td>753.0 億美元</td>
+                        <td>581.3 億美元</td>
+                        <td><span class="badge-blue">171.7 億美元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 年 6 月</strong></td>
+                        <td><span class="badge-red">紅燈 (41分)</span></td>
+                        <td><strong>952.6 億美元</strong> (+59.4%)</td>
+                        <td>748.3 億美元</td>
+                        <td>626.3 億美元</td>
+                        <td><span class="badge-blue">122.0 億美元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 年 5 月</strong></td>
+                        <td><span class="badge-red">紅燈 (39分)</span></td>
+                        <td><strong>894.8 億美元</strong> (+47.2%)</td>
+                        <td>784.8 億美元</td>
+                        <td>605.7 億美元</td>
+                        <td><span class="badge-blue">179.1 億美元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 年 4 月</strong></td>
+                        <td><span class="badge-red">紅燈 (41分)</span></td>
+                        <td><strong>874.5 億美元</strong> (+48.1%)</td>
+                        <td>676.2 億美元</td>
+                        <td>532.7 億美元</td>
+                        <td><span class="badge-blue">143.5 億美元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 年 3 月</strong></td>
+                        <td><span class="badge-red">紅燈 (41分)</span></td>
+                        <td><strong>911.2 億美元</strong> (+65.9%)</td>
+                        <td>801.8 億美元</td>
+                        <td>589.1 億美元</td>
+                        <td><span class="badge-blue">212.7 億美元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 年 2 月</strong></td>
+                        <td><span class="badge-red">紅燈 (39分)</span></td>
+                        <td><strong>638.8 億美元</strong> (+23.8%)</td>
+                        <td>498.0 億美元</td>
+                        <td>370.3 億美元</td>
+                        <td><span class="badge-blue">127.7 億美元</span></td>
+                    </tr>
+                    <tr style="background-color: rgba(0,0,0,0.02); font-style: italic;">
+                        <td><em>(參考) 1 月</em></td>
+                        <td><span class="badge-red">紅燈 (39分)</span></td>
+                        <td><em>769.1 億美元 (+60.1%)</em></td>
+                        <td><em>657.7 億美元</em></td>
+                        <td><em>468.7 億美元</em></td>
+                        <td><em>188.9 億美元</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+            * 數據註記：2～7 月近半年累計出超達 <strong>956.7 億美元</strong>；若加計 1 月，1～7 月累計出超正式突破千億美元大關，達 <strong>1,145.6 億美元</strong>。
+        </p>
+    </div>
+
+    <!-- 戰略收斂 -->
+    <div class="section-card card-summary">
+        <h2>🎯 戰略收斂：順應物理慣性，抱緊掌握全球 AI 硬體收稅權的實體生產資料</h2>
+        <p>
+            回顧本月四大戰略主軸與全套宏觀數據，我們得到一個最清晰的底層真理：<strong>「全球 AI 算力的熱力學膨脹，正在無情地將真金白銀注入台灣的實體硬體聚落」</strong>。
+        </p>
+        <p>
+            市場每天都有無數短線雜訊與恐慌回檔，但總經物理學告訴我們：系統的運行軌跡取決於<strong>基礎內能，而不是風切聲</strong>。當台積電的三年資本支出達 2,000 億美元、EPS 叩關百元向 150～180 元邁進，當外銷訂單與實體出超持續創下歷史新高，台灣最具代表性的優質資產（如元大台灣 50 / 0050 ETF 與核心供應鏈龍頭）正迎來前所未有的<strong>價值重估</strong>。
+        </p>
+        <p>
+            面對未來 3～5 年的國運級大浪潮，最理性的投資策略不是頻繁猜測短線高低點，而是維持充足的現金流防禦，<strong>順應物理慣性，抱緊全人類不可或缺的硬體收路費關口</strong>，靜享時間與複利帶來的長期豐厚回報。
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>資料來源：國家發展委員會、行政院主計總處、經濟部統計處、財政部統計處、證券交易所、NVIDIA 官方財報、外資法人研究報告</p>
+        <p>本報告秉持客觀中立之學術研究視角。內文提及之數據與產業推估僅供戰略研究參考，不構成任何買賣與投資建議。<br>© 2026 護國群山戰情室</p>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. 檢查 Chart.js 是否載入成功 (防白屏與離線備援)
+        if (typeof Chart === 'undefined' || window.chartLoadFailed) {
+            console.warn("偵測到圖表腳本未載入，切換至備援表格...");
+            const cContainer = document.getElementById('canvas-container');
+            const fTable = document.getElementById('fallback-table');
+            if (cContainer) cContainer.style.display = 'none';
+            if (fTable) fTable.style.display = 'block';
+            return;
+        }
+
+        try {
+            const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const textCfgColor = isDark ? '#94a3b8' : '#475569';
+            const gridCfgColor = isDark ? '#334155' : '#e2e8f0';
+
+            // 2. 渲染台積電未來三年 EPS 階梯圖表
+            const ctx = document.getElementById('tsmcEpsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['2025 (基期實績)', '2026 (外資預估)', '2027 (外資預估)', '2028 (長線推估)'],
+                    datasets: [{
+                        label: '台積電預估 EPS 中位數 (元)',
+                        data: [58.5, 103.7, 139.0, 181.5],
+                        backgroundColor: [
+                            'rgba(100, 116, 139, 0.85)',
+                            'rgba(37, 99, 235, 0.9)',
+                            'rgba(2, 132, 199, 0.9)',
+                            'rgba(5, 150, 105, 0.95)'
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) { return `預估 EPS: ${context.raw} 元`; }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { 
+                            ticks: { color: textCfgColor, font: { weight: 'bold', size: 12 } }, 
+                            grid: { display: false }
+                        },
+                        y: { 
+                            ticks: { color: textCfgColor, stepSize: 30 }, 
+                            grid: { color: gridCfgColor },
+                            title: { display: true, text: 'EPS 每股盈餘 (新台幣元)', color: textCfgColor, font: { weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("圖表渲染異常，無痛切換為備援表格:", error);
+            const cContainer = document.getElementById('canvas-container');
+            const fTable = document.getElementById('fallback-table');
+            if (cContainer) cContainer.style.display = 'none';
+            if (fTable) fTable.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
