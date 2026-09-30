@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f1f5f9">
+    <title>台灣五年總體經濟展望（2026 年 10 月號）｜護國群山戰情室</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="window.chartLoadFailed = true;"></script>
+    <style>
+        :root {
+            --primary:#0f172a; --accent:#1e40af; --accent-light:#eff6ff; --accent-border:#bfdbfe;
+            --bg-color:#f1f5f9; --card-bg:#fff; --text-main:#1e293b; --text-muted:#475569; --border:#cbd5e1;
+            --c-blue:#1d4ed8; --c-cyan:#0284c7; --c-purple:#6d28d9; --c-amber:#b45309; --c-emerald:#047857; --c-rose:#be123c;
+            --badge-blue:#dbeafe; --badge-amber:#fef3c7; --badge-emerald:#d1fae5; --badge-rose:#ffe4e6; --badge-purple:#ede9fe;
+        }
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --primary:#f8fafc; --accent:#3b82f6; --accent-light:#1e293b; --accent-border:#334155;
+                --bg-color:#0b0f19; --card-bg:#151e2e; --text-main:#f1f5f9; --text-muted:#94a3b8; --border:#334155;
+                --c-blue:#60a5fa; --c-cyan:#38bdf8; --c-purple:#a78bfa; --c-amber:#fbbf24; --c-emerald:#34d399; --c-rose:#fb7185;
+                --badge-blue:#1e3a8a; --badge-amber:#78350f; --badge-emerald:#064e3b; --badge-rose:#881337; --badge-purple:#4c1d95;
+            }
+        }
+        * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+            background:var(--bg-color); color:var(--text-main); line-height:1.85; margin:0; padding:24px 16px;
+        }
+        a { color:var(--c-blue); text-underline-offset:3px; }
+        a:hover { opacity:.82; }
+        .container { max-width:960px; margin:0 auto; }
+        header {
+            text-align:center; padding:38px 22px; background:linear-gradient(145deg,#fff 0%,#e0f2fe 100%);
+            border-radius:18px; border:2px solid var(--accent-border); margin-bottom:26px;
+            box-shadow:0 8px 20px rgba(30,64,175,.06);
+        }
+        @media (prefers-color-scheme:dark) {
+            header { background:linear-gradient(145deg,#1e293b 0%,#0f172a 100%); box-shadow:0 8px 20px rgba(0,0,0,.3); }
+        }
+        h1 { font-size:1.95rem; font-weight:900; color:var(--primary); margin:0 0 10px; letter-spacing:-.5px; line-height:1.35; }
+        .meta-info { font-size:.98rem; color:var(--text-muted); font-weight:600; margin-bottom:20px; }
+        .highlight-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px; }
+        .stat-card { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; padding:18px 10px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,.03); }
+        .stat-card.c-red { border-top:4px solid var(--c-rose); }
+        .stat-card.c-blue { border-top:4px solid var(--c-blue); }
+        .stat-card.c-cyan { border-top:4px solid var(--c-cyan); }
+        .stat-card.c-green { border-top:4px solid var(--c-emerald); }
+        .stat-value { font-size:1.25rem; font-weight:900; color:var(--primary); line-height:1.4; }
+        .stat-label { font-size:.8rem; color:var(--text-muted); font-weight:700; margin-top:6px; }
+        .section-card { background:var(--card-bg); border:1px solid var(--border); border-radius:18px; padding:34px 28px; margin-bottom:28px; box-shadow:0 6px 16px rgba(0,0,0,.03); text-align:justify; }
+        .card-ch1 { border-top:6px solid var(--c-blue); }
+        .card-ch2 { border-top:6px solid var(--c-cyan); }
+        .card-ch3 { border-top:6px solid var(--c-purple); }
+        .card-ch4 { border-top:6px solid var(--c-amber); }
+        .card-db { border-top:6px solid var(--c-emerald); }
+        .card-focus { background:linear-gradient(145deg,#fff 0%,#eff6ff 100%); border:2px solid #bfdbfe; border-top:6px solid var(--c-rose); }
+        .card-summary { background:linear-gradient(145deg,#fff 0%,#f0fdf4 100%); border:2px solid #bbf7d0; border-top:6px solid var(--c-emerald); }
+        @media (prefers-color-scheme:dark) {
+            .card-focus { background:linear-gradient(145deg,#1e293b 0%,#172554 100%); border-color:#1e3a8a; }
+            .card-summary { background:linear-gradient(145deg,#1e293b 0%,#064e3b 100%); border-color:#065f46; }
+        }
+        h2 { color:var(--primary); font-size:1.38rem; font-weight:900; margin:0 0 20px; line-height:1.45; }
+        h3 { font-size:1.15rem; font-weight:800; margin:26px 0 14px; padding:8px 14px; border-radius:8px; display:inline-block; }
+        h3.title-blue { color:var(--c-blue); background:var(--badge-blue); }
+        h3.title-cyan { color:var(--c-cyan); background:#e0f2fe; }
+        h3.title-purple { color:var(--c-purple); background:var(--badge-purple); }
+        h3.title-amber { color:var(--c-amber); background:var(--badge-amber); }
+        h3.title-green { color:var(--c-emerald); background:var(--badge-emerald); }
+        @media (prefers-color-scheme:dark) { h3.title-cyan { background:#075985; } }
+        strong { color:#0f172a; font-weight:800; background:rgba(254,240,138,.35); padding:1px 4px; border-radius:4px; }
+        @media (prefers-color-scheme:dark) { strong { color:#fff; background:rgba(59,130,246,.25); } }
+        .tag-pill { display:inline-block; font-size:.78rem; font-weight:800; padding:4px 10px; border-radius:8px; margin-bottom:10px; }
+        .bullet-list { list-style:none; padding:0; margin:20px 0; }
+        .bullet-list li { margin-bottom:16px; background:#f8fafc; padding:18px 20px; border-radius:12px; border:1px solid var(--border); border-left:5px solid var(--c-blue); }
+        @media (prefers-color-scheme:dark) { .bullet-list li { background:#1a2234; } }
+        .bullet-list li.border-cyan { border-left-color:var(--c-cyan); }
+        .bullet-list li.border-purple { border-left-color:var(--c-purple); }
+        .bullet-list li.border-amber { border-left-color:var(--c-amber); }
+        .bullet-list li.border-green { border-left-color:var(--c-emerald); }
+        .bullet-list li strong { font-size:1.05rem; }
+        .table-responsive { width:100%; overflow-x:auto; margin:22px 0; border-radius:14px; border:1px solid var(--border); box-shadow:0 4px 12px rgba(0,0,0,.02); }
+        .data-table { width:100%; border-collapse:collapse; text-align:left; font-size:.92rem; }
+        .data-table th,.data-table td { padding:14px 16px; border-bottom:1px solid var(--border); vertical-align:top; }
+        .data-table th { background:#e2e8f0; color:#0f172a; font-weight:900; white-space:nowrap; }
+        @media (prefers-color-scheme:dark) { .data-table th { background:#1e293b; color:#f8fafc; } }
+        .data-table tbody tr:nth-child(even) { background:rgba(241,245,249,.6); }
+        @media (prefers-color-scheme:dark) { .data-table tbody tr:nth-child(even) { background:rgba(30,41,59,.4); } }
+        .badge-red,.badge-blue,.badge-amber { font-weight:800; padding:3px 8px; border-radius:6px; display:inline-block; white-space:nowrap; }
+        .badge-red { background:#fee2e2; color:#b91c1c; }
+        .badge-blue { background:#dbeafe; color:#1d4ed8; }
+        .badge-amber { background:#fef3c7; color:#92400e; }
+        .chart-wrapper { position:relative; height:320px; width:100%; margin:28px 0 16px; padding:14px; background:#f8fafc; border-radius:14px; border:1px solid var(--border); }
+        @media (prefers-color-scheme:dark) { .chart-wrapper { background:#131b29; } }
+        .fallback-table-wrapper { display:none; margin:20px 0; }
+        .note-box { padding:14px 18px; background:var(--accent-light); border-left:4px solid var(--c-cyan); border-radius:8px; margin:18px 0; }
+        .scenario-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:20px 0; }
+        .scenario { border:1px solid var(--border); border-radius:12px; padding:18px; background:var(--card-bg); }
+        .scenario h3 { display:block; margin:0 0 10px; padding:0; background:none; }
+        .footer { text-align:center; color:var(--text-muted); font-size:.84rem; margin-top:45px; padding-top:26px; border-top:1px solid var(--border); line-height:1.8; }
+        @media (max-width:768px) {
+            body { padding:14px 10px; }
+            header { padding:24px 14px; margin-bottom:18px; }
+            h1 { font-size:1.6rem; }
+            .highlight-grid { grid-template-columns:repeat(2,1fr); gap:8px; }
+            .stat-card { padding:12px 8px; }
+            .stat-value { font-size:1.12rem; }
+            .stat-label { font-size:.74rem; }
+            .section-card { padding:24px 16px; margin-bottom:20px; }
+            h2 { font-size:1.25rem; }
+            h3 { font-size:1.05rem; }
+            .chart-wrapper { height:260px; }
+            .data-table th,.data-table td { padding:10px 8px; font-size:.84rem; }
+            .bullet-list li { padding:15px 14px; }
+            .scenario-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="tag-pill" style="background-color:var(--badge-blue);color:var(--c-blue);">🌐 五年總體展望 · 2026 年 10 月號</span>
+        <h1>台灣總體經濟：AI 資本週期與五年成長路徑</h1>
+        <div class="meta-info">護國群山戰情室 ｜ 以 2026 年 9 月可得資訊，推演 2026～2030 年的機會、條件與風險</div>
+        <p style="margin:0;color:var(--text-muted);font-size:.9rem;">資料截點：2026 年 9 月 30 日。台灣最新完整月度統計多為 8 月；以下為情境分析，不是精確預測。</p>
+        <div class="highlight-grid">
+            <div class="stat-card c-red"><div class="stat-label">📦 8 月外銷訂單</div><div class="stat-value" style="color:var(--c-rose);">1,029.6 億美元</div><div class="stat-label">年增 71.4%</div></div>
+            <div class="stat-card c-blue"><div class="stat-label">📈 2026 GDP 預測</div><div class="stat-value" style="color:var(--c-blue);">11.05%</div><div class="stat-label">主計總處預測值</div></div>
+            <div class="stat-card c-cyan"><div class="stat-label">🏭 台積電 2026 資本預算</div><div class="stat-value" style="color:var(--c-cyan);">600～640 億美元</div><div class="stat-label">公司於 Q2 法說更新</div></div>
+            <div class="stat-card c-green"><div class="stat-label">📊 9/23 加權指數收盤</div><div class="stat-value" style="color:var(--c-emerald);">48,157.29</div><div class="stat-label">當日收盤新高</div></div>
+        </div>
+    </header>
+
+    <div class="section-card card-focus">
+        <span class="tag-pill" style="background:var(--badge-rose);color:var(--c-rose);">🧭 經理人摘要</span>
+        <h2>基準判斷：未來五年 AI 仍是台灣重要成長引擎，但成長會從「擴產」走向「驗收投資回報」</h2>
+        <p>本報告把 Gemini 彙整的九月事件作為主軸：台灣外銷訂單跨過千億美元、台積電先進製程和海外擴建、全球模型與代理競賽、端側 AI 裝置、資料中心能源需求，以及全球利率與資金條件。整體訊號指向同一件事：AI 正由模型能力競爭，延伸為晶片、封裝、資料中心、電力和新型終端的實體投資週期。</p>
+        <p>我的基準情境是：<strong>2026～2030 年 AI 投資大方向仍具延續性，台灣有條件維持高於自身長期平均的成長；但 2026 年的極高增速不宜直線外推。</strong>未來差異將由算力使用率、企業付費、供應鏈產能到位速度、電力與人才供給，以及新增產能的報酬率共同決定。全球經濟仍可能是中等成長，而台灣因科技出口比重高，表現會比全球平均更強、也更具循環性。</p>
+        <p>因此，報告不採「AI 一定不會退潮」或「擴產必然造成過剩」任一極端，而採一個可追蹤的命題：<strong>只要 AI 算力逐步轉成企業收入與生產力，台灣的半導體聚落可把投資潮轉化為中期成長；若商業化慢於供給擴張，成長仍會發生，但獲利、估值與投資回收將分化。</strong></p>
+        <div class="note-box"><strong>報告口徑：</strong>官方統計及公司公告用作事實底座；媒體／供應鏈消息用作產業線索；未公開的產能數字、商業化速度和五年結果則明確視為推估。這是分析分層，不是對題材本身打折。</div>
+    </div>
+
+    <div class="section-card card-ch1">
+        <h2>CHAPTER 01 ｜ 全球 AI 投資週期：從模型競賽走向算力、代理與電力的實體擴張</h2>
+        <p>本月 AI 新聞的共同主線，不只是哪一家模型更強，而是主要企業正在把模型接到可以執行任務的代理、資料中心和終端設備。對總經的意義在於，若代理 AI 增加推論量與企業使用，雲端資本支出可能從訓練大型模型，延伸到長期運行服務；這會拉長晶片、網路、儲存、冷卻和電力設備的需求鏈。</p>
+        <h3 class="title-blue">📊 九月訊號與經濟傳導路徑</h3>
+        <ul class="bullet-list">
+            <li><strong>模型競賽仍然快速前進：</strong>9 月 OpenAI 擴充 GPT-6 系列，Anthropic 發布 Claude Opus 5.5、Sonnet 5.5，Meta 推出個人代理 Muse。這些發展支持「代理 AI 將提高推論和服務需求」的投資假設；五年成長仍取決於使用頻率、企業付費與實際生產力提升，而不只是模型發布次數。<a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">OpenAI</a>｜<a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener">Anthropic Opus</a>｜<a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">Anthropic Sonnet</a>｜<a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener">Meta Muse</a></li>
+            <li class="border-cyan"><strong>多吉瓦資料中心把 AI 需求推進能源系統：</strong>Meta 宣布路易斯安那州 Richland Parish 園區擴至 5 GW compute capacity，並規劃承載 Hyperion 訓練叢集；公司稱該區域投資超過 500 億美元。這是多年建設計畫，不是已全部上線的即時負載；但它清楚顯示大型雲端業者正在把算力建設提升至電力與地方基礎建設規模。<a href="https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/" target="_blank" rel="noopener">Meta 園區公告</a></li>
+            <li class="border-purple"><strong>端側 AI 開始有具體載體：</strong>Apple 新款 Mac mini 以裝置端 AI 和常時運作的代理工作流程為產品定位；Counterpoint 統計 2026 年第一季無顯示智慧眼鏡出貨年增 210%，但 VR 頭戴裝置年減 17%。這顯示消費端可能從笨重頭戴裝置轉向較輕的語音／相機入口；高成長率仍須與絕對出貨量、回購率和服務收入一起看。<a href="https://www.apple.com/tw/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/" target="_blank" rel="noopener">Apple Mac mini</a>｜<a href="https://counterpointresearch.com/de/insights/intelligent-eyewear-up-yoy-driven-by-demand-q1-2026" target="_blank" rel="noopener">Counterpoint 眼鏡研究</a></li>
+            <li class="border-green"><strong>軟硬體整合與空間智慧投資：</strong>AMD 宣布以約 82 億美元全股票交易收購 World Labs，預計仍須完成監管程序。若空間模型逐步進入機器人、設計、模擬與自主系統，算力可能由資料中心延伸至邊緣端；這是有策略邏輯的方向，但收入貢獻需要時間驗證。<a href="https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute" target="_blank" rel="noopener">AMD 官方公告</a></li>
+        </ul>
+        <h3 class="title-blue">🔭 五年觀察：AI 資本支出如何轉成持續需求</h3>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead><tr><th>傳導階段</th><th>五年機會</th><th>需要驗證的量化訊號</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>模型與代理</strong></td><td>企業流程自動化、推論量增加、雲端服務滲透率提升</td><td>企業 AI 支出、付費席次、推論服務收入、客戶留存及使用量</td></tr>
+                    <tr><td><strong>資料中心與算力</strong></td><td>GPU／ASIC、CPU、網通、記憶體、儲存與散熱持續升級</td><td>雲端業者資本支出、資料中心上線速度、利用率、租用價格與折舊</td></tr>
+                    <tr><td><strong>能源與基礎建設</strong></td><td>電網、變壓器、備援電力、冷卻與能源管理的投資外溢</td><td>接電排程、電力採購、設備交期、每單位算力能耗與能源成本</td></tr>
+                    <tr><td><strong>終端與實體 AI</strong></td><td>AI PC、智慧眼鏡、機器人及邊緣運算擴大應用場景</td><td>出貨基數、活躍使用者、裝置留存、應用收入與部署後的效率提升</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>能源是一個實質約束，但同時也會形成新投資需求。Meta 的公告提到園區能源合作和地方電力安排，說明資料中心投資已包含能源系統協調；未來應比較「新增用電」與「發電、輸配電、儲能和效率提升」的速度，而不是只用單一電力缺口預言產業停滯。</p>
+    </div>
+
+    <div class="section-card card-ch2">
+        <h2>CHAPTER 02 ｜ 半導體供給與台積電：強勁需求支持擴產，回報取決於產能轉換效率</h2>
+        <p>台積電和台灣供應鏈站在 AI 基建的關鍵位置。產業領袖提到近 20 座廠同步施工、客戶希望增加產能，以及營建與設備人力限制，呈現的是需求強、供給鏈正在擴張的現場訊號。五年分析的重點不是只算廠房數量，而是估算新資本何時轉為可出貨、可獲利的產能。</p>
+        <h3 class="title-cyan">🏭 公司指引支持投資主線，也呈現成本爬坡</h3>
+        <ul class="bullet-list">
+            <li><strong>台積電提高投資力度：</strong>台積電 Q2 法說將 2026 年資本預算提高至 <strong>600～640 億美元</strong>，公司說明客戶對先進製程需求強、AI 與 agentic AI 形成結構性機會。資本預算約 70%～80% 投向先進製程，約 10% 投向特殊製程，其餘用於先進封裝、測試及相關項目。<a href="https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-07/57b65edbfe6e480e74abe202be983ecbde79e934/TSMC%202Q26%20Transcript.pdf" target="_blank" rel="noopener">台積電 Q2 法說逐字稿</a></li>
+            <li class="border-cyan"><strong>新節點需求與成本同時增加：</strong>公司指出 2 奈米在 2026 下半年快速爬坡，短期可能稀釋毛利約 3～4 個百分點；海外廠初期爬坡亦可能帶來毛利稀釋。這是重要的經理人訊號：需求強可以支持擴產，但新產能在成熟前會先帶來資本支出、折舊和學習成本。</li>
+            <li class="border-purple"><strong>擴廠數量反映投資規模，不等同滿載產能：</strong>SEMICON 論壇提及台灣約 13 座、海外約 5～6 座廠同步施工。不同建案的節點、完工期、裝機、良率和客戶認證不同；在建工地是產業投資能見度，不是可立即出售的晶圓量。<a href="https://money.udn.com/money/story/5612/9730162" target="_blank" rel="noopener">論壇報導</a></li>
+            <li class="border-green"><strong>德州傳聞應視為額外上行情境：</strong>9 月底市場傳出在德州新建大型晶圓廠區，但截至資料截點未見台積電公開確認該方案。台積電在美既有投資與亞利桑那布局已是重要全球化策略；若德州方案日後落實，將擴大在地供應與資本支出，也須評估成本、人才和建置回收期。<a href="https://english.ftvnews.tw/news/2026929W06EA" target="_blank" rel="noopener">德州市場傳聞</a>｜<a href="https://pr.tsmc.com/system/files/newspdf/attachment/84b411e444a0b48e5e96a55a4ca792a3a4889cb7/TSMC%20Intends%20to%20Expand%20Its%20Investment%20in%20the%20United%20States%20to%20US%24165%20Billion%20to%20Power%20the%20Future%20of%20AI_FINAL_%28C%29_wmn.pdf" target="_blank" rel="noopener">台積電美國投資公告</a></li>
+            <li class="border-amber"><strong>成熟製程與封裝也在擴產：</strong>VIS 與 NXP 合資的 VSMC 新加坡 12 吋廠已進入風險試產，目標 2027 年第一季量產，滿載後預計 2029 年月產 44,000 片。先進製程與成熟／特殊製程的需求來源不同，這座新廠提供供應鏈韌性與在地服務的案例，不能簡化成「所有成熟製程長期缺貨」。<a href="https://www.globenewswire.com/news-release/2026/09/28/3369483/0/en/vsmc-celebrates-the-grand-opening-of-its-first-300mm-fab-in-singapore.html" target="_blank" rel="noopener">VSMC／NXP 公告</a></li>
+        </ul>
+        <h3 class="title-cyan">⚖️ 產能擴張的五年收益式</h3>
+        <p><strong>產能的經濟價值 ≈ 可售出產量 × 單位毛利 − 折舊 − 維運與能源成本 − 融資成本。</strong>這不是用來精算單一企業的公式，而是提醒投資判斷要同時看需求和成本。AI 長期滲透若帶來持續訂單，建廠有機會把技術與聚落優勢轉成數年現金流；若需求成長低於供給成長，新廠仍具有戰略價值，但財務回報可能晚於預期，毛利率和資本效率會先受考驗。</p>
+        <div class="note-box"><strong>管理含意：</strong>營建人力、設備裝機、電力、良率、客戶認證與封裝能力是同一條產能鏈的不同環節。最有利的五年路徑，是逐步到位、按需求擴充、讓客戶產品上市時程與產能爬坡相匹配。</div>
+    </div>
+
+    <div class="section-card card-ch3">
+        <h2>CHAPTER 03 ｜ 台灣總體經濟：出口熱度已進入實體數據，下一步看景氣擴散與附加價值</h2>
+        <p>9 月可得的台灣數據相當強。8 月外銷訂單首次突破千億美元，出口、工業生產和景氣燈號同向偏強，主計總處將 2026 年 GDP 成長預測上修至 11.05%。這些數字讓「AI 對台灣已不只是題材」有實體依據；五年期間要回答的問題，是這波繁榮能否擴散到更多產業、薪資與內需，以及台灣能保留多少價值。</p>
+        <h3 class="title-purple">📦 統計數據與長線解讀</h3>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead><tr><th>指標（最新已公布）</th><th>數值</th><th>五年意義</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>8 月外銷訂單</strong></td><td>1,029.6 億美元，年增 71.4%；1～8 月年增 55.0%</td><td>訂單能見度強，AI／資通訊需求是主要推力；訂單最終是否在台灣生產，仍視供應鏈分工而定。</td></tr>
+                    <tr><td><strong>8 月海關出口</strong></td><td>824.0 億美元，年增 41.0%；1～8 月年增 44.2%</td><td>已出貨的實體證據；電子零組件與資通訊產品占出口約八成，集中度同步偏高。</td></tr>
+                    <tr><td><strong>8 月工業生產</strong></td><td>年增 23.47%；製造業年增 24.61%</td><td>製造活動跟上需求；高年增率不應直接外推至未來每年。</td></tr>
+                    <tr><td><strong>景氣對策信號</strong></td><td>8 月 41 分，紅燈；領先指標月增 0.51%</td><td>短中期動能強，後續要看領先指標、庫存及非科技部門能否保持韌性。</td></tr>
+                    <tr><td><strong>全年 GDP 預測</strong></td><td>主計總處 11.05%；央行 11.48%</td><td>是機關依當時資訊所做的預測，顯示今年景氣強，但不代表 2027～2030 也會維持相同速度。</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chart-wrapper" id="orders-chart-container"><canvas id="ordersChart"></canvas></div>
+        <div class="fallback-table-wrapper" id="orders-fallback">
+            <p><strong>備援資料：經濟部外銷訂單金額</strong></p>
+            <div class="table-responsive"><table class="data-table"><thead><tr><th>月份</th><th>2 月</th><th>3 月</th><th>4 月</th><th>5 月</th><th>6 月</th><th>7 月</th><th>8 月</th></tr></thead><tbody><tr><td>億美元</td><td>638.8</td><td>911.2</td><td>874.5</td><td>894.8</td><td>952.6</td><td>979.4</td><td>1,029.6</td></tr></tbody></table></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--text-muted);">資料來源：<a href="https://mnscdn.moea.gov.tw/Mns/populace/news/EpaperDetail.aspx?volume=20260922" target="_blank" rel="noopener">經濟部外銷訂單</a>。農曆年、工作天數及季節因素會影響月間波動。經濟部亦提醒，外銷訂單不必然全數由台灣生產及出口。</p>
+        <h3 class="title-purple">🌱 五年內要看的「繁榮擴散」</h3>
+        <ul class="bullet-list">
+            <li><strong>較佳路徑：</strong>高科技出口與企業投資推高生產力，供應鏈擴大對本地設備、材料、工程服務的採購，就業與實質薪資增加，服務業和家庭消費逐步跟上。</li>
+            <li class="border-cyan"><strong>可能的落差：</strong>高科技企業利潤與股市資產價格先上升，但新增產能大量使用海外供應、勞動需求有限，或傳統產業接單偏弱，則出口繁榮未必平均轉成家庭所得與全產業獲利。</li>
+            <li class="border-amber"><strong>總體穩定關鍵：</strong>電子與資通產品近八成的出口權重，增加台灣對雲端資本支出、科技產品週期、貿易政策及主要市場需求的敏感度。分散客戶、產品和市場，並提升能源韌性，會影響這波成長能否延長。</li>
+        </ul>
+    </div>
+
+    <div class="section-card card-ch4">
+        <h2>CHAPTER 04 ｜ 金融條件與市場評價：台股全球化升級，總經風險與報酬也更敏感</h2>
+        <h3 class="title-amber">🌍 全球利率分化：企業投資仍有資金成本</h3>
+        <p>9 月美國聯準會升息 1 碼至 3.75%～4.00%；日本銀行調整政策利率至約 1.25%；台灣央行維持重貼現率 2%。利率路徑並不同步，企業的資本成本、匯率和資金配置仍會變動。AI 投資能否創造高於資金成本的報酬，未來五年比單一央行會議的短線方向更重要。</p>
+        <ul class="bullet-list">
+            <li><strong>Fed：</strong>9 月 16 日升息 25 個基點至 3.75%～4.00%。<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm" target="_blank" rel="noopener">Fed 決議</a></li>
+            <li class="border-cyan"><strong>日本銀行：</strong>9 月調整短期利率引導至約 1.25%。<a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260918a.pdf" target="_blank" rel="noopener">BOJ 決議</a></li>
+            <li class="border-green"><strong>台灣央行：</strong>9 月維持政策利率不變，重貼現率 2%，另調整選擇性信用管制。<a href="https://www.cbc.gov.tw/tw/cp-302-192864-4319f-1.html" target="_blank" rel="noopener">中央銀行決議</a></li>
+        </ul>
+        <h3 class="title-amber">📈 台股創高：資本市場地位提高，也要觀察集中度</h3>
+        <p>9 月 23 日加權指數收在 48,157.29 點。中央社引述 MarketCapWatch 當日估算，台股市值約 5.3 兆美元、全球排名第四。這反映台灣大型科技企業在全球 AI 投資中的權重上升。五年觀察除了總市值，也應看市場漲幅是否有獲利支撐、各產業參與度、外資與本地資金結構，以及大型權值股集中度。市值排名不是未來報酬率排名。<a href="https://www.cna.com.tw/news/afe/202609230279.aspx" target="_blank" rel="noopener">中央社市場市值報導</a></p>
+        <h3 class="title-amber">🏦 金融流動性：總體寬裕與個別資金管理可以並存</h3>
+        <p>金管會公布 7 月底國銀平均流動性覆蓋比率（LCR）為 115.52%，高於 100% 法定最低值，並表示整體未見明顯資金短缺；同時，市場報導反映個別銀行會依存放款和企業融資需求調整定價。這比較像是景氣投資需求升高下的資金成本管理議題，目前不支持直接判斷為全體銀行系統性流動性危機。<a href="https://www.cna.com.tw/news/afe/202609100313.aspx" target="_blank" rel="noopener">中央社引述金管會說明</a></p>
+        <h3 class="title-amber">🧩 製程以外的供應鏈價值</h3>
+        <p>CPO、玻璃基板／TGV 和先進封裝代表算力帶寬、功耗、散熱與封裝尺寸的下一階段競爭；台灣廠商若能把設備、材料、封裝、測試和系統整合能力一起升級，新增價值有機會擴散到更多產業。各路線的技術成熟和量產時程仍不相同，應以客戶導入、設備出貨和正式量產為後續驗證點。<a href="https://www.cna.com.tw/news/afe/202608300034.aspx" target="_blank" rel="noopener">中央社 CPO 產業進展</a>｜<a href="https://www.cna.com.tw/news/afe/202606170205.aspx" target="_blank" rel="noopener">中央社玻璃基板與 CoPoS</a></p>
+    </div>
+
+    <div class="section-card card-db">
+        <h2>📊【五年展望框架】2026～2030 年三種可驗證情境</h2>
+        <p>情境不是對未來貼標籤，而是讓企業與政策制定者可以隨新資料調整判斷。基準情境採「AI 需求延續、但成長速度正常化」；上行情境和下行情境則說明哪些條件會令結果偏離基準。</p>
+        <div class="scenario-grid">
+            <div class="scenario" style="border-top:5px solid var(--c-emerald);">
+                <h3 class="title-green">基準｜投資延續、回報分化</h3>
+                <p>大型雲端與企業 AI 投資繼續，但年度增速起伏，部分應用先落地、部分投資回收較慢。台灣科技出口仍強，卻由 2026 的極高年增回到更正常的循環增長；先進製程和封裝維持重要，企業間獲利差距擴大。</p>
+                <p><strong>觀察：</strong>雲端資本支出與實際使用量大致同步；外銷訂單仍增長但波動；新廠按計畫分段爬坡。</p>
+            </div>
+            <div class="scenario" style="border-top:5px solid var(--c-blue);">
+                <h3 class="title-blue">上行｜AI 生產力形成新增收入</h3>
+                <p>代理 AI、推論服務、智慧終端與實體 AI 帶來新付費場景，雲端業者能把算力轉成服務收入，企業客戶以效率改善支持持續採購。台灣供應鏈提升本地附加價值，電力、人才和建廠能力同步改善。</p>
+                <p><strong>觀察：</strong>AI 服務收入、企業使用率和留存率提高；客戶擴大採購不只為建置容量；新產能良率和利用率穩步提升。</p>
+            </div>
+            <div class="scenario" style="border-top:5px solid var(--c-amber);">
+                <h3 class="title-amber">下行｜回收期拉長、供給先於需求</h3>
+                <p>算力使用與變現低於預期，客戶推遲建置或轉向更有效率的晶片，供應鏈同時承受庫存調整；新廠折舊、電力、人力和海外營運成本仍在。全球成長、出口與股市可能同步降溫，尤以擴產較快、客戶較集中的企業敏感度最高。</p>
+                <p><strong>觀察：</strong>雲端業者資本支出下修或延期；交期縮短伴隨庫存上升；新節點利用率、毛利和自由現金流下滑。</p>
+            </div>
+        </div>
+        <h3 class="title-green">🧭 經理人與政策端的共同觀測表</h3>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead><tr><th>每季／每月追蹤</th><th>若走向改善</th><th>若走向轉弱</th><th>決策含意</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>AI 客戶投資與使用</strong></td><td>CapEx 和付費使用同步增長</td><td>建置增長、使用與收入停滯</td><td>檢視投資回收期和新訂單品質</td></tr>
+                    <tr><td><strong>台灣訂單到出貨</strong></td><td>訂單、出口、生產同向</td><td>訂單高但出貨不跟、庫存墊高</td><td>調整產能、庫存與營運資金</td></tr>
+                    <tr><td><strong>新增產能</strong></td><td>裝機、認證、良率、利用率依序達標</td><td>工程延誤或投產後利用率不足</td><td>分段投資，保留擴充彈性</td></tr>
+                    <tr><td><strong>能源與人才</strong></td><td>供電、工程人力和設備供應擴充</td><td>電力／工班／設備成為進度瓶頸</td><td>把基礎建設與人才納入產業政策</td></tr>
+                    <tr><td><strong>成長擴散</strong></td><td>薪資、服務消費、非科技產業改善</td><td>出口與股市強，家庭與傳產落後</td><td>提升技能、競爭力和所得傳導</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <h3 class="title-green">🌐 全球環境底色</h3>
+        <p>IMF 2026 年 7 月展望預估全球 GDP 於 2026 年成長 3.0%、2027 年成長 3.4%，同時指出 AI 相關需求支撐科技價值鏈、能源衝擊則使各經濟體表現分化。這支持台灣科技景氣有機會跑贏全球平均的判斷，也提醒台灣仍處於全球需求、能源和貿易政策的連動之中。IMF 對 2028 年以後沒有給出能替代情境分析的精確確定值，本報告不把單一遠期數字當成承諾。<a href="https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026" target="_blank" rel="noopener">IMF 2026 年 7 月 WEO 更新</a></p>
+    </div>
+
+    <div class="section-card card-summary">
+        <h2>🎯 五年總結：看好台灣的戰略位置，同時用投資回報管理景氣週期</h2>
+        <p>從 Gemini 彙整的新聞與已公布數據來看，這波 AI 不是只靠口號：台灣接單、出口和工業生產已強勁走高，雲端業者宣布多吉瓦資料中心，台積電提高年度資本預算，端側 AI、代理和空間智慧也在尋找新的需求入口。這些條件共同支持一個有分量的中期成長機會。</p>
+        <p>我對 2026～2030 年的基準看法是<strong>「結構偏多、循環仍在」</strong>：台灣有機會繼續受益於全球 AI 基建和半導體分工，但五年並非每年直線上升。供給擴張會先增加工程量和資本支出，然後才逐步轉成量產與獲利；需求變化、節點爬坡、電力、人才與全球政策，會決定兩者之間的時間差和回報幅度。</p>
+        <p>因此，近 20 座在建廠房、2 奈米擴產、CPO／玻璃基板、AI 眼鏡與大型資料中心，都值得放在同一張「台灣 AI 產業升級地圖」裡看。它們未必同時、同速成功，但合起來顯示產業投資邊界正在擴大。管理上的核心不是否定這個浪潮，而是持續確認需求是否跟上供給、技術是否變成產品、產品是否形成收入，以及新增價值能否擴散到台灣整體經濟。</p>
+        <p><strong>結論：</strong>台灣未來五年的上行空間真實存在，且 AI 正提高台灣在全球製造與算力供應鏈中的戰略重要性；最可信的樂觀，來自逐季驗證的訂單、出貨、產能利用率與企業現金流。</p>
+    </div>
+
+    <div class="footer">
+        <p>主要資料來源：國際貨幣基金（IMF）、主計總處、經濟部、財政部、國發會、中央銀行、聯準會、日本銀行；公司與產業資料以公司公告、法說會及研究機構資料為主。</p>
+        <p>本報告以 2026 年 9 月 30 日前可得資訊撰寫。中長期展望為條件式推演，實際結果可能不同；內容供研究與管理決策參考，不構成投資建議。<br>© 2026 護國群山戰情室</p>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var chartBox = document.getElementById("orders-chart-container");
+    var fallback = document.getElementById("orders-fallback");
+    if (typeof Chart === "undefined" || window.chartLoadFailed) {
+        if (chartBox) chartBox.style.display = "none";
+        if (fallback) fallback.style.display = "block";
+        return;
+    }
+    try {
+        var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var textColor = dark ? "#94a3b8" : "#475569";
+        var gridColor = dark ? "#334155" : "#e2e8f0";
+        new Chart(document.getElementById("ordersChart").getContext("2d"), {
+            type:"bar",
+            data:{
+                labels:["2 月","3 月","4 月","5 月","6 月","7 月","8 月"],
+                datasets:[{
+                    label:"外銷訂單（億美元）",
+                    data:[638.8,911.2,874.5,894.8,952.6,979.4,1029.6],
+                    backgroundColor:["rgba(100,116,139,.82)","rgba(29,78,216,.88)","rgba(2,132,199,.88)","rgba(109,40,217,.82)","rgba(180,83,9,.82)","rgba(4,120,87,.86)","rgba(190,24,93,.9)"],
+                    borderWidth:0,borderRadius:8
+                }]
+            },
+            options:{
+                responsive:true,maintainAspectRatio:false,
+                plugins:{legend:{display:false}},
+                scales:{
+                    x:{ticks:{color:textColor,font:{weight:"bold"}},grid:{display:false}},
+                    y:{beginAtZero:true,ticks:{color:textColor},grid:{color:gridColor},title:{display:true,text:"億美元",color:textColor}}
+                }
+            }
+        });
+    } catch (e) {
+        if (chartBox) chartBox.style.display = "none";
+        if (fallback) fallback.style.display = "block";
+    }
+});
+</script>
+</body>
+</html>
