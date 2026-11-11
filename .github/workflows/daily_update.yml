@@ -36,6 +36,16 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python finance_news_agent.py
 
+      - name: Update history index (for news.html)
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json, os
+          files = sorted((f for f in os.listdir("data/history") if f.endswith(".json")), reverse=True)
+          with open("data/history_index.json", "w", encoding="utf-8") as fh:
+              json.dump({"files": files}, fh, ensure_ascii=False, indent=1)
+          PY
+
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

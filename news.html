@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-TW" style="color-scheme: light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>財經AI快報</title>
+
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/refs/heads/main/icon.png?v=5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="財經AI快報">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <style>
+    /* 想整體放大／縮小字體：只要改下面這一行的 font-size 即可（所有尺寸都是 rem） */
+    :root { color-scheme: light; --text:#0f172a; --muted:#64748b; --faint:#94a3b8; --border:#e7ebf3; --navy:#1e293b; --blue:#1e40af; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { font-size: clamp(15px, 4.3vw, 20px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: #fff; color: #000; line-height: 1.5;
+      font-family: "HanziPen SC", "翩翩體", "PingFang TC", -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: .7rem .8rem 2rem; }
+
+    /* 標題列 */
+    .head-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; }
+    h1.brand { margin: 0; font-size: 1.75rem; font-weight: 900; color: var(--text); letter-spacing: -.5px; }
+    .sub { color: var(--muted); font-size: .85rem; margin: .15rem 0 .3rem; }
+    .update-time { font-size: .7rem; color: var(--faint); margin-bottom: .6rem; }
+    .speak {
+      background: linear-gradient(135deg, #2563eb, #1e40af); color: #fff; border: none; border-radius: 50px;
+      padding: .45rem 1rem; font: inherit; font-size: .85rem; font-weight: 800; cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,.15); white-space: nowrap;
+    }
+    .speak:active { transform: scale(.97); }
+
+    /* 模式切換（取代 st.radio） */
+    .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: .7rem; }
+    .seg button { font: inherit; font-size: .85rem; font-weight: 700; padding: .4rem .9rem; border: 0; background: #fff; color: var(--muted); cursor: pointer; }
+    .seg button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+    .hist { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-bottom: .8rem; }
+    .hist .full { grid-column: 1 / -1; }
+    .hist select { width: 100%; font: inherit; font-size: .9rem; padding: .45rem .5rem; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: var(--text); }
+    .hist label { display: block; font-size: .72rem; color: var(--muted); margin-bottom: .15rem; }
+
+    /* 區塊標題 */
+    .sec-title { font-size: 1.15rem; font-weight: 900; color: var(--navy); margin: 1.3rem 0 .5rem; }
+
+    /* 市場核心戰略參數 */
+    .banner { background: #f8fafc; border-left: 6px solid var(--blue); padding: 1rem; border-radius: 12px; margin: .4rem 0 1.2rem; box-shadow: 0 8px 22px rgba(2,6,23,.05); }
+    .banner h2 { margin: 0 0 .6rem; font-size: 1.1rem; font-weight: 850; color: var(--blue); }
+    .kv-label { font-size: .78rem; color: var(--muted); margin-bottom: .25rem; }
+    .kv-val { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem 1.1rem; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+    .kv-item { white-space: nowrap; }
+    .kv-val small { font-size: .75rem; font-weight: 400; color: var(--muted); }
+    .banner hr { border: 0; border-top: 1px solid #e2e8f0; margin: .8rem 0; }
+    .lights { display: flex; gap: .55rem; margin-top: .3rem; overflow-x: auto; padding-bottom: .2rem; }
+    .light { display: flex; flex-direction: column; align-items: center; gap: .25rem; flex: 1 0 auto; min-width: 2.6rem; }
+    .light .dot { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.05rem; }
+    .light .mon { font-size: .75rem; font-weight: 700; color: var(--muted); }
+    .light-note { font-size: .68rem; color: var(--faint); margin-top: .4rem; }
+
+    /* AI 摘要 */
+    .report { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 1rem; font-size: 1rem; line-height: 1.8; color: var(--text); box-shadow: inset 0 1px 3px rgba(0,0,0,.05); overflow-wrap: anywhere; }
+    .report .rp-h { font-weight: 900; font-size: 1.08rem; margin: 1rem 0 .3rem; color: var(--blue); }
+    .report .rp-h:first-child { margin-top: 0; }
+    .report .rp-li { padding-left: 1.1rem; text-indent: -1.1rem; margin: .25rem 0; }
+    .report .rp-gap { height: .45rem; }
+    .report strong { font-weight: 800; }
+    .gold-star { color: #FFD700; text-shadow: 0 0 2px rgba(255,215,0,.5); font-weight: bold; margin: 0 1px; }
+    .notice { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; border-radius: 10px; padding: .8rem 1rem; font-size: .9rem; }
+
+    /* 新聞時間軸 */
+    .timeline { border-left: 2px solid #e2e8f0; margin-left: .6rem; padding-left: 1.1rem; margin-bottom: 1rem; }
+    .t-item { position: relative; margin-bottom: 1.1rem; }
+    .t-item::before { content: ''; position: absolute; left: -1.62rem; top: .45rem; width: .65rem; height: .65rem; border-radius: 50%; background: #000; border: 2px solid #fff; }
+    .t-time { font-size: .8rem; color: var(--faint); font-weight: 700; margin-bottom: .15rem; font-family: ui-monospace, Menlo, monospace; }
+    .t-title { display: block; font-size: 1rem; font-weight: 800; color: #000; line-height: 1.5; text-decoration: none; overflow-wrap: anywhere; }
+    .t-title:hover { text-decoration: underline; }
+
+    .status { padding: 2rem 0; text-align: center; color: var(--muted); }
+    .status button { font: inherit; margin-top: .6rem; padding: .45rem 1.1rem; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; }
+    .foot { margin-top: 1.5rem; padding-top: .8rem; border-top: 1px solid var(--border); font-size: .68rem; color: var(--faint); line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="head-row">
+        <h1 class="brand">財經AI快報</h1>
+        <button id="speakBtn" class="speak" type="button" hidden>▶️ 收聽快報</button>
+      </div>
+      <div class="sub">每日重點整理（重大事件｜台股影響｜投資觀察）</div>
+      <div class="update-time" id="updated"></div>
+    </header>
+
+    <div class="seg" role="group" aria-label="檢視模式">
+      <button type="button" id="modeLatest" aria-pressed="true">最新（今日）</button>
+      <button type="button" id="modeHist" aria-pressed="false">歷史回顧</button>
+    </div>
+
+    <div class="hist" id="histPick" hidden>
+      <div><label for="selYear">🗓️ 選擇年份</label><select id="selYear"></select></div>
+      <div><label for="selMonth">📅 選擇月份</label><select id="selMonth"></select></div>
+      <div class="full"><label for="selReport">📄 選擇報告</label><select id="selReport"></select></div>
+    </div>
+
+    <main id="content"><div class="status">載入中…</div></main>
+
+    <div class="foot">
+      本頁之財經數據與 AI 摘要僅供資訊參考，不構成任何投資建議。投資是一場馬拉松，而不是百米衝刺。
+    </div>
+  </div>
+  <noscript><div class="wrap"><div class="notice">此頁面需要啟用 JavaScript 才能顯示內容。</div></div></noscript>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+   * 設定區
+   * ============================================================ */
+  var RAW_BASE = 'https://raw.githubusercontent.com/flyer19820218/finance_daily_news/main/';
+  var TZ = 'Asia/Taipei';
+  var HISTORY_INDEX = 'data/history_index.json'; // 由 GitHub Actions 每日更新的歷史清單
+
+  /* 台灣景氣對策信號（近半年，國發會公布；數字為「修正後」數值）
+   * ★ 每月底國發會公布新一期後，只要更新這一區即可。
+   * 分數對應燈色：38–45 紅燈｜32–37 黃紅燈｜23–31 綠燈｜17–22 黃藍燈｜9–16 藍燈 */
+  var BUSINESS_LIGHTS = {
+    note: '國發會 10/29 公布｜連 10 紅｜9 月為初值，8 月已由 41 修正為 40',
+    items: [
+      { m: '4月', s: 40 },
+      { m: '5月', s: 39 },
+      { m: '6月', s: 41 },
+      { m: '7月', s: 41 },
+      { m: '8月', s: 40 },
+      { m: '9月', s: 41 }
+    ]
+  };
+
+  /* ============================================================
+   * 小工具
+   * ============================================================ */
+  var $ = function (id) { return document.getElementById(id); };
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : '#'; }
+
+  function loadJSON(path) {
+    var bucket = Math.floor(Date.now() / 300000); // 5 分鐘
+    var urls = [RAW_BASE + path + '?v=' + bucket, './' + path];
+    var chain = Promise.reject(new Error('init'));
+    urls.forEach(function (u) {
+      chain = chain.catch(function () {
+        return fetch(u, { cache: 'no-store' }).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        });
+      });
+    });
+    return chain;
+  }
+  function historyPath(file) { return 'data/history/' + encodeURIComponent(file); }
+
+  function twHour() {
+    try {
+      var h = parseInt(new Intl.DateTimeFormat('en-GB', { hour: '2-digit', hour12: false, timeZone: TZ }).format(new Date()), 10);
+      return h === 24 ? 0 : h;
+    } catch (e) { return new Date().getHours(); }
+  }
+  function twTime(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d)) return '今日';
+      return new Intl.DateTimeFormat('zh-TW', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: TZ }).format(d);
+    } catch (e) { return '今日'; }
+  }
+
+  /* ============================================================
+   * 景氣燈號
+   * ============================================================ */
+  function lightColors(s) {
+    if (s >= 38) return ['#ff4d4d', '#cc0000', '204,0,0'];
+    if (s >= 32) return ['#ffb366', '#e67300', '230,115,0'];
+    if (s >= 23) return ['#4ade80', '#16a34a', '22,163,74'];
+    if (s >= 17) return ['#fde047', '#ca8a04', '202,138,4'];
+    return ['#60a5fa', '#1d4ed8', '29,78,216'];
+  }
+  function lightsHtml() {
+    return BUSINESS_LIGHTS.items.map(function (it) {
+      var c = lightColors(it.s);
+      return '<div class="light"><div class="dot" style="background:radial-gradient(circle at 30% 30%,' + c[0] + ',' + c[1] +
+        ');box-shadow:0 4px 8px rgba(' + c[2] + ',.4)">' + esc(it.s) + '</div><div class="mon">' + esc(it.m) + '</div></div>';
+    }).join('');
+  }
+
+  /* ============================================================
+   * 報告文字渲染（先跳脫，再轉換少量格式，避免 XSS）
+   * ============================================================ */
+  function isFailedReport(text) {
+    return !text || /^\s*AI 情報官連線失敗/.test(text);
+  }
+  function inlineFmt(s) {
+    return esc(s)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/★/g, '<span class="gold-star">★</span>');
+  }
+  function renderReport(raw) {
+    var h = twHour();
+    var t = raw;
+    if ((h >= 14 && h < 24) || (h >= 0 && h < 5)) {
+      t = t.replace(/一分鐘戰略速讀/g, '盤後戰略精華包').replace(/晨報/g, '盤後戰略');
+    } else {
+      t = t.replace(/一分鐘戰略速讀/g, '一分鐘速讀懶人包');
+    }
+    var out = [];
+    t.split(/\r?\n/).forEach(function (line) {
+      if (!line.trim()) { out.push('<div class="rp-gap"></div>'); return; }
+      if (/^\s*[\u{1F300}-\u{1FAFF}☀-➿].*【.*】/u.test(line)) {
+        out.push('<div class="rp-h">' + inlineFmt(line.trim()) + '</div>');
+      } else if (/^\s*[*\-•]\s+/.test(line)) {
+        out.push('<div class="rp-li">• ' + inlineFmt(line.replace(/^\s*[*\-•]\s+/, '')) + '</div>');
+      } else {
+        out.push('<div>' + inlineFmt(line.trim()) + '</div>');
+      }
+    });
+    return out.join('');
+  }
+
+  /* ============================================================
+   * 語音播報（瀏覽器內建語音；聲音依手機系統而定）
+   * ============================================================ */
+  var SPEAK_REPLACE = [
+    ['重挫', '仲挫'], ['重擊', '仲擊'], ['重啟', '蟲啟'],
+    ['重磅', '仲棒'], ['定調', '定掉'], ['軋空', '嘎空']
+  ];
+  function buildSpeechText(data) {
+    var text = (data.tts_report && !isFailedReport(data.tts_report)) ? data.tts_report : (data.report || '');
+    text = text.replace(/<[^>]+>/g, '');
+    text = text.replace(/作為[\s\S]*?如下[：:]/g, '');
+    text = text.replace(/★+/g, function (m) { return m.length + '顆星'; });
+    text = text.replace(/[\u{10000}-\u{10FFFF}☀-➿️]/gu, '');
+    text = text.replace(/[【】\[\]()（）\/*#\-•]/g, ' ');
+    SPEAK_REPLACE.forEach(function (p) { text = text.split(p[0]).join(p[1]); });
+    return '即將通往財務自由的大家，歡迎收聽財經快報，以下是曉臻為您帶來的市場重點整理：。 ' + text;
+  }
+  function splitChunks(text) {
+    var sentences = text.match(/[^。！？!?；;\n]+[。！？!?；;\n]?/g) || [];
+    var chunks = [], cur = '';
+    sentences.forEach(function (s) {
+      if ((cur + s).length > 90 && cur) { chunks.push(cur); cur = ''; }
+      cur += s;
+    });
+    if (cur.trim()) chunks.push(cur);
+    return chunks.map(function (c) { return c.trim(); }).filter(Boolean);
+  }
+
+  var Speech = { chunks: [], idx: 0, state: 'idle', token: 0 };
+  var speakBtn = $('speakBtn');
+  var hasTTS = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+
+  function setBtn() {
+    speakBtn.textContent = Speech.state === 'playing' ? '⏸️ 暫停快報'
+      : Speech.state === 'paused' ? '▶️ 繼續收聽' : '▶️ 收聽快報';
+  }
+  function pickVoice() {
+    var vs = window.speechSynthesis.getVoices() || [];
+    return vs.filter(function (v) { return /^zh[-_]TW$/i.test(v.lang); })[0]
+      || vs.filter(function (v) { return /^zh/i.test(v.lang); })[0] || null;
+  }
+  function speakFrom(i) {
+    var my = ++Speech.token;
+    window.speechSynthesis.cancel();
+    Speech.idx = i;
+    Speech.state = 'playing';
+    setBtn();
+    (function next() {
+      if (my !== Speech.token) return;
+      if (Speech.idx >= Speech.chunks.length) { Speech.state = 'idle'; Speech.idx = 0; setBtn(); return; }
+      var u = new SpeechSynthesisUtterance(Speech.chunks[Speech.idx]);
+      u.lang = 'zh-TW'; u.rate = 1.05; u.pitch = 1.05;
+      var v = pickVoice(); if (v) u.voice = v;
+      u.onend = function () { if (my !== Speech.token) return; Speech.idx++; next(); };
+      u.onerror = function () { if (my !== Speech.token) return; Speech.state = 'idle'; setBtn(); };
+      window.speechSynthesis.speak(u);
+    })();
+  }
+  function stopSpeech() {
+    Speech.token++;
+    if (hasTTS) window.speechSynthesis.cancel();
+    Speech.state = 'idle'; Speech.idx = 0; setBtn();
+  }
+  function prepareSpeech(data) {
+    stopSpeech();
+    if (!hasTTS || isFailedReport(data.report)) { speakBtn.hidden = true; return; }
+    Speech.chunks = splitChunks(buildSpeechText(data));
+    speakBtn.hidden = Speech.chunks.length === 0;
+  }
+  speakBtn.addEventListener('click', function () {
+    if (Speech.state === 'playing') {
+      Speech.token++; window.speechSynthesis.cancel(); Speech.state = 'paused'; setBtn();
+    } else if (Speech.state === 'paused') {
+      speakFrom(Speech.idx);
+    } else {
+      speakFrom(0);
+    }
+  });
+  window.addEventListener('pagehide', function () { if (hasTTS) window.speechSynthesis.cancel(); });
+
+  /* ============================================================
+   * 主畫面渲染
+   * ============================================================ */
+  function render(data) {
+    var risk = data.risk_indicators || {};
+    var vix = risk.vix || '-', vixTrend = risk.vix_trend || '';
+    var usd = risk.usd_twd || '-', usdTrend = risk.usd_trend || '';
+    $('updated').textContent = '最後更新：' + (data.updated_at_utc || '');
+
+    var html = '';
+
+    // 市場核心戰略參數
+    html += '<section class="banner"><h2>📍 市場核心戰略參數</h2>' +
+      '<div class="kv-label">恐慌指標 / 匯率</div>' +
+      '<div class="kv-val"><span class="kv-item">VIX ' + esc(vix) + (vixTrend ? ' <small>(' + esc(vixTrend) + ')</small>' : '') + '</span>' +
+      '<span class="kv-item">TWD ' + esc(usd) + (usdTrend ? ' <small>(' + esc(usdTrend) + ')</small>' : '') + '</span></div>' +
+      '<hr><div class="kv-label">台灣景氣對策信號</div>' +
+      '<div class="lights">' + lightsHtml() + '</div>' +
+      '<div class="light-note">' + esc(BUSINESS_LIGHTS.note) + '</div></section>';
+
+    // AI 盤勢快評
+    html += '<div class="sec-title">🤖 AI 盤勢快評</div>';
+    if (isFailedReport(data.report)) {
+      html += '<div class="notice">⚠️ 本期 AI 盤勢報告產生失敗，下方的新聞快報與市場指標不受影響。</div>';
+    } else {
+      html += '<div class="report">' + renderReport(data.report) + '</div>';
+    }
+
+    // 新聞快報
+    html += '<div class="sec-title">📰 24小時即時新聞快報</div>';
+    var news = Array.isArray(data.news) ? data.news : [];
+    if (news.length) {
+      html += '<div class="timeline">' + news.map(function (n) {
+        return '<div class="t-item"><div class="t-time">' + esc(twTime(n.dt_utc)) + '</div>' +
+          '<a class="t-title" href="' + esc(safeUrl(n.link)) + '" target="_blank" rel="noopener noreferrer">' + esc(n.title || '') + '</a></div>';
+      }).join('') + '</div>';
+    } else {
+      html += '<div class="notice" style="background:#eff6ff;border-color:#bfdbfe;color:#1e3a8a">目前無 24 小時內的快訊資料。</div>';
+    }
+
+    $('content').innerHTML = html;
+    prepareSpeech(data);
+  }
+
+  function showError(msg, retry) {
+    $('content').innerHTML = '<div class="status">' + esc(msg) + '<br><button type="button" id="retryBtn">重新載入</button></div>';
+    $('retryBtn').addEventListener('click', retry);
+    $('updated').textContent = '';
+    stopSpeech(); speakBtn.hidden = true;
+  }
+
+  /* ============================================================
+   * 最新模式
+   * ============================================================ */
+  function showLatest() {
+    $('content').innerHTML = '<div class="status">載入中…</div>';
+    loadJSON('data/latest_report.json').then(render).catch(function () {
+      showError('找不到資料檔案，或網路暫時無法連線。', showLatest);
+    });
+  }
+
+  /* ============================================================
+   * 歷史回顧模式
+   * ============================================================ */
+  var histFiles = null;
+
+  function fillSelect(sel, items, labelFn) {
+    sel.innerHTML = items.map(function (v) { return '<option value="' + esc(v) + '">' + esc(labelFn ? labelFn(v) : v) + '</option>'; }).join('');
+  }
+  function onYear() {
+    var y = $('selYear').value;
+    var months = Array.from(new Set(histFiles.filter(function (f) { return f.slice(0, 4) === y; }).map(function (f) { return f.slice(5, 7); })));
+    months.sort().reverse();
+    fillSelect($('selMonth'), months, function (m) { return parseInt(m, 10) + ' 月'; });
+    onMonth();
+  }
+  function onMonth() {
+    var prefix = $('selYear').value + '-' + $('selMonth').value;
+    var list = histFiles.filter(function (f) { return f.indexOf(prefix) === 0; });
+    fillSelect($('selReport'), list, function (f) { return f.replace(/\.json$/, ''); });
+    onReport();
+  }
+  function onReport() {
+    var f = $('selReport').value;
+    if (!f) { $('content').innerHTML = '<div class="status">該月份尚未產生報告。</div>'; return; }
+    $('content').innerHTML = '<div class="status">載入中…</div>';
+    loadJSON(historyPath(f)).then(render).catch(function () {
+      showError('這份報告載入失敗。', onReport);
+    });
+  }
+  function showHistory() {
+    if (histFiles) { return onYear(); }
+    $('content').innerHTML = '<div class="status">載入中…</div>';
+    loadJSON(HISTORY_INDEX).then(function (idx) {
+      histFiles = (idx.files || []).filter(function (f) { return /^\d{4}-\d{2}-\d{2}.*\.json$/.test(f); }).sort().reverse();
+      if (!histFiles.length) { $('content').innerHTML = '<div class="status">尚無歷史資料。</div>'; return; }
+      var years = Array.from(new Set(histFiles.map(function (f) { return f.slice(0, 4); }))).sort().reverse();
+      fillSelect($('selYear'), years, function (y) { return y + ' 年'; });
+      onYear();
+    }).catch(function () {
+      showError('歷史清單暫時無法載入。', showHistory);
+    });
+  }
+
+  $('selYear').addEventListener('change', onYear);
+  $('selMonth').addEventListener('change', onMonth);
+  $('selReport').addEventListener('change', onReport);
+
+  /* ============================================================
+   * 模式切換
+   * ============================================================ */
+  function setMode(mode) {
+    var hist = mode === 'history';
+    $('modeLatest').setAttribute('aria-pressed', String(!hist));
+    $('modeHist').setAttribute('aria-pressed', String(hist));
+    $('histPick').hidden = !hist;
+    stopSpeech();
+    if (hist) showHistory(); else showLatest();
+  }
+  $('modeLatest').addEventListener('click', function () { setMode('latest'); });
+  $('modeHist').addEventListener('click', function () { setMode('history'); });
+
+  showLatest();
+})();
+</script>
+</body>
+</html>
