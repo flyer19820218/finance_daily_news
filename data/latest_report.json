@@ -1,9 +1,207 @@
 {
-  "updated_at_utc": "2026-11-11 09:11:57 (TW)",
-  "title": "全球局勢與市場情報 2026-11-11 盤前",
-  "report": "AI 情報官連線失敗: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.",
-  "tts_report": "AI 情報官連線失敗: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.",
+  "updated_at_utc": "2026-11-12 10:13:05 (TW)",
+  "title": "全球局勢與市場情報 2026-11-12 盤前",
+  "report": "🎯 【一分鐘戰略速讀】\n今日市場呈現結構性波動與訊息錯綜，但整體宏觀風險指標相對穩定。Nvidia高層變動傳聞引發個股層面劇烈震盪，然而VIX恐慌指數錄得下降，台幣匯率亦同步走升，這明確指出市場並未陷入普遍性恐慌或資金外逃。同時，中東地緣政治緊張報導持續，但避險資產表現與VIX數據皆未顯著噴發，故定調為情緒噪音。MSCI對台股權重的調整則預計帶來結構性資金流入。投資人應聚焦數據，警惕個股傳聞對產業基本面的短期擾動，並區分市場噪音與實質風險。\n\n📊 【重大事件：交叉驗證報告】\n\n- AI帝國震盪！Nvidia爆董事會逼宮傳聞 黃仁勳恐丟帥位、外資警戒地緣與治理風險 (★★★★★)\n    **事實核對**：VIX恐慌指數下降至17.49，美元/台幣匯率走貶至32.85（台幣升值）。這表示市場對於單一企業高層變動的反應，並未觸發廣泛的系統性恐慌或資金顯著外流。此事件影響範圍目前主要集中於Nvidia及其直接相關供應鏈，而非整體市場流動性。\n    **解讀**：儘管Nvidia作為AI產業關鍵廠商，其執行長人事傳聞衝擊巨大，但當前整體市場情緒指標（VIX、台幣匯率）並未顯示避險情緒顯著升溫。投資人應關注Nvidia公司治理與營運策略的實質變化，而非僅受傳聞影響，同時留意後續消息澄清或證實。\n\n- MSCI最新季度調整 台股權重三升 (★★★★)\n    **事實核對**：MSCI指數權重調整屬於客觀的指數編纂結果，通常會在生效日前後對市場產生預期的被動式資金流動影響。此消息為公開事實，生效日為11月30日。\n    **解讀**：台股在MSCI季度調整中獲權重調升，理論上有助於吸引更多追蹤MSCI指數的被動式基金流入，為市場帶來潛在的資金動能。此為結構性利多，但實際影響程度仍需觀察生效日後的資金實際流向，並與整體國際資金環境綜合評估。\n\n- 伊朗軍事行動未歇襲商船.炸阿曼島上設施 / 伊朗 : 美國用中東地區以外的軍事基地襲擊伊朗， 伊朗將打擊這些基地 (★★★)\n    **事實核對**：VIX恐慌指數下降1.97點，美元/台幣匯率下降0.10元（台幣升值）。傳統上，地緣政治緊張升溫會促使避險資產如美元、黃金上漲，VIX飆升。然而，當前市場指標與此預期不符。\n    **解讀**：儘管中東地區仍有軍事衝突及潛在擴大風險的報導，但當前的市場反應（VIX下降、台幣升值）顯示，國際資本市場並未將其解讀為大規模、系統性的避險衝擊。投資人應將此類消息定調為「情緒噪音」，而非實際觸發全球資金避險潮的因子。\n\n- 股市崩跌打亂房市布局！預約賞屋客喊卡業者嘆：股轉房買氣被股災嚇跑了 (★★)\n    **事實核對**：新聞提及「股市崩跌」與「股災」，然而今日VIX恐慌指數下降，台幣匯率走升。這表示至少在當前時點，系統性「股災」的定義與市場宏觀指標不符。房市買氣受股市情緒影響是普遍現象，但該新聞中的形容詞可能過度誇大。\n    **解讀**：房市買氣確實會受股市財富效應與投資情緒影響。然而，鑑於當前VIX與匯率數據顯示整體市場並未處於全面崩跌狀態，該新聞提及的「股災」可能更多是反映了部分投資者的短期心理感受或局部市場波動，而非整體系統性風險對房市的直接壓垮。\n\n- AI 資料中心發展前景疑慮緩解CRWV／BE 飆漲 / Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade (★★★)\n    **事實核對**：儘管Nvidia高層傳聞引發股價重挫，但相關報導亦指出Nvidia股價隨後反彈，以及AI資料中心概念股的特定公司上漲，顯示市場對AI基礎設施長期發展的信心並未完全動搖。\n    **解讀**：此消息與Nvidia執行長傳聞形成對比，提示投資人即使個別企業面臨挑戰，AI產業整體發展仍有其內生動能。這表明市場正在區分短期人事波動與長期產業趨勢，對於AI資料中心等基礎建設的需求前景仍持正面看法。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數錄得17.49，較前一日下降1.97點。美元/台幣匯率則為32.85，下跌0.10元。這兩項關鍵指標共同揭示，儘管市場存在部分個股層面的波動與地緣政治訊息，整體金融市場並未出現普遍性的恐慌情緒或資金明顯外流現象。VIX的下降表明市場波動性預期減弱，而台幣的走強則暗示資金流向可能相對穩健，並未受到外部負面消息的嚴重衝擊。\n\n💰 【台股影響與板塊點名】\n受惠於MSCI權重上調的訊息，台股有望吸引被動式資金的流入，對於大型權值股具支撐作用。儘管Nvidia高層傳聞短期衝擊AI概念股，但鑒於VIX與台幣匯率的穩定，以及AI資料中心前景疑慮緩解的訊息，長期而言，半導體（特別是領先者如台積電）、高速運算、散熱、AI伺服器供應鏈仍是市場焦點。台積電在先進製程（如2奈米）的領先地位，以及與海力士在HBM技術上的合作，使其在AI產業鏈中扮演不可或缺的角色，其穩定性為AI領域提供了堅實基礎。聯發科等IC設計指標股在市場震盪中也展現出抗壓性。受衝擊的則為短期受傳聞影響的Nvidia直接供應鏈中的部分個股，以及因情緒波動而影響的房市相關類股。\n\n📈 【投資觀察指引】\n1.  數據為本：任何市場新聞，務必以VIX、匯率等核心數據進行交叉驗證，排除情緒噪音。\n2.  區分風險：辨識個股特定風險與系統性風險的差異，避免將單一事件誤判為全面性危機。\n3.  基本面導向：AI產業發展儘管受個股傳聞擾動，但資料中心等基礎建設的長期需求仍是支撐，應關注企業實際營運與技術進展。\n4.  資金流向：MSCI權重調整後，密切觀察外資與投信的實際資金流向，作為選股或板塊配置的參考。\n5.  穩健配置：在訊息混雜的環境下，保持適當的現金部位，並分散配置，以應對可能出現的結構性機會或調整。\n\n🏫 【曉臻財經小教室】\n今日單字：【營業利益率 (Operating Margin)】\n營業利益率衡量公司在扣除營業成本和營業費用後，每單位營收能產生多少營業利益。高營業利益率代表公司核心業務獲利能力強勁，不受一次性收入或業外損益影響，有助於區分真實獲利能力與短期財報美化。\n\n數據為證，理性為鑒，穩健佈局，洞悉本源。",
+  "tts_report": "🎯 【一分鐘戰略速讀】\n今日市場呈現結構性波動與訊息錯綜，但整體宏觀風險指標相對穩定。Nvidia高層變動傳聞引發個股層面劇烈震盪，然而VIX恐慌指數錄得下降，台幣匯率亦同步走升，這明確指出市場並未陷入普遍性恐慌或資金外逃。同時，中東地緣政治緊張報導持續，但避險資產表現與VIX數據皆未顯著噴發，故定掉為情緒噪音。MSCI對台股權重的調整則預計帶來結構性資金流入。投資人應聚焦數據，警惕個股傳聞對產業基本面的短期擾動，並區分市場噪音與實質風險。\n\n📊 【重大事件：交叉驗證報告】\n\n- AI帝國震盪！Nvidia爆董事會逼宮傳聞 黃仁勳恐丟帥位、外資警戒地緣與治理風險 (★★★★★)\n    **事實核對**：VIX恐慌指數下降至17.49，美元/台幣匯率走貶至32.85（台幣升值）。這表示市場對於單一企業高層變動的反應，並未觸發廣泛的系統性恐慌或資金顯著外流。此事件影響範圍目前主要集中於Nvidia及其直接相關供應鏈，而非整體市場流動性。\n    **解讀**：儘管Nvidia作為AI產業關鍵廠商，其執行長人事傳聞衝擊巨大，但當前整體市場情緒指標（VIX、台幣匯率）並未顯示避險情緒顯著升溫。投資人應關注Nvidia公司治理與營運策略的實質變化，而非僅受傳聞影響，同時留意後續消息澄清或證實。\n\n- MSCI最新季度調整 台股權重三升 (★★★★)\n    **事實核對**：MSCI指數權重調整屬於客觀的指數編纂結果，通常會在生效日前後對市場產生預期的被動式資金流動影響。此消息為公開事實，生效日為11月30日。\n    **解讀**：台股在MSCI季度調整中獲權重調升，理論上有助於吸引更多追蹤MSCI指數的被動式基金流入，為市場帶來潛在的資金動能。此為結構性利多，但實際影響程度仍需觀察生效日後的資金實際流向，並與整體國際資金環境綜合評估。\n\n- 伊朗軍事行動未歇襲商船.炸阿曼島上設施 / 伊朗 : 美國用中東地區以外的軍事基地襲擊伊朗， 伊朗將打擊這些基地 (★★★)\n    **事實核對**：VIX恐慌指數下降1.97點，美元/台幣匯率下降0.10元（台幣升值）。傳統上，地緣政治緊張升溫會促使避險資產如美元、黃金上漲，VIX飆升。然而，當前市場指標與此預期不符。\n    **解讀**：儘管中東地區仍有軍事衝突及潛在擴大風險的報導，但當前的市場反應（VIX下降、台幣升值）顯示，國際資本市場並未將其解讀為大規模、系統性的避險衝擊。投資人應將此類消息定掉為「情緒噪音」，而非實際觸發全球資金避險潮的因子。\n\n- 股市崩跌打亂房市布局！預約賞屋客喊卡業者嘆：股轉房買氣被股災嚇跑了 (★★)\n    **事實核對**：新聞提及「股市崩跌」與「股災」，然而今日VIX恐慌指數下降，台幣匯率走升。這表示至少在當前時點，系統性「股災」的定義與市場宏觀指標不符。房市買氣受股市情緒影響是普遍現象，但該新聞中的形容詞可能過度誇大。\n    **解讀**：房市買氣確實會受股市財富效應與投資情緒影響。然而，鑑於當前VIX與匯率數據顯示整體市場並未處於全面崩跌狀態，該新聞提及的「股災」可能更多是反映了部分投資者的短期心理感受或局部市場波動，而非整體系統性風險對房市的直接壓垮。\n\n- AI 資料中心發展前景疑慮緩解CRWV／BE 飆漲 / Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade (★★★)\n    **事實核對**：儘管Nvidia高層傳聞引發股價重挫，但相關報導亦指出Nvidia股價隨後反彈，以及AI資料中心概念股的特定公司上漲，顯示市場對AI基礎設施長期發展的信心並未完全動搖。\n    **解讀**：此消息與Nvidia執行長傳聞形成對比，提示投資人即使個別企業面臨挑戰，AI產業整體發展仍有其內生動能。這表明市場正在區分短期人事波動與長期產業趨勢，對於AI資料中心等基礎建設的需求前景仍持正面看法。\n\n🔥 【市場情緒與壓力測試】\n今日VIX恐慌指數錄得17.49，較前一日下降1.97點。美元/台幣匯率則為32.85，下跌0.10元。這兩項關鍵指標共同揭示，儘管市場存在部分個股層面的波動與地緣政治訊息，整體金融市場並未出現普遍性的恐慌情緒或資金明顯外流現象。VIX的下降表明市場波動性預期減弱，而台幣的走強則暗示資金流向可能相對穩健，並未受到外部負面消息的嚴重衝擊。\n\n💰 【台股影響與板塊點名】\n受惠於MSCI權重上調的訊息，台股有望吸引被動式資金的流入，對於大型權值股具支撐作用。儘管Nvidia高層傳聞短期衝擊AI概念股，但鑒於VIX與台幣匯率的穩定，以及AI資料中心前景疑慮緩解的訊息，長期而言，半導體（特別是領先者如台積電）、高速運算、散熱、AI伺服器供應鏈仍是市場焦點。台積電在先進製程（如2奈米）的領先地位，以及與海力士在HBM技術上的合作，使其在AI產業鏈中扮演不可或缺的角色，其穩定性為AI領域提供了堅實基礎。聯發科等IC設計指標股在市場震盪中也展現出抗壓性。受衝擊的則為短期受傳聞影響的Nvidia直接供應鏈中的部分個股，以及因情緒波動而影響的房市相關類股。\n\n📈 【投資觀察指引】\n1.  數據為本：任何市場新聞，務必以VIX、匯率等核心數據進行交叉驗證，排除情緒噪音。\n2.  區分風險：辨識個股特定風險與系統性風險的差異，避免將單一事件誤判為全面性危機。\n3.  基本面導向：AI產業發展儘管受個股傳聞擾動，但資料中心等基礎建設的長期需求仍是支撐，應關注企業實際營運與技術進展。\n4.  資金流向：MSCI權重調整後，密切觀察外資與投信的實際資金流向，作為選股或板塊配置的參考。\n5.  穩健配置：在訊息混雜的環境下，保持適當的現金部位，並分散配置，以應對可能出現的結構性機會或調整。\n\n🏫 【曉臻財經小教室】\n今日單字：【營業利益率 (Operating Margin)】\n營業利益率衡量公司在扣除營業成本和營業費用後，每單位營收能產生多少營業利益。高營業利益率代表公司核心業務獲利能力強勁，不受一次性收入或業外損益影響，有助於區分真實獲利能力與短期財報美化。\n\n數據為證，理性為鑒，穩健佈局，洞悉本源。",
   "news": [
+    {
+      "title": "《台北股市》MSCI最新季度調整 台股權重三升 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMnRpamZpYUQzSDZ0SS1nVldLNVMzUGNXU1FfS0hLekNVT3hZbTJnZGM4Si1xSHpKNU90UkhrUjRIYjdIdDdRXy1IT0xWY2JoLWNzRkJEcmNpcVd6NjZUbEJ5cjZoSHVwNTl3OVl2YkpzTGNaQ3JCdjVCaVBwYzduaWYtTkRXa3dw?oc=5",
+      "summary": "《台北股市》MSCI最新季度調整 台股權重三升&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T02:04:00+00:00"
+    },
+    {
+      "title": "《股市簡訊》阿里巴巴港股早盤挫2.7%，延續此前四個交易日的連續跌勢 - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1vVDRFbDlPYVp0T0p4TmJ6Z0xFdUExTmtfRmdXWHJzNWRoQURqbHVmYlFGUUpnZGZZazlnejQtNVZRRFA1TXJveVU5RWZWNFNOb2N0bzU1Z0E1QzVvOE9pb0tlWnF4enVHd0p6MGg2NUxQMVhkTlZB?oc=5",
+      "summary": "《股市簡訊》阿里巴巴港股早盤挫2.7%，延續此前四個交易日的連續跌勢&nbsp;&nbsp;TradingView",
+      "dt_utc": "2026-11-12T02:03:31+00:00"
+    },
+    {
+      "title": "AI帝國震盪！Nvidia爆董事會逼宮傳聞 黃仁勳恐丟帥位、外資警戒地緣與治理風險 - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeTlUN05XbEZXVWhFMWZYc2RNNEZLeTVudnRGdG5PT0U1aDFmYndMTnlRNWhMbW0wNENoSWFxOGMtQWFFWVVteTBGRE5nMXdoSE1oYTJxSzBEXzJoa0xFSVd4RWFMYkJIQjNadm9NLU42SXR6TzlnbUdmSjFhN2laUUdvUnBMMndBelhhY213?oc=5",
+      "summary": "AI帝國震盪！Nvidia爆董事會逼宮傳聞 黃仁勳恐丟帥位、外資警戒地緣與治理風險&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-11-12T02:00:24+00:00"
+    },
+    {
+      "title": "股市崩跌打亂房市布局！預約賞屋客喊卡業者嘆：股轉房買氣被股災嚇跑了- 生活新聞 - PChome Online 新聞",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLUtydEhqQ2NucEttTjBRb3VnZlhpcF9uMEZsdmk4aUNySk5hdmlwYlBuSVVJeXkxMmxpTENkZGJadFoyRXNsRVAtSXJWT0NQYXJXT2M2RVdXSzJSM2cyaXN3LUl2MUstUlZJTTlqM25yZU1ITGNzajBTa1pseHg4UUUwMFBadTZJ?oc=5",
+      "summary": "股市崩跌打亂房市布局！預約賞屋客喊卡業者嘆：股轉房買氣被股災嚇跑了- 生活新聞&nbsp;&nbsp;PChome Online 新聞",
+      "dt_utc": "2026-11-12T01:53:08+00:00"
+    },
+    {
+      "title": "亞洲股市：今(12)日亞洲股市目前指數 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY2FsTFlzTm5nNDNSd1B0SFJ4ZHE2bTQ0S0RwaUo4bmlnQ0l1Z015SXpIdzNkUEI1bF92SHhSR3pHY1Bvc0d6UHZULTVPOU5GYjZvLXJQOGRKamtRS3BzMDEyaVBsYm9xaW52LWo2eWV0T1dadUJVSGZWd25UdFozeWVfSTRaN3lI?oc=5",
+      "summary": "亞洲股市：今(12)日亞洲股市目前指數&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:44:00+00:00"
+    },
+    {
+      "title": "股市要聞：MSCI指數台股權重三升，11/30收盤生效 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMU54dEpYang3ek9iQ2FxQTUwMUc5TkIycjZDNDg1OXU2Z285LTdVZWQzVVdlS0NQSDQyNFlzd056d0MwQnN1NU5sZjlSWDBCWVhmdTk4UWN0ZGItM3FYeXRadHNDQy10SXIxLWp1SUtyT3NqMXUxQ0lPNGcySzFZZGJkdHNnamYx?oc=5",
+      "summary": "股市要聞：MSCI指數台股權重三升，11/30收盤生效&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:41:00+00:00"
+    },
+    {
+      "title": "《台北股市》輝達效應？台股震盪加劇 致力翻紅漲百點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbnJvLW9iRlNGRWhaTjJnbHVFV0VZLU9pRFFWRWVoQjdsUFJNa1g5QS1yVUtoYnRma3gwdmZKUWRYWEJadGpSSi1tTVJtd0pyVjJCM1k0ZVN6T09PRS16S2hlWl9UUXNqQ2pXd29nT3luNW1iYjdtTXpwQlI5Ul81RnFvb0VmWFFK?oc=5",
+      "summary": "《台北股市》輝達效應？台股震盪加劇 致力翻紅漲百點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:40:00+00:00"
+    },
+    {
+      "title": "《亞洲股市》09:30，上海A股跌0.01點，為3859.15點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWjNsME5vVjRONGFZMkI0UFNFTUN2V21pdTk1UXZ0ZTFndjlNMXhGaTZPWjljdTdQQ1J3ekxnZnR3b3hpdnJiZ3pMQkU2XzIxS05ZS0lRclZPOU5URDRyc3hIRjM0bW1aMGtIN1ZQdWZTVFd5NUlibF9UdzlJelI0VGFZUU1nRm8xa0tNaHJQQlRZQQ?oc=5",
+      "summary": "《亞洲股市》09:30，上海A股跌0.01點，為3859.15點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:32:00+00:00"
+    },
+    {
+      "title": "If Jensen Huang were truly replaced, how much would NVIDIA's stock decline? - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOYjFhY1czU2FpZXlZUERhUFE0N3lvTlBuOUhhbWVpUjFfbklSZ083Y3l3S2xZT2NMdXduN0NOdDJCUFE5cnlPN3BpcmktNzhOVWx0R244d1lSYW9heHhEakYxZVJEUnI0bGRZNVF1MmtBbWRhQm8ycVZib1BTLWdSRHFNb1lENXBKRDBnVGpBc2lGRlozRHA2M2k5MDFTQ2pLV0E?oc=5",
+      "summary": "If Jensen Huang were truly replaced, how much would NVIDIA's stock decline?&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-11-12T01:28:25+00:00"
+    },
+    {
+      "title": "黃仁勳人事傳聞衝擊輝達盤後重挫！台股震盪回測44K 聯發科領軍抗空 - udn",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBUdGR3M1E2N3ZiZWNsbV9uQWExUmlYYVF6eWhlbVRJck13QjNVWS1MWnBEdHlMQ2lOWkNGVXo2eHVrc25QZU51VjZCWTRJNkVH0gFWQVVfeXFMUEwwbjlUWXR4WUtwZ0hxNlhkdVJYVVBtdU1ySHk0ZEt1SHRSN3RNOWZiSXp1X3p4QjJmcTd1ckcyUmtnZkg0VlZXLUNrcXY5bi1Cd2Rzemc?oc=5",
+      "summary": "黃仁勳人事傳聞衝擊輝達盤後重挫！台股震盪回測44K 聯發科領軍抗空&nbsp;&nbsp;udn",
+      "dt_utc": "2026-11-12T01:23:52+00:00"
+    },
+    {
+      "title": "開盤，外資砸盤- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBfdmtJQ01XNXBNLVVwNWFXWlBuWE14UXFjbXZHejVUbmZYVDZLclhJTmNhUTVDUlFodTg2SkZEa1UzUkxqTmtoMUN2bzU5blRCQ0ltUmRrbXk?oc=5",
+      "summary": "開盤，外資砸盤- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-12T01:19:55+00:00"
+    },
+    {
+      "title": "《東京股市》09:15，日經指數漲173.80點，為61422.39點 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTHpydU9wQUdtZEg5WUxWVkJDM3lJQU15SzhTR29yRUVJUkc2ZjBwdEpJSVNjbFdyRlozVklCcVA1NHNQMGNnYUQycWFObmxzOXRqN01YemtpOVE0SjNrUVhfTWlWSDlBbnQxNFAyRWVwenZqMWZlOHROTk1MN2wxNXdOZWZ0Wklk?oc=5",
+      "summary": "《東京股市》09:15，日經指數漲173.80點，為61422.39點&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:16:00+00:00"
+    },
+    {
+      "title": "亞洲股市：今(12)日亞洲股市目前指數 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQN3FkUUVtRE5aazR2bHlxbEl2NXJOUnRhVHFFQjdUUngwdXpxbkNGdlNlaWdYZkJESGJDTHE1dVlvRVY4LUUxYXpZMFkzRVNuWk81a2xySnVDUmdWUXVSajNrX3pZRV80c195cG5hMFI1R3JlU0s2bEJZaERwVzFkaG1rVll4ZUxNajdIRW5FWHl4dw?oc=5",
+      "summary": "亞洲股市：今(12)日亞洲股市目前指數&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-12T01:14:00+00:00"
+    },
+    {
+      "title": "TWA00 加權指數- 11/11盤後分析紀錄- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5lclB1cDA5YnVFSGd5aXptNXhfX1NlQ0RkN0VWQ0t4R01iVGgwSW5LR2pyNjNta0pvNHBIc3BaOHdrcXN3Z3ZSYVp6TWVXcE9zb0tlZ0VvY2M?oc=5",
+      "summary": "TWA00 加權指數- 11/11盤後分析紀錄- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-12T01:05:02+00:00"
+    },
+    {
+      "title": "AI 資料中心發展前景疑慮緩解CRWV／BE 飆漲- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9LalZ3VFBaZzd5Ym5WNC1pT01kTk9VT2w3bVlwQmZ0NFJhMVlHUWZOZ2hGQ0dFLTBtYW1tdkdEM1hXUXNtMVBpNjQ1cXhMVUpOV0pRbXhDTFE?oc=5",
+      "summary": "AI 資料中心發展前景疑慮緩解CRWV／BE 飆漲- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-12T01:00:56+00:00"
+    },
+    {
+      "title": "2603 長榮 - 大航運-航運自我認知的覺醒😆 - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5TM08zTE0tM2IycnR4a2pfdllJUkZZdnFKdU95aUh4RVRlZkZFRXhjUE9ITEpZVS13VnZqVjVLdXoxMVpDQUM5dFJWRjVjanlsYklod3hBOE8?oc=5",
+      "summary": "2603 長榮 - 大航運-航運自我認知的覺醒😆 - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-12T00:49:59+00:00"
+    },
+    {
+      "title": "老簡帶你 11/11 盤前個股追蹤，籌碼神探帶你跟著股市內部大戶走！ - CMoney投資網誌",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcnJMME9zQno2ZzY4ak4xWlpNSy1oaWR2WklPLUloSHBWTC1NYktyT00zNW1IeXk4ZFc1QUdaaEVmX1ZOdmdDMVdDUG5iUm1BN3lmbTNBZzVwTDdxaE5Qck5YaFZ4NHNLc2Z4MkRCUHN4bWNXcTBwUUI3TXBYT2lHZg?oc=5",
+      "summary": "老簡帶你 11/11 盤前個股追蹤，籌碼神探帶你跟著股市內部大戶走！&nbsp;&nbsp;CMoney投資網誌",
+      "dt_utc": "2026-11-12T00:41:05+00:00"
+    },
+    {
+      "title": "Blackstone (Stove Tokenized Stock) 價格： BXS 今日即時價格 | BXS 市值與圖表分析 - Bybit",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5wQ2JrLWx1UjR4UkFqRW1SdFRSWVFxbmg0ejFKV3JUOWVYMmE1Uk5tcjRnLTBid2RJbzJlSXMtSC0tdHBYOEd1c2hKT2lTTmxtTTk3VktBcUQxRzU5Ukl1QkdfVDRrVi1rc2ZBM3FRNUZaYWhqU0E?oc=5",
+      "summary": "Blackstone (Stove Tokenized Stock) 價格： BXS 今日即時價格 | BXS 市值與圖表分析&nbsp;&nbsp;Bybit",
+      "dt_utc": "2026-11-12T00:14:24+00:00"
+    },
+    {
+      "title": "8299 群聯- 宏芯宇11/12正式港股掛牌- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB1SmVCa3BkUkFZUEFOR1VpTms0Z2hDN1RvalJlalNURm53a1pyTDhXUE1oNHl1ZlNJSm9OSTc3TzJFNFJnaTQySXhOeENGZk01NUNqRG8zalI?oc=5",
+      "summary": "8299 群聯- 宏芯宇11/12正式港股掛牌- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-12T00:07:30+00:00"
+    },
+    {
+      "title": "破撤資傳聞 張善政熱線美光CEO - 旺得富理財網",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5lbHZwMVhhWUFMLVZxVC1uSV9RTHhzVUpTcFh0VTM5ZGhaWk92ajQ0WXdYOFBPQXRvMVFFcDI2eFNaeUVlY0JIVnpzQW1VTmRMWDJpYkF1SlNGQVVucjh1UEtRX0JENDJveWc?oc=5",
+      "summary": "破撤資傳聞 張善政熱線美光CEO&nbsp;&nbsp;旺得富理財網",
+      "dt_utc": "2026-11-11T23:51:07+00:00"
+    },
+    {
+      "title": "《台北股市》注意股：12日25檔 華新科、晶豪科、誠美材、驊宏資等 - 富聯網",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNR2lIdnNVU2h5bmh3Q1NMM2VBdXBabksyS1FxQmc1akE0RWVXSVVoNWNTN2pxRzFnMVZvU01kS2xialRkZFZYaDZrNXBKRG9BYzREaHZsRjhLUF9ITGY3c0RFYVhxQUFhd3ZtWHJKcHBFd0Q1NUZnY0o0M3lBM29vNHdVeW9HR29a?oc=5",
+      "summary": "《台北股市》注意股：12日25檔 華新科、晶豪科、誠美材、驊宏資等&nbsp;&nbsp;富聯網",
+      "dt_utc": "2026-11-11T23:51:00+00:00"
+    },
+    {
+      "title": "輝達董事會傳聞正在準備撤換執行長黃仁勳，盤後股價應聲重挫 8% - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaXRKaEJIV2ZvajdHWi1fTV9fUUQ2OTBUekJZckFqQ0F3OEhnaE9pUTRnb2drUk9PWUlQOEkxUjhESHlnd1lPOTNpVkRsQVVSVFMxSXBwcHNsRGlqSWFsd2pYNE9IcE5hY3lfNXYtQmQxZF9zOTBRc2xBY09CendmbVJ4RmtvNWxXLUZjNnNqNjFWSkl0Z3pLWEhjSEhSb2RYc3ZUZE1aeWhjTF9wMmlyV3ZHakxEUTVRUzNpSGtHOGdhdHBqeEE?oc=5",
+      "summary": "輝達董事會傳聞正在準備撤換執行長黃仁勳，盤後股價應聲重挫 8%&nbsp;&nbsp;TechNews 科技新報",
+      "dt_utc": "2026-11-11T23:03:02+00:00"
+    },
+    {
+      "title": "Flex Ltd tokenized stock (xStock) (FLEXx) 價格、圖表、市值及其他指標 - CoinMarketCap",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONk91aS1tZGVoYjBTcWFWWE1WUm15YUtPRlk4N2VpcFc0Y2t0NUpvOERtQ2tsX0J4UmpOdXA2UDBvZnZITXAtdHhhSnh3SWlRdlh0V2NDVWJQOFlwaTlmekdQNFUxdGdNSzVKRHhwaGVVU01iWFhxRE55UWtKUUt5aA?oc=5",
+      "summary": "Flex Ltd tokenized stock (xStock) (FLEXx) 價格、圖表、市值及其他指標&nbsp;&nbsp;CoinMarketCap",
+      "dt_utc": "2026-11-11T22:58:08+00:00"
+    },
+    {
+      "title": "Super Micro's Close Nvidia Ties Weigh on Stock -- Market Talk - Moomoo",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNa2xjdFlLVzBjQmdpYXFNZVNlU2ZFN3AzRmgyU0gyd2RTV1VWY1duNnBfUmZoMjFwZW4xVEo5ZFE2N2EtUnlMUXNoNS1rdmNVdDh2czRfM0hhWE8ta1BuUlJIZmxMb0huTlctYTVsRXhjX3AwWTJ3TDU2NXNVeFZ5bXk5dklZNnZZem5UTThpUS1SYi1JVXdXUW4tSFI1bDVqeGlwRQ?oc=5",
+      "summary": "Super Micro's Close Nvidia Ties Weigh on Stock -- Market Talk&nbsp;&nbsp;Moomoo",
+      "dt_utc": "2026-11-11T22:58:00+00:00"
+    },
+    {
+      "title": "伊朗 : 美國用中東地區以外的軍事基地襲擊伊朗， 伊朗將打擊這些基地 - RFI",
+      "link": "https://news.google.com/rss/articles/CBMiygNBVV95cUxQem4wTS1wS2JWbUt5Qk5tRnd0a3c0aE9sVzNlVkptZVhoWmo5TmlUc2swX0c4YTE0NGU2MWRPYXN3TlZnazdZNmVQWEVubk93YUxXdl9fb01hU3dtblQyb1pJaDFVQUFVM3VwUlNfbnFEa0VJbUNmcjkzMk5GbHBoZmpkQl9VMzlYRU9HZUlpbnZqbEcwSjBGYVFaV0VZYms5SDJpd3V4XzFwNlk5TExCakxSOVpmMXl6bzdpT05RZ0lQbHlMY0U4WlpMTkZsblRWX09WVnV3MTFrd25SMHM0UGxKbVpnWlU2VWxjTm1XclZGVDRGVDJ0MkNaSHhvRXF6Rldha3Qzc0ZOci1LcEhLWWItSjFyT183SGltU2Exc0NTMDhTUDFtekpZbkd1azNBOWs5OExiUlZRNWNSNGJ1RHpLN0QtQkxGOUR6TGl0QWJsZVZCNzZOQXZHT3pjX0Q5TWlmaFFwVlF6eDhncHNyMXdBVHA3anZiWEhmMnVINWhsQXhkRko3WXJqN3cwZC1FMER4RzJHOTd5RkZHNGpoXy1OMkZtNjJoTDF4ZHowa2p6ZWRhTE1ReHNVX2tlQ0R0bFdWRGdoSkpOdw?oc=5",
+      "summary": "伊朗 : 美國用中東地區以外的軍事基地襲擊伊朗， 伊朗將打擊這些基地&nbsp;&nbsp;RFI",
+      "dt_utc": "2026-11-11T21:46:37+00:00"
+    },
+    {
+      "title": "AAPL 蘋果 - Nvidia stock is pricing in 2 major risks as CEO Jensen Huang's affair fallout plays out - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1pTWhPTWNTU2RldlNOT0FmZ09jVzEwS1NJSVkzN3dHeHc5aDM0NXZWR3c0dXpvUnJCTzUwemg0YW02NzRuZmNacmZHNUNCdFFtYzJMR0Q5enY?oc=5",
+      "summary": "AAPL 蘋果 - Nvidia stock is pricing in 2 major risks as CEO Jensen Huang's affair fallout plays out - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-11T19:37:33+00:00"
+    },
+    {
+      "title": "ASML 艾司摩爾控股- Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade - 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1rV3NDZEJuVlU4cFp3ckVRVHBNSnNnclE5YkFPTFNBcWQxNDFTVWN0WXdtVTU4d2JmdjZaMlN1NklFODVEV2ZFSU5YREtUSkdFSzd6dkl5YnA?oc=5",
+      "summary": "ASML 艾司摩爾控股- Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade - 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-11T14:37:44+00:00"
+    },
+    {
+      "title": "'Icarus' rise and fall': Analyst downgrades Nvidia stock amid Jensen Huang woes, highlights risks - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE45NnRzbE9za0VCY0U2UVFhX2VwQTBaWXc0UUphb1NuZkhaa0MwNGtCTUEwMzhWLVRNTG1hMmEzUU83ZzhFTzdnZ3hVWDJnSFJYU0FHckl5R1U?oc=5",
+      "summary": "'Icarus' rise and fall': Analyst downgrades Nvidia stock amid Jensen Huang woes, highlights risks&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-11T13:37:54+00:00"
+    },
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as Nvidia stock recovers, 10-year yield nears 5% - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1vZVdCRndFV2dNZTlPalB6UG1iNUtyLW5EQ1lHTkFyUEx4cDZVZ0NxQU1ZWC1POEd2M1JEX2NRb3EzcFhES1FrMFd6VG9TeW9IZW81MDhDZmM?oc=5",
+      "summary": "Stock market today: Dow, S&amp;P 500, Nasdaq futures rise as Nvidia stock recovers, 10-year yield nears 5%&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-11T13:07:31+00:00"
+    },
+    {
+      "title": "Tesla Stock Thrives on Key-Man Drama. Nvidia Might Not Be So Lucky. -- Barrons.com - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR0dDRUV3OWZVMHJtNVZQN2h2UXBYWjJNcElEZnhaZ0szMU1Nd1Bvb1lta1RSdWpRemw4aGZiQzVKZWhCTDBTZGJWeUE5YU5XWjNQbFI0X2FtQzNSNDJnSU0tUVNLMkhrUEV3WEJ2OGp2UXFPNExNd0dIc2JyTFdVQVAzVDE2QTdncWFNVlZLdjBBc25qeFEzWi1GQ2Y?oc=5",
+      "summary": "Tesla Stock Thrives on Key-Man Drama. Nvidia Might Not Be So Lucky. -- Barrons.com&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-11-11T11:47:00+00:00"
+    },
+    {
+      "title": "Bitcoin Sits Out Stock Rebound as ETF Outflows Extend to Fourth Day - 富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONFlVa2RwZkFyenlHeTJSbERzT0s3LWY3dV8wb3JrSTI1eDBKdnUtcmVMYWswOHZfTDYyUXl2bUJHQVhsN0R2TnlmSG04ODg5QVcyXzlpeE9jekh0VzZ6ZDM0dmN1djZGXzRMelJMOWRVbTAxOUx6b19xQmtiYWVJUUJ0djV6QnptMEdjaDA5LWJNcWQ5NUpMUHlIVGVPVUlX?oc=5",
+      "summary": "Bitcoin Sits Out Stock Rebound as ETF Outflows Extend to Fourth Day&nbsp;&nbsp;富途牛牛",
+      "dt_utc": "2026-11-11T11:37:04+00:00"
+    },
+    {
+      "title": "TWA00 加權指數- 台股反彈面臨大壓力- 股市爆料同學會 - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE13ODMweUs2TmNrV2tsb0thVWdNZ3hnOGhsdVlGN2xnSnpIQjdyemtaN1NiYmtLWGE1QUZXaUw1MmM1MUhBclhEVGJDX2YyQy1QWW1PZTgzeDI?oc=5",
+      "summary": "TWA00 加權指數- 台股反彈面臨大壓力- 股市爆料同學會&nbsp;&nbsp;CMoney",
+      "dt_utc": "2026-11-11T09:01:20+00:00"
+    },
+    {
+      "title": "聚焦「OnChain Finance」，2027香港Web3嘉年華首設機構專場 - 樂聯網",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBsZGlhOGh4dzZzcW0zQUZSdVRxdXdUSHRNNWZraXpXcE4tSVNKUlB5XzBkaGd3YUNheFg5aEJwdkFldXlpS0JsNEtLOA?oc=5",
+      "summary": "聚焦「OnChain Finance」，2027香港Web3嘉年華首設機構專場&nbsp;&nbsp;樂聯網",
+      "dt_utc": "2026-11-11T05:34:00+00:00"
+    },
     {
       "title": "荷蘭採購V-200無人直升機 提升海域態勢感知- 軍事 - 中時新聞網",
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9vbzAtZ0hzZVA4bjExZWE0SW5IWU44alFnOHNPSFViWjRhUDM1UkdqZ3c4QkNlU1hnRG5uWmltZHAzcU9fYzhBbkdrM3F2aUpydVJqYzdodWtpLW1CVUQwbjNYYVEyRVN6Q2F0czdR?oc=5",
@@ -189,210 +387,12 @@
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE43aVVWREhJSzVyNzBCcVZCSkxpVXRQUXcyX2c5RWY2ck0yYkItWlp6NFJobzJQOGZiUVZiaHRGRWpsYURzWTVucFFzSE9fMnpXci1JMUMtbWY?oc=5",
       "summary": "ONON On - House set to begin voting on Hegseth impeachment measure - 股市爆料同學會&nbsp;&nbsp;CMoney",
       "dt_utc": "2026-11-10T22:32:36+00:00"
-    },
-    {
-      "title": "鏡論／跟著國安基金一起衝浪 - 鏡週刊Mirror Media",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9UNGFBeEhvSDJPZzZGMm13NGNRSDdQZkJkUERCekR6S3BhdE9nc0Nnck0tUkxtZ1h3ZENYT0VzOF9ZNjVOY2k2WFdBRVR5dV9peWZkdWlyX0J2R3PSAWBBVV95cUxObTZpa0pJZWlpVEE1OUhXVVAxc1JTeHZ4M0hwNGNMTDQyRVFaRW9zSUhUSzBYSllSdGsxSVNZMnFrVmYtcXVGMGdJZTUxWXQyTHBxbWdSUnZKWnAyRnYwTmk?oc=5",
-      "summary": "鏡論／跟著國安基金一起衝浪&nbsp;&nbsp;鏡週刊Mirror Media",
-      "dt_utc": "2026-11-10T22:28:59+00:00"
-    },
-    {
-      "title": "游客要当心！中国扒手团伙在日本频频作案(图) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0wbk95VVZ6ZFVGeGlORkpkM3VfR0FHZHRHaFdwNFRCWkxTUHpCeGMtLWszOUVBNW1NcWNTLWhhYnM4LS1NVDJvc2hqeHNiaU1EZG1NZEdHNDU?oc=5",
-      "summary": "游客要当心！中国扒手团伙在日本频频作案(图)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T22:19:40+00:00"
-    },
-    {
-      "title": "年近40歲才踏入股市會太晚？他月薪8萬、沒房貸想存ETF 網一看條件喊：快進場吧 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilANBVV95cUxNOGFyRWJIb1FBdzVNQmJHcWxpRUhvb05EM3YtNEJCbzAxOUtWd09NTkxxUUhBaHZZWmZoV0hFREU5Wm1jcVExSUJQVER6YmgzVXpkeFJKVnFnMVNtUkEwenk4RXVUbUhfVXlWS0NrWXRFVmlBb2dicEVpeXNFS1hGMDVpdGhqdGNzbl9qeDZSYmJhbi1uYm5Jb1ZJQXhsU09VYjdBT1gybmhCeHBialByUjJYcXNRdjRSSmxVWmxiVHR4elBFZ3psQzFxeUpWbzVOZUJEYl9RQjF4Rml3S1BIOW1qcFZ6WXByQWlTZnJVTkwzN3hKQnZZQnhRNGEyR2FpRUxuUlkxM1lDVkdWRk9rNjB2VmR1VnN3WWNHVXRCeGRxTTRWeUNHYTZMNW5QZEJhUXFpYXFCSFVxdG9ZcWZmaHp5N09tRVRjQzhuRU1CNEVJdDlYcnk4VWxGcmJVbU5yYjE0UEhTcE5tR1JVTlJBV2w4LVFOYmNGS1dxMlRpdmhFZzE2cWdxNEgyV09JeUZSMHFtYw?oc=5",
-      "summary": "年近40歲才踏入股市會太晚？他月薪8萬、沒房貸想存ETF 網一看條件喊：快進場吧&nbsp;&nbsp;Yahoo股市",
-      "dt_utc": "2026-11-10T22:05:00+00:00"
-    },
-    {
-      "title": "美國股市：收低，因通脹數據超預期及美聯儲官員言論加劇加息憂慮 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9wQU8tRmhEVTJyRXczbi1GNHQ3djZUUndiWmtEdFNSc3lmUDVrN3J2UzhscFFpdDdSaV94MDVBeGQ2Y1ZQbU13cmNsSEhCR3ZHVG9pSHlMSEZvTHBQeHNQZkxoeTJCdDhLcEF0UFp6dDJ4d2QyYU1R?oc=5",
-      "summary": "美國股市：收低，因通脹數據超預期及美聯儲官員言論加劇加息憂慮&nbsp;&nbsp;TradingView",
-      "dt_utc": "2026-11-10T21:40:17+00:00"
-    },
-    {
-      "title": "乔丹当选众院共和党领袖 迎战国会新格局(图) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ZOC05VmxmQ1VDelZwSWRmcE5TOUMtRmkzdDdmNEFsX3dEOHIzRDlpTFJVc1NtdlBtWVBkU3FGUGlCTmtucjVhLW1pRjFWNlctYld4Qms4d2Q?oc=5",
-      "summary": "乔丹当选众院共和党领袖 迎战国会新格局(图)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T20:54:50+00:00"
-    },
-    {
-      "title": "鉅亨速報- Factset 最新調查：Kaspi.kz Joint Stock Company Sponsored ADR RegSKSPI-US的目標價調降至94.17元，幅度約3.7% - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9uMmx0X0N3R0NnSDZDaUNObkwzWVBvVFl3TVAwZllYREpEY1FYSFVjUDZJWDlvdklRQjNFQWd1dEN4WjlBNHM3bTQ4Zm5zQjlWR3N4aG9qWVVybFlXTlh1U0pEbGs?oc=5",
-      "summary": "鉅亨速報- Factset 最新調查：Kaspi.kz Joint Stock Company Sponsored ADR RegSKSPI-US的目標價調降至94.17元，幅度約3.7%&nbsp;&nbsp;TradingView",
-      "dt_utc": "2026-11-10T20:15:22+00:00"
-    },
-    {
-      "title": "【軍事情報局】三航母圍住伊朗 美還要打伊朗？ - 大紀元",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBoRC1FVnhRbnZybFY0Q2dCaE9tR1lUdFdpd3JORVBMR2piQUp2bnphR0ozLWNrRlFrdXJYVGNDdXNwSDNaRndTOFI0ZDIxWWE2QzB1Z0x1THcxYmVSb0NIS0530gFnQVVfeXFMTXJ2S1dYVjVDMXpfQWtHeFZkcXFsMVE3cnZfMjIyQjNYU0RXRWZkTnhMZi00UWc5Q20xb2ZlSUQ1R0UyU0R6VkgtZkx6SGFiRlZacGdyZkMyMnd2VjRpSmNsR3NMbEppWQ?oc=5",
-      "summary": "【軍事情報局】三航母圍住伊朗 美還要打伊朗？&nbsp;&nbsp;大紀元",
-      "dt_utc": "2026-11-10T20:11:00+00:00"
-    },
-    {
-      "title": "加拿大多城集会声援黄之锋 斥政治操作(组图) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5wSlVHWkpkaFUyZTczQzhtN1BLaGVjQXRXRXRfaEZ0eTU0bWgtNDVXTVlRTWdya3ltQ0VWWXltTXM5NG1KcWNOdXRzazBwZndlR3E3SGFFMUY?oc=5",
-      "summary": "加拿大多城集会声援黄之锋 斥政治操作(组图)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T19:58:26+00:00"
-    },
-    {
-      "title": "AMD's Stock Fades as Investors Weigh Whether Nvidia's Turmoil Will Mean Lasting Wins - 富途牛牛",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaUZDQ3VHNU1YV2Q5MU5NLXFUYTloblM5bEV0UjVGQWluMVZNVXRMamJ0N0NEby1zQnkwOFJPTkVvODlEZUVtNGdrU3F4UF9lY3BVRDdOdktaT3BKdm80eTZ5ZUtKSDQ2TG9tYlpIRWszZFNVaEZvYzBwcjN4UW55dkJHQW5LTEhnRk5SZ284RkhOY3lrc2k2N202Wmc?oc=5",
-      "summary": "AMD's Stock Fades as Investors Weigh Whether Nvidia's Turmoil Will Mean Lasting Wins&nbsp;&nbsp;富途牛牛",
-      "dt_utc": "2026-11-10T19:34:08+00:00"
-    },
-    {
-      "title": "盧比歐稱美國重創伊朗經濟暫無必要重啟大規模軍事行動| 國際 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE82WGxZM0s1TkpSek1Bc2doRzQxVFVOV1VtU0lTeFB0TFc5XzYtT2MzSXFjWjU2Z3VuU05Mc0hYTVowUnl1dUh5SHNYS0hSSktOUHc5blU5czNyY2IxekY4?oc=5",
-      "summary": "盧比歐稱美國重創伊朗經濟暫無必要重啟大規模軍事行動| 國際&nbsp;&nbsp;中央社 CNA",
-      "dt_utc": "2026-11-10T18:59:00+00:00"
-    },
-    {
-      "title": "OSG/Octave Specialty Group - 今日股價行情與走勢圖 - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxd1BMRlJFVEFEc2V5SVV0N0t1US1XaGNRVWRPZWN0a1d4aGZxNlNoa2FtUVRKTlBqSWhOWHFmWTE4VGZ5ZWNfYXBvaHUtSjFZNnc?oc=5",
-      "summary": "OSG/Octave Specialty Group - 今日股價行情與走勢圖 - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T18:51:27+00:00"
-    },
-    {
-      "title": "法人：台股短線不易「大V轉」 - UDN",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE13ZWtPX01ZWnFkcDZJRGZqdFQ2TmgwVy1qZWlzeFRwTTNsTDY2a2ozdFdwUkNyVnVsYk5qa1hxUTE4Nk44ZUJ2eDdFWE1abHpl0gFWQVVfeXFMTkxXRzBlbl82U1FvZW1yVENVczlXR2g1TzVkd3ZuV21uTU5QWGZUQmF3MThvdndGa1NpbUdnNGRPd3JBVmp0STg1dmc4dmpfeUc3N19ZQkE?oc=5",
-      "summary": "法人：台股短線不易「大V轉」&nbsp;&nbsp;UDN",
-      "dt_utc": "2026-11-10T18:49:12+00:00"
-    },
-    {
-      "title": "股市與金融韌性 | 名家觀點 | 專欄 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5LdlFua0hZZmMyVnBmRDJoamJkTEVBSG1PdXBBSWpSZm5mUUNjMXZycTR2UTEzOG9RcUNSUWloM2Rta0M2VXFleVprMDhWWEFMbWlRU2VNTHU5Zw?oc=5",
-      "summary": "股市與金融韌性 | 名家觀點 | 專欄&nbsp;&nbsp;經濟日報",
-      "dt_utc": "2026-11-10T18:47:36+00:00"
-    },
-    {
-      "title": "【即時新聞】Bain Capital Specialty Finance(BCSF)公布最新財報！第三季淨利0.43美元，評估明年股息水準 - CMoney投資網誌",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVmdPSU1jZmJ0eW91dmk0TXpwMGxfaVRaRVA5WmRoNXJyUFhwYnltai16bF8tbC1iUVhnM0xhNmJDRUhLR0Fld1I0VHlKZ0d1WkhFMnlnZlh1cEpkd2ZRcHlSeDNrNDM2dXlUR1FXN0ZJRUZKbDgwMGhRalFYWHRyLWNYTEJmMVRrMjBzRTViYm0?oc=5",
-      "summary": "【即時新聞】Bain Capital Specialty Finance(BCSF)公布最新財報！第三季淨利0.43美元，評估明年股息水準&nbsp;&nbsp;CMoney投資網誌",
-      "dt_utc": "2026-11-10T18:46:31+00:00"
-    },
-    {
-      "title": "《強勢美股特報》COKE,CPRI,AFG,G等9檔 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1lcnhXcXI0d0pjSWNPNlBTVUVfTXpLR2NjSjlpQzl5T3RNNTJnN3lWeG5hek5yYV9FYXNyWE5WaF9zenJSWXBJcEdZTlZkR3NLOXlLS3F4bXE?oc=5",
-      "summary": "《強勢美股特報》COKE,CPRI,AFG,G等9檔&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T18:43:31+00:00"
-    },
-    {
-      "title": "櫃買業績發表 下周登場 - UDN",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zdVJqTV9uVDR6RncxR0lIblI1Y1l6SjJybmFxSFdwTGdSQm5uUE80U2VCX19aNU1MTzNyZkFJeGU3eWFKOU9jNVVrd0g4cG5s0gFWQVVfeXFMUFVkVnNWbEFSXzVCdnJSZi12dFN1ei10TEphMTlRaHdrQjdzZlFNSENjeUhqU0NBOHBNbk5RU3ppSUxKaHR6S2cyRE5tS0prZ3dZeWo5YUE?oc=5",
-      "summary": "櫃買業績發表 下周登場&nbsp;&nbsp;UDN",
-      "dt_utc": "2026-11-10T18:38:48+00:00"
-    },
-    {
-      "title": "北市府獲SLB資格認可 - UDN",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5fRDVoa0VJUGRfX0c1SmE5c2FQbTh1LTIwek13a3FtTGxKdGRoV0ZfeVdlbFlpcnFtWk5zZEszNTRaNEs5Tk10REFRWlhqUFE00gFWQVVfeXFMTmFmSFF0Vjl2OC1xNEVOUVp4Q2JEckJYUDBLOVptVzJDS2dQVHI4OHRtSlVIMDN0LW9tZ3JXNjNFdmNmWGU1VlUzYkk0VVRSVlcyWjViRGc?oc=5",
-      "summary": "北市府獲SLB資格認可&nbsp;&nbsp;UDN",
-      "dt_utc": "2026-11-10T18:38:30+00:00"
-    },
-    {
-      "title": "亞資辦公室參與高雄金博會 - UDN",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE55Z1M4VnNiMlpTQXBqaDhTUTRrQkF3TTdkbGpPOTR4MGJ2WmdQeEk3d29uZzQ0N2JTMFR0dnpxcGRPN0RNMHJFanVCdG9EeDFW0gFWQVVfeXFMUGgtRHRwR3FOUHJNdktxZG9yTjJYOXExVE56dWVMT1hqS2w4a3VFNkJzZjhDUVNkTXdtZTNOQkRkRFkxd0EtSG9OOU9pRmZHc0ZDSFpnc0E?oc=5",
-      "summary": "亞資辦公室參與高雄金博會&nbsp;&nbsp;UDN",
-      "dt_utc": "2026-11-10T18:38:21+00:00"
-    },
-    {
-      "title": "鴻海、技嘉 權證認購放閃 - UDN",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rYm5VMjFTemw4WlBUaEdYcDctb29CNllQRldJZGRGYVNiQ1pPRF9uU1ByRGQxV01SMDdjRFNQSF93Zi1hWm5SZVZfd1VfN0FN0gFWQVVfeXFMTW1HdHJOZWwtdEZ2N0tJRWczTUdCcDBxc1FYTFNuLUx3RDVHMmdRSk14Q000QW53QkJ2aElMc3M0Q1JYQ2cyTUhUcUU0SkVrbENqcFBMeXc?oc=5",
-      "summary": "鴻海、技嘉 權證認購放閃&nbsp;&nbsp;UDN",
-      "dt_utc": "2026-11-10T18:33:50+00:00"
-    },
-    {
-      "title": "白宮推遲軍事打擊 美軍海外基地突發撤離 - 新唐人電視台",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5vM3R2d2pxeFcyOFVjM0JIXzVEb1ZtYmR5NU1CdWc4dlV0TEFDeHlydy1jcm91b2s1dWNzZmVkcnBBZE5MSm4zMkFmT0h0YmhndHE3c2p1QktaUDhnTTYtOdIBZkFVX3lxTE8yWDFwUFhoT0FfNk96a0J0b181TE9hWnExQUpkVGphVmN6M01FaEQwVm15dzZyR1prMTNFZl9VWWJzRU53Z2tRTFA3MEtkR3ZLVXpQWVRnbHpXREpmblRmaC1MRS02dw?oc=5",
-      "summary": "白宮推遲軍事打擊 美軍海外基地突發撤離&nbsp;&nbsp;新唐人電視台",
-      "dt_utc": "2026-11-10T18:16:40+00:00"
-    },
-    {
-      "title": "TWA00 加權指數- 看起來還是誘多- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBSZ1Bsa0RUR1NScWcxdWxKdzlaSXdIVTllOXRwcVlsM0NuZjExZHlWMmo4Um5sNWV4NWtvdUd1LVdldi1VTWRpbmxsSGstV0dNcC1hVmU0amw?oc=5",
-      "summary": "TWA00 加權指數- 看起來還是誘多- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T18:12:01+00:00"
-    },
-    {
-      "title": "AI浪潮褪不了…科技主題主動式受追捧 - udn",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE93enVGZjlqdlo5aDJYMzhSVmoxMGxfYlZMcWU2S3A0OEZYR01zRll0UUQzWGdmUm1reVJjTmZNaXRXN2RDTjJoYU1VNkVRVHJGcnfSAVdBVV95cUxNa0hZbkFoVEZhSVZVY3ZoWjZHcmRqQ2VELXg1ZEppa0pILWhkamNXeGtaZlpWbElUb0ZIQ3pIZjVvWTJUWHpTYkpkUkVWal9QNnd4c3Zwc0k?oc=5",
-      "summary": "AI浪潮褪不了…科技主題主動式受追捧&nbsp;&nbsp;udn",
-      "dt_utc": "2026-11-10T17:17:33+00:00"
-    },
-    {
-      "title": "8299 群聯- 跟大戶進場成本一樣- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5EV282amg3aEUzZXh3MHk4a0RzQ3dMTXMya1Z0VDh2dHZDQ0ZwRDM1MmxWX3o1czNkanpqMTRpaXM1U1p5TnNMcXc4NjZ2MnV0RlhwU29LZFY?oc=5",
-      "summary": "8299 群聯- 跟大戶進場成本一樣- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T17:05:06+00:00"
-    },
-    {
-      "title": "2603 長榮 - 股市最新爆料，掌握股友們對眾個股股價、技術分析、新聞的第一手... - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBVRVJNaHYyQUhpTkc2c1dLNlNyQ0VFVnQ5RW51UnltSjVuU29lUmlEY29zNTlBVnBiZGhBZ3c0M3FhVFdsc1RKSFdUUEcxci1ub1NqU0tFZlA?oc=5",
-      "summary": "2603 長榮 - 股市最新爆料，掌握股友們對眾個股股價、技術分析、新聞的第一手... - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T16:22:57+00:00"
-    },
-    {
-      "title": "判決書、遺言曝光！景美軍事法庭重新開放 帶你直擊白色恐怖審判 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMimwNBVV95cUxNU3U5SkM3elZWVjRhSUNmWDR6UGVVcXB1X3FOeFl6Mm1nT0dVX21MQ2tTVVV4Sk9BVzc5NGpuRUl5NGtleDNET2JwYnc3Mnk3MUhHY1hxMTUtZXdwQmRCR3lXWDVMMWI4OGdWLVFmSk5zcXotaHQwSC0yTlQwNzlEXzNDNTNmSlA5OWxwazRpakhDUU9kejA5N1NkTUYyS2J6NVFNNjNzUUV6UURoamJyNjNpcm91VUlyUTRNWWVvcVBUTUlPNkRfZ29Xd2NIem5keTNxUnJ5amRramg2Mlh0ZDFKWUx1dnEwRncwWHFWRzhFb1FVSkNZLTl5UXRJc0NUenlwbHlCMVdpakNiMkJhU0lwYl94X1JvZG5WZ0R4OXpMS2FpMk94WjdSZ082aGtzbW11V3l6aDBXRmtLZHhNZzA4WHZrZmxaUkxpYldPcDlmRmpIV01XSUZWUS14VG04RzVKM0xVZFk2aTJsb0hnVDBJc1ktOHY3NlpxMnltOWN6SGNNNG1oaGNrZHREUnlGaHJsbk5KVG4ycWc?oc=5",
-      "summary": "判決書、遺言曝光！景美軍事法庭重新開放 帶你直擊白色恐怖審判&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-11-10T15:56:00+00:00"
-    },
-    {
-      "title": "FXT在2026年金融大亨Finance Magnates大獎中獲評最具創新力經紀商 - BusinessFocus",
-      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQSVNDUGFaRFFLMW5iY0hHXzBrcEZiUGphNFFrNzJ3cmVfNjFOSFN4dGF0U1JjWGNGTm1odW84V0dJVmNYSTNuWXFfOVgwSXpjRzFkNkFham84Z3hiTXZrc3lQb0Z6OWZGalZ1M19hUEpPejJLRmVWS0pmTWRuZGNTZFpibWxpTkpXMDdZQ0hpVHZBZU5lTzBqV0ZWcDBsY0tSclFpR1gyZmhYMG1JS3VVbjNpUWI3cUpzamkyQzJaYjVqWkluVmVEcjFNRUJZc3JPLUVSTldENURLaUZfemZUN1drSVd6dXR1NVVwWHlLeWstUU1obDRtVnRJMmw1Z3pDY0NpVXV2U1R5eXJYRGluS25EUE9uTnlvZmdxNjROVm05X1lmZl9zZTJvQ1U1UkRFRG5tekp4UTFRTW9RTXlyWGlZc0RUdmstN0FuMTI4SUZ3Wkll?oc=5",
-      "summary": "FXT在2026年金融大亨Finance Magnates大獎中獲評最具創新力經紀商&nbsp;&nbsp;BusinessFocus",
-      "dt_utc": "2026-11-10T15:03:03+00:00"
-    },
-    {
-      "title": "萨尔瓦多出兵海地 帮派头目住所被摧毁(图) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyOGZpbVdsVGRkTWZqZWtIOU1iandrZklnemRBZTZfZVlQRnhPTklNOVFSWEtfbTdhLVVnYnFnUVBRa2RaVnVJQms0TlNLek13dFlGMTY4SGk?oc=5",
-      "summary": "萨尔瓦多出兵海地 帮派头目住所被摧毁(图)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T14:56:13+00:00"
-    },
-    {
-      "title": "共和党失利意味着美国“左派”回潮？(视频) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9USGRNb2VZWEw5TXNVZmNSbHpkRWxJSnlDeFNRLUp0ZzhCNTE3RkF1SG1vRkoxT2RFTERGNUFmc20wcXN4VVQ3NmJVeGFvVUVackFmTjluakM?oc=5",
-      "summary": "共和党失利意味着美国“左派”回潮？(视频)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T14:56:11+00:00"
-    },
-    {
-      "title": "集安组织峰会：俄罗斯盟友加速另寻出路(图) - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5yOFFBZWdvTlNXSVU2YlZjeHktWThxTGd3NUFvcW1KZzRTYmw4QWVTeEhxYWg0RGRQZUtOZEEtNWM0ZnJGRWJEekx0YUZzUjdITXY0Y3lXVG8?oc=5",
-      "summary": "集安组织峰会：俄罗斯盟友加速另寻出路(图)&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T14:56:03+00:00"
-    },
-    {
-      "title": "6446 藥華藥- 撤銷的是哪些部分？ - 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5UXzhYZDl4UUcwcnUyR0VfcXNDSjRMbzNQcHk1LUFwcVJiVWEyWkVzZ1dfOGhsNG5JTWpZbEYyb2ZzSjZiM1BzRXhlbXNud2FadDQzM0c4djM?oc=5",
-      "summary": "6446 藥華藥- 撤銷的是哪些部分？ - 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T14:53:55+00:00"
-    },
-    {
-      "title": "波灣合作理事會在科威特設立聯合軍事前進總部 - Rti 中央廣播電臺",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9oZ1VBcmFxdlhEUjBmbjNqb011YnNKaTdFV0xucE4xdlJDNzlTTHlzWGJiYnFUVHhPbk1KVmF4WktXVlR4VG56YXZTU3RLYmI5eUNhVDBFcS0?oc=5",
-      "summary": "波灣合作理事會在科威特設立聯合軍事前進總部&nbsp;&nbsp;Rti 中央廣播電臺",
-      "dt_utc": "2026-11-10T14:46:00+00:00"
-    },
-    {
-      "title": "3037 欣興- 外資開始買；融資也降；非常漂亮- 股市爆料同學會 - CMoney",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0wX212dUNsV1RGQVMwX1BMbXBGT1NOY0c3WVF0aU1VUE51T3VpSkJZR3M0RkdMNVl3Q3l1c3Y2YVRPTDNKNHVKa0tDSmgzejhTTk15Wmh0d1k?oc=5",
-      "summary": "3037 欣興- 外資開始買；融資也降；非常漂亮- 股市爆料同學會&nbsp;&nbsp;CMoney",
-      "dt_utc": "2026-11-10T14:27:57+00:00"
-    },
-    {
-      "title": "黃仁勳婚外情攸關美國國安具地緣政治重要性走私晶片只是前菜搞垮輝達重創美國AI發展才是主菜｜鏡轉全球｜#鏡新聞 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMigwVBVV95cUxOUnNOODZ0Um5SdkFCQ0xGYXhiMWNzdzhWY2dEN1JLb3lXYVVrbGQ4X0NSbDhrTGk4VTQycTVKQ25TT0lnRlRJM21ITHB0RTFHRWx2eUNXOWpTWjREUzVlSXVvV2pqNVU5UUNTLWFPZ01JUVl4aHlVOHdCbFVjUzdEQlhRNzdROXdYdmcxNTUyNTlUdXhNZTlTMVQ0Q1M1el9SM2thY2VVQ1NWbXFXcmdQRjJ3T204WmZoR1MwSVpTdDJQRGNnbVJJMEFGbHRWT2Zfa3EtcGQ1MzR2Z2pCTEU5emlUdzNwOFRvRVl3UFo3SUk2WlFjMlA4eTZtNkJnbndCanpvQUZ4SXpIdkhhSkVzbzFIUV9BdEdWcXRidGxTMnRTY2p2dWZKT2Z1LWx0emh6MFcyMFBqU3U0RHRIZm9OVUViVXhWNUc4cEVqYlQ1XzUwVEptU0hGOVk4RExvdFpCUVp3aURyZzNDdEtUaXluQ1NPVVQzWU1oeG0wajlISVY0clEyQlhWeGJpc2pqLVhZWklYdmM5V0w2Ri1mMWxFQlZYbUxrSFVYbENkM3Q2ckVRelRFN3pJSlNvZDlBaXZZQnktdU1Gck9vT1JiNWRwVmphcDdlVnQ0N3d6Y0xKZmZxTUJ5VlV5VldScTYxQlltYW95djRvZERiZ2N3S1lqczNMU1lNQ2hDN01lU1R3Z2xBNk1Mc2hVbGZqVUNSdnktYU0ya3NwMHppaV9oTHNiVXM4MmpwcW4xb3l6R3hfQ3pZRHVHWjlCZHFmWGhHcGVMZVM0dXB2Y1h2dzR6MzBRRk9nZEs0WFFOVlF4aXNUZG9fM0N3VDhwVUI3bjFqNE8xbGlJ?oc=5",
-      "summary": "黃仁勳婚外情攸關美國國安具地緣政治重要性走私晶片只是前菜搞垮輝達重創美國AI發展才是主菜｜鏡轉全球｜#鏡新聞&nbsp;&nbsp;Yahoo新聞",
-      "dt_utc": "2026-11-10T14:04:08+00:00"
     }
   ],
   "risk_indicators": {
-    "vix": "19.46",
-    "vix_trend": "▼ 0.46",
-    "usd_twd": "32.92",
-    "usd_trend": "▲ 0.13"
+    "vix": "17.49",
+    "vix_trend": "▼ 1.97",
+    "usd_twd": "32.85",
+    "usd_trend": "▼ 0.10"
   }
 }
