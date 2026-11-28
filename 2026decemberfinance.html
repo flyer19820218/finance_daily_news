@@ -41,13 +41,55 @@
         h1 { font-size:1.95rem; font-weight:900; color:var(--primary); margin:0 0 10px; letter-spacing:-.5px; line-height:1.35; }
         .meta-info { font-size:.98rem; color:var(--text-muted); font-weight:600; margin-bottom:20px; }
         .highlight-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px; }
-        .stat-card { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; padding:18px 10px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,.03); }
+        .stat-card {
+            appearance:none; width:100%; font:inherit; cursor:pointer;
+            background:var(--card-bg); border:1px solid var(--border); border-radius:14px;
+            padding:18px 10px 14px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,.03);
+            transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+        .stat-card:hover { transform:translateY(-3px); box-shadow:0 10px 22px rgba(15,23,42,.1); border-color:var(--accent); }
+        .stat-card:active { transform:translateY(-1px); }
+        .stat-card:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
         .stat-card.c-red { border-top:4px solid var(--c-rose); }
         .stat-card.c-blue { border-top:4px solid var(--c-blue); }
         .stat-card.c-cyan { border-top:4px solid var(--c-cyan); }
         .stat-card.c-green { border-top:4px solid var(--c-emerald); }
         .stat-value { font-size:1.22rem; font-weight:900; color:var(--primary); line-height:1.4; }
         .stat-label { font-size:.8rem; color:var(--text-muted); font-weight:700; margin-top:6px; }
+        .stat-hint { font-size:.72rem; color:var(--c-blue); font-weight:700; margin-top:8px; opacity:.85; }
+        .trend-modal {
+            position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center;
+            background:rgba(15,23,42,.62); backdrop-filter:blur(4px); padding:16px;
+        }
+        .trend-modal.open { display:flex; }
+        .trend-dialog {
+            width:100%; max-width:800px; max-height:90vh; overflow-y:auto;
+            background:var(--card-bg); color:var(--text-main); border:1px solid var(--border);
+            border-radius:18px; padding:24px 24px 26px; box-shadow:0 24px 50px rgba(0,0,0,.28);
+            text-align:left;
+        }
+        .trend-top { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+        .trend-tabs { display:flex; flex-wrap:wrap; gap:6px; }
+        .trend-tab {
+            appearance:none; font:inherit; font-size:.82rem; font-weight:800; padding:6px 12px;
+            border-radius:999px; border:1px solid var(--border); background:var(--bg-color);
+            color:var(--text-muted); cursor:pointer; transition:all .15s ease;
+        }
+        .trend-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+        .trend-close {
+            appearance:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--border);
+            background:var(--bg-color); color:var(--text-main); font-size:1.1rem; font-weight:800;
+            cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+        }
+        .trend-close:hover { border-color:var(--accent); color:var(--accent); }
+        .trend-title { font-size:1.22rem; font-weight:900; color:var(--primary); margin:4px 0 4px; }
+        .trend-sub { font-size:.86rem; color:var(--text-muted); margin:0 0 14px; }
+        .trend-chart-box { position:relative; height:270px; width:100%; margin:12px 0 16px; padding:12px; background:#f8fafc; border-radius:14px; border:1px solid var(--border); }
+        @media (prefers-color-scheme:dark) { .trend-chart-box { background:#131b29; } }
+        .rev-strip { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 16px; }
+        .rev-chip { font-size:.8rem; font-weight:700; padding:6px 10px; border-radius:10px; background:var(--accent-light); border:1px solid var(--accent-border); color:var(--text-main); }
+        .trend-note { font-size:.86rem; color:var(--text-muted); margin:12px 0 0; padding:10px 14px; background:var(--accent-light); border-left:4px solid var(--c-blue); border-radius:8px; }
+        .light-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle; }
         .section-card { background:var(--card-bg); border:1px solid var(--border); border-radius:18px; padding:34px 28px; margin-bottom:28px; box-shadow:0 6px 16px rgba(0,0,0,.03); text-align:justify; }
         .card-ch1 { border-top:6px solid var(--c-blue); }
         .card-ch2 { border-top:6px solid var(--c-cyan); }
@@ -117,6 +159,8 @@
             h2 { font-size:1.24rem; }
             h3 { font-size:1.04rem; }
             .chart-wrapper { height:260px; }
+            .trend-dialog { padding:18px 14px 20px; }
+            .trend-chart-box { height:225px; }
             .data-table th,.data-table td { padding:10px 8px; font-size:.84rem; }
             .bullet-list li { padding:15px 14px; }
             .scenario-grid { grid-template-columns:1fr; }
@@ -131,10 +175,30 @@
         <div class="meta-info">護國群山戰情室 ｜ 以 2026 年 11 月可得統計與專案每日紀錄，評估 2026～2030 年的成長基礎與風險</div>
         <p style="margin:0;color:var(--text-muted);font-size:.9rem;">資料截點：2026 年 11 月 28 日。台灣最新完整月度統計為 10 月，GDP 與景氣對策信號更新至 11 月 27 日官方發布；以下為條件式情境分析，不是精確預測。</p>
         <div class="highlight-grid">
-            <div class="stat-card c-red"><div class="stat-label">📈 2026 / 2027 GDP</div><div class="stat-value" style="color:var(--c-rose);">13.28% / 6.51%</div><div class="stat-label">主計總處 11/27 預測</div></div>
-            <div class="stat-card c-blue"><div class="stat-label">🏭 台積電 10 月營收</div><div class="stat-value" style="color:var(--c-blue);">5,868.9 億元</div><div class="stat-label">年增 59.7%｜全年估增 44%</div></div>
-            <div class="stat-card c-cyan"><div class="stat-label">📦 10 月外銷訂單</div><div class="stat-value" style="color:var(--c-cyan);">1,238.2 億美元</div><div class="stat-label">年增 78.3%｜連 3 月破千億</div></div>
-            <div class="stat-card c-green"><div class="stat-label">📊 10 月景氣燈號</div><div class="stat-value" style="color:var(--c-emerald);">40 分（紅燈）</div><div class="stat-label">連續 11 個月紅燈</div></div>
+            <button type="button" class="stat-card c-red" data-metric="gdp" aria-label="查看 2025 至 2027 年 GDP 成長趨勢">
+                <div class="stat-label">📈 2026 / 2027 GDP</div>
+                <div class="stat-value" style="color:var(--c-rose);">13.28% / 6.51%</div>
+                <div class="stat-label">主計總處 11/27 預測</div>
+                <div class="stat-hint">點擊看近兩年趨勢 ↗</div>
+            </button>
+            <button type="button" class="stat-card c-blue" data-metric="tsmc" aria-label="查看台積電近 12 個月營收趨勢">
+                <div class="stat-label">🏭 台積電 10 月營收</div>
+                <div class="stat-value" style="color:var(--c-blue);">5,868.9 億元</div>
+                <div class="stat-label">年增 59.7%｜全年估增 44%</div>
+                <div class="stat-hint">點擊看近 12 月趨勢 ↗</div>
+            </button>
+            <button type="button" class="stat-card c-cyan" data-metric="orders" aria-label="查看台灣近 12 個月外銷訂單趨勢">
+                <div class="stat-label">📦 10 月外銷訂單</div>
+                <div class="stat-value" style="color:var(--c-cyan);">1,238.2 億美元</div>
+                <div class="stat-label">年增 78.3%｜連 3 月破千億</div>
+                <div class="stat-hint">點擊看近 12 月趨勢 ↗</div>
+            </button>
+            <button type="button" class="stat-card c-green" data-metric="lights" aria-label="查看台灣近 12 個月景氣燈號趨勢">
+                <div class="stat-label">📊 10 月景氣燈號</div>
+                <div class="stat-value" style="color:var(--c-emerald);">40 分（紅燈）</div>
+                <div class="stat-label">連續 11 個月紅燈</div>
+                <div class="stat-hint">點擊看近 12 月趨勢 ↗</div>
+            </button>
         </div>
     </header>
 
@@ -295,51 +359,287 @@
         <p>本報告以 2026 年 11 月 28 日前可得資訊撰寫。中長期展望為條件式推演，實際結果可能不同；內容供研究與決策參考，不構成任何投資建議。<br>© 2026 護國群山戰情室</p>
     </div>
 </div>
+
+<div class="trend-modal" id="trendModal" role="dialog" aria-modal="true" aria-labelledby="trendModalTitle">
+    <div class="trend-dialog">
+        <div class="trend-top">
+            <div class="trend-tabs" role="tablist">
+                <button type="button" class="trend-tab" data-tab="gdp">📈 GDP 趨勢</button>
+                <button type="button" class="trend-tab" data-tab="tsmc">🏭 台積電營收</button>
+                <button type="button" class="trend-tab" data-tab="orders">📦 外銷訂單</button>
+                <button type="button" class="trend-tab" data-tab="lights">📊 景氣燈號</button>
+            </div>
+            <button type="button" class="trend-close" id="trendClose" aria-label="關閉視窗">✕</button>
+        </div>
+        <h3 class="trend-title" id="trendModalTitle" style="display:block;padding:0;background:none;margin:4px 0 4px;"></h3>
+        <p class="trend-sub" id="trendModalSub"></p>
+        <div id="trendExtra"></div>
+        <div class="trend-chart-box" id="trendChartBox"><canvas id="trendModalChart"></canvas></div>
+        <div class="table-responsive" style="margin:14px 0;">
+            <table class="data-table" id="trendTable"></table>
+        </div>
+        <div class="trend-note" id="trendNote"></div>
+    </div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var textColor = dark ? "#94a3b8" : "#475569";
+    var gridColor = dark ? "#334155" : "#e2e8f0";
+
+    // Chapter 03 外銷訂單長條圖
     var chartBox = document.getElementById("orders-chart-container");
     var fallback = document.getElementById("orders-fallback");
     if (typeof Chart === "undefined" || window.chartLoadFailed) {
         if (chartBox) chartBox.style.display = "none";
         if (fallback) fallback.style.display = "block";
-        return;
-    }
-    try {
-        var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var textColor = dark ? "#94a3b8" : "#475569";
-        var gridColor = dark ? "#334155" : "#e2e8f0";
-        new Chart(document.getElementById("ordersChart").getContext("2d"), {
-            type:"bar",
-            data:{
-                labels:["4 月","5 月","6 月","7 月","8 月","9 月","10 月"],
-                datasets:[{
-                    label:"台灣外銷訂單（億美元）",
-                    data:[874.5,894.8,952.6,979.4,1029.6,1142.1,1238.2],
-                    backgroundColor:[
-                        "rgba(100,116,139,.82)",
-                        "rgba(29,78,216,.84)",
-                        "rgba(2,132,199,.86)",
-                        "rgba(109,40,217,.84)",
-                        "rgba(180,83,9,.86)",
-                        "rgba(4,120,87,.88)",
-                        "rgba(190,18,60,.92)"
-                    ],
-                    borderWidth:0,borderRadius:8
-                }]
-            },
-            options:{
-                responsive:true,maintainAspectRatio:false,
-                plugins:{legend:{display:false}},
-                scales:{
-                    x:{ticks:{color:textColor,font:{weight:"bold"}},grid:{display:false}},
-                    y:{beginAtZero:true,ticks:{color:textColor},grid:{color:gridColor},title:{display:true,text:"億美元",color:textColor}}
+    } else {
+        try {
+            new Chart(document.getElementById("ordersChart").getContext("2d"), {
+                type:"bar",
+                data:{
+                    labels:["4 月","5 月","6 月","7 月","8 月","9 月","10 月"],
+                    datasets:[{
+                        label:"台灣外銷訂單（億美元）",
+                        data:[874.5,894.8,952.6,979.4,1029.6,1142.1,1238.2],
+                        backgroundColor:[
+                            "rgba(100,116,139,.82)",
+                            "rgba(29,78,216,.84)",
+                            "rgba(2,132,199,.86)",
+                            "rgba(109,40,217,.84)",
+                            "rgba(180,83,9,.86)",
+                            "rgba(4,120,87,.88)",
+                            "rgba(190,18,60,.92)"
+                        ],
+                        borderWidth:0,borderRadius:8
+                    }]
+                },
+                options:{
+                    responsive:true,maintainAspectRatio:false,
+                    plugins:{legend:{display:false}},
+                    scales:{
+                        x:{ticks:{color:textColor,font:{weight:"bold"}},grid:{display:false}},
+                        y:{beginAtZero:true,ticks:{color:textColor},grid:{color:gridColor},title:{display:true,text:"億美元",color:textColor}}
+                    }
                 }
-            }
-        });
-    } catch (e) {
-        if (chartBox) chartBox.style.display = "none";
-        if (fallback) fallback.style.display = "block";
+            });
+        } catch (e) {
+            if (chartBox) chartBox.style.display = "none";
+            if (fallback) fallback.style.display = "block";
+        }
     }
+
+    // 頁首四大指標互動趨勢視窗（整年 12 期 / 近兩年各季趨勢）
+    var METRICS = {
+        gdp: {
+            title: "台灣實質 GDP 年增率趨勢（2025 Q1 ～ 2027 全年預測）",
+            sub: "資料來源：行政院主計總處（2026/11/27 最新發布）｜單位：%",
+            type: "bar",
+            unit: "%",
+            yMin: 0,
+            labels: ["25 Q1","25 Q2","25 Q3","25 Q4","26 Q1","26 Q2","26 Q3","26 Q4(估)","27 全年(估)"],
+            values: [5.54, 7.71, 8.42, 12.95, 15.44, 13.31, 14.39, 10.42, 6.51],
+            colors: ["#94a3b8","#64748b","#475569","#0284c7","#be123c","#be123c","#be123c","#e11d48","#047857"],
+            extraHtml:
+                '<div style="font-size:.82rem;font-weight:800;color:var(--text-muted);margin-bottom:4px;">2026 全年 GDP 主計總處歷次預測上修軌跡：</div>' +
+                '<div class="rev-strip">' +
+                '<span class="rev-chip">2025/11：3.54%</span>' +
+                '<span class="rev-chip">2026/02：7.71%</span>' +
+                '<span class="rev-chip">2026/05：9.64%</span>' +
+                '<span class="rev-chip">2026/08：11.05%</span>' +
+                '<span class="rev-chip" style="border-color:var(--c-rose);color:var(--c-rose);">2026/11：13.28%</span>' +
+                '</div>',
+            headers: ["期間","GDP 年增率","統計口徑／備註"],
+            rows: [
+                ["2025 Q1","5.54%","已公布統計（2025 全年修正為 8.94%）"],
+                ["2025 Q2","7.71%","已公布統計"],
+                ["2025 Q3","8.42%","已公布統計"],
+                ["2025 Q4","12.95%","修正數，首度跨入雙位數成長"],
+                ["2026 Q1","15.44%","修正數"],
+                ["2026 Q2","13.31%","修正數"],
+                ["2026 Q3","14.39%","初步統計數"],
+                ["2026 Q4","10.42%","11/27 預測（較前次上修 5.05 個百分點）；全年 13.28%"],
+                ["2027 全年","6.51%","11/27 預測；每人 GDP 預估 50,779 美元"]
+            ],
+            note: "趨勢重點：自 2025 Q4 起已連續五季維持雙位數成長，主計總處於一年內將 2026 全年 GDP 預測由 3.54% 逐步上修至 13.28%；2027 年在高基期之上仍估成長 6.51%。"
+        },
+        tsmc: {
+            title: "台積電（2330）近 12 個月合併營收趨勢（2025/11 ～ 2026/10）",
+            sub: "資料來源：台積電公開每月營收公告｜單位：新台幣億元",
+            type: "line",
+            unit: "億元",
+            yMin: 2500,
+            labels: ["25/11","25/12","26/01","26/02","26/03","26/04","26/05","26/06","26/07","26/08","26/09","26/10"],
+            values: [3436.1, 3350.0, 4012.6, 3176.6, 4151.9, 4107.3, 4169.8, 4426.8, 4675.8, 5148.1, 5118.6, 5868.9],
+            colors: "#1d4ed8",
+            extraHtml: "",
+            headers: ["月份","合併營收（億元）","階段重點"],
+            rows: [
+                ["2025 年 11 月","3,436.1","2025 Q4 傳統旺季（2025 全年約 3.81 兆元）"],
+                ["2025 年 12 月","3,350.0","年底盤點期"],
+                ["2026 年 1 月","4,012.6","單月首度突破 4,000 億元"],
+                ["2026 年 2 月","3,176.6","農曆春節工作天數較少"],
+                ["2026 年 3 月","4,151.9","重回 4,000 億元上方"],
+                ["2026 年 4 月","4,107.3","穩定站穩 4,100 億元區間"],
+                ["2026 年 5 月","4,169.8","先進製程出貨續增"],
+                ["2026 年 6 月","4,426.8","Q2 季底拉貨"],
+                ["2026 年 7 月","4,675.8","進入 2 奈米量產爬坡與 Q3 旺季"],
+                ["2026 年 8 月","5,148.1","單月首度突破 5,000 億元"],
+                ["2026 年 9 月","5,118.6","Q3 合計 1 兆 4,942.4 億元、EPS 29.43 元"],
+                ["2026 年 10 月","5,868.9","年增 59.7%、月增 14.7%，1～10 月累計 4 兆 4,856.2 億元（+43.3%）"]
+            ],
+            note: "趨勢重點：過去 12 個月台積電單月營收由約 3,400 億元階梯式墊高至 5,868.9 億元，反映 3 奈米滿載、2 奈米放量及 HPC／AI 訂單持續轉化為實質營收。"
+        },
+        orders: {
+            title: "台灣近 12 個月外銷訂單金額趨勢（2025/11 ～ 2026/10）",
+            sub: "資料來源：經濟部統計處（2026/11/20 發布）｜單位：億美元",
+            type: "bar",
+            unit: "億美元",
+            yMin: 0,
+            labels: ["25/11","25/12","26/01","26/02","26/03","26/04","26/05","26/06","26/07","26/08","26/09","26/10"],
+            values: [729.2, 762.0, 769.1, 638.8, 911.2, 874.5, 894.8, 952.6, 979.4, 1029.6, 1142.1, 1238.2],
+            colors: ["#94a3b8","#64748b","#38bdf8","#94a3b8","#0284c7","#0284c7","#0284c7","#1d4ed8","#1d4ed8","#047857","#047857","#be123c"],
+            extraHtml: "",
+            headers: ["月份","外銷訂單（億美元）","變動與備註"],
+            rows: [
+                ["2025 年 11 月","729.2","年增 39.5%"],
+                ["2025 年 12 月","762.0","年增 43.8%，2025 全年達 7,437.3 億美元（+26.0%）"],
+                ["2026 年 1 月","769.1","年增 60.1%，同月首度突破 700 億美元"],
+                ["2026 年 2 月","638.8","年增 23.8%，受春節工作天數較少影響"],
+                ["2026 年 3 月","911.2","年增 65.9%，單月首度突破 900 億美元"],
+                ["2026 年 4 月","874.5","維持高檔接單"],
+                ["2026 年 5 月","894.8","AI 與資通訊需求延續"],
+                ["2026 年 6 月","952.6","逼近千億美元門檻"],
+                ["2026 年 7 月","979.4","創當時單月新高"],
+                ["2026 年 8 月","1,029.6","年增 71.4%，單月首度突破 1,000 億美元"],
+                ["2026 年 9 月","1,142.1","年增 62.4%，連續 2 個月破千億美元"],
+                ["2026 年 10 月","1,238.2","年增 78.3%，連續 3 個月破千億美元（1～10 月 9,430.2 億，+58.6%）"]
+            ],
+            note: "趨勢重點：過去 12 個月台灣外銷訂單從 729.2 億美元一路攀升至 1,238.2 億美元（增幅約 70%），經濟部預估 2026 全年將站上 1.1 兆美元以上。"
+        },
+        lights: {
+            title: "台灣近 12 個月景氣對策信號趨勢（2025/11 ～ 2026/10）",
+            sub: "資料來源：國家發展委員會（2026/11/27 發布）｜38～45 分為紅燈，32～37 分為黃紅燈",
+            type: "bar",
+            unit: "分",
+            yMin: 30,
+            labels: ["25/11","25/12","26/01","26/02","26/03","26/04","26/05","26/06","26/07","26/08","26/09","26/10"],
+            values: [37, 38, 39, 40, 39, 40, 39, 41, 41, 40, 41, 40],
+            colors: ["#f59e0b","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626","#dc2626"],
+            extraHtml: "",
+            headers: ["月份","分數","燈號與紀錄"],
+            rows: [
+                ["2025 年 11 月","37 分","<span class='light-dot' style='background:#f59e0b'></span>黃紅燈（距紅燈僅差 1 分）"],
+                ["2025 年 12 月","38 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（第 1 個月紅燈）"],
+                ["2026 年 1 月","39 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 2 紅）"],
+                ["2026 年 2 月","40 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 3 紅）"],
+                ["2026 年 3 月","39 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 4 紅）"],
+                ["2026 年 4 月","40 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 5 紅｜修正值）"],
+                ["2026 年 5 月","39 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 6 紅｜修正值）"],
+                ["2026 年 6 月","41 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 7 紅｜修正值）"],
+                ["2026 年 7 月","41 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 8 紅｜修正值）"],
+                ["2026 年 8 月","40 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 9 紅｜修正值）"],
+                ["2026 年 9 月","41 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 10 紅｜修正值）"],
+                ["2026 年 10 月","40 分","<span class='light-dot' style='background:#dc2626'></span>紅燈（連 11 紅｜初值，創歷史最長連續紅燈紀錄）"]
+            ],
+            note: "趨勢重點：景氣分數自 2025 年 12 月跨越 38 分門檻後，已連續 11 個月穩定落在 38～41 分紅燈區間，10 月領先與同時指標亦持續走揚。"
+        }
+    };
+
+    var modal = document.getElementById("trendModal");
+    var closeBtn = document.getElementById("trendClose");
+    var titleEl = document.getElementById("trendModalTitle");
+    var subEl = document.getElementById("trendModalSub");
+    var extraEl = document.getElementById("trendExtra");
+    var tableEl = document.getElementById("trendTable");
+    var noteEl = document.getElementById("trendNote");
+    var modalChartBox = document.getElementById("trendChartBox");
+    var modalChart = null;
+
+    function renderMetric(key) {
+        var m = METRICS[key];
+        if (!m) return;
+        document.querySelectorAll(".trend-tab").forEach(function(btn) {
+            btn.classList.toggle("active", btn.getAttribute("data-tab") === key);
+        });
+        titleEl.textContent = m.title;
+        subEl.textContent = m.sub;
+        extraEl.innerHTML = m.extraHtml || "";
+        noteEl.textContent = m.note;
+
+        var thead = "<thead><tr>" + m.headers.map(function(h) { return "<th>" + h + "</th>"; }).join("") + "</tr></thead>";
+        var tbody = "<tbody>" + m.rows.map(function(r) {
+            return "<tr><td><strong>" + r[0] + "</strong></td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>";
+        }).join("") + "</tbody>";
+        tableEl.innerHTML = thead + tbody;
+
+        if (modalChart) { modalChart.destroy(); modalChart = null; }
+        if (typeof Chart === "undefined" || window.chartLoadFailed) {
+            modalChartBox.style.display = "none";
+            return;
+        }
+        modalChartBox.style.display = "block";
+        try {
+            var ds = m.type === "line" ? {
+                label: m.title,
+                data: m.values,
+                borderColor: m.colors,
+                backgroundColor: dark ? "rgba(96,165,250,.18)" : "rgba(29,78,216,.12)",
+                fill: true,
+                tension: 0.25,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderWidth: 3
+            } : {
+                label: m.title,
+                data: m.values,
+                backgroundColor: m.colors,
+                borderWidth: 0,
+                borderRadius: 6
+            };
+            modalChart = new Chart(document.getElementById("trendModalChart").getContext("2d"), {
+                type: m.type,
+                data: { labels: m.labels, datasets: [ds] },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: textColor, font: { weight: "bold", size: 11 } }, grid: { display: false } },
+                        y: {
+                            min: m.yMin,
+                            ticks: { color: textColor },
+                            grid: { color: gridColor },
+                            title: { display: true, text: m.unit, color: textColor }
+                        }
+                    }
+                }
+            });
+        } catch (e) {
+            modalChartBox.style.display = "none";
+        }
+    }
+
+    function openModal(key) {
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+        renderMetric(key);
+    }
+    function closeModal() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".stat-card[data-metric]").forEach(function(card) {
+        card.addEventListener("click", function() { openModal(card.getAttribute("data-metric")); });
+    });
+    document.querySelectorAll(".trend-tab").forEach(function(tab) {
+        tab.addEventListener("click", function() { renderMetric(tab.getAttribute("data-tab")); });
+    });
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
 });
 </script>
 </body>
