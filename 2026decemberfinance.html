@@ -2,8 +2,13 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#f1f5f9">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="台灣五年總體經濟展望（2026 年 12 月號）｜護國群山戰情室">
+    <meta property="og:description" content="2026/2027 GDP 預測 13.28%/6.51%、台積電 10 月營收 5,868.9 億、10 月外銷訂單 1,238.2 億美元與景氣連 11 紅完整數據趨勢。">
+    <meta property="og:url" content="https://flyer19820218.github.io/finance_daily_news/2026decemberfinance.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/flyer19820218/finance_daily_news/main/icon.png">
     <title>台灣五年總體經濟展望（2026 年 12 月號）｜護國群山戰情室</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="window.chartLoadFailed = true;"></script>
     <style>
@@ -22,14 +27,18 @@
             }
         }
         * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-        html { scroll-behavior:smooth; }
+        html { scroll-behavior:smooth; max-width:100%; overflow-x:hidden; -webkit-text-size-adjust:100%; }
         body {
             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
-            background:var(--bg-color); color:var(--text-main); line-height:1.85; margin:0; padding:24px 16px;
+            background:var(--bg-color); color:var(--text-main); line-height:1.85; margin:0;
+            padding:calc(20px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+            max-width:100%; overflow-x:hidden;
         }
+        p, li, td, th, h1, h2, h3, .note-box { overflow-wrap:anywhere; word-break:break-word; }
+        code { word-break:break-all; font-size:.86em; }
         a { color:var(--c-blue); text-underline-offset:3px; }
         a:hover { opacity:.82; }
-        .container { max-width:960px; margin:0 auto; }
+        .container { max-width:960px; width:100%; margin:0 auto; }
         header {
             text-align:center; padding:38px 22px; background:linear-gradient(145deg,#fff 0%,#e0f2fe 100%);
             border-radius:18px; border:2px solid var(--accent-border); margin-bottom:26px;
@@ -63,12 +72,17 @@
         }
         .trend-modal.open { display:flex; }
         .trend-dialog {
-            width:100%; max-width:800px; max-height:90vh; overflow-y:auto;
+            width:100%; max-width:800px; max-height:88vh; max-height:88dvh; overflow-y:auto;
+            -webkit-overflow-scrolling:touch; overscroll-behavior:contain;
             background:var(--card-bg); color:var(--text-main); border:1px solid var(--border);
-            border-radius:18px; padding:24px 24px 26px; box-shadow:0 24px 50px rgba(0,0,0,.28);
+            border-radius:18px; padding:20px 22px 24px; box-shadow:0 24px 50px rgba(0,0,0,.28);
             text-align:left;
         }
-        .trend-top { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+        .trend-top {
+            position:sticky; top:-20px; z-index:5; background:var(--card-bg);
+            display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+            margin:-20px -22px 14px; padding:14px 22px 12px; border-bottom:1px solid var(--border);
+        }
         .trend-tabs { display:flex; flex-wrap:wrap; gap:6px; }
         .trend-tab {
             appearance:none; font:inherit; font-size:.82rem; font-weight:800; padding:6px 12px;
@@ -103,7 +117,7 @@
             .card-summary { background:linear-gradient(145deg,#1e293b 0%,#064e3b 100%); border-color:#065f46; }
         }
         h2 { color:var(--primary); font-size:1.38rem; font-weight:900; margin:0 0 20px; line-height:1.45; }
-        h3 { font-size:1.15rem; font-weight:800; margin:26px 0 14px; padding:8px 14px; border-radius:8px; display:inline-block; }
+        h3 { font-size:1.15rem; font-weight:800; margin:26px 0 14px; padding:8px 14px; border-radius:8px; display:inline-block; max-width:100%; line-height:1.45; }
         h3.title-blue { color:var(--c-blue); background:var(--badge-blue); }
         h3.title-cyan { color:var(--c-cyan); background:#e0f2fe; }
         h3.title-purple { color:var(--c-purple); background:var(--badge-purple); }
@@ -148,22 +162,57 @@
         .scenario h3 { display:block; margin:0 0 10px; padding:0; background:none; }
         .footer { text-align:center; color:var(--text-muted); font-size:.84rem; margin-top:45px; padding-top:26px; border-top:1px solid var(--border); line-height:1.8; }
         @media (max-width:768px) {
-            body { padding:14px 10px; }
-            header { padding:24px 14px; margin-bottom:18px; }
-            h1 { font-size:1.58rem; }
-            .highlight-grid { grid-template-columns:repeat(2,1fr); gap:8px; }
-            .stat-card { padding:12px 8px; }
-            .stat-value { font-size:1.08rem; }
-            .stat-label { font-size:.74rem; }
-            .section-card { padding:24px 16px; margin-bottom:20px; }
-            h2 { font-size:1.24rem; }
-            h3 { font-size:1.04rem; }
-            .chart-wrapper { height:260px; }
-            .trend-dialog { padding:18px 14px 20px; }
-            .trend-chart-box { height:225px; }
-            .data-table th,.data-table td { padding:10px 8px; font-size:.84rem; }
-            .bullet-list li { padding:15px 14px; }
-            .scenario-grid { grid-template-columns:1fr; }
+            body { padding:calc(12px + env(safe-area-inset-top)) 10px calc(22px + env(safe-area-inset-bottom)); line-height:1.78; }
+            header { padding:20px 12px; margin-bottom:16px; border-radius:16px; }
+            h1 { font-size:1.42rem; line-height:1.38; }
+            .meta-info { font-size:.88rem; margin-bottom:12px; }
+            .highlight-grid { grid-template-columns:repeat(2,1fr); gap:8px; margin-top:14px; }
+            .stat-card { padding:12px 6px 10px; border-radius:12px; }
+            .stat-value { font-size:clamp(.92rem,3.8vw,1.08rem); word-break:keep-all; }
+            .stat-label { font-size:.73rem; margin-top:4px; }
+            .stat-hint { font-size:.69rem; margin-top:6px; }
+            .section-card { padding:20px 14px; margin-bottom:16px; border-radius:16px; text-align:left; }
+            h2 { font-size:1.18rem; margin-bottom:14px; }
+            h3 { font-size:.98rem; padding:7px 11px; margin:20px 0 12px; }
+            .bullet-list li { padding:14px 12px; margin-bottom:12px; font-size:.92rem; }
+            .badge-red,.badge-blue,.badge-amber,.badge-green { white-space:normal; line-height:1.35; margin-bottom:5px; font-size:.74rem; }
+            .chart-wrapper { height:240px; padding:10px 8px; margin:20px 0 12px; }
+            .scenario-grid { grid-template-columns:1fr; gap:10px; }
+            .scenario { padding:14px; }
+            /* LINE 9:16 表格零溢出卡片化排版 */
+            .table-responsive { overflow-x:visible; border:none; box-shadow:none; background:transparent; margin:14px 0; border-radius:0; }
+            .data-table, .data-table tbody, .data-table tr, .data-table td { display:block; width:100%; }
+            .data-table thead { display:none; }
+            .data-table tbody tr {
+                background:var(--card-bg) !important; border:1px solid var(--border);
+                border-radius:12px; padding:12px 13px; margin-bottom:10px;
+                box-shadow:0 2px 6px rgba(0,0,0,.03);
+            }
+            .data-table tbody tr:last-child { margin-bottom:0; }
+            .data-table td { padding:6px 0; border-bottom:1px dashed var(--border); font-size:.88rem; line-height:1.62; }
+            .data-table td:last-child { border-bottom:none; padding-bottom:0; }
+            .data-table td:first-child { padding-top:0; padding-bottom:7px; border-bottom:1px solid var(--border); font-size:.94rem; }
+            .data-table td::before {
+                content:attr(data-label); display:block; font-size:.72rem; font-weight:800;
+                color:var(--text-muted); margin-bottom:2px;
+            }
+            /* Modal 內 12 個月精簡雙欄卡片列表 */
+            #trendTable tbody tr { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; padding:10px 12px; margin-bottom:8px; }
+            #trendTable td::before { display:none; }
+            #trendTable td:nth-child(1) { width:auto; border:none; padding:0; font-size:.88rem; }
+            #trendTable td:nth-child(2) { width:auto; border:none; padding:0; font-size:.95rem; font-weight:900; color:var(--c-blue); }
+            #trendTable td:nth-child(3) { width:100%; border:none; border-top:1px dashed var(--border); margin-top:6px; padding:6px 0 0; font-size:.81rem; color:var(--text-muted); }
+            /* LINE 9:16 彈窗適配 */
+            .trend-modal { padding:10px; align-items:flex-end; }
+            .trend-dialog { padding:16px 14px calc(18px + env(safe-area-inset-bottom)); max-height:88vh; max-height:88dvh; border-radius:16px; }
+            .trend-top { top:-16px; margin:-16px -14px 12px; padding:12px 14px 10px; align-items:flex-start; }
+            .trend-tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; flex:1; }
+            .trend-tab { font-size:.76rem; padding:6px 6px; text-align:center; }
+            .trend-title { font-size:1.05rem; line-height:1.4; }
+            .trend-sub { font-size:.78rem; margin-bottom:10px; }
+            .trend-chart-box { height:210px; padding:8px 6px; }
+            .rev-strip { gap:6px; }
+            .rev-chip { font-size:.74rem; padding:5px 8px; }
         }
     </style>
 </head>
@@ -285,7 +334,7 @@
         <div class="chart-wrapper" id="orders-chart-container"><canvas id="ordersChart"></canvas></div>
         <div class="fallback-table-wrapper" id="orders-fallback">
             <p><strong>備援資料：2026 年 4～10 月台灣外銷訂單金額（經濟部統計處）</strong></p>
-            <div class="table-responsive"><table class="data-table"><thead><tr><th>月份</th><th>4 月</th><th>5 月</th><th>6 月</th><th>7 月</th><th>8 月</th><th>9 月</th><th>10 月</th></tr></thead><tbody><tr><td>億美元</td><td>874.5</td><td>894.8</td><td>952.6</td><td>979.4</td><td>1,029.6</td><td>1,142.1</td><td>1,238.2</td></tr></tbody></table></div>
+            <div class="table-responsive"><table class="data-table"><thead><tr><th>月份</th><th>外銷訂單（億美元）</th></tr></thead><tbody><tr><td>4 月</td><td>874.5</td></tr><tr><td>5 月</td><td>894.8</td></tr><tr><td>6 月</td><td>952.6</td></tr><tr><td>7 月</td><td>979.4</td></tr><tr><td>8 月</td><td>1,029.6</td></tr><tr><td>9 月</td><td>1,142.1</td></tr><tr><td>10 月</td><td>1,238.2</td></tr></tbody></table></div>
         </div>
         <p style="font-size:.88rem;color:var(--text-muted);">資料來源：<a href="https://www.moea.gov.tw/" target="_blank" rel="noopener">經濟部統計處外銷訂單（11/20）</a>、<a href="https://www.stat.gov.tw/" target="_blank" rel="noopener">行政院主計總處（11/27）</a>、<a href="https://www.mof.gov.tw/" target="_blank" rel="noopener">財政部海關統計（11/9）</a>、<a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener">國發會景氣燈號（11/27）</a>。經濟部亦提醒，外銷訂單不必然全數於台灣生產及出口，須搭配海關出口與工業生產數據交叉觀察。</p>
         <h3 class="title-purple">🌱 2027 年 6.51% 的數據解讀與結構觀察</h3>
@@ -387,6 +436,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     var textColor = dark ? "#94a3b8" : "#475569";
     var gridColor = dark ? "#334155" : "#e2e8f0";
+    var isNarrow = window.innerWidth <= 480;
+
+    // 自動為頁面內所有靜態表格寫入 data-label，供手機／LINE 9:16 零溢出卡片排版使用
+    document.querySelectorAll(".data-table").forEach(function(tbl) {
+        var heads = Array.from(tbl.querySelectorAll("thead th")).map(function(th) { return th.textContent.trim(); });
+        if (!heads.length) return;
+        tbl.querySelectorAll("tbody tr").forEach(function(tr) {
+            Array.from(tr.children).forEach(function(td, idx) {
+                if (heads[idx]) td.setAttribute("data-label", heads[idx]);
+            });
+        });
+    });
 
     // Chapter 03 外銷訂單長條圖
     var chartBox = document.getElementById("orders-chart-container");
@@ -570,7 +631,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var thead = "<thead><tr>" + m.headers.map(function(h) { return "<th>" + h + "</th>"; }).join("") + "</tr></thead>";
         var tbody = "<tbody>" + m.rows.map(function(r) {
-            return "<tr><td><strong>" + r[0] + "</strong></td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>";
+            return "<tr>" +
+                "<td data-label=\"" + m.headers[0] + "\"><strong>" + r[0] + "</strong></td>" +
+                "<td data-label=\"" + m.headers[1] + "\">" + r[1] + "</td>" +
+                "<td data-label=\"" + m.headers[2] + "\">" + r[2] + "</td>" +
+            "</tr>";
         }).join("") + "</tbody>";
         tableEl.innerHTML = thead + tbody;
 
@@ -606,12 +671,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        x: { ticks: { color: textColor, font: { weight: "bold", size: 11 } }, grid: { display: false } },
+                        x: {
+                            ticks: {
+                                color: textColor,
+                                font: { weight: "bold", size: isNarrow ? 10 : 11 },
+                                maxRotation: isNarrow ? 45 : 0,
+                                autoSkip: false
+                            },
+                            grid: { display: false }
+                        },
                         y: {
                             min: m.yMin,
-                            ticks: { color: textColor },
+                            ticks: { color: textColor, font: { size: isNarrow ? 10 : 11 } },
                             grid: { color: gridColor },
-                            title: { display: true, text: m.unit, color: textColor }
+                            title: { display: !isNarrow, text: m.unit, color: textColor }
                         }
                     }
                 }
